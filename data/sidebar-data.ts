@@ -20,6 +20,7 @@ export const sidebarData: SidebarDataType = {
     email: "m@example.com",
     avatar: "/avatars/shadcn.jpg",
   },
+
   teams: [
     {
       name: "Acme Inc",
@@ -37,12 +38,50 @@ export const sidebarData: SidebarDataType = {
       plan: "Free",
     },
   ],
+  tools: [
+    {
+      title: "Simulador de espesor de lentes",
+      url: "/simulador",
+      icon: DraftingCompass,
+    },
+    {
+      title: "Filtro de lentes",
+      url: "#",
+      icon: ScanSearch,
+    },
+    {
+      title: "Pasillo de multifocales",
+      url: "#",
+      icon: CircleSlash2,
+    },
+    {
+      title: "Anteojos según el rostro",
+      url: "#",
+      icon: Smile,
+    },
+  ],
   library: [
+    {
+      title: "Materiales e índice",
+      url: "/libreria/",
+      icon: Sparkle,
+      blocks: [
+        {
+          title: "materiales de lentes",
+          url: "/libreria/materiales-de-lentes"
+        },
+        {
+          title: "Indice de refracción",
+          url: "/libreria/indice-de-refraccion"
+        }
+
+      ]
+    },
     {
       title: "Tratamientos",
       url: "/libreria/",
       icon: Sparkle,
-      isActive: true,
+
       blocks: [
         {
           title: "Tratamiento Antirreflejante",
@@ -73,8 +112,8 @@ export const sidebarData: SidebarDataType = {
           url: "/libreria/polarizado",
         },
         {
-          title: "Anti rayas",
-          url: "/libreria/anti-rayas",
+          title: "tratamiento anti rayas",
+          url: "/libreria/tratamiento-anti-rayas",
         },
         {
           title: "Recubrimiento Espejado",
@@ -260,10 +299,29 @@ export const sidebarData: SidebarDataType = {
           url: "/herramientas-de-aboratorio/procesos/lavadora-ultrasonica",
         },
         {
+          title: "Estación de estiramiento",
+          url: "/herramientas-de-aboratorio/procesos/estacion-de-estiramiento",
+        },
+                {
+          title: "Estación de control óptico",
+          url: "/herramientas-de-aboratorio/procesos/estacion-de-control-optico",
+        },
+        {
+          title: "Estación de de análisis fotometrico",
+          url: "/herramientas-de-aboratorio/procesos/estacion-de-analisis-fotometrico",
+        },
+        {
+          title: "Prensa de laminación óptica",
+          url: "/herramientas-de-aboratorio/procesos/prensa-de-laminacion-optica",
+        },
+
+        {
           title: "Horno de curado",
           url: "/herramientas-de-aboratorio/procesos/horno-de-curado",
         },
+
         { title: "Cámara de vacío", url: "/herramientas-de-aboratorio/procesos/camara-de-vacio" },
+        { title: "talladora digital de superficie libre", url: "/herramientas-de-aboratorio/procesos/talladora-digital-de-superficie-libre" }
       ],
     },
     {
@@ -303,26 +361,5 @@ export const sidebarData: SidebarDataType = {
       ],
     },
   ],
-  tools: [
-    {
-      title: "Simulador de espesor de lentes",
-      url: "/simulador",
-      icon: DraftingCompass,
-    },
-    {
-      title: "Filtro de lentes",
-      url: "#",
-      icon: ScanSearch,
-    },
-    {
-      title: "Pasillo de multifocales",
-      url: "#",
-      icon: CircleSlash2,
-    },
-    {
-      title: "Anteojos según el rostro",
-      url: "#",
-      icon: Smile,
-    },
-  ],
+
 };
