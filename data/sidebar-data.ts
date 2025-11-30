@@ -20,24 +20,6 @@ export const sidebarData: SidebarDataType = {
     email: "m@example.com",
     avatar: "/avatars/shadcn.jpg",
   },
-
-  teams: [
-    {
-      name: "Acme Inc",
-      logo: GalleryVerticalEnd,
-      plan: "Enterprise",
-    },
-    {
-      name: "Acme Corp.",
-      logo: AudioWaveform,
-      plan: "Startup",
-    },
-    {
-      name: "Evil Corp.",
-      logo: Command,
-      plan: "Free",
-    },
-  ],
   tools: [
     {
       title: "Simulador de espesor de lentes",
@@ -60,23 +42,26 @@ export const sidebarData: SidebarDataType = {
       icon: Smile,
     },
   ],
-  library: [
+  teams: [
     {
-      title: "Materiales e índice",
-      url: "/libreria/",
-      icon: Sparkle,
-      blocks: [
-        {
-          title: "materiales de lentes",
-          url: "/libreria/materiales-de-lentes"
-        },
-        {
-          title: "Indice de refracción",
-          url: "/libreria/indice-de-refraccion"
-        }
-
-      ]
+      name: "Acme Inc",
+      logo: GalleryVerticalEnd,
+      plan: "Enterprise",
     },
+    {
+      name: "Acme Corp.",
+      logo: AudioWaveform,
+      plan: "Startup",
+    },
+    {
+      name: "Evil Corp.",
+      logo: Command,
+      plan: "Free",
+    },
+  ],
+
+  library: [
+
     {
       title: "Tratamientos",
       url: "/libreria/",
@@ -121,42 +106,16 @@ export const sidebarData: SidebarDataType = {
         },
       ],
     },
-    {
-      title: "Lentes de contacto",
-      url: "/lentesContacto",
-      icon: CircleDot,
-      blocks: [
-        {
-          title: "Acuvue 2",
-          url: "#",
-        },
-        {
-          title: "Acuvue Oasys",
-          url: "#",
-        },
-        {
-          title: "Acuvue Vita",
-          url: "#",
-        },
-        {
-          title: "Acuvue Moist",
-          url: "#",
-        },
-        {
-          title: "Acuvue Oasys multifocal",
-          url: "#",
-        },
-      ],
-    },
+
     {
       title: "Condiciones visuales",
       url: "/Condiciones",
       icon: Eye,
       blocks: [
-        { title: "Miopía", url: "/condiciones/miopia" },
-        { title: "Hipermetropía", url: "/condiciones/hipermetropia" },
-        { title: "Astigmatismo", url: "/condiciones/astigmatismo" },
-        { title: "Presbicia", url: "/condiciones/presbicia" },
+        { title: "Miopía", url: "/libreria/miopia" },
+        { title: "Hipermetropía", url: "/libreria/hipermetropia" },
+        { title: "Astigmatismo", url: "/libreria/astigmatismo" },
+        { title: "Presbicia", url: "/libreria/presbicia" },
 
         { title: "Exoforia", url: "/condiciones/exoforia" },
         { title: "Esoforia", url: "/condiciones/esoforia" },
@@ -215,6 +174,49 @@ export const sidebarData: SidebarDataType = {
         },
         { title: "Queratocono", url: "/condiciones/queratocono" },
         { title: "Uveítis", url: "/condiciones/uveitis" },
+      ],
+    },
+    {
+      title: "Materiales e índice",
+      url: "/libreria/",
+      icon: Sparkle,
+      blocks: [
+        {
+          title: "materiales de lentes",
+          url: "/libreria/materiales-de-lentes"
+        },
+        {
+          title: "Indice de refracción",
+          url: "/libreria/indice-de-refraccion"
+        }
+
+      ]
+    },
+    {
+      title: "Lentes de contacto",
+      url: "/lentesContacto",
+      icon: CircleDot,
+      blocks: [
+        {
+          title: "Acuvue 2",
+          url: "#",
+        },
+        {
+          title: "Acuvue Oasys",
+          url: "#",
+        },
+        {
+          title: "Acuvue Vita",
+          url: "#",
+        },
+        {
+          title: "Acuvue Moist",
+          url: "#",
+        },
+        {
+          title: "Acuvue Oasys multifocal",
+          url: "#",
+        },
       ],
     },
   ],
@@ -302,7 +304,7 @@ export const sidebarData: SidebarDataType = {
           title: "Estación de estiramiento",
           url: "/herramientas-de-aboratorio/procesos/estacion-de-estiramiento",
         },
-                {
+        {
           title: "Estación de control óptico",
           url: "/herramientas-de-aboratorio/procesos/estacion-de-control-optico",
         },
