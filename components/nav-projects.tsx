@@ -10,18 +10,19 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 
-export function NavProjects({
-  projects,
-}: {
-  projects: {
-    title: string;
-    url: string;
-    icon: LucideIcon;
-  }[];
-}) {
+interface ProyectProps {
+  title: string;
+  url: string;
+  icon: LucideIcon;
+}
+interface NavToolsProps {
+  title: string;
+  projects: ProyectProps[];
+}
+export const NavProjects = ({ projects, title }: NavToolsProps) => {
   return (
     <SidebarGroup className="group-data-[collapsible=icon]:hidden">
-      <SidebarGroupLabel>Herramientas</SidebarGroupLabel>
+      <SidebarGroupLabel>{title}</SidebarGroupLabel>
       <SidebarMenu>
         {projects.map((item) => (
           <SidebarMenuItem key={item.title}>
@@ -36,4 +37,4 @@ export function NavProjects({
       </SidebarMenu>
     </SidebarGroup>
   );
-}
+};

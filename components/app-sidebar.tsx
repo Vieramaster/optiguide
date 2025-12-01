@@ -27,16 +27,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarHeader>
         <p>OPTIGUIDE</p>
         <Minus className="rotate-90" />
-        <GlassesIcon className=" " />
+        <GlassesIcon />
       </SidebarHeader>
       {/**Contenido del sidebar */}
       <SidebarContent>
+        <NavProjects projects={sidebarData.tools} title="herramientas" />
         <NavLibrary arrayItems={sidebarData.library} name="Libreria" />
-        <NavLibrary
-          arrayItems={sidebarData.laboratoryTools}
-          name="Herramientas de laboratorio"
-        />
-        <NavProjects projects={sidebarData.tools} />
       </SidebarContent>
       {/**Footer del sidebar */}
       <SidebarFooter>
@@ -46,3 +42,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     </Sidebar>
   );
 }
+/**        <NavLibrary
+          arrayItems={sidebarData.laboratoryTools}
+          name="Herramientas de laboratorio"
+        /> */

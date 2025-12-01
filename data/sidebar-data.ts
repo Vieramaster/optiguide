@@ -8,7 +8,6 @@ import {
   DraftingCompass,
   ScanSearch,
   CircleSlash2,
-  CircleDot,
   Sparkle,
   Smile,
   Eye,
@@ -61,61 +60,59 @@ export const sidebarData: SidebarDataType = {
   ],
 
   library: [
-
     {
       title: "Tratamientos",
-      url: "/libreria/",
       icon: Sparkle,
 
       blocks: [
         {
           title: "Tratamiento Antirreflejante",
-          url: "/libreria/antirreflejante",
+          url: "/antirreflejante",
         },
         {
           title: "Filtro azul",
-          url: "/libreria/filtro-azul",
+          url: "/filtro-azul",
         },
         {
           title: "Filtro Ultravioleta ",
-          url: "/libreria/filtro-ultravioleta",
+          url: "/filtro-ultravioleta",
         },
         {
           title: "Fotocromáticos ",
-          url: "/libreria/fotocromaticos",
+          url: "/fotocromaticos",
         },
         {
           title: " Hidrofóbico y Oleofóbico",
-          url: "/libreria/hidrofobico-y-oleofobico",
+          url: "/hidrofobico-y-oleofobico",
         },
         {
           title: "Tratamiento Antiempañante",
-          url: "/libreria/tratamiento-antiempanante",
+          url: "/tratamiento-antiempanante",
         },
         {
           title: "Polarizado",
-          url: "/libreria/polarizado",
+          url: "/polarizado",
         },
         {
           title: "tratamiento anti rayas",
-          url: "/libreria/tratamiento-anti-rayas",
+          url: "/tratamiento-anti-rayas",
         },
         {
           title: "Recubrimiento Espejado",
-          url: "/libreria/recubrimiento-espejado",
+          url: "/recubrimiento-espejado",
         },
       ],
     },
 
     {
       title: "Condiciones visuales",
-      url: "/Condiciones",
+
       icon: Eye,
       blocks: [
-        { title: "Miopía", url: "/libreria/miopia" },
-        { title: "Hipermetropía", url: "/libreria/hipermetropia" },
-        { title: "Astigmatismo", url: "/libreria/astigmatismo" },
-        { title: "Presbicia", url: "/libreria/presbicia" },
+        { title: "Miopía", url: "/miopia" },
+        { title: "Hipermetropía", url: "/hipermetropia" },
+        { title: "Astigmatismo", url: "/astigmatismo" },
+        { title: "Presbicia", url: "/presbicia" },
 
         { title: "Exoforia", url: "/condiciones/exoforia" },
         { title: "Esoforia", url: "/condiciones/esoforia" },
@@ -178,87 +175,84 @@ export const sidebarData: SidebarDataType = {
     },
     {
       title: "Materiales e índice",
-      url: "/libreria/",
       icon: Sparkle,
       blocks: [
         {
           title: "materiales de lentes",
-          url: "/libreria/materiales-de-lentes"
+          url: "/materiales-de-lentes",
         },
         {
           title: "Indice de refracción",
-          url: "/libreria/indice-de-refraccion"
-        }
-
-      ]
-    },
-    {
-      title: "Lentes de contacto",
-      url: "/lentesContacto",
-      icon: CircleDot,
-      blocks: [
-        {
-          title: "Acuvue 2",
-          url: "#",
-        },
-        {
-          title: "Acuvue Oasys",
-          url: "#",
-        },
-        {
-          title: "Acuvue Vita",
-          url: "#",
-        },
-        {
-          title: "Acuvue Moist",
-          url: "#",
-        },
-        {
-          title: "Acuvue Oasys multifocal",
-          url: "#",
+          url: "/indice-de-refraccion",
         },
       ],
     },
   ],
-  laboratoryTools: [
+};
+/**
+ *   laboratoryTools: [
     {
       title: "Medicion",
-      url: "/herramientas-de-aboratorio/medicion",
       icon: GalleryVerticalEnd,
       blocks: [
-        { title: "Lensometro", url: "/herramientas-de-aboratorio/medicion/lensometro" },
+        {
+          title: "Lensometro",
+          url: "/herramientas-de-aboratorio/medicion/lensometro",
+        },
         {
           title: "Calibrador digital",
           url: "/herramientas-de-aboratorio/medicion/calibrador_digital",
         },
-        { title: "Regla PD", url: "/herramientas-de-aboratorio/medicion/regla_pd" },
-        { title: "Esferometro", url: "/herramientas-de-aboratorio/medicion/esferometro" },
+        {
+          title: "Regla PD",
+          url: "/herramientas-de-aboratorio/medicion/regla_pd",
+        },
+        {
+          title: "Esferometro",
+          url: "/herramientas-de-aboratorio/medicion/esferometro",
+        },
         {
           title: "Medidor de curvatura",
           url: "/herramientas-de-aboratorio/medicion/medidor_curvatura",
         },
-        { title: "Pupimetro", url: "/herramientas-de-aboratorio/medicion/pupimetro" },
+        {
+          title: "Pupimetro",
+          url: "/herramientas-de-aboratorio/medicion/pupimetro",
+        },
       ],
     },
     {
       title: "Tallado",
-      url: "/herramientas-de-aboratorio/tallado",
       icon: GalleryVerticalEnd,
       blocks: [
-        { title: "Biseladora", url: "/herramientas-de-aboratorio/tallado/biseladora" },
-        { title: "Bloqueadora", url: "/herramientas-de-aboratorio/tallado/bloqueadora" },
+        {
+          title: "Biseladora",
+          url: "/herramientas-de-aboratorio/tallado/biseladora",
+        },
+        {
+          title: "Bloqueadora",
+          url: "/herramientas-de-aboratorio/tallado/bloqueadora",
+        },
         {
           title: "Generador digital",
           url: "/herramientas-de-aboratorio/tallado/generador_digital",
         },
-        { title: "Pulidora", url: "/herramientas-de-aboratorio/tallado/pulidora" },
-        { title: "Desbastadora", url: "/herramientas-de-aboratorio/tallado/desbastadora" },
-        { title: "Centrado", url: "/herramientas-de-aboratorio/tallado/centrado" },
+        {
+          title: "Pulidora",
+          url: "/herramientas-de-aboratorio/tallado/pulidora",
+        },
+        {
+          title: "Desbastadora",
+          url: "/herramientas-de-aboratorio/tallado/desbastadora",
+        },
+        {
+          title: "Centrado",
+          url: "/herramientas-de-aboratorio/tallado/centrado",
+        },
       ],
     },
     {
       title: "Herramientas",
-      url: "/herramientas-de-aboratorio/herramientas",
       icon: GalleryVerticalEnd,
       blocks: [
         {
@@ -281,16 +275,24 @@ export const sidebarData: SidebarDataType = {
           title: "Pinzas de ajuste",
           url: "/herramientas-de-aboratorio/herramientas/pinzas_ajuste",
         },
-        { title: "Limas", url: "/herramientas-de-aboratorio/herramientas/limas" },
+        {
+          title: "Limas",
+          url: "/herramientas-de-aboratorio/herramientas/limas",
+        },
       ],
     },
     {
       title: "Procesos",
-      url: "/herramientas-de-aboratorio/procesos",
       icon: GalleryVerticalEnd,
       blocks: [
-        { title: "Baño hard coat", url: "/herramientas-de-aboratorio/procesos/hard-coat" },
-        { title: "Tinturas", url: "/herramientas-de-aboratorio/procesos/tinturas" },
+        {
+          title: "Baño hard coat",
+          url: "/herramientas-de-aboratorio/procesos/hard-coat",
+        },
+        {
+          title: "Tinturas",
+          url: "/herramientas-de-aboratorio/procesos/tinturas",
+        },
         {
           title: "Horno para tintura",
           url: "/herramientas-de-aboratorio/procesos/horno_tintura",
@@ -322,13 +324,18 @@ export const sidebarData: SidebarDataType = {
           url: "/herramientas-de-aboratorio/procesos/horno-de-curado",
         },
 
-        { title: "Cámara de vacío", url: "/herramientas-de-aboratorio/procesos/camara-de-vacio" },
-        { title: "talladora digital de superficie libre", url: "/herramientas-de-aboratorio/procesos/talladora-digital-de-superficie-libre" }
+        {
+          title: "Cámara de vacío",
+          url: "/herramientas-de-aboratorio/procesos/camara-de-vacio",
+        },
+        {
+          title: "talladora digital de superficie libre",
+          url: "/herramientas-de-aboratorio/procesos/talladora-digital-de-superficie-libre",
+        },
       ],
     },
     {
       title: "Control",
-      url: "/herramientas-de-aboratorio/control",
       icon: GalleryVerticalEnd,
       blocks: [
         {
@@ -351,17 +358,21 @@ export const sidebarData: SidebarDataType = {
     },
     {
       title: "Montaje",
-      url: "/herramientas-de-aboratorio/montaje",
       icon: GalleryVerticalEnd,
       blocks: [
         {
           title: "Calentador de armazones",
           url: "/herramientas-de-aboratorio/montaje/calentador",
         },
-        { title: "Succionadores", url: "/herramientas-de-aboratorio/montaje/succionadores" },
-        { title: "Plantillas", url: "/herramientas-de-aboratorio/montaje/plantillas" },
+        {
+          title: "Succionadores",
+          url: "/herramientas-de-aboratorio/montaje/succionadores",
+        },
+        {
+          title: "Plantillas",
+          url: "/herramientas-de-aboratorio/montaje/plantillas",
+        },
       ],
     },
   ],
-
-};
+ */

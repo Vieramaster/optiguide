@@ -7,7 +7,6 @@ export type BlockType = {
 
 export type LibraryItemType = {
   title: string;
-  url: string;
   icon: LucideIcon;
   isActive?: boolean;
   blocks: BlockType[];
@@ -15,8 +14,8 @@ export type LibraryItemType = {
 
 export type LaboratoryToolItemType = {
   title: string;
-  url: string;
   icon: LucideIcon;
+  url: string;
   blocks: BlockType[];
 };
 
@@ -42,6 +41,7 @@ export type SidebarDataType = {
   user: UserType;
   teams: TeamType[];
   library: LibraryItemType[];
-  laboratoryTools: LaboratoryToolItemType[];
+
   tools: ToolItemType[];
 };
+/**  laboratoryTools: LibraryItemType[] */

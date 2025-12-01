@@ -4,7 +4,7 @@ Los lentes fotocromáticos son una de las opciones más prácticas que existen h
 Están hechos con pequeñas moléculas especiales dentro del propio material del lente. Cuando reciben luz ultravioleta, esas moléculas “se activan” y el lente se oscurece. Cuando la luz baja, vuelven a su estado original y el lente se aclara otra vez.
 No es una capa puesta encima, sino algo que forma parte del lente en sí. Eso hace que el cambio de color sea uniforme, dure más y funcione bien durante mucho tiempo.
 
-![comparación de con y sin lentes fotocromáticos](/library/fotocromaticos-1.webp)
+![comparación de con y sin lentes fotocromáticos](/images/library/treatments/fotocromaticos-1.webp)
 
 ## Ventajas de usar lentes fotocromaticas.
 
@@ -33,7 +33,7 @@ Al oscurecerse, también reducen deslumbramiento y protegen al ojo frente a rayo
 
 - Pueden tardar varios segundos en lograr su máxima intensidad.
 
-![comparación de con y sin lentes fotocromáticos](/library/fotocromaticos-2.webp)
+![comparación de con y sin lentes fotocromáticos](/images/library/treatments/fotocromaticos-2.webp)
 
 ## ¿Como se fabrica?
 

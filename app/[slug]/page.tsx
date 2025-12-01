@@ -4,13 +4,23 @@ import ReactMarkdown from "react-markdown";
 import Link from "next/link";
 import Image from "next/image";
 import rehypeRaw from "rehype-raw";
+
+import { findMarkdownFile } from "@/lib/findMarkdownFile";
+
 type PageProps = {
   params: Promise<{ slug: string }>;
 };
 
 export default async function Page({ params }: PageProps) {
   const { slug } = await params;
-  const filePath = path.join(process.cwd(), "articles", `${slug}.md`);
+
+  const baseDir = path.join(process.cwd(), "articles");
+  const filePath = findMarkdownFile(baseDir, slug);
+
+  if (!filePath) {
+    return <div>No se encontró el artículo</div>;
+  }
+  
   const content = fs.readFileSync(filePath, "utf-8");
 
   return (
@@ -94,7 +104,6 @@ const MDImage = ({ ...props }: React.ComponentProps<"img">) => {
       height={height ? Number(height) : 400}
       {...rest}
       className="mx-auto my-5 rounded-xl"
-      
     />
   );
 };
