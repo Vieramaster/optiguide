@@ -20,14 +20,12 @@ Dato clave para el óptico: a mayor potencia (positiva o negativa), más crític
 
 Si la receta incluye astigmatismo, vas a ver un cilindro (C) y un eje (°). El cilindro indica la cantidad y el eje muestra la orientación exacta entre 0° y 180°. En recetas sin astigmatismo, directamente dejan el cilindro y el eje vacíos, indicando que solo hay corrección esférica (E). En algunos casos el cilindro se escribe en positivo y en otros en negativo; es solo una diferencia de notación, no de graduación real.  
 Un punto clave: el eje no cambia la potencia total del lente, solo indica la dirección en la que se corrige el astigmatismo. Si el lente rota en el armazón o está mal montado, la visión puede volverse borrosa aunque la graduación sea correcta.  
-Extra útil: cuanto mayor sea el cilindro, **más importante es la estabilidad del armazón** y la correcta horizontalidad de la montura al marcar centros.
 
 ![imagen que muestra cómo se ve un astigmatismo en un gráfico de orientación]
 
 ## ADD (Adición): visión de cerca
 
 La adición se usa para presbicia y aparece como un valor positivo que suma potencia solo para leer o ver de cerca. No modifica la visión de lejos. Este dato es esencial para lentes progresivos, bifocales o lentes exclusivos de lectura.  
-Tip práctico: si la ADD es muy alta (por ejemplo +2.50 o más), puede requerir **progresivos de mejor calidad** para lograr zonas de lectura más amplias y cómodas.
 
 ![imagen que representa zonas de un lente progresivo]
 
