@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 
 import { findMarkdownFile } from "@/lib/findMarkdownFile";
-import { MarkdownRenderer } from "@/components/Markdown-renderer";
+import { MarkdownRenderer } from "@/components/markdown-renderer";
 type PageProps = {
   params: Promise<{ slug: string }>;
 };
