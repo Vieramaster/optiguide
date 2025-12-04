@@ -1,59 +1,52 @@
 # Conversión de transposición
 
-La transposición en lentes oftálmicos es el proceso de convertir una receta escrita en cilindro positivo a cilindro negativo o viceversa sin alterar la corrección óptica real y se utiliza principalmente en casos de astigmatismo porque este puede expresarse de dos formas equivalentes; sirve para uniformar recetas entre profesionales y laboratorios que trabajan con diferentes convenciones, facilitar la comunicación y evitar errores en la fabricación de lentes, asegurando que la graduación mantenga la misma potencia aunque esté expresada en otro formato.
+La **transposición** es el proceso mediante el cual una receta en cilindro positivo se convierte a cilindro negativo o al revés, manteniendo exactamente la misma corrección óptica. Se utiliza en recetas con astigmatismo, ya que esta graduación puede expresarse de dos maneras equivalentes. Su función principal es unificar criterios entre profesionales y laboratorios, facilitar la interpretación y reducir errores en la fabricación de lentes sin alterar la potencia final.
 
-
-## Cómo se hace el cálculo
-
-### El proceso tiene tres pasos básicos:
-
-- **Sumar la esfera y el cilindro** → el resultado será la nueva esfera.
-
-- **Cambiar el signo del cilindro** → si era positivo pasa a negativo, y viceversa.
-
-- **Modificar el eje** → se rota 90° (si era 180°, pasa a 90°; si era 45°, pasa a 135°, etc.).
 ---
 
+
+## Cómo se realiza el cálculo
+
+### Pasos esenciales:
+
+- **Sumar la esfera y el cilindro** → el resultado será la nueva esfera.  
+- **Invertir el signo del cilindro** → de positivo a negativo o de negativo a positivo.  
+- **Ajustar el eje** → se modifica 90° (por ejemplo: de 180° a 90°, o de 45° a 135°).
+
+
+![imagen ilustrativa de receta](/images/library/basic-concepts/conversion-de-transposicion-1.webp)
 ## Ejemplos prácticos
+---
 
-### Ejemplo 1 Receta original:
+**Ejemplo 1 — Receta original:**
 
-*Esfera:* +2.00
 
-*Cilindro:* +1.00
+*Esfera:* –1.50 --- *Cilindro:* –0.75 --- *Eje:* 45°
 
-*Eje:* 180°
+**Transposición**
 
-**Transposición:**
+*Nueva esfera:* +2.00 + (+1.00) = +3.00  --- *Nuevo cilindro:* –1.00  --- *Nuevo eje:* 90°
 
-*Nueva esfera:* +2.00 + (+1.00) = +3.00
 
-*Nuevo cilindro:* –1.00
 
-*Nuevo eje*: 90°
-
-*Resultado:* +3.00 –1.00 × 90°
+**Resultado:** +3.00 –1.00 × 90°
 
 ---
 
-### Ejemplo 2 Receta original:
+**Ejemplo 2 — Receta original**
 
-*Esfera:* –1.50
+*Esfera:* –1.50  -- *Cilindro:* –0.75  --- *Eje:* 45°
 
-*Cilindro:* –0.75
 
-*Eje:* 45°
+**Transposición**
 
-**Transposición:**
+*Nueva esfera:* –1.50 + (–0.75) = –2.25  --- *Nuevo cilindro:* +0.75  --- *Nuevo eje:* 135°
 
-*Nueva esfera:* –1.50 + (–0.75) = –2.25
 
-*Nuevo cilindro:* +0.75
+**Resultado:** –2.25 +0.75 × 135°
 
-*Nuevo eje:* 135°
-
-*Resultado:* –2.25 +0.75 × 135°
 ---
 
-## Resumen 
-La transposición es una herramienta matemática y práctica que asegura que la corrección óptica sea la misma aunque se exprese en formatos distintos. Es clave para la fabricación de lentes y la correcta interpretación de recetas oftálmicas.
+## Resumen
+
+La transposición es un recurso matemático que permite expresar la misma corrección en distintos formatos sin modificar su efecto óptico. Es fundamental para interpretar recetas y garantizar precisión en la fabricación de lentes.

@@ -85,7 +85,7 @@ const MDImage = ({ ...props }: React.ComponentProps<"img">) => {
       width={width ? Number(width) : 600}
       height={height ? Number(height) : 400}
       {...rest}
-      className="mx-auto my-5 rounded-xl"
+      className="mx-auto my-5 rounded-xl w-full lg:w-1/2"
     />
   );
 };

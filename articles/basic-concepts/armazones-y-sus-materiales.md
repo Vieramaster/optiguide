@@ -1,154 +1,90 @@
 # Armazones
 
-Los armazones de lentes son la estructura que sostiene los cristales oftálmicos y permiten que se adapten al rostro del usuario. Además de cumplir una función práctica, también tienen un rol estético y de estilo personal. Su diseño influye en la comodidad, la durabilidad y la apariencia general de las gafas, por lo que elegir el armazón adecuado es tan importante como seleccionar la graduación correcta.
+Los armazones son la estructura que sostiene los cristales oftálmicos y permite que las gafas se adapten al rostro de cada usuario. Además de su función práctica, cumplen un rol estético y expresan estilo personal. Su diseño influye en la comodidad, la resistencia y la apariencia general, por lo que elegir un armazón adecuado es tan relevante como seleccionar la graduación correcta.
 
----
+## ![imagen ilustrativa de un armazón de metal](/images/library/basic-concepts/armazones-y-sus-materiales-3.webp)
 
-## Metal
+## Armazones de metal
 
-Los armazones de metal son una de las opciones más tradicionales y populares en gafas. Se caracterizan por ser delgados, elegantes y resistentes, lo que los convierte en una elección versátil tanto para uso diario como para estilos más formales. Suelen fabricarse en aleaciones como monel, acero inoxidable, titanio o aluminio, cada una con propiedades específicas de durabilidad y peso.
+Los armazones de metal constituyen una opción tradicional y versátil. Se reconocen por su diseño delgado y elegante, adecuado tanto para el uso diario como para estilos formales. Se fabrican en distintos materiales como monel, acero inoxidable, titanio o aluminio, cada uno con características particulares de resistencia y peso.
 
-## Ventajas
+**Ventajas**
 
 - Ligeros y cómodos para uso prolongado.
+- Estilo discreto con estructuras más finas.
+- Durabilidad frente al desgaste.
+- Posibilidad de ajuste para una mejor adaptación al rostro.
+- Existen opciones hipoalergénicas como el titanio.
 
-- Estilo elegante y discreto, con diseños más finos.
+**Desventajas**
 
-- Alta resistencia y durabilidad frente al desgaste.
+- Menor variedad de colores y estilos frente al acetato.
+- Posibilidad de alergias si no se utilizan materiales adecuados.
+- Mayor tendencia a deformarse ante impactos.
+- Sensación de frío en bajas temperaturas.
+- En graduaciones medias o altas pueden resaltar el borde del cristal.
 
-- Ajustables: permiten modificar la forma para adaptarse mejor al rostro.
+![imagen ilustrativa de un armazón de metal](/images/library/basic-concepts/armazones-y-sus-materiales-2.webp)
 
-- Disponibles en materiales hipoalergénicos como el titanio.
+## Tipos de metales
 
-## Desventajas
+- **Monel:** Aleación de uso frecuente por su costo accesible y facilidad de ajuste; puede generar alergias si no cuenta con un recubrimiento adecuado.
+- **Acero inoxidable:** Resistente a la corrosión y con buena durabilidad; mantiene la forma, aunque es menos liviano que otros metales.
+- **Titanio:** Material premium, ligero, resistente e hipoalergénico; destaca por su comodidad, aunque su costo es más elevado.
+- **Aluminio:** Ofrece acabados estéticos y aspecto moderno; es duradero, pero menos flexible al ajustar.
 
-- Menor variedad de colores y estilos en comparación con el acetato.
-
-- Pueden causar alergias si no son de materiales hipoalergénicos.
-
-- Más propensos a doblarse o deformarse con impactos fuertes.
-
-- En algunos casos, menos cómodos en climas fríos porque el metal se enfría rápidamente.
-
-- No se suele recomendar mucho para graduaciones medias o altas en miopía, ya que resaltaria el borde del cristal.
-
-## tipo de metales
-
-- **Monel:** Es una aleación muy utilizada en armazones por su bajo costo y facilidad de ajuste, aunque puede causar alergias si no tiene recubrimiento adecuado; resulta práctico y accesible para quienes buscan gafas metálicas económicas.
-
-- **Acero inoxidable:** Destaca por su resistencia a la corrosión y durabilidad, manteniendo bien la forma del armazón; es una opción de precio medio que combina fuerza con un diseño sobrio, aunque es menos ligero que otros metales.
-
-- **Titanio:** Considerado un material premium, es extremadamente liviano, hipoalergénico y muy resistente, lo que lo hace ideal para quienes buscan comodidad y durabilidad; su principal desventaja es el costo más elevado.
-
-- **Aluminio:** Se caracteriza por su aspecto moderno y duradero, con acabados atractivos que lo hacen popular en diseños estéticos; sin embargo, es menos flexible que otros metales y puede resultar más rígido al ajustarse.
-
-**Aleaciones con memoria (memory metal):** Son metales que recuperan su forma original tras doblarse, ofreciendo gran resistencia a deformaciones accidentales; son especialmente útiles para personas activas o niños, aunque suelen ser más caros que los metales convencionales.
+**Aleaciones con memoria (memory metal):**  
+Son metales diseñados para volver a su forma original tras doblarse, lo que les otorga una alta resistencia frente a deformaciones accidentales. Resultan útiles para personas activas o niños, aunque su costo suele ser superior al de los metales convencionales.
 
 ---
 
 ## Armazones inyectados
 
-El inyectado se fabrica mediante un proceso industrial en el que el plástico se funde y se inyecta en moldes, lo que permite producir armazones de manera rápida y económica. Son más livianos y suelen encontrarse en modelos deportivos o de uso masivo.
+Los armazones inyectados se producen a través de un proceso industrial en el que el plástico se funde y se inyecta en un molde, lo que permite obtener piezas de forma rápida y a bajo costo. Son livianos y se utilizan con frecuencia en modelos deportivos o de uso cotidiano gracias a su comodidad y practicidad.
 
-## Ventajas
+**Ventajas**
 
-- Muy livianos y cómodos para uso prolongado.
+- Muy livianos para uso prolongado.
+- Económicos en comparación con otros materiales.
+- Fabricación rápida y eficiente.
+- Adecuados para gafas deportivas o casuales.
 
-Económicos y accesibles en comparación con el acetato.
+**Desventajas**
 
-Proceso de fabricación rápido y eficiente.
+- Menor resistencia y durabilidad frente al acetato.
+- Variedad limitada en colores y acabados.
+- Posibles deformaciones con el tiempo o ante el calor.
 
-Ideales para gafas deportivas o casuales.
+![imagen ilustrativa de un armazón de metal](/images/library/basic-concepts/armazones-y-sus-materiales-4.webp)
 
-Desventajas
+## Materiales comunes dentro del inyectado
 
-Menos resistentes y duraderos que el acetato.
+- **Nylon:** Flexible y resistente a impactos, ampliamente utilizado en gafas deportivas y de seguridad; puede perder rigidez con el paso del tiempo.
+- **Optyl:** Termoajustable, más ligero que el acetato, mantiene bien su forma y es hipoalergénico; una opción adecuada para quienes priorizan comodidad y durabilidad.
+- **TR-90 (Grilamid):** Polímero muy flexible y resistente, extremadamente ligero, ideal para modelos deportivos.
+- **Policarbonato:** Conocido principalmente por su uso en lentes, también se aplica a armazones; destaca por su resistencia a impactos y bajo peso, útil en gafas para niños o uso exigente.
+- **Zylonita (celulosa):** Similar al acetato pero más liviana, permite una amplia variedad de colores y estilos.
 
-Limitación en variedad de colores y acabados.
+---
 
-Pueden deformarse con el tiempo o con el calor.
+## Armazones de acetato
 
-Además del acetato y el inyectado, existen varios tipos de plásticos utilizados en armazones de lentes, cada uno con propiedades específicas que influyen en la comodidad, resistencia y estilo.
+El acetato es un material derivado de fibras vegetales, principalmente del algodón, que se fabrica en láminas y luego se moldea para obtener el armazón. Se distingue por su resistencia, flexibilidad y por permitir una amplia variedad de colores, transparencias y texturas, lo que lo convierte en una opción de alta calidad dentro de los materiales plásticos para gafas.
 
-🛠️ Principales plásticos en armazones de gafas
-Nylon
+**Ventajas**
 
-Muy flexible y resistente a impactos.
+- Amplia gama de colores, texturas y acabados.  
+- Resistente y duradero para el uso cotidiano.  
+- Flexible y cómodo, se adapta adecuadamente al rostro.  
+- Ideal para diseños personalizados o estéticos más llamativos.
 
-Se usa mucho en gafas deportivas y de seguridad.
+**Desventajas**
 
-Ligero y cómodo, aunque puede perder rigidez con el tiempo.
+- Puede ser más pesado que otros materiales plásticos.  
+- Requiere cuidado ante altas temperaturas.  
+- Suelen tener un costo mayor que los modelos inyectados.
 
-Optyl
+![imagen ilustrativa de un armazón de metal](/images/library/basic-concepts/armazones-y-sus-materiales-5.webp)
 
-Es un material termoajustable, más ligero que el acetato.
 
-Mantiene mejor la forma y es hipoalergénico.
-
-Ideal para quienes buscan durabilidad y comodidad.
-
-TR-90 (Grilamid)
-
-Un polímero muy flexible y resistente, usado en gafas deportivas.
-
-Extremadamente ligero y cómodo.
-
-Resistente a altas temperaturas y a la deformación.
-
-Policarbonato
-
-Aunque se usa más en lentes, también puede emplearse en armazones.
-
-Muy resistente a impactos, liviano y duradero.
-
-Perfecto para gafas de niños o uso rudo.
-
-Zylonita (celulosa)
-
-Similar al acetato, pero más liviana.
-
-Permite variedad de colores y estilos.
-
-Es económica y bastante común en modelos de moda.
-
-👓 Armazones de acetato
-El acetato es un material derivado de fibras vegetales, especialmente del algodón, que se trabaja en láminas y luego se moldea para crear los armazones. Se caracteriza por su resistencia, flexibilidad y la posibilidad de ofrecer una amplia gama de colores y texturas. Es considerado un material de alta calidad dentro de los plásticos para gafas.
-
-Ventajas
-
-Gran variedad de colores, texturas y acabados.
-
-Resistente y duradero frente al uso diario.
-
-Cómodo y flexible, se adapta bien al rostro.
-
-Ideal para diseños llamativos y personalizados.
-
-Desventajas
-
-Puede ser más pesado que otros plásticos.
-
-Requiere mayor cuidado frente a altas temperaturas.
-
-Generalmente más costoso que el inyectado.
-
-👓 Armazones inyectados
-El inyectado se fabrica mediante un proceso industrial en el que el plástico se funde y se inyecta en moldes, lo que permite producir armazones de manera rápida y económica. Son más livianos y suelen encontrarse en modelos deportivos o de uso masivo.
-
-Ventajas
-
-Muy livianos y cómodos para uso prolongado.
-
-Económicos y accesibles en comparación con el acetato.
-
-Proceso de fabricación rápido y eficiente.
-
-Ideales para gafas deportivas o casuales.
-
-Desventajas
-
-Menos resistentes y duraderos que el acetato.
-
-Limitación en variedad de colores y acabados.
-
-Pueden deformarse con el tiempo o con el calor.
+---

@@ -64,18 +64,19 @@ export const sidebarData: SidebarDataType = {
       title: "Conceptos básicos",
       icon: Sparkle,
       blocks: [
+        { title: "Tipos de lentes", url: "/tipos-de-lentes" },
         { title: "¿Cómo leer una receta?", url: "/como-leer-una-receta" },
         {
           title: "Conversión de transposición",
           url: "/conversion-de-transposicion",
         },
-        {
-          title: "Armazones y sus materiales",
-          url: "/Armazones-y-sus-materiales",
-        },
-        { title: "Tipos de lentes", url: "/tipos-de-lentes" },
+
         { title: "Tipos de cristales", url: "/tipos-de-cristales" },
         { title: "Tipos de indices ", url: "/tipos-de-indices" },
+        {
+          title: "Armazones y sus materiales",
+          url: "/armazones-y-sus-materiales",
+        },
       ],
     },
     {

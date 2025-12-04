@@ -22,10 +22,11 @@ Se aplica en cámaras de vacío dentro de laboratorios ópticos, donde materiale
 
 <iframe
   className= "w-full m-auto h-56  xl:w-2/3 xl:h-120"
-  src="https://www.youtube.com/embed/JoVyV4vcJ5I?si=1VxqZcnbJT7WFJb1&start=5"
+  src=""
   title="YouTube video player"
   frameBorder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
   referrerPolicy="strict-origin-when-cross-origin"
   allowFullScreen
 ></iframe>
+

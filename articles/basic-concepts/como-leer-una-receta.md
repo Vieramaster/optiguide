@@ -1,55 +1,87 @@
-# Cómo leer una receta oftalmológica (explicado fácil y completo)
+# Cómo leer una receta oftalmológica
 
-Leer una receta oftalmológica parece difícil al principio, pero todos sus valores siguen una lógica clara. La idea es que, al terminar este texto, puedas interpretar cualquier receta básica sin depender de nadie.
+Interpretar una receta oftalmológica puede resultar complejo al primer vistazo, pero cada valor responde a un criterio específico. El objetivo de esta guía es que puedas comprender cualquier receta básica y reconocer qué representa cada dato.
 
-![imagen que muestra una receta oftalmológica con OD y OI marcados]
+---
 
-## OD, OI y AO: identificar cada ojo
+## OD, OI y AO: identificación de cada ojo
 
-Las recetas siempre separan los datos en **OD** (ojo derecho) y **OI** (ojo izquierdo). A veces aparece **AO**, que indica que ambos ojos comparten el mismo valor. Dependiendo del profesional, puede estar organizado en columnas o todo en una misma línea, pero la interpretación es la misma.  
-Un detalle importante: algunos profesionales anotan primero el ojo derecho porque es el primero que se evalúa en gabinete, así que siempre verificá que estés tomando como referencia la fila correcta antes de cargar una receta en el sistema.
+Las recetas distinguen los valores según el ojo al que pertenecen: **OD** se refiere al ojo derecho, **OI** al ojo izquierdo y **AO** indica que ambos comparten la misma graduación. La forma de presentación puede variar, ya sea en columnas o en una única línea, pero el significado permanece igual.  
+Es importante revisar que estás interpretando la línea correspondiente a cada ojo, especialmente al transcribir la receta, para evitar cargar información invertida.
 
-## Esfera (E): miopía o hipermetropía
+![imagen que muestra una receta oftalmológica con OD y OI marcados](/images/library/basic-concepts/como-leer-una-receta-1.webp)
 
-La **esfera** indica si la dificultad principal está en ver de lejos o de cerca. Los valores negativos marcan miopía, mientras que los positivos indican hipermetropía. Cuando aparece “0.00” o directameante no se encuentra, simplemente no necesitás corrección esférica. Es el dato que más influye en el espesor de la lente.  
-Dato clave para el óptico: a mayor potencia (positiva o negativa), más crítico es elegir un **buen índice** y un **diámetro adecuado**, porque eso define si el lente termina fino o grueso.
+---
 
-![imagen que ilustra miopía e hipermetropía con líneas de enfoque]
+## Esfera (E): corrección para ver de cerca o de lejos
 
-## Cilindro (C o CIL) y Eje (signo ° o AXIS): astigmatismo
+El valor de **esfera** indica si la corrección está orientada a mejorar la visión lejana o cercana. Los números negativos corresponden a la [miopía](/miopia) y los positivos a la [hipermetropía](/hipermetropia). Si se muestra como “0.00” o directamente no figura, significa que no se requiere corrección esférica.  
+Este valor influye en el espesor de las lentes, por lo que una graduación más alta, ya sea positiva o negativa, requiere una selección precisa del índice y el diámetro del material.
 
-Si la receta incluye astigmatismo, vas a ver un cilindro (C) y un eje (°). El cilindro indica la cantidad y el eje muestra la orientación exacta entre 0° y 180°. En recetas sin astigmatismo, directamente dejan el cilindro y el eje vacíos, indicando que solo hay corrección esférica (E). En algunos casos el cilindro se escribe en positivo y en otros en negativo; es solo una diferencia de notación, no de graduación real.  
-Un punto clave: el eje no cambia la potencia total del lente, solo indica la dirección en la que se corrige el astigmatismo. Si el lente rota en el armazón o está mal montado, la visión puede volverse borrosa aunque la graduación sea correcta.  
+![como ve una persona con miopia y con hipermetropía](/images/library/basic-concepts/como-leer-una-receta-2.webp)
 
-![imagen que muestra cómo se ve un astigmatismo en un gráfico de orientación]
+---
+
+## Cilindro (C o CIL) y Eje (° o AXIS): corrección del astigmatismo
+
+Cuando la receta incluye [astigmatismo](/astigmatismo), se detallan dos valores: el **cilindro**, que indica la cantidad de corrección, y el **eje**, que define la orientación exacta entre 0° y 180°. En recetas sin astigmatismo, ambos campos pueden aparecer vacíos porque solo se corrige la esfera.  
+El cilindro puede escribirse con signo positivo o negativo, según el criterio del profesional, aunque esto no modifica la graduación real. El eje, por su parte, no cambia la potencia del lente, sino la dirección en la que actúa la corrección. Si el lente se rota o se monta de forma incorrecta, la nitidez puede verse afectada aun con la graduación adecuada.
+
+![como ve una persona normal y una con astigmatismo](/images/library/basic-concepts/como-leer-una-receta-3.webp)
+
+---
 
 ## ADD (Adición): visión de cerca
 
-La adición se usa para presbicia y aparece como un valor positivo que suma potencia solo para leer o ver de cerca. No modifica la visión de lejos. Este dato es esencial para lentes progresivos, bifocales o lentes exclusivos de lectura.  
+La adición es un valor positivo que se suma a la graduación de lejos para permitir enfocar de cerca. Se usa en casos de presbicia y es un dato clave en lentes multifocales, bifocales o de lectura. No cambia la visión de lejos, solo agrega la potencia necesaria para tareas cercanas como leer, celular o computadora.
 
-![imagen que representa zonas de un lente progresivo]
+---
 
 ## Distancia Pupilar (DP o PD)
 
-La distancia pupilar determina dónde deben centrarse tus lentes dentro del armazón. Puede aparecer como un único valor total o dividida por ojo para mayor precisión. Una DP mal tomada puede generar incomodidad visual incluso con la graduación correcta.  
-Dato útil: en progresivos y en recetas con astigmatismo alto, es preferible usar **DP por ojo**, no total.
+La distancia pupilar indica cuántos milímetros separan el centro de cada pupila, y define dónde deben ubicarse los lentes dentro del armazón. Puede figurar como un único valor total o dividida por ojo para mayor precisión. Una DP mal medida puede causar mareos, visión borrosa o sensación de que la imagen está “corrida”, aun con la graduación correcta.
+Dato útil: en lentes progresivos, prismas o astigmatismos altos, es recomendable usar DP por ojo, no total, para evitar errores de centrado.
 
-![imagen mostrando una regla midiendo DP sobre un rostro]
+![imagen mostrando una regla midiendo DP sobre un rostro](/images/library/basic-concepts/como-leer-una-receta-7.webp)
 
+
+---
 
 ## Prismas (Δ o PRISM)
 
-Los prismas aparecen solo en recetas que corrigen desalineaciones oculares. Incluyen la cantidad de potencia prismática y la dirección (base arriba, abajo, hacia dentro o hacia fuera).  
-Consejo práctico: cualquier receta con prismas debería fabricarse con **centrado y tolerancias muy precisas**, así que evitá monturas demasiado abiertas o flexibles.
+Los prismas aparecen en la receta cuando los ojos no están alineados en el mismo punto, debido a condiciones como [forias](/forias) (exoforia, endoforia, hiperforia o hipoforia). No cambian la graduación del lente; su función es redirigir la imagen. Un prisma desvía la luz antes de llegar al ojo para que ambas imágenes coincidan y el cerebro pueda fusionarlas, ayudando en casos de visión doble, molestias al leer, cerrar un ojo para enfocar o sensación de cansancio visual. Su efecto existe solo mientras se usan los anteojos; al quitarlos, todo vuelve a su estado original. No corrigen la estructura ni los músculos del ojo, simplemente mejoran la comodidad y la alineación percibida. Además, requieren un centrado muy preciso, por lo que funcionan mejor en monturas firmes y no demasiado flexibles o abiertas.
 
-![imagen que muestra un esquema simple de prisma y desviación de la luz]
+
+
+**Beneficios**
+
+- Alivia visión doble rápidamente en muchos casos.
+
+- Reduce dolores de cabeza, mareos y cansancio visual por esfuerzo al intentar alinear.
+
+- No invasivo y reversible; si cambia la condición, se puede ajustar el prisma.
+
+- Se adapta al uso diario sin necesidad de procedimientos médicos.
+
+**Limitaciones**
+
+- No solucionan la causa, solo el efecto sobre la visión.
+
+- Funcionan mientras los usás; al quitarlos vuelve la molestia.
+
+- En prismas fuertes pueden aparecer distorsiones o cambios en la percepción de profundidad.
+
+- No son útiles para todos los casos; en desviaciones grandes o neurológicas, puede necesitarse otro tratamiento.
+
+![muestra de lentes con prisma](/images/library/basic-concepts/como-leer-una-receta-6.webp)
+
+---
 
 ## Agudeza Visual (AV)
 
-Algunas recetas incluyen un valor como 20/20, 20/30 o 1.0. Indica la visión esperada con esa corrección puesta. No siempre aparece, pero cuando está sirve como referencia para saber si la visión final será completa o limitada por alguna condición.  
-Dato útil: si la AV es menor a 20/25 aun con corrección, avisale al cliente que la limitación no viene del lente, sino de su condición visual de base.
+En algunas recetas se incluye un dato expresado como **20/20**, **20/30** o **1.0**, que representa la calidad de visión estimada al utilizar la corrección indicada. No siempre aparece, pero cuando está permite saber si se espera una visión completa o si podría existir una limitación asociada a una condición visual previa.
 
-## Recomendaciones adicionales
+Cuando la AV es menor a 20/25 aun con la corrección correcta, es importante informar que la limitación no está relacionada con el lente, sino con la salud visual de base.
 
-Dependiendo del caso, el profesional puede anotar sugerencias sobre el tipo de lente, si serán para computadora, lectura o uso continuo, o si conviene agregar tratamientos como antirreflejo o filtros específicos.  
-A veces también indican **material sugerido** (por ejemplo policarbonato en niños), algo que conviene respetar porque suele estar relacionado con seguridad o espesor.
+---
+
