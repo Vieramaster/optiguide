@@ -38,7 +38,6 @@ Los lentes bifocales permiten corregir la visión a dos distancias: generalmente
 
 ![imagen ilustrativa de un lente bifocal](/images/library/basic-concepts/tipos-de-lentes-2.webp)
 
-
 Los lentes bifocales se pueden clasificar principalmente según la forma y posición del segmento de visión cercana. Los tipos más comunes son:
 
 - **Ejecutivo:** es el que ocupa toda la parte inferior del lente de un extremo al otro, sin línea curva ni espacio, ofreciendo un campo de visión cercana muy amplio.
@@ -52,8 +51,6 @@ Los lentes bifocales se pueden clasificar principalmente según la forma y posic
 ## Lentes ocupacionales
 
 Estas gafas están diseñadas para tareas de cerca e intermedias, como trabajar frente a una computadora, leer o escribir. Mejoran el confort visual y reducen la fatiga ocular, optimizando el campo de visión en el rango más usado (aproximadamente 40 cm a 1,5 m).
-
-
 
 **Ventajas**
 
@@ -92,6 +89,5 @@ Las lentes multifocales son la evolución de los bifocales, ofreciendo una trans
 - Zonas borrosas percibidas al inicio hasta acostumbrarse al lente.
 
 ![imagen ilustrativa de un lente multifocal](/images/library/basic-concepts/tipos-de-lentes-4.webp)
-
 
 ---
