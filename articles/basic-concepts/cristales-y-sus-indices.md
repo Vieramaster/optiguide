@@ -24,8 +24,8 @@ Estas lentes tienden a ser más gruesas que las de índices superiores, por lo q
 
 - Alto valor Abbe (≈58), lo que reduce aberraciones y mejora la nitidez.
 - Liviano en comparación con el vidrio.
-- Se raya con relativa facilidad si no tiene tratamiento endurecido.
-- Buena aceptación de tratamientos: antirreflejo, filtro azul, endurecido y coloraciones de tinte.
+- Se raya con relativa facilidad si no tiene [tratamiento anti rayas](/tratamiento-anti-rayas).
+- Buena aceptación de tratamientos: [antirreflejo](/antireflejante), [[filtro azul](/filtro-azul)](/filtro-azul), endurecido y coloraciones de tinte.
 - Resistencia a impactos correcta, pero inferior a Policarbonato o Trivex.
 - Estabilidad en el color con el tiempo; no amarillea fácilmente.
 
@@ -38,7 +38,7 @@ El vidrio índice 1.52 es la versión estándar del material mineral tradicional
 ### Características principales
 
 - Claridad óptica superior.
-- Excelente resistencia al rayado, incluso sin endurecido.
+- Excelente resistencia al rayado, incluso sin [tratamiento anti rayas](/tratamiento-anti-rayas).
 - Más pesado que los materiales orgánicos.
 - Riesgo de rotura ante impactos o caídas.
 - No recomendado para niños o actividades de riesgo.
@@ -71,11 +71,12 @@ Es una excelente alternativa para quienes buscan seguridad sin perder nitidez, e
 - Valor Abbe aprox. 43–45, buena nitidez y menor aberración.
 - Resistencia a impactos muy alta.
 - Permite perforaciones y mantiene mejor rigidez que el policarbonato.
-- Acepta sin inconvenientes antirreflejo, endurecido y filtros.
+- Acepta sin inconvenientes [antirreflejo](/antireflejante), [tratamiento anti rayas](/tratamiento-anti-rayas) y filtros.
 - Peso reducido y excelente comodidad.
 - Protección UV natural integrada.
 
 ---
+
 
 ## Resina de Alto índice | Indice 1.56
 
@@ -103,7 +104,7 @@ Es uno de los índices más utilizados en la actualidad, especialmente para quie
 - Valor Abbe entre 34 y 36 (menor que CR-39, con leve incremento de aberraciones periféricas).
 - Más liviano y más delgado que el 1.50.
 - Resistencia a impactos similar o un poco superior a CR-39, pero no comparable con policarbonato o Trivex.
-- Acepta sin problema tratamientos: antirreflejo, endurecido, filtro azul y coloraciones por tinte.
+- Acepta sin problema tratamientos: [antirreflejo](/antireflejante), [anti rayas](/tratamiento-anti-rayas), [filtro azul](/filtro-azul) y coloraciones por tinte.
 - Buena estabilidad y durabilidad con el uso cotidiano.
 - No ideal para trabajos o actividades con alto riesgo de golpes.
 
@@ -128,7 +129,7 @@ Si bien mejora la seguridad y la estética, su calidad óptica presenta más abe
 - Valor Abbe aprox. 43–45 (mejor nitidez que policarbonato).
 - Muy alta resistencia a impactos (cercano o superior al policarbonato según fabricante).
 - Permite perforaciones y monturas al aire con más estabilidad estructural.
-- Acepta bien antirreflejo, filtro azul y tratamientos de endurecido.
+- Acepta bien [antirreflejo](/antireflejante), [filtro azul](/filtro-azul) y [tratamiento anti rayas](/tratamiento-anti-rayas).
 - Peso reducido y buena comodidad a largo plazo.
 - Protección natural frente a rayos UV.
 
@@ -158,7 +159,7 @@ Aun así, mantiene el peso propio del vidrio y el mismo riesgo de rotura, por lo
 
 ### Resina de Alto Índice
 
-La resina de índice 1.60 es un material de alto índice diseñado para reducir significativamente el grosor de la lente frente a CR-39 (1.50) y 1.56. Esto se traduce en una mejora estética notable, especialmente en recetas de [miopía](/miopia) o [hipermetropías](/hipermetropias) más marcadas, evitando bordes gruesos o el efecto lupa.
+La resina de índice 1.60 es un material de alto índice diseñado para reducir significativamente el grosor de la lente frente a CR-39 (1.50) y 1.56. Esto se traduce en una mejora estética notable, especialmente en recetas de [[miopía](/miopia)](/miopia) o [hipermetropías](/hipermetropias) más marcadas, evitando bordes gruesos o el efecto lupa.
 Ofrece un equilibrio entre delgadez, peso y claridad, siendo una de las opciones más comunes para quienes necesitan una corrección más alta sin llegar al costo de índices como 1.67 o 1.74.
 
 ### Resinas y nombres comerciales utilizados para este índice:
@@ -180,8 +181,8 @@ Ofrece un equilibrio entre delgadez, peso y claridad, siendo una de las opciones
 
 - Valor Abbe aprox. 32–36 (puede generar leve aberración periférica).
 - Resistencia a impacto similar a la resina 1.56; no ideal si la prioridad es seguridad.
-- Acepta correctamente antirreflejo, filtro azul y endurecido.
-- Recomendado siempre con antirreflejo por mayor reflejo que índices bajos.
+- Acepta correctamente [antirreflejo](/antireflejante), [filtro azul](/filtro-azul) y [anti rayas](/tratamiento-anti-rayas).
+- Recomendado siempre con [antirreflejo](/antireflejante) por mayor reflejo que índices bajos.
 - Ofrece una muy buena relación entre estética, peso y precio.
 
 ---
@@ -202,7 +203,7 @@ Es una opción frecuente para quienes necesitan correcciones altas con un buen r
 
 - Material orgánico de alto índice más delgado que 1.50, 1.56 y 1.60.
 - Adecuado para graduaciones altas (aprox. de ±5.00 a ±8.00 por estética).
-- Reduce de forma muy notable el grosor en [miopía](/miopia)s, evitando bordes marcados.
+- Reduce de forma muy notable el grosor en [[miopía](/miopia)](/miopia)s, evitando bordes marcados.
 - Disminuye el efecto lupa en [hipermetropías](/hipermetropias) y lentifica la distorsión visual.
 - Más liviano que índices bajos y medio, mejora comodidad en uso prolongado.
 - Se utiliza en monturas completas y semi al aire (no ideal para perforadas).
@@ -211,8 +212,8 @@ Es una opción frecuente para quienes necesitan correcciones altas con un buen r
 
 - Valor Abbe aprox. 32 (mayor posibilidad de aberración periférica).
 - Menor estabilidad mecánica en comparación con Trivex o policarbonato.
-- Necesita antirreflejo debido a su mayor índice y reflejos visibles.
-- Compatible con filtros especiales como azul, UV, fotocromáticos y AR premium.
+- Necesita [antirreflejo](/antireflejante) debido a su mayor índice y reflejos visibles.
+- Compatible con filtros especiales como [filtro azul](/filtro-azul), [filtro UV](/filtro-ultravioleta), [fotocromáticos](/fotocromaticos) y [antireflejante](/antireflejante) premium.
 - Muy buena opción estética en graduaciones altas sin llegar al costo del 1.74.
 
 ---
@@ -221,29 +222,22 @@ Es una opción frecuente para quienes necesitan correcciones altas con un buen r
 
 ### Vidrio Mineral
 
-El vidrio índice 1.70 es un material mineral de alto índice diseñado para obtener lentes considerablemente más delgados que el vidrio 1.52 y 1.60. Es elegido principalmente por motivos estéticos en graduaciones altas, ya que reduce notablemente el borde en miopías fuertes y el efecto lupa en hipermetropías.
+El vidrio índice 1.70 es un material mineral de alto índice diseñado para obtener lentes considerablemente más delgados que el vidrio 1.52 y 1.60. Es elegido principalmente por motivos estéticos en graduaciones altas, ya que reduce notablemente el borde en [miopía](/miopia)s fuertes y el efecto lupa en hipermetropías.
 Aun así, mantiene el peso característico del vidrio y el riesgo de rotura por impacto, por lo que su uso es muy específico y menos frecuente en la actualidad.
 
 ### Características principales
 
 - Mucho más delgado que el vidrio tradicional.
-
 - Máxima nitidez y mínima aberración cromática.
-
 - Resistente al rayado sin tratamientos.
-
 - Pesado pese a ser más fino.
-
 - Riesgo de rotura mayor comparado con cualquier resina.
 
 ### Datos del material
 
 - Valor Abbe muy alto.
-
 - Notable reducción del grosor frente a 1.52 y 1.60.
-
 - Buena respuesta en coloraciones.
-
 - Recomendado en monturas completas y uso cuidado.
 
 ### Resina de Alto Índice
@@ -263,7 +257,7 @@ Suele considerarse una opción premium, utilizada por quienes desean lentes fino
 - Recomendado para graduaciones altas (aprox. ±5.00 a ±8.00 por estética).
 - Reduce notablemente el espesor del borde y el efecto lupa.
 - Más liviano que el vidrio y que los índices bajos.
-- Mayor reflejo superficial, recomendable usar antirreflejo siempre.
+- Mayor reflejo superficial, recomendable usar [antirreflejo](/antireflejante) siempre.
 
 ### Datos del material
 
@@ -291,20 +285,20 @@ Ofrece la mejor estética dentro de los materiales orgánicos, aunque con mayor 
 - Ideal para graduaciones altas (aprox. desde ±6.00 a ±10.00 o más por estética).
 - Reduce drásticamente el grosor perceptible del borde y el efecto lupa.
 - Ligero en relación a su potencia, mejora notablemente la comodidad.
-- Requiere sí o sí antirreflejo por el alto reflejo de la superficie.
+- Requiere sí o sí [antirreflejo](/antireflejante) por el alto reflejo de la superficie.
 
 ### Datos del material
 
 - Valor Abbe aprox. 32 (menor nitidez periférica frente a índices como 1.50 o Trivex).
 - Resistencia a impacto moderada, similar a 1.67; no es la opción ideal si la prioridad es seguridad.
-- Acepta antirreflejo, endurecido y filtro azul; no siempre recomendado para coloraciones profundas.
+- Acepta [antirreflejo](/antireflejante), [anti rayas](/tratamiento-anti-rayas) y [filtro azul](/filtro-azul); no siempre recomendado para coloraciones profundas.
 - El más delgado del mercado en materiales orgánicos, pero también el de mayor costo.
 
 ---
 
 ## Vidrio Mineral de Súper Alto Índice | Índice 1.80 y 1.90
 
-Los materiales minerales 1.80 y 1.90 representan el nivel más extremo en reducción de grosor dentro de la producción de lentes. Son diseñados exclusivamente para graduaciones muy altas, donde la prioridad es la estética y la disminución máxima del borde en miopías severas o del efecto lupa en hipermetropías avanzadas.
+Los materiales minerales 1.80 y 1.90 representan el nivel más extremo en reducción de grosor dentro de la producción de lentes. Son diseñados exclusivamente para graduaciones muy altas, donde la prioridad es la estética y la disminución máxima del borde en [miopía](/miopia)s severas o del efecto lupa en hipermetropías avanzadas.
 
 ### Son materiales muy raros en el mercado, producidos por pocos fabricantes y utilizados en situaciones puntuales como:
 
@@ -330,3 +324,95 @@ Los materiales minerales 1.80 y 1.90 representan el nivel más extremo en reducc
 - Costos elevados comparados al resto del mercado.
 
 ---
+### Tabla comparativa: Grosor, peso y uso según índice de lentes
+
+<table>
+  <cristales>
+    <tr>
+      <th>Índice</th>
+      <th>Material</th>
+      <th>Grosor (comparado con 1.50)</th>
+      <th>Peso</th>
+      <th>Uso recomendado</th>
+    </tr>
+  </cristales>
+  <tbody>
+    <tr>
+      <td>1.50</td>
+      <td>CR-39</td>
+      <td>Base</td>
+      <td>Ligero</td>
+      <td>Recetas bajas a medias</td>
+    </tr>
+    <tr>
+      <td>1.52</td>
+      <td>Vidrio mineral</td>
+      <td>~0% más fino</td>
+      <td>Pesado</td>
+      <td>Alta claridad, uso específico</td>
+    </tr>
+    <tr>
+      <td>1.53</td>
+      <td>Vidrio mineral</td>
+      <td>~5% más fino que 1.52</td>
+      <td>Pesado</td>
+      <td>Alta claridad, uso estético específico</td>
+    </tr>
+    <tr>
+      <td>1.56</td>
+      <td>Resinas MR-8 / MR-7</td>
+      <td>~15% más fino</td>
+      <td>Ligero</td>
+      <td>Graduaciones medias</td>
+    </tr>
+    <tr>
+      <td>1.59</td>
+      <td>Policarbonato</td>
+      <td>~20% más fino</td>
+      <td>Muy ligero</td>
+      <td>Niños, deportivos, seguridad</td>
+    </tr>
+    <tr>
+      <td>1.60</td>
+      <td>Resinas MR-10 / MR-8</td>
+      <td>~25% más fino</td>
+      <td>Ligero</td>
+      <td>Miopías moderadas</td>
+    </tr>
+    <tr>
+      <td>1.67</td>
+      <td>Resinas MR-7 / MR-8</td>
+      <td>~35% más fino</td>
+      <td>Ligero</td>
+      <td>Miopías altas</td>
+    </tr>
+    <tr>
+      <td>1.70 (mineral)</td>
+      <td>Vidrio</td>
+      <td>~40% más fino</td>
+      <td>Pesado</td>
+      <td>Alta nitidez, uso específico</td>
+    </tr>
+    <tr>
+      <td>1.74</td>
+      <td>Resinas MR-174</td>
+      <td>~45% más fino</td>
+      <td>Muy ligero</td>
+      <td>Muy alta graduación</td>
+    </tr>
+    <tr>
+      <td>1.80 (mineral)</td>
+      <td>Vidrio</td>
+      <td>~50% más fino</td>
+      <td>Muy pesado</td>
+      <td>Uso muy específico</td>
+    </tr>
+    <tr>
+      <td>1.90 (mineral)</td>
+      <td>Vidrio</td>
+      <td>~60% más fino</td>
+      <td>Muy pesado</td>
+      <td>Casos extremos</td>
+    </tr>
+  </tbody>
+</table>

@@ -19,6 +19,24 @@ export const sidebarData: SidebarDataType = {
     email: "m@example.com",
     avatar: "/avatars/shadcn.jpg",
   },
+  teams: [
+    {
+      name: "Acme Inc",
+      logo: GalleryVerticalEnd,
+      plan: "Enterprise",
+    },
+    {
+      name: "Acme Corp.",
+      logo: AudioWaveform,
+      plan: "Startup",
+    },
+    {
+      name: "Evil Corp.",
+      logo: Command,
+      plan: "Free",
+    },
+  ],
+
   tools: [
     {
       title: "Simulador de espesor de lentes",
@@ -39,23 +57,6 @@ export const sidebarData: SidebarDataType = {
       title: "Anteojos según el rostro",
       url: "#",
       icon: Smile,
-    },
-  ],
-  teams: [
-    {
-      name: "Acme Inc",
-      logo: GalleryVerticalEnd,
-      plan: "Enterprise",
-    },
-    {
-      name: "Acme Corp.",
-      logo: AudioWaveform,
-      plan: "Startup",
-    },
-    {
-      name: "Evil Corp.",
-      logo: Command,
-      plan: "Free",
     },
   ],
 
@@ -80,7 +81,7 @@ export const sidebarData: SidebarDataType = {
     },
     {
       title: "Tratamientos",
-      icon: Sparkle, 
+      icon: Sparkle,
 
       blocks: [
         {
@@ -189,20 +190,6 @@ export const sidebarData: SidebarDataType = {
         },
         { title: "Queratocono", url: "/queratocono" },
         { title: "Uveítis", url: "/uveitis" },
-      ],
-    },
-    {
-      title: "Materiales e índice",
-      icon: Sparkle,
-      blocks: [
-        {
-          title: "materiales de lentes",
-          url: "/materiales-de-lentes",
-        },
-        {
-          title: "Indice de refracción",
-          url: "/indice-de-refraccion",
-        },
       ],
     },
   ],

@@ -1,4 +1,4 @@
-# Tipos de cristales : ¿para qué sirve cada uno?
+# Tipos de lentes : ¿para qué sirve cada uno?
 
 ## Monofocales
 

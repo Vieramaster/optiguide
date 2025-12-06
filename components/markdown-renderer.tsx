@@ -3,6 +3,16 @@ import rehypeRaw from "rehype-raw";
 import Link from "next/link";
 import Image from "next/image";
 
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
+
+
 interface MarkdownProps {
   children: string;
 }
@@ -18,6 +28,13 @@ export const MarkdownRenderer = ({ children }: MarkdownProps) => (
       img: MDImage,
       li: LiList,
       ul: OlList,
+      table: Table,
+      thead: TableHeader,
+      tr:TableRow,
+      th:TableHead,
+      tbody: TableBody,
+      td:TableCell,
+
     }}
   >
     {children}
@@ -94,3 +111,4 @@ const MDImage = ({ ...props }: React.ComponentProps<"img">) => {
     />
   );
 };
+
