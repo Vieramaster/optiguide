@@ -12,6 +12,7 @@ export const MarkdownRenderer = ({ children }: MarkdownProps) => (
     components={{
       h1: Title,
       h2: SubTitle,
+      h3: BodyText,
       p: Text,
       a: Links,
       img: MDImage,
@@ -25,23 +26,27 @@ export const MarkdownRenderer = ({ children }: MarkdownProps) => (
 
 //COMPONENTS
 
-const LiList = ({ ...props }: React.ComponentProps<"li">) => (
-  <li className="font-semi-bold  italic my-2" {...props} />
-);
-const OlList = ({ ...props }: React.ComponentProps<"ul">) => (
-  <ul className="list-disc pl-10 " {...props} />
-);
+//TEXTS
 
 const Title = ({ ...props }: React.ComponentProps<"h1">) => (
   <h1 className="font-bold text-4xl" {...props} />
 );
-
 const SubTitle = ({ ...props }: React.ComponentProps<"h2">) => (
   <h2 className="font-semibold text-2xl" {...props} />
 );
-
+const BodyText = ({ ...props }: React.ComponentProps<"h3">) => (
+  <h3 className="font-semibold text-lg" {...props} />
+);
 const Text = ({ ...props }: React.ComponentProps<"p">) => (
   <p className="" {...props} />
+);
+
+//LIST
+const LiList = ({ ...props }: React.ComponentProps<"li">) => (
+  <li className="font-semi-bold  italic my-2" {...props} />
+);
+const OlList = ({ ...props }: React.ComponentProps<"ul">) => (
+  <ul className="list-disc pl-10 -mt-4 " {...props} />
 );
 
 const Links = ({ children, href, ...props }: React.ComponentProps<"a">) => {

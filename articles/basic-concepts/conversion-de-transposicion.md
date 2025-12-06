@@ -15,7 +15,7 @@ La **transposición** es el proceso mediante el cual una receta en cilindro posi
 
 
 ![imagen ilustrativa de receta](/images/library/basic-concepts/conversion-de-transposicion-1.webp)
-## Ejemplos prácticos
+### Ejemplos prácticos
 ---
 
 **Ejemplo 1 — Receta original:**

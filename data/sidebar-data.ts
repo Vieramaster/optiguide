@@ -71,8 +71,7 @@ export const sidebarData: SidebarDataType = {
           url: "/conversion-de-transposicion",
         },
 
-        { title: "Tipos de cristales", url: "/tipos-de-cristales" },
-        { title: "Tipos de indices ", url: "/tipos-de-indices" },
+        { title: "Cristales y sus indices", url: "/cristales-y-sus-indices" },
         {
           title: "Armazones y sus materiales",
           url: "/armazones-y-sus-materiales",
@@ -81,7 +80,7 @@ export const sidebarData: SidebarDataType = {
     },
     {
       title: "Tratamientos",
-      icon: Sparkle,
+      icon: Sparkle, 
 
       blocks: [
         {

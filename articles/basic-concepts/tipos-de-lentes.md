@@ -1,36 +1,31 @@
-# Tipos de lentes
+# Tipos de cristales : ¿para qué sirve cada uno?
 
-Según el defecto visual a corregir la [miopía](/miopia), [astigmatismo](/astigmatismo), [hipermetropía](/hipermetropia) o [presbicia](/presbicia), existen distintos tipos de lentes. Cada uno tiene una función específica y ofrece **Ventajas** según las actividades y necesidades del usuario.
+## Monofocales
 
----
+Un cristal monofocal es una lente de gafa que tiene una única graduación en toda su superficie, corrigiendo la visión a una sola distancia (cerca, lejos o intermedia) para problemas como [miopía](/miopia), [astigmatismo](/astigmatismo), [hipermetropía](/hipermetropia) y hasta [prisma](/prisma). Sus ventajas incluyen una visión clara y nítida para una distancia específica, ideal para actividades diarias como leer o conducir, y la capacidad de ser fabricadas de forma delgada y ligera para un mejor aspecto estético y comodidad, especialmente con graduaciones altas.
 
-## Lentes monofocales
+### Diseño específico:
 
-Estos lentes corrigen la visión a una sola distancia: lejos (por ejemplo, conducir, ver televisión o actividades al aire libre) o cerca (lectura, celular, manualidades). Son los más frecuentes, ya que resuelven la mayoría de los problemas visuales habituales y su adaptación es rápida. Se fabrican en distintos materiales e índices, lo que afecta grosor, peso y apariencia. Pueden ser esféricos para miopía o hipermetropía, o cilíndricos para astigmatismo.
+- **Para miopía:** Son cóncavas, más gruesas en los bordes que en el centro.
 
-- Adaptación sencilla y rápida.
-- Económicos y accesibles.
-- Compatibles con tratamientos y filtros.
-
-**Desventajas**
-
-- Solo corrigen una distancia; puede ser necesario un par distinto según la actividad.
+- **Para hipermetropía y presbicia:** Son convexas, más gruesas en el centro que en los bordes.
 
 ![imagen ilustrativa de un lente monofocal](/images/library/basic-concepts/tipos-de-lentes-1.webp)
 
 ---
 
-## Lentes bifocales
+## Bifocales
 
-Los lentes bifocales permiten corregir la visión a dos distancias: generalmente lejos y cerca. Poseen dos segmentos visibles: la parte superior para visión lejana y la inferior para lectura o tareas de cerca. Son frecuentes en personas con [presbicia](/presbicia), condición asociada a la edad que dificulta enfocar objetos cercanos
+Son utilizadas mayormente para personas con [presbicia](/presbicia), tienen 2 zonas visuales separadas por un segmento llamado **película**, donde en la parte superior del cristal va la visión de lejos, y en parte inferior, que es donde esta la película, la vision de cerca.  
+Son prácticos, pero la linea puede resultar estética o visualmente molesta para algunos usuarios.
 
-**Ventajas**
+### Ventajas
 
 - Permiten ver de lejos y de cerca sin cambiar de anteojos.
 - Opción clásica y funcional.
 - Menor costo que las lentes progresivas.
 
-**Desventajas**
+### Desventajas
 
 - Línea visible entre los segmentos.
 - No corrigen la visión intermedia (computadora, tablero de auto).
@@ -38,21 +33,25 @@ Los lentes bifocales permiten corregir la visión a dos distancias: generalmente
 
 ![imagen ilustrativa de un lente bifocal](/images/library/basic-concepts/tipos-de-lentes-2.webp)
 
-Los lentes bifocales se pueden clasificar principalmente según la forma y posición del segmento de visión cercana. Los tipos más comunes son:
+### Tipos de bifocales
 
-- **Ejecutivo:** es el que ocupa toda la parte inferior del lente de un extremo al otro, sin línea curva ni espacio, ofreciendo un campo de visión cercana muy amplio.
+- **Bifocales de segmento plano (Flat Top):**  Son los más comunes. Tienen una parte inferior en forma de "D" o con una línea recta en la parte superior del segmento para ver de cerca.
 
-- **Flat-Top:** es el rectangular con la parte superior recta, como un “D” recortado, visible como una línea recta horizontal; es el más común en adultos activos.
+- **Bifocales de segmento redondo (Kriptock):** Presentan un segmento circular para la visión de cerca en la parte inferior, lo que los hace estéticamente más discretos.
 
-- **invisible:** los segmentos de lejos y cerca están separados por una línea que no es visible. La línea divisoria se ha pulido de tal manera que no se observa. La visión en el área de unión de los dos segmentos puede resultar un poco borrosa, causando un poco de dificultad en la adaptación.
+- **Bifocales ejecutivos:** Cuentan con una línea de separación horizontal que abarca todo el ancho de la lente, ofreciendo un campo de visión más amplio para leer que otros estilos.
+
+- **Bifocales invisibles:** Son una versión de los bifocales planos o redondos donde la línea divisoria entre las dos partes de la lente es casi imperceptible, mejorando su estética.
 
 ---
 
-## Lentes ocupacionales
+## Ocupacionales ( o también llamados "de oficina")
 
-Estas gafas están diseñadas para tareas de cerca e intermedias, como trabajar frente a una computadora, leer o escribir. Mejoran el confort visual y reducen la fatiga ocular, optimizando el campo de visión en el rango más usado (aproximadamente 40 cm a 1,5 m).
+Los lentes ocupacionales son gafas diseñadas para personas con [presbicia](/presbicia) que necesitan ver con claridad en distancias cortas e intermedias, especialmente en entornos laborales como oficinas o trabajos frente a pantallas. Están pensados para facilitar el enfoque en documentos, computadoras y conversaciones dentro de un rango de hasta cuatro metros, ofreciendo una solución práctica y especializada para la rutina diaria.
 
-**Ventajas**
+![imagen ilustrativa de un lente progresivo](/images/library/basic-concepts/tipos-de-lentes-6.webp)
+
+### Ventajas
 
 - Facilitan el enfoque relajado, previniendo cansancio, sequedad ocular y dolores de cabeza.
 - Ayudan a mantener buena postura al evitar acercar los ojos innecesariamente a la pantalla.
@@ -61,33 +60,41 @@ Estas gafas están diseñadas para tareas de cerca e intermedias, como trabajar 
 - Pueden complementarse con lentes progresivos para corrección más específica en entornos de oficina.
 - El cambio entre las distancias focales es gradual y natural. No es visible el cambio de graduación
 
-**Desventajas**
+### Desventajas
 
 - No corrigen visión lejana; no son adecuadas para conducir o actividades al aire libre.
 - Uso limitado fuera del trabajo o escritorio.
 - Algunos modelos requieren adaptación según la posición habitual de trabajo.
 - Mayor costo que lentes monofocales simples.
 
-![imagen ilustrativa de un lente progresivo](/images/library/basic-concepts/tipos-de-lentes-6.webp)
+
 
 ---
 
-## Lentes multifocales
+## Multifocal (o progresivos)
 
-Las lentes multifocales son la evolución de los bifocales, ofreciendo una transición continua entre todas las distancias sin líneas visibles. Corrigen visión lejana, intermedia y cercana en un mismo lente, por lo que también se denominan progresivas.
+Un lente multifocal es un tipo de lente que presenta varias graduaciones en una sola lente para corregir la visión a diferentes distancias (lejos, cerca e intermedia) sin necesidad de cambiar de anteojos. Son útiles especialmente para personas con presbicia, que es la dificultad para enfocar objetos cercanos causada por la edad. Estos lentes, que también se llaman progresivos, logran esto mediante diferentes zonas ópticas integradas en la superficie de la lente.
 
-**Ventajas**
+### Funcionamiento
 
+- **Visión de lejos**: La parte superior del lente está graduada para ver a la distancia.
+- **Visión intermedia**: La parte central del lente proporciona una graduación para distancias intermedias, como usar una computadora o mirar el tablero del auto.
+- **Visión de cerca**: La parte inferior del lente tiene la graduación para ver de cerca, como al leer un libro o el celular.
+
+![imagen ilustrativa de un lente multifocal](/images/library/basic-concepts/tipos-de-lentes-4.webp)
+
+
+### Ventajas
+
+- Permiten ver con claridad tanto de cerca como a distancia intermedia y de lejos.
 - Transición natural y cómoda entre distintas distancias.
 - Ausencia de líneas visibles.
-- Permiten cubrir todas las necesidades visuales sin cambiar de anteojos.
+- Eliminan la necesidad de cambiar entre diferentes pares de gafas (por ejemplo, para leer y para ver de lejos), lo que simplifica las actividades diarias.
 
-**Desventajas**
+### Desventajas
 
 - Adaptación inicial puede requerir días o semanas.
 - Diseño más complejo y costoso.
 - Zonas borrosas percibidas al inicio hasta acostumbrarse al lente.
-
-![imagen ilustrativa de un lente multifocal](/images/library/basic-concepts/tipos-de-lentes-4.webp)
 
 ---

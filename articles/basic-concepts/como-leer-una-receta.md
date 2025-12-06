@@ -24,7 +24,7 @@ Este valor influye en el espesor de las lentes, por lo que una graduación más 
 
 ## Cilindro (C o CIL) y Eje (° o AXIS): corrección del astigmatismo
 
-Cuando la receta incluye [astigmatismo](/astigmatismo), se detallan dos valores: el **cilindro**, que indica la cantidad de corrección, y el **eje**, que define la orientación exacta entre 0° y 180°. En recetas sin astigmatismo, ambos campos pueden aparecer vacíos porque solo se corrige la esfera.  
+Cuando la receta incluye [astigmatismo](/astigmatismo), se detallan dos valores: el **cilindro**, que indica la cantidad de corrección, y el **eje**, que define la orientación exacta entre 0° y 180°. En recetas sin [astigmatismo](/astigmatismo), ambos campos pueden aparecer vacíos porque solo se corrige la esfera.  
 El cilindro puede escribirse con signo positivo o negativo, según el criterio del profesional, aunque esto no modifica la graduación real. El eje, por su parte, no cambia la potencia del lente, sino la dirección en la que actúa la corrección. Si el lente se rota o se monta de forma incorrecta, la nitidez puede verse afectada aun con la graduación adecuada.
 
 ![como ve una persona normal y una con astigmatismo](/images/library/basic-concepts/como-leer-una-receta-3.webp)
@@ -33,14 +33,14 @@ El cilindro puede escribirse con signo positivo o negativo, según el criterio d
 
 ## ADD (Adición): visión de cerca
 
-La adición es un valor positivo que se suma a la graduación de lejos para permitir enfocar de cerca. Se usa en casos de presbicia y es un dato clave en lentes multifocales, bifocales o de lectura. No cambia la visión de lejos, solo agrega la potencia necesaria para tareas cercanas como leer, celular o computadora.
+La adición es un valor positivo que se suma a la graduación de lejos para permitir enfocar de cerca. Se usa en casos de [/presbicia] y es un dato clave en lentes [multifocales, bifocales o de lectura](/tipos-de-lentes). No cambia la visión de lejos, solo agrega la potencia necesaria para tareas cercanas como leer, celular o computadora.
 
 ---
 
 ## Distancia Pupilar (DP o PD)
 
 La distancia pupilar indica cuántos milímetros separan el centro de cada pupila, y define dónde deben ubicarse los lentes dentro del armazón. Puede figurar como un único valor total o dividida por ojo para mayor precisión. Una DP mal medida puede causar mareos, visión borrosa o sensación de que la imagen está “corrida”, aun con la graduación correcta.
-Dato útil: en lentes progresivos, prismas o astigmatismos altos, es recomendable usar DP por ojo, no total, para evitar errores de centrado.
+Dato útil: en lentes [multifocales](/tipos-de-lentes), prismas o [astigmatismos](/astigmatismos) altos, es recomendable usar DP por ojo, no total, para evitar errores de centrado.
 
 ![imagen mostrando una regla midiendo DP sobre un rostro](/images/library/basic-concepts/como-leer-una-receta-7.webp)
 
@@ -51,26 +51,18 @@ Dato útil: en lentes progresivos, prismas o astigmatismos altos, es recomendabl
 
 Los prismas aparecen en la receta cuando los ojos no están alineados en el mismo punto, debido a condiciones como [forias](/forias) (exoforia, endoforia, hiperforia o hipoforia). No cambian la graduación del lente; su función es redirigir la imagen. Un prisma desvía la luz antes de llegar al ojo para que ambas imágenes coincidan y el cerebro pueda fusionarlas, ayudando en casos de visión doble, molestias al leer, cerrar un ojo para enfocar o sensación de cansancio visual. Su efecto existe solo mientras se usan los anteojos; al quitarlos, todo vuelve a su estado original. No corrigen la estructura ni los músculos del ojo, simplemente mejoran la comodidad y la alineación percibida. Además, requieren un centrado muy preciso, por lo que funcionan mejor en monturas firmes y no demasiado flexibles o abiertas.
 
-
-
-**Beneficios**
+### Caracteristicas
 
 - Alivia visión doble rápidamente en muchos casos.
-
 - Reduce dolores de cabeza, mareos y cansancio visual por esfuerzo al intentar alinear.
-
 - No invasivo y reversible; si cambia la condición, se puede ajustar el prisma.
-
 - Se adapta al uso diario sin necesidad de procedimientos médicos.
 
-**Limitaciones**
+### Limitaciones
 
 - No solucionan la causa, solo el efecto sobre la visión.
-
 - Funcionan mientras los usás; al quitarlos vuelve la molestia.
-
 - En prismas fuertes pueden aparecer distorsiones o cambios en la percepción de profundidad.
-
 - No son útiles para todos los casos; en desviaciones grandes o neurológicas, puede necesitarse otro tratamiento.
 
 ![muestra de lentes con prisma](/images/library/basic-concepts/como-leer-una-receta-6.webp)
