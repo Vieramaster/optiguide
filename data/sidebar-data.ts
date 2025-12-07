@@ -132,7 +132,6 @@ export const sidebarData: SidebarDataType = {
         { title: "Hipermetropía", url: "/hipermetropia" },
         { title: "Astigmatismo", url: "/astigmatismo" },
         { title: "Presbicia", url: "/presbicia" },
-
         { title: "Exoforia", url: "/exoforia" },
         { title: "Esoforia", url: "/esoforia" },
         { title: "Hiperforia", url: "/hiperforia" },

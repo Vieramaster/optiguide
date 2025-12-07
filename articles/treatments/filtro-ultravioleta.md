@@ -26,14 +26,10 @@ Su función es simple pero crucial: evitar que la radiación dañina atraviese l
 
 ## Ventajas de usar lentes con filtro UV
 
-Protegen contra cataratas y daños acumulativos a largo plazo:
-
+- Protegen contra cataratas y daños acumulativos a largo plazo
 - Evitan irritación ocular en días intensos de sol.
-
 - Reducen el cansancio visual en exteriores.
-
 - Aumentan la seguridad visual en actividades al aire libre.
-
 - Son aptos para cualquier tipo de lente: recetados, solares, deportivos o de uso diario.
 
 ## ¿Todos los lentes filtran UV?

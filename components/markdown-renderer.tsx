@@ -81,7 +81,8 @@ const Links = ({ children, href, ...props }: React.ComponentProps<"a">) => {
   );
 };
 
-const MDImage = ({ ...props }: React.ComponentProps<"img">) => {
+const MDImage = ({ ...props }: React.ComponentProps<"img">) => (<img className="mx-auto my-5 rounded-xl w-full lg:w-1/2" {...props}/>)
+const MDImage2 = ({ ...props }: React.ComponentProps<"img">) => {
   // Only allow string src, as required by next/image
   // Destructure only what Next/Image expects, and provide fallback for alt and required sizing.
   const {

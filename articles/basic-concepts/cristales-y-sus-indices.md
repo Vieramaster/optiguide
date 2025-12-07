@@ -5,6 +5,8 @@ Un índice más alto significa que la luz se desvía más al atravesar la lente,
 A medida que la prescripción aumenta, las lentes tradicionales pueden volverse voluminosas y pesadas, lo que no solo afecta la estética, sino que también puede generar incomodidad durante su uso diario. Las lentes de alto índice solucionan este problema: su material desvía la luz de manera más eficiente, requiriendo menos volumen para alcanzar la corrección deseada. El resultado son lentes más finas, ligeras y estéticamente atractivas, cualidades cada vez más valoradas en el mercado de anteojos.  
 Conocer el índice de la lente permite seleccionar la opción más adecuada según la graduación, la comodidad deseada y el tipo de armazón a utilizar.
 
+
+![imagen ilustrativa de un lente monofocal](/images/library/basic-concepts/cristales-y-sus-indices-2.webp)
 ## CR-39 | Indice 1.50
 
 El CR-39 es un material orgánico (resina plástica) utilizado desde hace décadas como estándar en la fabricación de lentes y su índice de refracción es 1.50. Este índice es considerado básico, pero ofrece una excelente calidad óptica para la mayoría de las graduaciones bajas y moderadas, siendo una alternativa accesible en costo sin sacrificar nitidez.
@@ -52,6 +54,8 @@ El vidrio índice 1.52 es la versión estándar del material mineral tradicional
 
 ---
 
+
+---
 ## Trivex | Índice 1.53
 
 El Trivex es un material orgánico diseñado inicialmente para usos militares por su resistencia y ligereza. Su índice 1.53 permite fabricar lentes delgadas manteniendo una muy buena calidad óptica, reduciendo distorsiones laterales en comparación con el policarbonato.
@@ -110,7 +114,11 @@ Es uno de los índices más utilizados en la actualidad, especialmente para quie
 
 ---
 
-### Policarbonato | Indice 1.59
+![imagen comparativa de tamaños de indice](/images/library/basic-concepts/cristales-y-sus-indices-4.webp)
+
+---
+
+## Policarbonato | Indice 1.59
 
 El policarbonato es un material termoplástico muy resistente a impactos y más liviano que las resinas convencionales. Su índice de refracción 1.59 ofrece una reducción notable del grosor respecto al CR-39 y un poco mayor que el 1.56, lo que lo convierte en una opción popular para niños, deportistas y personas que buscan monturas al aire o con perforaciones.
 Si bien mejora la seguridad y la estética, su calidad óptica presenta más aberraciones laterales que otras resinas debido a su menor valor Abbe, por lo que puede no ser la opción ideal para usuarios muy sensibles a la distorsión periférica.
@@ -132,6 +140,8 @@ Si bien mejora la seguridad y la estética, su calidad óptica presenta más abe
 - Acepta bien [antirreflejo](/antireflejante), [filtro azul](/filtro-azul) y [tratamiento anti rayas](/tratamiento-anti-rayas).
 - Peso reducido y buena comodidad a largo plazo.
 - Protección natural frente a rayos UV.
+
+![imagen comparativa de tamaños de indice](/images/library/basic-concepts/cristales-y-sus-indices-7.webp)
 
 ---
 
@@ -218,6 +228,10 @@ Es una opción frecuente para quienes necesitan correcciones altas con un buen r
 
 ---
 
+![imagen ilustrativa de deformacion visual en el lente](/images/library/basic-concepts/cristales-y-sus-indices-9.webp)
+
+---
+
 ## Índice 1.70
 
 ### Vidrio Mineral
@@ -294,6 +308,8 @@ Ofrece la mejor estética dentro de los materiales orgánicos, aunque con mayor 
 - Acepta [antirreflejo](/antireflejante), [anti rayas](/tratamiento-anti-rayas) y [filtro azul](/filtro-azul); no siempre recomendado para coloraciones profundas.
 - El más delgado del mercado en materiales orgánicos, pero también el de mayor costo.
 
+
+![imagen ilustrativa de indice 1.74](/images/library/basic-concepts/cristales-y-sus-indices-8.webp)
 ---
 
 ## Vidrio Mineral de Súper Alto Índice | Índice 1.80 y 1.90

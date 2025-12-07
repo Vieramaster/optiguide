@@ -19,14 +19,3 @@ Su propósito es mejorar la experiencia visual del usuario. Reduce los reflejos 
 ## Como se fabrica?
 
 Se aplica en cámaras de vacío dentro de laboratorios ópticos, donde materiales especiales se evaporan y se depositan en capas muy finas sobre la lente. Antes del proceso, la lente se limpia con ultrasonido para eliminar impurezas, y luego equipos automatizados controlan la adherencia, el espesor y la uniformidad de cada capa.
-
-<iframe
-  className= "w-full m-auto h-56  xl:w-2/3 xl:h-120"
-  src=""
-  title="YouTube video player"
-  frameBorder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  referrerPolicy="strict-origin-when-cross-origin"
-  allowFullScreen
-></iframe>
-

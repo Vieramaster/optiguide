@@ -15,6 +15,8 @@ Su propósito es mejorar la comodidad visual durante el uso prolongado de dispos
 
 ![como filtra el cristal la luz azul daniña](/images/library/treatments/filtro-luz-azul-2.webp)
 
+---
+
 ## Qué beneficios trae?
 
 - Reduce cansancio y pesadez ocular tras varias horas frente a pantallas.
@@ -36,6 +38,8 @@ Su propósito es mejorar la comodidad visual durante el uso prolongado de dispos
 - Si es de baja calidad, no aporta diferencia real frente a un AR común.
 
 - No es necesario para todos los usuarios; depende del uso de pantallas, más si su trabajo requiere el uso de colores.
+
+---
 
 ## Como se fabrica?
 
