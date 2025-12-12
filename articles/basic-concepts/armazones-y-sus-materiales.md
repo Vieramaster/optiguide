@@ -4,6 +4,8 @@ Los armazones son la estructura que sostiene los cristales oftálmicos y permite
 
 ![imagen ilustrativa de un armazón de metal](/images/library/basic-concepts/armazones-y-sus-materiales-3.webp)
 
+---
+ 
 ## Armazones de metal
 
 Los armazones de metal constituyen una opción tradicional y versátil. Se reconocen por su diseño delgado y elegante, adecuado tanto para el uso diario como para estilos formales. Se fabrican en distintos materiales como monel, acero inoxidable, titanio o aluminio, cada uno con características particulares de resistencia y peso.

@@ -1,20 +1,24 @@
 import fs from "fs";
 import path from "path";
 
-export const findMarkdownFile = (dir: string, slug: string): string | null => {
-  const entries = fs.readdirSync(dir, { withFileTypes: true });
+export const findMarkdownFile = (root: string, slug: string): string | null => {
+  const target = `${slug}.md`;
+  const queue: string[] = [root];
 
-  for (const entry of entries) {
-    const fullPath = path.join(dir, entry.name);
+  while (queue.length) {
+    const current = queue.shift()!;
+    const entries = fs.readdirSync(current, { withFileTypes: true });
 
-    if (entry.isDirectory()) {
-      const result = findMarkdownFile(fullPath, slug);
-      if (result) return result;
-    }
+    // Archivos primero
+    const file = entries.find(e => e.isFile() && e.name === target);
+    if (file) return path.join(current, file.name);
 
-    if (entry.isFile() && entry.name === `${slug}.md`) {
-      return fullPath;
-    }
+    // Directorios a la cola
+    queue.push(
+      ...entries
+        .filter(e => e.isDirectory())
+        .map(e => path.join(current, e.name))
+    );
   }
 
   return null;

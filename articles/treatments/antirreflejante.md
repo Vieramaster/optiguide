@@ -6,6 +6,9 @@ Su propósito es mejorar la experiencia visual del usuario. Reduce los reflejos 
 ![imagen que muestra con y sin antireflejante](/images/library/treatments/antireflex.webp)
 
 
+---
+ 
+
 
 ## Qué beneficios trae?
 
@@ -15,6 +18,10 @@ Su propósito es mejorar la experiencia visual del usuario. Reduce los reflejos 
 - Hace que los lentes se vean más transparentes y limpios estéticamente.
 
 ![imagen que muestra con y sin antireflejante](/images/library/treatments/antireflex2.webp)
+
+
+---
+ 
 
 ## Como se fabrica?
 

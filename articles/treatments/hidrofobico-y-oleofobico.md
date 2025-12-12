@@ -8,6 +8,9 @@ Su función es evitar que el agua se adhiera y que la grasa o las huellas queden
 ![demostracion de filtro UV ](/images/library/treatments/hidrofobica-oleofobica-2.webp)
 
 
+---
+ 
+
 ## ¿Qué beneficios trae?
 
 - Reduce la adherencia del agua, permitiendo que las gotas se deslicen sin dejar rastros.
@@ -21,6 +24,9 @@ Su función es evitar que el agua se adhiera y que la grasa o las huellas queden
 - Prolonga la vida útil del tratamiento antirreflejo al evitar limpiezas agresivas. 
 
 ![demostracion de filtro UV ](/images/library/treatments/hidrofobica-oleofobica-1.webp)
+
+---
+ 
 
 ## Fabricación
 

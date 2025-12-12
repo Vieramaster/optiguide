@@ -6,6 +6,9 @@ No es una capa puesta encima, sino algo que forma parte del lente en sí. Eso ha
 
 ![comparación de con y sin lentes fotocromáticos](/images/library/treatments/fotocromaticos-1.webp)
 
+---
+ 
+
 ## Ventajas de usar lentes fotocromaticas.
 
 - Se adaptan solos a la iluminación: se oscurecen al sol y se aclaran en interiores, reduciendo deslumbramientos sin que el usuario haga nada.
@@ -21,6 +24,9 @@ No es una capa puesta encima, sino algo que forma parte del lente en sí. Eso ha
 Esto ayuda a mantener una visión cómoda en situaciones donde la luz cambia seguido, por ejemplo: entrar/salir de locales, caminar por zonas de sombra, moverse entre interior y exterior.
 Al oscurecerse, también reducen deslumbramiento y protegen al ojo frente a rayos UVA y UVB, que son dañinos para la retina y los tejidos oculares.
 
+---
+ 
+
 ## Limitaciones que hay que tener en cuenta
 
 - Dentro del auto oscurecen menos: el parabrisas bloquea rayos UV, que es lo que activa el lente.
@@ -34,6 +40,9 @@ Al oscurecerse, también reducen deslumbramiento y protegen al ojo frente a rayo
 - Pueden tardar varios segundos en lograr su máxima intensidad.
 
 ![comparación de con y sin lentes fotocromáticos](/images/library/treatments/fotocromaticos-2.webp)
+
+---
+ 
 
 ## ¿Como se fabrica?
 

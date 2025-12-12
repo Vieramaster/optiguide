@@ -35,7 +35,7 @@ Son prácticos, pero la linea puede resultar estética o visualmente molesta par
 
 ### Tipos de bifocales
 
-- **Bifocales de segmento plano (Flat Top):**  Son los más comunes. Tienen una parte inferior en forma de "D" o con una línea recta en la parte superior del segmento para ver de cerca.
+- **Bifocales de segmento plano (Flat Top):** Son los más comunes. Tienen una parte inferior en forma de "D" o con una línea recta en la parte superior del segmento para ver de cerca.
 
 - **Bifocales de segmento redondo (Kriptock):** Presentan un segmento circular para la visión de cerca en la parte inferior, lo que los hace estéticamente más discretos.
 
@@ -48,8 +48,6 @@ Son prácticos, pero la linea puede resultar estética o visualmente molesta par
 ## Ocupacionales ( o también llamados "de oficina")
 
 Los lentes ocupacionales son gafas diseñadas para personas con [presbicia](/presbicia) que necesitan ver con claridad en distancias cortas e intermedias, especialmente en entornos laborales como oficinas o trabajos frente a pantallas. Están pensados para facilitar el enfoque en documentos, computadoras y conversaciones dentro de un rango de hasta cuatro metros, ofreciendo una solución práctica y especializada para la rutina diaria.
-
-![imagen ilustrativa de un lente progresivo](/images/library/basic-concepts/tipos-de-lentes-6.webp)
 
 ### Ventajas
 
@@ -67,34 +65,51 @@ Los lentes ocupacionales son gafas diseñadas para personas con [presbicia](/pre
 - Algunos modelos requieren adaptación según la posición habitual de trabajo.
 - Mayor costo que lentes monofocales simples.
 
+## ![imagen ilustrativa de un lente progresivo](/images/library/basic-concepts/tipos-de-lentes-6.webp)
 
+## Lentes trifocales (multifocales con tres zonas)
 
----
-
-## Multifocal (o progresivos)
-
-Un lente multifocal es un tipo de lente que presenta varias graduaciones en una sola lente para corregir la visión a diferentes distancias (lejos, cerca e intermedia) sin necesidad de cambiar de anteojos. Son útiles especialmente para personas con presbicia, que es la dificultad para enfocar objetos cercanos causada por la edad. Estos lentes, que también se llaman progresivos, logran esto mediante diferentes zonas ópticas integradas en la superficie de la lente.
+Los lentes trifocales son una variante de los lentes multifocales, pero con **tres zonas de graduación**: visión lejana, intermedia y cercana. A diferencia de los bifocales, ofrecen una zona adicional para la **visión intermedia** (como usar la computadora o mirar el tablero del auto), lo que hace que sean más funcionales para quienes necesitan corrección en más distancias.
 
 ### Funcionamiento
 
-- **Visión de lejos**: La parte superior del lente está graduada para ver a la distancia.
-- **Visión intermedia**: La parte central del lente proporciona una graduación para distancias intermedias, como usar una computadora o mirar el tablero del auto.
-- **Visión de cerca**: La parte inferior del lente tiene la graduación para ver de cerca, como al leer un libro o el celular.
-
-![imagen ilustrativa de un lente multifocal](/images/library/basic-concepts/tipos-de-lentes-4.webp)
-
+- **Parte superior:** visión lejana.
+- **Zona intermedia:** visión para distancias intermedias.
+- **Parte inferior:** visión cercana.
 
 ### Ventajas
 
-- Permiten ver con claridad tanto de cerca como a distancia intermedia y de lejos.
-- Transición natural y cómoda entre distintas distancias.
-- Ausencia de líneas visibles.
-- Eliminan la necesidad de cambiar entre diferentes pares de gafas (por ejemplo, para leer y para ver de lejos), lo que simplifica las actividades diarias.
+- Tres zonas de visión para mayor comodidad y versatilidad.
+- Mejor corrección para personas con presbicia que también tienen problemas para ver a media distancia.
 
 ### Desventajas
 
-- Adaptación inicial puede requerir días o semanas.
-- Diseño más complejo y costoso.
-- Zonas borrosas percibidas al inicio hasta acostumbrarse al lente.
+- **Líneas visibles** que separan cada zona, lo que puede ser estéticamente molesto.
+- Pueden resultar más complicados de usar debido a la mayor cantidad de zonas de enfoque.
+- Transición entre zonas no tan suave como en los progresivos.
 
 ---
+
+## Lentes progresivos
+
+Los lentes progresivos permiten una **transición continua** entre las zonas de visión lejana, intermedia y cercana, sin tener **líneas visibles** que separen las distintas graduaciones. Esto los convierte en una opción más estética y cómoda que los lentes multifocales con líneas.
+
+### Funcionamiento
+
+- **Parte superior:** visión lejana.
+- **Zona intermedia:** visión para tareas de media distancia, como leer una pantalla o mirar el tablero del auto.
+- **Parte inferior:** visión cercana, como para leer un libro o el celular.
+
+![imagen ilustrativa de un lente progresivo](/images/library/basic-concepts/tipos-de-lentes-8.webp)
+
+### Ventajas
+
+- Sin líneas visibles, lo que mejora la estética.
+- Transición suave y natural entre distancias, sin saltos bruscos.
+- Reemplaza a varios pares de gafas en un solo par, lo que resulta muy conveniente.
+
+### Desventajas
+
+- Requieren un período de adaptación para acostumbrarse a las transiciones.
+- Son más costosos que los bifocales o trifocales tradicionales.
+- Pueden presentar distorsiones laterales en algunas personas, especialmente en diseños más antiguos.

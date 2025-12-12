@@ -3,14 +3,24 @@
 Los lentes de sol polarizados reducen el brillo y la fatiga ocular. Debido a esto, mejoran la visión y la seguridad bajo el sol. Cuando trabaja o juega al aire libre, puede frustrarse e incluso cegarse temporalmente por la luz reflejada y el resplandor. Ésta es una situación potencialmente peligrosa que la polarización de los lentes puede prevenir.
 
 
+---
+ 
+
 ## ¿Qué es el resplandor?
 Por lo general, la luz se dispersa porque rebota en diferentes ángulos en la superficie irregular de un objeto. Pero si la superficie es lisa, como con aguas tranquilas o una pieza plana de metal, la luz se refleja en un ángulo. Cuando esta luz se refleja justo en los ojos, es lo que se conoce como resplandor. Las gafas de sol polarizadas reducen el resplandor y solucionan este problema.
 
+![imagen comparativa de polarizado contra un lente normal](/images/library/treatments/polarizado-2.webp)
+
+---
+ 
 
 ## ¿Cómo funcionan?
 A los lentes polarizados se les aplica un químico especial para filtrar la luz. Las moléculas de la sustancia química están alineadas específicamente para bloquear parte de la luz y evitar que pase a través del lente. Piense en ello como una mini persiana que cuelga frente a una ventana. Solo se puede ver la luz que atraviesa las aberturas de las persianas.
 
 Como resultado de este filtrado, la imagen que ve con lentes polarizados es un poco más oscura de lo habitual. Pero los objetos se ven más nítidos y claros con lentes polarizados y los detalles son más fáciles de ver.
+
+---
+ 
 
 ## ¿Qué beneficios trae?
 
@@ -22,6 +32,11 @@ Como resultado de este filtrado, la imagen que ve con lentes polarizados es un p
 - Permite observar debajo de la superficie del agua reducuiendo los brillos del sol, ideal para pesca, navegación o actividades acuaticas.
 
 - Reproduce colores mas naturales y equilibrados, evitando el "lavado" típico producido por reflejos intensos. 
+
+![imagen comparativa de polarizado contra un lente normal](/images/library/treatments/polarizado-1.webp)
+
+---
+ 
 
 ## ¿Cómo se fabrica?
 

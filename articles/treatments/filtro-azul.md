@@ -7,6 +7,9 @@ La luz azul natural, como la del sol, regula el ritmo circadiano, aumenta la ale
 
 ![grafico que demuestra donde esta la luz azul en el espectro de luz ](/images/library/treatments/filtro-luz-azul.webp)
 
+---
+ 
+
 ## ¿Que es el filtro de luz azul?
 
 Es un recubrimiento especial aplicado sobre la superficie del lente mediante capas finas que modifican la interacción con la luz. Reduce la transmisión de la luz azul-violeta de alta energía proveniente de fuentes artificiales, disminuyendo el deslumbramiento y la fatiga visual.  

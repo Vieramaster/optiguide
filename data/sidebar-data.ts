@@ -131,53 +131,39 @@ export const sidebarData: SidebarDataType = {
 
       icon: Eye,
       blocks: [
+               // Errores refractivos
         { title: "Miopía", url: "/miopia" },
         { title: "Hipermetropía", url: "/hipermetropia" },
         { title: "Astigmatismo", url: "/astigmatismo" },
         { title: "Presbicia", url: "/presbicia" },
+
+        // Posición ocular
         { title: "Forias", url: "/forias" },
-        { title: "estrabismos", url: "/estravismos" }
-        {
-          title: "Convergencias",
-          url: "/convergencias",
-        },
-        {
-          title: "Trastornos de acomodación",
-          url: "/trastornos-acomodacion",
-        },
-        {
-          title: "Inflexibilidad acomodativa",
-          url: "/inflexibilidad-acomodativa",
-        },
+        { title: "Tropías o estrabismos", url: "/tropias-o-estrabismos" },
+
+        // Convergencia
+        { title: "Convergencias", url: "/convergencias" },
+
+        // Acomodación
+        { title: "Trastornos de acomodación", url: "/trastornos-acomodacion" },
+        { title: "Inflexibilidad acomodativa", url: "/inflexibilidad-acomodativa" },
+
+        // Otras condiciones
         { title: "Ambliopía", url: "/ambliopia" },
         { title: "Ojo seco", url: "/ojo-seco" },
         { title: "Fotofobia", url: "/fotofobia" },
-        {
-          title: "Baja sensibilidad al contraste",
-          url: "/baja-sensibilidad-contraste",
-        },
-        { title: "Daltonismo", url: "/daltonismo" }
+        { title: "Baja sensibilidad al contraste", url: "/baja-sensibilidad-contraste" },
+        { title: "Daltonismo", url: "/daltonismo" },
         { title: "Acromatopsia", url: "/acromatopsia" },
-
         { title: "Cataratas", url: "/cataratas" },
         { title: "Glaucoma", url: "/glaucoma" },
-        {
-          title: "Degeneración macular",
-          url: "/degeneracion-macular",
-        },
-        {
-          title: "Retinopatía diabética",
-          url: "/retinopatia-diabetica",
-        },
-        {
-          title: "Desprendimiento de retina",
-          url: "/desprendimiento-retina",
-        },
+        { title: "Degeneración macular", url: "/degeneracion-macular" },
+        { title: "Retinopatía diabética", url: "/retinopatia-diabetica" },
+        { title: "Desprendimiento de retina", url: "/desprendimiento-retina" },
         { title: "Queratocono", url: "/queratocono" },
-        { title: "Uveítis", url: "/uveitis" },
-      ],
-    },
-  ],
+        { title: "Uveítis", url: "/uveitis" }
+    ]  }
+  ]
 };
 
 /**
@@ -186,36 +172,36 @@ export const sidebarData: SidebarDataType = {
   "icon": "Eye",
   "blocks": {
     "Defectos refractivos": [
-      { "title": "Miopía", "url": "/miopia" },
-      { "title": "Hipermetropía", "url": "/hipermetropia" },
-      { "title": "Astigmatismo", "url": "/astigmatismo" },
-      { "title": "Presbicia", "url": "/presbicia" }
+      { "title": "Miopía", url: "/miopia" },
+      { "title": "Hipermetropía", url: "/hipermetropia" },
+      { "title": "Astigmatismo", url: "/astigmatismo" },
+      { "title": "Presbicia", url: "/presbicia" }
     ],
     "Visión binocular y acomodación": [
-      { "title": "Forias", "url": "/forias" },
-      { "title": "Estrabismos", "url": "/estrabismos" },
-      { "title": "Convergencias", "url": "/convergencias" },
-      { "title": "Trastornos de acomodación", "url": "/trastornos-acomodacion" },
-      { "title": "Inflexibilidad acomodativa", "url": "/inflexibilidad-acomodativa" },
-      { "title": "Ambliopía", "url": "/ambliopia" }
+      { "title": "Forias", url: "/forias" },
+      { "title": "Estrabismos", url: "/estrabismos" },
+      { "title": "Convergencias", url: "/convergencias" },
+      { "title": "Trastornos de acomodación", url: "/trastornos-acomodacion" },
+      { "title": "Inflexibilidad acomodativa", url: "/inflexibilidad-acomodativa" },
+      { "title": "Ambliopía", url: "/ambliopia" }
     ],
     "Trastornos funcionales": [
-      { "title": "Ojo seco", "url": "/ojo-seco" },
-      { "title": "Fotofobia", "url": "/fotofobia" },
-      { "title": "Baja sensibilidad al contraste", "url": "/baja-sensibilidad-contraste" }
+      { "title": "Ojo seco", url: "/ojo-seco" },
+      { "title": "Fotofobia", url: "/fotofobia" },
+      { "title": "Baja sensibilidad al contraste", url: "/baja-sensibilidad-contraste" }
     ],
     "Percepción del color": [
-      { "title": "Daltonismo", "url": "/daltonismo" },
-      { "title": "Acromatopsia", "url": "/acromatopsia" }
+      { "title": "Daltonismo", url: "/daltonismo" },
+      { "title": "Acromatopsia", url: "/acromatopsia" }
     ],
     "Patologías oculares": [
-      { "title": "Cataratas", "url": "/cataratas" },
-      { "title": "Glaucoma", "url": "/glaucoma" },
-      { "title": "Degeneración macular", "url": "/degeneracion-macular" },
-      { "title": "Retinopatía diabética", "url": "/retinopatia-diabetica" },
-      { "title": "Desprendimiento de retina", "url": "/desprendimiento-retina" },
-      { "title": "Queratocono", "url": "/queratocono" },
-      { "title": "Uveítis", "url": "/uveitis" }
+      { "title": "Cataratas", url: "/cataratas" },
+      { "title": "Glaucoma", url: "/glaucoma" },
+      { "title": "Degeneración macular", url: "/degeneracion-macular" },
+      { "title": "Retinopatía diabética", url: "/retinopatia-diabetica" },
+      { "title": "Desprendimiento de retina", url: "/desprendimiento-retina" },
+      { "title": "Queratocono", url: "/queratocono" },
+      { "title": "Uveítis", url: "/uveitis" }
     ]
   }
 }

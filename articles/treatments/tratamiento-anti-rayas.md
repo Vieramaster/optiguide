@@ -4,6 +4,11 @@ Es un recubrimiento transparente que se aplica sobre lentes oftálmologicos para
 Sirve para proteger del desgaste diario causado por contacto con paños, polvo, uñas u objetos pequeños. Ademas, ayuda a preservar otros tratamientos aplicados al lente, como el [tratamiento antireflejante](/antirreflejante) o los [tratamientos hidrofóbico y oleófobico](/hidrofobico-y-oleofobico), evitando que se deterioren rápidamente.
 
 
+![gif ilustrativo de un lente con rayas y uno con el tratamiento](/images/library/treatments/tratamiento-anti-rayas-1.webp)
+
+---
+ 
+
 ## ¿Qué beneficios trae?
 
 - Disminuye las marcas y rayaduras en la superficie del lente.
@@ -13,6 +18,9 @@ Sirve para proteger del desgaste diario causado por contacto con paños, polvo, 
 - Reduce la necesidad de reemplaar lentes por daños menores.
 
 - Facilita su limpieza , ya que la superficie dura se raya menos.
+
+---
+ 
 
 ## ¿Cómo se fabrica? 
 
