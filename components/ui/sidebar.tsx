@@ -327,7 +327,7 @@ function SidebarHeader({ className, ...props }: React.ComponentProps<"div">) {
       data-slot="sidebar-header"
       data-sidebar="header"
       className={cn(
-        "h-16  flex  p-2 justify-center items-center text-center font-semibold text-xl",
+        "h-16  flex  p-2 justify-center items-center text-center  text-2xl container-type-inline-size",
         className
       )}
       {...props}

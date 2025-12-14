@@ -2,43 +2,16 @@
 import type { SidebarDataType } from "@/types/sidebar-data-types";
 //ICOS
 import {
-  AudioWaveform,
-  Command,
-  GalleryVerticalEnd,
   DraftingCompass,
   ScanSearch,
   CircleSlash2,
   Sparkle,
   Smile,
   Eye,
+  BookOpen,
 } from "lucide-react";
 
-
-
 export const sidebarData: SidebarDataType = {
-  user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
-  },
-  teams: [
-    {
-      name: "Acme Inc",
-      logo: GalleryVerticalEnd,
-      plan: "Enterprise",
-    },
-    {
-      name: "Acme Corp.",
-      logo: AudioWaveform,
-      plan: "Startup",
-    },
-    {
-      name: "Evil Corp.",
-      logo: Command,
-      plan: "Free",
-    },
-  ],
-
   tools: [
     {
       title: "Simulador de espesor de lentes",
@@ -61,12 +34,10 @@ export const sidebarData: SidebarDataType = {
       icon: Smile,
     },
   ],
-
-
   library: [
     {
       title: "Conceptos básicos",
-      icon: Sparkle,
+      icon: BookOpen,
       blocks: [
         { title: "Tipos de lentes", url: "/tipos-de-lentes" },
         { title: "¿Cómo leer una receta?", url: "/como-leer-una-receta" },
@@ -131,7 +102,7 @@ export const sidebarData: SidebarDataType = {
 
       icon: Eye,
       blocks: [
-               // Errores refractivos
+        // Errores refractivos
         { title: "Miopía", url: "/miopia" },
         { title: "Hipermetropía", url: "/hipermetropia" },
         { title: "Astigmatismo", url: "/astigmatismo" },
@@ -140,30 +111,9 @@ export const sidebarData: SidebarDataType = {
         // Posición ocular
         { title: "Forias", url: "/forias" },
         { title: "Tropías o estrabismos", url: "/tropias-o-estrabismos" },
-
-        // Convergencia
-        { title: "Convergencias", url: "/convergencias" },
-
-        // Acomodación
-        { title: "Trastornos de acomodación", url: "/trastornos-acomodacion" },
-        { title: "Inflexibilidad acomodativa", url: "/inflexibilidad-acomodativa" },
-
-        // Otras condiciones
-        { title: "Ambliopía", url: "/ambliopia" },
-        { title: "Ojo seco", url: "/ojo-seco" },
-        { title: "Fotofobia", url: "/fotofobia" },
-        { title: "Baja sensibilidad al contraste", url: "/baja-sensibilidad-contraste" },
-        { title: "Daltonismo", url: "/daltonismo" },
-        { title: "Acromatopsia", url: "/acromatopsia" },
-        { title: "Cataratas", url: "/cataratas" },
-        { title: "Glaucoma", url: "/glaucoma" },
-        { title: "Degeneración macular", url: "/degeneracion-macular" },
-        { title: "Retinopatía diabética", url: "/retinopatia-diabetica" },
-        { title: "Desprendimiento de retina", url: "/desprendimiento-retina" },
-        { title: "Queratocono", url: "/queratocono" },
-        { title: "Uveítis", url: "/uveitis" }
-    ]  }
-  ]
+      ],
+    },
+  ],
 };
 
 /**

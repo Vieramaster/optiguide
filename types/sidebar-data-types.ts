@@ -38,10 +38,7 @@ export type UserType = {
 };
 
 export type SidebarDataType = {
-  user: UserType;
-  teams: TeamType[];
   library: LibraryItemType[];
-
   tools: ToolItemType[];
 };
 /**  laboratoryTools: LibraryItemType[] */
