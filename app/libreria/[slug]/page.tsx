@@ -10,7 +10,7 @@ type PageProps = {
   params: Promise<{ slug: string }>;
 };
 
-export default async function Page({ params }: PageProps) {
+const LibraryPage = async({ params }: PageProps) => {
   const { slug } = await params;
 
   const baseDir = path.join(process.cwd(), "articles");
@@ -28,3 +28,5 @@ export default async function Page({ params }: PageProps) {
     </section>
   );
 }
+
+export default LibraryPage

@@ -15,7 +15,7 @@ export const sidebarData: SidebarDataType = {
   tools: [
     {
       title: "Simulador de espesor de lentes",
-      url: "/simulador",
+      url: "/simulador-de-espesor",
       icon: DraftingCompass,
     },
     {
@@ -39,17 +39,17 @@ export const sidebarData: SidebarDataType = {
       title: "Conceptos básicos",
       icon: BookOpen,
       blocks: [
-        { title: "Tipos de lentes", url: "/tipos-de-lentes" },
-        { title: "¿Cómo leer una receta?", url: "/como-leer-una-receta" },
+        { title: "Tipos de lentes", url: "/libreria/tipos-de-lentes" },
+        { title: "¿Cómo leer una receta?", url: "/libreria/como-leer-una-receta" },
         {
           title: "Conversión de transposición",
           url: "/conversion-de-transposicion",
         },
 
-        { title: "Cristales y sus indices", url: "/cristales-y-sus-indices" },
+        { title: "Cristales y sus indices", url: "/libreria/cristales-y-sus-indices" },
         {
           title: "Armazones y sus materiales",
-          url: "/armazones-y-sus-materiales",
+          url: "/libreria/armazones-y-sus-materiales",
         },
       ],
     },
@@ -60,39 +60,39 @@ export const sidebarData: SidebarDataType = {
       blocks: [
         {
           title: "Tratamiento Antirreflejante",
-          url: "/antirreflejante",
+          url: "/libreria/antirreflejante",
         },
         {
           title: "Filtro azul",
-          url: "/filtro-azul",
+          url: "/libreria/filtro-azul",
         },
         {
           title: "Filtro Ultravioleta ",
-          url: "/filtro-ultravioleta",
+          url: "/libreria/filtro-ultravioleta",
         },
         {
           title: "Fotocromáticos ",
-          url: "/fotocromaticos",
+          url: "/libreria/fotocromaticos",
         },
         {
           title: " Hidrofóbico y Oleofóbico",
-          url: "/hidrofobico-y-oleofobico",
+          url: "/libreria/hidrofobico-y-oleofobico",
         },
         {
           title: "Tratamiento Antiempañante",
-          url: "/tratamiento-antiempanante",
+          url: "/libreria/tratamiento-antiempanante",
         },
         {
           title: "Polarizado",
-          url: "/polarizado",
+          url: "/libreria/polarizado",
         },
         {
           title: "tratamiento anti rayas",
-          url: "/tratamiento-anti-rayas",
+          url: "/libreria/tratamiento-anti-rayas",
         },
         {
           title: "Recubrimiento Espejado",
-          url: "/recubrimiento-espejado",
+          url: "/libreria/recubrimiento-espejado",
         },
       ],
     },
@@ -103,14 +103,14 @@ export const sidebarData: SidebarDataType = {
       icon: Eye,
       blocks: [
         // Errores refractivos
-        { title: "Miopía", url: "/miopia" },
-        { title: "Hipermetropía", url: "/hipermetropia" },
-        { title: "Astigmatismo", url: "/astigmatismo" },
-        { title: "Presbicia", url: "/presbicia" },
+        { title: "Miopía", url: "/libreria/miopia" },
+        { title: "Hipermetropía", url: "/libreria/hipermetropia" },
+        { title: "Astigmatismo", url: "/libreria/astigmatismo" },
+        { title: "Presbicia", url: "/libreria/presbicia" },
 
         // Posición ocular
-        { title: "Forias", url: "/forias" },
-        { title: "Tropías o estrabismos", url: "/tropias-o-estrabismos" },
+        { title: "Forias", url: "/libreria/forias" },
+        { title: "Tropías o estrabismos", url: "/libreria/tropias-o-estrabismos" },
       ],
     },
   ],
