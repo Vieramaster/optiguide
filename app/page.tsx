@@ -6,9 +6,9 @@ const MainPage = () => {
       <div className=" flex container-type-inline-size text-4xl">
         <PageTitle />
       </div>
-      <article className="text-center text-2xl">
-        <h2>
-          Guia práctica para quines empiezan a trabajar en óptica
+      <article className="text-centerw-2/3 flex flex-col gap-8 items-center text-center">
+        <h2 className="text-2xl">
+          Guia práctica para quienes empiezan a trabajar en óptica.
         </h2>
         <p>Conceptos claros, ejemplos reales y explicaciones simples para aprender más rapido el trabajo diario</p>
       </article>
