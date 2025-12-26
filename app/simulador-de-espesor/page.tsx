@@ -1,81 +1,102 @@
-"use client"
-import { Input } from "@/components/ui/input"
-import { Label } from "@radix-ui/react-dropdown-menu"
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { toast } from "sonner"
+"use client";
+
+import { useState } from "react";
+import { GraduationInput } from "@/components/graduation-input";
+import { Button } from "@/components/ui/button";
+import { simulatorGraduationData } from "@/data/simulator-graduation-data";
+import { calculateThickness } from "@/lib/calculateThickness";
 
 const ThicknessSimulator = () => {
+  const GraduationKeys = Object.keys(
+    simulatorGraduationData
+  ) as (keyof typeof simulatorGraduationData)[];
 
-    const [values, setValues] = useState({ ESF: 0, CIL: 0, EJE: 0 });
-    const [errors, setErrors] = useState<{ [key: string]: string }>({});
+  const [graduationValue, setGraduationValue] = useState<
+    Record<string, string>
+  >({
+    ESF: "0",
+    CIL: "0",
+    EJE: "0",
+    DIAM: "65",
+    INDICE: "1.5",
+  });
 
-    const handleChange = (name: "ESF" | "CIL" | "EJE") =>
-        (e: React.ChangeEvent<HTMLInputElement>) => {
-            const val = parseFloat(e.target.value);
+  const handleChangeGraduation = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const { name, value } = event.target;
+    setGraduationValue((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
 
-            if (name === "EJE" && val < 0 || val > 180) {
-                setErrors(prev => ({ ...prev, [name]: "El eje debe estar entre 0 y 180" }));
+    
+  };
 
-            } else {
-                if (val < -14 || val > 14 || val % 0.25) {
-                    setErrors(prev => ({ ...prev, [name]: "La graduación debe estar entre -14 y 14 y ser múltiplo de 0.25" }));
+  const handleClickGraduation = () => {
+    try {
+      GraduationKeys.forEach((key) => {
+        const val = parseFloat(graduationValue[key]);
+        const { min, max, step } = simulatorGraduationData[key];
 
-                }
-            };
-            return (
-                <section className="w-full h-full ">
-                    <fieldset className=" w-full h-28 flex flex-col justify-center items-center gap-4 font-semibold">
-                        <label>Introduzca aqui la graduación:</label>
-                        <form className="flex gap-8 ">
-                            <GraduationInput name="ESF"
-                                value={values.ESF}
-                                onChange={handleChange("ESF")} />
-                            <GraduationInput name="CIL" value={values.CIL}
-                                onChange={handleChange("CIL")} />
-                            <GraduationInput name="EJE" value={values.EJE}
-                                onChange={handleChange("EJE")} />
-                            <Button disabled={Object.values(errors).some(error => error !== "")} className="self-end mb-2" type="submit">Calcular</Button>
-                        </form>
+        if (isNaN(val)) throw new Error(`${key} debe ser un número`);
+        if (val < min || val > max)
+          throw new Error(`${key} debe estar entre ${min} y ${max}`);
+        if (Math.abs((val - min) % step) > 1e-8)
+          throw new Error(`${key} debe ser múltiplo de ${step}`);
+      });
 
-                    </fieldset>
+      console.log("Valores válidos:", graduationValue);
+    } catch (err) {
+      alert((err as Error).message);
+    }
 
-
-                </section>
-
-            )
-
-        }
-
-    export default ThicknessSimulator
-
-    export const ErrorInput = ({ message }: { message: string }) => {
-        return (
-            <p className="text-sm text-red-500 mt-1">{message}</p>
+    finally{
+        console.log(
+            calculateThickness({
+                sphere: parseFloat(graduationValue["ESF"] )|| 0,
+                cylinder:parseFloat(graduationValue["CIL"] )|| 0,
+                diameter:parseFloat(graduationValue["DIAM"] )|| 65,
+                index:parseFloat(graduationValue["INDICE"] )|| 1.5,
+            })
         )
     }
 
+  };
 
-    type GraduationInputProps = {
-        name: "ESF" | "CIL" | "EJE";
-        value: number;
-        onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    };
+  return (
+    <section className="w-full h-full bg-violet-200 p-10 flex flex-col gap-10 text-center">
+      <div className="bg-violet-400 p-4 rounded">
+        <h2 className="text-4xl mb-5 font-semibold">
+          Simulador de espesor de lentes
+        </h2>
+        <p className="italic text-sm">
+          Nota: este simulador es ilustrativo y no siempre refleja el grosor
+          real, depende del laboratorio y del técnico óptico.
+        </p>
+      </div>
 
-    export const GraduationInput = ({ name, value, onChange }: GraduationInputProps) => {
-        const isEje = name === "EJE";
-        return (
-            <div className="text-center">
-                <Label className="mb-1">{name}:</Label>
-                <Input
-                    type="number"
-                    step={isEje ? 0 : 0.25}
-                    min={isEje ? 0 : -14}
-                    max={isEje ? 180 : 14}
-                    value={value}
-                    onChange={onChange}
-                    className="w-18 bg-primary-foreground"
-                />
-            </div>
-        );
-    };
+      <div className="bg-violet-500 flex flex-wrap gap-8 justify-center p-6 rounded">
+        {GraduationKeys.map((key) => (
+          <GraduationInput
+            key={key}
+            name={key}
+            maxLength={5}
+            value={graduationValue[key]}
+            onChange={handleChangeGraduation}
+          />
+        ))}
+
+        <Button
+          onClick={handleClickGraduation}
+          type="button"
+          className="self-end mb-2"
+        >
+          Calcular
+        </Button>
+      </div>
+    </section>
+  );
+};
+
+export default ThicknessSimulator;

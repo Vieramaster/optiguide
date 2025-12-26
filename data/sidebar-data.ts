@@ -43,7 +43,7 @@ export const sidebarData: SidebarDataType = {
         { title: "¿Cómo leer una receta?", url: "/libreria/como-leer-una-receta" },
         {
           title: "Conversión de transposición",
-          url: "/conversion-de-transposicion",
+          url: "/libreria/conversion-de-transposicion",
         },
 
         { title: "Cristales y sus indices", url: "/libreria/cristales-y-sus-indices" },

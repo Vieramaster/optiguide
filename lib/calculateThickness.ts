@@ -5,17 +5,17 @@ type Lens = {
   index: number;
 };
 
-// Ajustes por índice (calibrados)
+// Ajustes por índice
 const ADJUST: Record<number, number> = {
   1.5: 0.94,
-  1.56: 0.55,
+  1.56: 0.59, // ajustado
   1.59: 0.45,
   1.6: 0.435,
   1.67: 0.40,
   1.74: 0.36,
 };
 
-// Exponentes por índice (calibrados)
+// Exponentes por índice
 const EXPONENT: Record<number, number> = {
   1.5: 0.64,
   1.56: 0.68,
@@ -58,20 +58,21 @@ export const calculateThickness = ({
 
   const tSphere = thicknessFromPower(sphere, diameter, index);
 
+  // sin cilindro
   if (!cylinder) {
-    let totalNoCyl = tCenter + tSphere;
-    if (sphere > 0) totalNoCyl *= 0.8; // reducir 20% si esférico positivo
-    return Number(totalNoCyl.toFixed(2));
+    let total = tCenter + tSphere;
+    if (sphere > 0) total *= 0.8; // −20% para positivos
+    return Number(total.toFixed(2));
   }
 
-  const tCyl = thicknessFromPower(cylinder, diameter, index) * 0.25; // cilindro aporta 25%
+  const tCyl = thicknessFromPower(cylinder, diameter, index) * 0.25;
 
   const sameSign =
     (sphere >= 0 && cylinder >= 0) || (sphere < 0 && cylinder < 0);
 
   let total = tCenter + tSphere + (sameSign ? tCyl : -tCyl);
 
-  if (sphere > 0) total *= 0.8; // reducir 20% si esférico positivo
+  if (sphere > 0) total *= 0.8; // −20% para positivos
 
   return Number(total.toFixed(2));
 };
