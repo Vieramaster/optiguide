@@ -4,23 +4,32 @@ import { useState } from "react";
 import { GraduationInput } from "@/components/graduation-input";
 import { Button } from "@/components/ui/button";
 import { simulatorGraduationData } from "@/data/simulator-graduation-data";
-import { calculateThickness } from "@/lib/calculateThickness";
+
+type graduationType = keyof typeof simulatorGraduationData;
 
 const ThicknessSimulator = () => {
   const GraduationKeys = Object.keys(
     simulatorGraduationData
-  ) as (keyof typeof simulatorGraduationData)[];
+  ) as graduationType[];
 
   const [graduationValue, setGraduationValue] = useState<
-    Record<string, string>
+    Record<graduationType, string>
   >({
     ESF: "0",
     CIL: "0",
     EJE: "0",
-    DIAM: "65",
-    INDICE: "1.5",
+    DIAM: "20",
   });
 
+  const [error, setError] = useState<Record<string, string> | null>(null);
+  const [finalGraduation, setFinalGraduation] = useState<
+    Record<graduationType, string>
+  >({
+    ESF: "0",
+    CIL: "0",
+    EJE: "0",
+    DIAM: "20",
+  });
   const handleChangeGraduation = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
@@ -29,39 +38,36 @@ const ThicknessSimulator = () => {
       ...prev,
       [name]: value,
     }));
-
-    
   };
-
   const handleClickGraduation = () => {
-    try {
-      GraduationKeys.forEach((key) => {
-        const val = parseFloat(graduationValue[key]);
-        const { min, max, step } = simulatorGraduationData[key];
+    const keys = Object.keys(simulatorGraduationData) as graduationType[];
 
-        if (isNaN(val)) throw new Error(`${key} debe ser un número`);
-        if (val < min || val > max)
-          throw new Error(`${key} debe estar entre ${min} y ${max}`);
-        if (Math.abs((val - min) % step) > 1e-8)
-          throw new Error(`${key} debe ser múltiplo de ${step}`);
-      });
+    const hasError = keys.some((key) => {
+      const val = Number(graduationValue[key]);
+      const { min, max, step } = simulatorGraduationData[key];
 
-      console.log("Valores válidos:", graduationValue);
-    } catch (err) {
-      alert((err as Error).message);
-    }
+      if (!Number.isFinite(val)) {
+        setError({ [key]: "debe ser un número" });
+        return true;
+      }
 
-    finally{
-        console.log(
-            calculateThickness({
-                sphere: parseFloat(graduationValue["ESF"] )|| 0,
-                cylinder:parseFloat(graduationValue["CIL"] )|| 0,
-                diameter:parseFloat(graduationValue["DIAM"] )|| 65,
-                index:parseFloat(graduationValue["INDICE"] )|| 1.5,
-            })
-        )
-    }
+      if (val < min || val > max) {
+        setError({ [key]: `debe estar entre ${min} y ${max}` });
+        return true;
+      }
 
+      if ((val - min) % step !== 0) {
+        setError({ [key]: `debe ser múltiplo de ${step}` });
+        return true;
+      }
+
+      return false;
+    });
+
+    if (hasError) return;
+
+    setError(null);
+    setFinalGraduation(graduationValue);
   };
 
   return (
@@ -95,8 +101,51 @@ const ThicknessSimulator = () => {
           Calcular
         </Button>
       </div>
+      <Simulator />
     </section>
   );
 };
 
 export default ThicknessSimulator;
+
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
+export const Simulator = () => {
+  const crystalIndexes = [
+    { index: "1.50", name: "CR-39" },
+    { index: "1.56", name: "resina de alto índice " },
+    { index: "1.59", name: "policarbonato " },
+    { index: "1.60", name: "resina de alto índice" },
+    { index: "1.67", name: "resina de alto índice " },
+    { index: "1.74", name: "resina de alto índice " },
+  ];
+  return (
+    <div className="h-full bg-violet-800 flex flex-col gap-8 ">
+      <Select>
+        <SelectTrigger className="w-[180px]">
+          <SelectValue placeholder="Seleccionar indice" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectGroup>
+            <SelectLabel>Indices</SelectLabel>
+
+            {crystalIndexes.map((item) => (
+              <SelectItem key={item.index} value={item.index}>
+                <span className="mr-3 font-semibold">{item.index}</span>
+                <span className="italic">{item.name}</span>
+              </SelectItem>
+            ))}
+          </SelectGroup>
+        </SelectContent>
+      </Select>
+    </div>
+  );
+};

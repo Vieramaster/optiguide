@@ -13,17 +13,16 @@ export const GraduationInput = ({
   name,
   value,
   onChange,
-  maxLength ,
+  maxLength,
 }: GraduationInputProps) => {
   return (
-    <div className="text-center font-semibold">
+    <div className="text-center font-semibold relative">
       <Label className="mb-1">{name}:</Label>
       <Input
         className="w-18 bg-primary-foreground"
         type="text"
         {...{ name, value, maxLength, onChange }}
         placeholder="0"
-     
       />
     </div>
   );
