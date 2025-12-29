@@ -8,7 +8,7 @@ import { simulatorGraduationData } from "@/data/simulator-graduation-data";
 
 // HOOKS
 import { useState } from "react";
-import { calculateThickness } from "@/lib/calculateThickness";
+import { calculateThickness } from "@/lib/calculate-thickness";
 
 const ThicknessSimulator = () => {
   const [graduationValue, setGraduationValue] = useState({

@@ -8,7 +8,7 @@ import { simulatorGraduationData } from "@/data/simulator-graduation-data";
 
 // HOOKS
 import { useState } from "react";
-import { calculateThickness } from "@/lib/calculateThickness";
+import { calculateThickness } from "@/lib/calculate-thickness";
 
 type GraduationValueType = {
   ESF: string;
@@ -32,8 +32,8 @@ const ThicknessSimulator = () => {
   // Actualiza el estado mientras el usuario escribe
   const handleChangeGraduation = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setGraduationValue(prev => ({ ...prev, [name]: value }));
-    setErrors(prev => ({ ...prev, [name]: "" })); // limpiar error mientras escribe
+    setGraduationValue((prev) => ({ ...prev, [name]: value }));
+    setErrors((prev) => ({ ...prev, [name]: "" })); // limpiar error mientras escribe
   };
 
   // Validación y cálculo al submit
@@ -42,7 +42,8 @@ const ThicknessSimulator = () => {
     let hasError = false;
 
     Object.entries(graduationValue).forEach(([key, value]) => {
-      const rules = simulatorGraduationData[key as keyof typeof simulatorGraduationData];
+      const rules =
+        simulatorGraduationData[key as keyof typeof simulatorGraduationData];
       const num = parseFloat(value);
 
       if (value === "") {
@@ -64,7 +65,9 @@ const ThicknessSimulator = () => {
       }
 
       if (rules && (num < rules.min || num > rules.max)) {
-        newErrors[key] = `El valor debe estar entre ${rules.min} y ${rules.max}`;
+        newErrors[
+          key
+        ] = `El valor debe estar entre ${rules.min} y ${rules.max}`;
         hasError = true;
         return;
       }

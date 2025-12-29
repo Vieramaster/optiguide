@@ -4,3 +4,4 @@ export const simulatorGraduationData = {
   EJE: { step: 1, min: 0, max: 180 },
   DIAM: { step: 1, min: 20, max: 65 },
 } as const;
+

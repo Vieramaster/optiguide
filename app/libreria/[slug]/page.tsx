@@ -3,7 +3,7 @@ export const revalidate = 0;
 
 import fs from "fs";
 import path from "path";
-import { findMarkdownFile } from "@/lib/findMarkdownFile";
+import { findMarkdownFile } from "@/lib/findmarkdown-file";
 import { MarkdownRenderer } from "@/components/markdown-renderer";
 
 type PageProps = {

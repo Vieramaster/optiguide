@@ -7,6 +7,7 @@ type GraduationInputProps = {
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   maxLength: number;
+
 };
 
 export const GraduationInput = ({
@@ -14,6 +15,7 @@ export const GraduationInput = ({
   value,
   onChange,
   maxLength,
+
 }: GraduationInputProps) => {
   return (
     <div className="text-center font-semibold relative">
