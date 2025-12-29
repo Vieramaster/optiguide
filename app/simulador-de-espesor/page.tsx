@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { simulatorGraduationData } from "@/data/simulator-graduation-data";
 import { graduationType, GraduationValueType } from "@/types/simulator-types";
 import { HeaderSimulator } from "@/components/header-simulator";
+import { SelectSimulator } from "@/components/select-simulator";
 import { LensSimulator } from "@/components/lens-simulator";
 const ThicknessSimulator = () => {
   const GraduationKeys = Object.keys(
@@ -13,7 +14,7 @@ const ThicknessSimulator = () => {
   ) as graduationType[];
 
 
-  const [graduationValue, setGraduationValue] = useState<
+  const [inputsValues, setInputsValues] = useState<
     GraduationValueType
   >({
     ESF: "0",
@@ -23,7 +24,7 @@ const ThicknessSimulator = () => {
   });
 
   const [error, setError] = useState<Record<string, string> | null>(null);
-  const [finalGraduation, setFinalGraduation] = useState<
+  const [finalValues, setFinalValues] = useState<
     GraduationValueType
   >({
     ESF: "0",
@@ -35,7 +36,7 @@ const ThicknessSimulator = () => {
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
     const { name, value } = event.target;
-    setGraduationValue((prev) => ({
+    setInputsValues((prev) => ({
       ...prev,
       [name]: value,
     }));
@@ -44,7 +45,7 @@ const ThicknessSimulator = () => {
     const keys = Object.keys(simulatorGraduationData) as graduationType[];
 
     const hasError = keys.some((key) => {
-      const val = Number(graduationValue[key]);
+      const val = Number(inputsValues[key]);
       const { min, max, step } = simulatorGraduationData[key];
 
       if (!Number.isFinite(val)) {
@@ -68,7 +69,7 @@ const ThicknessSimulator = () => {
     if (hasError) return;
 
     setError(null);
-    setFinalGraduation(graduationValue);
+    setFinalValues(inputsValues);
   };
 
   return (
@@ -78,11 +79,11 @@ const ThicknessSimulator = () => {
 
       <InputsSimulator
         GraduationKeys={GraduationKeys}
-        graduationValue={graduationValue}
+        graduationValue={inputsValues}
         onChangevalues={handleChangeGraduation}
         onClickGraduation={handleClickGraduation}
       />
-      <LensSimulator />
+      <LensSimulator graduationValues={finalValues} />
     </section>
   );
 };

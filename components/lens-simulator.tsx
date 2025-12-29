@@ -1,36 +1,28 @@
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import {CRYSTAL_INDEXES_DATA} from "@/data/crystal-indexes-data";
+import ThicknessSimulator from "@/lala";
+import { SelectSimulator } from "./select-simulator";
+import { GraduationValueType } from "@/types/simulator-types";
+import { calculateThickness } from "@/lib/calculateThickness";
 
+interface LensSimulatorProps {
+    graduationValues: GraduationValueType;
+}
+export const LensSimulator = ({ graduationValues }: LensSimulatorProps) => {
 
-export const LensSimulator = () => {
+    const handleValueSelect = (value: string) => {
 
-  return (
-    <div className="h-full bg-violet-800 flex flex-col gap-8 ">
-      <Select>
-        <SelectTrigger className="w-[180px]">
-          <SelectValue placeholder="Seleccionar indice" />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectGroup>
-            <SelectLabel>Indices</SelectLabel>
+        const index = parseFloat(value);
+        console.log(
+            calculateThickness({
+                sphere: parseFloat(graduationValues.ESF) ?? 0,
+                cylinder: parseFloat(graduationValues.CIL) ?? 0,
+                diameter: parseFloat(graduationValues.DIAM) ?? 20,
+                index: index ?? 1.5,
+            })
+        );
+    }
 
-            {CRYSTAL_INDEXES_DATA.map((item) => (
-              <SelectItem key={item.index} value={item.index}>
-                <span className="mr-3 font-semibold">{item.index}</span>
-                <span className="italic">{item.name}</span>
-              </SelectItem>
-            ))}
-          </SelectGroup>
-        </SelectContent>
-      </Select>
-    </div>
-  );
-};
+    return (
+        <div className="h-96 w-1/2 bg-violet-800 flex flex-col gap-8 justify-center items-center">  <SelectSimulator onValueSelect={handleValueSelect} />
+        </div>
+    );
+}
