@@ -6,6 +6,7 @@ import { useState } from "react";
 interface LensSimulatorProps {
   graduationValues: GraduationValueType;
 }
+
 export const LensSimulator = ({ graduationValues }: LensSimulatorProps) => {
   const [index, setIndex] = useState(1.5);
 
@@ -13,29 +14,36 @@ export const LensSimulator = ({ graduationValues }: LensSimulatorProps) => {
     setIndex(parseFloat(value));
   };
 
-const toNumber = (v: string, fallback: number) => {
-  const n = Number(v);
-  return Number.isFinite(n) ? n : fallback;
-};
+  const toNumber = (v: string, fallback: number) => {
+    const n = Number(v);
+    return Number.isFinite(n) ? n : fallback;
+  };
 
-const lensThickness = calculateThickness({
-  sphere: toNumber(graduationValues.ESF, 0),
-  cylinder: toNumber(graduationValues.CIL, 0),
-  diameter: toNumber(graduationValues.DIAM, 20),
-  index,
-});
+  const calculate = calculateThickness({
+    sphere: toNumber(graduationValues.ESF, 0),
+    cylinder: toNumber(graduationValues.CIL, 0),
+    diameter: toNumber(graduationValues.DIAM, 20),
+    index,
+  });
 
+  const converter = Number(graduationValues.ESF) - Number(graduationValues.CIL);
 
-  console.log(graduationValues);
-  const lala = ((lensThickness * 25.4) / 96) * 20;
+  const positiveLens = {
+    borderLeftWidth: `${calculate * 2}px`, borderRightWidth: `${calculate}px`, borderTopWidth: "8px", borderBottomWidth: "8px", borderStyle: "solid"
+  }
+
+  const negativeLens = {
+    borderLeftWidth: `${calculate}px`, RightWidth: `${calculate}px`, borderTopWidth: `${calculate * 2}px`, BottomWidth: `${calculate * 2}px`, borderStyle: "solid",
+  }
+  const lensThickness = converter > 0 ? positiveLens : negativeLens;
+
   return (
-    <div className="h-96 w-1/2 bg-violet-800 flex flex-col gap-8 justify-center items-center">
-      {" "}
+    <div className="h-96 w-1/2 flex flex-col gap-8 justify-center items-center">
       <SelectSimulator onValueSelect={handleValueSelect} />
-      <div
-        className="bg-red-500 h-60 ease-in-out duration-300"
-        style={{ width: `${lala}px` }}
-      ></div>
+      <p>se estima que el grosor es de {calculate}mm</p>
+      <div className="bg-red-500 h-80 ease-in-out duration-300" style={ lensThickness } />
     </div>
   );
+
+
 };
