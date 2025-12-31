@@ -95,8 +95,10 @@ const ThicknessSimulator = () => {
         </ul>
       ) : null}
       <LensSimulator graduationValues={finalValues} />
+
     </section>
   );
 };
 
 export default ThicknessSimulator;
+

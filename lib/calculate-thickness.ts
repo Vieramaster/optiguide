@@ -7,8 +7,8 @@ type Lens = {
 
 // Ajustes por índice
 const ADJUST: Record<number, number> = {
-  1.5: 0.94,
-  1.56: 0.59, // ajustado
+  1.5: 0.75,   // actualizado
+  1.56: 0.55,
   1.59: 0.45,
   1.6: 0.435,
   1.67: 0.40,
@@ -17,7 +17,7 @@ const ADJUST: Record<number, number> = {
 
 // Exponentes por índice
 const EXPONENT: Record<number, number> = {
-  1.5: 0.64,
+  1.5: 0.62,   // calibrado
   1.56: 0.68,
   1.59: 0.74,
   1.6: 0.80,
