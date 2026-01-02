@@ -20,23 +20,23 @@ export const LensSimulator = ({ graduationValues }: LensSimulatorProps) => {
     return Number.isFinite(n) ? n : fallback;
   };
 
-  const calculatedSize = calculateThickness({
+
+const totalThickness = calculateThickness({
     sphere: toNumber(graduationValues.ESF, 0),
     cylinder: toNumber(graduationValues.CIL, 0),
     diameter: toNumber(graduationValues.DIAM, 20),
     index,
   });
 
-const roundedSize = Number(calculatedSize.toFixed(2));
 
 
-  const isPositive = Number(graduationValues.ESF) > 0;
+  const isPositive = Number(graduationValues.ESF) >= 0;
 
   return (
     <div className="h-96 w-1/2 flex flex-col gap-8 justify-center items-center">
       <SelectSimulator onValueSelect={handleValueSelect} />
-      <p>se estima que el grosor es de {roundedSize}mm</p>
-      <LensSVG isPositive={isPositive} size={roundedSize}/>
+      <p>se estima que el grosor es de {totalThickness}mm</p>
+      <LensSVG isPositive={isPositive} size={totalThickness}/>
     </div>
   );
 };

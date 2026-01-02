@@ -15,10 +15,10 @@ const ThicknessSimulator = () => {
     EJE: "",
     DIAM: "",
   });
+  type ErrorState = Partial<Record<graduationType, string>>;
 
-  const [error, setError] = useState<Record<graduationType, string> | null>(
-    null
-  );
+  const [error, setError] = useState<ErrorState | null>({});
+
   const [finalValues, setFinalValues] = useState<GraduationValueType>({
     ESF: "0",
     CIL: "0",
@@ -38,6 +38,15 @@ const ThicknessSimulator = () => {
     const keys = Object.keys(simulatorGraduationData) as graduationType[];
 
     const newErrors: Record<string, string> = {};
+
+    // validación ESF + CIL
+    if (Math.abs(Number(inputsValues.ESF) + Number(inputsValues.CIL)) > 20) {
+      setError((prev) => ({
+        ...(prev ?? {}),
+        ESF: "la conversión total no debe pasar de las 20 dioptrias",
+      }));
+      return;
+    }
 
     keys.forEach((key) => {
       const val = Number(inputsValues[key]);
@@ -68,7 +77,7 @@ const ThicknessSimulator = () => {
     setFinalValues({ ...inputsValues });
   };
 
-  console.log(error);
+
   return (
     <section className="w-full h-full  p-10 flex flex-col gap-8 text-center">
       <HeaderSimulator
@@ -85,9 +94,9 @@ const ThicknessSimulator = () => {
         onClickGraduation={handleClickGraduation}
       />
       {error ? (
-        <ul>
+        <ul className=" mx-auto p-3 bg-primary-foreground rounded-md text-left">
           {Object.entries(error).map(([key, value]) => (
-            <li key={key}>
+            <li key={key} className="">
               <span className="font-semibold">{`${key} :`}</span>
               <span className="italic"> {value}</span>
             </li>
@@ -95,10 +104,8 @@ const ThicknessSimulator = () => {
         </ul>
       ) : null}
       <LensSimulator graduationValues={finalValues} />
-
     </section>
   );
 };
 
 export default ThicknessSimulator;
-
