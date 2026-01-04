@@ -1,16 +1,18 @@
 "use client";
+//COMPONENTS
 import { InputsSimulator } from "@/components/inputs-simulator";
 import { HeaderSimulator } from "@/components/header-simulator";
-import { GraduationKeysArray } from "@/lib/graduations-array";
-import { LensSimulator } from "@/components/lens-simulator";
 import { ErrorListSimulator } from "@/components/error-list-simulator";
-
+import { LensSimulator } from "@/components/lens-simulator";
+//DATA
+import { GraduationKeysArray } from "@/lib/graduations-array";
+//HOOKS
 import { useLensSimulator } from "@/hooks/use-lens-simulator";
+
+
 const ThicknessSimulator = () => {
 
   const { inputsValues, finalValues, error, handleChangeGraduation, handleClickGraduation } = useLensSimulator()
-
-
 
   return (
     <section className="w-full h-full  p-10 flex flex-col gap-8 text-center">
@@ -28,7 +30,8 @@ const ThicknessSimulator = () => {
         onClickGraduation={handleClickGraduation}
       />
       {error && <ErrorListSimulator {...{ error }} />}
-      <LensSimulator graduationValues={finalValues} />
+      <LensSimulator values={finalValues} />
+      
     </section>
   );
 };

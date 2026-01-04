@@ -1,42 +1,22 @@
 import { SelectSimulator } from "./select-simulator";
-import { GraduationValueType } from "@/types/simulator-types";
-import { calculateThickness } from "@/lib/calculate-thickness";
-import { useState } from "react";
 import { LensSVG } from "./ui/LensSVG";
+import { useLensSVG } from "@/hooks/use-lens-svg";
+import { GraduationValueType } from "@/types/simulator-types";
 
 interface LensSimulatorProps {
-  graduationValues: GraduationValueType;
+  values: GraduationValueType 
 }
 
-export const LensSimulator = ({ graduationValues }: LensSimulatorProps) => {
-  const [index, setIndex] = useState(1.5);
+export const LensSimulator = ({ values }: LensSimulatorProps) => {
 
-  const handleValueSelect = (value: string) => {
-    setIndex(parseFloat(value));
-  };
+  const  { handleValueSelect, totalThickness, isPositive} = useLensSVG(values)
 
-  const toNumber = (v: string, fallback: number) => {
-    const n = Number(v);
-    return Number.isFinite(n) ? n : fallback;
-  };
-
-
-const totalThickness = calculateThickness({
-    sphere: toNumber(graduationValues.ESF, 0),
-    cylinder: toNumber(graduationValues.CIL, 0),
-    diameter: toNumber(graduationValues.DIAM, 20),
-    index,
-  });
-
-
-
-  const isPositive = Number(graduationValues.ESF) >= 0;
 
   return (
     <div className="h-96 w-1/2 flex flex-col gap-8 justify-center items-center">
       <SelectSimulator onValueSelect={handleValueSelect} />
       <p>se estima que el grosor es de {totalThickness}mm</p>
-      <LensSVG isPositive={isPositive} size={totalThickness}/>
+      <LensSVG {...isPositive} size={totalThickness}/>
     </div>
   );
 };
