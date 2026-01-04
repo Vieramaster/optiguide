@@ -1,81 +1,15 @@
 "use client";
 import { InputsSimulator } from "@/components/inputs-simulator";
-import { useState } from "react";
-
-import { simulatorGraduationData } from "@/data/simulator-graduation-data";
-import { graduationType, GraduationValueType } from "@/types/simulator-types";
 import { HeaderSimulator } from "@/components/header-simulator";
 import { GraduationKeysArray } from "@/lib/graduations-array";
 import { LensSimulator } from "@/components/lens-simulator";
+import { ErrorListSimulator } from "@/components/error-list-simulator";
 
+import { useLensSimulator } from "@/hooks/use-lens-simulator";
 const ThicknessSimulator = () => {
-  const [inputsValues, setInputsValues] = useState<GraduationValueType>({
-    ESF: "",
-    CIL: "",
-    EJE: "",
-    DIAM: "",
-  });
-  type ErrorState = Partial<Record<graduationType, string>>;
 
-  const [error, setError] = useState<ErrorState | null>({});
+  const { inputsValues, finalValues, error, handleChangeGraduation, handleClickGraduation } = useLensSimulator()
 
-  const [finalValues, setFinalValues] = useState<GraduationValueType>({
-    ESF: "0",
-    CIL: "0",
-    EJE: "0",
-    DIAM: "60",
-  });
-  const handleChangeGraduation = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    const { name, value } = event.target;
-    setInputsValues((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-  const handleClickGraduation = () => {
-    const keys = Object.keys(simulatorGraduationData) as graduationType[];
-
-    const newErrors: Record<string, string> = {};
-
-    // validación ESF + CIL
-    if (Math.abs(Number(inputsValues.ESF) + Number(inputsValues.CIL)) > 20) {
-      setError((prev) => ({
-        ...(prev ?? {}),
-        ESF: "la conversión total no debe pasar de las 20 dioptrias",
-      }));
-      return;
-    }
-
-    keys.forEach((key) => {
-      const val = Number(inputsValues[key]);
-      const { min, max, step } = simulatorGraduationData[key];
-
-      if (!Number.isFinite(val)) {
-        newErrors[key] = "debe ser un número";
-        return;
-      }
-
-      if (val < min || val > max) {
-        newErrors[key] = `debe estar entre ${min} y ${max}`;
-        return;
-      }
-
-      if ((val - min) % step !== 0) {
-        newErrors[key] = `debe ser múltiplo de ${step}`;
-        return;
-      }
-    });
-
-    if (Object.keys(newErrors).length > 0) {
-      setError(newErrors);
-      return;
-    }
-
-    setError(null);
-    setFinalValues({ ...inputsValues });
-  };
 
 
   return (
@@ -93,16 +27,7 @@ const ThicknessSimulator = () => {
         onChangevalues={handleChangeGraduation}
         onClickGraduation={handleClickGraduation}
       />
-      {error ? (
-        <ul className=" mx-auto p-3 bg-primary-foreground rounded-md text-left">
-          {Object.entries(error).map(([key, value]) => (
-            <li key={key} className="">
-              <span className="font-semibold">{`${key} :`}</span>
-              <span className="italic"> {value}</span>
-            </li>
-          ))}
-        </ul>
-      ) : null}
+      {error && <ErrorListSimulator {...{ error }} />}
       <LensSimulator graduationValues={finalValues} />
     </section>
   );
