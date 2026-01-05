@@ -14,7 +14,7 @@ export const LensSVG = ({ size, isPositive }: LensSVGProps) => {
   return (
     <svg
       viewBox="-100 -500 200 1000"
-      className="h-80 w-80 ease-in duration-200"
+      className="h-80 w-80  mx-auto"
     >
       <path d={path} fill="black" />
     </svg>

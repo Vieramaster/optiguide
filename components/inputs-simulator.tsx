@@ -44,7 +44,7 @@ export const InputsSimulator = ({
       <Button
         onClick={onClickGraduation}
         type="button"
-        className=" lg:self-end "
+        className=" place-self-end lg:self-end "
         disabled={isDisabled}
       >
         Calcular

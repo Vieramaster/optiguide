@@ -15,7 +15,7 @@ interface SelectSimulatorProps {
 export const SelectSimulator = ({ onValueSelect }: SelectSimulatorProps) => {
   return (
     <Select onValueChange={onValueSelect}>
-      <SelectTrigger className="w-[180px]">
+      <SelectTrigger className="w-56 mx-auto ">
         <SelectValue placeholder="Seleccionar indice" />
       </SelectTrigger>
       <SelectContent>
@@ -23,7 +23,7 @@ export const SelectSimulator = ({ onValueSelect }: SelectSimulatorProps) => {
           <SelectLabel>Indices</SelectLabel>
 
           {CRYSTAL_INDEXES_DATA.map(({ name, index }) => (
-            <SelectItem key={index} value={index}>
+            <SelectItem key={index} value={index} className="">
               <span className="mr-3 font-semibold">{index}</span>
               <span className="italic">{name}</span>
             </SelectItem>
