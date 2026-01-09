@@ -27,7 +27,7 @@ const LibraryPage = async ({ params }: PageProps) => {
   const content = await fs.readFile(filePath, "utf-8");
 
   return (
-    <article className="px-10 pt-5 pb-20 flex flex-col gap-6 mx-auto max-w-4xl">
+    <article className="px-10 pt-5 pb-20 flex flex-col gap-6 mx-auto xl:px-28">
       <MarkdownRenderer>{content}</MarkdownRenderer>
     </article>
   );
