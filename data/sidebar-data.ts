@@ -18,7 +18,8 @@ export const sidebarData: SidebarDataType = {
       url: "/simulador-de-espesor",
       icon: DraftingCompass,
     },
-    {
+    /**
+     * {
       title: "Filtro de lentes",
       url: "#",
       icon: ScanSearch,
@@ -33,6 +34,7 @@ export const sidebarData: SidebarDataType = {
       url: "#",
       icon: Smile,
     },
+     */
   ],
   library: [
     {
