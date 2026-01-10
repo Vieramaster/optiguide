@@ -2,7 +2,7 @@
 
 ## Monofocales
 
-Un cristal monofocal es una lente de gafa que tiene una única graduación en toda su superficie, corrigiendo la visión a una sola distancia (cerca, lejos o intermedia) para problemas como [miopía](/miopia), [astigmatismo](/astigmatismo), [hipermetropía](/hipermetropia) y hasta [prisma](/prisma). Sus ventajas incluyen una visión clara y nítida para una distancia específica, ideal para actividades diarias como leer o conducir, y la capacidad de ser fabricadas de forma delgada y ligera para un mejor aspecto estético y comodidad, especialmente con graduaciones altas.
+Un cristal monofocal es una lente de gafa que tiene una única graduación en toda su superficie, corrigiendo la visión a una sola distancia (cerca, lejos o intermedia) para problemas como [miopía](/miopia), [astigmatismo](/libreria/astigmatismo), [hipermetropía](/libreria/hipermetropia) y hasta [prisma](/libreria/prisma). Sus ventajas incluyen una visión clara y nítida para una distancia específica, ideal para actividades diarias como leer o conducir, y la capacidad de ser fabricadas de forma delgada y ligera para un mejor aspecto estético y comodidad, especialmente con graduaciones altas.
 
 ### Diseño específico:
 
@@ -16,7 +16,7 @@ Un cristal monofocal es una lente de gafa que tiene una única graduación en to
 
 ## Bifocales
 
-Son utilizadas mayormente para personas con [presbicia](/presbicia), tienen 2 zonas visuales separadas por un segmento llamado **película**, donde en la parte superior del cristal va la visión de lejos, y en parte inferior, que es donde esta la película, la vision de cerca.  
+Son utilizadas mayormente para personas con [presbicia](/libreria/presbicia), tienen 2 zonas visuales separadas por un segmento llamado **película**, donde en la parte superior del cristal va la visión de lejos, y en parte inferior, que es donde esta la película, la vision de cerca.  
 Son prácticos, pero la linea puede resultar estética o visualmente molesta para algunos usuarios.
 
 ### Ventajas
@@ -47,7 +47,7 @@ Son prácticos, pero la linea puede resultar estética o visualmente molesta par
 
 ## Ocupacionales ( o también llamados "de oficina")
 
-Los lentes ocupacionales son gafas diseñadas para personas con [presbicia](/presbicia) que necesitan ver con claridad en distancias cortas e intermedias, especialmente en entornos laborales como oficinas o trabajos frente a pantallas. Están pensados para facilitar el enfoque en documentos, computadoras y conversaciones dentro de un rango de hasta cuatro metros, ofreciendo una solución práctica y especializada para la rutina diaria.
+Los lentes ocupacionales son gafas diseñadas para personas con [presbicia](/libreria/presbicia) que necesitan ver con claridad en distancias cortas e intermedias, especialmente en entornos laborales como oficinas o trabajos frente a pantallas. Están pensados para facilitar el enfoque en documentos, computadoras y conversaciones dentro de un rango de hasta cuatro metros, ofreciendo una solución práctica y especializada para la rutina diaria.
 
 ### Ventajas
 
@@ -65,7 +65,7 @@ Los lentes ocupacionales son gafas diseñadas para personas con [presbicia](/pre
 - Algunos modelos requieren adaptación según la posición habitual de trabajo.
 - Mayor costo que lentes monofocales simples.
 
-## ![imagen ilustrativa de un lente progresivo](/images/library/basic-concepts/tipos-de-lentes-6.webp)
+![imagen ilustrativa de un lente progresivo](/images/library/basic-concepts/tipos-de-lentes-6.webp)
 
 ## Lentes trifocales (multifocales con tres zonas)
 

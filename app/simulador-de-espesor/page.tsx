@@ -24,6 +24,12 @@ const ThicknessSimulator = () => {
   const handleClick = () => {
     setShowSimulator((prev) => !prev);
   };
+
+  type thicknessType = {
+    A: string
+    B: string
+  }
+  const [thickness,setThickness] = useState({A:"", B:""})
   return (
     <section className="w-full h-full  p-10 flex flex-col gap-8 text-center">
       <HeaderSimulator

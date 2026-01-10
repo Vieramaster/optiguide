@@ -15,7 +15,7 @@ Es importante revisar que estás interpretando la línea correspondiente a cada 
 
 ## Esfera (E): corrección para ver de cerca o de lejos
 
-El valor de **esfera** indica si la corrección está orientada a mejorar la visión lejana o cercana. Los números negativos corresponden a la [miopía](/miopia) y los positivos a la [hipermetropía](/hipermetropia). Si se muestra como “0.00” o directamente no figura, significa que no se requiere corrección esférica.  
+El valor de **esfera** indica si la corrección está orientada a mejorar la visión lejana o cercana. Los números negativos corresponden a la [miopía](/libreria/miopia) y los positivos a la [hipermetropía](/libreria/hipermetropia). Si se muestra como “0.00” o directamente no figura, significa que no se requiere corrección esférica.  
 Este valor influye en el espesor de las lentes, por lo que una graduación más alta, ya sea positiva o negativa, requiere una selección precisa del índice y el diámetro del material.
 
 ![como ve una persona con miopia y con hipermetropía](/images/library/basic-concepts/como-leer-una-receta-2.webp)
@@ -24,7 +24,7 @@ Este valor influye en el espesor de las lentes, por lo que una graduación más 
 
 ## Cilindro (C o CIL) y Eje (° o AXIS): corrección del astigmatismo
 
-Cuando la receta incluye [astigmatismo](/astigmatismo), se detallan dos valores: el **cilindro**, que indica la cantidad de corrección, y el **eje**, que define la orientación exacta entre 0° y 180°. En recetas sin [astigmatismo](/astigmatismo), ambos campos pueden aparecer vacíos porque solo se corrige la esfera.  
+Cuando la receta incluye [astigmatismo](/libreria/astigmatismo), se detallan dos valores: el **cilindro**, que indica la cantidad de corrección, y el **eje**, que define la orientación exacta entre 0° y 180°. En recetas sin [astigmatismo](/libreria/astigmatismo), ambos campos pueden aparecer vacíos porque solo se corrige la esfera.  
 El cilindro puede escribirse con signo positivo o negativo, según el criterio del profesional, aunque esto no modifica la graduación real. El eje, por su parte, no cambia la potencia del lente, sino la dirección en la que actúa la corrección. Si el lente se rota o se monta de forma incorrecta, la nitidez puede verse afectada aun con la graduación adecuada.
 
 ![como ve una persona normal y una con astigmatismo](/images/library/basic-concepts/como-leer-una-receta-3.webp)
@@ -33,14 +33,14 @@ El cilindro puede escribirse con signo positivo o negativo, según el criterio d
 
 ## ADD (Adición): visión de cerca
 
-La adición es un valor positivo que se suma a la graduación de lejos para permitir enfocar de cerca. Se usa en casos de [/presbicia] y es un dato clave en lentes [multifocales, bifocales o de lectura](/tipos-de-lentes). No cambia la visión de lejos, solo agrega la potencia necesaria para tareas cercanas como leer, celular o computadora.
+La adición es un valor positivo que se suma a la graduación de lejos para permitir enfocar de cerca. Se usa en casos de [/presbicia] y es un dato clave en lentes [multifocales, bifocales o de lectura](/libreria/tipos-de-lentes). No cambia la visión de lejos, solo agrega la potencia necesaria para tareas cercanas como leer, celular o computadora.
 
 ---
 
 ## Distancia Pupilar (DP o PD)
 
 La distancia pupilar indica cuántos milímetros separan el centro de cada pupila, y define dónde deben ubicarse los lentes dentro del armazón. Puede figurar como un único valor total o dividida por ojo para mayor precisión. Una DP mal medida puede causar mareos, visión borrosa o sensación de que la imagen está “corrida”, aun con la graduación correcta.
-Dato útil: en lentes [multifocales](/tipos-de-lentes), prismas o [astigmatismos](/astigmatismos) altos, es recomendable usar DP por ojo, no total, para evitar errores de centrado.
+Dato útil: en lentes [multifocales](/libreria/tipos-de-lentes), prismas o [astigmatismos](/libreria/astigmatismos) altos, es recomendable usar DP por ojo, no total, para evitar errores de centrado.
 
 ![imagen mostrando una regla midiendo DP sobre un rostro](/images/library/basic-concepts/como-leer-una-receta-7.webp)
 
@@ -49,7 +49,7 @@ Dato útil: en lentes [multifocales](/tipos-de-lentes), prismas o [astigmatismos
 
 ## Prismas (Δ o PRISM)
 
-Los prismas aparecen en la receta cuando los ojos no están alineados en el mismo punto, debido a condiciones como [forias](/forias) (exoforia, endoforia, hiperforia o hipoforia). No cambian la graduación del lente; su función es redirigir la imagen. Un prisma desvía la luz antes de llegar al ojo para que ambas imágenes coincidan y el cerebro pueda fusionarlas, ayudando en casos de visión doble, molestias al leer, cerrar un ojo para enfocar o sensación de cansancio visual. Su efecto existe solo mientras se usan los anteojos; al quitarlos, todo vuelve a su estado original. No corrigen la estructura ni los músculos del ojo, simplemente mejoran la comodidad y la alineación percibida. Además, requieren un centrado muy preciso, por lo que funcionan mejor en monturas firmes y no demasiado flexibles o abiertas.
+Los prismas aparecen en la receta cuando los ojos no están alineados en el mismo punto, debido a condiciones como [forias](/libreria/forias) (exoforia, endoforia, hiperforia o hipoforia). No cambian la graduación del lente; su función es redirigir la imagen. Un prisma desvía la luz antes de llegar al ojo para que ambas imágenes coincidan y el cerebro pueda fusionarlas, ayudando en casos de visión doble, molestias al leer, cerrar un ojo para enfocar o sensación de cansancio visual. Su efecto existe solo mientras se usan los anteojos; al quitarlos, todo vuelve a su estado original. No corrigen la estructura ni los músculos del ojo, simplemente mejoran la comodidad y la alineación percibida. Además, requieren un centrado muy preciso, por lo que funcionan mejor en monturas firmes y no demasiado flexibles o abiertas.
 
 ### Caracteristicas
 
