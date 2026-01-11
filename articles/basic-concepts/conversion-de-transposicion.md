@@ -25,11 +25,7 @@ La **transposición** es el proceso mediante el cual una receta en cilindro posi
 
 **Transposición**
 
-*Nueva esfera:* +2.00 + (+1.00) = +3.00  --- *Nuevo cilindro:* –1.00  --- *Nuevo eje:* 90°
-
-
-
-**Resultado:** +3.00 –1.00 × 90°
+*Nueva esfera:* -1.50 + (+1.00) = -0.50  --- *Nuevo cilindro:* –1.00  --- *Nuevo eje:* 90°
 
 ---
 
@@ -41,9 +37,6 @@ La **transposición** es el proceso mediante el cual una receta en cilindro posi
 **Transposición**
 
 *Nueva esfera:* –1.50 + (–0.75) = –2.25  --- *Nuevo cilindro:* +0.75  --- *Nuevo eje:* 135°
-
-
-**Resultado:** –2.25 +0.75 × 135°
 
 ---
 

@@ -113,6 +113,14 @@ export const sidebarData: SidebarDataType = {
         // Posición ocular
         { title: "Forias", url: "/libreria/forias" },
         { title: "Tropías o estrabismos", url: "/libreria/tropias-o-estrabismos" },
+        //Patologias oculares
+        { title: "Cataratas", url: "/libreria/cataratas" },
+        { title: "Glaucoma", url: "/libreria/glaucoma" },
+        {title: "ambliopía", url: "/libreria/ambliopia"},
+        {title: "ojo seco", url: "/libreria/ojo-seco"},
+
+        {title: "Daltonismo", url: "/libreria/daltonismo"},
+        {title: "fotofobia", url: "/libreria/fotofobia"},
       ],
     },
   ],
