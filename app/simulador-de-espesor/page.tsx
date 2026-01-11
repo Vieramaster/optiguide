@@ -11,6 +11,7 @@ import { GraduationKeysArray } from "@/lib/graduations-array";
 import { useLensSimulator } from "@/hooks/use-lens-simulator";
 import { useState } from "react";
 
+
 const ThicknessSimulator = () => {
   const {
     inputsValues,
@@ -27,6 +28,8 @@ const ThicknessSimulator = () => {
 
 
   const [thickness,setThickness] = useState({A:0, B:0})
+
+
   
   return (
     <section className="w-full h-full  p-10 flex flex-col gap-8 text-center">
@@ -44,7 +47,7 @@ const ThicknessSimulator = () => {
         onClickGraduation={handleClickGraduation}
       />
       {error && <ErrorListSimulator {...{ error }} />}
-      <div className="flex justify-center  gap-6 xl:hidden">
+      <div className="flex justify-center  gap-6 lg:hidden">
         <Button onClick={handleClick} disabled={showSimulator}>
           A
         </Button>
@@ -53,9 +56,9 @@ const ThicknessSimulator = () => {
           B
         </Button>
       </div>
-      <div className="flex  w-full justify-center xl:justify-evenly mt-5">
-        <LensSimulator values={finalValues} isShow={showSimulator} setThickness={setThickness} side="A"/>
-        <LensSimulator values={finalValues} isShow={!showSimulator} setThickness={setThickness} side="B"/>
+      <div className="flex  w-full justify-center lg:justify-evenly mt-5">
+        <LensSimulator values={finalValues} isShow={showSimulator}  {...{thickness, setThickness}} side="A"/>
+        <LensSimulator values={finalValues} isShow={!showSimulator}  {...{thickness, setThickness}} side="B"/>
       </div>
     </section>
   );
