@@ -25,11 +25,9 @@ const ThicknessSimulator = () => {
     setShowSimulator((prev) => !prev);
   };
 
-  type thicknessType = {
-    A: string
-    B: string
-  }
-  const [thickness,setThickness] = useState({A:"", B:""})
+
+  const [thickness,setThickness] = useState({A:0, B:0})
+  
   return (
     <section className="w-full h-full  p-10 flex flex-col gap-8 text-center">
       <HeaderSimulator
@@ -56,8 +54,8 @@ const ThicknessSimulator = () => {
         </Button>
       </div>
       <div className="flex  w-full justify-center xl:justify-evenly mt-5">
-        <LensSimulator values={finalValues} isShow={showSimulator} />
-        <LensSimulator values={finalValues} isShow={!showSimulator} />
+        <LensSimulator values={finalValues} isShow={showSimulator} setThickness={setThickness} side="A"/>
+        <LensSimulator values={finalValues} isShow={!showSimulator} setThickness={setThickness} side="B"/>
       </div>
     </section>
   );

@@ -1,3 +1,4 @@
+
 # Armazones
 
 Los armazones son la estructura que sostiene los cristales oftálmicos y permite que las gafas se adapten al rostro de cada usuario. Además de su función práctica, cumplen un rol estético y expresan estilo personal. Su diseño influye en la comodidad, la resistencia y la apariencia general, por lo que elegir un armazón adecuado es tan relevante como seleccionar la graduación correcta.
