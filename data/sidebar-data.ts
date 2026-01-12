@@ -18,6 +18,11 @@ export const sidebarData: SidebarDataType = {
       url: "/simulador-de-espesor",
       icon: DraftingCompass,
     },
+    {
+      title: "Lentes según el rostro",
+      url: "/lentes-segun-el-rostro",
+      icon: Smile,
+    },
     /**
      * {
       title: "Filtro de lentes",
@@ -31,7 +36,7 @@ export const sidebarData: SidebarDataType = {
     },
     {
       title: "Anteojos según el rostro",
-      url: "#",
+      url: "/anteojos-segun-el-rostro",
       icon: Smile,
     },
      */
@@ -116,11 +121,11 @@ export const sidebarData: SidebarDataType = {
         //Patologias oculares
         { title: "Cataratas", url: "/libreria/cataratas" },
         { title: "Glaucoma", url: "/libreria/glaucoma" },
-        {title: "ambliopía", url: "/libreria/ambliopia"},
-        {title: "ojo seco", url: "/libreria/ojo-seco"},
+        { title: "ambliopía", url: "/libreria/ambliopia" },
+        { title: "ojo seco", url: "/libreria/ojo-seco" },
 
-        {title: "Daltonismo", url: "/libreria/daltonismo"},
-        {title: "fotofobia", url: "/libreria/fotofobia"},
+        { title: "Daltonismo", url: "/libreria/daltonismo" },
+        { title: "fotofobia", url: "/libreria/fotofobia" },
       ],
     },
   ],
