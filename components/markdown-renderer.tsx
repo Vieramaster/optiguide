@@ -10,8 +10,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table"
-
+} from "@/components/ui/table";
 
 interface MarkdownProps {
   children: string;
@@ -30,11 +29,10 @@ export const MarkdownRenderer = ({ children }: MarkdownProps) => (
       ul: OlList,
       table: Table,
       thead: TableHeader,
-      tr:TableRow,
-      th:TableHead,
+      tr: TableRow,
+      th: TableHead,
       tbody: TableBody,
-      td:TableCell,
-
+      td: TableCell,
     }}
   >
     {children}
@@ -81,35 +79,40 @@ const Links = ({ children, href, ...props }: React.ComponentProps<"a">) => {
   );
 };
 
-const MDImage = ({ ...props }: React.ComponentProps<"img">) => (<img className="mx-auto my-5 rounded-xl w-full lg:w-2/3" {...props}/>)
-const MDImage2 = ({ ...props }: React.ComponentProps<"img">) => {
-  // Only allow string src, as required by next/image
-  // Destructure only what Next/Image expects, and provide fallback for alt and required sizing.
-  const {
-    src,
-    alt = "",
-    width,
-    height,
-    ...rest
-  } = props as React.ComponentProps<"img">;
+type MDImageProps = React.ImgHTMLAttributes<HTMLImageElement>;
 
-  // Next/Image requires src to be string, not undefined, not Blob.
-  if (typeof src !== "string" || !src) {
-    // If no src available, render nothing (or consider a placeholder).
-    return null;
-  }
+export const MDImage = ({
+  src,
+  alt,
+  width,
+  height,
+  className,
+  ...rest
+}: MDImageProps) => {
+  // Validar que src sea un string (Next.js Image no acepta Blob)
+  if (!src || typeof src !== "string") return null;
 
-  // Next/Image prefers width/height for static import, but these may be missing in Markdown.
-  // You may want to set default width/height or 'fill' as appropriate for your layout.
+  // Convertir width y height a números si vienen como strings
+  const imageWidth = width
+    ? typeof width === "string"
+      ? parseInt(width)
+      : width
+    : 600;
+  const imageHeight = height
+    ? typeof height === "string"
+      ? parseInt(height)
+      : height
+    : 400;
+
   return (
     <Image
       src={src}
-      alt={alt}
-      width={width ? Number(width) : 600}
-      height={height ? Number(height) : 400}
+      alt={alt || ""}
+      width={imageWidth}
+      height={imageHeight}
+      sizes="(max-width: 1024px) 100vw, 800px"
+      className={`mx-auto my-5 rounded-xl w-full lg:w-1/2 ${className ?? ""}`}
       {...rest}
-      className="mx-auto my-5 rounded-xl w-full lg:w-1/2"
     />
   );
 };
-

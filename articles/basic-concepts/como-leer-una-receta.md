@@ -33,7 +33,7 @@ El cilindro puede escribirse con signo positivo o negativo, según el criterio d
 
 ## ADD (Adición): visión de cerca
 
-La adición es un valor positivo que se suma a la graduación de lejos para permitir enfocar de cerca. Se usa en casos de [/presbicia] y es un dato clave en lentes [multifocales, bifocales o de lectura](/libreria/tipos-de-lentes). No cambia la visión de lejos, solo agrega la potencia necesaria para tareas cercanas como leer, celular o computadora.
+La adición es un valor positivo que se suma a la graduación de lejos para permitir enfocar de cerca. Se usa en casos de [presbicia](/libreria/presbicia) y es un dato clave en lentes [multifocales, bifocales o de lectura](/libreria/tipos-de-lentes). No cambia la visión de lejos, solo agrega la potencia necesaria para tareas cercanas como leer, celular o computadora.
 
 ---
 

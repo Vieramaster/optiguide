@@ -27,7 +27,7 @@ Estas lentes tienden a ser más gruesas que las de índices superiores, por lo q
 - Alto valor Abbe (≈58), lo que reduce aberraciones y mejora la nitidez.
 - Liviano en comparación con el vidrio.
 - Se raya con relativa facilidad si no tiene [tratamiento anti rayas](/libreria/tratamiento-anti-rayas).
-- Buena aceptación de tratamientos: [antirreflejo](/libreria/antireflejante), [[filtro azul](/filtro-azul)](/libreria/filtro-azul), endurecido y coloraciones de tinte.
+- Buena aceptación de tratamientos: [antirreflejo](/libreria/antireflejante), [filtro azul](/libreria/filtro-azul), endurecido y coloraciones de tinte.
 - Resistencia a impactos correcta, pero inferior a Policarbonato o Trivex.
 - Estabilidad en el color con el tiempo; no amarillea fácilmente.
 
@@ -108,7 +108,7 @@ Es uno de los índices más utilizados en la actualidad, especialmente para quie
 - Valor Abbe entre 34 y 36 (menor que CR-39, con leve incremento de aberraciones periféricas).
 - Más liviano y más delgado que el 1.50.
 - Resistencia a impactos similar o un poco superior a CR-39, pero no comparable con policarbonato o Trivex.
-- Acepta sin problema tratamientos: [antirreflejo](/antireflejante), [anti rayas](/libreria/tratamiento-anti-rayas), [filtro azul](/libreria/filtro-azul) y coloraciones por tinte.
+- Acepta sin problema tratamientos: [antirreflejo](/libreria/antireflejante), [anti rayas](/libreria/tratamiento-anti-rayas), [filtro azul](/libreria/filtro-azul) y coloraciones por tinte.
 - Buena estabilidad y durabilidad con el uso cotidiano.
 - No ideal para trabajos o actividades con alto riesgo de golpes.
 
@@ -271,7 +271,7 @@ Suele considerarse una opción premium, utilizada por quienes desean lentes fino
 - Recomendado para graduaciones altas (aprox. ±5.00 a ±8.00 por estética).
 - Reduce notablemente el espesor del borde y el efecto lupa.
 - Más liviano que el vidrio y que los índices bajos.
-- Mayor reflejo superficial, recomendable usar [antirreflejo]((/libreria/antireflejante) siempre.
+- Mayor reflejo superficial, recomendable usar [antirreflejo](/libreria/antireflejante) siempre.
 
 ### Datos del material
 

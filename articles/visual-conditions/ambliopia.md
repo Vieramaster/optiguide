@@ -39,7 +39,7 @@ El mayor peligro de la ambliopía es que **es invisible**. El niño no se queja 
 * Problemas para calcular distancias (el niño choca con cosas o es "torpe" en deportes).
 * Un ojo que parece moverse hacia adentro o hacia afuera.
 
-![Prueba de agudeza visual infantil con optotipos de figuras](/images/library/pathologies/pediatric-eye-test.webp)
+![Prueba de agudeza visual infantil con optotipos de figuras](/images/library/visual-conditions/ambliopia-1.webp)
 
 ---
 

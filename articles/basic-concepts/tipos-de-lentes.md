@@ -2,7 +2,7 @@
 
 ## Monofocales
 
-Un cristal monofocal es una lente de gafa que tiene una única graduación en toda su superficie, corrigiendo la visión a una sola distancia (cerca, lejos o intermedia) para problemas como [miopía](/miopia), [astigmatismo](/libreria/astigmatismo), [hipermetropía](/libreria/hipermetropia) y hasta [prisma](/libreria/prisma). Sus ventajas incluyen una visión clara y nítida para una distancia específica, ideal para actividades diarias como leer o conducir, y la capacidad de ser fabricadas de forma delgada y ligera para un mejor aspecto estético y comodidad, especialmente con graduaciones altas.
+Un cristal monofocal es una lente de gafa que tiene una única graduación en toda su superficie, corrigiendo la visión a una sola distancia (cerca, lejos o intermedia) para problemas como [miopía](/libreria/miopia), [astigmatismo](/libreria/astigmatismo), [hipermetropía](/libreria/hipermetropia) y hasta [prisma](/libreria/prisma). Sus ventajas incluyen una visión clara y nítida para una distancia específica, ideal para actividades diarias como leer o conducir, y la capacidad de ser fabricadas de forma delgada y ligera para un mejor aspecto estético y comodidad, especialmente con graduaciones altas.
 
 ### Diseño específico:
 

@@ -6,7 +6,7 @@ El glaucoma es un grupo de enfermedades oculares que dañan el nervio óptico, c
 
 Se le conoce como el "enemigo silencioso" porque, en sus etapas iniciales, no suele presentar síntomas ni dolor. La pérdida de visión comienza por la periferia (visión lateral) y es tan gradual que el paciente no nota el cambio hasta que la enfermedad está muy avanzada.
 
-![Diagrama del ojo mostrando la presión intraocular y el daño al nervio óptico](/images/library/pathologies/glaucoma-ojo.webp)
+![Diagrama del ojo mostrando la presión intraocular y el daño al nervio óptico](/images/library/visual-conditions/glaucoma-1.png)
 
 ---
 
@@ -38,7 +38,7 @@ Aunque cualquier persona puede desarrollarlo, los siguientes factores aumentan e
 * **Uso de corticoides:** El uso prolongado de gotas u otros medicamentos con cortisona.
 * **Etnia:** Mayor incidencia en personas de ascendencia africana, hispana o asiática.
 
-![Gráfico comparativo de visión normal vs visión con glaucoma avanzado](/images/library/pathologies/glaucoma-vision.webp)
+![Gráfico comparativo de visión normal vs visión con glaucoma avanzado](/images/library/visual-conditions/glaucoma-2.webp)
 
 ---
 

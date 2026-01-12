@@ -52,7 +52,7 @@ Existen diferentes opciones para corregir el astigmatismo, según su grado y las
 ## Tipos de astigmatismo
 
 - **Astigmatismo simple:** Afecta a un solo eje visual.  
-- **Astigmatismo compuesto:** Se presenta junto con otro defecto refractivo, como la [miopía](/miopia) o la [hipermetropía](/hipermetropia).  
+- **Astigmatismo compuesto:** Se presenta junto con otro defecto refractivo, como la [miopía](/libreria/miopia) o la [hipermetropía](/libreria/hipermetropia).  
 - **Astigmatismo mixto:** Un eje enfoca la imagen delante de la retina y el otro detrás de ella.
 
 ![representación de los diferentes tipos de astigmatismo](/images/library/basic-concepts/como-leer-una-receta-3.webp)

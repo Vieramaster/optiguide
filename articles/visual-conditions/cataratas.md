@@ -6,7 +6,7 @@ Una catarata es una opacidad de la lente natural del ojo, llamada **cristalino**
 
 Esta condición es la causa más común de pérdida de visión en personas mayores de 40 años y es la causa principal de ceguera tratable en el mundo. La sensación es similar a mirar a través de una ventana empañada o un parabrisas sucio.
 
-![Diagrama comparativo de un ojo sano y un ojo con catarata](/images/library/pathologies/cataratas-comparacion.webp)
+![Diagrama comparativo de un ojo sano y un ojo con catarata](/images/library/visual-conditions/cataracts-1.webp)
 
 ---
 
@@ -34,7 +34,7 @@ El desarrollo de las cataratas suele ser lento. Al principio, podrías no notar 
 5. **Cambios en la percepción de colores:** Los colores se ven más apagados, amarillentos o menos vibrantes.
 6. **Cambios frecuentes en la graduación:** Sentir que los lentes actuales ya no sirven en muy poco tiempo.
 
-![Ejemplo visual de cómo ve una persona con cataratas avanzadas](/images/library/pathologies/vision-cataratas.webp)
+![Ejemplo visual de cómo ve una persona con cataratas avanzadas](/images/library/visual-conditions/cataracts-2.webp)
 
 ---
 

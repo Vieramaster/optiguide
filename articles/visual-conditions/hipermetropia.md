@@ -35,7 +35,7 @@ En el caso de los niños o jóvenes que padecen hipermetropía, y si su graduaci
 
 
 ### Hipermetropía en mayores de 40 años
-En el caso de los pacientes mayores de 40 años, la hipermetropía puede confundirse con la [presbicia o vista cansada](/presbicia), otro defecto refractivo provocado por la pérdida de la capacidad de acomodación del cristalino y que se debe al paso del tiempo. Los síntomas de la presbicia suelen comenzar a aparecer a partir de los 40 o 45 años y progresan hasta los 60 años.
+En el caso de los pacientes mayores de 40 años, la hipermetropía puede confundirse con la [presbicia o vista cansada](/libreria/presbicia), otro defecto refractivo provocado por la pérdida de la capacidad de acomodación del cristalino y que se debe al paso del tiempo. Los síntomas de la presbicia suelen comenzar a aparecer a partir de los 40 o 45 años y progresan hasta los 60 años.
 
 
 ---

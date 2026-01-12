@@ -1,7 +1,7 @@
 # Tratamiento anti rayas
 
 Es un recubrimiento transparente que se aplica sobre lentes oftálmologicos para hacerlos más resistentes a rayaduras y microarañazos, Está compuesto por polimeros duros que forman una película y uniforme, diseñada para proteger la superficie del lente sin alterar su graduacion ni su transparencia.  
-Sirve para proteger del desgaste diario causado por contacto con paños, polvo, uñas u objetos pequeños. Ademas, ayuda a preservar otros tratamientos aplicados al lente, como el [tratamiento antireflejante](/antirreflejante) o los [tratamientos hidrofóbico y oleófobico](/hidrofobico-y-oleofobico), evitando que se deterioren rápidamente.
+Sirve para proteger del desgaste diario causado por contacto con paños, polvo, uñas u objetos pequeños. Ademas, ayuda a preservar otros tratamientos aplicados al lente, como el [tratamiento antireflejante](/libreria/antireflejante) o los [tratamientos hidrofóbico y oleófobico](/libreria/hidrofobico-y-oleofobico), evitando que se deterioren rápidamente.
 
 
 ![gif ilustrativo de un lente con rayas y uno con el tratamiento](/images/library/treatments/tratamiento-anti-rayas-1.webp)
