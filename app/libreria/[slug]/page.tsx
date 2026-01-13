@@ -2,17 +2,41 @@ import { promises as fs } from "fs";
 import path from "path";
 import { notFound } from "next/navigation";
 import { findMarkdownFile } from "@/lib/findmarkdown-file";
-import { MarkdownRenderer } from "@/components/markdown-renderer";
-import { generateStaticParams } from "@/lib/generate-static-params";
-
+import { MarkdownRenderer } from "@/components/articles/markdown-renderer";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
-// 1. Generación Estática: Next.js crea los HTML en el build
-generateStaticParams()
 
-// 2. El componente es limpio: solo se enfoca en el "camino feliz"
+// Generación Estática: Next.js crea los HTML en el build
+export async function generateStaticParams() {
+  const articlesDir = path.join(process.cwd(), "articles");
+  const slugs: { slug: string }[] = [];
+
+  async function findMarkdownFiles(dir: string) {
+    const entries = await fs.readdir(dir, { withFileTypes: true });
+
+    for (const entry of entries) {
+      const fullPath = path.join(dir, entry.name);
+
+      if (entry.isDirectory()) {
+        await findMarkdownFiles(fullPath);
+      } else if (entry.isFile() && entry.name.endsWith(".md")) {
+        const slug = entry.name.replace(/\.md$/, "");
+        slugs.push({ slug });
+      }
+    }
+  }
+
+  try {
+    await findMarkdownFiles(articlesDir);
+    return slugs;
+  } catch (error) {
+    console.error("Error generating static params:", error);
+    return [];
+  }
+}
+
 const LibraryPage = async ({ params }: PageProps) => {
   const { slug } = await params;
 

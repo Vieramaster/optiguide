@@ -1,6 +1,7 @@
 import { GraduationInput } from "./graduation-input";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import { GraduationValueType, graduationType } from "@/types/simulator-types";
+import { validateGraduationInputs } from "@/lib/validation/graduation-validation";
 
 interface InputsSimulatorProps {
   GraduationKeys: graduationType[];
@@ -16,16 +17,7 @@ export const InputsSimulator = ({
   onClickGraduation,
 
 }: InputsSimulatorProps) => {
-  const { ESF, CIL, EJE } = graduationValue;
-
-  const esf = Number(ESF);
-  const cil = Number(CIL);
-  const eje = Number(EJE);
-
-  const esfInvalid = esf === 0;
-  const cilEjeInvalid = (cil === 0) !== (eje === 0);
-
-  const isDisabled = esfInvalid || cilEjeInvalid;
+  const isDisabled = !validateGraduationInputs(graduationValue);
 
   return (
 <div className="flex flex-wrap gap-2  lg:flex-row  lg:gap-4 justify-center items-center ">

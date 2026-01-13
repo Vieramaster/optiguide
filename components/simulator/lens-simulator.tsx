@@ -1,5 +1,5 @@
 import { SelectSimulator } from "./select-simulator";
-import { LensSVG } from "./ui/LensSVG";
+import { LensSVG } from "../ui/LensSVG";
 import { useLensSVG } from "@/hooks/use-lens-svg";
 import { GraduationValueType } from "@/types/simulator-types";
 import { useThicknessSync } from "@/hooks/use-thickness-sync";

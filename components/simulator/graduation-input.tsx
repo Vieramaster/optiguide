@@ -1,5 +1,5 @@
 import { Label } from "@radix-ui/react-dropdown-menu";
-import { Input } from "./ui/input";
+import { Input } from "../ui/input";
 import { simulatorGraduationData } from "@/data/simulator-graduation-data";
 
 type GraduationInputProps = {

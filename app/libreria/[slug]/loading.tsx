@@ -1,5 +1,5 @@
 "use client"
-import { ArticleSkeleton } from "@/components/ui/article-skeleton";
+import { ArticleSkeleton } from "@/components/articles/article-skeleton";
 
 const Loading = () => <ArticleSkeleton />;
 
