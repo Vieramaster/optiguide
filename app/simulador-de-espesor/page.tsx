@@ -38,7 +38,7 @@ const ThicknessSimulator = () => {
         onChangevalues={handleChangeGraduation}
         onClickGraduation={handleClickGraduation}
       />
-      {error && <ErrorListSimulator {...{ error }} />}
+      {error && <ErrorListSimulator error={error} />}
       <div className="flex justify-center  gap-6 lg:hidden">
         <Button onClick={toggleSimulator} disabled={showSimulator}>
           A
@@ -52,13 +52,15 @@ const ThicknessSimulator = () => {
         <LensSimulator
           values={finalValues}
           isShow={showSimulator}
-          {...{ thickness, setThickness }}
+          thickness={thickness}
+          setThickness={setThickness}
           side="A"
         />
         <LensSimulator
           values={finalValues}
           isShow={!showSimulator}
-          {...{ thickness, setThickness }}
+          thickness={thickness}
+          setThickness={setThickness}
           side="B"
         />
       </div>

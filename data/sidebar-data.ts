@@ -33,12 +33,7 @@ export const sidebarData: SidebarDataType = {
       title: "Pasillo de multifocales",
       url: "#",
       icon: CircleSlash2,
-    },
-    {
-      title: "Anteojos según el rostro",
-      url: "/anteojos-segun-el-rostro",
-      icon: Smile,
-    },
+    }
      */
   ],
   library: [

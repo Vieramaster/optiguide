@@ -5,14 +5,13 @@
 ### Requisitos
 
 - Node.js 18+
-- Editor de código (VS Code recomendado)
+- Editor de código (Cursor)
 - Git
 
 ### Extensiones Recomendadas (VS Code)
 
 - ESLint
 - Prettier
-- TypeScript Vue Plugin (Volar)
 - Tailwind CSS IntelliSense
 
 ## 📝 Agregar un Nuevo Artículo

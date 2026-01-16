@@ -8,14 +8,14 @@ import { GraduationValueType } from "@/types/simulator-types";
 export const validateGraduationInputs = (
   graduationValue: GraduationValueType
 ): boolean => {
-  const { ESF, CIL, EJE } = graduationValue;
+  const { ESF, CIL, EJE, DIAM } = graduationValue;
 
   const esf = Number(ESF);
   const cil = Number(CIL);
   const eje = Number(EJE);
-
+  const diam = Number(DIAM);
   const esfInvalid = esf === 0;
   const cilEjeInvalid = (cil === 0) !== (eje === 0);
-
-  return !esfInvalid && !cilEjeInvalid;
+  const diamIsvalid = diam !== null && diam !== undefined && diam !== 0 && !isNaN(diam);
+  return !esfInvalid && !cilEjeInvalid && diamIsvalid;
 };
