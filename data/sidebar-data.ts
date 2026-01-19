@@ -15,12 +15,12 @@ export const sidebarData: SidebarDataType = {
   tools: [
     {
       title: "Simulador de espesor de lentes",
-      url: "/simulador-de-espesor",
+      url: "/herramientas/simulador-de-espesor",
       icon: DraftingCompass,
     },
     {
       title: "Lentes según el rostro",
-      url: "/lentes-segun-el-rostro",
+      url: "/herramientas/lentes-segun-el-rostro",
       icon: Smile,
     },
     /**
