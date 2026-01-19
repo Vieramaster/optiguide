@@ -134,11 +134,7 @@ export const faceShapes = [
         imageURL: "/images/face-shapes/frames/geometric.webp",
         femaleOnly: false,
       },
-      {
-        name: "Hexagonal",
-        imageURL: "/images/face-shapes/frames/hexagonal.webp",
-        femaleOnly: false,
-      },
+
       {
         name: "Octogonal",
         imageURL: "/images/face-shapes/frames/octagonal.webp",
