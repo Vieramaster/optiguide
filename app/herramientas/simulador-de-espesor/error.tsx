@@ -1,9 +1,20 @@
 
 "use client"
-import { ErrorPage } from "@/components/ui/error-page";
 
-const Error = ({ error }: { error: Error & { digest?: string } }) => (
-  <ErrorPage message={error.message} />
-);
+import { ErrorPage } from "@/components/ui/error-page"
 
-export default Error;
+interface ErrorProps {
+  error: Error & { digest?: string }
+  reset: () => void
+}
+
+const Error = ({ error, reset }: ErrorProps) => (
+  <ErrorPage
+    title="Error en el simulador"
+    message="Ha ocurrido un error al cargar el simulador de espesor. Intenta recargar la página."
+    showRetry
+    onRetry={reset}
+  />
+)
+
+export default Error

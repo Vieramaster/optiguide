@@ -1,6 +1,12 @@
 import fs from "fs";
 import path from "path";
 
+/**
+ * Busca recursivamente un archivo Markdown por su slug
+ * @param root - Directorio raíz donde buscar
+ * @param slug - Slug del archivo (sin extensión .md)
+ * @returns Ruta completa del archivo encontrado o null si no existe
+ */
 export const findMarkdownFile = (root: string, slug: string): string | null => {
   const target = `${slug}.md`;
   const queue: string[] = [root];
