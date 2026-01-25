@@ -32,7 +32,7 @@ export const FaceShapeCard = ({ name, imageURL, frames, description }: FaceShape
 
       <PopoverContent className="w-80">
         <FaceShapeFrames frames={frames} />
-        <p className="text-center italic mt-2">{description}</p>
+      
       </PopoverContent>
     </Popover>
   );

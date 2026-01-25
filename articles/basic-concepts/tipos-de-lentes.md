@@ -54,8 +54,7 @@ Los lentes ocupacionales son gafas diseñadas para personas con [presbicia](/lib
 - Facilitan el enfoque relajado, previniendo cansancio, sequedad ocular y dolores de cabeza.
 - Ayudan a mantener buena postura al evitar acercar los ojos innecesariamente a la pantalla.
 - Ofrecen un campo de visión amplio en distancias cercanas e intermedias.
-- Transición suave entre distintas graduaciones, mejorando el cambio de enfoque entre tareas.
-- Pueden complementarse con lentes progresivos para corrección más específica en entornos de oficina.
+- Transición suave entre las 2 graduaciones, mejorando el cambio de enfoque entre tareas.
 - El cambio entre las distancias focales es gradual y natural. No es visible el cambio de graduación
 
 ### Desventajas

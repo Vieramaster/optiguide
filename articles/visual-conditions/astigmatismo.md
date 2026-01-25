@@ -4,7 +4,7 @@
 
 El astigmatismo es un error de refracción que ocurre cuando la córnea o el cristalino presentan una curvatura irregular. En lugar de tener una forma perfectamente redondeada, su superficie es más ovalada, lo que provoca que la luz no se enfoque en un único punto de la retina, sino en varios.
 
-Como resultado, la visión se vuelve borrosa o distorsionada tanto de cerca como de lejos. El astigmatismo puede estar presente desde el nacimiento y suele tener un componente hereditario, aunque también puede desarrollarse a lo largo de la vida.
+Esto genera una visión poco nítida y distorsionada, tanto de cerca como de lejos. El astigmatismo puede estar presente desde el nacimiento y suele tener un componente hereditario, aunque también puede desarrollarse a lo largo de la vida.
 
 ![visión distorsionada en una persona con astigmatismo](/images/library/visual-conditions/astigmatismo-2.webp)
 
@@ -12,9 +12,8 @@ Como resultado, la visión se vuelve borrosa o distorsionada tanto de cerca como
 
 ## ¿Cuáles son sus causas?
 
-En un ojo sin astigmatismo, la córnea tiene una curvatura uniforme en todas sus direcciones, similar a un balón de baloncesto. En cambio, en un ojo con astigmatismo, la curvatura es irregular, parecida a un balón de rugby.
-
-Esta irregularidad provoca que los rayos de luz se enfoquen en distintos puntos de la retina, generando una imagen poco nítida.
+En un ojo sin astigmatismo, la córnea tiene una curvatura uniforme en todas sus direcciones, similar a un balón de baloncesto. En cambio, en un ojo con astigmatismo, la curvatura es irregular, parecida a un balón de rugby.  
+Esa irregularidad provoca que los rayos de luz se enfoquen en distintos puntos de la retina, generando una imagen desenfocada.
 
 Las causas más frecuentes son:
 
@@ -27,19 +26,22 @@ Las causas más frecuentes son:
 
 ---
 
-### Síntomas frecuentes
+## Síntomas frecuentes
 
-- Visión borrosa o distorsionada a cualquier distancia.  
+Las personas con astigmatismo suelen experimentar:
+
 - Dificultad para percibir líneas rectas con nitidez.  
-- Necesidad de entornar los ojos para enfocar.  
+- Necesidad de entornar los ojos para enfocar mejor.  
 - Fatiga visual, especialmente al leer o usar pantallas.  
-- Dolores de cabeza frecuentes.
+- Dolores de cabeza frecuentes.  
+
+El síntoma más característico es la **visión borrosa o distorsionada**, que puede presentarse a cualquier distancia.
 
 ---
 
 ## ¿Cómo se corrige el astigmatismo?
 
-Existen diferentes opciones para corregir el astigmatismo, según su grado y las características del ojo:
+Existen diferentes opciones para corregirlo, según su grado y las características del ojo:
 
 - **Gafas con lentes cilíndricas**, que compensan la curvatura irregular.  
 - **Lentes de contacto tóricas**, diseñadas específicamente para este defecto visual.  
@@ -61,6 +63,6 @@ Existen diferentes opciones para corregir el astigmatismo, según su grado y las
 
 ## El astigmatismo en la vida diaria
 
-El astigmatismo afecta a una gran parte de la población y, aunque no suele ser una condición incapacitante, puede dificultar actividades cotidianas como leer, conducir o trabajar frente a pantallas durante largos periodos.
+El astigmatismo afecta a una gran parte de la población y, aunque no suele ser una condición incapacitante, puede dificultar actividades cotidianas como leer, conducir o trabajar frente a pantallas durante largos periodos.  
 
 Una corrección adecuada mejora significativamente la calidad de vida, el rendimiento académico y laboral, así como la comodidad visual. La detección temprana es especialmente importante en niños, ya que muchas veces no son conscientes de que su visión no es normal.

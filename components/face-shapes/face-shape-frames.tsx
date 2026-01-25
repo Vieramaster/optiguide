@@ -16,7 +16,7 @@ export const FaceShapeFrames = ({ frames }: FaceShapeFramesProps) => {
             height={36}
             className={femaleOnly ? "bg-pink-200 rounded-lg" : ""}
           />
-          <p className="text-center text-sm italic">{name}</p>
+  
         </li>
       ))}
     </ul>

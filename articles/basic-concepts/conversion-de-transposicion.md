@@ -4,7 +4,6 @@ La **transposición** es el proceso mediante el cual una receta en cilindro posi
 
 ---
 
-
 ## Cómo se realiza el cálculo
 
 ### Pasos esenciales:
@@ -13,30 +12,28 @@ La **transposición** es el proceso mediante el cual una receta en cilindro posi
 - **Invertir el signo del cilindro** → de positivo a negativo o de negativo a positivo.  
 - **Ajustar el eje** → se modifica 90° (por ejemplo: de 180° a 90°, o de 45° a 135°).
 
-
 ![imagen ilustrativa de receta](/images/library/basic-concepts/conversion-de-transposicion-1.webp)
+
 ### Ejemplos prácticos
 ---
 
 **Ejemplo 1 — Receta original:**
 
-
 *Esfera:* –1.50 --- *Cilindro:* –0.75 --- *Eje:* 45°
 
 **Transposición**
 
-*Nueva esfera:* -1.50 + (+1.00) = -0.50  --- *Nuevo cilindro:* –1.00  --- *Nuevo eje:* 90°
+*Nueva esfera:* –1.50 + (–0.75) = –2.25  --- *Nuevo cilindro:* +0.75  --- *Nuevo eje:* 135°
 
 ---
 
 **Ejemplo 2 — Receta original**
 
-*Esfera:* –1.50  -- *Cilindro:* –0.75  --- *Eje:* 45°
-
+*Esfera:* –3.00 --- *Cilindro:* +2.00 --- *Eje:* 60°
 
 **Transposición**
 
-*Nueva esfera:* –1.50 + (–0.75) = –2.25  --- *Nuevo cilindro:* +0.75  --- *Nuevo eje:* 135°
+*Nueva esfera:* –3.00 + (+2.00) = –1.00 --- *Nuevo cilindro:* –2.00  --- *Nuevo eje:* 150°
 
 ---
 
