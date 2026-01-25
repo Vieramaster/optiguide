@@ -1,15 +1,13 @@
-export type FrameType = {
-    name: string;
-    imageURL: string;
-    femaleOnly?: boolean;
-  };
-  
+import {framesIds} from "../data/frames-ids"
+
+
   export type FaceShapeType = {
     name: string;
     description:string
     imageURL: string;
-    frames: readonly FrameType[];
+    frameIds:  FrameIdType[];
   };
   
-  export type FramesType = FaceShapeType["frames"];
+// 🔹 Type con todas las keys
+export type FrameIdType = keyof typeof framesIds;
 

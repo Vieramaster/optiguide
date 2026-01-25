@@ -8,7 +8,7 @@ import {
 import { FaceShapeFrames } from "./face-shape-frames";
 import { FaceShapeType } from "@/types/face-shape-types";
 
-export const FaceShapeCard = ({ name, imageURL, frames, description }: FaceShapeType) => {
+export const FaceShapeCard = ({ name, imageURL, frameIds, description }: FaceShapeType) => {
   return (
     <Popover>
       <PopoverTrigger asChild>
@@ -31,7 +31,7 @@ export const FaceShapeCard = ({ name, imageURL, frames, description }: FaceShape
       </PopoverTrigger>
 
       <PopoverContent className="w-80">
-        <FaceShapeFrames frames={frames} />
+        <FaceShapeFrames frames={frameIds} />
       
       </PopoverContent>
     </Popover>

@@ -3,7 +3,7 @@ import { FaceShapeGrid } from "@/components/face-shapes/face-shape-grid";
 const Page = () => {
   return (
     <section className="p-10 text-center">
-      <h1 className="text-3xl font-bold mb-16">
+      <h1 className="text-3xl font-bold mb-16 ">
         Cómo elegir las gafas perfectas según la forma de los rostros
       </h1>
 

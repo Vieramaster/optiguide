@@ -1,14 +1,16 @@
 import Image from "next/image";
-import { FramesType } from "@/types/face-shape-types";
+import type { FrameIdType } from "@/types/face-shape-types"
+import { framesIds } from "@/data/frames-ids";
 
 interface FaceShapeFramesProps {
-  frames: FramesType;
+  frames: FrameIdType[];
 }
 export const FaceShapeFrames = ({ frames }: FaceShapeFramesProps) => {
   return (
     <ul className="flex flex-wrap gap-3 justify-center items-center">
-      {frames.map(({ name, imageURL, femaleOnly }) => (
-        <li key={name}>
+      {frames.map(item => {
+        const { imageURL, name, femaleOnly } = framesIds[item];
+        return (<li key={item}>
           <Image
             src={imageURL}
             alt={name}
@@ -16,9 +18,8 @@ export const FaceShapeFrames = ({ frames }: FaceShapeFramesProps) => {
             height={36}
             className={femaleOnly ? "bg-pink-200 rounded-lg" : ""}
           />
-  
-        </li>
-      ))}
+        </li>)
+      })}
     </ul>
   );
 };
