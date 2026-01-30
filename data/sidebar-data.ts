@@ -3,8 +3,6 @@ import type { SidebarDataType } from "@/types/sidebar-data-types";
 //ICOS
 import {
   DraftingCompass,
-  ScanSearch,
-  CircleSlash2,
   Sparkle,
   Smile,
   Eye,

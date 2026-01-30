@@ -14,7 +14,7 @@ export const faceShapes = [
   {
     name: "Rectángulo redondeado",
     description: "Alargado pero con curvas suaves.",
-    imageURL: "/images/face-shapes/faces/oblong-soft.webp",
+    imageURL: "/images/face-shapes/faces/rounded-rectangle.webp",
     frameIds: ["aviator", "wayfarer", "round", "pantos", "geometric", "shield"],
   },
   {

@@ -3,7 +3,7 @@ import type { FrameIdType } from "@/types/face-shape-types"
 import { framesIds } from "@/data/frames-ids";
 
 interface FaceShapeFramesProps {
-  frames: FrameIdType[];
+  frames: readonly FrameIdType[];
 }
 export const FaceShapeFrames = ({ frames }: FaceShapeFramesProps) => {
   return (

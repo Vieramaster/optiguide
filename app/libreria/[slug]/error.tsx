@@ -7,7 +7,7 @@ interface ErrorProps {
   reset: () => void
 }
 
-const Error = ({ error, reset }: ErrorProps) => (
+const Error = ({ reset }: ErrorProps) => (
   <ErrorPage
     title="Error al cargar el artículo"
     message="No se pudo cargar el contenido solicitado. Puede que el artículo no exista o haya un problema temporal."

@@ -11,7 +11,7 @@ interface ErrorProps {
 const Error = ({ error, reset }: ErrorProps) => (
   <ErrorPage
     title="Error en el simulador"
-    message="Ha ocurrido un error al cargar el simulador de espesor. Intenta recargar la página."
+    message={error.message || "Ha ocurrido un error al cargar el simulador de espesor. Intenta recargar la página."}
     showRetry
     onRetry={reset}
   />

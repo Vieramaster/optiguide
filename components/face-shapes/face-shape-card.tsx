@@ -8,7 +8,7 @@ import {
 import { FaceShapeFrames } from "./face-shape-frames";
 import { FaceShapeType } from "@/types/face-shape-types";
 
-export const FaceShapeCard = ({ name, imageURL, frameIds, description }: FaceShapeType) => {
+export const FaceShapeCard = ({ name, imageURL, frameIds }: FaceShapeType) => {
   return (
     <Popover>
       <PopoverTrigger asChild>

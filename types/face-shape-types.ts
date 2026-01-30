@@ -5,7 +5,7 @@ import {framesIds} from "../data/frames-ids"
     name: string;
     description:string
     imageURL: string;
-    frameIds:  FrameIdType[];
+    frameIds: readonly FrameIdType[];
   };
   
 // 🔹 Type con todas las keys
