@@ -6,7 +6,7 @@ El ojo seco es una afección ocular frecuente que ocurre cuando los ojos **no pr
 
 Las lágrimas cumplen una función esencial: mantienen el ojo húmedo, protegen frente a agentes externos y permiten una visión clara. Cuando este equilibrio se altera, aparecen molestias persistentes que pueden afectar la comodidad visual y la calidad de vida.
 
-![ojo seco e irritado por falta de lubricación](/images/library/visual-conditions/dry-eye-1.webp)
+![ojo seco e irritado por falta de lubricación](/images/library/visual-conditions/ojo-seco-1.webp)
 
 ---
 
@@ -26,10 +26,12 @@ Además, los cambios hormonales —especialmente durante la menopausia—, ciert
 
 Se produce cuando existe una **disminución en la producción de la parte acuosa de la lágrima**. Esto provoca una lubricación insuficiente de la superficie ocular y puede generar síntomas como ardor, picazón, irritación, sensación de cuerpo extraño y visión borrosa.
 
-![imagen ilustrativa de ojo secoacuodeficiente](/images/library/visual-conditions/dry-eye-2.webp)
+![imagen ilustrativa de ojo seco acuodeficiente](/images/library/visual-conditions/ojo-seco-2.webp)
 ### Ojo seco evaporativo
 
 Se caracteriza por una alteración en la **capa lipídica de la lágrima**, lo que provoca una evaporación excesiva. Esta capa es fundamental para mantener la humedad ocular y evitar que la lágrima se evapore demasiado rápido.
+
+![imagen ilustrativa de ojo seco evaporativo](/images/library/visual-conditions/ojo-seco-3.webp)
 
 ---
 
@@ -61,8 +63,8 @@ El tratamiento depende de la causa y de la gravedad de los síntomas. En casos l
 
 Cuando el ojo seco es persistente, pueden indicarse geles o pomadas oftálmicas, tratamientos específicos para los párpados y ajustes ambientales, como el uso de humidificadores. En casos moderados o severos, el oftalmólogo puede recomendar tratamientos médicos destinados a mejorar la calidad de la lágrima y reducir la inflamación.
 
-![aplicación de lágrimas artificiales para el ojo seco](/images/library/visual-conditions/ojo-seco-3.webp)
 
+![aplicación de lágrimas artificiales para el ojo seco](/images/library/visual-conditions/ojo-seco-4.webp)
 ---
 
 ## Consejos para aliviar el ojo seco en el día a día

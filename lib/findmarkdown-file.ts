@@ -7,23 +7,23 @@ import path from "path";
  * @param slug - Slug del archivo (sin extensión .md)
  * @returns Ruta completa del archivo encontrado o null si no existe
  */
-export const findMarkdownFile = (root: string, slug: string): string | null => {
-  const target = `${slug}.md`;
-  const queue: string[] = [root];
+export const findMarkdownFile = (rootDirectory: string, slug: string): string | null => {
+  const targetFileName = `${slug}.md`;
+  const directoriesToSearch: string[] = [rootDirectory];
 
-  while (queue.length) {
-    const current = queue.shift()!;
-    const entries = fs.readdirSync(current, { withFileTypes: true });
+  while (directoriesToSearch.length) {
+    const currentDirectory = directoriesToSearch.shift()!;
+    const directoryEntries = fs.readdirSync(currentDirectory, { withFileTypes: true });
 
-    // Archivos primero
-    const file = entries.find(e => e.isFile() && e.name === target);
-    if (file) return path.join(current, file.name);
+    // Check for target file first
+    const targetFile = directoryEntries.find(entry => entry.isFile() && entry.name === targetFileName);
+    if (targetFile) return path.join(currentDirectory, targetFile.name);
 
-    // Directorios a la cola
-    queue.push(
-      ...entries
-        .filter(e => e.isDirectory())
-        .map(e => path.join(current, e.name))
+    // Add subdirectories to search queue
+    directoriesToSearch.push(
+      ...directoryEntries
+        .filter(entry => entry.isDirectory())
+        .map(entry => path.join(currentDirectory, entry.name))
     );
   }
 

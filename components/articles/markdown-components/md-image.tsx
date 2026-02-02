@@ -28,7 +28,7 @@ export const MDImage = ({
       width={imageWidth}
       height={imageHeight}
       sizes="(max-width: 1024px) 100vw, 800px"
-      className={`mx-auto my-5 rounded-xl w-[75%] ${className ?? ""}`}
+      className={`mx-auto my-5 rounded-xl w-[75%] 2xl:w-[50%] ${className ?? ""}`}
       {...rest}
     />
   );

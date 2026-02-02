@@ -16,7 +16,43 @@ La causa más común del daltonismo es genética y está relacionada con alterac
 
 Aunque es menos habitual, el daltonismo también puede adquirirse a lo largo de la vida. Esto puede ocurrir como consecuencia de enfermedades oculares, lesiones en la retina o el nervio óptico, enfermedades neurológicas, envejecimiento o el uso de ciertos medicamentos que alteran la percepción cromática.
 
-![comparación de visión normal y visión con daltonismo](/images/library/visual-conditions/daltonismo-2.webp)
+
+---
+
+## Tipos de daltonismo
+
+El daltonismo se clasifica según el tipo de cono afectado (L, M o S). Las principales formas son:
+
+### Daltonismo rojo-verde (los más frecuentes)
+Afectan a los conos **L (rojo)** o **M (verde)**.
+
+- **Protanopia**:  Ausencia de conos L. El rojo se percibe muy oscuro o negro; confusión rojo-verde severa.
+
+- **Protanomalía**:  Conos L alterados. El rojo se ve más apagado; confusión rojo-verde leve.
+
+- **Deuteranopia**:  Ausencia de conos M. El verde se confunde con rojo y marrón.
+
+- **Deuteranomalía**: Conos M alterados. Es la forma más común; confusión rojo-verde moderada.
+
+### Daltonismo azul-amarillo
+
+Afectan a los conos **S (azul)**. Son poco frecuentes.
+
+- **Tritanopia**:   Ausencia de conos S. Dificultad para distinguir azul de verde y amarillo de violeta.
+
+- **Tritanomalía**:   Conos S alterados. Alteración leve de la percepción azul-amarillo.
+
+### Acromatopsia
+Forma muy rara.
+
+- **Acromatopsia completa**:  Ausencia funcional de todos los conos. Visión en blanco, negro y tonos de gris.
+
+- **Acromatopsia incompleta**:  Función parcial de los conos. Percepción del color muy limitada.
+
+
+### Simulación de los daltonismos más frecuentes
+
+![tipos de daltonismo](/images/library/visual-conditions/daltonismo-2.webp)
 
 ---
 
@@ -37,15 +73,8 @@ El diagnóstico del daltonismo se realiza mediante pruebas visuales específicas
 
 Además, el especialista puede realizar una evaluación oftalmológica completa para descartar otras alteraciones visuales y determinar el tipo y grado de daltonismo.
 
----
+![muestra del test de Ishihara](/images/library/visual-conditions/daltonismo-3.webp)
 
-## Tipos de daltonismo
-
-Existen distintos tipos de daltonismo, según los conos afectados. Los más comunes son:
-
-- **Daltonismo rojo-verde:** Es el más frecuente y dificulta diferenciar entre estos colores.  
-- **Daltonismo azul-amarillo:** Menos común, afecta a la percepción de estos tonos.  
-- **Acromatopsia:** Forma muy poco frecuente en la que se perciben los colores en blanco, negro y tonos de gris.
 
 ---
 
@@ -55,6 +84,6 @@ El daltonismo de origen genético no tiene cura. Sin embargo, existen ayudas que
 
 En algunos casos, el uso de gafas o lentes con filtros especiales puede ayudar a diferenciar mejor ciertos colores. Cuando el daltonismo es adquirido, el tratamiento se centra en abordar la causa subyacente, siempre que sea posible.
 
-![uso de filtros especiales para el daltonismo](/images/library/visual-conditions/daltonismo-3.webp)
+![uso de filtros especiales para el daltonismo](/images/library/visual-conditions/daltonismo-4.webp)
 
 ---

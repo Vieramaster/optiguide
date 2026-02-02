@@ -1,4 +1,4 @@
-export const framesIds = {
+export const framesData = {
     aviator: { name: "Aviador", imageURL: "/images/face-shapes/frames/aviator.webp", femaleOnly: false },
     round: { name: "Redondo", imageURL: "/images/face-shapes/frames/round.webp", femaleOnly: false },
     oval: { name: "Ovalado", imageURL: "/images/face-shapes/frames/oval.webp", femaleOnly: false },

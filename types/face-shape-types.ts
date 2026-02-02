@@ -1,4 +1,4 @@
-import {framesIds} from "../data/frames-ids"
+import {framesData} from "../data/frames-ids";
 
 
   export type FaceShapeType = {
@@ -7,7 +7,7 @@ import {framesIds} from "../data/frames-ids"
     imageURL: string;
     frameIds: readonly FrameIdType[];
   };
-  
+
 // 🔹 Type con todas las keys
-export type FrameIdType = keyof typeof framesIds;
+export type FrameIdType = keyof typeof framesData;
 

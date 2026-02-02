@@ -16,14 +16,14 @@ La fotofobia aparece cuando el sistema visual reacciona de forma exagerada a la 
 
 Entre las causas más frecuentes se encuentran:
 
-- **Problemas oculares:** Ojo seco, conjuntivitis, queratitis o inflamación del iris (uveítis).  
-- **Defectos visuales no corregidos:** Miopía, hipermetropía o astigmatismo sin la graduación adecuada.  
+- **Problemas oculares:** [Ojo seco](/libreria/ojo-seco), conjuntivitis, queratitis o inflamación del iris (uveítis).  
+- **Defectos visuales no corregidos:** [Miopía](/libreria/miopia), [hipermetropía](/libreria/hipermetropia) o [astigmatismo](/libreria/astigmatismo) sin la graduación adecuada.  
 - **Enfermedades neurológicas:** Migraña, traumatismos craneales o meningitis.  
 - **Uso prolongado de pantallas:** Exposición continua a luz azul sin descansos visuales.  
 - **Cirugías oculares recientes:** Especialmente tras procedimientos como LASIK o cataratas.  
 - **Medicamentos:** Algunos antibióticos, antidepresivos o fármacos neurológicos pueden aumentar la sensibilidad a la luz.
 
-![ojo reaccionando con sensibilidad a la luz intensa](/images/library/visual-conditions/fotofobia-2.webp)
+
 
 ---
 
@@ -49,6 +49,8 @@ El diagnóstico de la fotofobia se basa en una **evaluación oftalmológica comp
 - Exploración del fondo de ojo.  
 - En algunos casos, derivación a un especialista en neurología si se sospecha un origen neurológico.
 
+
+![revision en el oftalmologo](/images/library/visual-conditions/fotofobia-2.webp)
 ---
 
 ## ¿Cómo se trata la fotofobia?

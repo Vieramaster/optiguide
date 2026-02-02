@@ -1,17 +1,21 @@
-export const getThicknessMessage = (A: number, B: number, side: "A" | "B"): string => {
-  if (A === 0 || B === 0) return "";
+export const getThicknessMessage = (
+  thicknessA: number,
+  thicknessB: number,
+  currentSide: "A" | "B"
+): string => {
+  if (thicknessA === 0 || thicknessB === 0) return "";
 
-  const diffA = ((A - B) / B) * 100;
-  const diffB = ((B - A) / A) * 100;
+  const percentageDifferenceA = ((thicknessA - thicknessB) / thicknessB) * 100;
+  const percentageDifferenceB = ((thicknessB - thicknessA) / thicknessA) * 100;
 
-  if ( A > B ) {
-    return side === "A"
-      ? `un ${diffA.toFixed(1)}% más grueso que su contraparte`
-      : `un -${diffA.toFixed(1)}% más delgado que su contraparte`;
-  } else if ( B > A ) {
-    return side === "B"
-      ? `un ${diffB.toFixed(1)}% más grueso que su contraparte`
-      : `un -${diffB.toFixed(1)}% más delgado que su contraparte`;
+  if (thicknessA > thicknessB) {
+    return currentSide === "A"
+      ? `un ${percentageDifferenceA.toFixed(1)}% más grueso que su contraparte`
+      : `un -${percentageDifferenceA.toFixed(1)}% más delgado que su contraparte`;
+  } else if (thicknessB > thicknessA) {
+    return currentSide === "B"
+      ? `un ${percentageDifferenceB.toFixed(1)}% más grueso que su contraparte`
+      : `un -${percentageDifferenceB.toFixed(1)}% más delgado que su contraparte`;
   } else {
     return "el mismo grosor que su contraparte";
   }

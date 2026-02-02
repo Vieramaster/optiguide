@@ -1,13 +1,13 @@
 export const faceShapes = [
   {
     name: "Cuadrado",
-    description: "Mandíbula marcada, convienen formas suaves.",
+    description: "Mandíbula marcada, convienen las formas suaves.",
     imageURL: "/images/face-shapes/faces/square.webp",
     frameIds: ["round", "oval", "aviator", "pantos", "shield"],
   },
   {
     name: "Rectangular",
-    description: "Rostro alargado, conviene sumar curvas.",
+    description: "Rostro alargado, conviene sumar las curvas.",
     imageURL: "/images/face-shapes/faces/rectangular.webp",
     frameIds: ["round", "oval", "aviator", "pantos", "geometric", "shield"],
   },
@@ -19,7 +19,7 @@ export const faceShapes = [
   },
   {
     name: "Redondo",
-    description: "Curvas predominantes, convienen formas angulosas.",
+    description: "Curvas predominantes, convienen las formas angulosas.",
     imageURL: "/images/face-shapes/faces/round.webp",
     frameIds: ["rectangular", "square", "wayfarer", "geometric", "octagonal", "browline", "shield"],
   },
@@ -28,12 +28,6 @@ export const faceShapes = [
     description: "Mandíbula ancha, frente angosta.",
     imageURL: "/images/face-shapes/faces/triangle.webp",
     frameIds: ["aviator", "wayfarer", "browline", "geometric", "shield"],
-  },
-  {
-    name: "Triángulo invertido",
-    description: "Frente ancha, mentón fino.",
-    imageURL: "/images/face-shapes/faces/inverted-triangle.webp",
-    frameIds: ["aviator", "round", "oval", "pantos", "shield"],
   },
   {
     name: "Corazón",
