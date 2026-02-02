@@ -16,7 +16,7 @@ export const SelectSimulator = ({ onValueSelect }: SelectSimulatorProps) => {
   return (
     <Select onValueChange={onValueSelect}>
       <SelectTrigger className="w-56 mx-auto ">
-        <SelectValue placeholder="Seleccionar indice" />
+        <SelectValue placeholder="1.50 CR-39" />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>

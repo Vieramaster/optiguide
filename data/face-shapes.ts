@@ -30,6 +30,12 @@ export const faceShapes = [
     frameIds: ["aviator", "wayfarer", "browline", "geometric", "shield"],
   },
   {
+    name: "Triángulo invertido",
+    description: "Frente ancha, mentón fino.",
+    imageURL: "/images/face-shapes/faces/inverted-triangle.webp",
+    frameIds: ["aviator", "round", "oval", "pantos", "shield"],
+  },
+  {
     name: "Corazón",
     description: "Frente amplia, pómulos suaves.",
     imageURL: "/images/face-shapes/faces/heart.webp",
