@@ -21,36 +21,46 @@ export const sidebarData: SidebarDataType = {
       url: "/herramientas/lentes-segun-el-rostro",
       icon: Smile,
     },
-    /**
-     * {
-      title: "Filtro de lentes",
-      url: "#",
-      icon: ScanSearch,
-    },
-    {
-      title: "Pasillo de multifocales",
-      url: "#",
-      icon: CircleSlash2,
-    }
-     */
+
   ],
   library: [
     {
       title: "Conceptos básicos",
       icon: BookOpen,
       blocks: [
-        { title: "Tipos de lentes", url: "/libreria/tipos-de-lentes" },
-        { title: "¿Cómo leer una receta?", url: "/libreria/como-leer-una-receta" },
+        {
+          title: "¿Cómo leer una receta?",
+          url: "/libreria/como-leer-una-receta"
+        },
         {
           title: "Conversión de transposición",
           url: "/libreria/conversion-de-transposicion",
         },
-
-        { title: "Cristales y sus indices", url: "/libreria/cristales-y-sus-indices" },
         {
           title: "Armazones y sus materiales",
           url: "/libreria/armazones-y-sus-materiales",
         },
+        {
+          title: "Tipos de lentes",
+          url: "/libreria/tipos-de-lentes"
+        },
+
+        {
+          title: "Cristales y sus indices",
+          url: "/libreria/cristales-y-sus-indices"
+        },
+        {
+          title: "Colores de lentes",
+          url:"/libreria/colores-de-lentes"
+        },
+        {
+          title: "Ángulo pantoscópico",
+          url: "/libreria/angulo-pantoscopico"
+        },
+        {
+          title:"Tallado digital",
+          url:"/libreria/tallado-digital"
+        }
       ],
     },
     {

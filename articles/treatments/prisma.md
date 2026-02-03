@@ -6,7 +6,7 @@ Los lentes con prisma son una solución óptica diseñada para corregir problema
 
 ## ¿Qué es un prisma en óptica?
 
-Un prisma es un elemento transparente con superficies planas inclinadas que desvía la luz. En lentes oftálmicos, esta desviación se aprovecha para compensar la diferencia de alineación entre los ojos.  
+Es un elemento transparente con superficies planas inclinadas que desvía la luz. En lentes oftálmicos, esta desviación se aprovecha para compensar la diferencia de alineación entre los ojos.  
 Cuando existe una condición como [estrabismo](https://es.wikipedia.org/wiki/Estrabismo) o [diplopía](https://es.wikipedia.org/wiki/Diplop%C3%ADa), el prisma ayuda a que la imagen que llega a cada ojo se fusione correctamente en el cerebro.
 
 ![imagen ilustrativa de prisma en lentes](/images/library/treatments/prisma-1.webp)

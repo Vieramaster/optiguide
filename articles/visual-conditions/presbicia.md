@@ -1,6 +1,6 @@
 ## Presbicia: cuando los ojos también cumplen años
 
-La presbicia, también llamada “vista cansada”, es un cambio natural del ojo que aparece alrededor de los 40 o 45 años. No es una enfermedad, sino un proceso fisiológico: el cristalino pierde flexibilidad y ya no puede enfocar con la misma facilidad los objetos cercanos. Actividades cotidianas como leer, mirar el celular, coser o trabajar frente a una computadora empiezan a requerir más esfuerzo, y la visión cercana se vuelve borrosa o incómoda.  
+También llamada “vista cansada”, es un cambio natural del ojo que aparece alrededor de los 40 o 45 años. No es una enfermedad, sino un proceso fisiológico: el cristalino pierde flexibilidad y ya no puede enfocar con la misma facilidad los objetos cercanos. Actividades cotidianas como leer, mirar el celular, coser o trabajar frente a una computadora empiezan a requerir más esfuerzo, y la visión cercana se vuelve borrosa o incómoda.  
 Este proceso avanza lentamente y suele estabilizarse hacia los 60 años. Le ocurre a todas las personas, incluso a quienes tienen [miopía](/libreria/miopia), [hipermetropía](/libreria/hipermetropia) o nunca usaron lentes. También es común que en sus primeras etapas se confunda con fatiga visual por pantallas o mala iluminación.
 
 

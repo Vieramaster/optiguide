@@ -1,6 +1,6 @@
 # ¿Qué son las *tropías* (estrabismos)?
 
-Las **tropías** son desviaciones **visibles** de los ojos cuando deberían estar alineados. A diferencia de las forias, que solo aparecen cuando se interrumpe la fusión binocular, las tropías se observan de manera constante o durante gran parte del día. En estos casos, un ojo mantiene la fijación mientras el otro se desvía hacia una dirección específica.
+Son desviaciones **visibles** de los ojos cuando deberían estar alineados. A diferencia de las forias, que solo aparecen cuando se interrumpe la fusión binocular, las tropías se observan de manera constante o durante gran parte del día. En estos casos, un ojo mantiene la fijación mientras el otro se desvía hacia una dirección específica.
 
 ---
 
@@ -26,7 +26,7 @@ En cambio, las **constantes** persisten todo el tiempo y conllevan mayor riesgo 
 
 ## Causas más frecuentes
 
-Las tropías pueden originarse por desequilibrios musculares, errores refractivos no corregidos, antecedentes congénitos, traumatismos o afecciones neurológicas. En niños, la hipermetropía sin corregir es una causa habitual de esotropía acomodativa. En adultos, algunos casos se relacionan con traumatismos o con alteraciones en los nervios oculomotores.
+Pueden originarse por desequilibrios musculares, errores refractivos no corregidos, antecedentes congénitos, traumatismos o afecciones neurológicas. En niños, la hipermetropía sin corregir es una causa habitual de esotropía acomodativa. En adultos, algunos casos se relacionan con traumatismos o con alteraciones en los nervios oculomotores.
 
 ---
 

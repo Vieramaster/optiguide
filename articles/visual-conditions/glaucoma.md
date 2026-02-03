@@ -2,7 +2,7 @@
 
 ## ¿Qué es el Glaucoma?
 
-El glaucoma es un grupo de enfermedades oculares que dañan el nervio óptico, cuya salud es vital para gozar de una buena vista. Este daño a menudo es causado por una presión ocular anormalmente alta (presión intraocular). Es una de las principales causas de ceguera para las personas mayores de 60 años, aunque puede ocurrir a cualquier edad.
+Es un grupo de enfermedades oculares que dañan el nervio óptico, cuya salud es vital para gozar de una buena vista. Este daño a menudo es causado por una presión ocular anormalmente alta (presión intraocular). Es una de las principales causas de ceguera para las personas mayores de 60 años, aunque puede ocurrir a cualquier edad.
 
 Se le conoce como el "enemigo silencioso" porque, en sus etapas iniciales, no suele presentar síntomas ni dolor. La pérdida de visión comienza por la periferia (visión lateral) y es tan gradual que el paciente no nota el cambio hasta que la enfermedad está muy avanzada.
 

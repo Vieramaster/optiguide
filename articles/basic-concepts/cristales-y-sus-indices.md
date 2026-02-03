@@ -9,7 +9,7 @@ Conocer el índice de la lente permite seleccionar la opción más adecuada seg�
 ![imagen ilustrativa de un lente monofocal](/images/library/basic-concepts/cristales-y-sus-indices-2.webp)
 ## CR-39 | Indice 1.50
 
-El CR-39 es un material orgánico (resina plástica) utilizado desde hace décadas como estándar en la fabricación de lentes y su índice de refracción es 1.50. Este índice es considerado básico, pero ofrece una excelente calidad óptica para la mayoría de las graduaciones bajas y moderadas, siendo una alternativa accesible en costo sin sacrificar nitidez.
+Es un material orgánico (resina plástica) utilizado desde hace décadas como estándar en la fabricación de lentes y su índice de refracción es 1.50. Este índice es considerado básico, pero ofrece una excelente calidad óptica para la mayoría de las graduaciones bajas y moderadas, siendo una alternativa accesible en costo sin sacrificar nitidez.
 Estas lentes tienden a ser más gruesas que las de índices superiores, por lo que en recetas más fuertes puede verse un borde más marcado, especialmente en monturas grandes o de armazón al aire.
 
 ### Características principales
@@ -35,7 +35,7 @@ Estas lentes tienden a ser más gruesas que las de índices superiores, por lo q
 
 ## Vidrio Mineral | Índice 1.52
 
-El vidrio índice 1.52 es la versión estándar del material mineral tradicional. Ofrece la mejor nitidez óptica y la mayor resistencia natural al rayado de todos los materiales. Su uso ha disminuido debido a su peso y a la baja resistencia al impacto, pero sigue siendo elegido por quienes priorizan claridad y durabilidad superficial.
+Es la versión estándar del material mineral tradicional. Ofrece la mejor nitidez óptica y la mayor resistencia natural al rayado de todos los materiales. Su uso ha disminuido debido a su peso y a la baja resistencia al impacto, pero sigue siendo elegido por quienes priorizan claridad y durabilidad superficial.
 
 ### Características principales
 
@@ -58,7 +58,7 @@ El vidrio índice 1.52 es la versión estándar del material mineral tradicional
 ---
 ## Trivex | Índice 1.53
 
-El Trivex es un material orgánico diseñado inicialmente para usos militares por su resistencia y ligereza. Su índice 1.53 permite fabricar lentes delgadas manteniendo una muy buena calidad óptica, reduciendo distorsiones laterales en comparación con el policarbonato.
+Es un material orgánico diseñado inicialmente para usos militares por su resistencia y ligereza. Su índice 1.53 permite fabricar lentes delgadas manteniendo una muy buena calidad óptica, reduciendo distorsiones laterales en comparación con el policarbonato.
 Es una excelente alternativa para quienes buscan seguridad sin perder nitidez, especialmente en usos activos, monturas al aire o recetas donde el usuario es sensible a aberraciones. Combina claridad, ligereza y protección.
 
 ### Características principales
@@ -84,7 +84,7 @@ Es una excelente alternativa para quienes buscan seguridad sin perder nitidez, e
 
 ## Resina de Alto índice | Indice 1.56
 
-La resina de alto índice corresponde al índice 1.56 que se desarrolló como alternativa más delgada y estéticamente favorable frente al CR-39 tradicional (1.50). Este material permite fabricar lentes más finos sin perder calidad visual, lo que lo convierte en una opción equilibrada entre precio, estética y peso.
+Se desarrolló como alternativa más delgada y estéticamente favorable frente al CR-39 tradicional (1.50). Este material permite fabricar lentes más finos sin perder calidad visual, lo que lo convierte en una opción equilibrada entre precio, estética y peso.
 Es uno de los índices más utilizados en la actualidad, especialmente para quienes tienen graduaciones moderadas, ya que reduce el grosor del borde con un costo accesible.
 
 ### Resinas y nombres comerciales utilizados para este índice (1.56)
@@ -120,7 +120,7 @@ Es uno de los índices más utilizados en la actualidad, especialmente para quie
 
 ## Policarbonato | Indice 1.59
 
-El policarbonato es un material termoplástico muy resistente a impactos y más liviano que las resinas convencionales. Su índice de refracción 1.59 ofrece una reducción notable del grosor respecto al CR-39 y un poco mayor que el 1.56, lo que lo convierte en una opción popular para niños, deportistas y personas que buscan monturas al aire o con perforaciones.
+Es un material termoplástico muy resistente a impactos y más liviano que las resinas convencionales. Su índice de refracción 1.59 ofrece una reducción notable del grosor respecto al CR-39 y un poco mayor que el 1.56, lo que lo convierte en una opción popular para niños, deportistas y personas que buscan monturas al aire o con perforaciones.
 Si bien mejora la seguridad y la estética, su calidad óptica presenta más aberraciones laterales que otras resinas debido a su menor valor Abbe, por lo que puede no ser la opción ideal para usuarios muy sensibles a la distorsión periférica.
 
 ### Características principales
@@ -149,7 +149,7 @@ Si bien mejora la seguridad y la estética, su calidad óptica presenta más abe
 
 ### Vidrio Mineral
 
-El vidrio 1.60 es una versión de alto índice que reduce el grosor en comparación con el vidrio estándar 1.52. Está orientado a graduaciones medias a altas, donde se busca una estética superior sin perder la nitidez característica del material mineral.
+Es una versión de alto índice que reduce el grosor en comparación con el vidrio estándar 1.52. Está orientado a graduaciones medias a altas, donde se busca una estética superior sin perder la nitidez característica del material mineral.
 Aun así, mantiene el peso propio del vidrio y el mismo riesgo de rotura, por lo que su uso es cada vez menos frecuente.
 
 ### Características principales
@@ -169,7 +169,7 @@ Aun así, mantiene el peso propio del vidrio y el mismo riesgo de rotura, por lo
 
 ### Resina de Alto Índice
 
-La resina de índice 1.60 es un material de alto índice diseñado para reducir significativamente el grosor de la lente frente a CR-39 (1.50) y 1.56. Esto se traduce en una mejora estética notable, especialmente en recetas de [miopía](/libreria/miopia) o [hipermetropías](/libreria/hipermetropia) más marcadas, evitando bordes gruesos o el efecto lupa.
+Es un material de alto índice diseñado para reducir significativamente el grosor de la lente frente a CR-39 (1.50) y 1.56. Esto se traduce en una mejora estética notable, especialmente en recetas de [miopía](/libreria/miopia) o [hipermetropías](/libreria/hipermetropia) más marcadas, evitando bordes gruesos o el efecto lupa.
 Ofrece un equilibrio entre delgadez, peso y claridad, siendo una de las opciones más comunes para quienes necesitan una corrección más alta sin llegar al costo de índices como 1.67 o 1.74.
 
 ### Resinas y nombres comerciales utilizados para este índice:
@@ -199,7 +199,7 @@ Ofrece un equilibrio entre delgadez, peso y claridad, siendo una de las opciones
 
 ## Resina de Alto Índice | Índice 1.67
 
-La resina de índice 1.67 pertenece a la categoría de altos índices diseñada para reducir de manera muy marcada el grosor de la lente en comparación con 1.50, 1.56 y 1.60. Está orientada a recetas más exigentes donde la estética y el peso se vuelven decisivos para evitar bordes gruesos o efecto lupa.
+Pertenece a la categoría de altos índices diseñada para reducir de manera muy marcada el grosor de la lente en comparación con 1.50, 1.56 y 1.60. Está orientada a recetas más exigentes donde la estética y el peso se vuelven decisivos para evitar bordes gruesos o efecto lupa.
 Es una opción frecuente para quienes necesitan correcciones altas con un buen resultado óptico sin llegar al costo del índice 1.74.
 
 ### Resinas y nombres comerciales utilizados para este índice:
@@ -236,7 +236,7 @@ Es una opción frecuente para quienes necesitan correcciones altas con un buen r
 
 ### Vidrio Mineral
 
-El vidrio índice 1.70 es un material mineral de alto índice diseñado para obtener lentes considerablemente más delgados que el vidrio 1.52 y 1.60. Es elegido principalmente por motivos estéticos en graduaciones altas, ya que reduce notablemente el borde en [miopías](/libreria/miopia) fuertes y el efecto lupa en [hipermetropías](/libreria/hipermetropia).
+Es un material mineral de alto índice diseñado para obtener lentes considerablemente más delgados que el vidrio 1.52 y 1.60. Es elegido principalmente por motivos estéticos en graduaciones altas, ya que reduce notablemente el borde en [miopías](/libreria/miopia) fuertes y el efecto lupa en [hipermetropías](/libreria/hipermetropia).
 Aun así, mantiene el peso característico del vidrio y el riesgo de rotura por impacto, por lo que su uso es muy específico y menos frecuente en la actualidad.
 
 ### Características principales
@@ -284,7 +284,7 @@ Suele considerarse una opción premium, utilizada por quienes desean lentes fino
 
 ## Resina de Alto Índice | Índice 1.74
 
-La resina de índice 1.74 es el material orgánico más delgado disponible actualmente para lentes oftálmicos. Está diseñado específicamente para graduaciones altas, donde la prioridad es reducir al máximo el grosor, el peso y el efecto estético indeseado (bordes en miopes y efecto lupa en [hipermetropías](/libreria/hipermetropia).
+Es el material orgánico más delgado para lentes oftálmicos en la mayoria de las opticas. Está diseñado específicamente para graduaciones altas, donde la prioridad es reducir al máximo el grosor, el peso y el efecto estético indeseado (bordes en miopes y efecto lupa en [hipermetropías](/libreria/hipermetropia).
 Ofrece la mejor estética dentro de los materiales orgánicos, aunque con mayor costo y una leve pérdida de claridad periférica debido a su bajo valor Abbe.
 
 ### Resinas y nombres comerciales utilizados para este índice:
@@ -314,7 +314,7 @@ Ofrece la mejor estética dentro de los materiales orgánicos, aunque con mayor 
 
 ## Vidrio Mineral de Súper Alto Índice | Índice 1.80 y 1.90
 
-Los materiales minerales 1.80 y 1.90 representan el nivel más extremo en reducción de grosor dentro de la producción de lentes. Son diseñados exclusivamente para graduaciones muy altas, donde la prioridad es la estética y la disminución máxima del borde en [miopías](/libreria/miopia) severas o del efecto lupa en hipermetropías avanzadas.
+Rrepresentan el nivel más extremo en reducción de grosor dentro de la producción de lentes. Son diseñados exclusivamente para graduaciones muy altas, donde la prioridad es la estética y la disminución máxima del borde en [miopías](/libreria/miopia) severas o del efecto lupa en hipermetropías avanzadas.
 
 ### Son materiales muy raros en el mercado, producidos por pocos fabricantes y utilizados en situaciones puntuales como:
 

@@ -2,7 +2,7 @@
 
 ## ¿Qué es el astigmatismo?
 
-El astigmatismo es un error de refracción que ocurre cuando la córnea o el cristalino presentan una curvatura irregular. En lugar de tener una forma perfectamente redondeada, su superficie es más ovalada, lo que provoca que la luz no se enfoque en un único punto de la retina, sino en varios.
+Es un error de refracción que ocurre cuando la córnea o el cristalino presentan una curvatura irregular. En lugar de tener una forma perfectamente redondeada, su superficie es más ovalada, lo que provoca que la luz no se enfoque en un único punto de la retina, sino en varios.
 
 Esto genera una visión poco nítida y distorsionada, tanto de cerca como de lejos. El astigmatismo puede estar presente desde el nacimiento y suele tener un componente hereditario, aunque también puede desarrollarse a lo largo de la vida.
 
@@ -63,6 +63,6 @@ Existen diferentes opciones para corregirlo, según su grado y las característi
 
 ## El astigmatismo en la vida diaria
 
-El astigmatismo afecta a una gran parte de la población y, aunque no suele ser una condición incapacitante, puede dificultar actividades cotidianas como leer, conducir o trabajar frente a pantallas durante largos periodos.  
+Afecta a una gran parte de la población y, aunque no suele ser una condición incapacitante, puede dificultar actividades cotidianas como leer, conducir o trabajar frente a pantallas durante largos periodos.  
 
 Una corrección adecuada mejora significativamente la calidad de vida, el rendimiento académico y laboral, así como la comodidad visual. La detección temprana es especialmente importante en niños, ya que muchas veces no son conscientes de que su visión no es normal.

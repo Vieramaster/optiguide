@@ -2,7 +2,7 @@
 
 ## ¿Qué son las Cataratas?
 
-Una catarata es una opacidad de la lente natural del ojo, llamada **cristalino**. Para que podamos ver con nitidez, el cristalino debe ser transparente para que la luz pase a través de él. Con el paso de los años, las proteínas que lo componen comienzan a degradarse y a agruparse, lo que hace que el lente se vuelva nublado, amarillento o blanquecino.
+Es una opacidad de la lente natural del ojo, llamada **cristalino**. Para que podamos ver con nitidez, el cristalino debe ser transparente para que la luz pase a través de él. Con el paso de los años, las proteínas que lo componen comienzan a degradarse y a agruparse, lo que hace que el lente se vuelva nublado, amarillento o blanquecino.
 
 Esta condición es la causa más común de pérdida de visión en personas mayores de 40 años y es la causa principal de ceguera tratable en el mundo. La sensación es similar a mirar a través de una ventana empañada o un parabrisas sucio.
 

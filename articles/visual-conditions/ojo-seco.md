@@ -2,7 +2,7 @@
 
 ## ¿Qué es el ojo seco?
 
-El ojo seco es una afección ocular frecuente que ocurre cuando los ojos **no producen suficientes lágrimas** o cuando estas **no tienen la calidad necesaria** para lubricar y proteger adecuadamente la superficie ocular.
+Es una afección ocular frecuente que ocurre cuando los ojos **no producen suficientes lágrimas** o cuando estas **no tienen la calidad necesaria** para lubricar y proteger adecuadamente la superficie ocular.
 
 Las lágrimas cumplen una función esencial: mantienen el ojo húmedo, protegen frente a agentes externos y permiten una visión clara. Cuando este equilibrio se altera, aparecen molestias persistentes que pueden afectar la comodidad visual y la calidad de vida.
 
@@ -12,7 +12,7 @@ Las lágrimas cumplen una función esencial: mantienen el ojo húmedo, protegen 
 
 ## ¿Por qué se produce el ojo seco?
 
-El ojo seco se desarrolla cuando se altera la **película lagrimal**, compuesta por tres capas: acuosa, lipídica y mucosa. Si alguna de ellas falla, la lágrima puede evaporarse con rapidez o no cumplir correctamente su función lubricante.
+Se desarrolla cuando se altera la **película lagrimal**, compuesta por tres capas: acuosa, lipídica y mucosa. Si alguna de ellas falla, la lágrima puede evaporarse con rapidez o no cumplir correctamente su función lubricante.
 
 Una de las causas más frecuentes es el uso prolongado de pantallas, ya que disminuye la frecuencia del parpadeo y favorece la evaporación lagrimal. También influyen factores ambientales como el aire acondicionado, la calefacción, el viento o los ambientes secos.
 
@@ -37,7 +37,7 @@ Se caracteriza por una alteración en la **capa lipídica de la lágrima**, lo q
 
 ## Síntomas más frecuentes
 
-El ojo seco puede manifestarse con distintos síntomas, que suelen intensificarse al final del día o tras un esfuerzo visual prolongado:
+Puede manifestarse con distintos síntomas, que suelen intensificarse al final del día o tras un esfuerzo visual prolongado:
 
 - Sensación de sequedad o arenilla en los ojos  
 - Ardor, picazón o escozor  

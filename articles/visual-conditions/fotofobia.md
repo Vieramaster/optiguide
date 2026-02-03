@@ -2,7 +2,7 @@
 
 ## ¿Qué es la fotofobia?
 
-La fotofobia es una **sensibilidad anormal a la luz**, en la que la iluminación —ya sea natural o artificial— provoca molestia, dolor ocular o la necesidad de cerrar los ojos. No se trata de una enfermedad en sí misma, sino de un **síntoma** que suele estar relacionado con diferentes problemas oculares o neurológicos.
+Es una **sensibilidad anormal a la luz**, en la que la iluminación —ya sea natural o artificial— provoca molestia, dolor ocular o la necesidad de cerrar los ojos. No se trata de una enfermedad en sí misma, sino de un **síntoma** que suele estar relacionado con diferentes problemas oculares o neurológicos.
 
 Las personas con fotofobia pueden experimentar incomodidad incluso con niveles de luz que resultan normales para otras personas, lo que puede afectar su calidad de vida y sus actividades diarias.
 
@@ -12,7 +12,7 @@ Las personas con fotofobia pueden experimentar incomodidad incluso con niveles d
 
 ## ¿Por qué se produce la fotofobia?
 
-La fotofobia aparece cuando el sistema visual reacciona de forma exagerada a la luz. Esto puede deberse a una alteración en los ojos, en los nervios que transmiten la información visual o en el cerebro.
+Aparece cuando el sistema visual reacciona de forma exagerada a la luz. Esto puede deberse a una alteración en los ojos, en los nervios que transmiten la información visual o en el cerebro.
 
 Entre las causas más frecuentes se encuentran:
 

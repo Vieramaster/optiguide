@@ -1,6 +1,5 @@
 # Capa hidrofobica y oleofóbica
 
-
 Es una capa superficial aplicada sobre lentes oftálmicos que modifica la energía de la superficie para repeler agua, grasa y suciedad. Está compuesta por moléculas fluoradas o siliconadas que se fijan formando una película ultrafina e invisible. Esta película no cambia la graduación ni el grosor del lente; simplemente altera cómo interactúan los líquidos y partículas con su superficie.
 Su función es evitar que el agua se adhiera y que la grasa o las huellas queden marcadas con facilidad. Reduce la fricción al limpiar y mantiene la transparencia por más tiempo, especialmente en rutinas donde el usuario manipula mucho los lentes o se expone a humedad, sudor o contacto constante con el rostro.
 

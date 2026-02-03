@@ -1,6 +1,6 @@
 # Lentes fotocromáticos
 
-Los lentes fotocromáticos son una de las opciones más prácticas que existen hoy en óptica: se aclaran cuando estás en interiores y se oscurecen solos cuando salís al sol. En un mismo par de lentes tenés comodidad, protección UV y buena visión sin tener que cambiar de anteojos.
+Son una de las opciones más prácticas que existen hoy en óptica: se aclaran cuando estás en interiores y se oscurecen solos cuando salís al sol. En un mismo par de lentes tenés comodidad, protección UV y buena visión sin tener que cambiar de anteojos.
 Están hechos con pequeñas moléculas especiales dentro del propio material del lente. Cuando reciben luz ultravioleta, esas moléculas “se activan” y el lente se oscurece. Cuando la luz baja, vuelven a su estado original y el lente se aclara otra vez.
 No es una capa puesta encima, sino algo que forma parte del lente en sí. Eso hace que el cambio de color sea uniforme, dure más y funcione bien durante mucho tiempo.
 

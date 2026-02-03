@@ -1,6 +1,6 @@
 # Conversión de transposición
 
-La **transposición** es el proceso mediante el cual una receta en cilindro positivo se convierte a cilindro negativo o al revés, manteniendo exactamente la misma corrección óptica. Se utiliza en recetas con astigmatismo, ya que esta graduación puede expresarse de dos maneras equivalentes. Su función principal es unificar criterios entre profesionales y laboratorios, facilitar la interpretación y reducir errores en la fabricación de lentes sin alterar la potencia final.
+Es el proceso mediante el cual una receta en cilindro positivo se convierte a cilindro negativo o al revés, manteniendo exactamente la misma corrección óptica. Se utiliza en recetas con astigmatismo, ya que esta graduación puede expresarse de dos maneras equivalentes. Su función principal es unificar criterios entre profesionales y laboratorios, facilitar la interpretación y reducir errores en la fabricación de lentes sin alterar la potencia final.
 
 ---
 

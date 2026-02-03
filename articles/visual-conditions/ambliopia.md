@@ -2,7 +2,7 @@
 
 ## ¿Qué es la Ambliopía?
 
-La ambliopía es la disminución de la agudeza visual en uno o ambos ojos sin que exista una causa orgánica o enfermedad visible que la justifique. Ocurre cuando la ruta nerviosa desde un ojo hasta el cerebro no se desarrolla correctamente durante la infancia.
+Es la disminución de la agudeza visual en uno o ambos ojos sin que exista una causa orgánica o enfermedad visible que la justifique. Ocurre cuando la ruta nerviosa desde un ojo hasta el cerebro no se desarrolla correctamente durante la infancia.
 
 En términos sencillos: el cerebro "favorece" a un ojo debido a que recibe una imagen más clara de él, y comienza a ignorar las señales que provienen del ojo más débil. Si no se trata a tiempo, el cerebro puede aprender a ignorar permanentemente la visión de ese ojo.
 

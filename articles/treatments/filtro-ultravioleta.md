@@ -9,7 +9,7 @@ La luz solar es vital para nuestra vida diaria, pero no toda la luz que emite el
 
 ## ¿Qué son los rayos UV?
 
-Los rayos UV son una forma de radiación emitida por el sol. Están presentes incluso en días nublados y pueden atravesar superficies como agua, arena e incluso algunos vidrios. Se dividen principalmente en dos tipos:
+Son una forma de radiación emitida por el sol. Están presentes incluso en días nublados y pueden atravesar superficies como agua, arena e incluso algunos vidrios. Se dividen principalmente en dos tipos:
 
 **UVA**: penetran más profundo y pueden causar envejecimiento ocular, cataratas y daño en la retina.  
  **UVB**: son más energéticos y están relacionados con quemaduras oculares e irritaciones.
@@ -30,7 +30,7 @@ Los ojos no tienen una “piel” que se descame o regenere rápido. Una vez que
 
 ## ¿Qué es el filtro UV en los lentes ?
 
-El filtro UV es un tratamiento que bloquea la radiación ultravioleta para que no llegue al ojo. No oscurece el lente ni cambia su color: puede estar presente en un lente completamente transparente. Es un filtro incorporado en el material o agregado como tratamiento superficial, según el tipo de lente.  
+Es un tratamiento que bloquea la radiación ultravioleta para que no llegue al ojo. No oscurece el lente ni cambia su color: puede estar presente en un lente completamente transparente. Es un filtro incorporado en el material o agregado como tratamiento superficial, según el tipo de lente.  
 Su función es simple pero crucial: evitar que la radiación dañina atraviese la lente y llegue al ojo.
 
 ---

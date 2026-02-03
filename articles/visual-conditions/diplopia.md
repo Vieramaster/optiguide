@@ -1,12 +1,12 @@
 # Diplopía (visión doble)
 
-La **diplopía** es el término médico para describir la **visión doble**. Una persona con diplopía percibe dos imágenes de un mismo objeto, lo que puede resultar confuso y afectar actividades cotidianas como leer, conducir o trabajar frente a una pantalla. No es una enfermedad en sí misma, sino un **síntoma** que indica que los ojos no están funcionando de manera coordinada.
+Es el término médico para describir la **visión doble**. Una persona con diplopía percibe dos imágenes de un mismo objeto, lo que puede resultar confuso y afectar actividades cotidianas como leer, conducir o trabajar frente a una pantalla. No es una enfermedad en sí misma, sino un **síntoma** que indica que los ojos no están funcionando de manera coordinada.
 
 ---
 
 ## ¿Por qué ocurre?
 
-La diplopía aparece cuando los ojos no logran alinear correctamente las imágenes que envían al cerebro. En condiciones normales, ambos ojos trabajan juntos y el cerebro fusiona las dos imágenes en una sola.  
+Aparece cuando los ojos no logran alinear correctamente las imágenes que envían al cerebro. En condiciones normales, ambos ojos trabajan juntos y el cerebro fusiona las dos imágenes en una sola.  
 Cuando existe un desajuste, el cerebro recibe dos imágenes distintas y las interpreta como duplicadas.
 
 Algunas causas frecuentes son:

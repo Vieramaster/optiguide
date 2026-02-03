@@ -1,6 +1,6 @@
 # Cómo leer una receta oftalmológica
 
-Interpretar una receta oftalmológica puede resultar complejo al primer vistazo, pero cada valor responde a un criterio específico. El objetivo de esta guía es que puedas comprender cualquier receta básica y reconocer qué representa cada dato.
+Interpretar una receta puede resultar complejo al primer vistazo, pero cada valor responde a un criterio específico. El objetivo de esta guía es que puedas comprender cualquier receta básica y reconocer qué representa cada dato.
 
 ---
 
@@ -33,13 +33,13 @@ El cilindro puede escribirse con signo positivo o negativo, según el criterio d
 
 ## ADD (Adición): visión de cerca
 
-La adición es un valor positivo que se suma a la graduación de lejos para permitir enfocar de cerca. Se usa en casos de [presbicia](/libreria/presbicia) y es un dato clave en lentes [multifocales, bifocales o de lectura](/libreria/tipos-de-lentes). No cambia la visión de lejos, solo agrega la potencia necesaria para tareas cercanas como leer, celular o computadora.
+Es un valor positivo que se suma a la graduación de lejos para permitir enfocar de cerca. Se usa en casos de [presbicia](/libreria/presbicia) y es un dato clave en lentes [multifocales, bifocales o de lectura](/libreria/tipos-de-lentes). No cambia la visión de lejos, solo agrega la potencia necesaria para tareas cercanas como leer, celular o computadora.
 
 ---
 
 ## Distancia Pupilar (DP o PD)
 
-La distancia pupilar indica cuántos milímetros separan el centro de cada pupila, y define dónde deben ubicarse los lentes dentro del armazón. Puede figurar como un único valor total o dividida por ojo para mayor precisión. Una DP mal medida puede causar mareos, visión borrosa o sensación de que la imagen está “corrida”, aun con la graduación correcta.
+Indica cuántos milímetros separan el centro de cada pupila, y define dónde deben ubicarse los lentes dentro del armazón. Puede figurar como un único valor total o dividida por ojo para mayor precisión. Una DP mal medida puede causar mareos, visión borrosa o sensación de que la imagen está “corrida”, aun con la graduación correcta.
 Dato útil: en lentes [multifocales](/libreria/tipos-de-lentes), prismas o [astigmatismos](/libreria/astigmatismos) altos, es recomendable usar DP por ojo, no total, para evitar errores de centrado.
 
 ![imagen mostrando una regla midiendo DP sobre un rostro](/images/library/basic-concepts/como-leer-una-receta-7.webp)
@@ -49,7 +49,7 @@ Dato útil: en lentes [multifocales](/libreria/tipos-de-lentes), prismas o [asti
 
 ## Prismas (Δ o PRISM)
 
-Los prismas aparecen en la receta cuando los ojos no están alineados en el mismo punto, debido a condiciones como [forias](/libreria/forias) (exoforia, endoforia, hiperforia o hipoforia). No cambian la graduación del lente; su función es redirigir la imagen. Un prisma desvía la luz antes de llegar al ojo para que ambas imágenes coincidan y el cerebro pueda fusionarlas, ayudando en casos de visión doble, molestias al leer, cerrar un ojo para enfocar o sensación de cansancio visual. Su efecto existe solo mientras se usan los anteojos; al quitarlos, todo vuelve a su estado original. No corrigen la estructura ni los músculos del ojo, simplemente mejoran la comodidad y la alineación percibida. Además, requieren un centrado muy preciso, por lo que funcionan mejor en monturas firmes y no demasiado flexibles o abiertas.
+Aparecen en la receta cuando los ojos no están alineados en el mismo punto, debido a condiciones como [forias](/libreria/forias) (exoforia, endoforia, hiperforia o hipoforia). No cambian la graduación del lente; su función es redirigir la imagen. Un prisma desvía la luz antes de llegar al ojo para que ambas imágenes coincidan y el cerebro pueda fusionarlas, ayudando en casos de visión doble, molestias al leer, cerrar un ojo para enfocar o sensación de cansancio visual. Su efecto existe solo mientras se usan los anteojos; al quitarlos, todo vuelve a su estado original. No corrigen la estructura ni los músculos del ojo, simplemente mejoran la comodidad y la alineación percibida. Además, requieren un centrado muy preciso, por lo que funcionan mejor en monturas firmes y no demasiado flexibles o abiertas.
 
 ### Caracteristicas
 

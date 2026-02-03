@@ -1,7 +1,7 @@
 
 # Armazones
 
-Los armazones son la estructura que sostiene los cristales oftálmicos y permite que las gafas se adapten al rostro de cada usuario. Además de su función práctica, cumplen un rol estético y expresan estilo personal. Su diseño influye en la comodidad, la resistencia y la apariencia general, por lo que elegir un armazón adecuado es tan relevante como seleccionar la graduación correcta.
+Son la estructura que sostiene los cristales oftálmicos y permite que las gafas se adapten al rostro de cada usuario. Además de su función práctica, cumplen un rol estético y expresan estilo personal. Su diseño influye en la comodidad, la resistencia y la apariencia general, por lo que elegir un armazón adecuado es tan relevante como seleccionar la graduación correcta.
 
 ![imagen ilustrativa de un armazón de metal](/images/library/basic-concepts/armazones-y-sus-materiales-3.webp)
 
@@ -9,7 +9,7 @@ Los armazones son la estructura que sostiene los cristales oftálmicos y permite
  
 ## Armazones de metal
 
-Los armazones de metal constituyen una opción tradicional y versátil. Se reconocen por su diseño delgado y elegante, adecuado tanto para el uso diario como para estilos formales. Se fabrican en distintos materiales como monel, acero inoxidable, titanio o aluminio, cada uno con características particulares de resistencia y peso.
+Constituyen una opción tradicional y versátil. Se reconocen por su diseño delgado y elegante, adecuado tanto para el uso diario como para estilos formales. Se fabrican en distintos materiales como monel, acero inoxidable, titanio o aluminio, cada uno con características particulares de resistencia y peso.
 
 ### Ventajas
 
@@ -43,7 +43,7 @@ Son metales diseñados para volver a su forma original tras doblarse, lo que les
 
 ## Armazones inyectados
 
-Los armazones inyectados se producen a través de un proceso industrial en el que el plástico se funde y se inyecta en un molde, lo que permite obtener piezas de forma rápida y a bajo costo. Son livianos y se utilizan con frecuencia en modelos deportivos o de uso cotidiano gracias a su comodidad y practicidad.
+Se producen a través de un proceso industrial en el que el plástico se funde y se inyecta en un molde, lo que permite obtener piezas de forma rápida y a bajo costo. Son livianos y se utilizan con frecuencia en modelos deportivos o de uso cotidiano gracias a su comodidad y practicidad.
 
 ### Ventajas
 
@@ -72,7 +72,7 @@ Los armazones inyectados se producen a través de un proceso industrial en el qu
 
 ## Armazones de acetato
 
-El acetato es un material derivado de fibras vegetales, principalmente del algodón, que se fabrica en láminas y luego se moldea para obtener el armazón. Se distingue por su resistencia, flexibilidad y por permitir una amplia variedad de colores, transparencias y texturas, lo que lo convierte en una opción de alta calidad dentro de los materiales plásticos para gafas.
+Es un material derivado de fibras vegetales, principalmente del algodón, que se fabrica en láminas y luego se moldea para obtener el armazón. Se distingue por su resistencia, flexibilidad y por permitir una amplia variedad de colores, transparencias y texturas, lo que lo convierte en una opción de alta calidad dentro de los materiales plásticos para gafas.
 
 ### Ventajas
 

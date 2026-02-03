@@ -1,6 +1,6 @@
 # Tratamiento Antirreflejante
 
-El antirrejeante o antireflex es un recubrimiento transparente formado por varias capas finas que se aplican sobre la superficie del lente. Estas capas se adhieren al material original y modifican su comportamiento óptico, cambiando cómo interactúa la luz con la superficie. Su naturaleza es puramente técnica y física: es un tratamiento superficial que altera las propiedades de reflexión del lente.  
+Es un recubrimiento transparente formado por varias capas finas que se aplican sobre la superficie del lente. Estas capas se adhieren al material original y modifican su comportamiento óptico, cambiando cómo interactúa la luz con la superficie. Su naturaleza es puramente técnica y física: es un tratamiento superficial que altera las propiedades de reflexión del lente.  
 Su propósito es mejorar la experiencia visual del usuario. Reduce los reflejos que interfieren con la visión y permite que la luz entre al ojo de forma más directa y sin distorsiones. En términos simples, su función es brindar una visión más clara y cómoda, evitando que los reflejos dificulten ver detalles en distintas situaciones.
 
 ![imagen que muestra con y sin antireflejante](/images/library/treatments/antireflex.webp)

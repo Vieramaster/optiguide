@@ -2,7 +2,7 @@
 
 ## ¿Qué es el daltonismo?
 
-El daltonismo es una alteración de la visión del color que dificulta o impide distinguir correctamente ciertos colores. No afecta a la agudeza visual ni suele provocar pérdida de visión, pero sí puede influir en la forma en que una persona percibe su entorno.
+Es una alteración de la visión del color que dificulta o impide distinguir correctamente ciertos colores. No afecta a la agudeza visual ni suele provocar pérdida de visión, pero sí puede influir en la forma en que una persona percibe su entorno.
 
 Esta condición se produce cuando los fotorreceptores de la retina, llamados conos, no funcionan correctamente o están ausentes. El daltonismo suele estar presente desde el nacimiento y, en la mayoría de los casos, tiene un origen genético.
 
