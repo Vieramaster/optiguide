@@ -26,7 +26,7 @@ En cambio, las **constantes** persisten todo el tiempo y conllevan mayor riesgo 
 
 ## Causas más frecuentes
 
-Pueden originarse por desequilibrios musculares, errores refractivos no corregidos, antecedentes congénitos, traumatismos o afecciones neurológicas. En niños, la hipermetropía sin corregir es una causa habitual de esotropía acomodativa. En adultos, algunos casos se relacionan con traumatismos o con alteraciones en los nervios oculomotores.
+Las tropías pueden originarse por desequilibrios musculares, errores refractivos no corregidos, antecedentes congénitos, traumatismos o afecciones neurológicas. En niños, la hipermetropía sin corregir es una causa habitual de esotropía acomodativa. En adultos, algunos casos se relacionan con traumatismos o con alteraciones en los nervios oculomotores.
 
 ---
 
