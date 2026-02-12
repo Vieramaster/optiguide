@@ -1,32 +1,69 @@
-# Tallado Digital en Lentes
+# Tallado digital en lentes
 
-Es una tecnología de última generación que ha transformado la óptica. A diferencia del tallado convencional, este proceso utiliza maquinaria computarizada para esculpir la superficie del lente con una precisión micrométrica, logrando una personalización total para cada usuario.
+El tallado digital es una tecnología óptica de **alta precisión** que cambió la forma en la que se fabrican los lentes.  
+A diferencia del tallado convencional, este sistema utiliza maquinaria computarizada para esculpir la superficie del lente con una exactitud micrométrica, permitiendo una **personalización real para cada usuario**.
+
+No se trata solo de “mejor calidad”, sino de un lente pensado para cómo mira, se mueve y usa sus anteojos cada persona.
+
+---
+
+![diferencia entre tallado convencional y digital](/images/library/basic-concepts/tallado-digital-1.webp)
 
 ---
 
 ## Concepto general
-También conocido como **freeform**, el tallado digital permite diseñar lentes con geometrías complejas que se adaptan a la graduación exacta, la forma de la montura y las características individuales del usuario. Cada lente se fabrica como una pieza única, optimizada para ofrecer la mejor visión posible.
+También conocido como **freeform**, el tallado digital permite crear lentes con geometrías complejas que se adaptan a:
+- la graduación exacta,
+- la forma de la montura,
+- la posición del lente frente al ojo,
+- y las características visuales del usuario.
+
+Cada lente se fabrica como una **pieza única**, optimizada para ofrecer el mejor rendimiento visual posible en condiciones reales de uso.
 
 ---
 
 ## Cómo funciona
-El proceso comienza con la recolección de datos del paciente: graduación, distancia interpupilar, altura de montaje y parámetros de la montura. Con esta información, un software especializado calcula la superficie óptima del lente. Luego, una máquina CNC talla la superficie con herramientas de diamante, creando curvaturas personalizadas. Finalmente, se realiza el pulido y se aplican tratamientos como antirreflejo, endurecido o filtros especiales.
+El proceso comienza con la toma de datos personalizados:
+- graduación,
+- distancia interpupilar,
+- altura de montaje,
+- parámetros de la montura (ángulo pantoscópico, distancia vértice, curvatura).
+
+Con esta información, un software óptico avanzado calcula la superficie ideal del lente.  
+Luego, una máquina CNC talla esa superficie con herramientas de diamante. Finalmente, el lente se pule y se le aplican tratamientos como antirreflejo, endurecido, filtros de luz azul o fotocromía.
+
+![fabricación de tallado digital](/images/library/basic-concepts/tallado-digital-2.webp)
 
 ---
 
-## ¿Qué hace un lente digital?
-Para el cliente, la diferencia se percibe de inmediato. Un lente digital ofrece una visión más clara y amplia, reduce las distorsiones en los bordes y hace que la adaptación sea más rápida. Es como pasar de una televisión antigua a una pantalla en alta definición: todo se ve más nítido y natural.  
+## ¿Qué hace diferente a un lente digital?
+Desde el punto de vista del usuario, la diferencia se nota rápido:
+- visión más nítida,
+- campos visuales más amplios,
+- menos distorsión en los bordes,
+- adaptación más rápida.
 
-Imagina dos personas con la misma receta de anteojos:  
-- Con lentes convencionales, ambas reciben un diseño genérico.  
-- Con lentes digitales, cada uno recibe un lente personalizado según la distancia entre sus ojos y la forma de la montura.  
+Una buena analogía es pasar de una imagen estándar a **alta definición**: todo se percibe más natural y estable.
 
-El resultado es que cada persona ve mejor, con menos esfuerzo y más comodidad.
+Imaginá dos personas con la misma receta:
+- con lentes convencionales, ambas reciben un diseño genérico;
+- con lentes digitales, cada una obtiene un lente calculado según su fisonomía y su montura.
+
+El resultado es **mejor visión con menos esfuerzo**.
+
+![diferencia de tallado digital y tradicional en lentes progresivos](/images/library/basic-concepts/tallado-digital-3.webp)
 
 ---
 
 ## Ventajas principales
-El tallado digital ofrece campos visuales más amplios, menos aberraciones y una personalización total. Esto facilita la adaptación del usuario y permite compatibilidad con monturas modernas, incluso aquellas curvas o envolventes. Además, reduce la fatiga visual y se adapta a distintos estilos de vida, ya sea trabajo frente a pantallas, conducción o deporte.
+El tallado digital permite:
+- campos visuales más amplios,
+- reducción de aberraciones,
+- personalización total,
+- mejor compatibilidad con monturas modernas o envolventes,
+- menor fatiga visual en usos prolongados.
+
+Es especialmente útil para personas que pasan muchas horas frente a pantallas, conducen con frecuencia o necesitan una visión precisa en distintas distancias.
 
 ---
 
@@ -35,34 +72,34 @@ El tallado digital ofrece campos visuales más amplios, menos aberraciones y una
 <table>
   <thead>
     <tr>
-      <th>Precisión óptica </th>
+      <th>Característica</th>
       <th>Convencional</th>
       <th>Digital</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Método</td>
+      <td>Método de fabricación</td>
       <td>Estándar</td>
-      <td>Micrométrica</td>
+      <td>Micrométrico</td>
     </tr>
     <tr>
-      <td>Personalización </td>
+      <td>Personalización</td>
       <td>Limitada</td>
       <td>Total</td>
     </tr>
     <tr>
-      <td> Campos visuales </td>
+      <td>Campos visuales</td>
       <td>Reducidos</td>
       <td>Amplios</td>
     </tr>
     <tr>
-      <td>Adaptación del usuario </td>
-      <td>lenta</td>
-      <td>rapida</td>
+      <td>Adaptación del usuario</td>
+      <td>Más lenta</td>
+      <td>Más rápida</td>
     </tr>
-        <tr>
-      <td>Compatibilidad monturas  </td>
+    <tr>
+      <td>Compatibilidad con monturas</td>
       <td>Básica</td>
       <td>Avanzada</td>
     </tr>
@@ -72,16 +109,54 @@ El tallado digital ofrece campos visuales más amplios, menos aberraciones y una
 ---
 
 ## Aplicaciones
-Los lentes progresivos digitales son los más beneficiados, ya que ofrecen transiciones más suaves entre zonas de visión. También se utilizan en lentes ocupacionales para oficina, deportivos adaptados a monturas curvas y en lentes con filtros especiales como luz azul, polarizados o fotocromáticos.
+Los lentes que más se benefician del tallado digital son:
+- **lentes progresivos**, con transiciones más suaves entre zonas,
+- lentes ocupacionales para oficina,
+- lentes deportivos para monturas curvas,
+- lentes con tratamientos especiales: luz azul, polarizados, fotocromáticos.
 
 ---
 
 ## Consejos prácticos
-Al elegir lentes digitales, es importante asegurarse de que el óptico tome medidas precisas y considerar tratamientos adicionales según el estilo de vida. La adaptación suele ser más rápida que con lentes convencionales, lo que mejora la experiencia del usuario desde el primer uso.
+- La precisión del lente depende de la **calidad de las medidas** tomadas por el óptico.
+- Es importante considerar el uso principal: trabajo, lectura, conducción o deporte.
+- La adaptación suele ser más rápida que con lentes convencionales.
+
+---
+
+## Bloque para ópticos: cuándo recomendar tallado digital
+- Usuarios con lentes progresivos o multifocales.
+- Personas sensibles a distorsiones laterales.
+- Cambios frecuentes de distancia (pantalla–papel–entorno).
+- Monturas curvas o no convencionales.
+- Pacientes que “ven bien, pero no cómodos” con lentes estándar.
+
+---
+
+## Mitos comunes sobre el tallado digital
+
+**“Todos los lentes digitales son iguales”**  
+No. El resultado depende del diseño óptico, del software utilizado y de la calidad de las medidas. Dos lentes digitales pueden ofrecer experiencias muy distintas.
+
+**“Es solo marketing”**  
+No. La diferencia está en la geometría del lente y en la personalización. En progresivos y lentes de uso intensivo, la mejora es claramente perceptible.
+
+**“Solo sirve para graduaciones altas”**  
+Falso. Incluso en graduaciones bajas, el confort y la estabilidad visual suelen ser superiores.
+
+**“Si la graduación está bien, no importa el tipo de tallado”**  
+Incorrecto. La graduación es solo un dato; el diseño del lente define cómo se comporta esa graduación en la vida real.
 
 ---
 
 ## Cómo explicarlo al cliente
-> “Un lente digital es como tener anteojos hechos especialmente para vos. Te dan una visión más clara y amplia, reducen el cansancio visual y hacen que todo se vea más natural.”
-  
+> “Un lente digital está hecho específicamente para vos y tus anteojos.  
+> Tiene más precisión, te da una visión más amplia y reduce el cansancio visual.  
+> No es un lente genérico: es un lente personalizado.”
 
+---
+
+## En resumen
+El tallado digital no es solo una mejora técnica, sino un cambio de enfoque:  
+pasar de lentes estándar a lentes diseñados para la persona que los usa.  
+Más precisión, más confort y una experiencia visual claramente superior.
