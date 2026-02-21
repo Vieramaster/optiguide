@@ -3,7 +3,8 @@ import { LensSVG } from "../ui/LensSVG";
 import { useLensSVG } from "@/hooks/use-lens-svg";
 import { GraduationValueType } from "@/types/simulator-types";
 import { useThicknessSync } from "@/hooks/use-thickness-sync";
-import { getThicknessMessage } from "@/lib/get-thickness-message";
+import { GetThicknessDifference } from "@/lib/get-thickness-difference";
+import { MessageThicknessDifference } from "./message-thickness-difference";
 import type { sideThicknessType } from "@/types/simulator-types";
 
 interface LensSimulatorProps {
@@ -22,7 +23,7 @@ export const LensSimulator = ({
   thickness,
 }: LensSimulatorProps) => {
   const { handleValueSelect, totalThickness, isPositive } = useLensSVG(values);
-  const message = getThicknessMessage(thickness.A, thickness.B, side);
+
 
   useThicknessSync(side, totalThickness, setThickness);
 
@@ -35,7 +36,11 @@ export const LensSimulator = ({
       `}
     >
       <SelectSimulator onValueSelect={handleValueSelect} />
-      <p>se estima que el grosor es de {totalThickness}mm y es {message}</p>
+        <MessageThicknessDifference
+          currentSide={side}
+          percentageDifferenceA={GetThicknessDifference(thickness.A, thickness.B)}
+          percentageDifferenceB={GetThicknessDifference(thickness.A, thickness.B)}
+        />
       <LensSVG isPositive={isPositive} size={totalThickness} />
     </div>
   );
