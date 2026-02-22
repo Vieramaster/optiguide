@@ -1,13 +1,13 @@
 //TYPES
 import type { sideThicknessType } from "@/types/simulator-types";
-import { GraduationValueType } from "@/types/simulator-types";
+import type { GraduationValueType } from "@/types/simulator-types";
 //HOOKS
 import { useLensSVG } from "@/hooks/use-lens-svg";
 import { useThicknessSync } from "@/hooks/use-thickness-sync";
 //LIBS
 import { porcentageCalculator } from "@/lib/porcentage-calculator";
 //COMPONENTS
-import { ThicknessPorcentageMessage } from "./thickness-porcentage-message";
+import { ThicknessMessage } from "./thickness-message";
 import { LensSVG } from "../ui/LensSVG";
 import { SelectSimulator } from "./select-simulator";
 
@@ -46,7 +46,8 @@ export const LensSimulator = ({
       `}
     >
       {/* Mensaje dinámico */}
-      <ThicknessPorcentageMessage
+      <ThicknessMessage
+      thickness={thickness[side]}
         isMax={isMax}
         percentage={percentageDiff}
       />

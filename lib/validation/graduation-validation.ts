@@ -14,8 +14,26 @@ export const validateGraduationInputs = (
   const cil = Number(CIL);
   const eje = Number(EJE);
   const diam = Number(DIAM);
-  const esfInvalid = esf === 0;
-  const cilEjeInvalid = (cil === 0) !== (eje === 0);
-  const diamIsvalid = diam !== null && diam !== undefined && diam !== 0 && !isNaN(diam);
-  return !esfInvalid && !cilEjeInvalid && diamIsvalid;
+
+  // 1. DIAM siempre válido
+  const diamIsValid = diam !== null && diam !== undefined && diam !== 0 && !isNaN(diam);
+
+  // 2. Validación de combinaciones
+  const hasEsf = esf !== 0;
+  const hasCil = cil !== 0;
+  const hasEje = eje !== 0;
+
+  // Reglas:
+  // - Solo ESF → válido
+  // - CIL requiere EJE
+  // - Puede haber CIL+EJE sin ESF
+  // - Puede haber todo
+  // - No se permite ninguno
+  const esfOnlyValid = hasEsf && !hasCil && !hasEje;
+  const cilWithEjeValid = hasCil && hasEje;
+  const allValid = hasEsf && hasCil && hasEje;
+
+  const graduationValid = esfOnlyValid || cilWithEjeValid || allValid;
+
+  return diamIsValid && graduationValid;
 };

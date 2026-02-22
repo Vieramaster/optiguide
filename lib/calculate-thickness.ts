@@ -1,4 +1,48 @@
-type Lens = {
+import type { calculateThicknessType } from "@/types/calculate-thickness-types";
+const defaultThicknessMap: Record<number, number> =
+{
+  1.5: 1.8,
+  1.56: 1.6,
+  1.6: 1.5,
+  1.67: 1.3,
+  1.74: 1.2,
+};
+// ---- Potencia máxima (meridiano más negativo) ----
+
+export const getMaxPower = (sphere: number, cylinder: number): number =>
+  cylinder < 0 ? sphere + cylinder : sphere;
+
+// ---- Cálculo principal ----
+
+export const calculateThickness = ({
+  sphere,
+  cylinder,
+  diameter,
+  refractiveIndex,
+}: calculateThicknessType): number => {
+
+  const centerThickness = defaultThicknessMap[refractiveIndex] ?? 1.2;
+
+  const maxPower = getMaxPower(sphere, cylinder);
+
+  const semiDiameter = diameter / 2; // mm
+
+  // Δe ≈ |Fmax| * (D/2)^2 / (2000 * (n - 1))
+  const thicknessIncrease =
+    Math.abs(maxPower) *
+    Math.pow(semiDiameter, 2) /
+    (2000 * (refractiveIndex - 1));
+
+
+  const totalthickness = centerThickness + thicknessIncrease;
+
+  return Number(totalthickness.toFixed(1));
+
+}
+
+/**
+ * 
+ * type Lens = {
   sphere: number;
   cylinder?: number;
   diameter: number;
@@ -76,3 +120,6 @@ export const calculateThickness = ({
   // UNA sola regla
   return Math.floor(total * 10) / 10;
 };
+
+
+ */

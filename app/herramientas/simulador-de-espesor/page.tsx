@@ -27,7 +27,7 @@ const ThicknessSimulator = () => {
     <section className="w-full h-full  p-10 flex flex-col gap-8 text-center">
       <HeaderSimulator
         title="Simulador de espesor de lentes"
-        text="Después de poner tu graduación aquí, dale al botón de "
+        text="Después de poner tu graduación en los bloques, dale al botón de "
         buttonText="Calcular"
         note="Nota: este simulador es ilustrativo y no siempre refleja el grosor real, depende del laboratorio y del técnico óptico."
       />
@@ -49,20 +49,17 @@ const ThicknessSimulator = () => {
         </Button>
       </div>
       <div className="flex  w-full justify-center lg:justify-evenly mt-5">
-        <LensSimulator
-          values={finalValues}
-          isShow={showSimulator}
-          thickness={thickness}
-          setThickness={setThickness}
-          side="A"
-        />
-        <LensSimulator
-          values={finalValues}
-          isShow={!showSimulator}
-          thickness={thickness}
-          setThickness={setThickness}
-          side="B"
-        />
+        {["A", "B"].map((side) => (
+          <LensSimulator
+            key={side}
+            values={finalValues}
+            isShow={side === "A" ? showSimulator : !showSimulator}
+            thickness={thickness}
+            setThickness={setThickness}
+            side={side as "A" | "B"}
+          />
+        ))}
+
       </div>
     </section>
   );

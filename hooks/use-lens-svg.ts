@@ -16,7 +16,7 @@ export const useLensSVG = (
 ) => {
     const [index, setIndex] = useState(1.5);
 
-    const {ESF,CIL,DIAM} = values
+    const {ESF,CIL,DIAM,} = values
     const handleValueSelect = (value: string) => {
         setIndex(parseFloat(value));
     };
@@ -25,7 +25,7 @@ export const useLensSVG = (
         sphere: toNumber(ESF, 0),
         cylinder: toNumber(CIL, 0),
         diameter: toNumber(DIAM, 20),
-        index,
+        refractiveIndex: toNumber(index.toString(), 1.5),
     });
 
       const isPositive = Number(ESF) >= 0;
