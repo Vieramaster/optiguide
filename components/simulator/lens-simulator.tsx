@@ -1,11 +1,16 @@
-import { SelectSimulator } from "./select-simulator";
-import { LensSVG } from "../ui/LensSVG";
-import { useLensSVG } from "@/hooks/use-lens-svg";
-import { GraduationValueType } from "@/types/simulator-types";
-import { useThicknessSync } from "@/hooks/use-thickness-sync";
-import { GetThicknessDifference } from "@/lib/get-thickness-difference";
-import { MessageThicknessDifference } from "./message-thickness-difference";
+//TYPES
 import type { sideThicknessType } from "@/types/simulator-types";
+import { GraduationValueType } from "@/types/simulator-types";
+//HOOKS
+import { useLensSVG } from "@/hooks/use-lens-svg";
+import { useThicknessSync } from "@/hooks/use-thickness-sync";
+//LIBS
+import { porcentageCalculator } from "@/lib/porcentage-calculator";
+//COMPONENTS
+import { ThicknessPorcentageMessage } from "./thickness-porcentage-message";
+import { LensSVG } from "../ui/LensSVG";
+import { SelectSimulator } from "./select-simulator";
+
 
 interface LensSimulatorProps {
   values: GraduationValueType;
@@ -22,10 +27,15 @@ export const LensSimulator = ({
   setThickness,
   thickness,
 }: LensSimulatorProps) => {
+
+  // hook personalizado para manejar el SVG de la lente
   const { handleValueSelect, totalThickness, isPositive } = useLensSVG(values);
 
-
+  // sincroniza el grosor con el hook
   useThicknessSync(side, totalThickness, setThickness);
+
+  // cálculo de porcentaje y comparación de grosores
+  const { isMax, percentageDiff } = porcentageCalculator({ side, thickness });
 
   return (
     <div
@@ -35,14 +45,20 @@ export const LensSimulator = ({
         lg:flex
       `}
     >
+      {/* Mensaje dinámico */}
+      <ThicknessPorcentageMessage
+        isMax={isMax}
+        percentage={percentageDiff}
+      />
+
+      {/** selects de indices */}
       <SelectSimulator onValueSelect={handleValueSelect} />
-        <MessageThicknessDifference
-          currentSide={side}
-          percentageDifferenceA={GetThicknessDifference(thickness.A, thickness.B)}
-          percentageDifferenceB={GetThicknessDifference(thickness.A, thickness.B)}
-        />
+
+      {/**SVG maleable */}
       <LensSVG isPositive={isPositive} size={totalThickness} />
+
+
     </div>
   );
-  
 };
+
