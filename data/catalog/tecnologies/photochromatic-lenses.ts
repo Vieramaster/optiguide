@@ -1,4 +1,22 @@
-export const photochromatic = {
+import { photochromaticlensesType } from "@/types/data/photochromatic-lenses-type";
+
+export const photochromaticlenses: photochromaticlensesType = {
+  Generic: {
+    id: "G1",
+    name: "Genérico",
+    brand: "Varios",
+    generation: "N/A",
+    colors: ["Gris", "Marrón", "Verde"],
+    photochromic_speed: "lento a medio",
+    UV_protection: "100%",
+    blue_light_filter: {
+      clear_state: "15%",
+      dark_state: "65%"
+    },
+    features: ["Uso diario", "Protección UVA/UVB"],
+
+    polarized: false
+  },
   TransitionsSignature: {
     id: "F1",
     name: "Transitions Signature",
@@ -12,7 +30,7 @@ export const photochromatic = {
       dark_state: "70%"
     },
     features: ["Uso diario", "Protección UVA/UVB"],
-    use_cases: ["Interior/exterior"],
+
     polarized: false
   },
 
@@ -29,13 +47,29 @@ export const photochromatic = {
       dark_state: "82%"
     },
     features: ["Mayor velocidad de activación", "Amplia paleta de colores"],
-    use_cases: ["Uso diario interior/exterior"],
+
     polarized: false
   },
 
-  TransitionsGenS: {
+  TransitionsGenSGrey: {
     id: "F3",
-    name: "Transitions Gen S (menos gris)",
+    name: "Transitions Gen S GRIS",
+    brand: "Varilux",
+    generation: "Gen S",
+    colors: ["gris"],
+    photochromic_speed: "Ultra rápido (más veloz que Gen 8)",
+    UV_protection: "100%",
+    blue_light_filter: {
+      clear_state: "32%",
+      dark_state: "85%"
+    },
+    features: ["HD vision", "Protección UVA/UVB total", "8 colores exclusivos"],
+
+    polarized: false
+  },
+  TransitionsGenSColors: {
+    id: "F4",
+    name: "Transitions Gen S (todos los colores)",
     brand: "Varilux",
     generation: "Gen S",
     colors: ["Marrón", "Verde", "Zafiro", "Ámbar", "Esmeralda", "Rubí", "Jade"],
@@ -46,12 +80,11 @@ export const photochromatic = {
       dark_state: "85%"
     },
     features: ["HD vision", "Protección UVA/UVB total", "8 colores exclusivos"],
-    use_cases: ["Uso diario interior/exterior"],
+
     polarized: false
   },
-
   TransitionsXTRActive: {
-    id: "F4",
+    id: "F5",
     name: "Transitions XTRActive",
     brand: "Varilux",
     generation: "XTRActive",
@@ -63,12 +96,12 @@ export const photochromatic = {
       dark_state: "86%"
     },
     features: ["Oscurece detrás del parabrisas", "Mayor protección contra luz intensa"],
-    use_cases: ["Conducción", "Exposición solar prolongada"],
+
     polarized: false
   },
 
   TransitionsDrivewear: {
-    id: "F5",
+    id: "F6",
     name: "Transitions Drivewear",
     brand: "Varilux",
     generation: "Drivewear",
@@ -85,7 +118,7 @@ export const photochromatic = {
       "Oscurecen detrás del parabrisas",
       "Protección UVA/UVB total"
     ],
-    use_cases: ["Conducción diurna", "Exposición solar prolongada"],
+
     polarized: true
   },
 
@@ -106,7 +139,7 @@ export const photochromatic = {
       "Oscurecimiento automático con luz solar",
       "Comodidad para uso diario"
     ],
-    use_cases: ["Interior/exterior", "Actividades cotidianas"],
+
     polarized: false
   }
 };

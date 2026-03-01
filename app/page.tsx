@@ -1,6 +1,8 @@
 import { PageTitle } from "@/components/page-title";
-
+import {monofocalCatalog} from "../data/catalog/tecni-optica-catalog";
 const MainPage = () => {
+
+  console.log(monofocalCatalog)
   return (
     <section className="h-full w-full p-5  flex flex-col gap-8 justify-center items-center">
       <div className=" flex container-type-inline-size text-4xl">

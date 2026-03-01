@@ -82,7 +82,7 @@ Es una excelente alternativa para quienes buscan seguridad sin perder nitidez, e
 ---
 
 
-## Resina de Alto índice | Indice 1.56
+## Resina de índice medio | Indice 1.56
 
 Se desarrolló como alternativa más delgada y estéticamente favorable frente al CR-39 tradicional (1.50). Este material permite fabricar lentes más finos sin perder calidad visual, lo que lo convierte en una opción equilibrada entre precio, estética y peso.
 Es uno de los índices más utilizados en la actualidad, especialmente para quienes tienen graduaciones moderadas, ya que reduce el grosor del borde con un costo accesible.
