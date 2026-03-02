@@ -1,278 +1,78 @@
-import { monofocalLenses } from "./lens/monofocal-lenses";
+import { MONOFOCALLENSES } from "./lens/monofocal-lenses";
 import { lensTreatments } from "./tecnologies/ lens-treatments";
 import { photochromaticlenses } from "./tecnologies/photochromatic-lenses";
 import type { monofocalCatalogItem } from "@/types/data/tecni-optica-catalog-type";
 
-const { orma1, orma2, orma3, orma4, orma5, orma7, orma8, orma9, orma10, orma11, orma12, orma13, orma14, orma15, orma16, orma17 } = monofocalLenses;
-
-const { MidIndex, ClearLook, ClearLookSupra, CrizalRock, CrizalSapphire, CrizalForte, CrizalPrevencia, SpectrumSky, SpectrumElite, BlueCut, Xperio } = lensTreatments;
-
-
-const { Generic, TransitionsSignature, TransitionsGen8, TransitionsGenSGrey, TransitionsGenSColors, TransitionsXTRActive } = photochromaticlenses;
-
-
-
 export const monofocalCatalog: monofocalCatalogItem[] = [
-    {
-        lens: orma1
-    },
-    {
-        lens: orma1,
-        treatment: [MidIndex]
-    },
-    {
-        lens: orma2,
-        treatment: [ClearLookSupra]
-    },
-    {
-        lens: orma2,
-        treatment: [CrizalSapphire]
-    },
-    {
-        lens: orma2,
-        treatment: [CrizalRock]
-    },
-    {
-        lens: orma2,
-        treatment: [CrizalPrevencia]
-    },
+    { id: "orma1-base", lens: MONOFOCALLENSES.orma1 },
+    { id: "orma1-midindex", lens: MONOFOCALLENSES.orma1, treatment: [lensTreatments.MidIndex] },
+    { id: "orma2-clsupra", lens: MONOFOCALLENSES.orma2, treatment: [lensTreatments.ClearLookSupra] },
+    { id: "orma2-czsapph", lens: MONOFOCALLENSES.orma2, treatment: [lensTreatments.CrizalSapphire] },
+    { id: "orma2-czrock", lens: MONOFOCALLENSES.orma2, treatment: [lensTreatments.CrizalRock] },
+    { id: "orma2-czprev", lens: MONOFOCALLENSES.orma2, treatment: [lensTreatments.CrizalPrevencia] },
 
-    {
-        lens: orma3,
-    },
-    {
-        lens: orma3,
-        treatment: [MidIndex]
-    },
-    {
-        lens: orma4,
-    },
-    {
-        lens: orma4,
-        treatment: [ClearLook]
-    },
-    {
-        lens: orma4,
-        treatment: [ClearLookSupra]
-    },
-    {
-        lens: orma4,
-        treatment: [CrizalSapphire]
-    },
-    {
-        lens: orma4,
-        treatment: [CrizalForte]
-    },
-    {
-        lens: orma4,
-        treatment: [CrizalPrevencia]
-    },
-    {
-        lens: orma5,
-    },
-    {
-        lens: orma5,
-        treatment: [ClearLook]
-    },
-    {
-        lens: orma5,
-        treatment: [ClearLookSupra]
-    },
-    {
-        lens: orma7,
-        treatment: [CrizalSapphire]
-    },
-    {
-        lens: orma7,
-        treatment: [CrizalForte]
-    },
-    {
-        lens: orma7,
-        treatment: [CrizalPrevencia]
-    },
-    {
-        lens: orma7,
-        treatment: [MidIndex, BlueCut]
-    },
-    {
-        lens: orma7,
-        treatment: [ClearLook, BlueCut]
-    },
-    {
-        lens: orma7,
-        treatment: [ClearLookSupra, BlueCut]
-    },
-    {
-        lens: orma8,
-        treatment: [MidIndex, BlueCut]
-    },
-    {
-        lens: orma8,
-        treatment: [ClearLook, BlueCut]
-    },
-    {
-        lens: orma8,
-        treatment: [ClearLookSupra, BlueCut]
-    },
-    {
-        lens: orma9,
-        treatment: [MidIndex, BlueCut]
-    },
-    {
-        lens: orma9,
-        treatment: [ClearLook, BlueCut]
-    },
-    {
-        lens: orma9,
-        treatment: [ClearLookSupra, BlueCut]
-    },
-    {
-        lens: orma10,
-        treatment: [MidIndex, BlueCut]
-    },
-    {
-        lens: orma10,
-        treatment: [ClearLook, BlueCut]
-    },
-    {
-        lens: orma10,
-        treatment: [ClearLookSupra, BlueCut]
+    { id: "orma3-base", lens: MONOFOCALLENSES.orma3 },
+    { id: "orma3-midindex", lens: MONOFOCALLENSES.orma3, treatment: [lensTreatments.MidIndex] },
+    { id: "orma4-base", lens: MONOFOCALLENSES.orma4 },
+    { id: "orma4-clook", lens: MONOFOCALLENSES.orma4, treatment: [lensTreatments.ClearLook] },
+    { id: "orma4-clsupra", lens: MONOFOCALLENSES.orma4, treatment: [lensTreatments.ClearLookSupra] },
+    { id: "orma4-czsapph", lens: MONOFOCALLENSES.orma4, treatment: [lensTreatments.CrizalSapphire] },
+    { id: "orma4-czforte", lens: MONOFOCALLENSES.orma4, treatment: [lensTreatments.CrizalForte] },
+    { id: "orma4-czprev", lens: MONOFOCALLENSES.orma4, treatment: [lensTreatments.CrizalPrevencia] },
 
-    },
-    {
-        lens: orma11,
-        treatment: [ClearLookSupra, BlueCut]
-    },
+    { id: "orma5-base", lens: MONOFOCALLENSES.orma5 },
+    { id: "orma5-clook", lens: MONOFOCALLENSES.orma5, treatment: [lensTreatments.ClearLook] },
+    { id: "orma5-clsupra", lens: MONOFOCALLENSES.orma5, treatment: [lensTreatments.ClearLookSupra] },
 
-    {
-        lens: orma12,
-        photochromatic: TransitionsGenSGrey
-    },
-    {
-        lens: orma12,
-        treatment: [CrizalForte,],
-        photochromatic: TransitionsGenSGrey
-    },
-    {
-        lens: orma13,
-        photochromatic: TransitionsGenSGrey,
+    { id: "orma7-czsapph", lens: MONOFOCALLENSES.orma7, treatment: [lensTreatments.CrizalSapphire] },
+    { id: "orma7-czforte", lens: MONOFOCALLENSES.orma7, treatment: [lensTreatments.CrizalForte] },
+    { id: "orma7-czprev", lens: MONOFOCALLENSES.orma7, treatment: [lensTreatments.CrizalPrevencia] },
+    { id: "orma7-mid-bcut", lens: MONOFOCALLENSES.orma7, treatment: [lensTreatments.MidIndex, lensTreatments.BlueCut] },
+    { id: "orma7-clook-bcut", lens: MONOFOCALLENSES.orma7, treatment: [lensTreatments.ClearLook, lensTreatments.BlueCut] },
+    { id: "orma7-clsupra-bcut", lens: MONOFOCALLENSES.orma7, treatment: [lensTreatments.ClearLookSupra, lensTreatments.BlueCut] },
 
-    },
-    {
-        lens: orma13,
-        treatment: [ClearLook],
-        photochromatic: TransitionsGenSGrey,
+    { id: "orma8-mid-bcut", lens: MONOFOCALLENSES.orma8, treatment: [lensTreatments.MidIndex, lensTreatments.BlueCut] },
+    { id: "orma8-clook-bcut", lens: MONOFOCALLENSES.orma8, treatment: [lensTreatments.ClearLook, lensTreatments.BlueCut] },
+    { id: "orma8-clsupra-bcut", lens: MONOFOCALLENSES.orma8, treatment: [lensTreatments.ClearLookSupra, lensTreatments.BlueCut] },
 
-    },
-    {
-        lens: orma13,
-        treatment: [ClearLookSupra],
-        photochromatic: TransitionsGenSGrey,
+    { id: "orma9-mid-bcut", lens: MONOFOCALLENSES.orma9, treatment: [lensTreatments.MidIndex, lensTreatments.BlueCut] },
+    { id: "orma9-clook-bcut", lens: MONOFOCALLENSES.orma9, treatment: [lensTreatments.ClearLook, lensTreatments.BlueCut] },
+    { id: "orma9-clsupra-bcut", lens: MONOFOCALLENSES.orma9, treatment: [lensTreatments.ClearLookSupra, lensTreatments.BlueCut] },
 
-    },
-    {
-        lens: orma13,
-        treatment: [CrizalSapphire],
-        photochromatic: TransitionsGenSGrey,
+    { id: "orma10-mid-bcut", lens: MONOFOCALLENSES.orma10, treatment: [lensTreatments.MidIndex, lensTreatments.BlueCut] },
+    { id: "orma10-clook-bcut", lens: MONOFOCALLENSES.orma10, treatment: [lensTreatments.ClearLook, lensTreatments.BlueCut] },
+    { id: "orma10-clsupra-bcut", lens: MONOFOCALLENSES.orma10, treatment: [lensTreatments.ClearLookSupra, lensTreatments.BlueCut] },
 
-    },
-    {
-        lens: orma13,
-        treatment: [CrizalForte,],
-        photochromatic: TransitionsGenSGrey,
+    { id: "orma11-clsupra-bcut", lens: MONOFOCALLENSES.orma11, treatment: [lensTreatments.ClearLookSupra, lensTreatments.BlueCut] },
 
-    },
-    {
-        lens: orma13,
-        treatment: [CrizalPrevencia],
-        photochromatic: TransitionsGenSGrey,
+    { id: "orma12-trans-grey", lens: MONOFOCALLENSES.orma12, photochromatic: photochromaticlenses.TransitionsGenSGrey },
+    { id: "orma12-czforte-trans-grey", lens: MONOFOCALLENSES.orma12, treatment: [lensTreatments.CrizalForte], photochromatic: photochromaticlenses.TransitionsGenSGrey },
 
-    },
-    {
-        lens: orma13,
-        photochromatic: TransitionsGenSColors,
+    { id: "orma13-trans-grey", lens: MONOFOCALLENSES.orma13, photochromatic: photochromaticlenses.TransitionsGenSGrey },
+    { id: "orma13-clook-trans-grey", lens: MONOFOCALLENSES.orma13, treatment: [lensTreatments.ClearLook], photochromatic: photochromaticlenses.TransitionsGenSGrey },
+    { id: "orma13-clsupra-trans-grey", lens: MONOFOCALLENSES.orma13, treatment: [lensTreatments.ClearLookSupra], photochromatic: photochromaticlenses.TransitionsGenSGrey },
+    { id: "orma13-czsapph-trans-grey", lens: MONOFOCALLENSES.orma13, treatment: [lensTreatments.CrizalSapphire], photochromatic: photochromaticlenses.TransitionsGenSGrey },
+    { id: "orma13-czforte-trans-grey", lens: MONOFOCALLENSES.orma13, treatment: [lensTreatments.CrizalForte], photochromatic: photochromaticlenses.TransitionsGenSGrey },
+    { id: "orma13-czprev-trans-grey", lens: MONOFOCALLENSES.orma13, treatment: [lensTreatments.CrizalPrevencia], photochromatic: photochromaticlenses.TransitionsGenSGrey },
 
-    },
-    {
-        lens: orma13,
-        treatment: [ClearLook],
-        photochromatic: TransitionsGenSColors,
+    { id: "orma13-trans-colors", lens: MONOFOCALLENSES.orma13, photochromatic: photochromaticlenses.TransitionsGenSColors },
+    { id: "orma13-clook-trans-colors", lens: MONOFOCALLENSES.orma13, treatment: [lensTreatments.ClearLook], photochromatic: photochromaticlenses.TransitionsGenSColors },
+    { id: "orma13-clsupra-trans-colors", lens: MONOFOCALLENSES.orma13, treatment: [lensTreatments.ClearLookSupra], photochromatic: photochromaticlenses.TransitionsGenSColors },
+    { id: "orma13-czsapph-trans-colors", lens: MONOFOCALLENSES.orma13, treatment: [lensTreatments.CrizalSapphire], photochromatic: photochromaticlenses.TransitionsGenSColors },
+    { id: "orma13-czforte-trans-colors", lens: MONOFOCALLENSES.orma13, treatment: [lensTreatments.CrizalForte], photochromatic: photochromaticlenses.TransitionsGenSColors },
+    { id: "orma13-czprev-trans-colors", lens: MONOFOCALLENSES.orma13, treatment: [lensTreatments.CrizalPrevencia], photochromatic: photochromaticlenses.TransitionsGenSColors },
 
-    },
-    {
-        lens: orma13,
-        treatment: [ClearLookSupra],
-        photochromatic: TransitionsGenSColors,
+    { id: "orma2-clook-gen", lens: MONOFOCALLENSES.orma2, treatment: [lensTreatments.ClearLook], photochromatic: photochromaticlenses.Generic },
+    { id: "orma14-clook-gen", lens: MONOFOCALLENSES.orma14, treatment: [lensTreatments.ClearLook], photochromatic: photochromaticlenses.Generic },
+    { id: "orma15-gen", lens: MONOFOCALLENSES.orma15, photochromatic: photochromaticlenses.Generic },
+    { id: "orma15-clook-gen", lens: MONOFOCALLENSES.orma15, treatment: [lensTreatments.ClearLook], photochromatic: photochromaticlenses.Generic },
+    { id: "orma15-clsupra-gen", lens: MONOFOCALLENSES.orma15, treatment: [lensTreatments.ClearLookSupra], photochromatic: photochromaticlenses.Generic },
+    { id: "orma16-mid-bcut-gen", lens: MONOFOCALLENSES.orma16, treatment: [lensTreatments.MidIndex, lensTreatments.BlueCut], photochromatic: photochromaticlenses.Generic },
 
-    }, {
-        lens: orma13,
-        treatment: [CrizalSapphire],
-        photochromatic: TransitionsGenSColors,
-
-    }, {
-        lens: orma13,
-        treatment: [CrizalForte,],
-        photochromatic: TransitionsGenSColors,
-
-    },
-    {
-        lens: orma13,
-        treatment: [CrizalPrevencia],
-        photochromatic: TransitionsGenSColors,
-
-    },
-    {
-        lens: orma2,
-        treatment: [ClearLook],
-        photochromatic: Generic,
-    },
-    {
-        lens: orma14,
-        treatment: [ClearLook],
-        photochromatic: Generic,
-    },
-    {
-        lens: orma15,
-
-        photochromatic: Generic,
-    },
-    {
-        lens: orma15,
-        treatment: [ClearLook],
-        photochromatic: Generic,
-    },
-    {
-        lens: orma15,
-        treatment: [ClearLookSupra],
-        photochromatic: Generic,
-    },
-    {
-        lens: orma16,
-        treatment: [MidIndex, BlueCut],
-        photochromatic: Generic,
-    },
-    {
-        lens: orma17,
-        treatment: [Xperio]
-    },
-    {
-        lens: orma17,
-        treatment: [Xperio, ClearLook],
-    },
-    {
-        lens: orma17,
-        treatment: [Xperio, ClearLookSupra]
-    },
-    {
-        lens: orma17,
-        treatment: [Xperio, CrizalSapphire],
-    },
-    {
-        lens: orma17,
-        treatment: [Xperio, CrizalForte],
-    },
-    {
-        lens: orma17,
-        treatment: [Xperio, CrizalPrevencia],
-    },
-]
+    { id: "orma17-xperio", lens: MONOFOCALLENSES.orma17, treatment: [lensTreatments.Xperio] },
+    { id: "orma17-xperio-clook", lens: MONOFOCALLENSES.orma17, treatment: [lensTreatments.Xperio, lensTreatments.ClearLook] },
+    { id: "orma17-xperio-clsupra", lens: MONOFOCALLENSES.orma17, treatment: [lensTreatments.Xperio, lensTreatments.ClearLookSupra] },
+    { id: "orma17-xperio-czsapph", lens: MONOFOCALLENSES.orma17, treatment: [lensTreatments.Xperio, lensTreatments.CrizalSapphire] },
+    { id: "orma17-xperio-czforte", lens: MONOFOCALLENSES.orma17, treatment: [lensTreatments.Xperio, lensTreatments.CrizalForte] },
+    { id: "orma17-xperio-czprev", lens: MONOFOCALLENSES.orma17, treatment: [lensTreatments.Xperio, lensTreatments.CrizalPrevencia] },
+];

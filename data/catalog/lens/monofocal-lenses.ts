@@ -1,6 +1,6 @@
 import type { monofocalLensType } from "@/types/data/monofocal-lens-type";
 
-export const monofocalLenses: monofocalLensType = {
+export const MONOFOCALLENSES: monofocalLensType = {
   orma1: {
     id: "O1",
     name: "Orma",
@@ -99,10 +99,6 @@ export const monofocalLenses: monofocalLensType = {
     company: "Essilor",
     range: "stock",
     diam: [65, 70],
-    combinations: [
-      { esf: 4, cil: -2 },
-      { esf: -6, cil: -2 }
-    ],
     rangeDiopters: [{ minEsf: -6, maxEsf: 4, minCil: -2, maxCil: 0 }],
     lensMaterial: { name: "MR-series 1.61", tipo: "thiourethane", index: 1.61 },
 
@@ -120,7 +116,7 @@ export const monofocalLenses: monofocalLensType = {
     range: "EXT",
     diam: [65, 70],
     rangeDiopters: [{ minEsf: -8, maxEsf: -6.25, minCil: 0, maxCil: 2 },
-    { minEsf: -4, maxEsf: 4, minCil: 0, maxCil: -2 }
+    { minEsf: -4, maxEsf: 4, minCil: 0, maxCil: -4 }
 
     ],
     lensMaterial: { name: "MR-8", tipo: "thiourethane", index: 1.60 },
@@ -137,11 +133,7 @@ export const monofocalLenses: monofocalLensType = {
     company: "Essilor",
     range: "EXT",
     diam: [65, 70],
-    rangeDiopters: [
-      { minEsf: 4.25, maxEsf: 6, cil: -2 },
-      { minEsf: -6.75, maxEsf: -10, cil: -2 }
-    ],
-    rangeDiopters: [{ minEsf: -6.75, maxEsf: 6, minCil: -t, maxCil: 2 }],
+    rangeDiopters: [{ minEsf: -6.75, maxEsf: 6, minCil: -2, maxCil: 2 }],
     lensMaterial: { name: "MR-8", tipo: "thiourethane", index: 1.60 },
     lensType: "esferico",
     tecnologies: [],
@@ -170,7 +162,7 @@ export const monofocalLenses: monofocalLensType = {
     company: "Essilor",
     range: "stock",
     diam: [65, 70],
-    rangeDiopters: [{ minEsf: -4, maxEsf: 4, cil: 2 }],
+    rangeDiopters: [{ minEsf: -4, maxEsf: 4, minCil: -2, maxCil: 2 }],
     lensMaterial: { name: "CR-39", tipo: "resina orgánica estándar", index: 1.50 },
     lensType: "esférico",
     tecnologies: [],
@@ -184,7 +176,7 @@ export const monofocalLenses: monofocalLensType = {
     company: "Essilor",
     range: "LAB",
     diam: [70],
-    rangeDiopters: [{ minEsf: -13, maxEsf: 7, cil: -6 }],
+    rangeDiopters: [{ minEsf: -13, maxEsf: 7, minCil: -6, maxCil: 6 }],
     lensMaterial: { name: "CR-39", tipo: "resina orgánica estándar", index: 1.50 },
 
     lensType: "esférico",
@@ -199,10 +191,7 @@ export const monofocalLenses: monofocalLensType = {
     company: "Essilor",
     range: "EXT",
     diam: [70],
-    combinations: [
-      { esf: 4, cil: -4 },
-      { esf: -4, cil: 4 }
-    ],
+    rangeDiopters: [{ minEsf: -4, maxEsf: 4, minCil: -4, maxCil: 4 }],
     lensMaterial: { name: "CR-39", tipo: "resina orgánica estándar", index: 1.50 },
     lensType: "esférico",
     tecnologies: [],
@@ -218,10 +207,7 @@ export const monofocalLenses: monofocalLensType = {
     company: "Essilor",
     range: "LAB",
     diam: [70],
-    combinations: [
-      { esf: 9, cil: -6 },
-      { esf: -12, cil: 6 }
-    ],
+    rangeDiopters: [{ minEsf: -12, maxEsf: 9, minCil: -6, maxCil: 6 }],
     lensMaterial: { name: "CR-39", tipo: "resina orgánica estándar", index: 1.50 },
     lensType: "esférico",
     tecnologies: [],
@@ -235,7 +221,7 @@ export const monofocalLenses: monofocalLensType = {
     company: "Essilor",
     range: "stock",
     diam: [70],
-    rangeDiopters: [{ minEsf: -6, maxEsf: 4, cil: 2 }],
+    rangeDiopters: [{ minEsf: -6, maxEsf: 4, minCil: -2, maxCil: 2 }],
     lensMaterial: { name: "CR-39", tipo: "resina orgánica estándar", index: 1.50 },
     lensType: "esférico",
     tecnologies: [],
