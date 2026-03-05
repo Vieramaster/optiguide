@@ -1,4 +1,4 @@
-import { lensTreatmentstype } from "@/types/data/lens-treatments-type";
+import { lensTreatmentstype } from "@/features/lens-catalog-page/types/company/tecnologies/lens-treatments";
 
 export const lensTreatments: lensTreatmentstype = {
   MidIndex: {

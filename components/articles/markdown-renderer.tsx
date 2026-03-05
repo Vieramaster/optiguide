@@ -1,4 +1,5 @@
 import ReactMarkdown from "react-markdown";
+
 import { Title } from "./markdown-components/title";
 import { SubTitle } from "./markdown-components/subtitle";
 import { BodyText } from "./markdown-components/body-text";
@@ -7,14 +8,10 @@ import { Links } from "./markdown-components/links";
 import { MDImage } from "./markdown-components/md-image";
 import { LiList } from "./markdown-components/li-list";
 import { OlList } from "./markdown-components/ol-list";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
+import { Table } from "@/components/ui/table";
+import { TableHeader } from "@/components/ui/table";
+import { TableRow } from "@/components/ui/table";
+import { TableHead, TableBody, TableCell } from "@/components/ui/table";
 
 interface MarkdownProps {
   children: string;

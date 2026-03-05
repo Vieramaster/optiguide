@@ -1,6 +1,6 @@
-import type { monofocalLensType } from "@/types/data/monofocal-lens-type";
+import type { monofocalLensType } from "@/features/lens-catalog-page/types/company/lens/lens-base";
 
-export const MONOFOCALLENSES: monofocalLensType = {
+export const MONOFOCAL_LENS_CATALOG: monofocalLensType = {
   orma1: {
     id: "O1",
     name: "Orma",
@@ -135,7 +135,7 @@ export const MONOFOCALLENSES: monofocalLensType = {
     diam: [65, 70],
     rangeDiopters: [{ minEsf: -6.75, maxEsf: 6, minCil: -2, maxCil: 2 }],
     lensMaterial: { name: "MR-8", tipo: "thiourethane", index: 1.60 },
-    lensType: "esferico",
+    lensType: "esférico",
     tecnologies: [],
     surfacing: "convencional"
 
@@ -148,9 +148,9 @@ export const MONOFOCALLENSES: monofocalLensType = {
     category: "BlueCut",
     range: "LAB",
     diam: [65, 70],
-    rangeDiopters: [{ minEsf: -11, maxEsf: 11, cil: -6 }],
+    rangeDiopters: [{ minEsf: -11, maxEsf: 11, minCil: -6, maxCil: 6 }],
     lensMaterial: { name: "MR-series 1.61", tipo: "thiourethane", index: 1.61 },
-    lensType: "esferico",
+    lensType: "esférico",
     tecnologies: [],
     surfacing: "convencional"
   },
@@ -235,7 +235,7 @@ export const MONOFOCALLENSES: monofocalLensType = {
     company: "Essilor",
     range: "LAB",
     diam: [70],
-    rangeDiopters: [{ minEsf: -8, maxEsf: 8, cil: -5 }],
+    rangeDiopters: [{ minEsf: -8, maxEsf: 8, minCil: -5, maxCil: 0 }],
     lensMaterial: { name: "CR-39", tipo: "resina orgánica estándar", index: 1.50 },
     lensType: "esférico",
     tecnologies: [],
@@ -249,7 +249,7 @@ export const MONOFOCALLENSES: monofocalLensType = {
     company: "Essilor",
     range: "LAB",
     diam: [80],
-    rangeDiopters: [{ minEsf: -5, maxEsf: 7, cil: -4 }],
+    rangeDiopters: [{ minEsf: -5, maxEsf: 7, minCil: -4, maxCil: 0 }],
     lensMaterial: { name: "CR-39", tipo: "resina orgánica estándar", index: 1.50 },
     lensType: "esférico",
     tecnologies: [],
@@ -263,9 +263,9 @@ export const MONOFOCALLENSES: monofocalLensType = {
     company: "Essilor",
     range: "stock",
     diam: [65, 70],
-    rangeDiopters: [{ minEsf: -10, maxEsf: 6, cil: -6 }],
+    rangeDiopters: [{ minEsf: -10, maxEsf: 6, minCil: -6, maxCil: 0 }],
     lensMaterial: { name: "MR-series 1.61", tipo: "thiourethane", index: 1.61 },
-    lensType: "esferico",
+    lensType: "esférico",
     tecnologies: [],
     surfacing: "digital"
   }
