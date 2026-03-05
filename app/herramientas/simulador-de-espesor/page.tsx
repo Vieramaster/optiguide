@@ -1,13 +1,13 @@
 "use client";
-//COMPONENTS
+// COMPONENTS
 import { InputsSimulator } from "@/components/simulator/inputs-simulator";
 import { HeaderSimulator } from "@/components/simulator/header-simulator";
 import { ErrorListSimulator } from "@/components/simulator/error-list-simulator";
 import { LensSimulator } from "@/components/simulator/lens-simulator";
 import { Button } from "@/components/ui/button";
-//DATA
+// DATA
 import { GraduationKeysArray } from "@/lib/graduations-array";
-//HOOKS
+// HOOKS
 import { useLensSimulator } from "@/hooks/use-lens-simulator";
 import { useThicknessSimulator } from "@/hooks/use-thickness-simulator";
 

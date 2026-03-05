@@ -1,5 +1,4 @@
 import ReactMarkdown from "react-markdown";
-import rehypeRaw from "rehype-raw";
 import { Title } from "./markdown-components/title";
 import { SubTitle } from "./markdown-components/subtitle";
 import { BodyText } from "./markdown-components/body-text";
@@ -23,7 +22,9 @@ interface MarkdownProps {
 
 export const MarkdownRenderer = ({ children }: MarkdownProps) => (
   <ReactMarkdown
-    rehypePlugins={[rehypeRaw]}
+    // Importante: no usamos HTML crudo por seguridad (evitamos XSS).
+    // Si en el futuro se necesitara HTML, habría que pasar el contenido
+    // por una capa de sanitización explícita antes de renderizarlo.
     components={{
       h1: Title,
       h2: SubTitle,
@@ -44,3 +45,4 @@ export const MarkdownRenderer = ({ children }: MarkdownProps) => (
     {children}
   </ReactMarkdown>
 );
+

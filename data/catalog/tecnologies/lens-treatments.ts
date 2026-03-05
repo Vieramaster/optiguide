@@ -1,13 +1,12 @@
 import { lensTreatmentstype } from "@/types/data/lens-treatments-type";
 
 export const lensTreatments: lensTreatmentstype = {
-
   MidIndex: {
     id: "T2",
     name: "Mid Index",
     brand: "Clear Look",
     tecnologies: ["Antirreflejo básico"],
-    features: ["antiReflex"]
+    features: ["antiReflex"],
   },
 
   ClearLook: {
@@ -15,7 +14,7 @@ export const lensTreatments: lensTreatmentstype = {
     name: "Clear Look",
     brand: "Clear Look",
     tecnologies: ["Antirreflejo estándar"],
-    features: ["antiReflex"]
+    features: ["antiReflex"],
   },
 
   ClearLookSupra: {
@@ -23,14 +22,15 @@ export const lensTreatments: lensTreatmentstype = {
     name: "Clear Look Supra",
     brand: "Clear Look",
     tecnologies: ["Antirreflejo avanzado"],
-    features: ["antiReflex"]
+    features: ["antiReflex"],
   },
+
   BlueCut: {
     id: "T5",
     name: "Blue Cut",
     brand: "Clear Look",
     tecnologies: [],
-    features: ["blueControl"]
+    features: ["blueControl"],
   },
 
   CrizalSapphire: {
@@ -42,15 +42,15 @@ export const lensTreatments: lensTreatmentstype = {
       "High-Resistance Technology™",
       "E-SPF® UV Protection",
       "High Surface Density™",
-      "Pad Control System™"
+      "Pad Control System™",
     ],
     features: [
       "antiReflex",
       "blueControl",
       "oleophobicHydrophobic",
       "scratchResistant",
-      "antiStatic"
-    ]
+      "antiStatic",
+    ],
   },
 
   CrizalRock: {
@@ -61,15 +61,15 @@ export const lensTreatments: lensTreatmentstype = {
       "High-Resistance Technology™",
       "High Surface Density™",
       "E-SPF® UV Protection",
-      "Multi-Angular Technology™"
+      "Multi-Angular Technology™",
     ],
     features: [
       "antiReflex",
       "blueControl",
       "oleophobicHydrophobic",
       "scratchResistant",
-      "antiStatic"
-    ]
+      "antiStatic",
+    ],
   },
 
   CrizalPrevencia: {
@@ -81,16 +81,17 @@ export const lensTreatments: lensTreatmentstype = {
       "Multi-Angular Technology™",
       "High-Resistance Technology™",
       "E-SPF® UV Protection",
-      "High Surface Density™"
+      "High Surface Density™",
     ],
     features: [
       "antiReflex",
       "blueControl",
       "oleophobicHydrophobic",
       "scratchResistant",
-      "antiStatic"
-    ]
+      "antiStatic",
+    ],
   },
+
   CrizalForte: {
     id: "C4",
     name: "Crizal Forte",
@@ -99,60 +100,53 @@ export const lensTreatments: lensTreatmentstype = {
       "High-Resistance Technology™",
       "High Surface Density™",
       "E-SPF® UV Protection",
-      "Multi-Angular Technology™"
+      "Multi-Angular Technology™",
     ],
-    features:
-      ["antiReflex",
-        "blueControl",
-        "oleophobicHydrophobic",
-        "scratchResistant",
-        "antiStatic"
-      ]
+    features: [
+      "antiReflex",
+      "blueControl",
+      "oleophobicHydrophobic",
+      "scratchResistant",
+      "antiStatic",
+    ],
   },
 
   SpectrumSky: {
     id: "S1",
     name: "Spectrum Sky+",
     brand: "Vitolen",
-    tecnologies: [
-      "Sky+ Technology™",
-      "Multi-layer AR System™"
-    ],
+    tecnologies: ["Sky+ Technology™", "Multi-layer AR System™"],
     features: [
       "antiReflex",
       "oleophobicHydrophobic",
       "scratchResistant",
-      "antiStatic"
-    ]
+      "antiStatic",
+    ],
   },
 
   SpectrumElite: {
     id: "S2",
     name: "Spectrum Elite",
     brand: "Vitolen",
-    tecnologies: [
-      "Elite AR Technology™",
-      "High-Density Coating™"
-    ],
+    tecnologies: ["Elite AR Technology™", "High-Density Coating™"],
     features: [
       "antiReflex",
       "oleophobicHydrophobic",
       "scratchResistant",
-      "antiStatic"
-    ]
+      "antiStatic",
+    ],
   },
-  Xperio: {
-  id: "XP1",
-  name: "Xperio pol. gris/verde/cafe",
-  brand: "Essilor",
-  tecnologies: [
-    "Xperio Polarised Technology™",
-    "Crizal Sun UV™",
-    "Enhanced Colour Perception"
-  ],
-  features: [
-    "polarized"
-  ]
-}
 
+  Xperio: {
+    id: "XP1",
+    name: "Xperio pol. gris/verde/cafe",
+    brand: "Essilor",
+    tecnologies: [
+      "Xperio Polarised Technology™",
+      "Crizal Sun UV™",
+      "Enhanced Colour Perception",
+    ],
+    features: ["polarized"],
+  },
 };
+

@@ -27,14 +27,8 @@ export const LensSimulator = ({
   setThickness,
   thickness,
 }: LensSimulatorProps) => {
-
-  // hook personalizado para manejar el SVG de la lente
   const { handleValueSelect, totalThickness, isPositive } = useLensSVG(values);
-
-  // sincroniza el grosor con el hook
   useThicknessSync(side, totalThickness, setThickness);
-
-  // cálculo de porcentaje y comparación de grosores
   const { isMax, percentageDiff } = porcentageCalculator({ side, thickness });
 
   return (
@@ -45,20 +39,13 @@ export const LensSimulator = ({
         lg:flex
       `}
     >
-      {/* Mensaje dinámico */}
       <ThicknessMessage
-      thickness={thickness[side]}
+        thickness={thickness[side]}
         isMax={isMax}
         percentage={percentageDiff}
       />
-
-      {/** selects de indices */}
       <SelectSimulator onValueSelect={handleValueSelect} />
-
-      {/**SVG maleable */}
       <LensSVG isPositive={isPositive} size={totalThickness} />
-
-
     </div>
   );
 };

@@ -5,19 +5,31 @@
 ### `/app`
 Contiene las rutas y páginas de Next.js usando App Router.
 
-```
+```txt
 app/
-├── layout.tsx              # Layout principal de la aplicación
-├── page.tsx               # Página de inicio
-├── libreria/[slug]/       # Rutas dinámicas para artículos
-│   ├── page.tsx          # Renderiza artículos Markdown
-│   ├── loading.tsx       # Estado de carga
-│   └── error.tsx         # Manejo de errores
-└── simulador-de-espesor/  # Página del simulador
-    ├── page.tsx
-    ├── loading.tsx
-    └── error.tsx
+├── layout.tsx                     # Layout principal de la aplicación
+├── page.tsx                       # Página de inicio
+├── libreria/[slug]/               # Rutas dinámicas para artículos
+│   ├── page.tsx                   # Renderiza artículos Markdown
+│   ├── loading.tsx                # Estado de carga
+│   └── error.tsx                  # Manejo de errores
+└── herramientas/                  # Herramientas interactivas
+    ├── simulador-de-espesor/      # Página del simulador de espesor
+    │   ├── page.tsx
+    │   ├── loading.tsx
+    │   └── error.tsx
+    └── lentes-segun-el-rostro/    # Herramienta de monturas según forma de rostro
+        ├── page.tsx
+        ├── loading.tsx
+        └── error.tsx
 ```
+
+### `/features`
+
+Espacio reservado para features de dominio encapsulados (por ejemplo, futuras
+implementaciones de monturas en SVG u otras herramientas avanzadas).
+Actualmente se utiliza `features/frames` como base para futuros desarrollos
+de formas de montura, pero aún no está integrado en el flujo principal.
 
 ### `/components`
 Componentes React organizados por funcionalidad.

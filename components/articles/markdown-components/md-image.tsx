@@ -12,13 +12,11 @@ export const MDImage = ({
   className,
   ...rest
 }: MDImageProps) => {
-  // Validar que src sea un string (Next.js Image no acepta Blob)
   if (typeof src !== "string" || !isValidImageSrc(src)) return null;
 
-  // Convertir width y height a números
   const { width: imageWidth, height: imageHeight } = parseImageDimensions(
     width,
-    height
+    height,
   );
 
   return (
@@ -33,3 +31,4 @@ export const MDImage = ({
     />
   );
 };
+

@@ -1,5 +1,5 @@
 import { MONOFOCALLENSES } from "./lens/monofocal-lenses";
-import { lensTreatments } from "./tecnologies/ lens-treatments";
+import { lensTreatments } from "./tecnologies/lens-treatments";
 import { photochromaticlenses } from "./tecnologies/photochromatic-lenses";
 import type { monofocalCatalogItem } from "@/types/data/tecni-optica-catalog-type";
 
