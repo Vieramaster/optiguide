@@ -1,4 +1,4 @@
-import { GraduationObject } from "@/features/lens-thickness-simulator/types/simulator";
+import { GraduationObject } from "../types/simulator"; 
 
 /**
  * Valida si los valores de graduación son válidos para habilitar el botón de calcular

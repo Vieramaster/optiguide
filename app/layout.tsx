@@ -37,10 +37,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' }
-  ],
+
   openGraph: {
     title: "Optiguide - Tu guía práctica en óptica",
     description: "Conceptos claros, ejemplos reales y explicaciones simples para aprender más rápido el trabajo diario en óptica.",

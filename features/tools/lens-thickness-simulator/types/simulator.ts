@@ -1,4 +1,4 @@
-import { GRADUATION_RANGES } from "@/features/lens-thickness-simulator/data/graduation-ranges";
+import { GRADUATION_RANGES } from "../data/graduation-ranges"; 
 
 export type GraduationKey = keyof typeof GRADUATION_RANGES;
 
