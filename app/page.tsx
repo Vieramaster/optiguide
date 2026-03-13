@@ -1,5 +1,5 @@
 import { PageTitle } from "@/components/page-title";
-import { monofocalCatalog } from "@/data/catalog/company/tecni-optica-catalog";
+
 const MainPage = () => {
 
   return (
