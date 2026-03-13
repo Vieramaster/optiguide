@@ -1,15 +1,15 @@
 "use client";
 // COMPONENTS
-import { InputsSimulator } from "@/components/simulator/inputs-simulator";
-import { HeaderSimulator } from "@/components/simulator/header-simulator";
-import { ErrorListSimulator } from "@/components/simulator/error-list-simulator";
-import { LensSimulator } from "@/components/simulator/lens-simulator";
+import { InputsSimulator, HeaderSimulator, ErrorListSimulator , LensSimulator} from "@/features/tools/lens-thickness-simulator/components";
 import { Button } from "@/components/ui/button";
 // DATA
-import { GraduationKeysArray } from "@/lib/graduations-array";
+import { graduationKeysArray } from "@/features/tools/lens-thickness-simulator/utils/graduation-keys-array";
 // HOOKS
-import { useLensSimulator } from "@/hooks/use-lens-simulator";
-import { useThicknessSimulator } from "@/hooks/use-thickness-simulator";
+import { useInputValuesSimulator, useThicknessSimulator } from "@/features/tools/lens-thickness-simulator/hooks";
+//TYPES
+import type { LensSide } from "@/features/tools/lens-thickness-simulator/types/simulator";
+
+const SIDES: LensSide[] = ["A", "B"];
 
 const ThicknessSimulator = () => {
   const {
@@ -18,10 +18,16 @@ const ThicknessSimulator = () => {
     error,
     handleChangeGraduation,
     handleClickGraduation,
-  } = useLensSimulator();
+  } = useInputValuesSimulator();
 
-  const { showSimulator, thickness, setThickness, toggleSimulator } =
+  const {
+    activeSide,
+    setActiveSide,
+    thickness,
+    setThickness,
+  } =
     useThicknessSimulator();
+
 
   return (
     <section className="w-full h-full  p-10 flex flex-col gap-8 text-center">
@@ -33,30 +39,31 @@ const ThicknessSimulator = () => {
       />
 
       <InputsSimulator
-        GraduationKeys={GraduationKeysArray}
+        graduationKeys={graduationKeysArray}
         graduationValue={inputsValues}
         onChangevalues={handleChangeGraduation}
         onClickGraduation={handleClickGraduation}
       />
       {error && <ErrorListSimulator error={error} />}
       <div className="flex justify-center  gap-6 lg:hidden">
-        <Button onClick={toggleSimulator} disabled={showSimulator}>
+        <Button onClick={() => setActiveSide("A")} disabled={activeSide === "A"}>
           A
         </Button>
 
-        <Button onClick={toggleSimulator} disabled={!showSimulator}>
+        <Button onClick={() => setActiveSide("B")} disabled={activeSide === "B"}>
           B
         </Button>
       </div>
       <div className="flex  w-full justify-center lg:justify-evenly mt-5">
-        {["A", "B"].map((side) => (
+
+        {SIDES.map((side) => (
           <LensSimulator
             key={side}
             values={finalValues}
-            isShow={side === "A" ? showSimulator : !showSimulator}
+            isShow={activeSide === side}
             thickness={thickness}
             setThickness={setThickness}
-            side={side as "A" | "B"}
+            side={side}
           />
         ))}
 

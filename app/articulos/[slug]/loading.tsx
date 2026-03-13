@@ -3,4 +3,4 @@ import { ArticleSkeleton } from "@/features/articles/components/article-skeleton
 
 const Loading = () => <ArticleSkeleton />;
 
-export default Loading;
+export default Loading
