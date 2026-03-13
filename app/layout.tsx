@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import "./globals.css";
 
 import { AppSidebar } from "@/components/sidebar/components/app-sidebar";
-import { Header } from "@/components/header";
+import { Header } from "@/components/ui/layout/header";
 
 import { SidebarInset, SidebarProvider } from "@/components/sidebar/components/sidebar";
 

@@ -9,7 +9,7 @@ import {
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
-} from "@/components/ui/";
+} from  "./sidebar"
 //DATA
 import { ARTICLES_SIDEBAR } from "../data/library-sidebar";
 import { TOOLS_SIDEBAR } from "../data/tools-sidebar";

@@ -1,11 +1,8 @@
-"use client";
 //FRAMEWORKS
+"use client";
 import Link from "next/link";
 //COMPONENTS
 import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
   SidebarGroup,
   SidebarGroupLabel,
   SidebarMenu,
@@ -14,7 +11,12 @@ import {
   SidebarMenuSub,
   SidebarMenuSubButton,
   SidebarMenuSubItem,
-} from "@/components/ui/";
+} from "../sidebar";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger
+} from "@/components/ui";
 import { ChevronRight } from "lucide-react";
 //TYPES
 import type { articleItem } from "../../types/sidebar";

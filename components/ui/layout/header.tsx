@@ -1,4 +1,9 @@
+//FRAMEWORKS
 "use client";
+import { usePathname } from "next/navigation";
+//UTILS
+import { stringFormatters } from "./utils/stringFormatters";
+//COMPONENTS
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -6,23 +11,14 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-import { SidebarTrigger } from "./sidebar/components/sidebar";
-import { Separator } from "@/components/ui/separator";
-import { usePathname } from "next/navigation";
+  Separator
+} from "@/components/ui/";
+import { SidebarTrigger } from "../../sidebar/components/sidebar";
+
 
 export const Header = () => {
   const pathname = usePathname();
-
-
-  const parts = pathname
-    .split("/")
-    .filter(Boolean)
-    .map((part) => {
-      const sinGuiones = part.replace(/-/g, " ");
-      return sinGuiones.charAt(0).toUpperCase() + sinGuiones.slice(1);
-    });
-
+  const parts = stringFormatters(pathname)
   return (
     <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12">
       <div className="flex items-center gap-2 px-4">

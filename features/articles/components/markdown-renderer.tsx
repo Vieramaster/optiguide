@@ -1,8 +1,8 @@
 //LIBRARY
 import ReactMarkdown from "react-markdown";
 //COMPONENTS
-import { LiList, Title, SubTitle, BodyText, Links, Text, OlList, MDImage } from "./markdown-components";
-import { TableRow, TableHeader, Table ,  TableHead, TableBody, TableCell} from "@/components/ui/table";
+import { LiList, Title, SubTitle, BodyText, Links, Text, OlList } from "@/components/ui/typography";
+import { TableRow, TableHeader, Table ,  TableHead, TableBody, TableCell, MDImage} from "@/components/ui/";
 
 
 interface MarkdownProps {
