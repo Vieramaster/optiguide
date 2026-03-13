@@ -1,6 +1,6 @@
-import { lensTreatmentstype } from "@/features/lens-catalog-page/types/company/tecnologies/lens-treatments";
 
-export const lensTreatments: lensTreatmentstype = {
+
+export const lensTreatments = {
   MidIndex: {
     id: "T2",
     name: "Mid Index",

@@ -1,6 +1,6 @@
-import type { monofocalLensType } from "@/features/lens-catalog-page/types/company/lens/lens-base";
 
-export const MONOFOCAL_LENS_CATALOG: monofocalLensType = {
+
+export const MONOFOCAL_LENS_CATALOG = {
   orma1: {
     id: "O1",
     name: "Orma",

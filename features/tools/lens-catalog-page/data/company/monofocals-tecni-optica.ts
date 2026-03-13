@@ -1,5 +1,5 @@
 
-export const MONOFOCAL_CATALOG:  = [
+export const MONOFOCAL_CATALOG = [
     { id: "orma1-base", lens: "orma1" },
     { id: "orma1-midindex", lens: "orma1", treatment: ["MidIndex"] },
 

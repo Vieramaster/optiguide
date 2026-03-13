@@ -1,6 +1,6 @@
-import { photochromaticlensesType } from "@/features/lens-catalog-page/types/company/tecnologies/photochromatic-lenses";
 
-export const photochromaticlenses: photochromaticlensesType = {
+
+export const photochromaticlenses = {
   Generic: {
     id: "G1",
     name: "Genérico",
