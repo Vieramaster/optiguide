@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 
 import { ARTICLES_DIR } from "@/features/articles/utils/constants";
 import { findMarkdownFile } from "@/features/articles/utils/findmarkdown-file";
-import { isValidSlug } from "@/lib/validation/slug-validation";
+import { isValidSlug } from "@/shared/lib/validation/slug-validation";
 
 /**
  * Función utilitaria para cargar el contenido de un artículo desde archivos Markdown

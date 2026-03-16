@@ -20,7 +20,6 @@ const ArticlesPage = async ({ params }: PageProps) => {
   return (
     <article className="px-10 pt-5 pb-20 flex flex-col gap-6 mx-auto xl:px-28">
       <MarkdownRenderer>{content}</MarkdownRenderer>
-      <h1>hola</h1>
     </article>
   );
 };

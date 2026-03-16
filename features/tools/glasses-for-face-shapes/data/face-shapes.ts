@@ -1,4 +1,7 @@
-export const faceShapes = [
+
+import { FaceShape } from "../types/frames";
+
+export const faceShapes: FaceShape[] = [
   {
     name: "Cuadrado",
     description: "Mandíbula marcada, convienen las formas suaves.",

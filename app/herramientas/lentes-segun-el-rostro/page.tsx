@@ -1,4 +1,4 @@
-import { FaceShapeGrid } from "@/components/face-shapes/face-shape-grid";
+import { FaceShapeGrid } from "@/features/tools/glasses-for-face-shapes/components/face-shapes/face-shape-grid";
 
 const Page = () => {
   return (

@@ -2,8 +2,8 @@
 import ReactMarkdown from "react-markdown";
 //COMPONENTS
 import { LiList, Title, SubTitle, BodyText, Links, Text, OlList } from "@/components/ui/typography";
-import { TableRow, TableHeader, Table ,  TableHead, TableBody, TableCell, MDImage} from "@/components/ui/";
-
+import { TableRow, TableHeader, Table, TableHead, TableBody, TableCell } from "@/components/ui/";
+import { ImageArticle } from "./image-article";
 
 interface MarkdownProps {
   children: string;
@@ -20,7 +20,7 @@ export const MarkdownRenderer = ({ children }: MarkdownProps) => (
       h3: BodyText,
       p: Text,
       a: Links,
-      img: MDImage,
+      img: ImageArticle,
       li: LiList,
       ul: OlList,
       table: Table,
