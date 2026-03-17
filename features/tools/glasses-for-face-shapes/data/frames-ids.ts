@@ -1,16 +1,21 @@
+//COMPONENTS
+import { AviatorFrame, BrownlineFrame, ButterflyFrame, CatEyeFrame, GeometricFrame, OvalFrame, RectangleFrame, RoundFrame, ShieldFrame, SquareFrame } from "../components/frames";
+//TYPES
 import { FrameData } from "../types/frames";
 
 export const framesData: FrameData[] = [
-    { id:"aviator", name: "Aviador", imageURL: "/images/face-shapes/frames/aviator.webp", femaleOnly: false },
-    { id: "round", name: "Redondo", imageURL: "/images/face-shapes/frames/round.webp", femaleOnly: false },
-    { id: "oval", name: "Ovalado", imageURL: "/images/face-shapes/frames/oval.webp", femaleOnly: false },
-    { id: "pantos", name: "Pantos", imageURL: "/images/face-shapes/frames/pantos.webp", femaleOnly: false },
-    { id: "shield", name: "Shield", imageURL: "/images/face-shapes/frames/shield.webp", femaleOnly: false },
-    { id: "geometric", name: "Geométrico", imageURL: "/images/face-shapes/frames/geometric.webp", femaleOnly: true },
-    { id: "wayfarer", name: "Wayfarer", imageURL: "/images/face-shapes/frames/wayfarer.webp", femaleOnly: false },
-    { id: "rectangular", name: "Rectangular", imageURL: "/images/face-shapes/frames/rectangular.webp", femaleOnly: false },
-    { id: "square", name: "Cuadrado", imageURL: "/images/face-shapes/frames/square.webp", femaleOnly: false },
-    { id: "browline", name: "Browline", imageURL: "/images/face-shapes/frames/browline.webp", femaleOnly: false },
-    { id: "catEye", name: "Cat-eye", imageURL: "/images/face-shapes/frames/cat-eye.webp", femaleOnly: true },
-    { id: "butterfly", name: "Butterfly", imageURL: "/images/face-shapes/frames/butterfly.webp", femaleOnly: true },
+    { id: "aviator", name: "Aviador", Ico: AviatorFrame, femaleOnly: false },
+    { id: "round", name: "Redondo", Ico: RoundFrame, femaleOnly: false },
+    { id: "oval", name: "Ovalado", Ico: OvalFrame, femaleOnly: false },
+    { id: "shield", name: "Shield", Ico: ShieldFrame, femaleOnly: false },
+    { id: "geometric", name: "Geométrico", Ico: GeometricFrame, femaleOnly: true },
+    { id: "rectangular", name: "Rectangular", Ico: RectangleFrame, femaleOnly: false },
+    { id: "square", name: "Cuadrado", Ico: SquareFrame, femaleOnly: false },
+    { id: "browline", name: "Browline", Ico: BrownlineFrame, femaleOnly: false },
+    { id: "catEye", name: "Cat-eye", Ico: CatEyeFrame, femaleOnly: true },
+    { id: "butterfly", name: "Butterfly", Ico: ButterflyFrame, femaleOnly: true },
 ]
+/**
+ *     { id: "wayfarer", name: "Wayfarer", Ico: "/images/face-shapes/frames/wayfarer.webp", femaleOnly:false },
+ *     { id: "pantos", name: "Pantos", Ico: "/images/face-shapes/frames/pantos.webp", femaleOnly: false },
+ */

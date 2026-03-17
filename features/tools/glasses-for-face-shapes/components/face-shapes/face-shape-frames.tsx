@@ -15,17 +15,11 @@ export const FaceShapeFrames = ({ frames }: FaceShapeFramesProps) => (
         throw new Error(`Frame no encontrado: ${frame}`);
       }
 
-      const { name, imageURL, femaleOnly } = frameData;
+      const { name, Ico, femaleOnly } = frameData;
 
       return (
-        <li key={frame}>
-          <MDImage
-            src={imageURL}
-            alt={name}
-            width={120}
-            height={40}
-            className={femaleOnly ? "bg-pink-200 rounded-lg" : ""}
-          />
+        <li key={frame} className={femaleOnly ? "bg-red-500" : ""} role="img" title={name}>
+          <Ico className="w-28 h-14" />
         </li>
       );
     })}
