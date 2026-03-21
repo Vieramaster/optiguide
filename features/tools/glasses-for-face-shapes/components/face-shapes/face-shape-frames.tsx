@@ -1,7 +1,6 @@
 
 import type { Frame } from "../../types/frames";
 import { framesData } from "@/features/tools/glasses-for-face-shapes/data/frames-ids";
-import { MDImage } from "@/components/ui";
 interface FaceShapeFramesProps {
   frames: Frame[];
 }

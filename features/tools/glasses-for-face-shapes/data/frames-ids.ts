@@ -1,5 +1,7 @@
 //COMPONENTS
-import { AviatorFrame, BrownlineFrame, ButterflyFrame, CatEyeFrame, GeometricFrame, OvalFrame, RectangleFrame, RoundFrame, ShieldFrame, SquareFrame } from "../components/frames";
+import { AviatorFrame, NavigatorFrame, BrownlineFrame, ButterflyFrame, CatEyeFrame, GeometricFrame, OvalFrame, RectangleFrame, RoundFrame, ShieldFrame, SquareFrame, PantosFrame, WayfarerFrame } from "../components/frames";
+
+
 //TYPES
 import { FrameData } from "../types/frames";
 
@@ -11,11 +13,10 @@ export const framesData: FrameData[] = [
     { id: "geometric", name: "Geométrico", Ico: GeometricFrame, femaleOnly: true },
     { id: "rectangular", name: "Rectangular", Ico: RectangleFrame, femaleOnly: false },
     { id: "square", name: "Cuadrado", Ico: SquareFrame, femaleOnly: false },
-    { id: "browline", name: "Browline", Ico: BrownlineFrame, femaleOnly: false },
+    { id: "browline", name: "Clubmaster", Ico: BrownlineFrame, femaleOnly: false },
     { id: "catEye", name: "Cat-eye", Ico: CatEyeFrame, femaleOnly: true },
     { id: "butterfly", name: "Butterfly", Ico: ButterflyFrame, femaleOnly: true },
+    { id: "wayfarer", name: "Wayfarer", Ico: WayfarerFrame, femaleOnly: false },
+    { id: "pantos", name: "Pantos", Ico: PantosFrame, femaleOnly: false },
+    { id: "navigator", name: "Navigator", Ico: NavigatorFrame, femaleOnly: false }
 ]
-/**
- *     { id: "wayfarer", name: "Wayfarer", Ico: "/images/face-shapes/frames/wayfarer.webp", femaleOnly:false },
- *     { id: "pantos", name: "Pantos", Ico: "/images/face-shapes/frames/pantos.webp", femaleOnly: false },
- */

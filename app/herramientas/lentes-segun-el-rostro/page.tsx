@@ -6,7 +6,7 @@ const Page = () => {
       <h1 className="text-3xl font-bold mb-16 ">
         Cómo elegir las gafas perfectas según la forma de los rostros
       </h1>
-
+    
       <FaceShapeGrid />
     </section>
   );

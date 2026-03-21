@@ -9,5 +9,8 @@ export const FRAMES = [
     "shield",
     "catEye",
     "butterfly",
+    "pantos",
+    "wayfarer",
+    "navigator"
   ] as const
 
