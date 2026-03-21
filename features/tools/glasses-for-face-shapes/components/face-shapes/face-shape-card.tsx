@@ -6,35 +6,35 @@ import {
   Button,
   MDImage
 } from "@/components/ui";
-import { FaceShapeFrames } from "./face-shape-frames";
+import { FaceShapeFrames } from "./frames-list";
 
 //TYPES
 import type { FaceShape } from "../../types/frames";
 
 export const FaceShapeCard = ({ name, imageURL, frameIds, description }: FaceShape) =>
 
-  <ul className="flex flex-col gap-5 bg-violet-500 w-full">
-    <li className="bg-red-500 w-72 rounded-lg">
+  <ul className="flex flex-col gap-5 w-full ">
+    <li className="bg-red-500 w-72 rounded-lg  lg:flex-wrap">
       {/**primer bloque */}
-      <div>
-        <div className="h-10 place-content-center text-2xl font-bold">
-        <h3 className="font-bold"> {name}</h3>
-        </div>
-        <div className="h- bg-violet-400 flex place-content-center">
+      <div >
+        <div className="rounded-2xl p-4 overflow-hidden w-72 h-72">
           <MDImage
             src={imageURL}
             alt={name}
             width={256}
             height={256}
-            className="h-full"
+            className="w-full rounded-md "
           />
-        </div>
-        <div className="p-2">
 
+        </div>
+
+        <div className="px-4 " >
+          <h3 className="text-2xl font-bold mb-2">{name}</h3>
           <p>{description}</p>
         </div>
-        <FaceShapeFrames frames={frameIds} />
+
       </div>
+      <FaceShapeFrames frames={frameIds} />
     </li>
   </ul>
 

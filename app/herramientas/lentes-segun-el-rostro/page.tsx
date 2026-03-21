@@ -1,5 +1,4 @@
-import { FaceShapeGrid } from "@/features/tools/glasses-for-face-shapes/components/face-shapes/face-shape-grid";
-
+import { FaceShapeList } from "@/features/tools/glasses-for-face-shapes/components/face-shapes/face-shape-list";
 const Page = () => {
   return (
     <section className="p-10 text-center">
@@ -7,7 +6,7 @@ const Page = () => {
         Cómo elegir las gafas perfectas según la forma de los rostros
       </h1>
     
-      <FaceShapeGrid />
+      <FaceShapeList />
     </section>
   );
 };

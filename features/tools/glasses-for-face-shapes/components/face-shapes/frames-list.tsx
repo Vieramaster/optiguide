@@ -5,8 +5,8 @@ interface FaceShapeFramesProps {
   frames: Frame[];
 }
 
-export const FaceShapeFrames = ({ frames }: FaceShapeFramesProps) => (
-  <ul className="flex flex-wrap gap-3 justify-center items-center">
+export const FramesList = ({ frames }: FaceShapeFramesProps) => (
+  <ul className="flex flex-wrap gap-3 p-4 lg:pt-0 justify-center items-center ">
     {frames.map((frame) => {
       const frameData = framesData.find(({ id }) => id === frame);
 
@@ -14,11 +14,11 @@ export const FaceShapeFrames = ({ frames }: FaceShapeFramesProps) => (
         throw new Error(`Frame no encontrado: ${frame}`);
       }
 
-      const { name, Ico, femaleOnly } = frameData;
+      const { name, Ico  } = frameData;
 
       return (
-        <li key={frame} className={femaleOnly ? "bg-red-500" : ""} role="img" title={name}>
-          <Ico className="w-28 h-14" />
+        <li key={frame} role="img" title={name}>
+          <Ico className="w-28 h-14 " />
         </li>
       );
     })}
