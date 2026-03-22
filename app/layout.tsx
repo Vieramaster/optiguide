@@ -8,14 +8,34 @@ import { Header } from "@/components/ui/layout/header";
 
 import { SidebarInset, SidebarProvider } from "@/components/sidebar/components/sidebar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+// app/fonts.ts
+import localFont from 'next/font/local';
+
+export const poppins = localFont({
+  src: [
+    { path: './fonts/poppins-light.ttf', weight: '300' },
+    { path: './fonts/poppins-regular.ttf', weight: '400' },
+    { path: './fonts/poppins-bold.ttf', weight: '700' },
+  ],
+  variable: '--font-heading',
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+export const taviraj = localFont({
+  src: [
+    { path: './fonts/taviraj-light.ttf', weight: '300' },
+    { path: './fonts/taviraj-regular.ttf', weight: '400' },
+    { path: './fonts/taviraj-bold.ttf', weight: '700' },
+  ],
+  variable: '--font-body',
+});
+
+export const oxygen = localFont({
+  src: [
+    { path: './fonts/oxygen-light.ttf', weight: '300' },
+    { path: './fonts/oxygen-regular.ttf', weight: '400' },
+    { path: './fonts/oxygen-bold.ttf', weight: '700' },
+  ],
+  variable: '--font-alt',
 });
 
 export const metadata: Metadata = {
@@ -72,7 +92,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${poppins.variable} ${taviraj.variable} ${oxygen.variable}`}>
         <SidebarProvider>
           <AppSidebar />
           <SidebarInset>

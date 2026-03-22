@@ -6,7 +6,7 @@ import {
   Button,
   MDImage
 } from "@/components/ui";
-import { FaceShapeFrames } from "./frames-list";
+import { FramesList } from "./frames-list";
 
 //TYPES
 import type { FaceShape } from "../../types/frames";
@@ -14,7 +14,7 @@ import type { FaceShape } from "../../types/frames";
 export const FaceShapeCard = ({ name, imageURL, frameIds, description }: FaceShape) =>
 
   <ul className="flex flex-col gap-5 w-full ">
-    <li className="bg-red-500 w-72 rounded-lg  lg:flex-wrap">
+    <li className=" w-72 rounded-lg  lg:flex-wrap 2xl:bg-violet-500">
       {/**primer bloque */}
       <div >
         <div className="rounded-2xl p-4 overflow-hidden w-72 h-72">
@@ -34,7 +34,7 @@ export const FaceShapeCard = ({ name, imageURL, frameIds, description }: FaceSha
         </div>
 
       </div>
-      <FaceShapeFrames frames={frameIds} />
+      <FramesList frames={frameIds} />
     </li>
   </ul>
 
