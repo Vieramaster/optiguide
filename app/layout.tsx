@@ -1,5 +1,3 @@
-import { Geist_Mono } from "next/font/google";
-import { Geist } from "next/font/google";
 import { Metadata } from "next";
 import "./globals.css";
 
@@ -8,35 +6,7 @@ import { Header } from "@/components/ui/layout/header";
 
 import { SidebarInset, SidebarProvider } from "@/components/sidebar/components/sidebar";
 
-// app/fonts.ts
-import localFont from 'next/font/local';
-
-export const poppins = localFont({
-  src: [
-    { path: './fonts/poppins-light.ttf', weight: '300' },
-    { path: './fonts/poppins-regular.ttf', weight: '400' },
-    { path: './fonts/poppins-bold.ttf', weight: '700' },
-  ],
-  variable: '--font-heading',
-});
-
-export const taviraj = localFont({
-  src: [
-    { path: './fonts/taviraj-light.ttf', weight: '300' },
-    { path: './fonts/taviraj-regular.ttf', weight: '400' },
-    { path: './fonts/taviraj-bold.ttf', weight: '700' },
-  ],
-  variable: '--font-body',
-});
-
-export const oxygen = localFont({
-  src: [
-    { path: './fonts/oxygen-light.ttf', weight: '300' },
-    { path: './fonts/oxygen-regular.ttf', weight: '400' },
-    { path: './fonts/oxygen-bold.ttf', weight: '700' },
-  ],
-  variable: '--font-alt',
-});
+import { nunitoSans, taviraj, poppins } from "@/fonts/config";
 
 export const metadata: Metadata = {
   title: {
@@ -92,7 +62,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${poppins.variable} ${taviraj.variable} ${oxygen.variable}`}>
+      <body className={`${poppins.variable} ${taviraj.variable} ${nunitoSans.variable}`}>
         <SidebarProvider>
           <AppSidebar />
           <SidebarInset>

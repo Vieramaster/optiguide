@@ -131,7 +131,6 @@
     --sidebar-ring: oklch(0.439 0 0);
   }
 }
-
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -140,17 +139,32 @@
     @apply bg-background text-foreground;
   }
 }
+
 /* texto base */
-body {
-  font-family: var(--font-body);
-}
+@layer base {
+  h1 {
+    font-family: var(--font-heading);
+  }
 
-/* headings */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-}
+  /* headings */
+  h2, h3, h4, h5, h6 {
+    font-family: var(--font-subheading);
+  }
 
-/* textos especiales */
-.alt {
-  font-family: var(--font-alt);
+  body {
+    font-family: var(--font-body);
+  }
+
+  /* clases utilitarias para Tailwind */
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+
+  .font-subheading {
+    font-family: var(--font-subheading);
+  }
+
+  .font-text {
+    font-family: var(--font-body);
+  }
 }

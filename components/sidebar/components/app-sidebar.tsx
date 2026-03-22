@@ -18,7 +18,7 @@ export const AppSidebar = ({ ...props }: React.ComponentProps<typeof Sidebar>) =
   <Sidebar collapsible="icon" {...props}>
     {/**header del sidebar */}
     <SidebarHeader>
-      <PageTitle />
+      <PageTitle textSize="text-2xl" />
     </SidebarHeader>
     {/**Contenido del sidebar */}
     <SidebarContent>
