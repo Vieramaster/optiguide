@@ -148,7 +148,7 @@
 
   /* headings */
   h2, h3, h4, h5, h6 {
-    font-family: var(--font-subheading);
+    font-family: var(--font-subHeading);
   }
 
   body {
@@ -160,8 +160,8 @@
     font-family: var(--font-heading);
   }
 
-  .font-subheading {
-    font-family: var(--font-subheading);
+  .font-subHeading{
+    font-family: var(--font-subHeading);
   }
 
   .font-text {

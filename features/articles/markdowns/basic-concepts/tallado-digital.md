@@ -67,46 +67,6 @@ Es especialmente útil para personas que pasan muchas horas frente a pantallas, 
 
 ---
 
-## Comparación con el tallado convencional
-
-<table>
-  <thead>
-    <tr>
-      <th>Característica</th>
-      <th>Convencional</th>
-      <th>Digital</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Método de fabricación</td>
-      <td>Estándar</td>
-      <td>Micrométrico</td>
-    </tr>
-    <tr>
-      <td>Personalización</td>
-      <td>Limitada</td>
-      <td>Total</td>
-    </tr>
-    <tr>
-      <td>Campos visuales</td>
-      <td>Reducidos</td>
-      <td>Amplios</td>
-    </tr>
-    <tr>
-      <td>Adaptación del usuario</td>
-      <td>Más lenta</td>
-      <td>Más rápida</td>
-    </tr>
-    <tr>
-      <td>Compatibilidad con monturas</td>
-      <td>Básica</td>
-      <td>Avanzada</td>
-    </tr>
-  </tbody>
-</table>
-
----
 
 ## Aplicaciones
 Los lentes que más se benefician del tallado digital son:
