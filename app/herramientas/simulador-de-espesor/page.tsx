@@ -1,6 +1,6 @@
 "use client";
 // COMPONENTS
-import { InputsSimulator, HeaderSimulator, ErrorListSimulator , LensSimulator} from "@/features/tools/lens-thickness-simulator/components";
+import { InputsSimulator, HeaderSimulator, ErrorListSimulator, LensSimulator } from "@/features/tools/lens-thickness-simulator/components";
 import { Button } from "@/components/ui/button";
 // DATA
 import { graduationKeysArray } from "@/features/tools/lens-thickness-simulator/utils/graduation-keys-array";
@@ -44,7 +44,9 @@ const ThicknessSimulator = () => {
         onChangevalues={handleChangeGraduation}
         onClickGraduation={handleClickGraduation}
       />
-      {error && <ErrorListSimulator error={error} />}
+      {Object.keys(error).length > 0 && (
+        <ErrorListSimulator error={error} />
+      )}
       <div className="flex justify-center  gap-6 lg:hidden">
         <Button onClick={() => setActiveSide("A")} disabled={activeSide === "A"}>
           A

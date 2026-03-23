@@ -7,6 +7,7 @@ import { Header } from "@/components/ui/layout/header";
 import { SidebarInset, SidebarProvider } from "@/components/sidebar/components/sidebar";
 
 import { nunitoSans, taviraj, poppins } from "@/fonts/config";
+import { ThemeProvider } from "@/components/themes/theme-provider"
 
 export const metadata: Metadata = {
   title: {
@@ -63,13 +64,21 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${poppins.variable} ${taviraj.variable} ${nunitoSans.variable}`}>
-        <SidebarProvider>
-          <AppSidebar />
-          <SidebarInset>
-            <Header />
-            {children}
-          </SidebarInset>
-        </SidebarProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {/**page */}
+          <SidebarProvider>
+            <AppSidebar />
+            <SidebarInset>
+              <Header />
+              {children}
+            </SidebarInset>
+          </SidebarProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

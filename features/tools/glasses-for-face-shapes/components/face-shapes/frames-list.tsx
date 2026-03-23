@@ -18,7 +18,7 @@ export const FramesList = ({ frames }: FaceShapeFramesProps) => (
 
       return (
         <li key={frame} role="img" title={name}>
-          <Ico className="w-28 h-14 " />
+          <Ico className="w-28 h-14 fill-current" />
           <p className="text-xs">{name}</p>
         </li>
       );

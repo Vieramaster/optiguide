@@ -1,10 +1,11 @@
 //COMPONENTS
-import { faceShapes } from "../../data/face-shapes";
 import { MDImage } from "@/components/ui";
 import { FramesList} from "./frames-list";
+//DATA
+import { faceShapes } from "../../data/face-shapes";
 
 export const FaceShapeList = () => (
-  <ul className="w-full flex flex-col gap-8 justify-center items-center lg:gap-10">
+  <ul className="mt-16 w-full flex flex-col gap-8 justify-center items-center lg:gap-10">
     {faceShapes.map(({ imageURL, name, description, frameIds }) => (
       <li
         key={name}

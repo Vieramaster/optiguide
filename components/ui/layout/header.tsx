@@ -14,14 +14,15 @@ import {
   Separator
 } from "@/components/ui/";
 import { SidebarTrigger } from "../../sidebar/components/sidebar";
+import { SwitchTheme } from "@/components/themes/switch-theme";
 
 
 export const Header = () => {
   const pathname = usePathname();
   const parts = stringFormatters(pathname)
   return (
-    <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12">
-      <div className="flex items-center gap-2 px-4">
+    <header className="flex justify-between px-10 h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12 ">
+      <div className="flex items-center gap-2 ">
         <SidebarTrigger className="-ml-1 md:hidden" />
         <Separator
           orientation="vertical"
@@ -43,6 +44,7 @@ export const Header = () => {
           </BreadcrumbList>
         </Breadcrumb>
       </div>
+      <SwitchTheme/>
     </header>
   );
 };

@@ -4,7 +4,7 @@ import { validateGraduationInputs } from "../validations/validate-graduation-inp
 import { Button } from "@/components/ui/button";
 import { GraduationInput } from "./graduation-input";
 //TYPES
-import { GraduationKey, GraduationObject} from "../types/simulator";
+import { GraduationKey, GraduationObject } from "../types/simulator";
 
 interface InputsSimulatorProps {
   graduationKeys: GraduationKey[];
@@ -25,7 +25,6 @@ export const InputsSimulator = ({
   return (
     <div className="flex flex-wrap gap-2  lg:flex-row  lg:gap-4 justify-center items-center ">
 
-
       {graduationKeys.map((key) => (
         <GraduationInput
           key={key}
@@ -35,7 +34,7 @@ export const InputsSimulator = ({
           onChange={onChangevalues}
         />
       ))}
-      <div className=""></div>
+
       <Button
         onClick={onClickGraduation}
         type="button"
