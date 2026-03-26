@@ -110,6 +110,7 @@ Incorrecto. La graduación es solo un dato; el diseño del lente define cómo se
 ---
 
 ## Cómo explicarlo al cliente
+
 > “Un lente digital está hecho específicamente para vos y tus anteojos.  
 > Tiene más precisión, te da una visión más amplia y reduce el cansancio visual.  
 > No es un lente genérico: es un lente personalizado.”

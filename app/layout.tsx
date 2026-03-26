@@ -62,8 +62,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
-      <body className={`${poppins.variable} ${taviraj.variable} ${nunitoSans.variable}`}>
+    <html lang="es" suppressHydrationWarning>
+      <body className={`${poppins.variable} ${taviraj.variable} ${nunitoSans.variable}`} >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

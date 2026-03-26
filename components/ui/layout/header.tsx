@@ -7,7 +7,6 @@ import { stringFormatters } from "./utils/stringFormatters";
 import {
   Breadcrumb,
   BreadcrumbItem,
-  BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
@@ -18,8 +17,8 @@ import { SwitchTheme } from "@/components/themes/switch-theme";
 
 
 export const Header = () => {
-  const pathname = usePathname();
-  const parts = stringFormatters(pathname)
+
+  const parts = stringFormatters(usePathname())
   return (
     <header className="flex justify-between px-10 h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12 ">
       <div className="flex items-center gap-2 ">
@@ -28,10 +27,10 @@ export const Header = () => {
           orientation="vertical"
           className="mr-2 data-[orientation=vertical]:h-4"
         />
-        <Breadcrumb>
-          <BreadcrumbList>
+        <Breadcrumb >
+          <BreadcrumbList className="lg:text-lg">
             <BreadcrumbItem className="hidden md:block">
-              <BreadcrumbLink href="#">{parts[0] ?? "Home"} </BreadcrumbLink>
+              <BreadcrumbPage >{parts[0] ?? "Home"} </BreadcrumbPage>
             </BreadcrumbItem>
             {parts[1] && (
               <>
@@ -44,7 +43,7 @@ export const Header = () => {
           </BreadcrumbList>
         </Breadcrumb>
       </div>
-      <SwitchTheme/>
+      <SwitchTheme />
     </header>
   );
 };
