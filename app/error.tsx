@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation"
 import { ErrorPage } from "@/components/ui/error-page"
-import { stringFormatters } from "@/components/ui/layout/utils/stringFormatters"
+import { stringFormatters } from "@/shared/utils/string/stringFormatters"
 import { retryError } from "@/shared/actions/retry-error"
 
 interface ErrorProps {
@@ -10,7 +10,7 @@ interface ErrorProps {
   reset: () => void
 }
 
-export default function Error({ reset }: ErrorProps) {
+const Error = ({ reset }: ErrorProps) => {
   const pathname = usePathname()
   const formatted = stringFormatters(pathname)
 
@@ -24,3 +24,5 @@ export default function Error({ reset }: ErrorProps) {
     />
   )
 }
+
+export default Error

@@ -1,13 +1,15 @@
 import { Metadata } from "next";
 import "./globals.css";
 
-import { AppSidebar } from "@/components/sidebar/components/app-sidebar";
-import { Header } from "@/components/ui/layout/header";
+//COMPONENTS
+import { AppSidebar } from "@/features/layout/sidebar/app-sidebar";
+import { Header } from "@/features/layout/header/header";
+import { SidebarInset, SidebarProvider } from "@/features/layout/sidebar/components/";
+//PROVIDER
+import { ThemeProvider } from "@/shared/providers/theme-provider"
+//FONTS
+import { nunitoSans, taviraj, poppins } from "@/shared/fonts/config";
 
-import { SidebarInset, SidebarProvider } from "@/components/sidebar/components/sidebar";
-
-import { nunitoSans, taviraj, poppins } from "@/fonts/config";
-import { ThemeProvider } from "@/components/themes/theme-provider"
 
 export const metadata: Metadata = {
   title: {

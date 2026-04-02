@@ -1,13 +1,13 @@
 "use client";
 // COMPONENTS
-import { InputsSimulator, HeaderSimulator, ErrorListSimulator, LensSimulator } from "@/features/tools/lens-thickness-simulator/components";
+import { InputsSimulator, HeaderSimulator, ErrorListSimulator, LensSimulator } from "@/features/tools/lens-thickness/components";
 import { Button } from "@/components/ui/button";
 // DATA
-import { graduationKeysArray } from "@/features/tools/lens-thickness-simulator/utils/graduation-keys-array";
+import { graduationKeysArray } from "@/features/tools/lens-thickness/utils/graduation-keys-array";
 // HOOKS
-import { useInputValuesSimulator, useThicknessSimulator } from "@/features/tools/lens-thickness-simulator/hooks";
+import { useInputValuesSimulator, useThicknessSimulator } from "@/features/tools/lens-thickness/hooks";
 //TYPES
-import type { LensSide } from "@/features/tools/lens-thickness-simulator/types/simulator";
+import type { LensSide } from "@/features/tools/lens-thickness/types/simulator";
 
 const SIDES: LensSide[] = ["A", "B"];
 

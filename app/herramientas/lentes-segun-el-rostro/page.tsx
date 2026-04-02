@@ -1,13 +1,5 @@
-import { FaceShapeList } from "@/features/tools/glasses-for-face-shapes/components/face-shapes/face-shape-list";
-import { Title } from "@/components/ui/typography";
+import { FaceShapeGlasses } from "@/features/tools/face-shape/face-shape-glasses";
 
-const Page = () => {
-  return (
-    <section className="p-10 text-center">
-      <Title> Cómo elegir las gafas perfectas según la forma de los rostros</Title>
-      <FaceShapeList />
-    </section>
-  );
-};
+const FaceShapeGlassesPage = () => <FaceShapeGlasses />
 
-export default Page;
+export default FaceShapeGlassesPage;

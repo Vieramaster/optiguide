@@ -1,8 +1,8 @@
 //FRAMEWORK
 import Image from "next/image";
 //UTILS
-import { isValidImageSrc } from "@/shared/lib/utils/image-validator";
-import { parseImageDimensions } from "@/shared/lib/utils/image-dimensions";
+import { isValidImageSrc } from "@/shared/utils/image/image-validator";
+import { parseImageDimensions } from "@/shared/utils/image/image-dimensions";
 
 type MDImageProps = React.ImgHTMLAttributes<HTMLImageElement>;
 
@@ -28,7 +28,8 @@ export const MDImage = ({
       width={imageWidth}
       height={imageHeight}
       sizes="(max-width: 1024px) 100vw, 800px"
-      className= {className}
+      loading="eager"
+      className={className}
       {...rest}
     />
   );
