@@ -16,8 +16,8 @@ La forma de presentación puede variar (en columnas o en una sola línea), pero 
 ## Esfera (E): corrección para ver de cerca o de lejos
 
 El valor de **esfera** indica si la corrección está orientada a mejorar la visión lejana o cercana.  
-- Los números negativos corresponden a la [miopía](/libreria/miopia).  
-- Los positivos a la [hipermetropía](/libreria/hipermetropia).  
+- Los números negativos corresponden a la [miopía](/articulos/miopia).  
+- Los positivos a la [hipermetropía](/articulos/hipermetropia).  
 - Si aparece como “0.00” o no figura, significa que no se requiere corrección esférica.  
 
 Este valor influye en el espesor de las lentes: graduaciones más altas, tanto positivas como negativas, requieren elegir cuidadosamente el índice y el diámetro del material.
@@ -28,7 +28,7 @@ Este valor influye en el espesor de las lentes: graduaciones más altas, tanto p
 
 ## Cilindro (C o CIL) y Eje (° o AXIS): corrección del astigmatismo
 
-Cuando existe [astigmatismo](/libreria/astigmatismo), la receta incluye dos datos:  
+Cuando existe [astigmatismo](/articulos/astigmatismo), la receta incluye dos datos:  
 - **Cilindro:** indica la cantidad de corrección.  
 - **Eje:** define la orientación exacta entre 0° y 180°.  
 
@@ -41,7 +41,7 @@ Un montaje incorrecto o una rotación del lente puede afectar la nitidez, inclus
 
 ## ADD (Adición): visión de cerca
 
-La **adición** es un valor positivo que se suma a la graduación de lejos para permitir enfocar de cerca. Se utiliza en casos de [presbicia](/libreria/presbicia) y resulta esencial en lentes [multifocales, bifocales o de lectura](/libreria/tipos-de-lentes).  
+La **adición** es un valor positivo que se suma a la graduación de lejos para permitir enfocar de cerca. Se utiliza en casos de [presbicia](/articulos/presbicia) y resulta esencial en lentes [multifocales, bifocales o de lectura](/articulos/tipos-de-lentes).  
 No modifica la visión de lejos, sino que agrega la potencia necesaria para tareas cercanas como leer, usar el celular o trabajar frente a la computadora.
 
 ---
@@ -51,7 +51,7 @@ No modifica la visión de lejos, sino que agrega la potencia necesaria para tare
 La **distancia pupilar** mide en milímetros la separación entre el centro de cada pupila. Define la posición exacta en la que deben colocarse los lentes dentro del armazón.  
 Puede aparecer como un único valor total o dividido por ojo para mayor precisión. Una DP incorrecta puede provocar mareos, visión borrosa o sensación de que la imagen está “corrida”, incluso con la graduación correcta.  
 
-Dato útil: en lentes [multifocales](/libreria/tipos-de-lentes), prismas o [astigmatismos](/libreria/astigmatismos) altos, es recomendable usar DP por ojo y no total, para evitar errores de centrado.
+Dato útil: en lentes [multifocales](/articulos/tipos-de-lentes), prismas o [astigmatismos](/articulos/astigmatismo) altos, es recomendable usar DP por ojo y no total, para evitar errores de centrado.
 
 ![imagen mostrando una regla midiendo DP sobre un rostro](/images/library/basic-concepts/como-leer-una-receta-7.webp)
 
@@ -59,7 +59,7 @@ Dato útil: en lentes [multifocales](/libreria/tipos-de-lentes), prismas o [asti
 
 ## Prismas (Δ o PRISM)
 
-Los prismas aparecen en la receta cuando los ojos no se alinean en el mismo punto, debido a condiciones como [forias](/libreria/forias). No cambian la graduación del lente: su función es desviar la luz para que ambas imágenes coincidan y el cerebro pueda fusionarlas.  
+Los prismas aparecen en la receta cuando los ojos no se alinean en el mismo punto, debido a condiciones como [forias](/articulos/forias). No cambian la graduación del lente: su función es desviar la luz para que ambas imágenes coincidan y el cerebro pueda fusionarlas.  
 Se utilizan en casos de visión doble, molestias al leer, necesidad de cerrar un ojo para enfocar o sensación de cansancio visual. Su efecto existe solo mientras se usan los anteojos; al quitarlos, todo vuelve a su estado original. No corrigen la estructura del ojo ni los músculos, simplemente mejoran la comodidad y la alineación percibida.  
 Requieren un centrado muy preciso, por lo que funcionan mejor en monturas firmes y estables.
 

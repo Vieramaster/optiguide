@@ -24,8 +24,8 @@ Esto evita que el usuario vea doble y reduce el esfuerzo que los músculos ocula
 
 ## ¿Qué beneficios trae?
 
-- Corrige la [visión doble](/libreria/diplopia) al alinear las imágenes que llegan a cada ojo.  
-- Disminuye la fatiga visual en personas con [estrabismo](/libreria/tropias-o-estrabismos) o problemas de coordinación ocular.  
+- Corrige la [visión doble](/articulos/diplopia) al alinear las imágenes que llegan a cada ojo.  
+- Disminuye la fatiga visual en personas con [estrabismo](/articulos/tropias-o-estrabismos) o problemas de coordinación ocular.  
 - Mejora la comodidad en tareas cotidianas como lectura, conducción o uso de pantallas.  
 - Permite una visión más estable y clara en pacientes que antes dependían de un esfuerzo muscular excesivo.  
 - Puede ser una alternativa no invasiva frente a cirugías o tratamientos más complejos.  
@@ -39,7 +39,7 @@ Esto evita que el usuario vea doble y reduce el esfuerzo que los músculos ocula
 1. **Diseño óptico:** Se calcula el ángulo y la potencia prismática necesaria según la desviación ocular del paciente.  
 2. **Tallado digital:** La lente se moldea con precisión para incluir el prisma en la graduación.  
 3. **Verificación óptica:** Se mide que el prisma desvíe la luz en el ángulo correcto, evitando distorsiones.  
-4. **Acabados adicionales:** Se pueden añadir tratamientos como [antirreflejo](/libreria/antirreflejante) o filtros de luz azul para mayor comodidad.  
+4. **Acabados adicionales:** Se pueden añadir tratamientos como [antirreflejo](/articulos/antirreflejante) o filtros de luz azul para mayor comodidad.  
 5. **Control de calidad:** Se asegura que la lente cumpla con los parámetros prescritos y que el usuario perciba una imagen clara y alineada.
 
 ---
@@ -48,8 +48,8 @@ Esto evita que el usuario vea doble y reduce el esfuerzo que los músculos ocula
 
 Los lentes con prisma suelen indicarse en casos de:
 
-- [Estrabismo](/libreria/tropias-o-estrabismos) leve o moderado.  
-- [Diplopía](/libreria/diplopia) persistente.  
+- [Estrabismo](/articulos/tropias-o-estrabismos) leve o moderado.  
+- [Diplopía](/articulos/diplopia) persistente.  
 - Problemas de coordinación binocular.  
 - Fatiga ocular asociada a desalineación.  
 

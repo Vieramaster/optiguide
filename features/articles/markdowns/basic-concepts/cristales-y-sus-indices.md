@@ -26,8 +26,8 @@ Estas lentes tienden a ser más gruesas que las de índices superiores, por lo q
 
 - Alto valor Abbe (≈58), lo que reduce aberraciones y mejora la nitidez.
 - Liviano en comparación con el vidrio.
-- Se raya con relativa facilidad si no tiene [tratamiento anti rayas](/libreria/tratamiento-anti-rayas).
-- Buena aceptación de tratamientos: [antirreflejo](/libreria/antirreflejante), [filtro azul](/libreria/filtro-azul), endurecido y coloraciones de tinte.
+- Se raya con relativa facilidad si no tiene [tratamiento anti rayas](/articulos/tratamiento-anti-rayas).
+- Buena aceptación de tratamientos: [antirreflejo](/articulos/antirreflejante), [filtro azul](/articulos/filtro-azul), endurecido y coloraciones de tinte.
 - Resistencia a impactos correcta, pero inferior a Policarbonato o Trivex.
 - Estabilidad en el color con el tiempo; no amarillea fácilmente.
 
@@ -40,7 +40,7 @@ Es la versión estándar del material mineral tradicional. Ofrece la mejor nitid
 ### Características principales
 
 - Claridad óptica superior.
-- Excelente resistencia al rayado, incluso sin [tratamiento anti rayas](/libreria/tratamiento-anti-rayas).
+- Excelente resistencia al rayado, incluso sin [tratamiento anti rayas](/articulos/tratamiento-anti-rayas).
 - Más pesado que los materiales orgánicos.
 - Riesgo de rotura ante impactos o caídas.
 - No recomendado para niños o actividades de riesgo.
@@ -75,7 +75,7 @@ Es una excelente alternativa para quienes buscan seguridad sin perder nitidez, e
 - Valor Abbe aprox. 43–45, buena nitidez y menor aberración.
 - Resistencia a impactos muy alta.
 - Permite perforaciones y mantiene mejor rigidez que el policarbonato.
-- Acepta sin inconvenientes [antirreflejo](/libreria/antirreflejante), [tratamiento anti rayas](/libreria/tratamiento-anti-rayas) y filtros.
+- Acepta sin inconvenientes [antirreflejo](/articulos/antirreflejante), [tratamiento anti rayas](/articulos/tratamiento-anti-rayas) y filtros.
 - Peso reducido y excelente comodidad.
 - Protección UV natural integrada.
 
@@ -108,7 +108,7 @@ Es uno de los índices más utilizados en la actualidad, especialmente para quie
 - Valor Abbe entre 34 y 36 (menor que CR-39, con leve incremento de aberraciones periféricas).
 - Más liviano y más delgado que el 1.50.
 - Resistencia a impactos similar o un poco superior a CR-39, pero no comparable con policarbonato o Trivex.
-- Acepta sin problema tratamientos: [antirreflejo](/libreria/antirreflejante), [anti rayas](/libreria/tratamiento-anti-rayas), [filtro azul](/libreria/filtro-azul) y coloraciones por tinte.
+- Acepta sin problema tratamientos: [antirreflejo](/articulos/antirreflejante), [anti rayas](/articulos/tratamiento-anti-rayas), [filtro azul](/articulos/filtro-azul) y coloraciones por tinte.
 - Buena estabilidad y durabilidad con el uso cotidiano.
 - No ideal para trabajos o actividades con alto riesgo de golpes.
 
@@ -137,7 +137,7 @@ Si bien mejora la seguridad y la estética, su calidad óptica presenta más abe
 - Valor Abbe aprox. 43–45 (mejor nitidez que policarbonato).
 - Muy alta resistencia a impactos (cercano o superior al policarbonato según fabricante).
 - Permite perforaciones y monturas al aire con más estabilidad estructural.
-- Acepta bien [antirreflejo](/libreria/antirreflejante), [filtro azul](/libreria/filtro-azul) y [tratamiento anti rayas](/libreria/tratamiento-anti-rayas).
+- Acepta bien [antirreflejo](/articulos/antirreflejante), [filtro azul](/articulos/filtro-azul) y [tratamiento anti rayas](/articulos/tratamiento-anti-rayas).
 - Peso reducido y buena comodidad a largo plazo.
 - Protección natural frente a rayos UV.
 
@@ -169,7 +169,7 @@ Aun así, mantiene el peso propio del vidrio y el mismo riesgo de rotura, por lo
 
 ### Resina de Alto Índice
 
-Es un material de alto índice diseñado para reducir significativamente el grosor de la lente frente a CR-39 (1.50) y 1.56. Esto se traduce en una mejora estética notable, especialmente en recetas de [miopía](/libreria/miopia) o [hipermetropías](/libreria/hipermetropia) más marcadas, evitando bordes gruesos o el efecto lupa.
+Es un material de alto índice diseñado para reducir significativamente el grosor de la lente frente a CR-39 (1.50) y 1.56. Esto se traduce en una mejora estética notable, especialmente en recetas de [miopía](/articulos/miopia) o [hipermetropías](/articulos/hipermetropia) más marcadas, evitando bordes gruesos o el efecto lupa.
 Ofrece un equilibrio entre delgadez, peso y claridad, siendo una de las opciones más comunes para quienes necesitan una corrección más alta sin llegar al costo de índices como 1.67 o 1.74.
 
 ### Resinas y nombres comerciales utilizados para este índice:
@@ -183,7 +183,7 @@ Ofrece un equilibrio entre delgadez, peso y claridad, siendo una de las opciones
 
 - Material orgánico de alto índice (más delgado que 1.50, 1.56 y 1.53).
 - Adecuado para graduaciones moderadas a altas (aprox. de ±3.00 a ±6.00 por estética).
-- Reduce de manera visible el grosor en miopes y el aumento en [hipermetropías](/libreria/hipermetropia).
+- Reduce de manera visible el grosor en miopes y el aumento en [hipermetropías](/articulos/hipermetropia).
 - Más ligero que índices inferiores, mejor comodidad general.
 - Compatible con monturas al aire, aunque menos rígido que Trivex.
 
@@ -191,8 +191,8 @@ Ofrece un equilibrio entre delgadez, peso y claridad, siendo una de las opciones
 
 - Valor Abbe aprox. 32–36 (puede generar leve aberración periférica).
 - Resistencia a impacto similar a la resina 1.56; no ideal si la prioridad es seguridad.
-- Acepta correctamente [antirreflejo](/libreria/antirreflejante), [filtro azul](/libreria/filtro-azul) y [anti rayas](/libreria/tratamiento-anti-rayas).
-- Recomendado siempre con [antirreflejo](/libreria/antirreflejante) por mayor reflejo que índices bajos.
+- Acepta correctamente [antirreflejo](/articulos/antirreflejante), [filtro azul](/articulos/filtro-azul) y [anti rayas](/articulos/tratamiento-anti-rayas).
+- Recomendado siempre con [antirreflejo](/articulos/antirreflejante) por mayor reflejo que índices bajos.
 - Ofrece una muy buena relación entre estética, peso y precio.
 
 ---
@@ -213,8 +213,8 @@ Es una opción frecuente para quienes necesitan correcciones altas con un buen r
 
 - Material orgánico de alto índice más delgado que 1.50, 1.56 y 1.60.
 - Adecuado para graduaciones altas (aprox. de ±5.00 a ±8.00 por estética).
-- Reduce de forma muy notable el grosor en [miopía](/libreria/miopia), evitando bordes marcados.
-- Disminuye el efecto lupa en [hipermetropías](/libreria/hipermetropia) y lentifica la distorsión visual.
+- Reduce de forma muy notable el grosor en [miopía](/articulos/miopia), evitando bordes marcados.
+- Disminuye el efecto lupa en [hipermetropías](/articulos/hipermetropia) y lentifica la distorsión visual.
 - Más liviano que índices bajos y medio, mejora comodidad en uso prolongado.
 - Se utiliza en monturas completas y semi al aire (no ideal para perforadas).
 
@@ -222,8 +222,8 @@ Es una opción frecuente para quienes necesitan correcciones altas con un buen r
 
 - Valor Abbe aprox. 32 (mayor posibilidad de aberración periférica).
 - Menor estabilidad mecánica en comparación con Trivex o policarbonato.
-- Necesita [antirreflejo](/libreria/antirreflejante) debido a su mayor índice y reflejos visibles.
-- Compatible con filtros especiales como [filtro azul](/libreria/filtro-azul), [filtro UV](/libreria/filtro-ultravioleta), [fotocromáticos](/libreria/fotocromatico) y [antirreflejante](/libreria/antirreflejante) premium.
+- Necesita [antirreflejo](/articulos/antirreflejante) debido a su mayor índice y reflejos visibles.
+- Compatible con filtros especiales como [filtro azul](/articulos/filtro-azul), [filtro UV](/articulos/filtro-ultravioleta), [fotocromáticos](/articulos/fotocromaticos) y [antirreflejante](/articulos/antirreflejante) premium.
 - Muy buena opción estética en graduaciones altas sin llegar al costo del 1.74.
 
 ---
@@ -236,7 +236,7 @@ Es una opción frecuente para quienes necesitan correcciones altas con un buen r
 
 ### Vidrio Mineral
 
-Es un material mineral de alto índice diseñado para obtener lentes considerablemente más delgados que el vidrio 1.52 y 1.60. Es elegido principalmente por motivos estéticos en graduaciones altas, ya que reduce notablemente el borde en [miopías](/libreria/miopia) fuertes y el efecto lupa en [hipermetropías](/libreria/hipermetropia).
+Es un material mineral de alto índice diseñado para obtener lentes considerablemente más delgados que el vidrio 1.52 y 1.60. Es elegido principalmente por motivos estéticos en graduaciones altas, ya que reduce notablemente el borde en [miopías](/articulos/miopia) fuertes y el efecto lupa en [hipermetropías](/articulos/hipermetropia).
 Aun así, mantiene el peso característico del vidrio y el riesgo de rotura por impacto, por lo que su uso es muy específico y menos frecuente en la actualidad.
 
 ### Características principales
@@ -271,7 +271,7 @@ Suele considerarse una opción premium, utilizada por quienes desean lentes fino
 - Recomendado para graduaciones altas (aprox. ±5.00 a ±8.00 por estética).
 - Reduce notablemente el espesor del borde y el efecto lupa.
 - Más liviano que el vidrio y que los índices bajos.
-- Mayor reflejo superficial, recomendable usar [antirreflejo](/libreria/antirreflejante) siempre.
+- Mayor reflejo superficial, recomendable usar [antirreflejo](/articulos/antirreflejante) siempre.
 
 ### Datos del material
 
@@ -284,7 +284,7 @@ Suele considerarse una opción premium, utilizada por quienes desean lentes fino
 
 ## Resina de Alto Índice | Índice 1.74
 
-Es el material orgánico más delgado para lentes oftálmicos en la mayoria de las opticas. Está diseñado específicamente para graduaciones altas, donde la prioridad es reducir al máximo el grosor, el peso y el efecto estético indeseado (bordes en miopes y efecto lupa en [hipermetropías](/libreria/hipermetropia).
+Es el material orgánico más delgado para lentes oftálmicos en la mayoria de las opticas. Está diseñado específicamente para graduaciones altas, donde la prioridad es reducir al máximo el grosor, el peso y el efecto estético indeseado (bordes en miopes y efecto lupa en [hipermetropías](/articulos/hipermetropia).
 Ofrece la mejor estética dentro de los materiales orgánicos, aunque con mayor costo y una leve pérdida de claridad periférica debido a su bajo valor Abbe.
 
 ### Resinas y nombres comerciales utilizados para este índice:
@@ -299,13 +299,13 @@ Ofrece la mejor estética dentro de los materiales orgánicos, aunque con mayor 
 - Ideal para graduaciones altas (aprox. desde ±6.00 a ±10.00 o más por estética).
 - Reduce drásticamente el grosor perceptible del borde y el efecto lupa.
 - Ligero en relación a su potencia, mejora notablemente la comodidad.
-- Requiere sí o sí [antirreflejo](/libreria/antirreflejante) por el alto reflejo de la superficie.
+- Requiere sí o sí [antirreflejo](/articulos/antirreflejante) por el alto reflejo de la superficie.
 
 ### Datos del material
 
 - Valor Abbe aprox. 32 (menor nitidez periférica frente a índices como 1.50 o Trivex).
 - Resistencia a impacto moderada, similar a 1.67; no es la opción ideal si la prioridad es seguridad.
-- Acepta [antirreflejo](/libreria/antirreflejante), [anti rayas](/libreria/tratamiento-anti-rayas) y [filtro azul](/libreria/filtro-azul); no siempre recomendado para coloraciones profundas.
+- Acepta [antirreflejo](/articulos/antirreflejante), [anti rayas](/articulos/tratamiento-anti-rayas) y [filtro azul](/articulos/filtro-azul); no siempre recomendado para coloraciones profundas.
 - El más delgado del mercado en materiales orgánicos, pero también el de mayor costo.
 
 
@@ -314,7 +314,7 @@ Ofrece la mejor estética dentro de los materiales orgánicos, aunque con mayor 
 
 ## Vidrio Mineral de Súper Alto Índice | Índice 1.80 y 1.90
 
-Rrepresentan el nivel más extremo en reducción de grosor dentro de la producción de lentes. Son diseñados exclusivamente para graduaciones muy altas, donde la prioridad es la estética y la disminución máxima del borde en [miopías](/libreria/miopia) severas o del efecto lupa en hipermetropías avanzadas.
+Rrepresentan el nivel más extremo en reducción de grosor dentro de la producción de lentes. Son diseñados exclusivamente para graduaciones muy altas, donde la prioridad es la estética y la disminución máxima del borde en [miopías](/articulos/miopia) severas o del efecto lupa en hipermetropías avanzadas.
 
 ### Son materiales muy raros en el mercado, producidos por pocos fabricantes y utilizados en situaciones puntuales como:
 

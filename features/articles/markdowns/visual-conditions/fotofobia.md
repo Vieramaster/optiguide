@@ -16,8 +16,8 @@ Aparece cuando el sistema visual reacciona de forma exagerada a la luz. Esto pue
 
 Entre las causas más frecuentes se encuentran:
 
-- **Problemas oculares:** [Ojo seco](/libreria/ojo-seco), conjuntivitis, queratitis o inflamación del iris (uveítis).  
-- **Defectos visuales no corregidos:** [Miopía](/libreria/miopia), [hipermetropía](/libreria/hipermetropia) o [astigmatismo](/libreria/astigmatismo) sin la graduación adecuada.  
+- **Problemas oculares:** [Ojo seco](/articulos/ojo-seco), conjuntivitis, queratitis o inflamación del iris (uveítis).  
+- **Defectos visuales no corregidos:** [Miopía](/articulos/miopia), [hipermetropía](/articulos/hipermetropia) o [astigmatismo](/articulos/astigmatismo) sin la graduación adecuada.  
 - **Enfermedades neurológicas:** Migraña, traumatismos craneales o meningitis.  
 - **Uso prolongado de pantallas:** Exposición continua a luz azul sin descansos visuales.  
 - **Cirugías oculares recientes:** Especialmente tras procedimientos como LASIK o cataratas.  

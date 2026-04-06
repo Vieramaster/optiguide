@@ -2,8 +2,8 @@ import type { LensBase } from "../../types/lens/lens-base";
 
 export const MONOFOCAL_LENS_CATALOG: Record<string, LensBase> = {
   orma1: {
-    id: "O1",
-    name: "Orma",
+    lensItemId: "O1",
+    lensLine: "Orma",
     category: "Orma",
     lens: "monofocal",
     company: "Essilor",
@@ -11,13 +11,13 @@ export const MONOFOCAL_LENS_CATALOG: Record<string, LensBase> = {
     diam: [65, 70],
     rangeDiopters: [{ minEsf: -6, maxEsf: 6, minCil: -2, maxCil: 2 }],
     lensMaterial: { name: "CR-39", type: "resina orgánica estándar", index: 1.50 },
-    lensType: "esférico",
+    lensForm: "esférico",
     surfacing: "convencional"
   },
 
   orma2: {
-    id: "O2",
-    name: "Orma",
+    lensItemId: "O2",
+    lensLine: "Orma",
     lens: "monofocal",
     category: "Orma",
     company: "Essilor",
@@ -25,13 +25,13 @@ export const MONOFOCAL_LENS_CATALOG: Record<string, LensBase> = {
     diam: [65, 70],
     rangeDiopters: [{ minEsf: -4, maxEsf: 4, minCil: -2, maxCil: 2 }],
     lensMaterial: { name: "CR-39", type: "resina orgánica estándar", index: 1.50 },
-    lensType: "esférico",
+    lensForm: "esférico",
     surfacing: "convencional"
   },
 
   orma3: {
-    id: "O3",
-    name: "Orma",
+    lensItemId: "O3",
+    lensLine: "Orma",
     lens: "monofocal",
     category: "Orma",
     company: "Essilor",
@@ -39,13 +39,13 @@ export const MONOFOCAL_LENS_CATALOG: Record<string, LensBase> = {
     diam: [65, 70],
     rangeDiopters: [{ minEsf: -4, maxEsf: 4, minCil: -4, maxCil: 4 }],
     lensMaterial: { name: "CR-39", type: "resina orgánica estándar", index: 1.50 },
-    lensType: "esférico",
+    lensForm: "esférico",
     surfacing: "convencional"
   },
 
   orma4: {
-    id: "O4",
-    name: "Orma",
+    lensItemId: "O4",
+    lensLine: "Orma",
     lens: "monofocal",
     category: "Orma",
     company: "Essilor",
@@ -53,13 +53,13 @@ export const MONOFOCAL_LENS_CATALOG: Record<string, LensBase> = {
     diam: [65, 70],
     rangeDiopters: [{ minEsf: -14, maxEsf: 13.5, minCil: -6, maxCil: 6 }],
     lensMaterial: { name: "CR-39", type: "resina orgánica estándar", index: 1.50 },
-    lensType: "esférico",
+    lensForm: "esférico",
     surfacing: "convencional"
   },
 
   orma5: {
-    id: "O5",
-    name: "Orma",
+    lensItemId: "O5",
+    lensLine: "Orma",
     lens: "monofocal",
     category: "Orma",
     company: "Essilor",
@@ -67,13 +67,13 @@ export const MONOFOCAL_LENS_CATALOG: Record<string, LensBase> = {
     diam: [68],
     maxDiopters: [{ min: 0, max: 10 }],
     lensMaterial: { name: "CR-39", type: "resina orgánica estándar", index: 1.50 },
-    lensType: "esférico",
+    lensForm: "esférico",
     surfacing: "convencional"
   },
 
   orma7: {
-    id: "O7",
-    name: "Orma",
+    lensItemId: "O7",
+    lensLine: "Orma",
     lens: "monofocal",
     category: "Orma",
     company: "Essilor",
@@ -81,13 +81,13 @@ export const MONOFOCAL_LENS_CATALOG: Record<string, LensBase> = {
     diam: [65, 70],
     rangeDiopters: [{ minEsf: -6, maxEsf: 6, minCil: -2, maxCil: 2 }],
     lensMaterial: { name: "Orgánico 1.56", type: "resina de índice medio", index: 1.56 },
-    lensType: "esférico",
+    lensForm: "esférico",
     surfacing: "convencional"
   },
 
   orma8: {
-    id: "O8",
-    name: "Orma",
+    lensItemId: "O8",
+    lensLine: "Orma",
     lens: "monofocal",
     category: "Orma",
     company: "Essilor",
@@ -95,13 +95,13 @@ export const MONOFOCAL_LENS_CATALOG: Record<string, LensBase> = {
     diam: [65, 70],
     rangeDiopters: [{ minEsf: -6, maxEsf: 4, minCil: -2, maxCil: 0 }],
     lensMaterial: { name: "MR-series 1.61", type: "thiourethane", index: 1.61 },
-    lensType: "asférico",
+    lensForm: "asférico",
     surfacing: "convencional"
   },
 
   orma9: {
-    id: "O9",
-    name: "Orma",
+    lensItemId: "O9",
+    lensLine: "Orma",
     lens: "monofocal",
     category: "Orma",
     company: "Essilor",
@@ -112,13 +112,13 @@ export const MONOFOCAL_LENS_CATALOG: Record<string, LensBase> = {
 
     ],
     lensMaterial: { name: "MR-8", type: "thiourethane", index: 1.60 },
-    lensType: "esférico",
+    lensForm: "esférico",
     surfacing: "convencional"
   },
   ///
   orma10: {
-    id: "O10",
-    name: "Orma",
+    lensItemId: "O10",
+    lensLine: "Orma",
     lens: "monofocal",
     category: "BlueCut",
     company: "Essilor",
@@ -126,13 +126,13 @@ export const MONOFOCAL_LENS_CATALOG: Record<string, LensBase> = {
     diam: [65, 70],
     rangeDiopters: [{ minEsf: -6.75, maxEsf: 6, minCil: -2, maxCil: 2 }],
     lensMaterial: { name: "MR-8", type: "thiourethane", index: 1.60 },
-    lensType: "esférico",
+    lensForm: "esférico",
     surfacing: "convencional"
 
   },
   orma11: {
-    id: "O11",
-    name: "Orma",
+    lensItemId: "O11",
+    lensLine: "Orma",
     lens: "monofocal",
     company: "Essilor",
     category: "BlueCut",
@@ -140,12 +140,12 @@ export const MONOFOCAL_LENS_CATALOG: Record<string, LensBase> = {
     diam: [65, 70],
     rangeDiopters: [{ minEsf: -11, maxEsf: 11, minCil: -6, maxCil: 6 }],
     lensMaterial: { name: "MR-series 1.61", type: "thiourethane", index: 1.61 },
-    lensType: "esférico",
+    lensForm: "esférico",
     surfacing: "convencional"
   },
   orma12: {
-    id: "O12",
-    name: "Orma",
+    lensItemId: "O12",
+    lensLine: "Orma",
     lens: "monofocal",
     category: "Orma",
     company: "Essilor",
@@ -153,12 +153,12 @@ export const MONOFOCAL_LENS_CATALOG: Record<string, LensBase> = {
     diam: [65, 70],
     rangeDiopters: [{ minEsf: -4, maxEsf: 4, minCil: -2, maxCil: 2 }],
     lensMaterial: { name: "CR-39", type: "resina orgánica estándar", index: 1.50 },
-    lensType: "esférico",
+    lensForm: "esférico",
     surfacing: "convencional"
   },
   orma13: {
-    id: "O13",
-    name: "Orma",
+    lensItemId: "O13",
+    lensLine: "Orma",
     lens: "monofocal",
     category: "Orma",
     company: "Essilor",
@@ -166,12 +166,12 @@ export const MONOFOCAL_LENS_CATALOG: Record<string, LensBase> = {
     diam: [70],
     rangeDiopters: [{ minEsf: -13, maxEsf: 7, minCil: -6, maxCil: 6 }],
     lensMaterial: { name: "CR-39", type: "resina orgánica estándar", index: 1.50 },
-    lensType: "esférico",
+    lensForm: "esférico",
     surfacing: "convencional"
   },
   orma14: {
-    id: "O14",
-    name: "Orma",
+    lensItemId: "O14",
+    lensLine: "Orma",
     lens: "monofocal",
     category: "Orma",
     company: "Essilor",
@@ -179,14 +179,14 @@ export const MONOFOCAL_LENS_CATALOG: Record<string, LensBase> = {
     diam: [70],
     rangeDiopters: [{ minEsf: -4, maxEsf: 4, minCil: -4, maxCil: 4 }],
     lensMaterial: { name: "CR-39", type: "resina orgánica estándar", index: 1.50 },
-    lensType: "esférico",
+    lensForm: "esférico",
     surfacing: "convencional"
   },
 
 
   orma15: {
-    id: "O15",
-    name: "Orma",
+    lensItemId: "O15",
+    lensLine: "Orma",
     lens: "monofocal",
     category: "Orma",
     company: "Essilor",
@@ -194,12 +194,12 @@ export const MONOFOCAL_LENS_CATALOG: Record<string, LensBase> = {
     diam: [70],
     rangeDiopters: [{ minEsf: -12, maxEsf: 9, minCil: -6, maxCil: 6 }],
     lensMaterial: { name: "CR-39", type: "resina orgánica estándar", index: 1.50 },
-    lensType: "esférico",
+    lensForm: "esférico",
     surfacing: "convencional"
   },
   orma16: {
-    id: "O16",
-    name: "Orma",
+    lensItemId: "O16",
+    lensLine: "Orma",
     lens: "monofocal",
     category: "Orma",
     company: "Essilor",
@@ -207,12 +207,12 @@ export const MONOFOCAL_LENS_CATALOG: Record<string, LensBase> = {
     diam: [70],
     rangeDiopters: [{ minEsf: -6, maxEsf: 4, minCil: -2, maxCil: 2 }],
     lensMaterial: { name: "CR-39", type: "resina orgánica estándar", index: 1.50 },
-    lensType: "esférico",
+    lensForm: "esférico",
     surfacing: "convencional"
   },
   orma17: {
-    id: "O17",
-    name: "Orma",
+    lensItemId: "O17",
+    lensLine: "Orma",
     lens: "monofocal",
     category: "Orma",
     company: "Essilor",
@@ -220,12 +220,12 @@ export const MONOFOCAL_LENS_CATALOG: Record<string, LensBase> = {
     diam: [70],
     rangeDiopters: [{ minEsf: -8, maxEsf: 8, minCil: -5, maxCil: 0 }],
     lensMaterial: { name: "CR-39", type: "resina orgánica estándar", index: 1.50 },
-    lensType: "esférico",
+    lensForm: "esférico",
     surfacing: "convencional"
   },
   orma18: {
-    id: "O18",
-    name: "Orma",
+    lensItemId: "O18",
+    lensLine: "Orma",
     lens: "monofocal",
     category: "Orma",
     company: "Essilor",
@@ -233,12 +233,12 @@ export const MONOFOCAL_LENS_CATALOG: Record<string, LensBase> = {
     diam: [80],
     rangeDiopters: [{ minEsf: -5, maxEsf: 7, minCil: -4, maxCil: 0 }],
     lensMaterial: { name: "CR-39", type: "resina orgánica estándar", index: 1.50 },
-    lensType: "esférico",
+    lensForm: "esférico",
     surfacing: "convencional"
   },
   eyezen1: {
-    id: "E1",
-    name: "Eyezen",
+    lensItemId: "E1",
+    lensLine: "Eyezen",
     lens: "monofocal",
     category: "Eyezen",
     company: "Essilor",
@@ -246,8 +246,8 @@ export const MONOFOCAL_LENS_CATALOG: Record<string, LensBase> = {
     diam: [65, 70],
     rangeDiopters: [{ minEsf: -10, maxEsf: 6, minCil: -6, maxCil: 0 }],
     lensMaterial: { name: "MR-series 1.61", type: "thiourethane", index: 1.61 },
-    lensType: "esférico",
-    tecnologies: ["lala"],
+    lensForm: "esférico",
+    lensTecnologies: ["lala"],
     surfacing: "digital"
   }
 };

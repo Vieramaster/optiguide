@@ -27,11 +27,11 @@ Descripción breve de la condición...
 
 ## Tratamiento
 
-El tratamiento incluye [lentes correctivos](/libreria/tipos-de-lentes) y 
-[tratamiento antirreflejante](/libreria/antireflejante).
+El tratamiento incluye [lentes correctivos](/articulos/tipos-de-lentes) y 
+[tratamiento antirreflejante](/articulos/antirreflejante).
 
-Más información sobre [miopía](/libreria/miopia) y 
-[astigmatismo](/libreria/astigmatismo).
+Más información sobre [miopía](/articulos/miopia) y 
+[astigmatismo](/articulos/astigmatismo).
 ```
 
 **3. Agregar imagen:**

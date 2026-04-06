@@ -40,7 +40,7 @@ Texto del artículo...
 - Lista de puntos
 - Otro punto
 
-[Enlace a otro artículo](/libreria/otro-articulo)
+[Enlace a otro artículo](/articulos/otro-articulo)
 ```
 
 ### Paso 3: Agregar imágenes
@@ -55,7 +55,7 @@ Texto del artículo...
 **✅ Correcto:**
 
 ```markdown
-[miopía](/libreria/miopia)
+[miopía](/articulos/miopia)
 ```
 
 **❌ Incorrecto:**

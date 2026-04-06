@@ -9,10 +9,9 @@ Contiene las rutas y páginas de Next.js usando App Router.
 app/
 ├── layout.tsx                     # Layout principal de la aplicación
 ├── page.tsx                       # Página de inicio
-├── libreria/[slug]/               # Rutas dinámicas para artículos
+├── articulos/[slug]/              # Rutas dinámicas para artículos
 │   ├── page.tsx                   # Renderiza artículos Markdown
-│   ├── loading.tsx                # Estado de carga
-│   └── error.tsx                  # Manejo de errores
+│   └── loading.tsx                # Estado de carga
 └── herramientas/                  # Herramientas interactivas
     ├── simulador-de-espesor/      # Página del simulador de espesor
     │   ├── page.tsx
@@ -88,7 +87,7 @@ hooks/
 ### Renderizado de Artículos
 
 ```
-1. Usuario visita /libreria/[slug]
+1. Usuario visita /articulos/[slug]
    ↓
 2. generateStaticParams() busca todos los .md en articles/
    ↓

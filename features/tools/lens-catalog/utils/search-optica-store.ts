@@ -14,7 +14,6 @@ export const searchOpticaStore = (store: OpticaInput): OpticaResolved => {
     }
 }
 
-
 export const searchCatalogs = (lensCatalog: LensArrayCatalog[]): LensObjectCatalog[] => {
     return lensCatalog.map(
         ({ key, lens, treatment, photochromatic }) => {

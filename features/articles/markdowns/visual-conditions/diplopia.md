@@ -11,8 +11,8 @@ Cuando existe un desajuste, el cerebro recibe dos imágenes distintas y las inte
 
 Algunas causas frecuentes son:
 
-- [Estrabismo](/libreria/tropias-o-estrabismos): desviación constante de los ojos.  
-- [Forias](/libreria/forias): desviaciones latentes que se manifiestan en situaciones de cansancio o estrés visual.  
+- [Estrabismo](/articulos/tropias-o-estrabismos): desviación constante de los ojos.  
+- [Forias](/articulos/forias): desviaciones latentes que se manifiestan en situaciones de cansancio o estrés visual.  
 - Problemas neurológicos o musculares que afectan el movimiento ocular.  
 - Traumatismos o cirugías que alteran la coordinación de los ojos.  
 

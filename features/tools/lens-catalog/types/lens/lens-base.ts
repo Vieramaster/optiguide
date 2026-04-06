@@ -25,8 +25,8 @@ export type MaxDiopters = {
 };
 
 export type LensBase = {
-  id: string;
-  name: Name;
+  lensItemId: string;
+  lensLine: Name;
   category: Category;
   lens: Lens;
   company: Company;
@@ -35,7 +35,7 @@ export type LensBase = {
   rangeDiopters?: RangeDiopters[];
   maxDiopters?: MaxDiopters[];
   lensMaterial: LensMaterial;
-  lensType: LensType;
-  tecnologies?: string[];
+  lensForm: LensType;
+  lensTecnologies?: string[];
   surfacing: Surfacing;
 };

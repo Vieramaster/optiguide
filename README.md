@@ -34,7 +34,7 @@ npm run dev
 ```
 optiguide/
 ├── app/                    # Páginas y rutas de Next.js
-│   ├── libreria/          # Biblioteca de artículos
+│   ├── articulos/         # Artículos (ruta dinámica [slug])
 │   └── simulador-de-espesor/  # Simulador de espesor
 │
 ├── articles/               # Contenido en Markdown
@@ -88,20 +88,20 @@ El proyecto sigue una arquitectura limpia con separación clara entre:
    - `articles/visual-conditions/` para condiciones visuales
 
 2. El nombre del archivo será el slug de la URL. Por ejemplo:
-   - `miopia.md` → `/libreria/miopia`
+   - `miopia.md` → `/articulos/miopia`
 
 3. Escribe el contenido en Markdown. Puedes usar:
    - Encabezados (`#`, `##`, `###`)
    - Imágenes: `![alt text](/images/library/ruta/imagen.webp)`
-   - Enlaces: `[texto](/libreria/slug-del-articulo)`
+   - Enlaces: `[texto](/articulos/slug-del-articulo)`
    - Listas, tablas, etc.
 
 ### Formato de Enlaces
 
-Todos los enlaces internos deben usar el prefijo `/libreria/`:
+Todos los enlaces internos deben usar el prefijo `/articulos/`:
 
 ```markdown
-✅ Correcto: [miopía](/libreria/miopia)
+✅ Correcto: [miopía](/articulos/miopia)
 ❌ Incorrecto: [miopía](/miopia)
 ```
 
@@ -215,7 +215,7 @@ Calcula propiedades del SVG del lente:
 
 ### Los artículos no se muestran
 - Verifica que los archivos `.md` estén en la carpeta `articles/`
-- Asegúrate de que los enlaces usen el prefijo `/libreria/`
+- Asegúrate de que los enlaces usen el prefijo `/articulos/`
 
 ### Errores de TypeScript
 - Ejecuta: `npm run build` para ver errores detallados

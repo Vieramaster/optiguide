@@ -2,20 +2,20 @@ import { PHOTOCHROMATIC_LENSES_CATALOG } from "../../data/tecnologies/photochrom
 export type PhotochromaticBrand = "Varilux" | "Varios" | "Vitolen";
 export type PhotochromaticColor = "Gris" | "Marrón" | "Verde" | "Zafiro" | "Ámbar" | "Esmeralda" | "Rubí" | "Jade" | "Verde cobre" | "Marrón cobre";
 export type BlueLightFilter = {
-    clear_state: string;
-    dark_state: string;
+    clearState: string;
+    darkState: string;
 }
 export type PhotochromaticLens = {
-    id: string,
-    name: string,
-    brand: PhotochromaticBrand;
-    generation: string;
-    colors: PhotochromaticColor[];
-    photochromic_speed: string;
-    UV_protection: string;
-    blue_light_filter: BlueLightFilter;
-    features: string[];
-    polarized: boolean;
+    photochromaticItemId: string,
+    photochromaticName: string,
+    photochromaticBrand: PhotochromaticBrand;
+    photochromaticGeneration: string;
+    photochromaticColors: PhotochromaticColor[];
+    photochromicSpeed: string;
+    photochromaticUvProtection: string;
+    photochromaticBlueLightFilter: BlueLightFilter;
+    photochromaticFeatures: string[];
+    photochromaticPolarized: boolean;
 
 }
 

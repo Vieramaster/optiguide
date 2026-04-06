@@ -2,7 +2,7 @@
 
 ## Monofocales
 
-Es una lente de gafa que tiene una única graduación en toda su superficie, corrigiendo la visión a una sola distancia (cerca, lejos o intermedia) para problemas como [miopía](/libreria/miopia), [astigmatismo](/libreria/astigmatismo), [hipermetropía](/libreria/hipermetropia) y hasta [prisma](/libreria/prisma). Sus ventajas incluyen una visión clara y nítida para una distancia específica, ideal para actividades diarias como leer o conducir, y la capacidad de ser fabricadas de forma delgada y ligera para un mejor aspecto estético y comodidad, especialmente con graduaciones altas.
+Es una lente de gafa que tiene una única graduación en toda su superficie, corrigiendo la visión a una sola distancia (cerca, lejos o intermedia) para problemas como [miopía](/articulos/miopia), [astigmatismo](/articulos/astigmatismo), [hipermetropía](/articulos/hipermetropia) y hasta [prisma](/articulos/prisma). Sus ventajas incluyen una visión clara y nítida para una distancia específica, ideal para actividades diarias como leer o conducir, y la capacidad de ser fabricadas de forma delgada y ligera para un mejor aspecto estético y comodidad, especialmente con graduaciones altas.
 
 ### Diseño específico:
 
@@ -16,7 +16,7 @@ Es una lente de gafa que tiene una única graduación en toda su superficie, cor
 
 ## Bifocales
 
-Son utilizadas mayormente para personas con [presbicia](/libreria/presbicia), tienen 2 zonas visuales separadas por un segmento llamado **película**, donde en la parte superior del cristal va la visión de lejos, y en parte inferior, que es donde esta la película, la vision de cerca.  
+Son utilizadas mayormente para personas con [presbicia](/articulos/presbicia), tienen 2 zonas visuales separadas por un segmento llamado **película**, donde en la parte superior del cristal va la visión de lejos, y en parte inferior, que es donde esta la película, la vision de cerca.  
 Son prácticos, pero la linea puede resultar estética o visualmente molesta para algunos usuarios.
 
 ### Ventajas
@@ -46,7 +46,7 @@ Son prácticos, pero la linea puede resultar estética o visualmente molesta par
 ---
 
 ## Ocupacionales ( o también llamados "de oficina")
-Son gafas diseñadas para personas con [presbicia](/libreria/presbicia) que necesitan ver con claridad en distancias cortas e intermedias, especialmente en entornos laborales como oficinas o trabajos frente a pantallas. Están pensados para facilitar el enfoque en documentos, computadoras y conversaciones dentro de un rango de hasta cuatro metros, ofreciendo una solución práctica y especializada para la rutina diaria.
+Son gafas diseñadas para personas con [presbicia](/articulos/presbicia) que necesitan ver con claridad en distancias cortas e intermedias, especialmente en entornos laborales como oficinas o trabajos frente a pantallas. Están pensados para facilitar el enfoque en documentos, computadoras y conversaciones dentro de un rango de hasta cuatro metros, ofreciendo una solución práctica y especializada para la rutina diaria.
 
 ### Ventajas
 
