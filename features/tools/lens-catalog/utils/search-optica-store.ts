@@ -1,24 +1,28 @@
 //DATA
-import { MONOFOCAL_LENS_CATALOG } from "../data/lens/monofocal-lenses";
+import { MONOFOCAL_CATALOG} from "../data/lens/catalogs";
 import { TREATMENTS_CATALOG } from "../data/tecnologies/treatments";
 import { PHOTOCHROMATIC_LENSES_CATALOG } from "../data/tecnologies/photochromatic";
 import { LensObjectCatalog, OpticaInput, OpticaResolved } from "../types/lens/optica-store";
 import { LensArrayCatalog } from "../types/lens/optica-store";
+import type { LensBaseObject } from "../types/lens/lens-base";
 
 
 
 export const searchOpticaStore = (store: OpticaInput): OpticaResolved => {
     const { monofocal } = store
     return {
-        monofocal: searchCatalogs(monofocal)
+        monofocal: searchCatalogs(monofocal, MONOFOCAL_CATALOG)
     }
 }
 
-export const searchCatalogs = (lensCatalog: LensArrayCatalog[]): LensObjectCatalog[] => {
+export const searchCatalogs = (
+    lensCatalog: LensArrayCatalog[],
+    lensBaseCatalog: LensBaseObject
+): LensObjectCatalog[] => {
     return lensCatalog.map(
         ({ key, lens, treatment, photochromatic }) => {
 
-            const lensObject = MONOFOCAL_LENS_CATALOG[lens]
+            const lensObject = lensBaseCatalog[lens]
 
             const product: LensObjectCatalog = {
                 key,

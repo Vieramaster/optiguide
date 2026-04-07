@@ -1,9 +1,8 @@
-import type { LensBase } from "../../types/lens/lens-base";
+import type { LensBaseObject } from "../../../types/lens/lens-base";
 
-export const MONOFOCAL_LENS_CATALOG: Record<string, LensBase> = {
+export const ESSILOR_MONOFOCAL_CATALOG: LensBaseObject = {
   orma1: {
     lensItemId: "O1",
-    lensLine: "Orma",
     category: "Orma",
     lens: "monofocal",
     company: "Essilor",
@@ -17,7 +16,6 @@ export const MONOFOCAL_LENS_CATALOG: Record<string, LensBase> = {
 
   orma2: {
     lensItemId: "O2",
-    lensLine: "Orma",
     lens: "monofocal",
     category: "Orma",
     company: "Essilor",
@@ -31,7 +29,6 @@ export const MONOFOCAL_LENS_CATALOG: Record<string, LensBase> = {
 
   orma3: {
     lensItemId: "O3",
-    lensLine: "Orma",
     lens: "monofocal",
     category: "Orma",
     company: "Essilor",
@@ -45,7 +42,6 @@ export const MONOFOCAL_LENS_CATALOG: Record<string, LensBase> = {
 
   orma4: {
     lensItemId: "O4",
-    lensLine: "Orma",
     lens: "monofocal",
     category: "Orma",
     company: "Essilor",
@@ -59,7 +55,6 @@ export const MONOFOCAL_LENS_CATALOG: Record<string, LensBase> = {
 
   orma5: {
     lensItemId: "O5",
-    lensLine: "Orma",
     lens: "monofocal",
     category: "Orma",
     company: "Essilor",
@@ -73,7 +68,6 @@ export const MONOFOCAL_LENS_CATALOG: Record<string, LensBase> = {
 
   orma7: {
     lensItemId: "O7",
-    lensLine: "Orma",
     lens: "monofocal",
     category: "Orma",
     company: "Essilor",
@@ -87,7 +81,6 @@ export const MONOFOCAL_LENS_CATALOG: Record<string, LensBase> = {
 
   orma8: {
     lensItemId: "O8",
-    lensLine: "Orma",
     lens: "monofocal",
     category: "Orma",
     company: "Essilor",
@@ -101,7 +94,6 @@ export const MONOFOCAL_LENS_CATALOG: Record<string, LensBase> = {
 
   orma9: {
     lensItemId: "O9",
-    lensLine: "Orma",
     lens: "monofocal",
     category: "Orma",
     company: "Essilor",
@@ -118,7 +110,6 @@ export const MONOFOCAL_LENS_CATALOG: Record<string, LensBase> = {
   ///
   orma10: {
     lensItemId: "O10",
-    lensLine: "Orma",
     lens: "monofocal",
     category: "BlueCut",
     company: "Essilor",
@@ -132,7 +123,6 @@ export const MONOFOCAL_LENS_CATALOG: Record<string, LensBase> = {
   },
   orma11: {
     lensItemId: "O11",
-    lensLine: "Orma",
     lens: "monofocal",
     company: "Essilor",
     category: "BlueCut",
@@ -145,7 +135,6 @@ export const MONOFOCAL_LENS_CATALOG: Record<string, LensBase> = {
   },
   orma12: {
     lensItemId: "O12",
-    lensLine: "Orma",
     lens: "monofocal",
     category: "Orma",
     company: "Essilor",
@@ -158,7 +147,6 @@ export const MONOFOCAL_LENS_CATALOG: Record<string, LensBase> = {
   },
   orma13: {
     lensItemId: "O13",
-    lensLine: "Orma",
     lens: "monofocal",
     category: "Orma",
     company: "Essilor",
@@ -171,7 +159,6 @@ export const MONOFOCAL_LENS_CATALOG: Record<string, LensBase> = {
   },
   orma14: {
     lensItemId: "O14",
-    lensLine: "Orma",
     lens: "monofocal",
     category: "Orma",
     company: "Essilor",
@@ -186,7 +173,6 @@ export const MONOFOCAL_LENS_CATALOG: Record<string, LensBase> = {
 
   orma15: {
     lensItemId: "O15",
-    lensLine: "Orma",
     lens: "monofocal",
     category: "Orma",
     company: "Essilor",
@@ -199,7 +185,6 @@ export const MONOFOCAL_LENS_CATALOG: Record<string, LensBase> = {
   },
   orma16: {
     lensItemId: "O16",
-    lensLine: "Orma",
     lens: "monofocal",
     category: "Orma",
     company: "Essilor",
@@ -212,7 +197,6 @@ export const MONOFOCAL_LENS_CATALOG: Record<string, LensBase> = {
   },
   orma17: {
     lensItemId: "O17",
-    lensLine: "Orma",
     lens: "monofocal",
     category: "Orma",
     company: "Essilor",
@@ -225,7 +209,6 @@ export const MONOFOCAL_LENS_CATALOG: Record<string, LensBase> = {
   },
   orma18: {
     lensItemId: "O18",
-    lensLine: "Orma",
     lens: "monofocal",
     category: "Orma",
     company: "Essilor",
@@ -238,7 +221,6 @@ export const MONOFOCAL_LENS_CATALOG: Record<string, LensBase> = {
   },
   eyezen1: {
     lensItemId: "E1",
-    lensLine: "Eyezen",
     lens: "monofocal",
     category: "Eyezen",
     company: "Essilor",

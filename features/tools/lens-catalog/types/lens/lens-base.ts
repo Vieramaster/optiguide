@@ -1,4 +1,3 @@
-export type Name = "Orma" | "Eyezen";
 export type Surfacing = "convencional" | "digital";
 export type Lens = "monofocal" | "bifocal" | "occupational" | "progressive";
 export type Category = "Orma" | "Eyezen" | "BlueCut";
@@ -26,7 +25,6 @@ export type MaxDiopters = {
 
 export type LensBase = {
   lensItemId: string;
-  lensLine: Name;
   category: Category;
   lens: Lens;
   company: Company;
@@ -39,3 +37,5 @@ export type LensBase = {
   lensTecnologies?: string[];
   surfacing: Surfacing;
 };
+
+export type LensBaseObject = Record<string, LensBase>
