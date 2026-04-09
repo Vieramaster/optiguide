@@ -3,11 +3,13 @@ import { calculatePercentage } from "../utils";
 //COMPONENTS
 import { ThicknessMessage } from "./thickness-message";
 import { LensSVG } from "./svg-lens";
-import { SelectSimulator } from "./select-simulator";
+import { SelectField } from "@/components/select-field";
 //HOOKS
 import { useLensSVG, useThicknessSync } from "../hooks";
 //TYPES
 import type { SideThickness, GraduationObject, LensSide } from "../types/simulator";
+//DATA
+import { CRYSTAL_INDEX_OPTIONS } from "../data/crystal-index-options";
 
 interface LensSimulatorProps {
   values: GraduationObject;
@@ -50,8 +52,12 @@ export const LensSimulator = ({
       />
 
       {/** selects de indices */}
-      <SelectSimulator onValueSelect={handleValueSelect} />
 
+      <SelectField
+        options={CRYSTAL_INDEX_OPTIONS}
+        onValueSelect={handleValueSelect} 
+
+        />
       {/**SVG maleable */}
       <LensSVG isPositive={isPositive} size={totalThickness} />
 

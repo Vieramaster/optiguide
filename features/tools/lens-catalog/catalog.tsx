@@ -1,45 +1,65 @@
-import { searchOpticaStore } from "./utils/search-optica-store"
-import { CATALOG_TECNI_OPTICA } from "./data/company-tecni-optica/catalog-tecni-optica"
-import { CATALOG_TABLE_COLUMNS } from "./data/catalog-table-columns"
-import { Table, TableBody, TableHeader, TableRow, TableHead, TableCell } from "@/components/ui"
-import { mapCatalogToRow } from "./logic/catalog-row"
-import { formatCatalogCellValue } from "./utils/format-catalog-cell-value"
+"use client";
+
+import {
+  Title,
+  SubTitle,
+  Table,
+  TableBody,
+  TableHeader,
+} from "@/components/ui";
+import { SelectField } from "@/components/select-field";
+import { useSelect } from "./hooks/use-select";
+import { useCatalogFilters } from "./hooks/use-catalog-filters";
+import { TableColumnsHeader } from "./components/table-columns-header";
+import { CatalogRowItem } from "./components/catalog-row-item";
+import { FilterCheckboxes } from "./components/filter-checkboxes";
+import {
+  OPTICAL_COMPANY_OPTIONS,
+  OPTICAL_LENS_OPTIONS,
+} from "./data/catalog-table-columns";
 
 export const Catalog = () => {
-    const { monofocal } = searchOpticaStore(CATALOG_TECNI_OPTICA)
+  const { onChangeCompany, onChangeLens, companySelect, lensSelect } =
+    useSelect();
+  const { filteredCatalog, filters, handleCheckboxChange, FILTERABLE_COLUMNS } =
+    useCatalogFilters(companySelect, lensSelect);
 
-    return (
-        <section className="overflow-x-auto">
-            <Table className="min-w-full">
-                <TableHeader>
-                    <TableRow>
-                        {CATALOG_TABLE_COLUMNS.map(({ tableTitle, Ico, tableKey }) => (
-                            <TableHead key={tableKey}>
-                                {Ico ? <Ico className="mx-auto" /> : tableTitle}
-                            </TableHead>
-                        ))}
-                    </TableRow>
-                </TableHeader>
+  return (
+    <section className="overflow-x-auto">
+      <div className="flex flex-col items-center gap-8 p-10">
+        <article className="flex flex-col gap-4 items-center">
+          <Title>Catalogo para opticas</Title>
+          <SubTitle>elije la optica y el cristal que quieras buscar</SubTitle>
+        </article>
+        {/* Filtros booleanos */}
+        <FilterCheckboxes
+          columns={FILTERABLE_COLUMNS}
+          filters={filters}
+          onChange={handleCheckboxChange}
+        />
+        <div className="flex gap-8">
+          <SelectField
+            options={OPTICAL_COMPANY_OPTIONS}
+            onValueSelect={onChangeCompany}
+          />
+          <SelectField
+            options={OPTICAL_LENS_OPTIONS}
+            onValueSelect={onChangeLens}
+          />
+        </div>
+      </div>
 
-                <TableBody>
-                    {monofocal.map((lensItem) => {
-                        const row = mapCatalogToRow(lensItem)
-                        return (
-                            <TableRow key={lensItem.key}>
-                                {CATALOG_TABLE_COLUMNS.map(({ tableKey }) => {
-                                    const value = row[tableKey]
+      <Table className="min-w-full">
+        <TableHeader>
+          <TableColumnsHeader />
+        </TableHeader>
 
-                                    return (
-                                        <TableCell key={tableKey}>
-                                            {formatCatalogCellValue(value)}
-                                        </TableCell>
-                                    )
-                                })}
-                            </TableRow>
-                        )
-                    })}
-                </TableBody>
-            </Table>
-        </section>
-    )
-}
+        <TableBody>
+          {filteredCatalog.map((lensItem) => (
+            <CatalogRowItem key={lensItem.key} lensItem={lensItem} />
+          ))}
+        </TableBody>
+      </Table>
+    </section>
+  );
+};

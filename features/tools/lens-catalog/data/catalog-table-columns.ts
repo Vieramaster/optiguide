@@ -1,29 +1,42 @@
-import type { ForwardRefExoticComponent, RefAttributes } from "react"
-import type { LucideProps } from "lucide-react"
-import { Sparkles, MonitorSmartphone, DropletOff, Shield, ZapOff, Sun } from "lucide-react"
-import type { CatalogRow } from "../logic/catalog-row"
+//ICONS
+import {
+  Sparkles,
+  MonitorSmartphone,
+  DropletOff,
+  Shield,
+  ZapOff,
+  Sun,
+} from "lucide-react";
+//TYPES
+import type { TableOptions, RowOptions } from "../types/table-options";
 
-export type CatalogTableColumn = {
-    tableTitle: string
-    tableKey: keyof CatalogRow
-    Ico?: ForwardRefExoticComponent<
-        Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>
-    >
-}
+export const CATALOG_TABLE_COLUMNS: TableOptions[] = [
+  { label: "nombre del cristal", value: "lensLine" },
+  { label: "tipo", value: "type" },
+  { label: "rango de dioptrias", value: "rangeDiopters" },
+  { label: "indice", value: "index" },
+  { label: "diam", value: "diam" },
+  { label: "tallado", value: "surfacing" },
+  { label: "forma", value: "lensForm" },
+  { label: "antireflejo", Ico: Sparkles, value: "antiReflex" },
+  { label: "filtro de pantalla", Ico: MonitorSmartphone, value: "blueControl" },
+  {
+    label: "oleofobico e hidrofobico",
+    Ico: DropletOff,
+    value: "oleophobicHydrophobic",
+  },
+  { label: "proteccion contra rayas", Ico: Shield, value: "scratchResistant" },
+  { label: "anti estatica", Ico: ZapOff, value: "antiStatic" },
+  { label: "fotocromatico", Ico: Sun, value: "photochromatic" },
+  { label: "polarizado", value: "polarized" },
+] as const;
 
-export const CATALOG_TABLE_COLUMNS: CatalogTableColumn[] = [
-    { tableTitle: "nombre del cristal", tableKey: "lensLine" },
-    { tableTitle: "tipo", tableKey: "type" },
-    { tableTitle: "rango de dioptrias", tableKey: "rangeDiopters" },
-    { tableTitle: "indice", tableKey: "index" },
-    { tableTitle: "diam", tableKey: "diam" },
-    { tableTitle: "tallado", tableKey: "surfacing" },
-    { tableTitle: "forma", tableKey: "lensForm" },
-    { tableTitle: "antireflejo", Ico: Sparkles, tableKey: "antiReflex" },
-    { tableTitle: "filtro de pantalla", Ico: MonitorSmartphone, tableKey: "blueControl" },
-    { tableTitle: "oleofobico e hidrofobico", Ico: DropletOff, tableKey: "oleophobicHydrophobic" },
-    { tableTitle: "proteccion contra rayas", Ico: Shield, tableKey: "scratchResistant" },
-    { tableTitle: "anti estatica", Ico: ZapOff, tableKey: "antiStatic" },
-    { tableTitle: "fotocromatico", Ico: Sun, tableKey: "photochromatic" },
-    { tableTitle: "polarizado", tableKey: "polarized" }
-]
+export const OPTICAL_COMPANY_OPTIONS: RowOptions[] = [
+  { label: "Tecni-Optica", value: "tecniOptica" },
+  { label: "Optica Luro", value: "opticaLuro" },
+];
+
+export const OPTICAL_LENS_OPTIONS: RowOptions[] = [
+  { label: "monofocal", value: "monofocal" },
+  { label: "bifocal", value: "bifocal" },
+];

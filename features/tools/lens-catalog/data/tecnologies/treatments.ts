@@ -46,7 +46,6 @@ export const TREATMENTS_CATALOG = {
     ],
     treatmentFeatures: [
       "antiReflex",
-      "blueControl",
       "oleophobicHydrophobic",
       "scratchResistant",
       "antiStatic",
@@ -65,7 +64,6 @@ export const TREATMENTS_CATALOG = {
     ],
     treatmentFeatures: [
       "antiReflex",
-      "blueControl",
       "oleophobicHydrophobic",
       "scratchResistant",
       "antiStatic",
@@ -104,7 +102,6 @@ export const TREATMENTS_CATALOG = {
     ],
     treatmentFeatures: [
       "antiReflex",
-      "blueControl",
       "oleophobicHydrophobic",
       "scratchResistant",
       "antiStatic",

@@ -1,7 +1,7 @@
 import type { LensTreatment, TreatmentsName, } from "../tecnologies/lens-treatments"
 import type { PhotochromaticLens, PhotochromaticName } from "../tecnologies/photochromatic";
 import type { LensBase } from "./lens-base";
-
+import type { LensBaseObject } from "./lens-base";
 
 export type LensBaseProduct<L, T, P> = {
     key: string,
@@ -23,10 +23,11 @@ export type LensObjectCatalog = LensBaseProduct<
 >
 
 export type Optica<T> = {
-    monofocal: T[]
-    bifocal?: T[]
-    progressive?: T[]
+    monofocal: T
+    bifocal?: T
+    progressive?: T
 }
 
-export type OpticaInput = Optica<LensArrayCatalog>
-export type OpticaResolved = Optica<LensObjectCatalog>
+export type OpticaInput = Optica<LensArrayCatalog[]>
+export type OpticaResolved = Optica<LensObjectCatalog[]>
+export type OpticaCatalog = Optica<LensBaseObject>
