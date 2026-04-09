@@ -51,5 +51,6 @@ export const MONOFOCAL_TECNI_OPTICA: LensArrayCatalog[] = [
 
   { key: "orma15-gen", lens: "orma15", photochromatic: "Generic" },
 
-  { key: "orma17-xperio", lens: "orma17", treatment: ["Xperio"] },
+  { key: "orma18-xperio", lens: "orma18   ", treatment: ["Xperio"] },
+  
 ];
