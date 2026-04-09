@@ -14,15 +14,15 @@ export const CheckboxBasic = ({
   checked,
   onChange,
 }: CheckBoxBasicProps) => (
-  <FieldGroup className="mx-auto w-56 cursor-po">
-    <Field orientation="horizontal">
+  <FieldGroup className="mx-auto w-14">
+    <Field orientation="horizontal" className="w-10">
       <Checkbox
         className="cursor-pointer"
         id={`${label}-checkbox`}
         checked={checked}
         onCheckedChange={(checked) => onChange?.(!!checked)}
       />
-      <FieldLabel title={label} className="cursor-help">
+      <FieldLabel title={label} className="cursor-help ">
         {children}
       </FieldLabel>
     </Field>

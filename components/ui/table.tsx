@@ -34,7 +34,7 @@ function TableBody({ className, ...props }: React.ComponentProps<"tbody">) {
     <tbody
       data-slot="table-body"
       className={cn(
-        "hidden xl:table-row-group xl:[&_tr:last-child]:border-0",
+        " table-row-group xl:[&_tr:last-child]:border-0",
         className
       )}
       {...props}

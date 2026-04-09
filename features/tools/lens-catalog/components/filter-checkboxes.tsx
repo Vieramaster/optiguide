@@ -1,8 +1,10 @@
+//COMPONENTS
 import { CheckboxBasic } from "@/components/checkbox-basic";
-import type { FC } from "react";
+//TYPES
+import type { RowOptions } from "../types/table-options";
 
 interface FilterCheckboxesProps {
-  columns: { value: string; label: string; Ico?: FC<any> }[];
+  columns: RowOptions[];
   filters: Record<string, boolean>;
   onChange: (key: string, checked: boolean) => void;
 }
@@ -12,7 +14,7 @@ export const FilterCheckboxes = ({
   filters,
   onChange,
 }: FilterCheckboxesProps) => (
-  <div className="w-200 flex justify-center items-center ">
+  <div className="w-50 flex flex-wrap items-center justify-center gap-8  lg:gap-0 lg:w-[90%]">
     {columns.map(({ label, Ico, value }, index) =>
       Ico ? (
         <CheckboxBasic

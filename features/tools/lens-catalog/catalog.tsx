@@ -1,5 +1,5 @@
 "use client";
-
+//COMPONENTS
 import {
   Title,
   SubTitle,
@@ -13,6 +13,7 @@ import { useCatalogFilters } from "./hooks/use-catalog-filters";
 import { TableColumnsHeader } from "./components/table-columns-header";
 import { CatalogRowItem } from "./components/catalog-row-item";
 import { FilterCheckboxes } from "./components/filter-checkboxes";
+//DATA
 import {
   OPTICAL_COMPANY_OPTIONS,
   OPTICAL_LENS_OPTIONS,
@@ -27,7 +28,7 @@ export const Catalog = () => {
   return (
     <section className="overflow-x-auto">
       <div className="flex flex-col items-center gap-8 p-10">
-        <article className="flex flex-col gap-4 items-center">
+        <article className="flex flex-col gap-6 items-center">
           <Title>Catalogo para opticas</Title>
           <SubTitle>elije la optica y el cristal que quieras buscar</SubTitle>
         </article>
