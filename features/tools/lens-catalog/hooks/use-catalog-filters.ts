@@ -1,9 +1,11 @@
+"use client";
+
 import { useMemo, useState } from "react";
 import { searchOpticaCompany } from "../utils/search-optica-store";
 import { mapCatalogToRow } from "../logic/catalog-row";
 import { CATALOG_TABLE_COLUMNS } from "../data/catalog-table-columns";
 import type { OpticalCompanyKey, LensTypeKey } from "../types/optic-keys";
-import type { LensObjectCatalog } from "../types/lens/optica-company";
+
 
 export const useCatalogFilters = (
   companySelect: OpticalCompanyKey,

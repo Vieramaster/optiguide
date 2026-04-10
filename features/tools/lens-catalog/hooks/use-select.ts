@@ -1,3 +1,5 @@
+"use client";
+
 //HOOKS
 import { useState } from "react";
 //TYPES
