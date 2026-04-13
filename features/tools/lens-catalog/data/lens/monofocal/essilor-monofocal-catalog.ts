@@ -68,7 +68,7 @@ export const ESSILOR_MONOFOCAL_CATALOG: LensBaseObject = {
   orma6: {
     lensItemId: "O6",
     lens: "monofocal",
-    category: "BlueCut",
+    category: "Orma",
     company: "Essilor",
     range: "stock",
     diam: [65, 70],
@@ -81,7 +81,7 @@ export const ESSILOR_MONOFOCAL_CATALOG: LensBaseObject = {
   orma7: {
     lensItemId: "O7",
     lens: "monofocal",
-    category: "BlueCut",
+    category: "Orma",
     company: "Essilor",
     range: "stock",
     diam: [65, 70],
@@ -94,7 +94,7 @@ export const ESSILOR_MONOFOCAL_CATALOG: LensBaseObject = {
   orma8: {
     lensItemId: "O8",
     lens: "monofocal",
-    category: "BlueCut",
+    category: "Orma",
     company: "Essilor",
     range: "EXT",
     diam: [65, 70],
@@ -109,7 +109,7 @@ export const ESSILOR_MONOFOCAL_CATALOG: LensBaseObject = {
   orma9: {
     lensItemId: "O9",
     lens: "monofocal",
-    category: "BlueCut",
+    category: "Orma",
     company: "Essilor",
     range: "EXT",
     diam: [65, 70],
@@ -125,7 +125,7 @@ export const ESSILOR_MONOFOCAL_CATALOG: LensBaseObject = {
   orma10: {
     lensItemId: "O10",
     lens: "monofocal",
-    category: "BlueCut",
+    category: "Orma",
     company: "Essilor",
     range: "LAB",
     diam: [65, 70],

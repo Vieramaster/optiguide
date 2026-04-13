@@ -26,43 +26,11 @@ export const MONOFOCAL_TECNI_OPTICA: LensArrayCatalog[] = [
   { key: "orma5-czforte", lens: "orma5", treatment: ["CrizalForte"] },
   { key: "orma5-czprev", lens: "orma5", treatment: ["CrizalPrevencia"] },
 
-  { key: "orma6-mid-bcut", lens: "orma6", treatment: ["BlueCut", "MidIndex"] },
-  { key: "orma6-clook-bcut", lens: "orma6", treatment: ["BlueCut", "ClearLook"] },
-  { key: "orma6-clsupra-bcut", lens: "orma6", treatment: ["BlueCut", "ClearLookSupra"] },
+
 
   { key: "orma7-mid-bcut", lens: "orma7", treatment: ["BlueCut", "MidIndex"] },
   { key: "orma7-clook-bcut", lens: "orma7", treatment: ["BlueCut", "ClearLook"] },
   { key: "orma7-clsupra-bcut", lens: "orma7", treatment: ["BlueCut", "ClearLookSupra"] },
   
-
-  { key: "orma7-czsapph", lens: "orma7", treatment: ["CrizalSapphire"] },
-  { key: "orma7-czforte", lens: "orma7", treatment: ["CrizalForte"] },
-  { key: "orma7-czprev", lens: "orma7", treatment: ["CrizalPrevencia"] },
-  { key: "orma7-mid-bcut", lens: "orma7", treatment: ["MidIndex", "BlueCut"] },
-  {
-    key: "orma7-clook-bcut",
-    lens: "orma7",
-    treatment: ["ClearLook", "BlueCut"],
-  },
-  {
-    key: "orma7-clsupra-bcut",
-    lens: "orma7",
-    treatment: ["ClearLookSupra", "BlueCut"],
-  },
-
-  {
-    key: "orma12-trans-grey",
-    lens: "orma12",
-    photochromatic: "TransitionsGenSGrey",
-  },
-  {
-    key: "orma13-trans-colors",
-    lens: "orma13",
-    photochromatic: "TransitionsGenSColors",
-  },
-
-  { key: "orma15-gen", lens: "orma15", photochromatic: "Generic" },
-
-  { key: "orma18-xperio", lens: "orma18   ", treatment: ["Xperio"] },
 
 ];

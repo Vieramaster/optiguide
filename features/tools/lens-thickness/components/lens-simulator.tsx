@@ -7,7 +7,12 @@ import { SelectField } from "@/components/select-field";
 //HOOKS
 import { useLensSVG, useThicknessSync } from "../hooks";
 //TYPES
-import type { SideThickness, GraduationObject, LensSide } from "../types/simulator";
+import type {
+  SideThickness,
+  GraduationObject,
+  LensSide,
+} from "../types/simulator";
+
 //DATA
 import { CRYSTAL_INDEX_OPTIONS } from "../data/crystal-index-options";
 
@@ -26,7 +31,6 @@ export const LensSimulator = ({
   setThickness,
   thickness,
 }: LensSimulatorProps) => {
-
   // hook personalizado para manejar el SVG de la lente
   const { handleValueSelect, totalThickness, isPositive } = useLensSVG(values);
 
@@ -55,14 +59,10 @@ export const LensSimulator = ({
 
       <SelectField
         options={CRYSTAL_INDEX_OPTIONS}
-        onValueSelect={handleValueSelect} 
-
-        />
+        onValueSelect={handleValueSelect}
+      />
       {/**SVG maleable */}
       <LensSVG isPositive={isPositive} size={totalThickness} />
-
-
     </div>
   );
 };
-

@@ -3,11 +3,11 @@ import { Label } from "@radix-ui/react-dropdown-menu";
 import { Input } from "@/components/ui/input";
 //DATA
 import { GRADUATION_RANGES } from "../data/graduation-ranges";
+import type { GraduationKey } from "@/shared/types/graduation";
 
-
-interface GraduationInputProps  {
+interface GraduationInputProps {
   name: keyof typeof GRADUATION_RANGES;
-  value: string;
+  value: GraduationKey;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   maxLength: number;
 

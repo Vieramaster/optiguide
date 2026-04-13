@@ -1,30 +1,30 @@
 //VALIDATIONS
-import { validateGraduationInputs } from "../validations/validate-graduation-inputs";
+import { validateGraduationInputs } from "../../../../components/prescription-form/prescription-form-utils";
 //COMPONENTS
 import { Button } from "@/components/ui/button";
 import { GraduationInput } from "./graduation-input";
 //TYPES
-import { GraduationKey, GraduationObject } from "../types/simulator";
+import type { GraduationKey, GraduationObject, } from "../types/simulator";
 
+import type { GraduationFields, BaseGraduation } from "@/shared/types/graduation";
 interface InputsSimulatorProps {
   graduationKeys: GraduationKey[];
-  graduationValue: GraduationObject;
+  graduationValue: GraduationFields | BaseGraduation;
   onChangevalues: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onClickGraduation: () => void;
 }
+
 
 export const InputsSimulator = ({
   graduationKeys,
   graduationValue,
   onChangevalues,
   onClickGraduation,
-
 }: InputsSimulatorProps) => {
   const isDisabled = !validateGraduationInputs(graduationValue);
 
   return (
     <div className="flex flex-wrap gap-2  lg:flex-row  lg:gap-4 justify-center items-center ">
-
       {graduationKeys.map((key) => (
         <GraduationInput
           key={key}
@@ -43,8 +43,6 @@ export const InputsSimulator = ({
       >
         Calcular
       </Button>
-
     </div>
-
   );
 };
