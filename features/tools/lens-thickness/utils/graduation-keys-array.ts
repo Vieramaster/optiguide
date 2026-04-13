@@ -1,4 +1,4 @@
-import { GRADUATION_RANGES } from "../data/graduation-ranges";
+import { GRADUATION_RANGES } from "../../../../shared/graduation-form/graduation-ranges";
 
 
 export const graduationKeysArray = Object.keys(

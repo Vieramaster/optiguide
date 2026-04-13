@@ -10,7 +10,7 @@ interface GraduationInputProps {
 
 };
 
-export const GraduationInput = ({
+export const InputBlock = ({
   name,
   value,
   onChange,

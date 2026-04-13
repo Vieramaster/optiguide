@@ -1,6 +1,5 @@
 export * from "./error-list-simulator"
 export * from "./graduation-input"
 export * from "./header-simulator"
-export * from "./inputs-simulator"
 export * from "./lens-simulator"
 export * from "./thickness-message"

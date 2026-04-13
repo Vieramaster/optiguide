@@ -1,57 +1,54 @@
 "use client";
 // COMPONENTS
 import {
-  InputsSimulator,
   HeaderSimulator,
   ErrorListSimulator,
   LensSimulator,
 } from "./components";
 import { Button } from "@/components/ui/button";
+import { PrescriptionForm } from "@/components/prescription-form";
+//UTILS
+import { graduationKeysArray, validateFormValues } from "./utils"
 // DATA
-import { graduationKeysArray } from "./utils/graduation-keys-array";
+import { LensTicknessTitle } from "./data/title";
+import { graduationComplete } from "@/shared/graduation-form/graduation-data";
 // HOOKS
-import { useInputValuesSimulator, useThicknessSimulator } from "./hooks";
+import { useThicknessSimulator } from "./hooks";
+import { useFormGraduation } from "@/shared/graduation-form/graduation-form-hook";
 //TYPES
 import type { LensSide } from "./types/simulator";
-import { PrescriptionForm } from "@/components/prescription-form/prescription-form";
-
 const SIDES: LensSide[] = ["A", "B"];
 
 export const LensThicknessSimulator = () => {
+
   const {
-    inputsValues,
-    finalValues,
-    error,
-    handleChangeGraduation,
-    handleClickGraduation,
-  } = useInputValuesSimulator();
+    values,
+    errors,
+    submittedValues,
+    handleChange,
+    handleSubmit,
+  } = useFormGraduation();
 
   const { activeSide, setActiveSide, thickness, setThickness } =
     useThicknessSimulator();
 
+  const isButtonDisabled = validateFormValues(values)
+  console.log(isButtonDisabled)
   return (
     <section className="w-full h-full  p-10 flex flex-col gap-8 text-center">
       <HeaderSimulator
-        title="Simulador de espesor de lentes"
-        text="Después de poner tu graduación en los bloques, dale al botón de "
-        buttonText="Calcular"
-        note="Nota: este simulador es ilustrativo y no siempre refleja el grosor real, depende del laboratorio y del técnico óptico."
+        {...LensTicknessTitle}
       />
 
-      <InputsSimulator
-        graduationKeys={graduationKeysArray}
-        graduationValue={inputsValues}
-        onChangevalues={handleChangeGraduation}
-        onClickGraduation={handleClickGraduation}
-      />
       <PrescriptionForm
         keys={graduationKeysArray}
-        values={inputsValues}
-        onChange={handleChangeGraduation}
-        onSubmit={handleClickGraduation}
-       
+        values={values}
+        onChange={handleChange}
+        onSubmit={handleSubmit}
+        isDisabled={isButtonDisabled}
+
       />
-      {Object.keys(error).length > 0 && <ErrorListSimulator error={error} />}
+      {Object.keys(errors).length > 0 && <ErrorListSimulator error={errors} />}
       <div className="flex justify-center  gap-6 lg:hidden">
         <Button
           onClick={() => setActiveSide("A")}
@@ -71,7 +68,7 @@ export const LensThicknessSimulator = () => {
         {SIDES.map((side) => (
           <LensSimulator
             key={side}
-            values={finalValues}
+            values={submittedValues ?? graduationComplete}
             isShow={activeSide === side}
             thickness={thickness}
             setThickness={setThickness}

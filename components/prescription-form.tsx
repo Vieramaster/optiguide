@@ -1,26 +1,24 @@
 import { Button } from "@/components/ui/button";
-import { GraduationInput } from "@/features/tools/lens-thickness/components";
-import type {
-  BaseGraduation,
-  GraduationFields,
-} from "@/shared/types/graduation";
-import { validateGraduationInputs } from "./prescription-form-utils";
+import { InputBlock } from "./input-block";
 
-import { GraduationKey, GraduationValues } from "@/shared/types/graduation";
-interface PrescriptionFormProps {
-  keys: GraduationKey[] ;
-  values: BaseGraduation | GraduationFields;
+interface PrescriptionFormProps<T extends Record<string, string>> {
+  keys: (keyof T)[];
+  values: T;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onSubmit: () => void;
+  isDisabled:boolean
 }
 
-export const PrescriptionForm = ({
+export const PrescriptionForm = <T extends Record<string, string>>({
   keys,
   values,
   onChange,
   onSubmit,
-}: PrescriptionFormProps) => {
-  const isDisabled = !validateGraduationInputs(values);
+  isDisabled
+  
+}: PrescriptionFormProps<T>) => {
+
+
   return (
     <form
       onSubmit={(e) => {
@@ -30,9 +28,9 @@ export const PrescriptionForm = ({
       className="flex flex-wrap gap-2 lg:flex-row lg:gap-4 justify-center items-center"
     >
       {keys.map((key) => (
-        <GraduationInput
-          key={key}
-          name={key}
+        <InputBlock
+          key={String(key)}
+          name={String(key)}
           value={values[key]}
           onChange={onChange}
           maxLength={5}
@@ -42,7 +40,7 @@ export const PrescriptionForm = ({
       <Button
         type="submit"
         className=" place-self-end lg:self-end "
-        disabled={isDisabled}
+        disabled={!isDisabled}
       >
         Calcular
       </Button>
