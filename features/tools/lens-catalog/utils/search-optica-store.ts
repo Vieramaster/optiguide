@@ -12,7 +12,7 @@ import { LENS_CATALOGS } from "../data/lens/catalogs";
 
 export const searchOpticaCompany = (
   company: OpticalCompanyKey,
-  lens: LensTypeKey
+  lens: LensTypeKey,
 ) => {
   if (!company || !lens) return null;
 
@@ -29,7 +29,7 @@ export const searchOpticaCompany = (
 
 const searchCatalogs = (
   lensCatalog: LensArrayCatalog[],
-  lensBaseCatalog: LensBaseObject
+  lensBaseCatalog: LensBaseObject,
 ): LensObjectCatalog[] => {
   return lensCatalog.map(({ key, lens, treatment, photochromatic }) => {
     const lensObject = lensBaseCatalog[lens];

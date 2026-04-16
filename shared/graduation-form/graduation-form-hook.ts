@@ -2,30 +2,35 @@
 import { useState } from "react";
 
 //DATA
-import { GRADUATION_RANGES_COMPLETE } from "./graduation-data";
-
+import { GRADUATION_RANGES } from "./graduation-ranges";
 //TYPES
 import type {
-  GraduationFields,
-  GraduationError,
+  BaseGraduationKeys,
+  GraduationFieldsKey,
 } from "@/shared/types/graduation";
-export const useFormGraduation = () => {
-  const [values, setValues] = useState<GraduationFields>({
-    ESF: "",
-    CIL: "",
-    EJE: "",
-    DIAM: "",
+
+export const useFormGraduation = <
+  K extends BaseGraduationKeys | GraduationFieldsKey,
+>(
+  fields: K[],
+) => {
+  const [values, setValues] = useState<Record<K, string>>(() => {
+    const initial = {} as Record<K, string>;
+    fields.forEach((f) => {
+      initial[f] = "";
+    });
+    return initial;
   });
 
-  const [errors, setErrors] = useState<GraduationError>({});
-  const [submittedValues, setSubmittedValues] =
-    useState<GraduationFields | null>(null);
+  const [errors, setErrors] = useState<Partial<Record<K, string>>>({});
+  const [submittedValues, setSubmittedValues] = useState<Record<
+    K,
+    string
+  > | null>(null);
 
-  // -------------------------
-  // CHANGE (controlado)
-  // -------------------------
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
+    const name = e.target.name as K;
+    const value = e.target.value;
 
     setValues((prev) => ({
       ...prev,
@@ -33,21 +38,15 @@ export const useFormGraduation = () => {
     }));
   };
 
-  // -------------------------
-  // VALIDACIÓN NUMÉRICA
-  // -------------------------
-  const validate = (): GraduationError => {
-    const newErrors: GraduationError = {};
+  const validate = () => {
+    const newErrors: Partial<Record<K, string>> = {};
 
-    (Object.keys(values) as (keyof GraduationFields)[]).forEach((key) => {
+    fields.forEach((key) => {
       const raw = values[key];
-
-      // ignorar campos que no se usan
-      if (raw === "" || raw === undefined) return;
+      if (!raw) return;
 
       const val = Number(raw);
-      const config = GRADUATION_RANGES_COMPLETE[key];
-
+      const config = GRADUATION_RANGES[key];
       if (!config) return;
 
       const { min, max, step } = config;
@@ -70,14 +69,10 @@ export const useFormGraduation = () => {
     return newErrors;
   };
 
-  // -------------------------
-  // SUBMIT (form)
-  // -------------------------
   const handleSubmit = () => {
-    // 1. validación numérica
     const newErrors = validate();
 
-    if (Object.keys(newErrors).length > 0) {
+    if (Object.keys(newErrors).length) {
       setErrors(newErrors);
       return;
     }
@@ -85,11 +80,6 @@ export const useFormGraduation = () => {
     setErrors({});
     setSubmittedValues(values);
   };
-
-  // -------------------------
-  // UI state
-  // -------------------------
-
 
   return {
     values,

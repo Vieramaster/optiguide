@@ -1,3 +1,5 @@
+import { GraduationBase } from "../graduation-form/graduation-type";
+
 export type BaseGraduation = {
   ESF: string;
   CIL: string;
@@ -8,10 +10,11 @@ export type GraduationFields = BaseGraduation & {
   DIAM: string;
 };
 
-export type GraduationKey = keyof GraduationFields;
+export type BaseGraduationKeys = keyof GraduationBase
 
-export type GraduationError<K extends GraduationKey = GraduationKey> = Partial<
+export type GraduationFieldsKey = keyof GraduationFields;
+
+export type GraduationError<K extends GraduationFieldsKey = GraduationFieldsKey> = Partial<
   Record<K, string>
 >;
 export type GraduationValues = BaseGraduation | GraduationFields;
-

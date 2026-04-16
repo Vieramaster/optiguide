@@ -1,14 +1,10 @@
 "use client";
 // COMPONENTS
-import {
-  HeaderSimulator,
-  ErrorListSimulator,
-  LensSimulator,
-} from "./components";
-import { Button } from "@/components/ui/button";
-import { PrescriptionForm } from "@/components/prescription-form";
+import { HeaderSimulator, LensSimulator } from "./components";
+import { Button } from "@/components/ui/";
+import { PrescriptionForm, ErrorList } from "@/components/";
 //UTILS
-import { graduationKeysArray, validateFormValues } from "./utils"
+import { graduationKeysArray, validateFormValues } from "./utils";
 // DATA
 import { LensTicknessTitle } from "./data/title";
 import { graduationComplete } from "@/shared/graduation-form/graduation-data";
@@ -20,25 +16,17 @@ import type { LensSide } from "./types/simulator";
 const SIDES: LensSide[] = ["A", "B"];
 
 export const LensThicknessSimulator = () => {
-
-  const {
-    values,
-    errors,
-    submittedValues,
-    handleChange,
-    handleSubmit,
-  } = useFormGraduation();
+  const { values, errors, submittedValues, handleChange, handleSubmit } =
+    useFormGraduation(["ESF", "CIL", "EJE", "DIAM"]);
 
   const { activeSide, setActiveSide, thickness, setThickness } =
     useThicknessSimulator();
 
-  const isButtonDisabled = validateFormValues(values)
-  console.log(isButtonDisabled)
+  const isButtonDisabled = validateFormValues(values);
+
   return (
     <section className="w-full h-full  p-10 flex flex-col gap-8 text-center">
-      <HeaderSimulator
-        {...LensTicknessTitle}
-      />
+      <HeaderSimulator {...LensTicknessTitle} />
 
       <PrescriptionForm
         keys={graduationKeysArray}
@@ -46,9 +34,8 @@ export const LensThicknessSimulator = () => {
         onChange={handleChange}
         onSubmit={handleSubmit}
         isDisabled={isButtonDisabled}
-
       />
-      {Object.keys(errors).length > 0 && <ErrorListSimulator error={errors} />}
+      {Object.keys(errors).length > 0 && <ErrorList error={errors} />}
       <div className="flex justify-center  gap-6 lg:hidden">
         <Button
           onClick={() => setActiveSide("A")}

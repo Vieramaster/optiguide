@@ -1,10 +1,10 @@
 //COMPONENTS
 import { CheckboxBasic } from "@/components/checkbox-basic";
 //TYPES
-import type { RowOptions } from "../types/table-options";
+import type {  TableOptions } from "../types/table-options";
 
 interface FilterCheckboxesProps {
-  columns: RowOptions[];
+  columns: TableOptions[];
   filters: Record<string, boolean>;
   onChange: (key: string, checked: boolean) => void;
 }

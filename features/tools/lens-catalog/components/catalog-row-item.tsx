@@ -1,14 +1,13 @@
 import { TableRow, TableCell } from "@/components/ui";
 import { FormatCatalogCellValue } from "../components/format-catalog-cell-value";
 import { CATALOG_TABLE_COLUMNS } from "../data/catalog-table-columns";
-import { mapCatalogToRow } from "../logic/catalog-row";
-import type { LensObjectCatalog } from "../types/lens/optica-company";
+import type { CatalogRow } from "../logic/catalog-row";
 
 interface CatalogRowItemProps {
-  lensItem: LensObjectCatalog;
+  row: CatalogRow;
 }
-export const CatalogRowItem = ({ lensItem }: CatalogRowItemProps) => {
-  const row = mapCatalogToRow(lensItem);
+
+export const CatalogRowItem = ({ row }: CatalogRowItemProps) => {
   return (
     <TableRow>
       {CATALOG_TABLE_COLUMNS.map(({ value, label }) => (

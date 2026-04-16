@@ -1,7 +1,8 @@
 //COMPONENTS
 import {
     DraftingCompass,
-    Smile
+    Smile,
+    NotebookText
 } from "lucide-react";
 //TYPES
 import { toolItem } from "../types/sidebar";
@@ -17,5 +18,10 @@ export const TOOLS_SIDEBAR: toolItem[] = [
         url: "/herramientas/lentes-segun-el-rostro",
         Icon: Smile,
     },
+    {
+        title:"Catalogo",
+        url:"/herramientas/catalogo",
+        Icon: NotebookText
+    }
 
 ]

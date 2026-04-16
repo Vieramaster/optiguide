@@ -1,4 +1,6 @@
 "use client";
+//REACT
+import { useMemo } from "react";
 //COMPONENTS
 import {
   Title,
@@ -7,31 +9,63 @@ import {
   TableBody,
   TableHeader,
 } from "@/components/ui";
-import { SelectField } from "@/components/select-field";
-import { useSelect } from "./hooks/use-select";
-import { useCatalogFilters } from "./hooks/use-catalog-filters";
-import { TableColumnsHeader } from "./components/table-columns-header";
-import { CatalogRowItem } from "./components/catalog-row-item";
-import { FilterCheckboxes } from "./components/filter-checkboxes";
+
+import {
+  TableColumnsHeader,
+  CatalogRowItem,
+  FilterCheckboxes,
+} from "./components/";
+
+import { ErrorList, PrescriptionForm, SelectField } from "@/components/";
+
+//UTILS
+import { filterTranspolation } from "./utils/filter-transpolation";
+import { hasGraduationValues } from "./utils/has-graduation-values";
 //DATA
 import {
   OPTICAL_COMPANY_OPTIONS,
   OPTICAL_LENS_OPTIONS,
 } from "./data/catalog-table-columns";
 
+//HOOKS
+import { useCatalogFilters } from "./hooks/use-catalog-filters";
+import { useFormGraduation } from "@/shared/graduation-form/graduation-form-hook";
+import { useSelect } from "./hooks/use-select";
+import { useCatalogRows } from "./hooks/use-catalog-row";
+
+//TYPES
+import { GraduationBaseKeys } from "@/shared/graduation-form/graduation-type";
+
+const PRESCRIPTION_KEYS: GraduationBaseKeys[] = ["ESF", "CIL"];
+
 export const Catalog = () => {
-  const { onChangeCompany, onChangeLens, companySelect, lensSelect } =
+  //HANDLERS
+  const { handleChangeCompany, handleChangeLens, companySelect, lensSelect } =
     useSelect();
+
+  //FILTROS
   const { filteredCatalog, filters, handleCheckboxChange, FILTERABLE_COLUMNS } =
     useCatalogFilters(companySelect, lensSelect);
 
+  //FILTROS EN BASE A GRADUACION
+  const { values, errors, submittedValues, handleChange, handleSubmit } =
+    useFormGraduation(PRESCRIPTION_KEYS);
+
+  const transposedCatalog = useMemo(
+    () => filterTranspolation(filteredCatalog, submittedValues),
+    [filteredCatalog, submittedValues]
+  );
+
+  const transposedCatalogWithRow = useCatalogRows(transposedCatalog);
+  //HABILITA EL BOTON DE TRANSPOSICION
+  const isValidForm = hasGraduationValues(values)
   return (
     <section className="overflow-x-auto">
       <div className="flex flex-col items-center gap-8 p-10">
-        <article className="flex flex-col gap-6 items-center">
+        <header className="flex flex-col gap-6 items-center">
           <Title>Catalogo para opticas</Title>
           <SubTitle>elije la optica y el cristal que quieras buscar</SubTitle>
-        </article>
+        </header>
         {/* Filtros booleanos */}
         <FilterCheckboxes
           columns={FILTERABLE_COLUMNS}
@@ -41,12 +75,22 @@ export const Catalog = () => {
         <div className="flex gap-8">
           <SelectField
             options={OPTICAL_COMPANY_OPTIONS}
-            onValueSelect={onChangeCompany}
+            onValueSelect={handleChangeCompany}
           />
           <SelectField
             options={OPTICAL_LENS_OPTIONS}
-            onValueSelect={onChangeLens}
+            onValueSelect={handleChangeLens}
           />
+        </div>
+        <div className="flex gap-8">
+          <PrescriptionForm
+            keys={PRESCRIPTION_KEYS}
+            values={values}
+            onChange={handleChange}
+            onSubmit={handleSubmit}
+            isDisabled={isValidForm}
+          />
+          {Object.keys(errors).length > 0 && <ErrorList error={errors} />}
         </div>
       </div>
 
@@ -56,8 +100,8 @@ export const Catalog = () => {
         </TableHeader>
 
         <TableBody>
-          {filteredCatalog.map((lensItem) => (
-            <CatalogRowItem key={lensItem.key} lensItem={lensItem} />
+          {transposedCatalogWithRow.map(({ key, row }) => (
+            <CatalogRowItem key={key} row={row} />
           ))}
         </TableBody>
       </Table>

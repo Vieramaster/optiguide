@@ -8,7 +8,8 @@ import type {
   GraduationFields,
   GraduationError,
 } from "@/shared/types/graduation";
-export const useFormGraduation = () => {
+import { GraduationBase } from "@/shared/graduation-form/graduation-type";
+export const useFormGraduation = (prescriptionKeys: (keyof GraduationBase)[]) => {
   const [values, setValues] = useState<GraduationFields>({
     ESF: "",
     CIL: "",
