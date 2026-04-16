@@ -16,7 +16,11 @@ import {
   FilterCheckboxes,
 } from "./components/";
 
-import { ErrorList, PrescriptionForm, SelectField } from "@/components/";
+import {
+  ErrorList,
+  PrescriptionForm,
+  SelectField
+} from "@/components/";
 
 //UTILS
 import { filterTranspolation } from "./utils/filter-transpolation";
@@ -28,10 +32,12 @@ import {
 } from "./data/catalog-table-columns";
 
 //HOOKS
-import { useCatalogFilters } from "./hooks/use-catalog-filters";
 import { useFormGraduation } from "@/shared/graduation-form/graduation-form-hook";
-import { useSelect } from "./hooks/use-select";
-import { useCatalogRows } from "./hooks/use-catalog-row";
+import {
+  useCatalogRows,
+  useCatalogFilters,
+  useSelect
+} from "./hooks";
 
 //TYPES
 import { GraduationBaseKeys } from "@/shared/graduation-form/graduation-type";

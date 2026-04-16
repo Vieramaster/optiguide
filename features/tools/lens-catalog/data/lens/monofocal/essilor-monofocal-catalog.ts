@@ -1,10 +1,10 @@
 import type { LensBaseObject } from "../../../types/lens/lens-base";
 
 export const ESSILOR_MONOFOCAL_CATALOG: LensBaseObject = {
-  orma1: {
+  essilor1: {
     lensItemId: "O1",
-    category: "Orma",
     lens: "monofocal",
+    category: "Orma",
     company: "Essilor",
     range: "stock",
     diam: [65, 70],
@@ -14,7 +14,7 @@ export const ESSILOR_MONOFOCAL_CATALOG: LensBaseObject = {
     surfacing: "convencional"
   },
 
-  orma2: {
+  essilor2: {
     lensItemId: "O2",
     lens: "monofocal",
     category: "Orma",
@@ -27,7 +27,7 @@ export const ESSILOR_MONOFOCAL_CATALOG: LensBaseObject = {
     surfacing: "convencional"
   },
 
-  orma3: {
+  essilor3: {
     lensItemId: "O3",
     lens: "monofocal",
     category: "Orma",
@@ -40,7 +40,7 @@ export const ESSILOR_MONOFOCAL_CATALOG: LensBaseObject = {
     surfacing: "convencional"
   },
 
-  orma4: {
+  essilor4: {
     lensItemId: "O4",
     lens: "monofocal",
     category: "Orma",
@@ -53,7 +53,7 @@ export const ESSILOR_MONOFOCAL_CATALOG: LensBaseObject = {
     surfacing: "convencional"
   },
 
-  orma5: {
+  essilor5: {
     lensItemId: "O5",
     lens: "monofocal",
     category: "Orma",
@@ -65,36 +65,47 @@ export const ESSILOR_MONOFOCAL_CATALOG: LensBaseObject = {
     lensForm: "esférico",
     surfacing: "convencional"
   },
-  orma6: {
+  essilor6: {
     lensItemId: "O6",
     lens: "monofocal",
-    category: "Orma",
+    category: "Essilor 1.56",
     company: "Essilor",
-    range: "stock",
+    range: "LAB",
     diam: [65, 70],
     maxDiopters: [{ min: 0, max: 10 }],
-    lensMaterial: { name: "Orgánico 1.56", type: "resina de índice medio", index: 1.56 },
+    lensMaterial: { name: "Orgánico 1.56", type: "Resina de medio índice", index: 1.56 },
     lensForm: "esférico",
     surfacing: "convencional"
   },
 
-  orma7: {
+  essilor7: {
     lensItemId: "O7",
     lens: "monofocal",
-    category: "Orma",
+    category: "Ormix",
     company: "Essilor",
     range: "stock",
+    diam: [65, 70],
+    rangeDiopters: [{ minEsf: -6, maxEsf: 6, minCil: -2, maxCil: 2 }],
+    lensMaterial: { name: "Orgánico 1.56", type: "Resina de medio índice", index: 1.56 },
+    lensForm: "esférico",
+    surfacing: "convencional"
+  },
+  essilor17: {
+    lensItemId: "O17",
+    lens: "monofocal",
+    category: "Ormix",
+    company: "Essilor",
+    range: "EXT",
     diam: [65, 70],
     rangeDiopters: [{ minEsf: -6, maxEsf: 4, minCil: -2, maxCil: 2 }],
     lensMaterial: { name: "MR-series 1.61", type: "thiourethane", index: 1.60 },
     lensForm: "asférico",
     surfacing: "convencional"
   },
-
-  orma8: {
+  essilor8: {
     lensItemId: "O8",
     lens: "monofocal",
-    category: "Orma",
+    category: "Ormix",
     company: "Essilor",
     range: "EXT",
     diam: [65, 70],
@@ -106,26 +117,25 @@ export const ESSILOR_MONOFOCAL_CATALOG: LensBaseObject = {
     surfacing: "convencional"
   },
 
-  orma9: {
+  essilor9: {
     lensItemId: "O9",
     lens: "monofocal",
-    category: "Orma",
+    category: "Ormix",
     company: "Essilor",
     range: "EXT",
     diam: [65, 70],
     rangeDiopters: [{ minEsf: 4.25, maxEsf: 6, minCil: -2, maxCil: 2 },
     { minEsf: -10, maxEsf: -6.75, minCil: 2, maxCil: 2 }
-
     ],
     lensMaterial: { name: "MR-8", type: "thiourethane", index: 1.60 },
     lensForm: "esférico",
     surfacing: "convencional"
   },
   ///
-  orma10: {
+  essilor10: {
     lensItemId: "O10",
     lens: "monofocal",
-    category: "Orma",
+    category: "Ormix",
     company: "Essilor",
     range: "LAB",
     diam: [65, 70],
@@ -135,7 +145,7 @@ export const ESSILOR_MONOFOCAL_CATALOG: LensBaseObject = {
     surfacing: "convencional"
 
   },
-  orma11: {
+  essilor11: {
     lensItemId: "O11",
     lens: "monofocal",
     company: "Essilor",
@@ -147,19 +157,20 @@ export const ESSILOR_MONOFOCAL_CATALOG: LensBaseObject = {
     lensForm: "esférico",
     surfacing: "convencional"
   },
-  orma12: {
+  essilor12: {
     lensItemId: "O12",
     lens: "monofocal",
-    category: "Orma",
+    category: "Ormix",
     company: "Essilor",
     range: "EXT",
-    diam: [70],
-    rangeDiopters: [{ minEsf: -4, maxEsf: 4, minCil: -2, maxCil: 2 }],
-    lensMaterial: { name: "CR-39", type: "resina orgánica estándar", index: 1.50 },
+    diam: [65, 70],
+    rangeDiopters: [{ minEsf: -4, maxEsf: 4, minCil: -4, maxCil: 4 }],
+    lensMaterial: { name: "MR-series 1.61", type: "thiourethane", index: 1.60 },
     lensForm: "esférico",
     surfacing: "convencional"
   },
-  orma13: {
+  //--------------------------
+  essilor13: {
     lensItemId: "O13",
     lens: "monofocal",
     category: "Orma",
@@ -171,7 +182,7 @@ export const ESSILOR_MONOFOCAL_CATALOG: LensBaseObject = {
     lensForm: "esférico",
     surfacing: "convencional"
   },
-  orma14: {
+  essilor14: {
     lensItemId: "O14",
     lens: "monofocal",
     category: "Orma",
@@ -180,12 +191,11 @@ export const ESSILOR_MONOFOCAL_CATALOG: LensBaseObject = {
     diam: [70],
     rangeDiopters: [{ minEsf: -6, maxEsf: 4, minCil: -2, maxCil: 2 }],
     lensMaterial: { name: "CR-39", type: "resina orgánica estándar", index: 1.50 },
-    lensForm: "asférico",
+    lensForm: "esférico",
     surfacing: "digital"
   },
 
-
-  orma15: {
+  essilor15: {
     lensItemId: "O15",
     lens: "monofocal",
     category: "Orma",
@@ -197,7 +207,7 @@ export const ESSILOR_MONOFOCAL_CATALOG: LensBaseObject = {
     lensForm: "esférico",
     surfacing: "convencional"
   },
-  orma16: {
+  essilor16: {
     lensItemId: "O16",
     lens: "monofocal",
     category: "Orma",
@@ -209,10 +219,13 @@ export const ESSILOR_MONOFOCAL_CATALOG: LensBaseObject = {
     lensForm: "esférico",
     surfacing: "convencional"
   },
+
+  //EYEZENS
   eyezen1: {
     lensItemId: "E1",
     lens: "monofocal",
-    category: "Eyezen",
+    lensName: "Eyezen",
+    category: "Ormix",
     company: "Essilor",
     range: "LAB",
     diam: [65, 70],
@@ -225,7 +238,8 @@ export const ESSILOR_MONOFOCAL_CATALOG: LensBaseObject = {
   eyezen2: {
     lensItemId: "E2",
     lens: "monofocal",
-    category: "Eyezen",
+    lensName: "Eyezen",
+    category: "Stylis",
     company: "Essilor",
     range: "LAB",
     diam: [65],
@@ -238,20 +252,22 @@ export const ESSILOR_MONOFOCAL_CATALOG: LensBaseObject = {
   eyezen3: {
     lensItemId: "E3",
     lens: "monofocal",
-    category: "Eyezen",
+    lensName: "Eyezen",
+    category: "Premium",
     company: "Essilor",
     range: "LAB",
     diam: [65],
     rangeDiopters: [{ minEsf: -20, maxEsf: 18, minCil: -8, maxCil: 8 }],
-    lensMaterial: { name: "MR-174", type: "Resina orgánica de ultra alto índice", index: 1.74 },
+    lensMaterial: { name: "MR-174", type: "recina de alto índice", index: 1.74 },
     lensForm: "asférico",
     lensTecnologies: ["Eyezen Focus", "Blue UV Capture", "Dual Optimization"],
     surfacing: "digital"
   },
-    eyezen4: {
+  eyezen4: {
     lensItemId: "E4",
     lens: "monofocal",
-    category: "Eyezen",
+    lensName: "Eyezen",
+    category: "Stylis",
     company: "Essilor",
     range: "LAB",
     diam: [65],
@@ -261,4 +277,117 @@ export const ESSILOR_MONOFOCAL_CATALOG: LensBaseObject = {
     lensTecnologies: ["Eyezen Focus", "Blue UV Capture", "Dual Optimization"],
     surfacing: "digital"
   },
-};
+  //POLICARBONATO
+  essilorP1: {
+    lensItemId: "O17",
+    lens: "monofocal",
+    category: "Airwear",
+    company: "Essilor",
+    range: "stock",
+    diam: [65, 70],
+    rangeDiopters: [{ minEsf: -4, maxEsf: 4, minCil: -2, maxCil: 2 }],
+    lensMaterial: { name: "policarbonato", type: "policarbonato", index: 1.59 },
+    lensForm: "esférico",
+    surfacing: "convencional"
+  },
+  essilorP2: {
+    lensItemId: "O18",
+    lens: "monofocal",
+    category: "Airwear",
+    company: "Essilor",
+    range: "LAB",
+    diam: [70],
+    rangeDiopters: [{ minEsf: -14.5, maxEsf: 10, minCil: -6, maxCil: 6 }],
+    lensMaterial: { name: "policarbonato", type: "policarbonato", index: 1.59 },
+    lensForm: "esférico",
+    surfacing: "convencional"
+  },
+  essilorP3: {
+    lensItemId: "O19",
+    lens: "monofocal",
+    category: "Airwear",
+    company: "Essilor",
+    range: "LAB",
+    diam: [70],
+    maxDiopters: [{ min: 6, max: 20 }],
+    lensMaterial: { name: "policarbonato", type: "policarbonato", index: 1.59 },
+    lensForm: "esférico",
+    surfacing: "convencional"
+  },
+  essilorP4: {
+    lensItemId: "O20",
+    lens: "monofocal",
+    category: "Airwear",
+    company: "Essilor",
+    range: "LAB",
+    diam: [76],
+    maxDiopters: [{ min: 0, max: 10 }],
+    lensMaterial: { name: "policarbonato", type: "policarbonato", index: 1.59 },
+    lensForm: "esférico",
+    surfacing: "convencional"
+  },
+  essilorP5: {
+    lensItemId: "O21",
+    lens: "monofocal",
+    category: "Airwear",
+    company: "Essilor",
+    range: "LAB",
+    diam: [76],
+    rangeDiopters: [{ minEsf: -15, maxEsf: 8, minCil: -4, maxCil: 4 }],
+    lensMaterial: { name: "policarbonato", type: "policarbonato", index: 1.59 },
+    lensForm: "esférico",
+    surfacing: "convencional"
+  },
+  essilorP6: {
+    lensItemId: "O22",
+    lens: "monofocal",
+    category: "Airwear",
+    company: "Essilor",
+    range: "LAB",
+    diam: [74],
+    rangeDiopters: [{ minEsf: -12, maxEsf: 8, minCil: -4, maxCil: 4 }],
+    lensMaterial: { name: "policarbonato", type: "policarbonato", index: 1.59 },
+    lensForm: "esférico",
+    surfacing: "convencional"
+  },
+
+  essilorP7: {
+    lensItemId: "O23",
+    lens: "monofocal",
+    category: "Airwear",
+    company: "Essilor",
+    range: "stock",
+    diam: [65, 70],
+    rangeDiopters: [{ minEsf: -2, maxEsf: 2, minCil: -1, maxCil: 1 }],
+    lensMaterial: { name: "policarbonato", type: "policarbonato", index: 1.59 },
+    lensForm: "esférico",
+    surfacing: "convencional",
+  },
+  essilorP8: {
+    lensItemId: "O24",
+    lens: "monofocal",
+    category: "Airwear",
+    company: "Essilor",
+    range: "LAB",
+    diam: [80],
+    rangeDiopters: [{ minEsf: -12, maxEsf: 8, minCil: -4, maxCil: 4 }],
+    lensMaterial: { name: "policarbonato", type: "policarbonato", index: 1.59 },
+    lensForm: "esférico",
+    surfacing: "convencional"
+  },
+  //EYEZEN POLICARBONATO
+  eyezenP1: {
+    lensItemId: "PE1",
+    lens: "monofocal",
+    category: "Airwear",
+    company: "Essilor",
+    range: "LAB",
+    diam: [65, 70],
+    rangeDiopters: [{ minEsf: -10, maxEsf: 6, minCil: -6, maxCil: 6 }],
+    lensMaterial: { name: "policarbonato", type: "policarbonato", index: 1.59 },
+    lensForm: "esférico",
+    surfacing: "convencional"
+  }
+
+}
+
