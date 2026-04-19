@@ -1,96 +1,55 @@
 // ================= TYPES =================
-import type { Lens, Company, CreateEssilorLensInput, CreateEssilorDefault, LensBaseObject, LensBase } from "../../../types/lens/lens-base"
+import type { LensBaseObject, CreateDataLensInput, LensBase } from "../../../types/lens/lens-base"
+//DATA
+import { CR_39, MID_INDEX_RESIN, POLICARBONATE, RESIN_MR_7, RESIN_MR_8, ULTRA_HIGH_INDEX_RESIN } from "../../../data/lens-materials"
 
-// ================= BASE FACTORY =================
-const createLens = (
-  data: CreateEssilorLensInput,
-  defaults: CreateEssilorDefault,
-  lensConfig: Lens,
-  companyCofing: Company
-): LensBase => ({
-  lens: lensConfig,
-  company: companyCofing,
-  ...defaults,
-  ...data,
-});
+const PRODUCT_COMPANY = {
+  company: "Essilor",
+  lens: "monofocal",
+}
 
-// ================= DEFAULTS =================
-export const ORMA_DEFAULTS: CreateEssilorDefault = {
+export const createOrmaLens = (data: CreateDataLensInput): LensBase => ({
+  ...PRODUCT_COMPANY,
   category: "Orma",
-  lensMaterial: {
-    name: "CR-39",
-    type: "resina orgánica estándar",
-    index: 1.5,
-  },
-};
-export const ESSILOR_MID_INDEX_DEFAULTS: CreateEssilorDefault = {
+  ...CR_39,
+  ...data
+})
+
+export const createEssilor156Lens = (data: CreateDataLensInput): LensBase => ({
+  ...PRODUCT_COMPANY,
   category: "Essilor 1.56",
-  lensMaterial: {
-    name: "Orgánico 1.56",
-    type: "resina de medio índice",
-    index: 1.56
-  },
-}
-export const AIRWEAR_DEFAULTS: CreateEssilorDefault = {
+  ...MID_INDEX_RESIN,
+  ...data
+})
+
+export const createAirwearLens = (data: CreateDataLensInput): LensBase => ({
+  ...PRODUCT_COMPANY,
   category: "Airwear",
-  lensMaterial: {
-    name: "policarbonato",
-    type: "policarbonato",
-    index: 1.59,
-  },
-};
+  ...POLICARBONATE,
+  ...data
+})
 
-const ORMIX_DEFAULTS: CreateEssilorDefault = {
+export const createOrmixLens = (data: CreateDataLensInput): LensBase => ({
+  ...PRODUCT_COMPANY,
   category: "Ormix",
-  lensMaterial: {
-    name: "MR-8",
-    type: "thiourethane",
-    index: 1.6,
-  },
-};
-
-export const STYLIS_DEFAULTS: CreateEssilorDefault = {
+  ...RESIN_MR_8,
+  ...data
+})
+export const createStylisLens = (data: CreateDataLensInput): LensBase => ({
+  ...PRODUCT_COMPANY,
   category: "Stylis",
-  lensMaterial: {
-    name: "Japan MR-8",
-    type: "thiourethane",
-    index: 1.67
-  },
-}
-export const PREMIUM_DEFAULTS: CreateEssilorDefault = {
+  ...RESIN_MR_7,
+  ...data
+})
+
+export const createPremiumLens = (data: CreateDataLensInput): LensBase => ({
+  ...PRODUCT_COMPANY,
   category: "Premium",
-  lensMaterial: {
-    name: "MR-174",
-    type: "resina de ultra alto índice",
-    index: 1.74,
-  },
-};
+  ...ULTRA_HIGH_INDEX_RESIN,
+  ...data
+})
 
-
-// ================= CATEGORY FACTORIES =================
-
-//1.50
-export const createOrmaLens = (data: CreateEssilorLensInput) =>
-  createLens(data, ORMA_DEFAULTS, "monofocal", "Essilor");
-//1.56
-export const createMidIndexLens = (data: CreateEssilorLensInput) =>
-  createLens(data, ESSILOR_MID_INDEX_DEFAULTS, "monofocal", "Essilor");
-//1.59
-export const createAirwearLens = (data: CreateEssilorLensInput) =>
-  createLens(data, AIRWEAR_DEFAULTS, "monofocal", "Essilor");
-//1.60
-export const createOrmixLens = (data: CreateEssilorLensInput) =>
-  createLens(data, ORMIX_DEFAULTS, "monofocal", "Essilor");
-//1.67 
-export const createStylisLens = (data: CreateEssilorLensInput) =>
-  createLens(data, STYLIS_DEFAULTS, "monofocal", "Essilor");
-//1.74
-export const createPremiumLens = (data: CreateEssilorLensInput) =>
-  createLens(data, PREMIUM_DEFAULTS, "monofocal", "Essilor");
-
-
-export const ESSILOR_MONOFOCAL_CATALOG: LensBaseObject = {
-
+export const ORMA = {
   EO1: createOrmaLens({
     lensItemId: "EO1",
     range: "stock",
@@ -99,84 +58,67 @@ export const ESSILOR_MONOFOCAL_CATALOG: LensBaseObject = {
     surfacing: "convencional"
   }),
 
-
-  essilor2: {
+  EO2: createOrmaLens({
     lensItemId: "O2",
-    lens: "monofocal",
-    category: "Orma",
-    company: "Essilor",
     range: "stock",
     diam: [65, 70],
     rangeDiopters: [{ minEsf: -4, maxEsf: 4, minCil: -2, maxCil: 2 }],
-    lensMaterial: { name: "CR-39", type: "resina orgánica estándar", index: 1.50 },
     lensForm: "esférico",
     surfacing: "convencional"
-  },
+  }),
 
-  essilor3: {
+  EO3: createOrmaLens({
     lensItemId: "O3",
-    lens: "monofocal",
-    category: "Orma",
-    company: "Essilor",
     range: "ext",
     diam: [65, 70],
     rangeDiopters: [{ minEsf: -4, maxEsf: 4, minCil: -4, maxCil: 4 }, { minEsf: -8, maxEsf: 4, minCil: 4, maxCil: 4 }],
-    lensMaterial: { name: "CR-39", type: "resina orgánica estándar", index: 1.50 },
     lensForm: "esférico",
     surfacing: "convencional"
-  },
-
-  essilor4: {
+  }),
+  EO4: createOrmaLens({
     lensItemId: "O4",
-    lens: "monofocal",
-    category: "Orma",
-    company: "Essilor",
     range: "lab",
     diam: [65, 70],
     rangeDiopters: [{ minEsf: -14, maxEsf: 13.5, minCil: -6, maxCil: 6 }],
-    lensMaterial: { name: "CR-39", type: "resina orgánica estándar", index: 1.50 },
     lensForm: "esférico",
     surfacing: "convencional"
-  },
 
-  essilor5: {
+  }),
+  EO5: createOrmaLens({
     lensItemId: "O5",
-    lens: "monofocal",
-    category: "Orma",
-    company: "Essilor",
     range: "lab",
     diam: [68, 65, 70],
     maxDiopters: [{ min: 0, max: 10 }],
-    lensMaterial: { name: "CR-39", type: "resina orgánica estándar", index: 1.50 },
     lensForm: "esférico",
     surfacing: "convencional"
-  },
-  essilor6: {
+  })
+}
+
+export const ESSILOR_156 = {
+  essilor6: createEssilor156Lens({
     lensItemId: "O6",
-    lens: "monofocal",
-    category: "Essilor 1.56",
-    company: "Essilor",
     range: "lab",
     diam: [65, 70],
     maxDiopters: [{ min: 0, max: 10 }],
-    lensMaterial: { name: "Orgánico 1.56", type: "resina de medio índice", index: 1.56 },
     lensForm: "esférico",
     surfacing: "convencional"
-  },
-
-  essilor7: {
+  }),
+  essilor7: createEssilor156Lens({
     lensItemId: "O7",
-    lens: "monofocal",
-    category: "Essilor 1.56",
-    company: "Essilor",
     range: "stock",
     diam: [65, 70],
-    rangeDiopters: [{ minEsf: -6, maxEsf: 6, minCil: -2, maxCil: 2 }],
-    lensMaterial: { name: "Orgánico 1.56", type: "resina de medio índice", index: 1.56 },
+    rangeDiopters: [{ minEsf: -6, maxEsf: 6, minCil: -2, maxCil: 2 }],,
     lensForm: "esférico",
     surfacing: "convencional"
-  },
-  essilor17: {
+  })
+
+}
+export const ESSILOR_MONOFOCAL_CATALOG: LensBaseObject = {
+
+
+  essilor
+
+    essilor17: {
     lensItemId: "O17",
     lens: "monofocal",
     category: "Ormix",

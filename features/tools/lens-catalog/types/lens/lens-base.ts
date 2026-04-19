@@ -92,6 +92,4 @@ export type LensBase = {
 
 export type LensBaseObject = Record<string, LensBase>
 
-export type CreateEssilorLensInput = Omit<LensBase, "lens" | "company" | "category" | "lensMaterial">
-
-export type CreateEssilorDefault = Pick<LensBase, "category" | "lensMaterial">
+export type CreateDataLensInput = Omit<LensBase, "company" | "lens" | "lensMaterial" | "category">

@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "features/tools/lens-catalog/data/companies/tecni-optica", "features/tools/lens-catalog/data/companies/optica-luro"  ],
+, "features/tools/lens-catalog/constants/companies/tecni-optica", "features/tools/lens-catalog/constants/companies/optica-luro"  ],
   "exclude": ["node_modules"]
 }

@@ -1,4 +1,4 @@
-import { PHOTOCHROMATIC_LENSES_CATALOG } from "../../data/tecnologies/photochromatic";
+import { PHOTOCHROMATIC_LENSES_CATALOG } from "../../constants/tecnologies/photochromatic";
 export type PhotochromaticBrand = "Varilux" | "Varios" | "Vitolen";
 export type PhotochromaticColor = "Gris" | "Marrón" | "Verde" | "Zafiro" | "Ámbar" | "Esmeralda" | "Rubí" | "Jade" | "Verde cobre" | "Marrón cobre";
 export type BlueLightFilter = {

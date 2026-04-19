@@ -1,4 +1,4 @@
-import { TREATMENTS_CATALOG } from "../../data/tecnologies/treatments";
+import { TREATMENTS_CATALOG } from "../../constants/tecnologies/treatments";
 
 export type TreatmentBrand = "Clear Look" | "Essilor" | "Vitolen";
 export type Features = "antiReflex" | "blueControl" | "oleophobicHydrophobic" | "scratchResistant" | "antiStatic" | "polarized";
