@@ -1,10 +1,16 @@
 //DATA
-import { CATALOG_OPTICA_LURO } from "./optica-luro/catalog-optica-luro";
-import { CATALOG_TECNI_OPTICA } from "./tecni-optica/catalog-tecni-optica";
+import { MONOFOCAL_CATALOG_OPTICA_LURO, BIFOCAL_CATALOG_OPTICA_LURO } from "./optica-luro";
+import { MONOFOCAL_TECNI_OPTICA, BIFOCAL_TECNI_OPTICA } from "./tecni-optica";
 //TYPES
 import type { CatalogOpticalCompanies } from "../../types/catalog-optical-companies";
 
 export const CATALOG_OPTICAL_COMPANY: CatalogOpticalCompanies = {
-  opticaLuro: CATALOG_OPTICA_LURO,
-  tecniOptica: CATALOG_TECNI_OPTICA,
+  opticaLuro: {
+    monofocal: MONOFOCAL_CATALOG_OPTICA_LURO,
+    bifocal: BIFOCAL_CATALOG_OPTICA_LURO,
+  },
+  tecniOptica: {
+    monofocal: MONOFOCAL_TECNI_OPTICA,
+    bifocal: BIFOCAL_TECNI_OPTICA,
+  },
 };
