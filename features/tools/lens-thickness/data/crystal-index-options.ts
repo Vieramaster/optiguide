@@ -1,4 +1,5 @@
-import type { RowOptions } from "../../lens-catalog/types/table-options";
+//TYPES
+import type { RowOptions } from "../../catalog/types/table-options";
 
 export const CRYSTAL_INDEX_OPTIONS: RowOptions[] = [
   { value: "1.50", label: "1.50 - CR-39" },

@@ -1,13 +1,13 @@
 //TYPES
-import type { LensBase, LensBaseObject } from "@/features/tools/catalog/types/lens/lens-base"
+import type { LensBase, LensBaseObject,CreateLens } from "@/features/tools/catalog/types/lens/lens-base"
 //DATA
-import { MID_INDEX_RESIN } from "@/features/tools/catalog/data/lens-materials"
+import { LENS_MATERIALS } from "@/features/tools/catalog/data/lens-materials"
 
-export const createEvoClearDigital = (data: Partial<LensBase>): LensBase => ({
+export const createEvoClearDigital = (data: CreateLens): LensBase => ({
     company: "Kodak",
     lens: "monofocal",
     category: "EvoClear Digital 1.56",
-    ...MID_INDEX_RESIN,
+    lensMaterial:LENS_MATERIALS.MID_INDEX_RESIN,
     lensForm: "asférico",
     surfacing: "digital",
     ...data,

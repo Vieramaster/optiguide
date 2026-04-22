@@ -1,16 +1,15 @@
 //TYPES
-import type { LensBase, LensBaseObject } from "@/features/tools/catalog/types/lens/lens-base"
+import type { CreateLens, LensBase, LensBaseObject } from "@/features/tools/catalog/types/lens/lens-base"
 //DATA
-import { POLICARBONATE } from "@/features/tools/catalog/data/lens-materials"
-
+import { LENS_MATERIALS } from "@/features/tools/catalog/data/lens-materials"
 
 
 //FACTORY
-export const createAirwearLens = (data: Partial<LensBase>): LensBase => ({
+export const createAirwearLens = (data: CreateLens): LensBase => ({
     company: "Essilor",
     lens: "monofocal",
     category: "Airwear",
-    ...POLICARBONATE,
+    lensMaterial: LENS_MATERIALS.POLICARBONATE,
     lensForm: "esférico",
     surfacing: "convencional",
     ...data

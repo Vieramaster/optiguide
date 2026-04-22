@@ -1,15 +1,15 @@
 //TYPES
-import type { LensBase, LensBaseObject } from "@/features/tools/catalog/types/lens/lens-base"
+import type { CreateLens, LensBase, LensBaseObject } from "@/features/tools/catalog/types/lens/lens-base"
 //DATA
-import { CR_39 } from "@/features/tools/catalog/data/lens-materials"
+import { LENS_MATERIALS } from "@/features/tools/catalog/data/lens-materials"
 
 //FACTORY
 
-export const createSharpCR39 = (data: Partial<LensBase>): LensBase => ({
+export const createSharpCR39 = (data: CreateLens): LensBase => ({
     company: "ClearLook",
     lens: "monofocal",
     category: "Sharp CR-39",
-    ...CR_39,
+    lensMaterial: LENS_MATERIALS.CR_39,
     lensForm: "asférico",
     surfacing: "convencional",
     ...data

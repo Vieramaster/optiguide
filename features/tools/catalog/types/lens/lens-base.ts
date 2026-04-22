@@ -9,10 +9,11 @@ type EssilorCategory =
 
 type KodakCategory =
   | "Kodak 1.50"
-  | "Kodak 1.56"
+  | "EvoClear Digital 1.56"
   | "Kodak Policarbonate"
   | "Kodak Trivex"
   | "Kodak High Index";
+
 
 type ClearLookCategory =
   | "Sharp CR-39"
@@ -93,3 +94,5 @@ export type LensBase = {
 };
 
 export type LensBaseObject = Record<string, LensBase>
+
+export type CreateLens = Omit<LensBase, "company" | "lens" | "category" | "lensMaterial" | "lensForm" | "surfacing">

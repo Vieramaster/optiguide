@@ -1,13 +1,13 @@
 //TYPES
-import type { LensBase, LensBaseObject } from "@/features/tools/catalog/types/lens/lens-base"
+import type { LensBase, LensBaseObject, CreateLens } from "@/features/tools/catalog/types/lens/lens-base"
 //DATA
-import { MID_INDEX_RESIN } from "@/features/tools/catalog/data/lens-materials"
+import { LENS_MATERIALS } from "@/features/tools/catalog/data/lens-materials"
 //FACTORY
-export const createEssilor156Lens = (data: Partial<LensBase>): LensBase => ({
+export const createEssilor156Lens = (data: CreateLens): LensBase => ({
     company: "Essilor",
     lens: "monofocal",
     category: "Essilor 1.56",
-    ...MID_INDEX_RESIN,
+    lensMaterial: LENS_MATERIALS.MID_INDEX_RESIN,
     lensForm: "esférico",
     surfacing: "convencional",
     ...data,

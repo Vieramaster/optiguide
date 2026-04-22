@@ -1,15 +1,15 @@
 //TYPES
-import type { LensBase, LensBaseObject } from "@/features/tools/catalog/types/lens/lens-base"
+import type { LensBase, LensBaseObject, CreateLens } from "@/features/tools/catalog/types/lens/lens-base"
 //DATA
-import { POLICARBONATE } from "@/features/tools/catalog/data/lens-materials"
+import { LENS_MATERIALS } from "@/features/tools/catalog/data/lens-materials"
 
 //FACTORY
 
-export const createSharpPoli = (data: Partial<LensBase>): LensBase => ({
+export const createSharpPoli = (data: CreateLens): LensBase => ({
     company: "ClearLook",
     lens: "monofocal",
-    category: "Sharp Poli ",
-    ...POLICARBONATE,
+    category: "Sharp Poli",
+    lensMaterial: LENS_MATERIALS.POLICARBONATE,
     lensForm: "esférico",
     surfacing: "convencional",
     ...data

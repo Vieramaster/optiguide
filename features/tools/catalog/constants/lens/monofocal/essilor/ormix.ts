@@ -1,16 +1,17 @@
 //TYPES
-import type { LensBase , LensBaseObject} from "@/features/tools/catalog/types/lens/lens-base"
+import type { LensBase, LensBaseObject, CreateLens } from "@/features/tools/catalog/types/lens/lens-base"
 //DATA
-import { RESIN_MR_8 } from "@/features/tools/catalog/data/lens-materials"
+import { LENS_MATERIALS } from "@/features/tools/catalog/data/lens-materials"
+
 
 
 //FACTORY
-export const createOrmixLens = (data: Partial<LensBase>): LensBase => ({
+export const createOrmixLens = (data: CreateLens): LensBase => ({
     company: "Essilor",
     lens: "monofocal",
     category: "Ormix",
-    ...RESIN_MR_8,
-    lensForm: "asférico",
+    lensMaterial: LENS_MATERIALS.RESIN_MR_8,
+    lensForm: "esférico",
     surfacing: "convencional",
     ...data
 })

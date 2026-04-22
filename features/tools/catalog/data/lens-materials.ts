@@ -1,33 +1,26 @@
 import type { LensMaterial, IndexMaterial } from "../types/lens/lens-base";
 
-export const LENS_MATERIALS = {
+export const LENS_MATERIALS: Record<IndexMaterial, LensMaterial> = {
 
     CR_39: {
-        lensMaterial: {
-            name: "CR-39",
-            type: "resina orgánica estándar",
-            index: 1.5,
-        }
+        name: "CR-39",
+        type: "resina orgánica estándar",
+        index: 1.5,
     },
     MID_INDEX_RESIN: {
         name: "Orgánico 1.56",
         type: "resina de medio índice",
         index: 1.56
-
     },
     POLICARBONATE: {
         name: "policarbonato",
         type: "policarbonato",
         index: 1.59,
-
     },
     RESIN_MR_8: {
-        lensMaterial: {
-            name: "MR-8",
-            type: "resina de alto índice",
-            index: 1.6,
-        }
-
+        name: "MR-8",
+        type: "resina de alto índice",
+        index: 1.6,
     },
     RESIN_MR_7: {
         name: "MR-7",

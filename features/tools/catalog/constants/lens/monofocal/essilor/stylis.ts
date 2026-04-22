@@ -1,15 +1,16 @@
 //TYPES
-import type { LensBase, LensBaseObject } from "@/features/tools/catalog/types/lens/lens-base"
+import type { LensBase, LensBaseObject, CreateLens } from "@/features/tools/catalog/types/lens/lens-base"
 //DATA
-import { RESIN_MR_7 } from "@/features/tools/catalog/data/lens-materials"
+import { LENS_MATERIALS } from "@/features/tools/catalog/data/lens-materials"
 
 //FACTORY
-export const createStylisLens = (data: Partial<LensBase>): LensBase => ({
+export const createStylisLens = (data: CreateLens): LensBase => ({
     company: "Essilor",
     lens: "monofocal",
     category: "Stylis",
-    ...RESIN_MR_7,
+    lensMaterial: LENS_MATERIALS.RESIN_MR_7,
     lensForm: "asférico",
+    surfacing: "digital",
     ...data
 })
 
@@ -24,7 +25,7 @@ export const STYLIS: LensBaseObject = {
         diam: [65, 70],
         rangeDiopters: [{ minEsf: -14, maxEsf: 8, minCil: -4, maxCil: 4 }],
         lensTecnologies: ["Eyezen Focus", "Blue UV Capture", "Dual Optimization"],
-        surfacing: "digital"
+
     }),
     essilor_ormix_eyezen_02: createStylisLens({
         lensItemId: "ESS_STYLIS_EYE_02",
@@ -33,6 +34,6 @@ export const STYLIS: LensBaseObject = {
         diam: [65],
         rangeDiopters: [{ minEsf: -14, maxEsf: 9, minCil: -6, maxCil: 6 }],
         lensTecnologies: ["Eyezen Focus", "Blue UV Capture", "Dual Optimization"],
-        surfacing: "digital"
+
     })
 }

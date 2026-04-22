@@ -1,13 +1,14 @@
 //TYPES
-import type { LensBase, LensBaseObject } from "@/features/tools/catalog/types/lens/lens-base"
+import type { LensBase, LensBaseObject, CreateLens } from "@/features/tools/catalog/types/lens/lens-base"
 //DATA
-import { ULTRA_HIGH_INDEX_RESIN } from "@/features/tools/catalog/data/lens-materials"
+import { LENS_MATERIALS } from "@/features/tools/catalog/data/lens-materials"
 //FACTORY
-export const createPremiumLens = (data: Partial<LensBase>): LensBase => ({
+export const createPremiumLens = (data: CreateLens): LensBase => ({
     company: "Essilor",
     lens: "monofocal",
     category: "Premium",
-    ...ULTRA_HIGH_INDEX_RESIN,
+    lensMaterial: LENS_MATERIALS.ULTRA_HIGH_INDEX_RESIN,
+    surfacing: "digital",
     lensForm: "asférico",
     ...data
 })
