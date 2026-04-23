@@ -21,7 +21,7 @@ export const ORMA: LensBaseObject = {
         lensItemId: "ESS_ORM_01",
         range: "stock",
         diam: [65, 70],
-
+        rangeDiopters: [{ minEsf: -6, maxEsf: 6, minCil: -2, maxCil: 2 }],
     }),
 
     essilor_orma_02: createOrmaLens({
