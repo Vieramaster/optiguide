@@ -20,7 +20,7 @@ export type CatalogRow = {
 
 const findTreatment = (
   treatment: LensTreatment[] | undefined,
-  feature: Features
+  feature: Features,
 ) =>
   treatment?.some((item) => item.treatmentFeatures.includes(feature)) ?? false;
 
@@ -38,7 +38,7 @@ export const mapCatalogToRow = (catalog: LensObjectCatalog): CatalogRow => {
   const rangeDiopters =
     lens.rangeDiopters
       ?.map(
-        (r) => `Esf ${r.minEsf} a ${r.maxEsf} / Cil ${r.minCil} a ${r.maxCil}`
+        (r) => `Esf ${r.minEsf} a ${r.maxEsf} / Cil ${r.minCil} a ${r.maxCil}`,
       )
       .join(", ") ??
     lens.maxDiopters

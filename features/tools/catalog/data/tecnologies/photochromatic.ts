@@ -1,5 +1,4 @@
-
-import { PhotochromaticLens } from "../../types/tecnologies/photochromatic";
+import { PhotochromaticCatalog } from "../../types/tecnologies/photochromatic";
 
 export const PHOTOCHROMATIC_LENSES_CATALOG = {
   Generic: {
@@ -12,11 +11,11 @@ export const PHOTOCHROMATIC_LENSES_CATALOG = {
     photochromaticUvProtection: "100%",
     photochromaticBlueLightFilter: {
       clearState: "15%",
-      darkState: "65%"
+      darkState: "65%",
     },
     photochromaticFeatures: ["Uso diario", "Protección UVA/UVB"],
 
-    photochromaticPolarized: false
+    photochromaticPolarized: false,
   },
   TransitionsSignature: {
     photochromaticItemId: "F1",
@@ -28,11 +27,11 @@ export const PHOTOCHROMATIC_LENSES_CATALOG = {
     photochromaticUvProtection: "100%",
     photochromaticBlueLightFilter: {
       clearState: "20%",
-      darkState: "70%"
+      darkState: "70%",
     },
     photochromaticFeatures: ["Uso diario", "Protección UVA/UVB"],
 
-    photochromaticPolarized: false
+    photochromaticPolarized: false,
   },
 
   TransitionsGen8: {
@@ -40,16 +39,28 @@ export const PHOTOCHROMATIC_LENSES_CATALOG = {
     photochromaticName: "Transitions Generation 8",
     photochromaticBrand: "Varilux",
     photochromaticGeneration: "Gen 8",
-    photochromaticColors: ["Gris", "Marrón", "Verde", "Zafiro", "Ámbar", "Esmeralda", "Rubí", "Jade"],
+    photochromaticColors: [
+      "Gris",
+      "Marrón",
+      "Verde",
+      "Zafiro",
+      "Ámbar",
+      "Esmeralda",
+      "Rubí",
+      "Jade",
+    ],
     photochromicSpeed: "Muy rápido (30% más veloz que Signature VII)",
     photochromaticUvProtection: "100%",
     photochromaticBlueLightFilter: {
       clearState: "30%",
-      darkState: "82%"
+      darkState: "82%",
     },
-    photochromaticFeatures: ["Mayor velocidad de activación", "Amplia paleta de colores"],
+    photochromaticFeatures: [
+      "Mayor velocidad de activación",
+      "Amplia paleta de colores",
+    ],
 
-    photochromaticPolarized: false
+    photochromaticPolarized: false,
   },
 
   TransitionsGenSGrey: {
@@ -62,27 +73,43 @@ export const PHOTOCHROMATIC_LENSES_CATALOG = {
     photochromaticUvProtection: "100%",
     photochromaticBlueLightFilter: {
       clearState: "32%",
-      darkState: "85%"
+      darkState: "85%",
     },
-    photochromaticFeatures: ["HD vision", "Protección UVA/UVB total", "8 colores exclusivos"],
+    photochromaticFeatures: [
+      "HD vision",
+      "Protección UVA/UVB total",
+      "8 colores exclusivos",
+    ],
 
-    photochromaticPolarized: false
+    photochromaticPolarized: false,
   },
   TransitionsGenSColors: {
     photochromaticItemId: "F4",
     photochromaticName: "Transitions Gen S (todos los colores)",
     photochromaticBrand: "Varilux",
     photochromaticGeneration: "Gen S",
-    photochromaticColors: ["Marrón", "Verde", "Zafiro", "Ámbar", "Esmeralda", "Rubí", "Jade"],
+    photochromaticColors: [
+      "Marrón",
+      "Verde",
+      "Zafiro",
+      "Ámbar",
+      "Esmeralda",
+      "Rubí",
+      "Jade",
+    ],
     photochromicSpeed: "Ultra rápido (más veloz que Gen 8)",
     photochromaticUvProtection: "100%",
     photochromaticBlueLightFilter: {
       clearState: "32%",
-      darkState: "85%"
+      darkState: "85%",
     },
-    photochromaticFeatures: ["HD vision", "Protección UVA/UVB total", "8 colores exclusivos"],
+    photochromaticFeatures: [
+      "HD vision",
+      "Protección UVA/UVB total",
+      "8 colores exclusivos",
+    ],
 
-    photochromaticPolarized: false
+    photochromaticPolarized: false,
   },
   TransitionsXTRActive: {
     photochromaticItemId: "F5",
@@ -94,11 +121,14 @@ export const PHOTOCHROMATIC_LENSES_CATALOG = {
     photochromaticUvProtection: "100%",
     photochromaticBlueLightFilter: {
       clearState: "34%",
-      darkState: "86%"
+      darkState: "86%",
     },
-    photochromaticFeatures: ["Oscurece detrás del parabrisas", "Mayor protección contra luz intensa"],
+    photochromaticFeatures: [
+      "Oscurece detrás del parabrisas",
+      "Mayor protección contra luz intensa",
+    ],
 
-    photochromaticPolarized: false
+    photochromaticPolarized: false,
   },
 
   TransitionsDrivewear: {
@@ -111,16 +141,16 @@ export const PHOTOCHROMATIC_LENSES_CATALOG = {
     photochromaticUvProtection: "100%",
     photochromaticBlueLightFilter: {
       clearState: "35%",
-      darkState: "90%"
+      darkState: "90%",
     },
     photochromaticFeatures: [
       "Polarizados",
       "Diseñados para conducción",
       "Oscurecen detrás del parabrisas",
-      "Protección UVA/UVB total"
+      "Protección UVA/UVB total",
     ],
 
-    photochromaticPolarized: true
+    photochromaticPolarized: true,
   },
 
   VitolenSunmatic: {
@@ -133,14 +163,14 @@ export const PHOTOCHROMATIC_LENSES_CATALOG = {
     photochromaticUvProtection: "100%",
     photochromaticBlueLightFilter: {
       clearState: "25%",
-      darkState: "80%"
+      darkState: "80%",
     },
     photochromaticFeatures: [
       "Protección UVA/UVB total",
       "Oscurecimiento automático con luz solar",
-      "Comodidad para uso diario"
+      "Comodidad para uso diario",
     ],
 
-    photochromaticPolarized: false
-  }
-} as const satisfies Record<string, PhotochromaticLens>
+    photochromaticPolarized: false,
+  },
+} satisfies PhotochromaticCatalog;

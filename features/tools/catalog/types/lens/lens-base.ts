@@ -1,4 +1,3 @@
-
 type EssilorCategory =
   | "Orma"
   | "Airwear"
@@ -14,31 +13,20 @@ type KodakCategory =
   | "Kodak Trivex"
   | "Kodak High Index";
 
-
 type ClearLookCategory =
   | "Sharp CR-39"
   | "Sharp Poli"
   | "Sharp 1.6"
   | "Sharp 1.67"
-  | "Sharp 1.74"
+  | "Sharp 1.74";
 
-export type Category = KodakCategory | EssilorCategory | ClearLookCategory
+export type Category = KodakCategory | EssilorCategory | ClearLookCategory;
 
-export type Surfacing =
-  | "convencional"
-  | "digital";
+export type Surfacing = "convencional" | "digital";
 
-export type Lens =
-  | "monofocal"
-  | "bifocal"
-  | "occupational"
-  | "progressive";
+export type Lens = "monofocal" | "bifocal";
 
-export type Company =
-  | "Essilor"
-  | "Kodak"
-  | "Vitolén"
-  | "ClearLook";
+export type Company = "Essilor" | "Kodak" | "Vitolén" | "ClearLook";
 
 export type TypeLens =
   | "resina orgánica estándar"
@@ -53,11 +41,18 @@ export type Range = "stock" | "ext" | "lab";
 
 export type LensType = "esférico" | "asférico";
 
-export type LensName = "Eyezen"
+export type LensName = "Eyezen";
 
-export type LensIndex = 1.50 | 1.53 | 1.56 | 1.59 | 1.60 | 1.67 | 1.74
+export type LensIndex = 1.5 | 1.53 | 1.56 | 1.59 | 1.6 | 1.67 | 1.74;
 
-export type IndexMaterial = "CR_39" | "MID_INDEX_RESIN" | "POLICARBONATE" | "POLICARBONATE" | "RESIN_MR_8" | "RESIN_MR_7" | "ULTRA_HIGH_INDEX_RESIN"
+export type IndexMaterial =
+  | "CR_39"
+  | "MID_INDEX_RESIN"
+  | "POLICARBONATE"
+  | "POLICARBONATE"
+  | "RESIN_MR_8"
+  | "RESIN_MR_7"
+  | "ULTRA_HIGH_INDEX_RESIN";
 export type LensMaterial = {
   name: string;
   type: TypeLens;
@@ -78,7 +73,7 @@ export type MaxDiopters = {
 
 export type LensBase = {
   lensItemId: string;
-  lensName?: LensName
+  lensName?: LensName;
   category: Category;
   lens: Lens;
   company: Company;
@@ -90,9 +85,14 @@ export type LensBase = {
   lensForm: LensType;
   lensTecnologies?: string[];
   surfacing: Surfacing;
-  add?: number
+  add?: number;
 };
 
-export type LensBaseObject = Record<string, LensBase>
+export type LensBaseObject = Record<string, LensBase>;
 
-export type CreateLens = Omit<LensBase, "company" | "lens" | "category" | "lensMaterial" | "lensForm" | "surfacing">
+export type CreateLens = Omit<
+  LensBase,
+  "company" | "lens" | "category" | "lensMaterial" | "lensForm" | "surfacing"
+>;
+
+export type LensCatalog = Record<Lens, LensBaseObject>;

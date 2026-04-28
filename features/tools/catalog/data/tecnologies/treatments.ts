@@ -1,4 +1,7 @@
-import type { LensTreatment } from "../../types/tecnologies/lens-treatments";
+//=================TYPES=================/
+import type { TreatmentsCatalog } from "../../types/tecnologies/lens-treatments";
+
+//=================CATALOG=================/
 
 export const TREATMENTS_CATALOG = {
   MidIndex: {
@@ -145,4 +148,4 @@ export const TREATMENTS_CATALOG = {
     ],
     treatmentFeatures: ["polarized"],
   },
-} as const satisfies Record<string, LensTreatment>
+} satisfies TreatmentsCatalog;

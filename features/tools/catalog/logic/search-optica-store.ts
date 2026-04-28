@@ -1,23 +1,28 @@
 //DATA
-import { PHOTOCHROMATIC_LENSES_CATALOG } from "../constants/tecnologies/photochromatic";
-import { TREATMENTS_CATALOG } from "../constants/tecnologies/treatments";
-import { LensObjectCatalog } from "../types/lens/optica-company";
-import { LensArrayCatalog } from "../types/lens/optica-company";
+import { PHOTOCHROMATIC_LENSES_CATALOG } from "../data/tecnologies/photochromatic";
+import { TREATMENTS_CATALOG } from "../data/tecnologies/treatments";
+import { CATALOG_OPTICAL_COMPANY } from "../data/companies/optical-companies-catalog";
+import { LENS_CATALOGS } from "../data/lens/lens-catalog";
+
 //TYPES
-import type { OpticalCompanyKey, LensTypeKey } from "../types/optic-keys";
+import type {
+  OpticalCompanyKey,
+  LensObjectResolved,
+} from "../types/optica-company";
+
 import type { LensBaseObject } from "../types/lens/lens-base";
 
-import { CATALOG_OPTICAL_COMPANY } from "../constants/companies/optical-companies-catalog";
-import { LENS_CATALOGS } from "../constants/lens/lens-catalog";
+import { LensObjectInput } from "../types/optica-company";
+import type { Lens } from "../types/lens/lens-base";
 
-export const searchOpticaCompany = (
-  company: OpticalCompanyKey,
-  lens: LensTypeKey,
-) => {
+export const searchOpticaCompany = (company: OpticalCompanyKey, lens: Lens) => {
   if (!company || !lens) return null;
 
-  const catalogCompany = CATALOG_OPTICAL_COMPANY[company]?.[lens];
-  if (!catalogCompany) return null;
+  const lala = CATALOG_OPTICAL_COMPANY[company];
+  if (!lala) return null;
+  const lele = lala[lens];
+
+  if (!lele) return null;
 
   const lensCatalog = LENS_CATALOGS?.[lens];
   if (!lensCatalog) return null;
@@ -28,13 +33,13 @@ export const searchOpticaCompany = (
 //UTILS
 
 const searchCatalogs = (
-  lensCatalog: LensArrayCatalog[],
+  lensCatalog: LensObjectInput[],
   lensBaseCatalog: LensBaseObject,
-): LensObjectCatalog[] => {
+): LensObjectResolved[] => {
   return lensCatalog.map(({ key, lens, treatment, photochromatic }) => {
     const lensObject = lensBaseCatalog[lens];
 
-    const product: LensObjectCatalog = {
+    const product: LensObjectResolved = {
       key,
       lens: lensObject,
     };

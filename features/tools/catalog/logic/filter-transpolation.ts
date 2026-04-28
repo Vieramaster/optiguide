@@ -1,10 +1,10 @@
 //UTILS
 import { isValidString } from "@/shared/utils/string/is-valid-string";
 //TYPES
-import type { LensObjectCatalog } from "../types/lens/optica-company";
+import type { LensObjectResolve } from "../types/optica-company";
 import type { GraduationBaseKeys } from "@/shared/graduation-form/graduation-type";
 export const filterTranspolation = (
-  catalog: LensObjectCatalog[],
+  catalog: LensObjectResolved[],
   filters: Record<GraduationBaseKeys, string> | null,
 ) => {
   if (!filters) return catalog;
@@ -34,16 +34,15 @@ const transposePrescription = (sphere: number, cylinder: number) => {
   };
 };
 
-
 const catalogFilter = (
-  catalog: LensObjectCatalog[],
+  catalog: LensInputResolve[],
   transposition: { sphere: number; cylinder: number },
 ) => {
   const { sphere, cylinder } = transposition;
   const absCylinder = Math.abs(cylinder);
 
   return catalog.filter(({ lens }) => {
-    const { maxDiopters, rangeDiopters } = lens
+    const { maxDiopters, rangeDiopters } = lens;
 
     if (rangeDiopters && rangeDiopters.length > 0) {
       return rangeDiopters.some(
@@ -51,16 +50,13 @@ const catalogFilter = (
           sphere >= minEsf &&
           sphere <= maxEsf &&
           absCylinder >= minCil &&
-          absCylinder <= maxCil
+          absCylinder <= maxCil,
       );
     }
 
     if (maxDiopters && maxDiopters.length > 0) {
-      return maxDiopters.some(
-        ({ min, max }) => sphere >= min && sphere <= max
-      );
+      return maxDiopters.some(({ min, max }) => sphere >= min && sphere <= max);
     }
-
 
     return false;
   });

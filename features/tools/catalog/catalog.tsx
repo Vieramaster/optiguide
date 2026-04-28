@@ -1,8 +1,9 @@
 "use client";
 
-//REACT
+//==================REACT================/
 import { useMemo } from "react";
-//COMPONENTS
+
+//==================COMPONETS================/
 import {
   Title,
   SubTitle,
@@ -17,16 +18,12 @@ import {
   FilterCheckboxes,
 } from "./components/";
 
-import {
-  ErrorList,
-  PrescriptionForm,
-  SelectField
-} from "@/components/";
+import { ErrorList, PrescriptionForm, SelectField } from "@/components/";
 
-//UTILS
+//==================UTILS================/
 import { filterTranspolation } from "./logic/filter-transpolation";
 import { hasGraduationValues } from "./logic/has-graduation-values";
-//DATA
+//==================DATA================/
 import {
   OPTICAL_COMPANY_OPTIONS,
   OPTICAL_LENS_OPTIONS,
@@ -34,18 +31,13 @@ import {
 
 //HOOKS
 import { useFormGraduation } from "@/shared/graduation-form/graduation-form-hook";
-import {
-  useCatalogRows,
-  useCatalogFilters,
-  useSelect
-} from "./hooks";
+import { useCatalogRows, useCatalogFilters, useSelect } from "./hooks";
 
 //TYPES
 import { GraduationBaseKeys } from "@/shared/graduation-form/graduation-type";
 
-const PRESCRIPTION_KEYS: GraduationBaseKeys[] = ["ESF", "CIL"];
-
 export const Catalog = () => {
+  const PRESCRIPTION_KEYS: GraduationBaseKeys[] = ["ESF", "CIL"];
   //HANDLERS
   const { handleChangeCompany, handleChangeLens, companySelect, lensSelect } =
     useSelect();
@@ -60,12 +52,12 @@ export const Catalog = () => {
 
   const transposedCatalog = useMemo(
     () => filterTranspolation(filteredCatalog, submittedValues),
-    [filteredCatalog, submittedValues]
+    [filteredCatalog, submittedValues],
   );
 
   const transposedCatalogWithRow = useCatalogRows(transposedCatalog);
   //HABILITA EL BOTON DE TRANSPOSICION
-  const isValidForm = hasGraduationValues(values)
+  const isValidForm = hasGraduationValues(values);
   return (
     <section className="overflow-x-auto">
       <div className="flex flex-col items-center gap-8 p-10">
