@@ -1,9 +1,22 @@
-
 import ReactMarkdown from "react-markdown";
 
-//COMPONENTS
-import { LiList, Title, SubTitle, BodyText, Links, Text, OlList } from "@/components/ui";
-import { TableRow, TableHeader, Table, TableHead, TableBody, TableCell } from "@/components/ui/";
+import {
+  LiList,
+  Title,
+  SubTitle,
+  BodyText,
+  Links,
+  Text,
+  OlList,
+} from "@/components/ui";
+import {
+  TableRow,
+  TableHeader,
+  Table,
+  TableHead,
+  TableBody,
+  TableCell,
+} from "@/components/ui/";
 
 import { ImageArticle, SectionArticle } from "./components";
 

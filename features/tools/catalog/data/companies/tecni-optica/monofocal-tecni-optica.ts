@@ -79,8 +79,8 @@ export const MONOFOCAL_TECNI_OPTICA: LensObjectInput[] = [
   },
   {
     key: "orma7-clsupra-bcut",
-    lens: "essilor_orma_07",
-    treatment: ["BlueCut", "ClearLookSupra"],
+    lens: "essilor_orma_08",
+    treatment: ["ClearLookSupra"],
     photochromatic: "Generic",
   },
 ];

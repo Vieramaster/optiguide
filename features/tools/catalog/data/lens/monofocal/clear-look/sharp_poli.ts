@@ -3,22 +3,20 @@ import type {
   CreateLens,
   LensBase,
 } from "@/features/tools/catalog/types/lens/lens-base";
-//==================DATA=================/
 import { LENS_MATERIALS } from "@/features/tools/catalog/data/lens-materials";
 
-//==================FACTORY=================/
+
 
 export const createSharpPoli = (data: CreateLens): LensBase => ({
   company: "ClearLook",
   lens: "monofocal",
   category: "Sharp Poli",
   lensMaterial: LENS_MATERIALS.POLICARBONATE,
-  lensForm: "esférico",
-  surfacing: "convencional",
+  lensForm: "asf",
+  surfacing: "estandar",
   ...data,
 });
 
-//==================CATALOG=================/
 
 export const SHARP_POLI: LensBaseObject = {
   clearLook_policarbonate_01: createSharpPoli({

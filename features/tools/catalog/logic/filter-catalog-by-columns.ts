@@ -1,7 +1,7 @@
-import { mapCatalogToRow } from "./catalog-row";
 import type { LensObjectResolved } from "../types/optica-company";
 import type { TableOptions } from "../types/table-options";
 
+import { mapCatalogToRow } from "./catalog-row";
 /**
  * Filtra el catálogo según los filtros booleanos de columnas.
  * @param catalog Catálogo de lentes resuelto

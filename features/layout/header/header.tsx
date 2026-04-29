@@ -1,27 +1,23 @@
-
 "use client";
 import { usePathname } from "next/navigation";
 
-//UTILS
 import { stringFormatters } from "@/shared/utils";
-//COMPONENTS
+
 import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-  Separator
+  Separator,
 } from "@/components/ui/";
 
 import { SidebarTrigger } from "../sidebar/components";
 
 import { SwitchTheme } from "./components/switch-theme";
 
-
 export const Header = () => {
-
-  const parts = stringFormatters(usePathname())
+  const parts = stringFormatters(usePathname());
   return (
     <header className="flex justify-between px-10 h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12 ">
       <div className="flex items-center gap-2 ">
@@ -30,10 +26,10 @@ export const Header = () => {
           orientation="vertical"
           className="mr-2 data-[orientation=vertical]:h-4"
         />
-        <Breadcrumb >
+        <Breadcrumb>
           <BreadcrumbList className="lg:text-lg">
             <BreadcrumbItem className="hidden md:block">
-              <BreadcrumbPage >{parts[0] ?? "Home"} </BreadcrumbPage>
+              <BreadcrumbPage>{parts[0] ?? "Home"} </BreadcrumbPage>
             </BreadcrumbItem>
             {parts[1] && (
               <>

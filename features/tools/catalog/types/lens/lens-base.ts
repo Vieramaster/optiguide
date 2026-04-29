@@ -22,7 +22,7 @@ type ClearLookCategory =
 
 export type Category = KodakCategory | EssilorCategory | ClearLookCategory;
 
-export type Surfacing = "convencional" | "digital";
+export type Surfacing = "estandar" | "digital";
 
 export type Lens = "monofocal" | "bifocal";
 
@@ -39,7 +39,7 @@ export type TypeLens =
 
 export type Range = "stock" | "ext" | "lab";
 
-export type LensType = "esférico" | "asférico";
+export type LensType = "esf" | "asf";
 
 export type LensName = "Eyezen";
 
@@ -90,9 +90,17 @@ export type LensBase = {
 
 export type LensBaseObject = Record<string, LensBase>;
 
-export type CreateLens = Omit<
+//FACTORY
+type DioptersRequirement =
+  | { rangeDiopters: RangeDiopters[]; maxDiopters?: MaxDiopters[] }
+  | { maxDiopters: MaxDiopters[]; rangeDiopters?: RangeDiopters[] };
+
+type LensFormRequirement = { lensForm: LensType } | { lensForm?: never };
+
+export type OmitBase = Omit<
   LensBase,
   "company" | "lens" | "category" | "lensMaterial" | "lensForm" | "surfacing"
 >;
+export type CreateLens = OmitBase & LensFormRequirement & DioptersRequirement;
 
 export type LensCatalog = Record<Lens, LensBaseObject>;

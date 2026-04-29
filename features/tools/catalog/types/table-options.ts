@@ -1,9 +1,12 @@
 
 import type { LucideIco } from "@/shared/types/Icons";
 
+import type  { Range } from "./lens/lens-base";
+
+
 export type CatalogRow = {
   lensLine: string;
-  type: string;
+  range: Range;
   rangeDiopters: string;
   index: number;
   diam: string;

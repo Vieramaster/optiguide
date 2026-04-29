@@ -10,7 +10,7 @@ const createSharp160 = (data: CreateLens): LensBase => ({
   lens: "monofocal",
   lensMaterial: LENS_MATERIALS.RESIN_MR_8,
   category: "Sharp 1.6",
-  lensForm: "asférico",
+  lensForm: "asf",
   surfacing: "digital",
   ...data,
 });

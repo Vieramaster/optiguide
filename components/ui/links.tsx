@@ -1,10 +1,12 @@
-
 import Link from "next/link";
 
-//UTILS
 import { normalizePath } from "@/features/articles/utils/path-normalizer";
 
-export const Links = ({ children, href, ...props }: React.ComponentProps<"a">) => {
+export const Links = ({
+  children,
+  href,
+  ...props
+}: React.ComponentProps<"a">) => {
   const path = normalizePath(href);
 
   return (
@@ -13,4 +15,3 @@ export const Links = ({ children, href, ...props }: React.ComponentProps<"a">) =
     </Link>
   );
 };
-

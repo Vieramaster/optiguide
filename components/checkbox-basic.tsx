@@ -1,6 +1,5 @@
 import { Checkbox } from "@/components/ui/checkbox";
 import { Field, FieldGroup, FieldLabel } from "@/components/ui/";
-//TYPES
 
 interface CheckBoxBasicProps {
   children?: React.ReactNode;

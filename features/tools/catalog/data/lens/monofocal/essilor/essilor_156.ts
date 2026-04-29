@@ -1,13 +1,11 @@
 
 import { LENS_MATERIALS } from "@/features/tools/catalog/data/lens-materials";
-//==================TYPES=================/
 import type {
   LensBase,
   LensBaseObject,
   CreateLens,
 } from "@/features/tools/catalog/types/lens/lens-base";
 
-//==================FACTORY=================/
 
 export const createEssilor156Lens = (data: CreateLens) :LensBase =>
   ({
@@ -15,12 +13,12 @@ export const createEssilor156Lens = (data: CreateLens) :LensBase =>
     lens: "monofocal",
     category: "Essilor 1.56",
     lensMaterial: LENS_MATERIALS.MID_INDEX_RESIN,
-    lensForm: "esférico",
-    surfacing: "convencional",
+    lensForm: "esf",
+    surfacing: "estandar",
     ...data,
   }) ;
 
-//==================CATALOG=================/
+
 
 export const ESSILOR_156: LensBaseObject = {
   essilor_156_01: createEssilor156Lens({

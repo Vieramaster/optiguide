@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+
 import { mapCatalogToRow } from "../logic/catalog-row";
 import type { LensObjectResolved } from "../types/optica-company";
 import type { CatalogRow } from "../types/table-options";

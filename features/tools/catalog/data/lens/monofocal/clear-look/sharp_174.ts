@@ -1,24 +1,23 @@
 
+
 import { LENS_MATERIALS } from "@/features/tools/catalog/data/lens-materials";
-//==================TYPES=================/
 import type {
   LensBase,
   LensBaseObject,
   CreateLens,
 } from "@/features/tools/catalog/types/lens/lens-base";
 
-//==================FACTORY=================/
+
 const createSharp174 = (data: CreateLens) :LensBase =>
   ({
     company: "ClearLook",
     lens: "monofocal",
     category: "Sharp 1.74",
     lensMaterial: LENS_MATERIALS.ULTRA_HIGH_INDEX_RESIN,
-    lensForm: "asférico",
+    lensForm: "asf",
     surfacing: "digital",
     ...data,
   }) 
-//==================CATALOG=================/
 
 export const SHARP_174 : LensBaseObject = {
   clearlook_sharp174_01: createSharp174({

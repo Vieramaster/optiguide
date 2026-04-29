@@ -1,13 +1,11 @@
 
 import { LENS_MATERIALS } from "@/features/tools/catalog/data/lens-materials";
-//==================TYPES=================/
 import type {
   LensBase,
   LensBaseObject,
   CreateLens,
 } from "@/features/tools/catalog/types/lens/lens-base";
 
-//==================FACTORY=================/
 
 export const createStylisLens = (data: CreateLens) :LensBase =>
   ({
@@ -15,12 +13,11 @@ export const createStylisLens = (data: CreateLens) :LensBase =>
     lens: "monofocal",
     category: "Stylis",
     lensMaterial: LENS_MATERIALS.RESIN_MR_7,
-    lensForm: "asférico",
+    lensForm: "asf",
     surfacing: "digital",
     ...data,
   }) 
 
-//==================CATALOG=================/
 export const STYLIS: LensBaseObject = {
   //EYEZEN
   essilor_ormix_eyezen_01: createStylisLens({

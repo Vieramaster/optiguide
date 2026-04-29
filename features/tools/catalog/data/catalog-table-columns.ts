@@ -1,4 +1,3 @@
-
 import {
   Sparkles,
   MonitorSmartphone,
@@ -8,13 +7,12 @@ import {
   Sun,
 } from "lucide-react";
 
-//TYPES
 import type { TableOptions, RowOptions } from "../types/table-options";
 
 export const CATALOG_TABLE_COLUMNS: TableOptions[] = [
   { label: "nombre del cristal", value: "lensLine" },
-  { label: "tipo", value: "type" },
-  { label: "rango de dioptrias", value: "rangeDiopters" },
+  { label: "rango", value: "range" },
+  { label: "dioptrias", value: "rangeDiopters" },
   { label: "indice", value: "index" },
   { label: "diam", value: "diam" },
   { label: "tallado", value: "surfacing" },

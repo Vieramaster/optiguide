@@ -1,4 +1,3 @@
-
 import { LensBaseObject, LensCatalog } from "../../types/lens/lens-base";
 
 import {
@@ -17,9 +16,7 @@ import {
   SHARP_174,
 } from "./monofocal/clear-look";
 import { EVOCLEAR_DIGITAL } from "./monofocal/kodak/evoclear_digital";
-//==================TYPES=================/
 
-//==================CATALOGS=================/
 export const MONOFOCAL_CATALOG: LensBaseObject = {
   ...ORMA,
   ...ESSILOR_156,
@@ -39,7 +36,7 @@ export const BIFOCAL_CATALOG: LensBaseObject = {
   ...ORMA,
 };
 
-//==================cCOMPLETE CATALOG=================/
+
 export const LENS_CATALOGS: LensCatalog = {
   monofocal: MONOFOCAL_CATALOG,
   bifocal: BIFOCAL_CATALOG,

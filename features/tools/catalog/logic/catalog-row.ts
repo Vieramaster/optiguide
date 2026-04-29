@@ -32,7 +32,7 @@ export const mapCatalogToRow = (catalog: LensObjectResolved): CatalogRow => {
 
   return {
     lensLine,
-    type: lens.lensForm,
+    range: lens.range,
     rangeDiopters,
     index: lens.lensMaterial.index,
     diam: lens.diam.join(", "),

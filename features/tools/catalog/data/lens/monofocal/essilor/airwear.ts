@@ -1,13 +1,11 @@
 
 import { LENS_MATERIALS } from "@/features/tools/catalog/data/lens-materials";
-//==================TYPES=================/
 import type {
   CreateLens,
   LensBase,
   LensBaseObject,
 } from "@/features/tools/catalog/types/lens/lens-base";
 
-//==================FACTORY=================/
 
 export const createAirwearLens = (data: CreateLens): LensBase =>
   ({
@@ -15,12 +13,11 @@ export const createAirwearLens = (data: CreateLens): LensBase =>
     lens: "monofocal",
     category: "Airwear",
     lensMaterial: LENS_MATERIALS.POLICARBONATE,
-    lensForm: "esférico",
-    surfacing: "convencional",
+    lensForm: "esf",
+    surfacing: "estandar",
     ...data,
   })
 
-//==================CATALOG=================/
 
 export const AIRWEAR: LensBaseObject = {
   essilor_airwear_01: createAirwearLens({

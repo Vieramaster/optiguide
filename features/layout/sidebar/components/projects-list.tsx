@@ -1,5 +1,5 @@
 "use client";
-//COMPONENTS
+
 import {
   SidebarGroup,
   SidebarGroupLabel,
@@ -8,7 +8,6 @@ import {
   SidebarMenuItem,
 } from "@/features/layout/sidebar/components/";
 
-//TYPES
 import type { toolItem } from "../types/sidebar";
 
 interface projectsNavProps {

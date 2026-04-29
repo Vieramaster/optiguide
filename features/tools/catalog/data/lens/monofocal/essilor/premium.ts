@@ -4,10 +4,7 @@ import type {
   LensBaseObject,
   CreateLens,
 } from "@/features/tools/catalog/types/lens/lens-base";
-//==================DATA=================/
 import { LENS_MATERIALS } from "@/features/tools/catalog/data/lens-materials";
-
-//==================FACTORY=================/
 
 export const createPremiumLens = (data: CreateLens) :LensBase=>
   ({
@@ -16,11 +13,11 @@ export const createPremiumLens = (data: CreateLens) :LensBase=>
     category: "Premium",
     lensMaterial: LENS_MATERIALS.ULTRA_HIGH_INDEX_RESIN,
     surfacing: "digital",
-    lensForm: "asférico",
+    lensForm: "asf",
+    
     ...data,
   }) 
 
-//==================CATALOG=================/
 
 export const PREMIUM: LensBaseObject = {
   essilor_premium_eyezen_01: createPremiumLens({

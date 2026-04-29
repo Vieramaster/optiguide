@@ -1,6 +1,5 @@
 import { CheckboxBasic } from "@/components/checkbox-basic";
 
-//TYPES
 import type { TableOptions } from "../types/table-options";
 
 /**

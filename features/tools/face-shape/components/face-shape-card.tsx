@@ -1,22 +1,19 @@
-
 import { MDImage } from "@/components/ui";
 
 import { FaceShape } from "../types/frames";
 
 import { FrameCard } from "./frame-card";
-//TYPES
 
 interface FaceShapeProps {
-  shape: FaceShape
+  shape: FaceShape;
 }
 export const FaceShapeCard = ({ shape }: FaceShapeProps) => {
   const { imageURL, name, description, frameIds } = shape;
 
   return (
     <li className="bg-secondary w-72 lg:w-160 rounded-lg overflow-hidden pb-4 ">
-      <article aria-labelledby={`face-shape-${name} ` }>
+      <article aria-labelledby={`face-shape-${name} `}>
         <div className="lg:flex gap-4 lg:gap-6">
-          
           {/* Imagen */}
           <div className="p-3 lg:w-[30%]">
             <MDImage
@@ -30,10 +27,7 @@ export const FaceShapeCard = ({ shape }: FaceShapeProps) => {
 
           {/* Texto */}
           <div className="px-4 lg:w-[70%] lg:text-left lg:pt-4">
-            <h3
-              id={`face-shape-${name}`}
-              className="text-2xl font-bold mb-2"
-            >
+            <h3 id={`face-shape-${name}`} className="text-2xl font-bold mb-2">
               {name}
             </h3>
             <p>{description}</p>
