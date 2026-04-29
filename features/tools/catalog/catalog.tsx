@@ -28,43 +28,52 @@ import { useCatalogRows, useCatalogFilters, useChooseCatalog } from "./hooks";
 import { resolveCatalog } from "./logic/resolve-catalog";
 
 export const Catalog = () => {
+  // Claves de graduación a usar en el formulario
   const PRESCRIPTION_KEYS: GraduationBaseKeys[] = ["ESF", "CIL"];
 
-  //HANDLERS DE OPTICA
+  // Estado y handlers de selección de óptica y tipo de lente
   const { handleChangeCompany, handleChangeLens, companySelect, lensSelect } =
     useChooseCatalog();
 
-  //CATALOGO
-
+  // Catálogo resuelto según selección
   const resolvedCatalog = useMemo(
     () => resolveCatalog({ company: companySelect, lens: lensSelect }),
     [companySelect, lensSelect],
   );
 
-  //FILTROS
+  // Filtros booleanos
   const { filteredCatalog, filters, handleCheckboxChange, FILTERABLE_COLUMNS } =
     useCatalogFilters(resolvedCatalog);
 
-  //FILTROS EN BASE A GRADUACION
-  const { values, errors, submittedValues, handleChange, handleSubmit } =
-    useFormGraduation(PRESCRIPTION_KEYS);
+  // Estado y handlers del formulario de graduación
+  const {
+    values: graduationValues,
+    errors: graduationErrors,
+    submittedValues: submittedGraduationValues,
+    handleChange: handleGraduationChange,
+    handleSubmit: handleGraduationSubmit,
+  } = useFormGraduation(PRESCRIPTION_KEYS);
 
+  // Filtrado por transposición de graduación
   const transposedCatalog = useMemo(
-    () => filterTranspolation(filteredCatalog, submittedValues),
-    [filteredCatalog, submittedValues],
+    () => filterTranspolation(filteredCatalog, submittedGraduationValues),
+    [filteredCatalog, submittedGraduationValues],
   );
 
-  const transposedCatalogWithRow = useCatalogRows(transposedCatalog);
-  //HABILITA EL BOTON DE TRANSPOSICION
-  const isValidForm = hasGraduationValues(values);
+  // Mapeo a filas de tabla
+  const catalogRows = useCatalogRows(transposedCatalog);
+
+  // Habilita el botón de transposición si hay valores válidos
+  const isGraduationValid = hasGraduationValues(graduationValues);
+
   return (
     <section className="overflow-x-auto">
       <div className="flex flex-col items-center gap-8 p-10">
-        <header className="flex flex-col gap-6 items-center">
+        <header className="flex flex-col gap-6 items-center py-4">
           <Title>Catalogo para opticas</Title>
-          <SubTitle>elije la optica y el cristal que quieras buscar</SubTitle>
+          <SubTitle>Elije la óptica y el cristal que quieras buscar</SubTitle>
         </header>
-        {/*FILTROS PRINCIPALES */}
+        {/* Filtros principales */}
         <div className="flex gap-8">
           <SelectField
             options={OPTICAL_COMPANY_OPTIONS}
@@ -75,22 +84,24 @@ export const Catalog = () => {
             onValueSelect={handleChangeLens}
           />
         </div>
-        {/* FILTROS BOOLEANOS */}
+        {/* Filtros booleanos */}
         <FilterCheckboxes
           columns={FILTERABLE_COLUMNS}
           filters={filters}
           onChange={handleCheckboxChange}
         />
-        {/* FILTROS TRANSPOLACIONES */}
-        <div className="">
+        {/* Filtros por graduación */}
+        <div>
           <PrescriptionForm
             keys={PRESCRIPTION_KEYS}
-            values={values}
-            onChange={handleChange}
-            onSubmit={handleSubmit}
-            isDisabled={isValidForm}
+            values={graduationValues}
+            onChange={handleGraduationChange}
+            onSubmit={handleGraduationSubmit}
+            isDisabled={isGraduationValid}
           />
-          {Object.keys(errors).length > 0 && <ErrorList error={errors} />}
+          {Object.keys(graduationErrors).length > 0 && (
+            <ErrorList error={graduationErrors} />
+          )}
         </div>
       </div>
 
@@ -98,9 +109,8 @@ export const Catalog = () => {
         <TableHeader>
           <TableColumnsHeader />
         </TableHeader>
-
         <TableBody>
-          {transposedCatalogWithRow.map(({ key, row }) => (
+          {catalogRows.map(({ key, row }) => (
             <CatalogRowItem key={key} row={row} />
           ))}
         </TableBody>

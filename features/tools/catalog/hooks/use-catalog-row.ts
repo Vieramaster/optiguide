@@ -1,22 +1,21 @@
 import { useMemo } from "react";
-
 import { mapCatalogToRow } from "../logic/catalog-row";
 import type { LensObjectResolved } from "../types/optica-company";
 import type { CatalogRow } from "../types/table-options";
 
-type CatalogWithRow = LensObjectResolved & {
-  row: CatalogRow;
-};
-
+/**
+ * Hook que mapea un catálogo de lentes resueltos a filas de tabla listas para renderizar.
+ * Solo maneja memoización y transformación, sin lógica de negocio.
+ */
 export const useCatalogRows = (
-  transposedCatalog: LensObjectResolved[],
-): CatalogWithRow[] => {
+  catalog: LensObjectResolved[],
+): Array<LensObjectResolved & { row: CatalogRow }> => {
   return useMemo(
     () =>
-      transposedCatalog.map((item) => ({
+      catalog.map((item) => ({
         ...item,
         row: mapCatalogToRow(item),
       })),
-    [transposedCatalog],
+    [catalog],
   );
 };

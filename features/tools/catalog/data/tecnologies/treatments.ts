@@ -1,7 +1,7 @@
 
 import type { TreatmentsCatalog } from "../../types/tecnologies/lens-treatments";
 
-//=================CATALOG=================/
+
 
 export const TREATMENTS_CATALOG: TreatmentsCatalog = {
   MidIndex: {

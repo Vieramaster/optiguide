@@ -3,10 +3,14 @@ import { CheckboxBasic } from "@/components/checkbox-basic";
 //TYPES
 import type { TableOptions } from "../types/table-options";
 
+/**
+ * Componente UI puro para mostrar checkboxes de filtros de columnas.
+ * No contiene lógica de negocio, solo renderiza según props.
+ */
 interface FilterCheckboxesProps {
   columns: TableOptions[];
   filters: Record<string, boolean>;
-  onChange: (key: string, checked: boolean) => void;
+  onChange: (columnKey: string, checked: boolean) => void;
 }
 
 export const FilterCheckboxes = ({
@@ -14,7 +18,7 @@ export const FilterCheckboxes = ({
   filters,
   onChange,
 }: FilterCheckboxesProps) => (
-  <ul className="w-50 flex flex-wrap items-center justify-center gap-8  lg:gap-0 lg:w-[90%]">
+  <ul className="w-50 flex flex-wrap items-center justify-center gap-8 lg:gap-0 lg:w-[90%]">
     {columns.map(({ label, Ico, value }) => (
       <CheckboxBasic
         key={value}

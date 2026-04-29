@@ -3,7 +3,7 @@ import { PhotochromaticCatalog } from "../../types/tecnologies/photochromatic";
 export const PHOTOCHROMATIC_LENSES_CATALOG: PhotochromaticCatalog = {
   Generic: {
     photochromaticItemId: "G1",
-    photochromaticName: "Genérico",
+    photochromaticName: "polarizado generico",
     photochromaticBrand: "Varios",
     photochromaticGeneration: "N/A",
     photochromaticColors: ["Gris", "Marrón", "Verde"],

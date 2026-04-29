@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 
-import { mapCatalogToRow } from "../logic/catalog-row";
+import { filterCatalogByColumns } from "../logic/filter-catalog-by-columns";
 import { CATALOG_TABLE_COLUMNS } from "../data/catalog-table-columns";
 import type { LensObjectResolved } from "../types/optica-company";
 
@@ -16,13 +16,7 @@ export const useCatalogFilters = (catalog: LensObjectResolved[]) => {
 
   const filteredCatalog = useMemo(() => {
     if (!catalog) return [];
-    return catalog.filter((lensItem) => {
-      const row = mapCatalogToRow(lensItem);
-      return FILTERABLE_COLUMNS.every(({ value }) => {
-        if (!filters[value]) return true;
-        return row[value] === true;
-      });
-    });
+    return filterCatalogByColumns(catalog, FILTERABLE_COLUMNS, filters);
   }, [FILTERABLE_COLUMNS, catalog, filters]);
 
   const handleCheckboxChange = (key: string, checked: boolean) => {
