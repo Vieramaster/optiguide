@@ -1,4 +1,4 @@
-//==================TYPES=================/
+
 import type {
   LensBase,
   LensBaseObject,
@@ -9,7 +9,7 @@ import { LENS_MATERIALS } from "@/features/tools/catalog/data/lens-materials";
 
 //==================FACTORY=================/
 
-export const createEvoClearDigital = (data: CreateLens) =>
+export const createEvoClearDigital = (data: CreateLens) :LensBase =>
   ({
     company: "Kodak",
     lens: "monofocal",
@@ -18,11 +18,11 @@ export const createEvoClearDigital = (data: CreateLens) =>
     lensForm: "asférico",
     surfacing: "digital",
     ...data,
-  }) satisfies LensBase;
+  })
 
 //==================CATALOG=================/
 
-export const EVOCLEAR_DIGITAL = {
+export const EVOCLEAR_DIGITAL: LensBaseObject = {
   kodak_evoclear_digital_1: createEvoClearDigital({
     lensItemId: "kod_evoclear_1",
     range: "stock",
@@ -40,4 +40,4 @@ export const EVOCLEAR_DIGITAL = {
       { minEsf: -10, maxEsf: -8.25, minCil: -2, maxCil: 2 },
     ],
   }),
-} satisfies LensBaseObject;
+};

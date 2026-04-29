@@ -1,7 +1,8 @@
-//=================TYPES=================/
-import type { LensInputProduct } from "../../../types/optica-company";
 
-export const BIFOCAL_CATALOG_OPTICA_LURO = [
+import type { LensObjectInput } from "../../../types/optica-company";
+
+
+export const BIFOCAL_CATALOG_OPTICA_LURO:LensObjectInput[] = [
   { key: "orma1-base", lens: "essilor_orma_01" },
   { key: "orma1-midindex", lens: "essilor_orma_01", treatment: ["MidIndex"] },
 
@@ -21,4 +22,4 @@ export const BIFOCAL_CATALOG_OPTICA_LURO = [
     lens: "essilor_orma_02",
     treatment: ["CrizalPrevencia"],
   },
-] satisfies LensInputProduct[];
+] 

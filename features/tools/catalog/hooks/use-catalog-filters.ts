@@ -1,26 +1,17 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { searchOpticaCompany } from "../logic/search-optica-store";
+
 import { mapCatalogToRow } from "../logic/catalog-row";
 import { CATALOG_TABLE_COLUMNS } from "../data/catalog-table-columns";
-import type { OpticalCompanyKey, LensTypeKey } from "../types/optic-keys";
+import type { LensObjectResolved } from "../types/optica-company";
 
-
-export const useCatalogFilters = (
-  companySelect: OpticalCompanyKey,
-  lensSelect: LensTypeKey
-) => {
+export const useCatalogFilters = (catalog: LensObjectResolved[]) => {
   const [filters, setFilters] = useState<Record<string, boolean>>({});
-
-  const catalog = useMemo(
-    () => searchOpticaCompany(companySelect, lensSelect),
-    [companySelect, lensSelect]
-  );
 
   const FILTERABLE_COLUMNS = useMemo(
     () => CATALOG_TABLE_COLUMNS.filter((c) => c.Ico || c.value === "polarized"),
-    []
+    [],
   );
 
   const filteredCatalog = useMemo(() => {

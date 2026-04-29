@@ -1,6 +1,6 @@
 import { PhotochromaticCatalog } from "../../types/tecnologies/photochromatic";
 
-export const PHOTOCHROMATIC_LENSES_CATALOG = {
+export const PHOTOCHROMATIC_LENSES_CATALOG: PhotochromaticCatalog = {
   Generic: {
     photochromaticItemId: "G1",
     photochromaticName: "Genérico",
@@ -173,4 +173,4 @@ export const PHOTOCHROMATIC_LENSES_CATALOG = {
 
     photochromaticPolarized: false,
   },
-} satisfies PhotochromaticCatalog;
+};

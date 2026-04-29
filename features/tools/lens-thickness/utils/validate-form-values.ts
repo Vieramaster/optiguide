@@ -1,4 +1,4 @@
-import { GraduationFields, BaseGraduation } from "@/shared/types/graduation";
+import { GraduationFields } from "@/shared/types/graduation";
 
 
 const validate = (value: string): boolean => {

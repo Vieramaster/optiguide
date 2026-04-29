@@ -1,14 +1,13 @@
 "use client";
 
-//COMPONENTS
+
+import { PageTitle } from "@/components/page-title";
+
 import {
   ProjectsList, ArticlesList, Sidebar, SidebarContent,
   SidebarFooter,
   SidebarHeader,
 } from "./components";
-import { PageTitle } from "@/components/page-title";
-
-//DATA
 import { TOOLS_SIDEBAR } from "./data/toolsSidebar";
 import { ARTICLES_SIDEBAR } from "./data/librarySidebar";
 

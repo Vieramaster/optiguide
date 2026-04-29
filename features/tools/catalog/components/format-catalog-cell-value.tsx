@@ -1,5 +1,6 @@
-import { CatalogRow } from "../logic/catalog-row";
 import { Check, Minus } from "lucide-react";
+
+import { CatalogRow } from "../types/table-options";
 
 type Props = {
   value: CatalogRow[keyof CatalogRow];

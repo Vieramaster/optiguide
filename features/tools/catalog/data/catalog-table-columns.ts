@@ -1,4 +1,4 @@
-//ICONS
+
 import {
   Sparkles,
   MonitorSmartphone,
@@ -7,6 +7,7 @@ import {
   ZapOff,
   Sun,
 } from "lucide-react";
+
 //TYPES
 import type { TableOptions, RowOptions } from "../types/table-options";
 

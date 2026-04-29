@@ -1,4 +1,4 @@
-//==================DATA=================/
+
 import { LENS_MATERIALS } from "@/features/tools/catalog/data/lens-materials";
 //==================TYPES=================/
 import type {
@@ -7,9 +7,9 @@ import type {
   CreateLens,
 } from "@/features/tools/catalog/types/lens/lens-base";
 
-//==================TYPES=================/
+//==================FACTORY=================/
 
-export const createOrmaLens = (data: CreateLens) =>
+export const createOrmaLens = (data: CreateLens):LensBase =>
   ({
     company: "Essilor",
     lens: "monofocal",
@@ -18,11 +18,10 @@ export const createOrmaLens = (data: CreateLens) =>
     lensForm: "esférico",
     surfacing: "convencional",
     ...data,
-  }) satisfies LensBase;
+  }) 
+//==================CATALOG=================/
 
-//==================TYPES=================/
-
-export const ORMA = {
+export const ORMA: LensBaseObject = {
   essilor_orma_01: createOrmaLens({
     lensItemId: "ESS_ORM_01",
     range: "stock",
@@ -89,4 +88,4 @@ export const ORMA = {
     diam: [80],
     rangeDiopters: [{ minEsf: -5, maxEsf: 7, minCil: -4, maxCil: 4 }],
   }),
-} satisfies LensBaseObject;
+};

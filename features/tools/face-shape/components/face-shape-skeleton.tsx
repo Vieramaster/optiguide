@@ -1,4 +1,5 @@
 import { Skeleton } from "@/components/ui"
+
 import { FaceShapeSection } from "./face-shape-section";
 
 const SKELETON_ITEMS = Array.from({ length: 3 });

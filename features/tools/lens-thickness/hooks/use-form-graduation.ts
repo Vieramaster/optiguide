@@ -1,14 +1,13 @@
-//HOOKS
+
 import { useState } from "react";
 
-//DATA
-import { GRADUATION_RANGES } from "../../../../shared/graduation-form/graduation-ranges";
-//TYPES
 import type {
   GraduationFields,
   GraduationError,
 } from "@/shared/types/graduation";
 import { GraduationBase } from "@/shared/graduation-form/graduation-type";
+
+import { GRADUATION_RANGES } from "../../../../shared/graduation-form/graduation-ranges";
 export const useFormGraduation = (prescriptionKeys: (keyof GraduationBase)[]) => {
   const [values, setValues] = useState<GraduationFields>({
     ESF: "",

@@ -1,9 +1,10 @@
-//COMPONENTS
+
 import {
     Sparkle,
     Eye,
     BookOpen,
 } from "lucide-react";
+
 //TYPES
 import { articleItem } from "../types/sidebar";
 

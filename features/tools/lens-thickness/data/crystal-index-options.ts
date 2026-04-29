@@ -1,4 +1,4 @@
-//TYPES
+
 import type { RowOptions } from "../../catalog/types/table-options";
 
 export const CRYSTAL_INDEX_OPTIONS: RowOptions[] = [

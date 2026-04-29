@@ -1,6 +1,7 @@
-//FRAMEWORKS
+
 "use client";
 import { usePathname } from "next/navigation";
+
 //UTILS
 import { stringFormatters } from "@/shared/utils";
 //COMPONENTS
@@ -12,7 +13,9 @@ import {
   BreadcrumbSeparator,
   Separator
 } from "@/components/ui/";
+
 import { SidebarTrigger } from "../sidebar/components";
+
 import { SwitchTheme } from "./components/switch-theme";
 
 

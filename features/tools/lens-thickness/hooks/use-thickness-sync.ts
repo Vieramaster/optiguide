@@ -1,5 +1,6 @@
-//HOOKS
+
 import { useEffect } from "react";
+
 //TYPE
 import type { LensSide } from "../types/simulator";
 

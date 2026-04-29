@@ -1,7 +1,6 @@
-//=================TYPES=================/
-import type { LensInputProduct } from "../../../types/optica-company";
+import type { LensObjectInput } from "../../../types/optica-company";
 
-export const MONOFOCAL_TECNI_OPTICA = [
+export const MONOFOCAL_TECNI_OPTICA: LensObjectInput[] = [
   { key: "orma1-base", lens: "essilor_orma_01" },
   { key: "orma1-midindex", lens: "essilor_orma_01", treatment: ["MidIndex"] },
 
@@ -23,7 +22,7 @@ export const MONOFOCAL_TECNI_OPTICA = [
   },
 
   { key: "orma3-base", lens: "essilor_orma_03" },
-  { key: "orma3-midindex", lens: "essilor_orma_0", treatment: ["MidIndex"] },
+  { key: "orma3-midindex", lens: "essilor_orma_03", treatment: ["MidIndex"] },
 
   { key: "orma4-base", lens: "essilor_orma_04" },
   { key: "orma4-clook", lens: "essilor_orma_04", treatment: ["ClearLook"] },
@@ -78,4 +77,10 @@ export const MONOFOCAL_TECNI_OPTICA = [
     lens: "essilor_orma_07",
     treatment: ["BlueCut", "ClearLookSupra"],
   },
-] satisfies LensInputProduct[];
+  {
+    key: "orma7-clsupra-bcut",
+    lens: "essilor_orma_07",
+    treatment: ["BlueCut", "ClearLookSupra"],
+    photochromatic: "Generic",
+  },
+];

@@ -1,7 +1,8 @@
-//LIB
+
+import { useState } from "react";
+
 import { calculateThickness } from "../utils";
 //HOOKS
-import { useState } from "react";
 //TYPES
 import { GraduationObject } from "../types/simulator";
 

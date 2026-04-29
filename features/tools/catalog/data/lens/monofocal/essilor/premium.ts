@@ -1,4 +1,4 @@
-//==================TYPES=================/
+
 import type {
   LensBase,
   LensBaseObject,
@@ -9,7 +9,7 @@ import { LENS_MATERIALS } from "@/features/tools/catalog/data/lens-materials";
 
 //==================FACTORY=================/
 
-export const createPremiumLens = (data: CreateLens) =>
+export const createPremiumLens = (data: CreateLens) :LensBase=>
   ({
     company: "Essilor",
     lens: "monofocal",
@@ -18,11 +18,11 @@ export const createPremiumLens = (data: CreateLens) =>
     surfacing: "digital",
     lensForm: "asférico",
     ...data,
-  }) satisfies LensBase;
+  }) 
 
 //==================CATALOG=================/
 
-export const PREMIUM = {
+export const PREMIUM: LensBaseObject = {
   essilor_premium_eyezen_01: createPremiumLens({
     lensItemId: "ESS_PREMIUM_EYEZEN_01",
     lensName: "Eyezen",
@@ -31,4 +31,4 @@ export const PREMIUM = {
     rangeDiopters: [{ minEsf: -20, maxEsf: 18, minCil: -8, maxCil: 8 }],
     lensTecnologies: ["Eyezen Focus", "Blue UV Capture", "Dual Optimization"],
   }),
-} satisfies LensBaseObject;
+};

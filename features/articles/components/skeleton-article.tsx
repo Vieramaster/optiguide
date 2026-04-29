@@ -1,8 +1,10 @@
-//COMPONENTS
-import { SectionArticle } from "./section-article";
+
 import { Skeleton } from "@/components/ui";
+
 //DATA
 import { SKELETON_CONFIG } from "../data/skeleton-config";
+
+import { SectionArticle } from "./section-article";
 
 const CONFIG = ["h1", "text", "h2", "text", "text"] as const
 

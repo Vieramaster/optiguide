@@ -1,5 +1,6 @@
-//FRAMEWORK
+
 import Link from "next/link";
+
 //UTILS
 import { normalizePath } from "@/features/articles/utils/path-normalizer";
 

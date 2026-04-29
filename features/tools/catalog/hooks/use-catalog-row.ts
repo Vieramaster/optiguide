@@ -1,14 +1,15 @@
 import { useMemo } from "react";
-import { mapCatalogToRow } from "../logic/catalog-row";
-import type { LensObjectCatalog } from "../types/optica-company";
-import type { CatalogRow } from "../logic/catalog-row";
 
-type CatalogWithRow = LensObjectCatalog & {
+import { mapCatalogToRow } from "../logic/catalog-row";
+import type { LensObjectResolved } from "../types/optica-company";
+import type { CatalogRow } from "../types/table-options";
+
+type CatalogWithRow = LensObjectResolved & {
   row: CatalogRow;
 };
 
 export const useCatalogRows = (
-  transposedCatalog: LensObjectCatalog[],
+  transposedCatalog: LensObjectResolved[],
 ): CatalogWithRow[] => {
   return useMemo(
     () =>

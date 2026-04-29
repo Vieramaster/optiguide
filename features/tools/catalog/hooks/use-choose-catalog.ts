@@ -1,14 +1,13 @@
 "use client";
 
+//
 import { useState } from "react";
-import { OpticalCompanyKey, LensTypeKey } from "../types/optic-keys";
 
-type SelectState = {
-  company: OpticalCompanyKey;
-  lens: LensTypeKey;
-};
 
-export const useSelect = () => {
+import { OpticalCompanyKey } from "../types/optica-company";
+import type  { SelectState,  } from "../types/optica-company";
+import type { Lens } from "../types/lens/lens-base";
+export const useChooseCatalog = () => {
   const [select, setSelect] = useState<SelectState>({
     company: "tecniOptica",
     lens: "monofocal",
@@ -17,7 +16,7 @@ export const useSelect = () => {
     setSelect((prev) => ({ ...prev, company: value }));
   };
 
-  const handleChangeLens = (value: LensTypeKey) => {
+  const handleChangeLens = (value: Lens) => {
     setSelect((prev) => ({ ...prev, lens: value }));
   };
   return {

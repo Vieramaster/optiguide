@@ -1,6 +1,7 @@
 "use client"
 
 import { usePathname } from "next/navigation"
+
 import { ErrorPage } from "@/components/ui/error-page"
 import { stringFormatters } from "@/shared/utils/string/stringFormatters"
 import { retryError } from "@/shared/actions/retry-error"

@@ -1,5 +1,6 @@
-import { lensPathEmulator } from "../utils";
 import { useMemo } from "react";
+
+import { lensPathEmulator } from "../utils";
 
 
 type LensSVGProps = {

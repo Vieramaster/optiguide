@@ -1,8 +1,4 @@
-/**
- * Valida si un slug es válido para buscar artículos
- * @param slug - El slug a validar
- * @returns true si es válido, false si no
- */
+
 export const isValidSlug = (slug: string): boolean => {
   // Validaciones básicas del slug
   if (!slug || typeof slug !== "string") return false;

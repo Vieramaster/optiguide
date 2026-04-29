@@ -1,4 +1,4 @@
-//type 
+
 import type { ForwardRefExoticComponent,RefAttributes } from "react";
 import type { LucideProps } from "lucide-react";
 

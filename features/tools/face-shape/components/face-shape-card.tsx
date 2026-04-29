@@ -1,8 +1,10 @@
-//COMPONENTS
+
 import { MDImage } from "@/components/ui";
+
+import { FaceShape } from "../types/frames";
+
 import { FrameCard } from "./frame-card";
 //TYPES
-import { FaceShape } from "../types/frames";
 
 interface FaceShapeProps {
   shape: FaceShape

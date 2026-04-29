@@ -1,7 +1,7 @@
-//=================TYPES=================/
-import type { LensInputProduct } from "../../../types/optica-company";
 
-export const BIFOCAL_TECNI_OPTICA = [
+import type { LensObjectInput } from "../../../types/optica-company";
+
+export const BIFOCAL_TECNI_OPTICA:LensObjectInput[] = [
   { key: "orma1-base", lens: "essilor_orma_01" },
   { key: "orma1-midindex", lens: "essilor_orma_01", treatment: ["MidIndex"] },
 
@@ -15,4 +15,4 @@ export const BIFOCAL_TECNI_OPTICA = [
     lens: "essilor_orma_02",
     treatment: ["CrizalSapphire"],
   },
-] satisfies LensInputProduct[];
+] 

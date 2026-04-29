@@ -1,4 +1,5 @@
 import { promises as fs } from "fs";
+
 import { notFound } from "next/navigation";
 
 import { ARTICLES_DIR } from "@/features/articles/utils/constants";

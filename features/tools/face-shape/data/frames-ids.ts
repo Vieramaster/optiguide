@@ -1,8 +1,5 @@
-//COMPONENTS
+
 import { AviatorFrame, NavigatorFrame, BrownlineFrame, ButterflyFrame, CatEyeFrame, GeometricFrame, OvalFrame, RectangleFrame, RoundFrame, ShieldFrame, SquareFrame, PantosFrame, WayfarerFrame } from "../components/frames";
-
-
-//TYPES
 import { FrameData } from "../types/frames";
 
 export const framesData: FrameData[] = [

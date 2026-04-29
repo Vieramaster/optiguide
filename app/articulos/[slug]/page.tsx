@@ -1,4 +1,4 @@
-// Local imports
+
 import { getArticleStaticParams } from "@/features/articles/utils/get-article-static-params";
 import { getArticleContent } from "@/features/articles/utils/get-article-content";
 import { ArticleContent } from "@/features/articles/article-content";

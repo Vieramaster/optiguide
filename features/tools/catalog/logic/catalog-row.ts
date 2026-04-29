@@ -1,22 +1,6 @@
-import { LensObjectCatalog } from "../types/lens/optica-company";
 import { LensTreatment, Features } from "../types/tecnologies/lens-treatments";
-
-export type CatalogRow = {
-  lensLine: string;
-  type: string;
-  rangeDiopters: string;
-  index: number;
-  diam: string;
-  surfacing: string;
-  lensForm: string;
-  antiReflex: boolean;
-  blueControl: boolean;
-  oleophobicHydrophobic: boolean;
-  scratchResistant: boolean;
-  antiStatic: boolean;
-  photochromatic: boolean;
-  polarized: boolean;
-};
+import type { LensObjectResolved } from "../types/optica-company";
+import type { CatalogRow } from "../types/table-options";
 
 const findTreatment = (
   treatment: LensTreatment[] | undefined,
@@ -24,7 +8,7 @@ const findTreatment = (
 ) =>
   treatment?.some((item) => item.treatmentFeatures.includes(feature)) ?? false;
 
-export const mapCatalogToRow = (catalog: LensObjectCatalog): CatalogRow => {
+export const mapCatalogToRow = (catalog: LensObjectResolved): CatalogRow => {
   const { lens, treatment, photochromatic } = catalog;
 
   const lensLine = [

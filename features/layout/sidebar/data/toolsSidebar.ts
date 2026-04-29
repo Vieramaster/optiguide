@@ -1,9 +1,10 @@
-//COMPONENTS
+
 import {
     DraftingCompass,
     Smile,
     NotebookText
 } from "lucide-react";
+
 //TYPES
 import { toolItem } from "../types/sidebar";
 

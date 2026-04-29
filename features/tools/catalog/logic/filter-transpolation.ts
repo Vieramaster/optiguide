@@ -1,12 +1,12 @@
-//UTILS
 import { isValidString } from "@/shared/utils/string/is-valid-string";
-//TYPES
-import type { LensObjectResolve } from "../types/optica-company";
 import type { GraduationBaseKeys } from "@/shared/graduation-form/graduation-type";
+
+import type { LensObjectResolved } from "../types/optica-company";
+
 export const filterTranspolation = (
   catalog: LensObjectResolved[],
   filters: Record<GraduationBaseKeys, string> | null,
-) => {
+): LensObjectResolved[] => {
   if (!filters) return catalog;
 
   const { ESF, CIL } = filters;
@@ -26,7 +26,8 @@ export const filterTranspolation = (
   return catalogFilter(catalog, transposition);
 };
 
-//HELPERS
+//=================HELPERS=================/
+
 const transposePrescription = (sphere: number, cylinder: number) => {
   return {
     sphere: sphere + cylinder,
@@ -35,7 +36,7 @@ const transposePrescription = (sphere: number, cylinder: number) => {
 };
 
 const catalogFilter = (
-  catalog: LensInputResolve[],
+  catalog: LensObjectResolved[],
   transposition: { sphere: number; cylinder: number },
 ) => {
   const { sphere, cylinder } = transposition;

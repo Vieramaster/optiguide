@@ -1,5 +1,6 @@
-//COMPONENTS
+
 import { Label } from "@radix-ui/react-dropdown-menu";
+
 import { Input } from "@/components/ui/input";
 
 interface GraduationInputProps {

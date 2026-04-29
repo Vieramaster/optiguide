@@ -1,24 +1,22 @@
-//COMPONENTS
 import { Label } from "@radix-ui/react-dropdown-menu";
+
 import { Input } from "@/components/ui/input";
 
 interface GraduationInputProps {
-  name:string;
+  name: string;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   maxLength: number;
-
-};
+}
 
 export const InputBlock = ({
   name,
   value,
   onChange,
   maxLength,
-
 }: GraduationInputProps) => (
-  <div className="text-center font-semibold relative">
-    <Label className="mb-1">{name}:</Label>
+  <div className="flex  items-center  gap-2 text-center font-semibold relative">
+    <Label>{name}:</Label>
     <Input
       className="w-18 bg-primary-foreground"
       type="text"

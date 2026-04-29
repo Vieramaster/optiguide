@@ -1,20 +1,18 @@
-//LIBS
-import { calculatePercentage } from "../utils";
-//COMPONENTS
-import { ThicknessMessage } from "./thickness-message";
-import { LensSVG } from "./svg-lens";
+
+
 import { SelectField } from "@/components/select-field";
-//HOOKS
+
+import { calculatePercentage } from "../utils";
 import { useLensSVG, useThicknessSync } from "../hooks";
-//TYPES
 import type {
   SideThickness,
   GraduationObject,
   LensSide,
 } from "../types/simulator";
-
-//DATA
 import { CRYSTAL_INDEX_OPTIONS } from "../data/crystal-index-options";
+
+import { LensSVG } from "./svg-lens";
+import { ThicknessMessage } from "./thickness-message";
 
 interface LensSimulatorProps {
   values: GraduationObject;

@@ -1,5 +1,5 @@
 
-//TYPES
+
 import type { Frame } from "../types/frames";
 //DATA
 import { framesData } from "../data/frames-ids";

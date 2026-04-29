@@ -1,4 +1,4 @@
-//=================TYPES=================/
+
 import type {
   LensTreatment,
   TreatmentsName,
@@ -7,7 +7,7 @@ import type {
   PhotochromaticLens,
   PhotochromaticName,
 } from "./tecnologies/photochromatic";
-import type { LensBase } from "./lens/lens-base";
+import type { LensBase, Lens } from "./lens/lens-base";
 
 // OBJETO DEL CATALOGO
 export type LensBaseProduct<L, T, P> = {
@@ -56,3 +56,10 @@ export type CatalogOpticalCompaniesResolved = Record<
   OpticalCompanyKey,
   OpticaResolved
 >;
+
+//ESTADOS 
+
+export type SelectState = {
+  company: OpticalCompanyKey;
+  lens: Lens;
+};

@@ -1,4 +1,4 @@
-// lens-path-emulator.ts
+
 const H = 500;
 const EDGE = 20;
 

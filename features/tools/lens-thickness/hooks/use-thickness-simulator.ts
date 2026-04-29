@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import type { LensSide } from "../types/simulator";
 
 export type SideThicknessState = {

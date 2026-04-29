@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { useTheme } from "next-themes"
+
 import { Switch } from "@/components/ui/switch"
 import { capitalizeFirst } from "@/shared/utils/string/capitalize-first"
 

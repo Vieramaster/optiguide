@@ -1,18 +1,16 @@
 "use client";
-// COMPONENTS
-import { HeaderSimulator, LensSimulator } from "./components";
+
 import { Button } from "@/components/ui/";
 import { PrescriptionForm, ErrorList } from "@/components/";
-//UTILS
-import { graduationKeysArray, validateFormValues } from "./utils";
-// DATA
-import { LensTicknessTitle } from "./data/title";
 import { graduationComplete } from "@/shared/graduation-form/graduation-data";
-// HOOKS
-import { useThicknessSimulator } from "./hooks";
 import { useFormGraduation } from "@/shared/graduation-form/graduation-form-hook";
-//TYPES
+
+import { HeaderSimulator, LensSimulator } from "./components";
+import { graduationKeysArray, validateFormValues } from "./utils";
+import { LensTicknessTitle } from "./data/title";
+import { useThicknessSimulator } from "./hooks";
 import type { LensSide } from "./types/simulator";
+
 const SIDES: LensSide[] = ["A", "B"];
 
 export const LensThicknessSimulator = () => {

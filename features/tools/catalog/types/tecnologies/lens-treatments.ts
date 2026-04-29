@@ -1,4 +1,4 @@
-import { TREATMENTS_CATALOG } from "../../data/tecnologies/treatments";
+
 
 export type TreatmentBrand = "Clear Look" | "Essilor" | "Vitolen";
 export type Features =

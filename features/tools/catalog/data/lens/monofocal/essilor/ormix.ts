@@ -1,15 +1,15 @@
+
+import { LENS_MATERIALS } from "@/features/tools/catalog/data/lens-materials";
 //==================TYPES=================/
 import type {
   LensBase,
   LensBaseObject,
   CreateLens,
 } from "@/features/tools/catalog/types/lens/lens-base";
-//==================DATA=================/
-import { LENS_MATERIALS } from "@/features/tools/catalog/data/lens-materials";
 
 //==================FACTORY=================/
 
-export const createOrmixLens = (data: CreateLens) =>
+export const createOrmixLens = (data: CreateLens) :LensBase=>
   ({
     company: "Essilor",
     lens: "monofocal",
@@ -18,11 +18,11 @@ export const createOrmixLens = (data: CreateLens) =>
     lensForm: "esférico",
     surfacing: "convencional",
     ...data,
-  }) satisfies LensBase;
+  }) 
 
 //==================CATALOG=================/
 
-export const ORMIX = {
+export const ORMIX :LensBaseObject= {
   essilor_ormix_01: createOrmixLens({
     lensItemId: "ESS_ORMIX_01",
     range: "ext",
@@ -62,4 +62,4 @@ export const ORMIX = {
     diam: [65, 70],
     rangeDiopters: [{ minEsf: -4, maxEsf: 4, minCil: -4, maxCil: 4 }],
   }),
-} satisfies LensBaseObject;
+};

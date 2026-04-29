@@ -1,9 +1,4 @@
-/**
- * Normaliza una ruta para asegurar que tenga el formato correcto
- * Si no empieza con / o http, agrega / al inicio
- * @param path - Ruta a normalizar
- * @returns Ruta normalizada
- */
+
 export const normalizePath = (path: string | null | undefined): string => {
   if (!path) return "#";
 

@@ -1,4 +1,4 @@
-//==================DATA=================/
+
 import { LENS_MATERIALS } from "@/features/tools/catalog/data/lens-materials";
 //==================TYPES=================/
 import type {
@@ -9,7 +9,7 @@ import type {
 
 //==================FACTORY=================/
 
-export const createAirwearLens = (data: CreateLens) =>
+export const createAirwearLens = (data: CreateLens): LensBase =>
   ({
     company: "Essilor",
     lens: "monofocal",
@@ -18,11 +18,11 @@ export const createAirwearLens = (data: CreateLens) =>
     lensForm: "esférico",
     surfacing: "convencional",
     ...data,
-  }) satisfies LensBase;
+  })
 
 //==================CATALOG=================/
 
-export const AIRWEAR = {
+export const AIRWEAR: LensBaseObject = {
   essilor_airwear_01: createAirwearLens({
     lensItemId: "ESS_AIRWEAR_01",
     range: "stock",
@@ -81,10 +81,10 @@ export const AIRWEAR = {
 
   //EYEZEN
   essilor_airwear_eyezen_01: createAirwearLens({
+    lensName:"Eyezen",
     lensItemId: "ESS_AIRWEAR_EYE_01",
     range: "lab",
     diam: [65, 70],
     rangeDiopters: [{ minEsf: -10, maxEsf: 6, minCil: -6, maxCil: 6 }],
-    lensTecnologies: ["Eyezen Focus", "Blue UV Capture", "Dual Optimization"],
   }),
-} satisfies LensBaseObject;
+};

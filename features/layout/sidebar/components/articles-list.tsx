@@ -1,7 +1,17 @@
-//FRAMEWORKS
+
 "use client";
 import Link from "next/link";
-//COMPONENTS
+import { ChevronRight } from "lucide-react";
+
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger
+} from "@/components/ui";
+
+
+import type { articleItem } from "../types/sidebar";
+
 import {
   SidebarGroup,
   SidebarGroupLabel,
@@ -12,14 +22,6 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
 } from "./sidebar";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger
-} from "@/components/ui";
-import { ChevronRight } from "lucide-react";
-//TYPES
-import type { articleItem } from "../types/sidebar";
 
 
 interface ArticlesNavProps {

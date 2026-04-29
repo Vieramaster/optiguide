@@ -1,9 +1,9 @@
-//=================TYPES=================/
+
 import type { TreatmentsCatalog } from "../../types/tecnologies/lens-treatments";
 
 //=================CATALOG=================/
 
-export const TREATMENTS_CATALOG = {
+export const TREATMENTS_CATALOG: TreatmentsCatalog = {
   MidIndex: {
     treatmentItemId: "T2",
     treatmentName: "Mid Index",
@@ -148,4 +148,4 @@ export const TREATMENTS_CATALOG = {
     ],
     treatmentFeatures: ["polarized"],
   },
-} satisfies TreatmentsCatalog;
+};

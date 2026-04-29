@@ -1,4 +1,4 @@
-//==================DATA=================/
+
 import { LENS_MATERIALS } from "@/features/tools/catalog/data/lens-materials";
 //==================TYPES=================/
 import type {
@@ -8,7 +8,7 @@ import type {
 } from "@/features/tools/catalog/types/lens/lens-base";
 
 //==================FACTORY=================/
-const createSharp174 = (data: CreateLens) =>
+const createSharp174 = (data: CreateLens) :LensBase =>
   ({
     company: "ClearLook",
     lens: "monofocal",
@@ -17,11 +17,10 @@ const createSharp174 = (data: CreateLens) =>
     lensForm: "asférico",
     surfacing: "digital",
     ...data,
-  }) satisfies LensBase;
-
+  }) 
 //==================CATALOG=================/
 
-export const SHARP_174 = {
+export const SHARP_174 : LensBaseObject = {
   clearlook_sharp174_01: createSharp174({
     lensItemId: "CL_sharp174_01",
     diam: [70],
@@ -34,4 +33,5 @@ export const SHARP_174 = {
     rangeDiopters: [{ minEsf: -30, maxEsf: -20, minCil: -8, maxCil: 8 }],
     range: "lab",
   }),
-} satisfies LensBaseObject;
+};
+ 

@@ -1,9 +1,7 @@
 "use client";
 
-//==================REACT================/
 import { useMemo } from "react";
 
-//==================COMPONETS================/
 import {
   Title,
   SubTitle,
@@ -11,40 +9,41 @@ import {
   TableBody,
   TableHeader,
 } from "@/components/ui";
+import { ErrorList, PrescriptionForm, SelectField } from "@/components/";
+import { useFormGraduation } from "@/shared/graduation-form/graduation-form-hook";
+import { GraduationBaseKeys } from "@/shared/graduation-form/graduation-type";
 
 import {
   TableColumnsHeader,
   CatalogRowItem,
   FilterCheckboxes,
 } from "./components/";
-
-import { ErrorList, PrescriptionForm, SelectField } from "@/components/";
-
-//==================UTILS================/
 import { filterTranspolation } from "./logic/filter-transpolation";
 import { hasGraduationValues } from "./logic/has-graduation-values";
-//==================DATA================/
 import {
   OPTICAL_COMPANY_OPTIONS,
   OPTICAL_LENS_OPTIONS,
 } from "./data/catalog-table-columns";
-
-//HOOKS
-import { useFormGraduation } from "@/shared/graduation-form/graduation-form-hook";
-import { useCatalogRows, useCatalogFilters, useSelect } from "./hooks";
-
-//TYPES
-import { GraduationBaseKeys } from "@/shared/graduation-form/graduation-type";
+import { useCatalogRows, useCatalogFilters, useChooseCatalog } from "./hooks";
+import { resolveCatalog } from "./logic/resolve-catalog";
 
 export const Catalog = () => {
   const PRESCRIPTION_KEYS: GraduationBaseKeys[] = ["ESF", "CIL"];
-  //HANDLERS
+
+  //HANDLERS DE OPTICA
   const { handleChangeCompany, handleChangeLens, companySelect, lensSelect } =
-    useSelect();
+    useChooseCatalog();
+
+  //CATALOGO
+
+  const resolvedCatalog = useMemo(
+    () => resolveCatalog({ company: companySelect, lens: lensSelect }),
+    [companySelect, lensSelect],
+  );
 
   //FILTROS
   const { filteredCatalog, filters, handleCheckboxChange, FILTERABLE_COLUMNS } =
-    useCatalogFilters(companySelect, lensSelect);
+    useCatalogFilters(resolvedCatalog);
 
   //FILTROS EN BASE A GRADUACION
   const { values, errors, submittedValues, handleChange, handleSubmit } =
@@ -65,12 +64,7 @@ export const Catalog = () => {
           <Title>Catalogo para opticas</Title>
           <SubTitle>elije la optica y el cristal que quieras buscar</SubTitle>
         </header>
-        {/* Filtros booleanos */}
-        <FilterCheckboxes
-          columns={FILTERABLE_COLUMNS}
-          filters={filters}
-          onChange={handleCheckboxChange}
-        />
+        {/*FILTROS PRINCIPALES */}
         <div className="flex gap-8">
           <SelectField
             options={OPTICAL_COMPANY_OPTIONS}
@@ -81,7 +75,14 @@ export const Catalog = () => {
             onValueSelect={handleChangeLens}
           />
         </div>
-        <div className="flex gap-8">
+        {/* FILTROS BOOLEANOS */}
+        <FilterCheckboxes
+          columns={FILTERABLE_COLUMNS}
+          filters={filters}
+          onChange={handleCheckboxChange}
+        />
+        {/* FILTROS TRANSPOLACIONES */}
+        <div className="">
           <PrescriptionForm
             keys={PRESCRIPTION_KEYS}
             values={values}

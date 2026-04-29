@@ -1,5 +1,6 @@
-//FRAMEWORK
+
 import Image from "next/image";
+
 //UTILS
 import { isValidImageSrc } from "@/shared/utils/image/image-validator";
 import { parseImageDimensions } from "@/shared/utils/image/image-dimensions";

@@ -1,13 +1,14 @@
-//HOOKS
+
 import { useState } from "react";
 
 //DATA
-import { GRADUATION_RANGES } from "./graduation-ranges";
-//TYPES
 import type {
   BaseGraduationKeys,
   GraduationFieldsKey,
 } from "@/shared/types/graduation";
+
+import { GRADUATION_RANGES } from "./graduation-ranges";
+//TYPES
 
 export const useFormGraduation = <
   K extends BaseGraduationKeys | GraduationFieldsKey,

@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+
 import { InputBlock } from "./input-block";
 
 interface PrescriptionFormProps<T extends Record<string, string>> {
@@ -6,7 +7,7 @@ interface PrescriptionFormProps<T extends Record<string, string>> {
   values: T;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onSubmit: () => void;
-  isDisabled:boolean
+  isDisabled: boolean;
 }
 
 export const PrescriptionForm = <T extends Record<string, string>>({
@@ -14,18 +15,15 @@ export const PrescriptionForm = <T extends Record<string, string>>({
   values,
   onChange,
   onSubmit,
-  isDisabled
-  
+  isDisabled,
 }: PrescriptionFormProps<T>) => {
-
-
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
         onSubmit();
       }}
-      className="flex flex-wrap gap-2 lg:flex-row lg:gap-4 justify-center items-center"
+      className="flex gap-4 justify-between w-fit"
     >
       {keys.map((key) => (
         <InputBlock
@@ -37,11 +35,7 @@ export const PrescriptionForm = <T extends Record<string, string>>({
         />
       ))}
 
-      <Button
-        type="submit"
-        className=" place-self-end lg:self-end "
-        disabled={!isDisabled}
-      >
+      <Button type="submit" className=" ml-6 " disabled={!isDisabled}>
         Calcular
       </Button>
     </form>
