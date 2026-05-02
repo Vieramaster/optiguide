@@ -1,3 +1,5 @@
+import { MONOFOCAL_CATALOG } from "../../data/lens/lens-catalog";
+
 type EssilorCategory =
   | "Orma"
   | "Airwear"
@@ -85,7 +87,7 @@ export type LensBase = {
   lensForm: LensType;
   lensTecnologies?: string[];
   surfacing: Surfacing;
-  add?: number;
+  add?: string;
 };
 
 export type LensBaseObject = Record<string, LensBase>;
@@ -104,3 +106,4 @@ export type OmitBase = Omit<
 export type CreateLens = OmitBase & LensFormRequirement & DioptersRequirement;
 
 export type LensCatalog = Record<Lens, LensBaseObject>;
+

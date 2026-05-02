@@ -1,4 +1,4 @@
-export type PhotochromaticBrand = "Varilux" | "Varios" | "Vitolen";
+export type PhotochromaticBrand = "Varilux" | "Varios" | "Vitolen" | "ClearLook";
 export type PhotochromaticColor =
   | "Gris"
   | "Marrón"
@@ -9,7 +9,10 @@ export type PhotochromaticColor =
   | "Rubí"
   | "Jade"
   | "Verde cobre"
-  | "Marrón cobre";
+  | "Marrón cobre"
+  | "Rosado"
+  | "Azul"
+
 export type BlueLightFilter = {
   clearState: string;
   darkState: string;
@@ -32,10 +35,13 @@ export type PhotochromaticName =
   | "TransitionsSignature"
   | "TransitionsGen8"
   | "TransitionsGenSGrey"
+  | "TransitionsGenSGreyandBrown"
   | "TransitionsGenSColors"
   | "TransitionsXTRActive"
   | "TransitionsDrivewear"
-  | "VitolenSunmatic";
+  | "FotocromaticoCL1"
+  | "FotocromaticoCL2"
+  | "FotocromaticoCL3"
 
 export type PhotochromaticCatalog = Record<
   PhotochromaticName,

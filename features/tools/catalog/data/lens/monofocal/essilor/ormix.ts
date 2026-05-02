@@ -22,6 +22,7 @@ export const ORMIX: LensBaseObject = {
     range: "ext",
     diam: [65, 70],
     rangeDiopters: [{ minEsf: -6, maxEsf: 4, minCil: -2, maxCil: 2 }],
+    lensForm:"asf"
   }),
   essilor_ormix_02: createOrmixLens({
     lensItemId: "ESS_ORMIX_02",

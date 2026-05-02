@@ -29,11 +29,12 @@ export const mapCatalogToRow = (catalog: LensObjectResolved): CatalogRow => {
       ?.map((r) => `${r.min} hasta ${r.max} dioptrias`)
       .join(", ") ??
     "—";
-
+    
   return {
     lensLine,
     range: lens.range,
     rangeDiopters,
+    add: lens.add ? lens.add : "-",
     index: lens.lensMaterial.index,
     diam: lens.diam.join(", "),
     surfacing: lens.surfacing,

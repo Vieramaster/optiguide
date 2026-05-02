@@ -7,21 +7,21 @@ import type {
 } from "@/features/tools/catalog/types/lens/lens-base";
 
 
-export const createOrmaLens = (data: CreateLens):LensBase =>
-  ({
-    company: "Essilor",
-    lens: "monofocal",
-    category: "Orma",
-    lensMaterial: LENS_MATERIALS.CR_39,
-    lensForm: "esf",
-    surfacing: "estandar",
-    ...data,
-  }) 
+export const createOrmaLens = (data: CreateLens): LensBase =>
+({
+  company: "Essilor",
+  lens: "monofocal",
+  category: "Orma",
+  lensMaterial: LENS_MATERIALS.CR_39,
+  lensForm: "esf",
+  surfacing: "estandar",
+  ...data,
+})
 
 
 export const ORMA: LensBaseObject = {
   essilor_orma_01: createOrmaLens({
-    lensItemId: "ESS_ORM_01",
+    lensItemId: "ESS_ORMA_01",
     range: "stock",
     diam: [65, 70],
     rangeDiopters: [{ minEsf: -6, maxEsf: 6, minCil: -2, maxCil: 2 }],
@@ -69,10 +69,10 @@ export const ORMA: LensBaseObject = {
   }),
   essilor_orma_08: createOrmaLens({
     lensItemId: "ESS_ORMA_08",
-    range: "ext",
+    range: "stock",
     diam: [70],
     rangeDiopters: [{ minEsf: -6, maxEsf: 4, minCil: -2, maxCil: 2 }],
-  
+
   }),
   essilor_orma_09: createOrmaLens({
     lensItemId: "ESS_ORMA_09",
@@ -84,7 +84,31 @@ export const ORMA: LensBaseObject = {
   essilor_orma_10: createOrmaLens({
     lensItemId: "ESS_ORMA_10",
     range: "stock",
-    diam: [80],
+    diam: [70],
     rangeDiopters: [{ minEsf: -5, maxEsf: 7, minCil: -4, maxCil: 4 }],
+  }),
+  essilor_orma_11: createOrmaLens({
+    lensItemId: "ESS_ORMA_11",
+    range: "ext",
+    diam: [70],
+    rangeDiopters: [{ minEsf: -4, maxEsf: 4, minCil: -4, maxCil: 4 }],
+  }),
+  essilor_orma_12: createOrmaLens({
+    lensItemId: "ESS_ORMA_12",
+    range: "lab",
+    diam: [70],
+    rangeDiopters: [{ minEsf: -12, maxEsf: 9, minCil: -6, maxCil: 6 }],
+  }),
+  essilor_orma_13: createOrmaLens({
+    lensItemId: "ESS_ORMA_13",
+    range: "lab",
+    diam: [70],
+    rangeDiopters: [{ minEsf: -8, maxEsf: 8, minCil: -5, maxCil: 5 }],
+  }),
+  essilor_orma_14: createOrmaLens({
+    lensItemId: "ESS_ORMA_14",
+    range: "lab",
+    diam: [70],
+    rangeDiopters: [{ minEsf: -10, maxEsf: 6, minCil: -6, maxCil: 6 }],
   }),
 };

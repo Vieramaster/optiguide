@@ -1,2 +1,2 @@
-export * from "./monofocal-tecni-optica"
+export * from "./monofocal/tecni-monofocal-catalog"
 export * from "./bifocal-tecni-optica"

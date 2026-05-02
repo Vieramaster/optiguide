@@ -1,6 +1,6 @@
 
 
-export type TreatmentBrand = "Clear Look" | "Essilor" | "Vitolen";
+export type TreatmentBrand = "ClearLook" | "Essilor" | "Vitolen" | "Kodak";
 export type Features =
   | "antiReflex"
   | "blueControl"
@@ -13,7 +13,6 @@ export type LensTreatment = {
   treatmentItemId: string;
   treatmentName: string;
   treatmentBrand: TreatmentBrand;
-  treatmentTecnologies: string[];
   treatmentFeatures: Features[];
 };
 
@@ -26,8 +25,14 @@ export type TreatmentsName =
   | "CrizalRock"
   | "CrizalPrevencia"
   | "CrizalForte"
-  | "SpectrumSky"
-  | "SpectrumElite"
-  | "Xperio";
+  | "CrizalTrio"
+  | "GenericPolarized"
+  | "Xperio"
+  | "TrioCleanblue"
+  | "KodakNoReflexBlue"
+  | "ClearLookArBasic"
+  | "ClearLookArSupra"
+  | "ClearBlue"
+  | "ClearLookPolarized"
 
 export type TreatmentsCatalog = Record<TreatmentsName, LensTreatment>;

@@ -26,7 +26,6 @@ export const STYLIS: LensBaseObject = {
     range: "lab",
     diam: [65, 70],
     rangeDiopters: [{ minEsf: -14, maxEsf: 8, minCil: -4, maxCil: 4 }],
-    lensTecnologies: ["Eyezen Focus", "Blue UV Capture", "Dual Optimization"],
   }),
   essilor_ormix_eyezen_02: createStylisLens({
     lensItemId: "ESS_STYLIS_EYE_02",
@@ -34,6 +33,5 @@ export const STYLIS: LensBaseObject = {
     range: "lab",
     diam: [65],
     rangeDiopters: [{ minEsf: -14, maxEsf: 9, minCil: -6, maxCil: 6 }],
-    lensTecnologies: ["Eyezen Focus", "Blue UV Capture", "Dual Optimization"],
   }),
 };

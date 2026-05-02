@@ -7,32 +7,28 @@ export const TREATMENTS_CATALOG: TreatmentsCatalog = {
   MidIndex: {
     treatmentItemId: "T2",
     treatmentName: "Mid Index",
-    treatmentBrand: "Clear Look",
-    treatmentTecnologies: ["Antirreflejo básico"],
+    treatmentBrand: "ClearLook",
     treatmentFeatures: ["antiReflex"],
   },
 
   ClearLook: {
     treatmentItemId: "T3",
-    treatmentName: "Clear Look",
-    treatmentBrand: "Clear Look",
-    treatmentTecnologies: ["Antirreflejo estándar"],
+    treatmentName: "ClearLook",
+    treatmentBrand: "ClearLook",
     treatmentFeatures: ["antiReflex"],
   },
 
   ClearLookSupra: {
     treatmentItemId: "T4",
-    treatmentName: "Clear Look Supra",
-    treatmentBrand: "Clear Look",
-    treatmentTecnologies: ["Antirreflejo avanzado"],
+    treatmentName: "ClearLook Supra",
+    treatmentBrand: "ClearLook",
     treatmentFeatures: ["antiReflex"],
   },
 
   BlueCut: {
     treatmentItemId: "T5",
     treatmentName: "Blue Cut",
-    treatmentBrand: "Clear Look",
-    treatmentTecnologies: [],
+    treatmentBrand: "ClearLook",
     treatmentFeatures: ["blueControl"],
   },
 
@@ -40,13 +36,6 @@ export const TREATMENTS_CATALOG: TreatmentsCatalog = {
     treatmentItemId: "C1",
     treatmentName: "Crizal Sapphire",
     treatmentBrand: "Essilor",
-    treatmentTecnologies: [
-      "Multi-Angular Technology™",
-      "High-Resistance Technology™",
-      "E-SPF® UV Protection",
-      "High Surface Density™",
-      "Pad Control System™",
-    ],
     treatmentFeatures: [
       "antiReflex",
       "oleophobicHydrophobic",
@@ -59,12 +48,6 @@ export const TREATMENTS_CATALOG: TreatmentsCatalog = {
     treatmentItemId: "C2",
     treatmentName: "Crizal Rock",
     treatmentBrand: "Essilor",
-    treatmentTecnologies: [
-      "High-Resistance Technology™",
-      "High Surface Density™",
-      "E-SPF® UV Protection",
-      "Multi-Angular Technology™",
-    ],
     treatmentFeatures: [
       "antiReflex",
       "oleophobicHydrophobic",
@@ -77,13 +60,6 @@ export const TREATMENTS_CATALOG: TreatmentsCatalog = {
     treatmentItemId: "C3",
     treatmentName: "Crizal Prevencia",
     treatmentBrand: "Essilor",
-    treatmentTecnologies: [
-      "Harmful Blue Light Filtration Layer",
-      "Multi-Angular Technology™",
-      "High-Resistance Technology™",
-      "E-SPF® UV Protection",
-      "High Surface Density™",
-    ],
     treatmentFeatures: [
       "antiReflex",
       "blueControl",
@@ -97,12 +73,6 @@ export const TREATMENTS_CATALOG: TreatmentsCatalog = {
     treatmentItemId: "C4",
     treatmentName: "Crizal Forte",
     treatmentBrand: "Essilor",
-    treatmentTecnologies: [
-      "High-Resistance Technology™",
-      "High Surface Density™",
-      "E-SPF® UV Protection",
-      "Multi-Angular Technology™",
-    ],
     treatmentFeatures: [
       "antiReflex",
       "oleophobicHydrophobic",
@@ -111,11 +81,23 @@ export const TREATMENTS_CATALOG: TreatmentsCatalog = {
     ],
   },
 
-  SpectrumSky: {
+  CrizalTrio: {
+    treatmentItemId: "C5",
+    treatmentName: "Crizal Trio",
+    treatmentBrand: "Essilor",
+    treatmentFeatures: [
+      "antiReflex",
+      "oleophobicHydrophobic",
+      "scratchResistant",
+      "antiStatic",
+    ],
+  },
+
+
+  ClearLookArBasic: {
     treatmentItemId: "S1",
-    treatmentName: "Spectrum Sky+",
-    treatmentBrand: "Vitolen",
-    treatmentTecnologies: ["Sky+ Technology™", "Multi-layer AR System™"],
+    treatmentName: "ClearLook AR Basic",
+    treatmentBrand: "ClearLook",
     treatmentFeatures: [
       "antiReflex",
       "oleophobicHydrophobic",
@@ -124,28 +106,53 @@ export const TREATMENTS_CATALOG: TreatmentsCatalog = {
     ],
   },
 
-  SpectrumElite: {
+  ClearLookArSupra: {
     treatmentItemId: "S2",
-    treatmentName: "Spectrum Elite",
-    treatmentBrand: "Vitolen",
-    treatmentTecnologies: ["Elite AR Technology™", "High-Density Coating™"],
+    treatmentName: "ClearLook AR Supra",
+    treatmentBrand: "ClearLook",
     treatmentFeatures: [
       "antiReflex",
       "oleophobicHydrophobic",
       "scratchResistant",
       "antiStatic",
     ],
+  },
+
+  GenericPolarized: {
+    treatmentItemId: "PG1",
+    treatmentName: "Polarizado generico",
+    treatmentBrand: "Essilor",
+    treatmentFeatures: ["polarized"],
   },
 
   Xperio: {
     treatmentItemId: "XP1",
     treatmentName: "Xperio pol. gris/verde/cafe",
     treatmentBrand: "Essilor",
-    treatmentTecnologies: [
-      "Xperio Polarised Technology™",
-      "Crizal Sun UV™",
-      "Enhanced Colour Perception",
-    ],
+    treatmentFeatures: ["polarized"],
+  },
+  TrioCleanblue: {
+    treatmentItemId: "TCB1",
+    treatmentName: "Trio Clean Blue",
+    treatmentBrand: "Essilor",
+    treatmentFeatures: ["antiReflex", "blueControl", "oleophobicHydrophobic"],
+  },
+  KodakNoReflexBlue: {
+    treatmentItemId: "NRB",
+    treatmentName: "No Reflex Blue",
+    treatmentBrand: "Kodak",
+    treatmentFeatures: ["antiReflex", "blueControl"],
+  },
+  ClearBlue: {
+    treatmentItemId: "CLCL",
+    treatmentName: "Clear Blue",
+    treatmentBrand: "ClearLook",
+    treatmentFeatures: ["blueControl"],
+  },
+  ClearLookPolarized: {
+    treatmentItemId: "CLPolarized",
+    treatmentName: "Polarizado",
+    treatmentBrand: "ClearLook",
     treatmentFeatures: ["polarized"],
   },
 };

@@ -7,6 +7,7 @@ import type  { Range } from "./lens/lens-base";
 export type CatalogRow = {
   lensLine: string;
   range: Range;
+  add:string,
   rangeDiopters: string;
   index: number;
   diam: string;

@@ -20,13 +20,13 @@ const createSharp174 = (data: CreateLens) :LensBase =>
   }) 
 
 export const SHARP_174 : LensBaseObject = {
-  clearlook_sharp174_01: createSharp174({
+  clearLook_sharp174_01: createSharp174({
     lensItemId: "CL_sharp174_01",
     diam: [70],
     rangeDiopters: [{ minEsf: -20, maxEsf: 18, minCil: -8, maxCil: 8 }],
     range: "lab",
   }),
-  clearlook_sharp174_02: createSharp174({
+  clearLook_sharp174_02: createSharp174({
     lensItemId: "CL_sharp174_02",
     diam: [70],
     rangeDiopters: [{ minEsf: -30, maxEsf: -20, minCil: -8, maxCil: 8 }],

@@ -83,6 +83,25 @@ export const PHOTOCHROMATIC_LENSES_CATALOG: PhotochromaticCatalog = {
 
     photochromaticPolarized: false,
   },
+  TransitionsGenSGreyandBrown: {
+    photochromaticItemId: "F3",
+    photochromaticName: "Transitions Gen S GRIS/CAFE",
+    photochromaticBrand: "Varilux",
+    photochromaticGeneration: "Gen S",
+    photochromaticColors: ["Gris"],
+    photochromicSpeed: "Ultra rápido (más veloz que Gen 8)",
+    photochromaticUvProtection: "100%",
+    photochromaticBlueLightFilter: {
+      clearState: "32%",
+      darkState: "85%",
+    },
+    photochromaticFeatures: [
+      "HD vision",
+      "Protección UVA/UVB total",
+      "8 colores exclusivos",
+    ],
+    photochromaticPolarized: false,
+  },
   TransitionsGenSColors: {
     photochromaticItemId: "F4",
     photochromaticName: "Transitions Gen S (todos los colores)",
@@ -153,12 +172,52 @@ export const PHOTOCHROMATIC_LENSES_CATALOG: PhotochromaticCatalog = {
     photochromaticPolarized: true,
   },
 
-  VitolenSunmatic: {
+  FotocromaticoCL1: {
     photochromaticItemId: "V1",
-    photochromaticName: "Vitolen Sunmatic",
-    photochromaticBrand: "Vitolen",
+    photochromaticName: "Fotosensible",
+    photochromaticBrand: "ClearLook",
     photochromaticGeneration: "Sunmatic",
     photochromaticColors: ["Gris", "Marrón"],
+    photochromicSpeed: "Rápido",
+    photochromaticUvProtection: "100%",
+    photochromaticBlueLightFilter: {
+      clearState: "25%",
+      darkState: "80%",
+    },
+    photochromaticFeatures: [
+      "Protección UVA/UVB total",
+      "Oscurecimiento automático con luz solar",
+      "Comodidad para uso diario",
+    ],
+
+    photochromaticPolarized: false,
+  },
+  FotocromaticoCL2: {
+    photochromaticItemId: "V1",
+    photochromaticName: "Fotosensible",
+    photochromaticBrand: "ClearLook",
+    photochromaticGeneration: "Sunmatic",
+    photochromaticColors: ["Azul", "Rosado"],
+    photochromicSpeed: "Rápido",
+    photochromaticUvProtection: "100%",
+    photochromaticBlueLightFilter: {
+      clearState: "25%",
+      darkState: "80%",
+    },
+    photochromaticFeatures: [
+      "Protección UVA/UVB total",
+      "Oscurecimiento automático con luz solar",
+      "Comodidad para uso diario",
+    ],
+
+    photochromaticPolarized: false,
+  },
+  FotocromaticoCL3: {
+    photochromaticItemId: "V1",
+    photochromaticName: "Fotosensible",
+    photochromaticBrand: "ClearLook",
+    photochromaticGeneration: "Sunmatic",
+    photochromaticColors: ["Gris"],
     photochromicSpeed: "Rápido",
     photochromaticUvProtection: "100%",
     photochromaticBlueLightFilter: {

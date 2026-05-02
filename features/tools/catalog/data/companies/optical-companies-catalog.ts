@@ -5,8 +5,8 @@ import {
   MONOFOCAL_CATALOG_OPTICA_LURO,
   BIFOCAL_CATALOG_OPTICA_LURO,
 } from "./optica-luro";
-import { MONOFOCAL_TECNI_OPTICA, BIFOCAL_TECNI_OPTICA } from "./tecni-optica";
-//=================TYPES=================/
+import { TECNI_MONOFOCAL_CATALOG, BIFOCAL_TECNI_OPTICA } from "./tecni-optica";
+
 
 export const CATALOG_OPTICAL_COMPANY: CatalogOpticalCompaniesInput = {
   opticaLuro: {
@@ -14,7 +14,7 @@ export const CATALOG_OPTICAL_COMPANY: CatalogOpticalCompaniesInput = {
     bifocal: BIFOCAL_CATALOG_OPTICA_LURO,
   },
   tecniOptica: {
-    monofocal: MONOFOCAL_TECNI_OPTICA,
+    monofocal: TECNI_MONOFOCAL_CATALOG,
     bifocal: BIFOCAL_TECNI_OPTICA,
   },
 };

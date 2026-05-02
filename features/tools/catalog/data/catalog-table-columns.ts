@@ -13,6 +13,7 @@ export const CATALOG_TABLE_COLUMNS: TableOptions[] = [
   { label: "nombre del cristal", value: "lensLine" },
   { label: "rango", value: "range" },
   { label: "dioptrias", value: "rangeDiopters" },
+  { label: "add", value: "add" },
   { label: "indice", value: "index" },
   { label: "diam", value: "diam" },
   { label: "tallado", value: "surfacing" },
