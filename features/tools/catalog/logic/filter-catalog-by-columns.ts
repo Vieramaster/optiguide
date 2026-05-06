@@ -1,23 +1,27 @@
-import type { LensObjectResolved } from "../types/optica-company";
-import type { TableOptions } from "../types/table-options";
+import type { TableOptions } from "../types/ui/table-options";
+import type { LensObjectResolved } from "../types/companies/companies";
 
 import { mapCatalogToRow } from "./catalog-row";
+
 /**
  * Filtra el catálogo según los filtros booleanos de columnas.
- * @param catalog Catálogo de lentes resuelto
- * @param columns Columnas filtrables
- * @param filters Estado de los filtros booleanos
  */
 export function filterCatalogByColumns(
   catalog: LensObjectResolved[],
   columns: TableOptions[],
-  filters: Record<string, boolean>,
+  filters: Record<string, boolean>
 ): LensObjectResolved[] {
+  if (!columns.length) return catalog;
+
   return catalog.filter((lensItem) => {
     const row = mapCatalogToRow(lensItem);
+
     return columns.every(({ value }) => {
-      if (!filters[value]) return true;
-      return row[value] === true;
+      const isActive = filters[value];
+
+      if (!isActive) return true;
+
+      return Boolean(row[value]);
     });
   });
 }

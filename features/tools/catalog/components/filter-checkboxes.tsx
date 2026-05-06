@@ -1,6 +1,6 @@
 import { CheckboxBasic } from "@/components/checkbox-basic";
 
-import type { TableOptions } from "../types/table-options";
+import type { TableOptions } from "../types/ui/table-options";
 
 /**
  * Componente UI puro para mostrar checkboxes de filtros de columnas.
@@ -17,16 +17,17 @@ export const FilterCheckboxes = ({
   filters,
   onChange,
 }: FilterCheckboxesProps) => (
-  <ul className="w-50 flex flex-wrap items-center justify-center gap-8 lg:gap-0 lg:w-[90%]">
+  <ul className="w-50 flex flex-wrap items-center justify-center gap-8 lg:gap-16 lg:w-[90%]">
     {columns.map(({ label, Ico, value }) => (
-      <CheckboxBasic
-        key={value}
-        label={label}
-        onChange={(checked) => onChange(value, checked)}
-        checked={!!filters[value]}
-      >
-        {Ico ? <Ico /> : <span>{label}</span>}
-      </CheckboxBasic>
+      <li key={value}>
+        <CheckboxBasic
+          label={label}
+          onChange={(checked) => onChange(value, checked)}
+          checked={!!filters[value]}
+        >
+          {Ico ? <Ico /> : <span>{label}</span>}
+        </CheckboxBasic>
+      </li>
     ))}
   </ul>
 );

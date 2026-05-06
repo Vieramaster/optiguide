@@ -1,6 +1,6 @@
 import { Check, Minus } from "lucide-react";
 
-import { CatalogRow } from "../types/table-options";
+import { CatalogRow } from "../types/ui/table-options";
 
 type Props = {
   value: CatalogRow[keyof CatalogRow];

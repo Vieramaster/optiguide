@@ -8,6 +8,7 @@ import {
   Table,
   TableBody,
   TableHeader,
+  Button,
 } from "@/components/ui";
 import { ErrorList, PrescriptionForm, SelectField } from "@/components/";
 import { useFormGraduation } from "@/shared/graduation-form/graduation-form-hook";
@@ -24,7 +25,12 @@ import {
   OPTICAL_COMPANY_OPTIONS,
   OPTICAL_LENS_OPTIONS,
 } from "./data/catalog-table-columns";
-import { useCatalogRows, useCatalogFilters, useChooseCatalog } from "./hooks";
+import {
+  useCatalogRows,
+  useCatalogFilters,
+  useChooseCatalog,
+  useVisibleLenses,
+} from "./hooks";
 import { resolveCatalog } from "./logic/resolve-catalog";
 
 export const Catalog = () => {
@@ -42,7 +48,7 @@ export const Catalog = () => {
   );
 
   // Filtros booleanos
-  const { filteredCatalog, filters, handleCheckboxChange, FILTERABLE_COLUMNS } =
+  const { filteredCatalog, filters, handleCheckboxChange, filtercolumns } =
     useCatalogFilters(resolvedCatalog);
 
   // Estado y handlers del formulario de graduación
@@ -60,15 +66,20 @@ export const Catalog = () => {
     [filteredCatalog, submittedGraduationValues],
   );
 
+  // Hook para paginado incremental en cliente.
+  const { visibleLenses, handleVisibleLenses, hasMore } =
+    useVisibleLenses(transposedCatalog);
   // Mapeo a filas de tabla
-  const catalogRows = useCatalogRows(transposedCatalog);
+  const catalogRows = useCatalogRows(visibleLenses);
 
   // Habilita el botón de transposición si hay valores válidos
   const isGraduationValid = hasGraduationValues(graduationValues);
 
   return (
     <section className="overflow-x-auto">
+
       <div className="flex flex-col items-center gap-8 p-10">
+        {/*Header */}
         <header className="flex flex-col gap-6 items-center py-4">
           <Title>Catalogo para opticas</Title>
           <SubTitle>Elije la óptica y el cristal que quieras buscar</SubTitle>
@@ -86,7 +97,7 @@ export const Catalog = () => {
         </div>
         {/* Filtros booleanos */}
         <FilterCheckboxes
-          columns={FILTERABLE_COLUMNS}
+          columns={filtercolumns}
           filters={filters}
           onChange={handleCheckboxChange}
         />
@@ -115,6 +126,14 @@ export const Catalog = () => {
           ))}
         </TableBody>
       </Table>
+
+      {hasMore && (
+        <div className="w-full flex pb-10">
+          <Button onClick={handleVisibleLenses} className="mx-auto">
+            Cargar más
+          </Button>
+        </div>
+      )}
     </section>
   );
 };

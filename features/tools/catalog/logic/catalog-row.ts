@@ -1,52 +1,92 @@
-import { LensTreatment, Features } from "../types/tecnologies/lens-treatments";
-import type { LensObjectResolved } from "../types/optica-company";
-import type { CatalogRow } from "../types/table-options";
+import { LensTreatment, Features } from "../types/domain/tecnologies/lens-treatments";
+import type { LensObjectResolved } from "../types/companies/companies";
+import type { CatalogRow } from "../types/ui/table-options";
 
-const findTreatment = (
-  treatment: LensTreatment[] | undefined,
-  feature: Features,
-) =>
-  treatment?.some((item) => item.treatmentFeatures.includes(feature)) ?? false;
 
 export const mapCatalogToRow = (catalog: LensObjectResolved): CatalogRow => {
   const { lens, treatment, photochromatic } = catalog;
 
-  const lensLine = [
-    lens.category,
+  if (!lens || typeof lens === "string") {
+    throw new Error("Lens dont resolve");
+  }
+
+  const {
+    category,
+    rangeDiopters,
+    maxDiopters,
+    add,
+    range,
+    surfacing,
+    lensForm,
+    diam,
+    lensMaterial,
+  } = lens;
+
+  const lensLine = buildLensLine(category, treatment, photochromatic);
+
+  const rangeDioptersText = buildRange(rangeDiopters, maxDiopters);
+
+  const addText = add ? `${add.min} hasta ${add.max}` : "—";
+
+  return {
+    lensLine,
+    range,
+    rangeDiopters: rangeDioptersText,
+    add: addText,
+    index: lensMaterial.index,
+    diam: diam.join(", "),
+    surfacing,
+    lensForm,
+    antiReflex: hasFeature(treatment, "antiReflex"),
+    blueControl: hasFeature(treatment, "blueControl"),
+    oleophobicHydrophobic: hasFeature(treatment, "oleophobicHydrophobic"),
+    scratchResistant: hasFeature(treatment, "scratchResistant"),
+    antiStatic: hasFeature(treatment, "antiStatic"),
+    photochromatic: Boolean(photochromatic),
+    polarized:
+      photochromatic?.photochromaticPolarized ||
+      hasFeature(treatment, "polarized"),
+  };
+};
+
+//HELPERS
+const hasFeature = (
+  treatment: LensTreatment[] | undefined,
+  feature: Features
+) =>
+  treatment?.some((item) => item.treatmentFeatures.includes(feature)) ?? false;
+
+
+const buildLensLine = (
+  category: string,
+  treatment: LensTreatment[] | undefined,
+  photochromatic: LensObjectResolved["photochromatic"]
+) =>
+  [
+    category,
     ...(treatment?.map((t) => t.treatmentName) ?? []),
     photochromatic?.photochromaticName,
   ]
     .filter(Boolean)
     .join(" ");
 
-  const rangeDiopters =
-    lens.rangeDiopters
-      ?.map(
-        (r) => `Esf ${r.minEsf} a ${r.maxEsf} / Cil ${r.minCil} a ${r.maxCil}`,
+const buildRange = (
+  rangeDiopters: LensObjectResolved["lens"]["rangeDiopters"],
+  maxDiopters: LensObjectResolved["lens"]["maxDiopters"]
+) => {
+  if (rangeDiopters?.length) {
+    return rangeDiopters
+      .map(
+        (r) => `Esf ${r.minEsf} a ${r.maxEsf} / Cil ${r.minCil} a ${r.maxCil}`
       )
-      .join(", ") ??
-    lens.maxDiopters
-      ?.map((r) => `${r.min} hasta ${r.max} dioptrias`)
-      .join(", ") ??
-    "—";
-    
-  return {
-    lensLine,
-    range: lens.range,
-    rangeDiopters,
-    add: lens.add ? lens.add : "-",
-    index: lens.lensMaterial.index,
-    diam: lens.diam.join(", "),
-    surfacing: lens.surfacing,
-    lensForm: lens.lensForm,
-    antiReflex: findTreatment(treatment, "antiReflex"),
-    blueControl: findTreatment(treatment, "blueControl"),
-    oleophobicHydrophobic: findTreatment(treatment, "oleophobicHydrophobic"),
-    scratchResistant: findTreatment(treatment, "scratchResistant"),
-    antiStatic: findTreatment(treatment, "antiStatic"),
-    photochromatic: !!photochromatic,
-    polarized:
-      photochromatic?.photochromaticPolarized ||
-      findTreatment(treatment, "polarized"),
-  };
+      .join(", ");
+  }
+
+  if (maxDiopters?.length) {
+    return maxDiopters
+      .map((r) => `${r.min} hasta ${r.max} dioptrias`)
+      .join(", ");
+  }
+
+  return "—";
 };

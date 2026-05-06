@@ -1,5 +1,5 @@
 
-import type { RowOptions } from "../../catalog/types/table-options";
+import type { RowOptions } from "../../catalog/types/ui/table-options";
 
 export const CRYSTAL_INDEX_OPTIONS: RowOptions[] = [
   { value: "1.50", label: "1.50 - CR-39" },

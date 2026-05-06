@@ -7,7 +7,7 @@ import {
   Sun,
 } from "lucide-react";
 
-import type { TableOptions, RowOptions } from "../types/table-options";
+import type { TableOptions, RowOptions } from "../types/ui/table-options";
 
 export const CATALOG_TABLE_COLUMNS: TableOptions[] = [
   { label: "nombre del cristal", value: "lensLine" },
@@ -32,11 +32,11 @@ export const CATALOG_TABLE_COLUMNS: TableOptions[] = [
 ] as const;
 
 export const OPTICAL_COMPANY_OPTIONS: RowOptions[] = [
-  { label: "Tecni-Optica", value: "tecniOptica" },
-  { label: "Optica Luro", value: "opticaLuro" },
+  { label: "Tecni-Optica", value: "tecniOptica" }
 ];
 
 export const OPTICAL_LENS_OPTIONS: RowOptions[] = [
   { label: "monofocal", value: "monofocal" },
   { label: "bifocal", value: "bifocal" },
+  { label: "progresivos", value: "progressive" },
 ];

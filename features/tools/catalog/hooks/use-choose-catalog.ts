@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 
-import { OpticalCompanyKey } from "../types/optica-company";
-import type { SelectState } from "../types/optica-company";
-import type { Lens } from "../types/lens/lens-base";
+import { OpticalCompanyKey } from "../types/companies/companies";
+import type { SelectState } from "../types/companies/companies";
+import type { Lens } from "../types/domain/lens/lens-base";
 
 /**
  * Hook para manejar la selección de óptica y tipo de lente.
