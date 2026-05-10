@@ -1,6 +1,5 @@
-export * from "./calculate-thickness"
-export * from "./lens-path-emulator"
-export * from "./calculate-percentage "
-export * from "./lens-path-emulator"
-export * from "./validate-form-values"
-export * from "./graduation-keys-array"
+export * from "./calculate-thickness";
+export * from "./calculate-percentage";
+export * from "./lens-path-emulator";
+export * from "./validate-form-values";
+export * from "./graduation-keys-array";

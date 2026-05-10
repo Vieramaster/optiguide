@@ -77,7 +77,6 @@ export const Catalog = () => {
 
   return (
     <section className="overflow-x-auto">
-
       <div className="flex flex-col items-center gap-8 p-10">
         {/*Header */}
         <header className="flex flex-col gap-6 items-center py-4">
@@ -108,7 +107,7 @@ export const Catalog = () => {
             values={graduationValues}
             onChange={handleGraduationChange}
             onSubmit={handleGraduationSubmit}
-            isDisabled={isGraduationValid}
+            isEnabled={isGraduationValid}
           />
           {Object.keys(graduationErrors).length > 0 && (
             <ErrorList error={graduationErrors} />

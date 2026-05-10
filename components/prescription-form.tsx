@@ -7,7 +7,7 @@ interface PrescriptionFormProps<T extends Record<string, string>> {
   values: T;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onSubmit: () => void;
-  isDisabled: boolean;
+  isEnabled: boolean;
 }
 
 export const PrescriptionForm = <T extends Record<string, string>>({
@@ -15,7 +15,7 @@ export const PrescriptionForm = <T extends Record<string, string>>({
   values,
   onChange,
   onSubmit,
-  isDisabled,
+  isEnabled,
 }: PrescriptionFormProps<T>) => {
   return (
     <form
@@ -35,7 +35,7 @@ export const PrescriptionForm = <T extends Record<string, string>>({
         />
       ))}
 
-      <Button type="submit" className=" ml-6 " disabled={!isDisabled}>
+      <Button type="submit" className=" ml-6 " disabled={!isEnabled}>
         Calcular
       </Button>
     </form>

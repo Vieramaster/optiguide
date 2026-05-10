@@ -1,43 +1,27 @@
-
-
 import { SelectField } from "@/components/select-field";
 
-import { calculatePercentage } from "../utils";
-import { useLensSVG, useThicknessSync } from "../hooks";
-import type {
-  SideThickness,
-  GraduationObject,
-  LensSide,
-} from "../types/simulator";
 import { CRYSTAL_INDEX_OPTIONS } from "../data/crystal-index-options";
 
 import { LensSVG } from "./svg-lens";
 import { ThicknessMessage } from "./thickness-message";
 
 interface LensSimulatorProps {
-  values: GraduationObject;
   isShow: boolean;
-  side: LensSide;
-  setThickness: React.Dispatch<React.SetStateAction<SideThickness>>;
-  thickness: SideThickness;
+  currentThickness: number;
+  isPositive: boolean;
+  isMax: boolean;
+  percentageDiff: string;
+  onIndexChange: (value: string) => void;
 }
 
 export const LensSimulator = ({
-  values,
   isShow,
-  side,
-  setThickness,
-  thickness,
+  currentThickness,
+  isPositive,
+  isMax,
+  percentageDiff,
+  onIndexChange,
 }: LensSimulatorProps) => {
-  // hook personalizado para manejar el SVG de la lente
-  const { handleValueSelect, totalThickness, isPositive } = useLensSVG(values);
-
-  // sincroniza el grosor con el hook
-  useThicknessSync(side, totalThickness, setThickness);
-
-  // cálculo de porcentaje y comparación de grosores
-  const { isMax, percentageDiff } = calculatePercentage({ side, thickness });
-
   return (
     <div
       className={`
@@ -48,7 +32,7 @@ export const LensSimulator = ({
     >
       {/* Mensaje dinámico */}
       <ThicknessMessage
-        thickness={thickness[side]}
+        thickness={currentThickness}
         isMax={isMax}
         percentage={percentageDiff}
       />
@@ -57,10 +41,10 @@ export const LensSimulator = ({
 
       <SelectField
         options={CRYSTAL_INDEX_OPTIONS}
-        onValueSelect={handleValueSelect}
+        onValueSelect={onIndexChange}
       />
       {/**SVG maleable */}
-      <LensSVG isPositive={isPositive} size={totalThickness} />
+      <LensSVG isPositive={isPositive} size={currentThickness} />
     </div>
   );
 };

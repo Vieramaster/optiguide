@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import { calculateThickness } from "../utils";
-
 import { GraduationObject } from "../types/simulator";
 
 const toNumber = (v: string, fallback: number) => {

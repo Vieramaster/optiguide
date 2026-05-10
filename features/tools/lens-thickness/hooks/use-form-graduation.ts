@@ -5,10 +5,10 @@ import type {
   GraduationFields,
   GraduationError,
 } from "@/shared/types/graduation";
-import { GraduationBase } from "@/shared/graduation-form/graduation-type";
+
 
 import { GRADUATION_RANGES } from "../../../../shared/graduation-form/graduation-ranges";
-export const useFormGraduation = (prescriptionKeys: (keyof GraduationBase)[]) => {
+export const useFormGraduation = () => {
   const [values, setValues] = useState<GraduationFields>({
     ESF: "",
     CIL: "",

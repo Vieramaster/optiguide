@@ -2,36 +2,39 @@
 
 import { Button } from "@/components/ui/";
 import { PrescriptionForm, ErrorList } from "@/components/";
-import { graduationComplete } from "@/shared/graduation-form/graduation-data";
-import { useFormGraduation } from "@/shared/graduation-form/graduation-form-hook";
 
 import { HeaderSimulator, LensSimulator } from "./components";
-import { graduationKeysArray, validateFormValues } from "./utils";
-import { LensTicknessTitle } from "./data/title";
-import { useThicknessSimulator } from "./hooks";
+import { graduationKeysArray } from "./utils";
+import { LensThicknessTitle } from "./data/title";
+import { useLensThicknessSimulator } from "./hooks/use-lens-thickness-simulator";
 import type { LensSide } from "./types/simulator";
 
 const SIDES: LensSide[] = ["A", "B"];
 
 export const LensThicknessSimulator = () => {
-  const { values, errors, submittedValues, handleChange, handleSubmit } =
-    useFormGraduation(["ESF", "CIL", "EJE", "DIAM"]);
-
-  const { activeSide, setActiveSide, thickness, setThickness } =
-    useThicknessSimulator();
-
-  const isButtonDisabled = validateFormValues(values);
+  const {
+    values,
+    errors,
+    handleChange,
+    handleSubmit,
+    activeSide,
+    setActiveSide,
+    sideResults,
+    isPositive,
+    handleIndexChange,
+    isSubmitEnabled,
+  } = useLensThicknessSimulator();
 
   return (
     <section className="w-full h-full  p-10 flex flex-col gap-8 text-center">
-      <HeaderSimulator {...LensTicknessTitle} />
+      <HeaderSimulator {...LensThicknessTitle} />
 
       <PrescriptionForm
         keys={graduationKeysArray}
         values={values}
         onChange={handleChange}
         onSubmit={handleSubmit}
-        isDisabled={isButtonDisabled}
+        isEnabled={isSubmitEnabled}
       />
       {Object.keys(errors).length > 0 && <ErrorList error={errors} />}
       <div className="flex justify-center  gap-6 lg:hidden">
@@ -53,11 +56,12 @@ export const LensThicknessSimulator = () => {
         {SIDES.map((side) => (
           <LensSimulator
             key={side}
-            values={submittedValues ?? graduationComplete}
             isShow={activeSide === side}
-            thickness={thickness}
-            setThickness={setThickness}
-            side={side}
+            currentThickness={sideResults[side].thickness}
+            isPositive={isPositive}
+            isMax={sideResults[side].isMax}
+            percentageDiff={sideResults[side].percentageDiff}
+            onIndexChange={handleIndexChange(side)}
           />
         ))}
       </div>
