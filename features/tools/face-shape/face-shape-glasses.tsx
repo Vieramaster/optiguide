@@ -2,7 +2,6 @@ import { Title } from "@/components/ui";
 
 import { FaceShapeCard } from "./components/face-shape-card";
 import { FaceShapeSection } from "./components/face-shape-section";
-
 import { faceShapes } from "./data/face-shapes";
 
 export const FaceShapeGlasses = () => (

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/";
 import { PrescriptionForm, ErrorList } from "@/components/";
 
 import { HeaderSimulator, LensSimulator } from "./components";
-import { graduationKeysArray } from "./utils";
+import { graduationKeysArray } from "./logic";
 import { LensThicknessTitle } from "./data/title";
 import { useLensThicknessSimulator } from "./hooks/use-lens-thickness-simulator";
 import type { LensSide } from "./types/simulator";

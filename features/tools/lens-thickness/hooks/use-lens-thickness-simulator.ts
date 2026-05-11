@@ -7,7 +7,7 @@ import {
   calculateThickness,
   calculatePercentage,
   validateFormValues,
-} from "../utils";
+} from "../logic";
 import type { LensSide } from "../types/simulator";
 
 const DEFAULT_REFRACTIVE_INDEX = 1.5;
@@ -36,16 +36,16 @@ export const useLensThicknessSimulator = () => {
     }));
   };
 
-  const currentValues = submittedValues ?? graduationComplete;
+  const { ESF, CIL, DIAM } = submittedValues ?? graduationComplete;
 
   const calculateLensThickness = (side: LensSide) => {
     const refractiveIndex =
       Number(lensIndexes[side]) || DEFAULT_REFRACTIVE_INDEX;
 
     return calculateThickness({
-      sphere: Number(currentValues.ESF) || 0,
-      cylinder: Number(currentValues.CIL) || 0,
-      diameter: Number(currentValues.DIAM) || 20,
+      sphere: Number(ESF) || 0,
+      cylinder: Number(CIL) || 0,
+      diameter: Number(DIAM) || 20,
       refractiveIndex,
     });
   };
@@ -66,7 +66,7 @@ export const useLensThicknessSimulator = () => {
     },
   };
 
-  const isPositive = Number(currentValues.ESF) >= 0;
+  const isPositive = Number(ESF) >= 0;
   const isSubmitEnabled = validateFormValues(values);
 
   return {

@@ -1,7 +1,6 @@
 import { useMemo } from "react";
 
-import { lensPathEmulator } from "../utils";
-
+import { lensPathEmulator } from "../logic";
 
 type LensSVGProps = {
   size: number;
@@ -9,14 +8,13 @@ type LensSVGProps = {
 };
 
 export const LensSVG = ({ size, isPositive }: LensSVGProps) => {
-
- const path = useMemo(() => lensPathEmulator(size, isPositive), [size, isPositive]);
+  const path = useMemo(
+    () => lensPathEmulator(size, isPositive),
+    [size, isPositive],
+  );
 
   return (
-    <svg
-      viewBox="-100 -500 200 1000"
-      className="h-80 w-80  mx-auto"
-    >
+    <svg viewBox="-100 -500 200 1000" className="h-80 w-80  mx-auto">
       <path d={path} fill="currentColor" />
     </svg>
   );
