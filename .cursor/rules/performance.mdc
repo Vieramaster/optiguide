@@ -1,0 +1,22 @@
+---
+description: Frontend performance optimization rules
+globs:
+  - "app/**/*"
+  - "features/**/*"
+alwaysApply: false
+---
+
+# performance.mdc
+
+- Avoid unnecessary client components
+- Avoid unnecessary re-renders
+- Lazy load heavy interactive components
+- Prefer streaming and suspense boundaries
+- Keep bundle size minimal
+- Avoid shipping unused JavaScript
+- Prefer server-side data fetching
+- Optimize images and fonts
+- Avoid large client-side state trees
+- Use caching strategies when appropriate
+- Measure performance before optimizing
+- Avoid premature optimization

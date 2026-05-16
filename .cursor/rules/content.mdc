@@ -1,0 +1,16 @@
+---
+description: MDX and article content rules
+globs:
+  - "content/**/*"
+  - "**/*.mdx"
+alwaysApply: false
+---
+
+# content.mdc
+
+- Use MDX for article content
+- Keep content separated by category
+- Prefer reusable article components
+- Avoid duplicated markdown structures
+- Use semantic heading hierarchy
+- Optimize code blocks for readability

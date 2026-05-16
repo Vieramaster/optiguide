@@ -1,4 +1,4 @@
-import { Title } from "@/components/ui";
+import { Title } from "@/shared/components/ui";
 
 import { FaceShapeCard } from "./components/face-shape-card";
 import { FaceShapeSection } from "./components/face-shape-section";

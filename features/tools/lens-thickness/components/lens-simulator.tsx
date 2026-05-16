@@ -1,4 +1,4 @@
-import { SelectField } from "@/components/select-field";
+import { SelectField } from "@/shared/components/select-field";
 
 import { CRYSTAL_INDEX_OPTIONS } from "../data/crystal-index-options";
 

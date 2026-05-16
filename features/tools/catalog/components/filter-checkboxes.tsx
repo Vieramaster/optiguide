@@ -1,4 +1,4 @@
-import { CheckboxBasic } from "@/components/checkbox-basic";
+import { CheckboxBasic } from "@/shared/components/checkbox-basic";
 
 import type { TableOptions } from "../types/ui/table-options";
 

@@ -1,4 +1,4 @@
-import { Skeleton } from "@/components/ui"
+import { Skeleton } from "@/shared/components/ui"
 
 import { FaceShapeSection } from "./face-shape-section";
 

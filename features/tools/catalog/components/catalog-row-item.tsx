@@ -1,4 +1,4 @@
-import { TableRow, TableCell } from "@/components/ui";
+import { TableRow, TableCell } from "@/shared/components/ui";
 
 import { FormatCatalogCellValue } from "../components/format-catalog-cell-value";
 import { CATALOG_TABLE_COLUMNS } from "../data/catalog-table-columns";

@@ -9,8 +9,8 @@ import {
   TableBody,
   TableHeader,
   Button,
-} from "@/components/ui";
-import { ErrorList, PrescriptionForm, SelectField } from "@/components/";
+} from "@/shared/components/ui";
+import { ErrorList, PrescriptionForm, SelectField } from "@/shared/components";
 import { useFormGraduation } from "@/shared/graduation-form/graduation-form-hook";
 import { GraduationBaseKeys } from "@/shared/graduation-form/graduation-type";
 

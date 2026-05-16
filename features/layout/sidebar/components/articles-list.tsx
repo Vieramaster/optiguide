@@ -7,7 +7,7 @@ import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger
-} from "@/components/ui";
+} from "@/shared/components/ui";
 
 
 import type { articleItem } from "../types/sidebar";

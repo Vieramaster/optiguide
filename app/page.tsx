@@ -1,10 +1,10 @@
-import { PageTitle } from "@/components/page-title";
+import { PageTitle } from "@/shared/components/page-title";
 
 const MainPage = () => {
 
   return (
     <section className="h-full w-full p-5  flex flex-col gap-8 justify-center items-center">
-        <PageTitle textSize="text-4xl"/>
+      <PageTitle textSize="text-4xl" />
       <article className="text-center w-2/3 flex flex-col gap-8 items-center ">
         <h2 className="text-2xl">
           Guía práctica para quienes empiezan a trabajar en óptica.

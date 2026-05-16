@@ -1,7 +1,7 @@
 "use client";
 
 
-import { PageTitle } from "@/components/page-title";
+import { PageTitle } from "@/shared/components/page-title";
 
 import {
   ProjectsList, ArticlesList, Sidebar, SidebarContent,

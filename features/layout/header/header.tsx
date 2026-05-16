@@ -10,7 +10,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
   Separator,
-} from "@/components/ui/";
+} from "@/shared/components/ui";
 
 import { SidebarTrigger } from "../sidebar/components";
 

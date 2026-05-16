@@ -1,0 +1,14 @@
+---
+description: Animation and motion rules
+globs:
+  - "**/*.tsx"
+alwaysApply: false
+---
+
+# animations.mdc
+
+- Prefer subtle animations
+- Avoid blocking UI interactions with animations
+- Use transform and opacity for performant animations
+- Respect reduced motion preferences
+- Keep animation durations consistent

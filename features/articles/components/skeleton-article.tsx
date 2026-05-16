@@ -1,4 +1,4 @@
-import { Skeleton } from "@/components/ui";
+import { Skeleton } from "@/shared/components/ui";
 
 import { SKELETON_CONFIG } from "../data/skeleton-config";
 

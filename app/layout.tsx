@@ -9,8 +9,12 @@ import {
 } from "@/features/layout/sidebar/components/";
 //PROVIDER
 import { ThemeProvider } from "@/shared/providers/theme-provider";
-//FONTS
-import { nunitoSans, taviraj, poppins } from "@/shared/fonts/config";
+import { Montserrat, Inter } from "next/font/google";
+import { cn } from "@/shared/lib/utils";
+
+const interHeading = Inter({subsets:['latin'],variable:'--font-heading'});
+
+const montserrat = Montserrat({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
   title: {
@@ -76,10 +80,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" suppressHydrationWarning>
-      <body
-        className={`${poppins.variable} ${taviraj.variable} ${nunitoSans.variable}`}
-      >
+    <html lang="es" suppressHydrationWarning className={cn("font-sans", montserrat.variable, interHeading.variable)}>
+      <body>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

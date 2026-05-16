@@ -1,0 +1,25 @@
+---
+description: Next.js App Router and server-first architecture rules
+globs:
+  - "app/**/*"
+  - "features/**/*"
+  - "shared/**/*"
+alwaysApply: true
+---
+
+# nextjs.mdc
+
+- Use Next.js App Router
+- Prefer React Server Components by default
+- Minimize usage of "use client"
+- Prefer Server Actions for mutations when appropriate
+- Avoid unnecessary API routes
+- Prefer async server components for data fetching
+- Use Suspense and streaming when beneficial
+- Use dynamic imports for heavy client-side components
+- Use the Next.js Image component for optimized images
+- Keep sensitive logic on the server
+- Prefer colocated route structure when it improves maintainability
+- Avoid unnecessary client-side fetching
+- Prefer URL search params over duplicated client state when possible
+- Use loading.tsx and error.tsx boundaries when appropriate

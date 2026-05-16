@@ -1,4 +1,4 @@
-import { MDImage } from "@/components/ui";
+import { MDImage } from "@/shared/components/ui";
 
 export const ImageArticle = (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
     <MDImage

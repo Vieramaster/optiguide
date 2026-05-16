@@ -1,0 +1,18 @@
+---
+description: Accessibility and semantic HTML rules
+globs:
+  - "**/*.tsx"
+alwaysApply: false
+---
+
+# accessibility.mdc
+
+- Prefer semantic HTML elements
+- Ensure keyboard accessibility
+- Use proper aria attributes only when necessary
+- Maintain sufficient color contrast
+- Ensure interactive elements are reachable by keyboard
+- Provide accessible labels for form controls
+- Avoid accessibility anti-patterns---
+alwaysApply: true
+---

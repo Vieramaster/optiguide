@@ -1,4 +1,4 @@
-import { Title } from "@/components/ui";
+import { Title } from "@/shared/components/ui";
 interface HeaderSimulatorProps {
     title: string;
     text: string;

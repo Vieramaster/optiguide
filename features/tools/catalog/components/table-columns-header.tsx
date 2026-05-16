@@ -1,4 +1,4 @@
-import { TableRow, TableHead } from "@/components/ui";
+import { TableRow, TableHead } from "@/shared/components/ui";
 
 import { CATALOG_TABLE_COLUMNS } from "../data/catalog-table-columns";
 

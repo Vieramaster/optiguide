@@ -1,0 +1,20 @@
+---
+description: Data fetching and server communication rules
+globs:
+  - "app/**/*"
+  - "features/**/*"
+alwaysApply: false
+---
+
+# data-fetching.mdc
+
+- Prefer server-side data fetching
+- Keep fetching logic close to the server
+- Avoid duplicated fetch requests
+- Use caching intentionally
+- Prefer parallel fetching when possible
+- Avoid waterfall requests
+- Handle loading and error states explicitly
+- Keep external API access isolated---
+alwaysApply: true
+---

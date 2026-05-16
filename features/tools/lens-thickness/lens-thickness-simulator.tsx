@@ -1,7 +1,7 @@
 "use client";
 
-import { Button } from "@/components/ui/";
-import { PrescriptionForm, ErrorList } from "@/components/";
+import { Button } from "@/shared/components/ui";
+import { PrescriptionForm, ErrorList } from "@/shared/components";
 
 import { HeaderSimulator, LensSimulator } from "./components";
 import { graduationKeysArray } from "./logic";
