@@ -4,8 +4,8 @@ import { useState } from "react";
 import { prescriptionValid } from "@/shared/utils/validation/prescription-valid";
 import { transposePrescription } from "@/shared/utils/transposed-prescription";
 import {
-  IS_VALID_DIOPTERS,
-  IS_VALID_TRANSPOSITION,
+  INVALID_DIOPTERS,
+  INVALID_TRANSPOSITION,
 } from "@/shared/lib/prescription/messages";
 
 import { transpositionFilter } from "../logic/transposition-filter";
@@ -40,7 +40,7 @@ export const useFormFilter = (data: LensObjectResolved[]) => {
     const isCilValid = prescriptionValid(CIL);
 
     if (!isEsfValid || !isCilValid) {
-      errors.push(IS_VALID_DIOPTERS);
+      errors.push(INVALID_DIOPTERS);
     }
 
     const transposedPrescription = transposePrescription(ESF, CIL);
@@ -50,7 +50,7 @@ export const useFormFilter = (data: LensObjectResolved[]) => {
     );
 
     if (!isTranspositionValid) {
-      errors.push(IS_VALID_TRANSPOSITION);
+      errors.push(INVALID_TRANSPOSITION);
     }
 
     if (errors.length > 0) {

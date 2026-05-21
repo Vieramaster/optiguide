@@ -1,10 +1,9 @@
 import { useMemo, useState, useCallback } from "react";
 
-import type { CatalogRowResult } from "../types/companies/companies";
-
+import type { CatalogRow } from "../types/ui/table-options";
 const STEP = 20;
 
-export const usePagination = (catalog:CatalogRowResult) => {
+export const usePagination = (catalog:CatalogRow[]) => {
   const [visibleCount, setVisibleCount] = useState<number>(STEP);
 
   const visibleItems = useMemo(() => {

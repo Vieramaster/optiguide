@@ -25,6 +25,8 @@ import { PRESCRIPTION_KEYS } from "./data/prescription-keys";
 export const Catalog = () => {
   const { selectFilter, checkboxFilter, formFilter, pagination } = useCatalog();
 
+  console.log(pagination.visibleItems)
+
   return (
     <section className="overflow-x-auto">
       <div className="flex flex-col items-center gap-8 p-10">
@@ -63,8 +65,8 @@ export const Catalog = () => {
             <TableColumnsHeader />
           </TableHeader>
           <TableBody>
-            {pagination.visibleItems.map(({ key, row }) => (
-              <CatalogRowItem key={key} row={row} />
+            {pagination.visibleItems.map((item, index) => (
+              <CatalogRowItem key={index} row={item} />
             ))}
           </TableBody>
         </Table>
