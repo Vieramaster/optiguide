@@ -8,7 +8,7 @@ import {
   TableHeader,
   Button,
 } from "@/shared/components/ui";
-import { ErrorList, PrescriptionForm, SelectField } from "@/shared/components";
+import { PrescriptionForm, SelectField } from "@/shared/components";
 
 import {
   TableColumnsHeader,
@@ -19,25 +19,11 @@ import {
   OPTICAL_COMPANY_OPTIONS,
   OPTICAL_LENS_OPTIONS,
 } from "./data/catalog-table-columns";
-import { useCatalogOrchestrator } from "./hooks/use-catalog-orchestrator";
-
+import { CATALOG_FILTER_COLUMNS } from "./data/catalog-table-columns";
+import { useCatalog } from "./hooks/use-catalog";
+import { PRESCRIPTION_KEYS } from "./data/prescription-keys";
 export const Catalog = () => {
-  const {
-    handleChangeCompany,
-    handleChangeLens,
-    filtercolumns,
-    filters,
-    handleCheckboxChange,
-    PRESCRIPTION_KEYS,
-    graduationValues,
-    graduationErrors,
-    handleGraduationChange,
-    handleGraduationSubmit,
-    handleVisibleLenses,
-    isGraduationValid,
-    catalogRows,
-    hasMore,
-  } = useCatalogOrchestrator();
+  const { selectFilter, checkboxFilter, formFilter, pagination } = useCatalog();
 
   return (
     <section className="overflow-x-auto">
@@ -51,52 +37,46 @@ export const Catalog = () => {
         <div className="flex gap-8">
           <SelectField
             options={OPTICAL_COMPANY_OPTIONS}
-            onValueSelect={handleChangeCompany}
+            onValueSelect={selectFilter.handleSelectCompany}
           />
           <SelectField
             options={OPTICAL_LENS_OPTIONS}
-            onValueSelect={handleChangeLens}
+            onValueSelect={selectFilter.handleSelectLens}
           />
         </div>
-        {/* Filtros booleanos */}
         <FilterCheckboxes
-          columns={filtercolumns}
-          filters={filters}
-          onChange={handleCheckboxChange}
+          columns={CATALOG_FILTER_COLUMNS}
+          filters={checkboxFilter.checkboxFilter}
+          onChange={checkboxFilter.handleCheckboxChange}
         />
-        {/* Filtros por graduación */}
         <div>
           <PrescriptionForm
-            keys={PRESCRIPTION_KEYS}
-            values={graduationValues}
-            onChange={handleGraduationChange}
-            onSubmit={handleGraduationSubmit}
-            isEnabled={isGraduationValid}
+            prescriptionKeys={PRESCRIPTION_KEYS}
+            onSubmit={formFilter.handleFormSubmit}
+            errorList={formFilter.formErrors}
           />
-          {Object.keys(graduationErrors).length > 0 && (
-            <ErrorList error={graduationErrors} />
-          )}
         </div>
       </div>
+      <div>
+        <Table className="min-w-full">
+          <TableHeader>
+            <TableColumnsHeader />
+          </TableHeader>
+          <TableBody>
+            {pagination.visibleItems.map(({ key, row }) => (
+              <CatalogRowItem key={key} row={row} />
+            ))}
+          </TableBody>
+        </Table>
 
-      <Table className="min-w-full">
-        <TableHeader>
-          <TableColumnsHeader />
-        </TableHeader>
-        <TableBody>
-          {catalogRows.map(({ key, row }) => (
-            <CatalogRowItem key={key} row={row} />
-          ))}
-        </TableBody>
-      </Table>
-
-      {hasMore && (
-        <div className="w-full flex pb-10">
-          <Button onClick={handleVisibleLenses} className="mx-auto">
-            Cargar más
-          </Button>
-        </div>
-      )}
+        {pagination.hasMore && (
+          <div className="w-full flex pb-10">
+            <Button onClick={pagination.next} className="mx-auto">
+              Cargar más
+            </Button>
+          </div>
+        )}
+      </div>
     </section>
   );
 };

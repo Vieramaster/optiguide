@@ -5,19 +5,13 @@ import {
   Shield,
   ZapOff,
   Sun,
+  RectangleGoggles,
 } from "lucide-react";
 
 import type { TableOptions, RowOptions } from "../types/ui/table-options";
 
-export const CATALOG_TABLE_COLUMNS: TableOptions[] = [
-  { label: "nombre del cristal", value: "lensLine" },
-  { label: "rango", value: "range" },
-  { label: "dioptrias", value: "rangeDiopters" },
-  { label: "add", value: "add" },
-  { label: "indice", value: "index" },
-  { label: "diam", value: "diam" },
-  { label: "tallado", value: "surfacing" },
-  { label: "forma", value: "lensForm" },
+export const CATALOG_FILTER_COLUMNS = [
+  { label: "polarizado", value: "polarized", Ico: RectangleGoggles },
   { label: "antireflejo", Ico: Sparkles, value: "antiReflex" },
   { label: "filtro de pantalla", Ico: MonitorSmartphone, value: "blueControl" },
   {
@@ -28,15 +22,26 @@ export const CATALOG_TABLE_COLUMNS: TableOptions[] = [
   { label: "proteccion contra rayas", Ico: Shield, value: "scratchResistant" },
   { label: "anti estatica", Ico: ZapOff, value: "antiStatic" },
   { label: "fotocromatico", Ico: Sun, value: "photochromatic" },
-  { label: "polarizado", value: "polarized" },
-] as const;
+] satisfies readonly TableOptions[];
 
-export const OPTICAL_COMPANY_OPTIONS: RowOptions[] = [
-  { label: "Tecni-Optica", value: "tecniOptica" }
-];
+export const CATALOG_TABLE_COLUMNS: TableOptions[] = [
+  { label: "nombre del cristal", value: "lensLine" },
+  { label: "rango", value: "range" },
+  { label: "dioptrias", value: "rangeDiopters" },
+  { label: "add", value: "add" },
+  { label: "indice", value: "index" },
+  { label: "diam", value: "diam" },
+  { label: "tallado", value: "surfacing" },
+  { label: "forma", value: "lensForm" },
+  ...CATALOG_FILTER_COLUMNS,
+] satisfies readonly TableOptions[];
 
-export const OPTICAL_LENS_OPTIONS: RowOptions[] = [
+export const OPTICAL_COMPANY_OPTIONS = [
+  { label: "Tecni-Optica", value: "tecniOptica" },
+] satisfies readonly RowOptions[];
+
+export const OPTICAL_LENS_OPTIONS = [
   { label: "monofocal", value: "monofocal" },
   { label: "bifocal", value: "bifocal" },
   { label: "progresivos", value: "progressive" },
-];
+] satisfies readonly RowOptions[];

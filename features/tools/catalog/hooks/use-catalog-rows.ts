@@ -2,7 +2,7 @@ import { useMemo } from "react";
 
 import { mapCatalogToRow } from "../logic/catalog-row";
 import type { LensObjectResolved } from "../types/companies/companies";
-import type { CatalogRow } from "../types/ui/table-options";
+import type { CatalogRowResult } from "../types/companies/companies";
 
 /**
  * Hook que mapea un catálogo de lentes resueltos a filas de tabla listas para renderizar.
@@ -10,7 +10,7 @@ import type { CatalogRow } from "../types/ui/table-options";
  */
 export const useCatalogRows = (
   catalog: LensObjectResolved[],
-): Array<LensObjectResolved & { row: CatalogRow }> => {
+): CatalogRowResult => {
   return useMemo(
     () =>
       catalog.map((item) => ({

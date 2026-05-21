@@ -8,6 +8,7 @@ import type {
   PhotochromaticName,
 } from "../domain/tecnologies/photochromatic";
 import type { LensBase, Lens } from "../domain/lens/lens-base";
+import type { CatalogRow } from "../ui/table-options";
 
 // OBJETO DEL CATALOGO
 export type LensBaseProduct<L, T, P> = {
@@ -45,6 +46,8 @@ export type OpticaInput = Optica<LensObjectInput[]>;
 // CATÁLOGO DE OPTICA DE RESUELTO
 export type OpticaResolved = Optica<LensObjectResolved[]>;
 
+//CATALOGO DE OPTICA PARA TABLA 
+export type CatalogRowResult = Array<LensObjectResolved & { row: CatalogRow }>
 //CATALOGO DE COMPANIAS OPTICAS ENTRADA
 
 export type CatalogOpticalCompaniesInput = Record<

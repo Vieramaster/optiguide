@@ -1,43 +1,41 @@
 import { Button } from "@/shared/components/ui/button";
 
+import { getPrescriptionProps } from "../lib/prescription/logic";
+
 import { InputBlock } from "./input-block";
+import { ErrorList } from "./error-list";
+type PrescriptionFormProps<T extends readonly string[]> = {
+  prescriptionKeys: T;
+  errorList: string[];
+  onSubmit: React.SubmitEventHandler<HTMLFormElement>;
+};
 
-interface PrescriptionFormProps<T extends Record<string, string>> {
-  keys: (keyof T)[];
-  values: T;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  onSubmit: () => void;
-  isEnabled: boolean;
-}
-
-export const PrescriptionForm = <T extends Record<string, string>>({
-  keys,
-  values,
-  onChange,
+export const PrescriptionForm = <T extends readonly string[]>({
+  prescriptionKeys,
+  errorList,
   onSubmit,
-  isEnabled,
 }: PrescriptionFormProps<T>) => {
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        onSubmit();
-      }}
-      className="flex gap-4 justify-between w-fit mx-auto"
-    >
-      {keys.map((key) => (
-        <InputBlock
-          key={String(key)}
-          name={String(key)}
-          value={values[key]}
-          onChange={onChange}
-          maxLength={5}
-        />
-      ))}
+    <>
+      <form
+        onSubmit={onSubmit}
+        className="flex gap-4 justify-between w-fit mx-auto"
+      >
+        {prescriptionKeys.map((key) => (
+          <InputBlock
+            key={key}
+            name={key}
+            step={getPrescriptionProps(key).step}
+            min={getPrescriptionProps(key).min}
+            max={getPrescriptionProps(key).max}
+          />
+        ))}
 
-      <Button type="submit" className=" ml-6 " disabled={!isEnabled}>
-        Calcular
-      </Button>
-    </form>
+        <Button type="submit" className="ml-6">
+          Calcular
+        </Button>
+      </form>
+      {errorList.length > 0 ? <ErrorList errorList={errorList} /> : null}
+    </>
   );
 };

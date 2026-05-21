@@ -19,15 +19,14 @@ export const FilterCheckboxes = ({
 }: FilterCheckboxesProps) => (
   <ul className="w-50 flex flex-wrap items-center justify-center gap-8 lg:gap-16 lg:w-[90%]">
     {columns.map(({ label, Ico, value }) => (
-      <li key={value}>
-        <CheckboxBasic
-          label={label}
-          onChange={(checked) => onChange(value, checked)}
-          checked={!!filters[value]}
-        >
-          {Ico ? <Ico /> : <span>{label}</span>}
-        </CheckboxBasic>
-      </li>
+      <CheckboxBasic
+        key={value}
+        label={label}
+        onChange={(checked) => onChange(value, checked)}
+        checked={!!filters[value]}
+      >
+        {Ico ? <Ico /> : <span>{label}</span>}
+      </CheckboxBasic>
     ))}
   </ul>
 );

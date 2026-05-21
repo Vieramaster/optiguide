@@ -4,23 +4,19 @@ import { Input } from "@/shared/components/ui/input";
 
 interface GraduationInputProps {
   name: string;
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  maxLength: number;
+  step: number;
+  min: number;
+  max: number;
 }
 
-export const InputBlock = ({
-  name,
-  value,
-  onChange,
-  maxLength,
-}: GraduationInputProps) => (
+export const InputBlock = ({ name, step, min, max }: GraduationInputProps) => (
   <div className="flex  items-center  gap-2 text-center font-semibold relative">
     <Label>{name}:</Label>
     <Input
       className="w-18 bg-primary-foreground text-center"
-      type="text"
-      {...{ name, value, maxLength, onChange }}
+      type="number"
+      step={step}
+      {...{ name, min, max }}
       placeholder="0"
     />
   </div>
