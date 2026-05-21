@@ -16,7 +16,7 @@ export const FormatCatalogCellValue = ({ value, label }: Props) => {
     );
   }
   if (typeof value === "string" || typeof value === "number")
-    return <SpanComponent {...{ value, label }}>value</SpanComponent>;
+    return <SpanComponent {...{ value, label }}>{value}</SpanComponent>;
 
   return <UndefinedComponent />;
 };
