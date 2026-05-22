@@ -2,7 +2,6 @@ import { useMemo } from "react";
 
 import { mapCatalogToRow } from "../logic/catalog-row";
 import type { LensObjectResolved } from "../types/companies/companies";
-import type {} from "../types/companies/companies";
 import type { CatalogRow } from "../types/ui/table-options";
 
 /**

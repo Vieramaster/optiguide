@@ -1,4 +1,4 @@
-import { DIOPTERS_VALUES } from "./constants";
+import { DIOPTERS_VALUES } from "./data";
 
 const { min, max } = DIOPTERS_VALUES;
 

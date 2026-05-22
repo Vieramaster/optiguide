@@ -18,7 +18,6 @@ export const useCatalog = () => {
     selectFilter,
     checkboxFilter,
     formFilter,
-    catalogRow,
     pagination,
   };
 };

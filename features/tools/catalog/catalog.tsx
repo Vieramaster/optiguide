@@ -9,6 +9,7 @@ import {
   Button,
 } from "@/shared/components/ui";
 import { PrescriptionForm, SelectField } from "@/shared/components";
+import { TRANSPOLATION_KEYS } from "@/shared/lib/prescription/constants";
 
 import {
   TableColumnsHeader,
@@ -21,11 +22,8 @@ import {
 } from "./data/catalog-table-columns";
 import { CATALOG_FILTER_COLUMNS } from "./data/catalog-table-columns";
 import { useCatalog } from "./hooks/use-catalog";
-import { PRESCRIPTION_KEYS } from "./data/prescription-keys";
 export const Catalog = () => {
   const { selectFilter, checkboxFilter, formFilter, pagination } = useCatalog();
-
-  console.log(pagination.visibleItems)
 
   return (
     <section className="overflow-x-auto">
@@ -53,7 +51,7 @@ export const Catalog = () => {
         />
         <div>
           <PrescriptionForm
-            prescriptionKeys={PRESCRIPTION_KEYS}
+            prescriptionKeys={TRANSPOLATION_KEYS}
             onSubmit={formFilter.handleFormSubmit}
             errorList={formFilter.formErrors}
           />

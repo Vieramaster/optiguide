@@ -1,4 +1,7 @@
-import type { LensMaterial, IndexMaterial } from "../types/domain/lens/lens-base";
+import type {
+  LensMaterial,
+  IndexMaterial,
+} from "../types/domain/lens/lens-base";
 
 export const LENS_MATERIALS: Record<IndexMaterial, LensMaterial> = {
   CR_39: {

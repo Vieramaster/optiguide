@@ -1,4 +1,4 @@
-import { DIOPTERS_VALUES } from "@/shared/lib/prescription/constants";
+import { DIOPTERS_VALUES } from "@/shared/lib/prescription/data";
 
 export const prescriptionValid = (value: number) =>
   Number.isFinite(value) &&

@@ -1,4 +1,4 @@
-import { DIOPTERS_VALUES, AXIS_VALUES, DIAM_VALUES } from "./constants";
+import { DIOPTERS_VALUES, AXIS_VALUES, DIAM_VALUES } from "./data";
 import { PrescriptionObjectValues } from "./types";
 
 export const getPrescriptionProps = (
