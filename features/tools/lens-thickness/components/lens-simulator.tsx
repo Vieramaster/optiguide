@@ -22,7 +22,7 @@ export const LensSimulator = ({
       className={`
         w-80 flex-col items-center gap-8
         ${isShow ? "flex" : "hidden"}
-        lg:flex
+        xl:flex 
       `}
     >
       <SelectField

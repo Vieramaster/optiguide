@@ -1,13 +1,14 @@
 "use client";
 
-import { Button } from "@/shared/components/ui";
+//SHARED
+import { Button, Title } from "@/shared/components/ui";
 import { PrescriptionForm } from "@/shared/components";
 import { PRESCRIPTION_KEYS } from "@/shared/lib/prescription/constants";
 
-import { HeaderSimulator } from "./components/header-simulator";
+//FEATURES
 import { LensSimulator } from "./components/lens-simulator";
-import { LensThicknessTitle } from "./data/title";
 import { useSimulatorOrchestrator } from "./hook/use-simulator-orchestrator";
+import { LensThicknessTitle } from "./data/title";
 
 const LENS_SIDE = ["A", "B"] as const;
 
@@ -19,7 +20,10 @@ export const LensThicknessSimulator = () => {
   console.log(lensSide.activeSide);
   return (
     <section className="w-full h-full  p-10 flex flex-col gap-10 text-center">
-      <HeaderSimulator {...LensThicknessTitle} />
+      <header className="max-w-2xl mx-auto flex flex-col gap-3 text-center">
+        <Title>{LensThicknessTitle.title}</Title>
+        <p className="italic"> {LensThicknessTitle.text} </p>
+      </header>
 
       <PrescriptionForm
         prescriptionKeys={PRESCRIPTION_KEYS}
@@ -28,36 +32,29 @@ export const LensThicknessSimulator = () => {
         isCompletePrescription={true}
       />
       <div className="flex justify-center  gap-6 xl:hidden">
-        <Button
-          onClick={lensSide.handleToogleSide}
-          disabled={lensSide.activeSide === "A"}
-        >
-          A
-        </Button>
-
-        <Button
-          onClick={lensSide.handleToogleSide}
-          disabled={lensSide.activeSide === "B"}
-        >
-          B
-        </Button>
-        <div className="flex  w-full justify-center lg:justify-evenly mt-5 ">
-          {LENS_SIDE.map((side) => (
-            <LensSimulator
-              key={side}
-              isShow={lensSide.activeSide === side}
-              currentThickness={calculatedLensThickness[side]}
-              onIndexChange={(value) =>
-                indexSelect.handleIndexChange(side)(value)
-              }
-            />
-          ))}
-        </div>
+        {LENS_SIDE.map((side, index) => (
+          <Button
+            key={index}
+            onClick={lensSide.handleToogleSide}
+            disabled={lensSide.activeSide === side}
+          >
+            {side}
+          </Button>
+        ))}
       </div>
+      <div className="flex  w-full justify-center lg:justify-evenly mt-5 ">
+        {LENS_SIDE.map((side) => (
+          <LensSimulator
+            key={side}
+            isShow={lensSide.activeSide === side}
+            currentThickness={calculatedLensThickness[side]}
+            onIndexChange={(value) =>
+              indexSelect.handleIndexChange(side)(value)
+            }
+          />
+        ))}
+      </div>
+      <p className="italic mt-10">{LensThicknessTitle.note}</p>
     </section>
   );
 };
-/**
- * 
-
- */
