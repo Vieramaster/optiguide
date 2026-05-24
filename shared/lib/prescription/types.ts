@@ -1,4 +1,4 @@
-import { PRESCRIPTION_FIELD_CONFIG } from "./data";
+import {PRESCRIPTION_FIELD_CONFIG} from "./constants";
 export type PrescriptionObjectValues = {
   min: number;
   max: number;

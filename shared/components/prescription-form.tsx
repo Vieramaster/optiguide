@@ -1,6 +1,6 @@
 import { Button } from "@/shared/components/ui/button";
 
-import { PRESCRIPTION_FIELD_CONFIG } from "../lib/prescription/data";
+import { PRESCRIPTION_FIELD_CONFIG } from "../lib/prescription/constants";
 import { PrescriptionKeys } from "../lib/prescription/types";
 
 import { InputBlock } from "./input-block";

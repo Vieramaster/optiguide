@@ -1,21 +1,17 @@
-import {
-  DIOPTERS_VALUES,
-  DIAM_VALUES,
-  EJE_VALUES,
-} from "@/shared/lib/prescription/data";
-
 import type { PrescriptionObjectValues } from "./types";
+import { DIOPTERS_CONFIG, DIAM_CONFIG, EJE_CONFIG } from "./constants";
+
 
 export const isDiopterValid = (value: number) =>
   Number.isFinite(value) &&
-  value >= DIOPTERS_VALUES.min &&
-  value <= DIOPTERS_VALUES.max;
+  value >= DIOPTERS_CONFIG.min &&
+  value <= DIOPTERS_CONFIG.max;
 
 export const ejeIsValid = (value: number) =>
-  integerFieldValid(value, EJE_VALUES);
+  integerFieldValid(value, EJE_CONFIG);
 
 export const diamIsValid = (value: number) =>
-  integerFieldValid(value, DIAM_VALUES);
+  integerFieldValid(value, DIAM_CONFIG);
 
 //HELPERS
 const integerFieldValid = (value: number, object: PrescriptionObjectValues) =>
