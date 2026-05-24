@@ -54,6 +54,7 @@ export const Catalog = () => {
             prescriptionKeys={TRANSPOLATION_KEYS}
             onSubmit={formFilter.handleFormSubmit}
             errorList={formFilter.formErrors}
+            isCompletePrescription={false}
           />
         </div>
       </div>

@@ -1,70 +1,63 @@
 "use client";
 
 import { Button } from "@/shared/components/ui";
-import { PrescriptionForm, ErrorList } from "@/shared/components";
+import { PrescriptionForm } from "@/shared/components";
+import { PRESCRIPTION_KEYS } from "@/shared/lib/prescription/constants";
 
-import { HeaderSimulator, LensSimulator } from "./components";
-import { graduationKeysArray } from "./logic";
+import { HeaderSimulator } from "./components/header-simulator";
+import { LensSimulator } from "./components/lens-simulator";
 import { LensThicknessTitle } from "./data/title";
-import { useLensThicknessSimulator } from "./hooks/use-lens-thickness-simulator";
-import type { LensSide } from "./types/simulator";
+import { useSimulatorOrchestrator } from "./hook/use-simulator-orchestrator";
 
-const SIDES: LensSide[] = ["A", "B"];
+const LENS_SIDE = ["A", "B"] as const;
 
 export const LensThicknessSimulator = () => {
-  const {
-    values,
-    errors,
-    handleChange,
-    handleSubmit,
-    activeSide,
-    setActiveSide,
-    sideResults,
-    isPositive,
-    handleIndexChange,
-    isSubmitEnabled,
-  } = useLensThicknessSimulator();
+  const { prescriptionForm, lensSide, calculatedLensThickness, indexSelect } =
+    useSimulatorOrchestrator();
 
+  console.log(prescriptionForm.submittedValues);
+  console.log(lensSide.activeSide);
   return (
-    <section className="w-full h-full  p-10 flex flex-col gap-8 text-center">
+    <section className="w-full h-full  p-10 flex flex-col gap-10 text-center">
       <HeaderSimulator {...LensThicknessTitle} />
 
       <PrescriptionForm
-        keys={graduationKeysArray}
-        values={values}
-        onChange={handleChange}
-        onSubmit={handleSubmit}
-        isEnabled={isSubmitEnabled}
+        prescriptionKeys={PRESCRIPTION_KEYS}
+        onSubmit={prescriptionForm.handlePrescriptionSubmit}
+        errorList={prescriptionForm.formErrors}
+        isCompletePrescription={true}
       />
-      {Object.keys(errors).length > 0 && <ErrorList error={errors} />}
-      <div className="flex justify-center  gap-6 lg:hidden">
+      <div className="flex justify-center  gap-6 xl:hidden">
         <Button
-          onClick={() => setActiveSide("A")}
-          disabled={activeSide === "A"}
+          onClick={lensSide.handleToogleSide}
+          disabled={lensSide.activeSide === "A"}
         >
           A
         </Button>
 
         <Button
-          onClick={() => setActiveSide("B")}
-          disabled={activeSide === "B"}
+          onClick={lensSide.handleToogleSide}
+          disabled={lensSide.activeSide === "B"}
         >
           B
         </Button>
-      </div>
-      <div className="flex  w-full justify-center lg:justify-evenly mt-5">
-        {SIDES.map((side) => (
-          <LensSimulator
-            key={side}
-            isShow={activeSide === side}
-            currentThickness={sideResults[side].thickness}
-            isPositive={isPositive}
-            isMax={sideResults[side].isMax}
-            percentageDiff={sideResults[side].percentageDiff}
-            onIndexChange={handleIndexChange(side)}
-          />
-        ))}
+        <div className="flex  w-full justify-center lg:justify-evenly mt-5 ">
+          {LENS_SIDE.map((side) => (
+            <LensSimulator
+              key={side}
+              isShow={lensSide.activeSide === side}
+              currentThickness={calculatedLensThickness[side]}
+              onIndexChange={(value) =>
+                indexSelect.handleIndexChange(side)(value)
+              }
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
 };
+/**
+ * 
+
+ */

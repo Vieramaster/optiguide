@@ -7,7 +7,3 @@ export type CatalogResult = {
   error: string| null;
 };
 
-export type PrescriptionKey = (typeof PRESCRIPTION_KEYS)[number];
-
-export type PrescriptionValues =
-  Record<PrescriptionKey, number>;

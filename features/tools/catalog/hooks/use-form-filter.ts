@@ -1,20 +1,20 @@
 "use client";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 
-import { prescriptionValid } from "@/shared/utils/validation/prescription-valid";
-import { transposePrescription } from "@/shared/utils/transposed-prescription";
+import { isDiopterValid } from "@/shared/lib/prescription/validations";
+import { transposePrescription } from "@/shared/lib/prescription/transform";
 import {
   INVALID_DIOPTERS,
   INVALID_TRANSPOSITION,
 } from "@/shared/lib/prescription/messages";
+import type { PrescriptionBaseValues } from "@/shared/lib/prescription/types";
 
 import { transpositionFilter } from "../logic/transposition-filter";
 import type { LensObjectResolved } from "../types/companies/companies";
-import type { PrescriptionValues } from "../types/hooks-types";
 
-export const useFormFilter = (data: LensObjectResolved[]) => {
+export const useFormFilter = (baseCatalog: LensObjectResolved[]) => {
   const [submittedValues, setSubmittedValues] =
-    useState<PrescriptionValues | null>(null);
+    useState<PrescriptionBaseValues | null>(null);
 
   const [formErrors, setFormErrors] = useState<string[]>([]);
 
@@ -25,19 +25,18 @@ export const useFormFilter = (data: LensObjectResolved[]) => {
 
     const formData = new FormData(event.currentTarget);
 
-    const values: PrescriptionValues = {
+    const values = {
       ESF: Number(formData.get("ESF")),
-
       CIL: Number(formData.get("CIL")),
-    };
+    } satisfies PrescriptionBaseValues;
 
     const { ESF, CIL } = values;
 
     const errors: string[] = [];
 
-    const isEsfValid = prescriptionValid(ESF);
+    const isEsfValid = isDiopterValid(ESF);
 
-    const isCilValid = prescriptionValid(CIL);
+    const isCilValid = isDiopterValid(CIL);
 
     if (!isEsfValid || !isCilValid) {
       errors.push(INVALID_DIOPTERS);
@@ -45,9 +44,7 @@ export const useFormFilter = (data: LensObjectResolved[]) => {
 
     const transposedPrescription = transposePrescription(ESF, CIL);
 
-    const isTranspositionValid = prescriptionValid(
-      transposedPrescription.sphere,
-    );
+    const isTranspositionValid = isDiopterValid(transposedPrescription.ESF);
 
     if (!isTranspositionValid) {
       errors.push(INVALID_TRANSPOSITION);
@@ -64,12 +61,25 @@ export const useFormFilter = (data: LensObjectResolved[]) => {
     setSubmittedValues(values);
   };
 
-  const catalog = transpositionFilter(data, submittedValues);
+  const catalog = useMemo(() => {
+    if (!submittedValues) {
+      return baseCatalog;
+    }
+
+    return transpositionFilter(
+      baseCatalog,
+
+      submittedValues,
+    );
+  }, [baseCatalog, submittedValues]);
 
   return {
     submittedValues,
+
     formErrors,
+
     handleFormSubmit,
+
     catalog,
   };
 };

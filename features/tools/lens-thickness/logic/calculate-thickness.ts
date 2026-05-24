@@ -1,4 +1,3 @@
-import type { CalculateThicknessParams } from "../types/calculate-thickness-params";
 
 const DEFAULT_THICKNESS_MAP = {
   1.5: 1.8,
@@ -24,12 +23,12 @@ export const getMaxPower = (sphere: number, cylinder: number): number => {
  * Fórmula base:
  * Δe ≈ |Fmax| * (D/2)^2 / (2000 * (n - 1))
  */
-export const calculateThickness = ({
-  sphere,
-  cylinder,
-  diameter,
-  refractiveIndex,
-}: CalculateThicknessParams): number => {
+export const calculateThickness = (
+  sphere: number,
+  cylinder: number,
+  diameter: number,
+  refractiveIndex: number,
+): number => {
   const centerThickness =
     DEFAULT_THICKNESS_MAP[refractiveIndex as RefractiveIndex] ?? 1.2;
 
@@ -38,8 +37,7 @@ export const calculateThickness = ({
   const semiDiameterSquared = (diameter * diameter) / 4;
 
   const thicknessIncrease =
-    Math.abs(maxPower) * semiDiameterSquared /
-    (2000 * (refractiveIndex - 1));
+    (Math.abs(maxPower) * semiDiameterSquared) / (2000 * (refractiveIndex - 1));
 
   const totalThickness = centerThickness + thicknessIncrease;
 

@@ -1,15 +1,10 @@
-
-interface ErrorListSimulatorProps {
-  errorList: string[];
+interface ErrorListProps {
+  errors: string[];
 }
-
-export const ErrorList = ({ errorList }: ErrorListSimulatorProps) => (
-  <ul className=" mx-auto p-3 bg-primary-foreground rounded-md text-left">
-    {errorList.map(([key, value]) => (
-      <li key={key}>
-        <p className="font-semibold">{`${key} :`}</p>
-        <p className="italic"> {value}</p>
-      </li>
+export const ErrorList = ({ errors }: ErrorListProps) => (
+  <div className="w-full xl:w-300 mx-auto flex flex-col gap-4 text-center ">
+    {errors.map((item, key) => (
+      <p key={key}>{item}</p>
     ))}
-  </ul>
+  </div>
 );

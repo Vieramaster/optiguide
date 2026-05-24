@@ -1,41 +1,51 @@
 import { Button } from "@/shared/components/ui/button";
 
-import { getPrescriptionProps } from "../lib/prescription/logic";
+import { PRESCRIPTION_FIELD_CONFIG } from "../lib/prescription/data";
+import { PrescriptionKeys } from "../lib/prescription/types";
 
 import { InputBlock } from "./input-block";
 import { ErrorList } from "./error-list";
-type PrescriptionFormProps<T extends readonly string[]> = {
-  prescriptionKeys: T;
+
+interface PrescriptionFormProps {
+  prescriptionKeys: readonly PrescriptionKeys[];
   errorList: string[];
   onSubmit: React.SubmitEventHandler<HTMLFormElement>;
-};
+  isCompletePrescription: boolean;
+}
 
-export const PrescriptionForm = <T extends readonly string[]>({
+export const PrescriptionForm = ({
   prescriptionKeys,
   errorList,
   onSubmit,
-}: PrescriptionFormProps<T>) => {
+  isCompletePrescription,
+}: PrescriptionFormProps) => {
   return (
     <>
       <form
         onSubmit={onSubmit}
-        className="flex gap-4 justify-between w-fit mx-auto"
+        className={`flex  gap-6 items-center ${isCompletePrescription ? " flex-col  w-72  mx-auto xl:w-full xl:flex-row xl:justify-center" : ""}`}
       >
-        {prescriptionKeys.map((key) => (
-          <InputBlock
-            key={key}
-            name={key}
-            step={getPrescriptionProps(key).step}
-            min={getPrescriptionProps(key).min}
-            max={getPrescriptionProps(key).max}
-          />
-        ))}
+        <div className="grid grid-cols-2 w-full gap-6 xl:flex xl:w-fit">
+          {prescriptionKeys.map((key) => (
+            <InputBlock
+              key={key}
+              name={key}
+              step={PRESCRIPTION_FIELD_CONFIG[key].step}
+              min={PRESCRIPTION_FIELD_CONFIG[key].min}
+              max={PRESCRIPTION_FIELD_CONFIG[key].max}
+              isComplete={isCompletePrescription}
+            />
+          ))}
+        </div>
 
-        <Button type="submit" className="ml-6">
+        <Button
+          type="submit"
+          className={`w-full py-4 cursor-pointer ${isCompletePrescription ? " xl:w-30" : "xl:w-22 ml-6"}`}
+        >
           Calcular
         </Button>
       </form>
-      {errorList.length > 0 ? <ErrorList errorList={errorList} /> : null}
+      {errorList.length > 0 ? <ErrorList errors={errorList} /> : null}
     </>
   );
 };

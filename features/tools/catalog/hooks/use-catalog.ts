@@ -1,10 +1,9 @@
-
 import {
   useCatalogRows,
   useSelectFilter,
   useCheckboxFilter,
   usePagination,
-  useFormFilter
+  useFormFilter,
 } from ".";
 
 export const useCatalog = () => {

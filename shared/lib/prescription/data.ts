@@ -6,7 +6,7 @@ export const DIOPTERS_VALUES = {
   step: 0.25,
 } as const satisfies PrescriptionObjectValues;
 
-export const AXIS_VALUES = {
+export const EJE_VALUES = {
   min: -180,
   max: 180,
   step: 1,
@@ -18,4 +18,9 @@ export const DIAM_VALUES = {
   step: 1,
 } as const satisfies PrescriptionObjectValues;
 
-
+export const PRESCRIPTION_FIELD_CONFIG   = {
+  ESF: DIOPTERS_VALUES,
+  CIL: DIOPTERS_VALUES,
+  EJE: EJE_VALUES,
+  DIAM: DIAM_VALUES,
+} as const ;
