@@ -2,11 +2,11 @@
 import type {
   LensTreatment,
   TreatmentsName,
-} from "../domain/tecnologies/lens-treatments";
+} from "../domain/technologies/lens-treatments";
 import type {
   PhotochromaticLens,
   PhotochromaticName,
-} from "../domain/tecnologies/photochromatic";
+} from "../domain/technologies/photochromatic";
 import type { LensBase, Lens } from "../domain/lens/lens-base";
 import type { CatalogRow } from "../ui/table-options";
 

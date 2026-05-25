@@ -1,4 +1,4 @@
-import { LensTreatment, Features } from "../types/domain/tecnologies/lens-treatments";
+import { LensTreatment, Features } from "../types/domain/technologies/lens-treatments";
 import type { LensObjectResolved } from "../types/companies/companies";
 import type { CatalogRow } from "../types/ui/table-options";
 

@@ -1,11 +1,11 @@
 
 import { CATALOG_OPTICAL_COMPANY } from "../domain/companies/optical-companies-catalog";
 import { LENS_CATALOGS } from "../domain/lens/lens-catalog";
-import { TREATMENTS_CATALOG } from "../domain/tecnologies/treatments";
-import { PHOTOCHROMATIC_LENSES_CATALOG } from "../domain/tecnologies/photochromatic";
+import { TREATMENTS_CATALOG } from "../domain/technologies/treatments";
+import { PHOTOCHROMATIC_LENSES_CATALOG } from "../domain/technologies/photochromatic";
 import type { SelectState, LensObjectResolved } from "../types/companies/companies";
-import type { TreatmentsName } from "../types/domain/tecnologies/lens-treatments";
-import type { PhotochromaticName } from "../types/domain/tecnologies/photochromatic";
+import type { TreatmentsName } from "../types/domain/technologies/lens-treatments";
+import type { PhotochromaticName } from "../types/domain/technologies/photochromatic";
 
 
 const assertSelectFilter = (filter: SelectState) => {
