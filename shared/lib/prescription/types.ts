@@ -1,4 +1,4 @@
-import {PRESCRIPTION_FIELD_CONFIG} from "./constants";
+import { PRESCRIPTION_FIELD_CONFIG } from "./constants";
 
 // GRADUATION VALUES
 export type PrescriptionObjectValues = {
@@ -10,14 +10,14 @@ export type PrescriptionObjectValues = {
 //FULL GRADUATION
 export type PrescriptionKeys = keyof typeof PRESCRIPTION_FIELD_CONFIG;
 
+// PRESCRIPTION FULL VALUES
+export type PrescriptionFullValues = Record<PrescriptionKeys, number>;
+
 //BASE GRADUATION
 export type PrescriptionBaseValues = Pick<
   PrescriptionFullValues,
   "SPHERE" | "CYLINDER"
 >;
-// PRESCRIPTION FULL VALUES
-export type PrescriptionFullValues = Record<PrescriptionKeys, number>;
-
 
 // FOR HOOK
 type ParsePrescriptionSucceeded<T> = {

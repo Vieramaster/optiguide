@@ -1,4 +1,5 @@
 import { PrescriptionFullValues } from "@/shared/lib/prescription/types";
+import { dioptersRules } from "@/shared/lib/prescription/rules";
 import {
   isAxisValid,
   isDiameterValid,
@@ -8,16 +9,8 @@ import {
   INVALID_EJE,
   INVALID_ASTIGMATISM,
 } from "@/shared/lib/prescription/messages";
-import type { ParsePrescriptionResult } from "@/shared/lib/prescription/types";
-import { dioptersRules } from "@/shared/lib/prescription/rules";
 
-import { parseFullPrescription } from "../logic/parse-full-prescription";
-
-export const parsePrescriptionForm = (
-  formData: FormData,
-): ParsePrescriptionResult<PrescriptionFullValues> => {
-  const values = parseFullPrescription(formData);
-
+export const rulesFullPrescription = (values: PrescriptionFullValues) => {
   const { SPHERE, CYLINDER, AXIS, DIAMETER } = values;
 
   const errors: string[] = [];
@@ -43,15 +36,6 @@ export const parsePrescriptionForm = (
   if (CYLINDER === 0 && AXIS !== 0) {
     errors.push(INVALID_ASTIGMATISM);
   }
-  if (errors.length > 0) {
-    return {
-      success: false,
-      errors,
-    };
-  }
 
-  return {
-    success: true,
-    values,
-  };
+  return errors;
 };

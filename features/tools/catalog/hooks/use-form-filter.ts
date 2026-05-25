@@ -1,21 +1,16 @@
 "use client";
 import { useState, useMemo } from "react";
 
-import { isDiopterValid } from "@/shared/lib/prescription/validations";
-import { transposePrescription } from "@/shared/lib/prescription/transform";
-import {
-  INVALID_DIOPTERS,
-  INVALID_TRANSPOSITION,
-} from "@/shared/lib/prescription/messages";
 import type { PrescriptionBaseValues } from "@/shared/lib/prescription/types";
+import { dioptersRules } from "@/shared/lib/prescription/rules";
 
-import { transpositionFilter } from "../logic/transposition-filter";
 import type { LensObjectResolved } from "../types/companies/companies";
+import { transpositionFilter } from "../logic/transposition-filter";
+import { parseBasePrescription } from "../logic/parse-base-prescription";
 
 export const useFormFilter = (baseCatalog: LensObjectResolved[]) => {
   const [submittedValues, setSubmittedValues] =
     useState<PrescriptionBaseValues | null>(null);
-
   const [formErrors, setFormErrors] = useState<string[]>([]);
 
   const handleFormSubmit: React.SubmitEventHandler<HTMLFormElement> = (
@@ -25,39 +20,16 @@ export const useFormFilter = (baseCatalog: LensObjectResolved[]) => {
 
     const formData = new FormData(event.currentTarget);
 
-    const values = {
-      SPHERE: Number(formData.get("SPHERE")),
-      CYLINDER: Number(formData.get("CYLINDER")),
-    } satisfies PrescriptionBaseValues;
+    const values = parseBasePrescription(formData);
 
-    const { SPHERE, CYLINDER } = values;
+    const dioptersErrors = dioptersRules(values.SPHERE, values.CYLINDER);
 
-    const errors: string[] = [];
-
-    const isEsfValid = isDiopterValid(SPHERE);
-
-    const isCilValid = isDiopterValid(CYLINDER);
-
-    if (!isEsfValid || !isCilValid) {
-      errors.push(INVALID_DIOPTERS);
-    }
-
-    const transposedPrescription = transposePrescription(SPHERE, CYLINDER);
-
-    const isTranspositionValid = isDiopterValid(transposedPrescription.SPHERE);
-
-    if (!isTranspositionValid) {
-      errors.push(INVALID_TRANSPOSITION);
-    }
-
-    if (errors.length > 0) {
-      setFormErrors(errors);
-
+    if (dioptersErrors.length > 0) {
+      setFormErrors(dioptersErrors);
       return;
     }
 
     setFormErrors([]);
-
     setSubmittedValues(values);
   };
 
@@ -75,11 +47,8 @@ export const useFormFilter = (baseCatalog: LensObjectResolved[]) => {
 
   return {
     submittedValues,
-
     formErrors,
-
     handleFormSubmit,
-
     catalog,
   };
 };

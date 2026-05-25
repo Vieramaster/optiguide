@@ -2,15 +2,14 @@ import { Metadata } from "next";
 import "./globals.css";
 import { Montserrat, Inter } from "next/font/google";
 
-import { AppSidebar } from "@/features/layout/sidebar/app-sidebar";
-import { Header } from "@/features/layout/header/header";
+import { cn } from "@/lib/utils";
+import { Header } from "@/shared/layout/header/header";
+import { AppSidebar } from "@/shared/layout/sidebar/app-sidebar";
+import { ThemeProvider } from "@/shared/providers/theme-provider";
 import {
   SidebarInset,
   SidebarProvider,
-} from "@/features/layout/sidebar/components/";
-//PROVIDER
-import { ThemeProvider } from "@/shared/providers/theme-provider";
-import { cn } from "@/lib/utils";
+} from "@/shared/layout/sidebar/components/";
 
 const interHeading = Inter({subsets:['latin'],variable:'--font-heading'});
 

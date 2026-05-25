@@ -6,9 +6,9 @@ import {
   useFormFilter,
 } from ".";
 
-export const useCatalog = () => {
+export const useCatalogOrchestrator = () => {
   const selectFilter = useSelectFilter();
-  const checkboxFilter = useCheckboxFilter(selectFilter.catalogResult.catalog);
+  const checkboxFilter = useCheckboxFilter(selectFilter.catalogResult);
   const formFilter = useFormFilter(checkboxFilter.checkboxCatalog);
   const catalogRow = useCatalogRows(formFilter.catalog);
   const pagination = usePagination(catalogRow);

@@ -5,7 +5,6 @@ import { useState, useMemo } from "react";
 import { resolveCatalog } from "../logic/resolve-catalog";
 import type { SelectState } from "../types/companies/companies";
 import type { Lens } from "../types/domain/lens/lens-base";
-import type { CatalogResult } from "../types/hooks-types";
 import type { OpticalCompanyKey } from "../types/companies/companies";
 
 export const useSelectFilter = () => {
@@ -28,14 +27,15 @@ export const useSelectFilter = () => {
     }));
   };
 
-  const catalog = useMemo(() => resolveCatalog(selectFilter), [selectFilter]);
+  const catalogResult = useMemo(
+    () => resolveCatalog(selectFilter),
+    [selectFilter],
+  );
 
-  const error = catalog.length === 0 ? "Catalog could not be resolved." : null;
+  if (!catalogResult || catalogResult.length === 0) {
+    throw new Error("Catalog could not be resolved.");
+  }
 
-  const catalogResult : CatalogResult= {
-    catalog,
-    error,
-  };
   return {
     handleSelectCompany,
     handleSelectLens,

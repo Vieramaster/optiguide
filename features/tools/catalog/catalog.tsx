@@ -21,9 +21,9 @@ import {
   OPTICAL_LENS_OPTIONS,
 } from "./data/catalog-table-columns";
 import { CATALOG_FILTER_COLUMNS } from "./data/catalog-table-columns";
-import { useCatalog } from "./hooks/use-catalog";
+import { useCatalogOrchestrator } from "./hooks/use-catalog-orchestatrator";
 export const Catalog = () => {
-  const { selectFilter, checkboxFilter, formFilter, pagination } = useCatalog();
+  const { selectFilter, checkboxFilter, formFilter, pagination } = useCatalogOrchestrator();
 
   return (
     <section className="overflow-x-auto">

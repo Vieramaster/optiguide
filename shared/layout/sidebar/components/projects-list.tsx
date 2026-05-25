@@ -1,14 +1,15 @@
 "use client";
 
+import type { toolItem } from "../types/sidebar";
+
 import {
   SidebarGroup,
   SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/features/layout/sidebar/components/";
+} from "./sidebar";
 
-import type { toolItem } from "../types/sidebar";
 
 interface projectsNavProps {
   title: string;

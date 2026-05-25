@@ -3,8 +3,8 @@ const DEFAULT_THICKNESS_MAP = {
   1.5: 1.8,
   1.56: 1.6,
   1.6: 1.5,
-  1.67: 1.3,
-  1.74: 1.2,
+  1.67: 1.15,
+  1.74: 1.1,
 } as const;
 
 type RefractiveIndex = keyof typeof DEFAULT_THICKNESS_MAP;

@@ -2,7 +2,8 @@ import { useState } from "react";
 
 import { PrescriptionFullValues } from "@/shared/lib/prescription/types";
 
-import { parsePrescriptionForm } from "../parses/parse-simulator-form";
+import { rulesFullPrescription, parseFullPrescription } from "../logic";
+
 const DEFAULT_VALUES = {
   SPHERE: 0,
   CYLINDER: 0,
@@ -10,7 +11,7 @@ const DEFAULT_VALUES = {
   DIAMETER: 0,
 } satisfies PrescriptionFullValues;
 
-export const usePrescriptionForm = () => {
+export const usePrescriptionBaseForm = () => {
   const [submittedValues, setSubmittedValues] =
     useState<PrescriptionFullValues>(DEFAULT_VALUES);
 
@@ -23,15 +24,17 @@ export const usePrescriptionForm = () => {
 
     const formData = new FormData(event.currentTarget);
 
-    const result = parsePrescriptionForm(formData);
+    const parsedValues = parseFullPrescription(formData);
 
-    if (!result.success) {
-      setFormErrors(result.errors);
+    const validate = rulesFullPrescription(parsedValues);
 
+    if (validate.length > 0) {
+      setFormErrors(validate);
       return;
     }
+
     setFormErrors([]);
-    setSubmittedValues(result.values);
+    setSubmittedValues(parsedValues);
   };
 
   return {
