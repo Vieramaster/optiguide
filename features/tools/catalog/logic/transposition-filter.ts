@@ -1,9 +1,10 @@
+import type { PrescriptionBaseValues } from "@/shared/lib/prescription/types";
+
 import type { LensObjectResolved } from "../types/companies/companies";
-import type { PrescriptionValues } from "../types/hooks-types";
 
 export const transpositionFilter = (
   catalog: LensObjectResolved[],
-  prescription: PrescriptionValues | null,
+  prescription: PrescriptionBaseValues | null,
 ): LensObjectResolved[] => {
   if (!prescription) return catalog;
 
