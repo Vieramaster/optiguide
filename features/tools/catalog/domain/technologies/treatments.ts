@@ -1,5 +1,5 @@
 
-import type { TreatmentsCatalog } from "../../types/domain/tecnologies/lens-treatments";
+import type { TreatmentsCatalog } from "../../types/domain/technologies/lens-treatments";
 
 
 

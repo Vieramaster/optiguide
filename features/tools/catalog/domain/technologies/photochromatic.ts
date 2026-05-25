@@ -1,4 +1,4 @@
-import { PhotochromaticCatalog } from "../../types/domain/tecnologies/photochromatic";
+import { PhotochromaticCatalog } from "../../types/domain/technologies/photochromatic";
 
 export const PHOTOCHROMATIC_LENSES_CATALOG: PhotochromaticCatalog = {
   Generic: {
