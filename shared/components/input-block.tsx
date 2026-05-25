@@ -10,7 +10,7 @@ interface GraduationInputProps {
   isComplete: boolean;
 }
 
-export const InputBlock = ({
+export const GraduationInput = ({
   name,
   step,
   min,

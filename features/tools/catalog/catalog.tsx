@@ -9,7 +9,7 @@ import {
   Button,
 } from "@/shared/components/ui";
 import { PrescriptionForm, SelectField } from "@/shared/components";
-import { TRANSPOLATION_KEYS } from "@/shared/lib/prescription/constants";
+import { TRANSPOSITION_KEYS } from "@/shared/lib/prescription/constants";
 
 import {
   TableColumnsHeader,
@@ -51,7 +51,7 @@ export const Catalog = () => {
         />
         <div>
           <PrescriptionForm
-            prescriptionKeys={TRANSPOLATION_KEYS}
+            prescriptionKeys={TRANSPOSITION_KEYS}
             onSubmit={formFilter.handleFormSubmit}
             errorList={formFilter.formErrors}
             isCompletePrescription={false}

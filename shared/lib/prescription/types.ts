@@ -13,21 +13,21 @@ export type PrescriptionKeys = keyof typeof PRESCRIPTION_FIELD_CONFIG;
 //BASE GRADUATION
 export type PrescriptionBaseValues = Pick<
   PrescriptionFullValues,
-  "ESF" | "CIL"
+  "SPHERE" | "CYLINDER"
 >;
 // PRESCRIPTION FULL VALUES
 export type PrescriptionFullValues = Record<PrescriptionKeys, number>;
 
 
 // FOR HOOK
-type ParsePrescriptionSussed<T> = {
+type ParsePrescriptionSucceeded<T> = {
   success: true;
   values: T;
 };
-type ParsePrescriptionFalied = {
+type ParsePrescriptionFailed = {
   success: false;
   errors: string[];
 };
 export type ParsePrescriptionResult<T> =
-  | ParsePrescriptionSussed<T>
-  | ParsePrescriptionFalied;
+  | ParsePrescriptionSucceeded<T>
+  | ParsePrescriptionFailed;

@@ -1,22 +1,22 @@
 import { PrescriptionFullValues } from "@/shared/lib/prescription/types";
 
-import type { SelectLensIndex } from "../types/simulator";
+import type { LensRefractiveIndexBySide } from "../types/simulator";
 
 import { calculateThickness } from "./calculate-thickness";
 
-export const lensThickness = (
+export const calculateLensThicknessByIndex = (
   prescriptionValues: PrescriptionFullValues,
-  indexLens: SelectLensIndex,
+  indexLens: LensRefractiveIndexBySide,
 ) => {
-  const { ESF, CIL, DIAM } = prescriptionValues;
+  const { SPHERE, CYLINDER, DIAMETER } = prescriptionValues;
 
-  const { A: lensA, B: lensB } = indexLens;
+  const { left: lensLeft, right: lensRight } = indexLens;
 
-  const lensThicknessA = calculateThickness(ESF, CIL, DIAM, lensA);
-  const lensThicknessB = calculateThickness(ESF, CIL, DIAM, lensB);
+  const lensThicknessLeft = calculateThickness(SPHERE, CYLINDER, DIAMETER, lensLeft);
+  const lensThicknessRight = calculateThickness(SPHERE, CYLINDER, DIAMETER, lensRight);
 
   return {
-    A:lensThicknessA,
-    B:lensThicknessB,
+    left:lensThicknessLeft,
+    right:lensThicknessRight,
   };
 };

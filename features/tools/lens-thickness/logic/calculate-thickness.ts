@@ -34,12 +34,12 @@ export const calculateThickness = (
 
   const maxPower = getMaxPower(sphere, cylinder);
 
-  const semiDiameterSquared = (diameter * diameter) / 4;
+  const radiusSquared = (diameter * diameter) / 4;
 
-  const thicknessIncrease =
-    (Math.abs(maxPower) * semiDiameterSquared) / (2000 * (refractiveIndex - 1));
+  const addedThickness =
+    (Math.abs(maxPower) * radiusSquared) / (2000 * (refractiveIndex - 1));
 
-  const totalThickness = centerThickness + thicknessIncrease;
+  const totalThickness = centerThickness + addedThickness;
 
   return Math.round(totalThickness * 10) / 10;
 };

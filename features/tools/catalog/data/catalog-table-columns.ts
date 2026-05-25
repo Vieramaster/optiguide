@@ -11,17 +11,17 @@ import {
 import type { TableOptions, RowOptions } from "../types/ui/table-options";
 
 export const CATALOG_FILTER_COLUMNS = [
-  { label: "polarizado", value: "polarized", Ico: RectangleGoggles },
-  { label: "antireflejo", Ico: Sparkles, value: "antiReflex" },
-  { label: "filtro de pantalla", Ico: MonitorSmartphone, value: "blueControl" },
+  { label: "polarizado", value: "polarized", Icon: RectangleGoggles },
+  { label: "antireflejo", Icon: Sparkles, value: "antiReflex" },
+  { label: "filtro de pantalla", Icon: MonitorSmartphone, value: "blueControl" },
   {
     label: "oleofobico e hidrofobico",
-    Ico: DropletOff,
+    Icon: DropletOff,
     value: "oleophobicHydrophobic",
   },
-  { label: "proteccion contra rayas", Ico: Shield, value: "scratchResistant" },
-  { label: "anti estatica", Ico: ZapOff, value: "antiStatic" },
-  { label: "fotocromatico", Ico: Sun, value: "photochromatic" },
+  { label: "proteccion contra rayas", Icon: Shield, value: "scratchResistant" },
+  { label: "anti estatica", Icon: ZapOff, value: "antiStatic" },
+  { label: "fotocromatico", Icon: Sun, value: "photochromatic" },
 ] satisfies readonly TableOptions[];
 
 export const CATALOG_TABLE_COLUMNS: TableOptions[] = [

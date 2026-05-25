@@ -3,13 +3,12 @@ import { useState } from "react";
 import { PrescriptionFullValues } from "@/shared/lib/prescription/types";
 
 import { parsePrescriptionForm } from "../parses/parse-simulator-form";
-
 const DEFAULT_VALUES = {
-  ESF: 0,
-  CIL: 0,
-  EJE: 0,
-  DIAM: 0,
-};
+  SPHERE: 0,
+  CYLINDER: 0,
+  AXIS: 0,
+  DIAMETER: 0,
+} satisfies PrescriptionFullValues;
 
 export const usePrescriptionForm = () => {
   const [submittedValues, setSubmittedValues] =

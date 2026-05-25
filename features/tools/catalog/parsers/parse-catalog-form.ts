@@ -10,22 +10,22 @@ export const parseCatalogForm = (
   formData: FormData,
 ): ParsePrescriptionResult<PrescriptionBaseValues> => {
   const values = {
-    ESF: Number(formData.get("ESF")),
-    CIL: Number(formData.get("CIL")),
+    SPHERE: Number(formData.get("SPHERE")),
+    CYLINDER: Number(formData.get("CYLINDER")),
   } satisfies PrescriptionBaseValues;
 
-  const { ESF, CIL } = values;
+  const { SPHERE, CYLINDER } = values;
 
   const errors: string[] = [];
 
-  const isEsfValid = isDiopterValid(ESF);
-  const isCilValid = isDiopterValid(CIL);
+  const isEsfValid = isDiopterValid(SPHERE);
+  const isCilValid = isDiopterValid(CYLINDER);
 
   if (!isCilValid || !isEsfValid) errors.push(INVALID_DIOPTERS);
 
-  const transposedPrescription = transposePrescription(ESF, CIL);
+  const transposedPrescription = transposePrescription(SPHERE, CYLINDER);
 
-  const isTranspositionValid = isDiopterValid(transposedPrescription.ESF);
+  const isTranspositionValid = isDiopterValid(transposedPrescription.SPHERE);
 
   if (!isTranspositionValid) {
     errors.push(INVALID_TRANSPOSITION);

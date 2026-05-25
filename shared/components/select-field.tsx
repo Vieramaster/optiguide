@@ -13,7 +13,7 @@ interface SelectOption {
   value: string;
 }
 
-interface CustomSelectProps<T> {
+interface SelectFieldProps<T> {
   options: SelectOption[];
   onValueSelect: (value: T) => void;
   placeholder?: string;
@@ -25,7 +25,7 @@ export const SelectField = <T extends string>({
   onValueSelect,
   placeholder,
   label,
-}: CustomSelectProps<T>) => (
+}: SelectFieldProps<T>) => (
   <Select
     onValueChange={onValueSelect}
     defaultValue={options ? options[0].value : ""}

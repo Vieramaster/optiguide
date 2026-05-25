@@ -1,5 +1,5 @@
 import type { PrescriptionObjectValues } from "./types";
-import { DIOPTERS_CONFIG, DIAM_CONFIG, EJE_CONFIG } from "./constants";
+import { DIOPTERS_CONFIG, DIAMETER_CONFIG, AXIS_CONFIG } from "./constants";
 
 
 export const isDiopterValid = (value: number) =>
@@ -7,11 +7,11 @@ export const isDiopterValid = (value: number) =>
   value >= DIOPTERS_CONFIG.min &&
   value <= DIOPTERS_CONFIG.max;
 
-export const ejeIsValid = (value: number) =>
-  integerFieldValid(value, EJE_CONFIG);
+export const isAxisValid = (value: number) =>
+  integerFieldValid(value, AXIS_CONFIG);
 
-export const diamIsValid = (value: number) =>
-  integerFieldValid(value, DIAM_CONFIG);
+export const isDiameterValid = (value: number) =>
+  integerFieldValid(value, DIAMETER_CONFIG);
 
 //HELPERS
 const integerFieldValid = (value: number, object: PrescriptionObjectValues) =>

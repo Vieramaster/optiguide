@@ -1,5 +1,5 @@
 
-import type { LucideIco } from "@/shared/types/Icons";
+import type { LucideIcon } from "@/shared/types/Icons";
 
 import type { Range } from "../domain/lens/lens-base";
 
@@ -28,7 +28,7 @@ export type Table<L, V> = {
 };
 
 export type TableOptions = Table<string, keyof CatalogRow> & {
-  Ico?: LucideIco;
+  Icon?: LucideIcon;
 };
 
 export type RowOptions = Table<string, string>;

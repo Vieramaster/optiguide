@@ -1,8 +1,8 @@
 import { PrescriptionFullValues } from "@/shared/lib/prescription/types";
 import {
   isDiopterValid,
-  ejeIsValid,
-  diamIsValid,
+  isAxisValid,
+  isDiameterValid,
 } from "@/shared/lib/prescription/validations";
 import {
   INVALID_DIAM,
@@ -19,34 +19,34 @@ export const parsePrescriptionForm = (
   formData: FormData,
 ): ParsePrescriptionResult<PrescriptionFullValues> => {
   const values = {
-    ESF: Number(formData.get("ESF")),
+    SPHERE: Number(formData.get("SPHERE")),
 
-    CIL: Number(formData.get("CIL")),
+    CYLINDER: Number(formData.get("CYLINDER")),
 
-    EJE: Number(formData.get("EJE")),
+    AXIS: Number(formData.get("AXIS_CONFIG")),
 
-    DIAM: Number(formData.get("DIAM")),
+    DIAMETER: Number(formData.get("DIAMETER")),
   } satisfies PrescriptionFullValues;
 
-  const { ESF, CIL, EJE, DIAM } = values;
+  const { SPHERE, CYLINDER, AXIS, DIAMETER } = values;
 
   const errors: string[] = [];
 
-  const isEsfValid = isDiopterValid(ESF);
+  const isEsfValid = isDiopterValid(SPHERE);
 
-  const isCilValid = isDiopterValid(CIL);
+  const isCilValid = isDiopterValid(CYLINDER);
 
-  const isEjeValid = ejeIsValid(EJE);
+  const isEjeValid = isAxisValid(AXIS);
 
-  const isDiamValid = diamIsValid(DIAM);
+  const isDiamValid = isDiameterValid(DIAMETER);
 
   if (!isEsfValid || !isCilValid) {
     errors.push(INVALID_DIOPTERS);
   }
 
-  const transposedPrescription = transposePrescription(ESF, CIL);
+  const transposedPrescription = transposePrescription(SPHERE, CYLINDER);
 
-  const isTranspositionValid = isDiopterValid(transposedPrescription.ESF);
+  const isTranspositionValid = isDiopterValid(transposedPrescription.SPHERE);
 
   if (!isTranspositionValid) {
     errors.push(INVALID_TRANSPOSITION);
@@ -59,10 +59,10 @@ export const parsePrescriptionForm = (
   if (!isDiamValid) {
     errors.push(INVALID_DIAM);
   }
-  if (ESF === 0 && CIL === 0) {
+  if (SPHERE === 0 && CYLINDER === 0) {
     errors.push(INVALID_DIOPTERS_ENTRIES);
   }
-  if (CIL === 0 && EJE !== 0) {
+  if (CYLINDER === 0 && AXIS !== 0) {
     errors.push(INVALID_ASTIGMATISM);
   }
   if (errors.length > 0) {

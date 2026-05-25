@@ -7,7 +7,7 @@ export const PHOTOCHROMATIC_LENSES_CATALOG: PhotochromaticCatalog = {
     photochromaticBrand: "Varios",
     photochromaticGeneration: "N/A",
     photochromaticColors: ["Gris", "Marrón", "Verde"],
-    photochromicSpeed: "lento a medio",
+    photochromaticSpeed: "lento a medio",
     photochromaticUvProtection: "100%",
     photochromaticBlueLightFilter: {
       clearState: "15%",
@@ -23,7 +23,7 @@ export const PHOTOCHROMATIC_LENSES_CATALOG: PhotochromaticCatalog = {
     photochromaticBrand: "Varilux",
     photochromaticGeneration: "Signature",
     photochromaticColors: ["Gris", "Marrón", "Verde"],
-    photochromicSpeed: "Rápido",
+    photochromaticSpeed: "Rápido",
     photochromaticUvProtection: "100%",
     photochromaticBlueLightFilter: {
       clearState: "20%",
@@ -49,7 +49,7 @@ export const PHOTOCHROMATIC_LENSES_CATALOG: PhotochromaticCatalog = {
       "Rubí",
       "Jade",
     ],
-    photochromicSpeed: "Muy rápido (30% más veloz que Signature VII)",
+    photochromaticSpeed: "Muy rápido (30% más veloz que Signature VII)",
     photochromaticUvProtection: "100%",
     photochromaticBlueLightFilter: {
       clearState: "30%",
@@ -69,7 +69,7 @@ export const PHOTOCHROMATIC_LENSES_CATALOG: PhotochromaticCatalog = {
     photochromaticBrand: "Varilux",
     photochromaticGeneration: "Gen S",
     photochromaticColors: ["Gris"],
-    photochromicSpeed: "Ultra rápido (más veloz que Gen 8)",
+    photochromaticSpeed: "Ultra rápido (más veloz que Gen 8)",
     photochromaticUvProtection: "100%",
     photochromaticBlueLightFilter: {
       clearState: "32%",
@@ -89,7 +89,7 @@ export const PHOTOCHROMATIC_LENSES_CATALOG: PhotochromaticCatalog = {
     photochromaticBrand: "Varilux",
     photochromaticGeneration: "Gen S",
     photochromaticColors: ["Gris"],
-    photochromicSpeed: "Ultra rápido (más veloz que Gen 8)",
+    photochromaticSpeed: "Ultra rápido (más veloz que Gen 8)",
     photochromaticUvProtection: "100%",
     photochromaticBlueLightFilter: {
       clearState: "32%",
@@ -116,7 +116,7 @@ export const PHOTOCHROMATIC_LENSES_CATALOG: PhotochromaticCatalog = {
       "Rubí",
       "Jade",
     ],
-    photochromicSpeed: "Ultra rápido (más veloz que Gen 8)",
+    photochromaticSpeed: "Ultra rápido (más veloz que Gen 8)",
     photochromaticUvProtection: "100%",
     photochromaticBlueLightFilter: {
       clearState: "32%",
@@ -136,7 +136,7 @@ export const PHOTOCHROMATIC_LENSES_CATALOG: PhotochromaticCatalog = {
     photochromaticBrand: "Varilux",
     photochromaticGeneration: "XTRActive",
     photochromaticColors: ["Gris", "Marrón", "Verde"],
-    photochromicSpeed: "Rápido",
+    photochromaticSpeed: "Rápido",
     photochromaticUvProtection: "100%",
     photochromaticBlueLightFilter: {
       clearState: "34%",
@@ -156,7 +156,7 @@ export const PHOTOCHROMATIC_LENSES_CATALOG: PhotochromaticCatalog = {
     photochromaticBrand: "Varilux",
     photochromaticGeneration: "Drivewear",
     photochromaticColors: ["Verde cobre", "Marrón cobre"],
-    photochromicSpeed: "Adaptación rápida en conducción",
+    photochromaticSpeed: "Adaptación rápida en conducción",
     photochromaticUvProtection: "100%",
     photochromaticBlueLightFilter: {
       clearState: "35%",
@@ -178,7 +178,7 @@ export const PHOTOCHROMATIC_LENSES_CATALOG: PhotochromaticCatalog = {
     photochromaticBrand: "ClearLook",
     photochromaticGeneration: "Sunmatic",
     photochromaticColors: ["Gris", "Marrón"],
-    photochromicSpeed: "Rápido",
+    photochromaticSpeed: "Rápido",
     photochromaticUvProtection: "100%",
     photochromaticBlueLightFilter: {
       clearState: "25%",
@@ -198,7 +198,7 @@ export const PHOTOCHROMATIC_LENSES_CATALOG: PhotochromaticCatalog = {
     photochromaticBrand: "ClearLook",
     photochromaticGeneration: "Sunmatic",
     photochromaticColors: ["Azul", "Rosado"],
-    photochromicSpeed: "Rápido",
+    photochromaticSpeed: "Rápido",
     photochromaticUvProtection: "100%",
     photochromaticBlueLightFilter: {
       clearState: "25%",
@@ -218,7 +218,7 @@ export const PHOTOCHROMATIC_LENSES_CATALOG: PhotochromaticCatalog = {
     photochromaticBrand: "ClearLook",
     photochromaticGeneration: "Sunmatic",
     photochromaticColors: ["Gris"],
-    photochromicSpeed: "Rápido",
+    photochromaticSpeed: "Rápido",
     photochromaticUvProtection: "100%",
     photochromaticBlueLightFilter: {
       clearState: "25%",
@@ -239,7 +239,7 @@ export const PHOTOCHROMATIC_LENSES_CATALOG: PhotochromaticCatalog = {
     photochromaticBrand: "Kodak",
     photochromaticGeneration: "Acclimate",
     photochromaticColors: ["Gris", "Marrón"],
-    photochromicSpeed: "Estándar",
+    photochromaticSpeed: "Estándar",
     photochromaticUvProtection: "100%",
     photochromaticBlueLightFilter: {
       clearState: "20%",

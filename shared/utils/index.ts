@@ -1,5 +1,5 @@
 export * from "./string/capitalize-first"
 export * from "./image/image-dimensions"
 export * from "./image/image-validator"
-export * from "./string/stringFormatters"
+export * from "./string/string-formatters"
 export * from "./validation/slug-validation"

@@ -30,7 +30,7 @@ import {
   CONFORT,
   LIBERTY,
   PHYSIO,
-  XR_DESING,
+  XR_DESIGN,
   XR_XRPRO
 } from "./progressive/essilor";
 
@@ -62,7 +62,7 @@ export const PROGRESSIVE_CATALOG: LensBaseObject = {
   ...CONFORT,
   ...LIBERTY,
   ...PHYSIO,
-  ...XR_DESING,
+  ...XR_DESIGN,
   ...XR_XRPRO,
 
 }

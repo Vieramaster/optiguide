@@ -23,7 +23,7 @@ export type PhotochromaticLens = {
   photochromaticBrand: PhotochromaticBrand;
   photochromaticGeneration: string;
   photochromaticColors: PhotochromaticColor[];
-  photochromicSpeed: string;
+  photochromaticSpeed: string;
   photochromaticUvProtection: string;
   photochromaticBlueLightFilter: BlueLightFilter;
   photochromaticFeatures: string[];

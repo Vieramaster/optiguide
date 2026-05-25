@@ -8,14 +8,14 @@ export const transpositionFilter = (
 ): LensObjectResolved[] => {
   if (!prescription) return catalog;
 
-  const { ESF, CIL } = prescription;
+  const { SPHERE, CYLINDER } = prescription;
 
   return catalog.filter(({ lens }) => {
     if (!lens) return false;
 
     const { rangeDiopters, maxDiopters } = lens;
 
-    return matchRange(rangeDiopters, ESF, CIL) || matchMax(maxDiopters, ESF);
+    return matchRange(rangeDiopters, SPHERE, CYLINDER) || matchMax(maxDiopters, SPHERE);
   });
 };
 

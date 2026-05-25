@@ -4,28 +4,28 @@ const EDGE = 20;
 
 export const lensPathEmulator = (size: number, isPositive: boolean) => {
   // positivos
-  const frontX = size * 36;
-  const frontY = size * 31.5;
-  const backX = size * 9.5;
-  const backY = size * 9.5;
+  const frontCurveControlX = size * 36;
+  const frontCurveControlY = size * 31.5;
+  const backCurveControlX = size * 9.5;
+  const backCurveControlY = size * 9.5;
 
   // negativos
-  const negSide = size * 31.2;
+  const negativeSideCurveOffset = size * 31.2;
 
   const positivePath = `
     M 0 ${-H}
     L ${EDGE} ${-H}
-    C ${frontX} ${-frontY} ${frontX} ${frontY} ${EDGE} ${H}
+    C ${frontCurveControlX} ${-frontCurveControlY} ${frontCurveControlX} ${frontCurveControlY} ${EDGE} ${H}
     L 0 ${H}
-    C ${backX} ${backY} ${backX} ${-backY} 0 ${-H}
+    C ${backCurveControlX} ${backCurveControlY} ${backCurveControlX} ${-backCurveControlY} 0 ${-H}
     Z
   `;
 
   const negativePath = `
     M -30 ${-H}
     C 30 -230 30 230 -30 ${H}
-    L ${-negSide} ${H}
-    C 20 300 20 -300 ${-negSide} ${-H}
+    L ${-negativeSideCurveOffset} ${H}
+    C 20 300 20 -300 ${-negativeSideCurveOffset} ${-H}
     L -30 ${-H}
     Z
   `;

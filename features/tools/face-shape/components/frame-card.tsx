@@ -9,11 +9,11 @@ interface FrameCardProps {
 export const FrameCard = ({ frame }: FrameCardProps) => {
   const frameData = framesData.find(({ id }) => id === frame);
   if (!frameData) return null;
-  const { name, Ico } = frameData;
+  const { name, icon: Icon } = frameData;
 
   return (
     <li className="flex flex-col items-center " aria-label={name}>
-      <Ico
+      <Icon
         className="w-28 h-14 fill-current"
         aria-hidden="true"
         focusable="false"

@@ -3,6 +3,7 @@
 
 
 
-export type LensSide = "A" | "B";
+export type LensSide = "left" | "right";
 
-export type SelectLensIndex = Record<LensSide, number>;
+export type LensRefractiveIndexBySide = Record<LensSide, number>;
+

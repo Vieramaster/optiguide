@@ -10,14 +10,13 @@ import { LensSimulator } from "./components/lens-simulator";
 import { useSimulatorOrchestrator } from "./hook/use-simulator-orchestrator";
 import { LensThicknessTitle } from "./data/title";
 
-const LENS_SIDE = ["A", "B"] as const;
+const LENS_SIDE = ["left", "right"] as const;
 
 export const LensThicknessSimulator = () => {
   const { prescriptionForm, lensSide, calculatedLensThickness, indexSelect } =
     useSimulatorOrchestrator();
 
-  console.log(prescriptionForm.submittedValues);
-  console.log(lensSide.activeSide);
+
   return (
     <section className="w-full h-full  p-10 flex flex-col gap-10 text-center">
       <header className="max-w-2xl mx-auto flex flex-col gap-3 text-center">

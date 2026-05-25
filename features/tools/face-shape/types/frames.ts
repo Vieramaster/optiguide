@@ -13,7 +13,7 @@ export type FaceShape = {
 export type FrameData = {
     id: Frame
     name: string
-    Ico: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+    icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
     femaleOnly: boolean
 }
 

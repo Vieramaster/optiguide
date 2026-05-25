@@ -1,11 +1,11 @@
-import { EJE_CONFIG, DIAM_CONFIG, DIOPTERS_CONFIG } from "./constants";
+import { AXIS_CONFIG, DIAMETER_CONFIG, DIOPTERS_CONFIG } from "./constants";
 import { PrescriptionObjectValues } from "./types";
 
-export const getPrescriptionProps = (
+export const getPrescriptionFieldConfig = (
   values: string,
 ): PrescriptionObjectValues =>
-  values === "ESF" || values === "CIL"
+  values === "SPHERE" || values === "CYLINDER"
     ? DIOPTERS_CONFIG
-    : values === "EJE"
-      ? EJE_CONFIG
-      : DIAM_CONFIG;
+    : values === "AXIS"
+      ? AXIS_CONFIG
+      : DIAMETER_CONFIG;

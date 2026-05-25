@@ -3,7 +3,7 @@ import { Button } from "@/shared/components/ui/button";
 import { PRESCRIPTION_FIELD_CONFIG } from "../lib/prescription/constants";
 import { PrescriptionKeys } from "../lib/prescription/types";
 
-import { InputBlock } from "./input-block";
+import { GraduationInput } from "./input-block";
 import { ErrorList } from "./error-list";
 
 interface PrescriptionFormProps {
@@ -27,7 +27,7 @@ export const PrescriptionForm = ({
       >
         <div className="grid grid-cols-2 w-full gap-6 xl:flex xl:w-fit">
           {prescriptionKeys.map((key) => (
-            <InputBlock
+            <GraduationInput
               key={key}
               name={key}
               step={PRESCRIPTION_FIELD_CONFIG[key].step}

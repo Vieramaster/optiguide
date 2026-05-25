@@ -8,9 +8,9 @@ import { CATALOG_TABLE_COLUMNS } from "../data/catalog-table-columns";
  */
 export const TableColumnsHeader = () => (
   <TableRow>
-    {CATALOG_TABLE_COLUMNS.map(({ label, Ico, value }) => (
+    {CATALOG_TABLE_COLUMNS.map(({ label, Icon, value }) => (
       <TableHead key={value} title={label}>
-        {Ico ? <Ico className="mx-auto" /> : label}
+        {Icon ? <Icon className="mx-auto" /> : label}
       </TableHead>
     ))}
   </TableRow>

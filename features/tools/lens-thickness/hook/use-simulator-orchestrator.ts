@@ -1,4 +1,4 @@
-import { lensThickness } from "../logic/lens-thickness";
+import { calculateLensThicknessByIndex } from "../logic/lens-thickness";
 
 import { usePrescriptionForm, useLensSide, useIndexSelect } from ".";
 
@@ -9,7 +9,7 @@ export const useSimulatorOrchestrator = () => {
 
   const indexSelect = useIndexSelect();
 
-  const calculatedLensThickness = lensThickness(
+  const calculatedLensThickness = calculateLensThicknessByIndex(
     prescriptionForm.submittedValues,
     indexSelect.lensIndex,
   );
