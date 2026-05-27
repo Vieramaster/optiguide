@@ -1,67 +1,84 @@
 ---
-description: Runtime architectural enforcement rules for AI-assisted development
+description: Runtime architectural enforcement rules and pre-flight checklist for AI-assisted development
 globs:
   - "**/*"
 alwaysApply: true
 ---
 
-# Cursor Enforcement Layer
+# Cursor Enforcement & Pre-Flight Checklist
 
-This file defines how architectural rules must be enforced during code generation.
+This file defines how architectural rules must be enforced during code generation and the pre-flight checklist that must be completed BEFORE writing or modifying any code.
+
+If any answer is unclear → STOP and re-evaluate architecture decision.
 
 ---
 
-# 1. Pre-Generation Validation
+# 1. Pre-Generation Validation & Classification
 
-Before generating any code:
+Before generating any code, identify the module type:
+- UI change (belongs in `shared/ui` or `features/[domain]/components`)
+- Feature change (belongs in `features/[domain]`)
+- Shared utility (belongs in `shared/`)
+- Infrastructure / service change (belongs in `app/api` or `services/`)
 
-- identify module type (ui / feature / shared / infra)
-- determine owning rule file
-- validate dependency direction
-
-If invalid → do not proceed
+Every change MUST belong to exactly ONE category. No hybrid modules allowed.
 
 ---
 
 # 2. Dependency Safety Check
 
-Never generate:
-
-- cross-feature imports
-- shared → feature imports
-- UI → infra direct access
-- feature → feature coupling
+Validate the import graph. Never generate:
+- Upward imports (e.g. from `shared/` to `features/`)
+- Cross-feature imports (feature-to-feature coupling)
+- UI directly accessing infrastructure/services without passing through feature hooks/services
 
 ---
 
-# 3. Layer Compliance Rule
+# 3. Layer Placement Check
 
-All code must belong to a valid architectural layer:
-
-- UI layer (ui-boundaries)
-- Feature layer (feature-architecture)
-- Shared layer (shared-layer)
-- Infrastructure layer (boundaries)
-
-No hybrid modules allowed.
+Code is placed BEFORE implementation and never relocated after writing. Where does this code belong?
+- Feature internal layer
+- Shared reuse layer
+- UI layer
+- Infrastructure layer
 
 ---
 
-# 4. Abstraction Control
+# 4. Feature Isolation Check
 
-Do not create shared abstractions unless:
-
-- reused in at least 2 domains
-- proven necessity exists
-
-Prefer duplication over premature reuse.
+If working inside `features/`:
+- Does this import another feature? (Forbidden)
+- Does this leak UI/business logic across domains? (Forbidden)
+- Is this feature self-contained? (Mandatory)
 
 ---
 
-# 5. System Guarantee
+# 5. UI Purity Check
 
-If respected:
+If working in UI:
+- Is business logic present? (Forbidden)
+- Is data fetching happening here? (Forbidden)
+- Is state domain-driven instead of presentation-driven? (Forbidden)
 
-- zero architectural violations at generation time
-- predictable module placement
-- enforced clean architecture without manual policing
+---
+
+# 6. Abstraction Control & Reuse Validation
+
+For `shared/` candidates:
+- Is this used in 2+ domains?
+- Is reuse proven or assumed?
+- Is abstraction necessary or premature?
+
+Prefer duplication over premature speculative shared extraction. Do not create shared abstractions unless proven necessity exists.
+
+---
+
+# 7. Final Approval Gate
+
+Only proceed to write code if:
+- Classification is clear
+- Ownership is clear
+- Dependency direction is valid
+- Layer placement is correct
+
+Otherwise: → STOP → re-evaluate architecture decision.

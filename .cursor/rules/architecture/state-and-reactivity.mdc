@@ -1,0 +1,104 @@
+---
+description: Reactivity runtime, state ownership, hooks architecture, and server state
+globs:
+  - "app/**/*"
+  - "features/**/*"
+  - "shared/hooks/**/*"
+alwaysApply: true
+---
+
+# State & Reactivity Contract
+
+This file defines rules for React runtime behavior, state ownership, hook composition, and remote data synchronization.
+It unifies what was previously split across state, hooks, reactivity-runtime, and server-state rules.
+
+---
+
+# 1. Render Purity & Reactivity
+
+Rendering must remain deterministic.
+- Render must be pure (no side effects, no async operations, no external mutations).
+- Rendering is a pure projection of state → UI.
+
+## 1.1 Reactive Flow Control
+Reactive flows must remain explicit and non-cascading.
+- Avoid effect chains (effect triggering effect).
+- Avoid implicit synchronization graphs or multi-step reactive orchestration.
+- Data flow must be traceable in a single step.
+
+## 1.2 Effects Discipline
+Effects are for external synchronization ONLY.
+- Allowed: browser APIs, subscriptions, timers, DOM integrations, external libraries.
+- Forbidden: internal application orchestration, derived state calculation, syncing props into state.
+
+---
+
+# 2. State Ownership & Locality
+
+State must have a single, explicit owner.
+
+## 2.1 State Domains Separation
+State must be classified by domain and not mixed:
+- UI state (transient interaction state)
+- Feature state (domain workflow state)
+- Form state (interaction flow state)
+- Server state (external data state)
+
+## 2.2 Locality & Minimalism
+- State lives as close as possible to its usage scope (local over lifted).
+- Store only source-of-truth values.
+- Context is for dependency injection, NOT state storage for high-frequency reactive state.
+
+## 2.3 Derived State Principle
+If a value can be computed, it must NOT be stored.
+- Centralize derived state inside hooks or orchestrators.
+- Avoid recalculating business state inside JSX.
+- Avoid mirroring state via effects (syncing props → state).
+
+---
+
+# 3. Hook Architecture & Orchestration
+
+Hooks must live inside a dedicated `hooks/` or `hook/` directory and be colocated with their owning feature.
+- Separate UI hooks from business hooks.
+- Hooks encapsulate a single responsibility. Avoid oversized, catch-all hooks.
+
+## 3.1 Hook Composition & Orchestrators
+- Prefer composing multiple focused hooks over duplicating stateful logic.
+- **Orchestrator hooks:** Create an orchestrator hook when a component uses more than 2 business hooks.
+- Orchestrators coordinate communication between hooks, centralize derived state, and expose a clean UI-facing API.
+- Components must consume orchestrated state instead of coordinating hooks directly.
+- Avoid placing all business logic inside orchestrators (they coordinate, not replace).
+- Avoid deeply nested hook dependency chains or effect chains between hooks.
+
+---
+
+# 4. Server State & Remote Data
+
+Server state is a cached projection of remote truth.
+- The backend is the source of truth; the frontend maintains a controlled cache.
+- Do NOT bypass the server-state layer (e.g. using `fetch` directly in UI or hooks without an abstraction/cache layer).
+
+## 4.1 Fetching & Caching
+- Fetching must be explicit and traceable.
+- Cache server responses whenever reuse is expected (allow data to be stale by design).
+- Identical concurrent requests should be deduplicated.
+
+## 4.2 Synchronization & Invalidation
+- Cache invalidation must be explicit, minimal, and intentional.
+- Avoid global cache resets or cascading invalidation chains.
+- Loading and error states belong to the server state lifecycle; each request owns its lifecycle state.
+
+---
+
+# 5. Anti-Patterns
+
+Forbidden:
+- Cascading effect chains or hidden reactive orchestration.
+- Syncing props into state unnecessarily.
+- Global state as a default solution.
+- Mixing unrelated state domains (e.g., using forms as global state managers).
+- Fetching directly inside presentation components without abstraction.
+- Uncontrolled refetch loops or duplicating server state into local UI state.
+- Massive hooks replacing proper composition.
+- Hooks acting as the business layer (business logic belongs in `services/` or `model/`).

@@ -1,9 +1,11 @@
 import { notFound } from "next/navigation";
 import type { ComponentType } from "react";
 
-import { SectionArticle } from "@/features/articles";
-import { getArticleStaticParams } from "@/features/articles/server";
+
+import { getArticleStaticParams } from "@/features/articles/queries/get-article-static-params";
 import { isValidSlug } from "@/shared/validation/slug-validation";
+import { SectionArticle } from "@/features/articles/components";
+
 
 interface PageProps {
   params: Promise<{

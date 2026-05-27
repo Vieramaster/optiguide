@@ -1,9 +1,6 @@
 "use client";
 
-import {
-  PRESCRIPTION_KEYS,
-  PrescriptionForm,
-} from "@/features/prescription";
+import { PrescriptionForm } from "@/entities/prescription/components";
 import { Button, Title } from "@/shared/components/ui";
 
 import { LensSimulator } from "./components/lens-simulator";
@@ -25,10 +22,10 @@ export const LensThicknessSimulator = () => {
       </header>
 
       <PrescriptionForm
-        prescriptionKeys={PRESCRIPTION_KEYS}
+        mode="full"
         onSubmit={prescriptionForm.handlePrescriptionSubmit}
-        errorList={prescriptionForm.formErrors}
-        isCompletePrescription={true}
+
+
       />
       <div className="flex justify-center  gap-6 xl:hidden">
         {LENS_SIDE.map((side, index) => (

@@ -1,6 +1,8 @@
-import type { PrescriptionBaseValues } from "@/features/prescription";
+import type { PrescriptionBaseValues } from "@/entities/prescription/types/types";
 
 import type { LensObjectResolved } from "../types/companies/companies";
+
+
 
 export const transpositionFilter = (
   catalog: LensObjectResolved[],

@@ -1,0 +1,72 @@
+---
+description: Next.js App Router architecture, rendering strategies, and performance optimization rules
+globs:
+  - "src/app/**/*"
+  - "app/**/*"
+  - "features/**/*"
+alwaysApply: false
+---
+
+# Next.js Architecture & Performance
+
+Use modern Next.js App Router architecture. Prioritize server rendering, performance, reduced client JavaScript, clear rendering boundaries, and scalable async architecture. Avoid legacy Pages Router mentality.
+
+---
+
+# 1. Server Components First
+
+Use Server Components by default.
+- Ideal for data fetching, async rendering, security, performance, and reducing client JavaScript.
+- Avoid converting entire trees into client components unnecessarily.
+
+---
+
+# 2. Client Components & Boundaries
+
+Use Client Components (`"use client"`) ONLY when interaction is required.
+- Valid cases: event handlers, browser APIs, local interactive state, animations, refs, effects.
+- Keep client boundaries small (push them as far down the tree as possible).
+- Avoid leaking client-side rendering into large server trees.
+
+---
+
+# 3. Data Fetching & Async Architecture
+
+Prefer server-side data fetching whenever possible.
+- Use Server Components, Server Actions, or Route Handlers.
+- Avoid unnecessary client-side fetching for critical data (e.g. `useEffect(() => fetch(...), [])`).
+- Design async flows intentionally (consider loading states, suspense, streaming, retries, invalidation, error boundaries).
+
+---
+
+# 4. Server Actions & Route Handlers
+
+- **Server Actions:** Use for mutations when appropriate (forms, secure operations). Keep mutation logic outside UI components. Avoid large mutation flows directly inside client components.
+- **Route Handlers (`app/api/`):** Keep API logic isolated. Validate inputs, orchestrate requests, isolate transport logic. Avoid mixing API logic into UI layers.
+
+---
+
+# 5. Rendering & Caching Strategies
+
+- Choose rendering strategies (static, dynamic, streaming, partial hydration) based on actual feature requirements. Avoid making everything dynamic by default.
+- Understand caching behaviors (static, dynamic, revalidated, uncached).
+- Use layouts intentionally (persistent navigation, shared UI shells). Avoid duplicated layout structures across pages.
+
+---
+
+# 6. Performance Optimization
+
+- Reduce unnecessary client JavaScript (prefer server rendering, streaming).
+- Avoid unnecessary re-renders (use derived UI, keep state local).
+- Lazy load heavy interactive components.
+- Keep bundle size minimal; avoid shipping unused JavaScript.
+- Optimize images and fonts.
+- Avoid large client-side state trees.
+- Measure performance before optimizing; avoid premature optimization.
+
+---
+
+# 7. Error Handling & Loading
+
+- Use proper error boundaries (`error.tsx`, `not-found.tsx`). Avoid ad-hoc error handling scattered everywhere.
+- Loading states should be intentional and reusable. Prefer suspense, route `loading.tsx`, or reusable async boundaries instead of repeating `if (loading) return <Loading />` everywhere.

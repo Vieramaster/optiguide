@@ -1,0 +1,122 @@
+---
+description: Global architecture boundaries, feature isolation, shared layer rules, and module structure
+globs:
+  - "app/**/*"
+  - "features/**/*"
+  - "shared/**/*"
+  - "src/**/*"
+alwaysApply: true
+---
+
+# Global Architecture Boundaries & Modules Contract
+
+This file is the SINGLE SOURCE OF TRUTH for all GLOBAL dependency rules, feature structure, and layer definitions in the system.
+It unifies the boundaries, feature architecture, and shared layer contracts.
+
+---
+
+# 1. Core Dependency Direction (ABSOLUTE)
+
+System must follow strict inward dependency flow:
+
+app
+→ features
+→ entities
+→ shared
+→ infrastructure (services, api, persistence)
+
+
+Rule:
+- Dependencies must always flow downward. Upward imports are strictly forbidden.
+- Data must flow in one direction: infrastructure → services → entities → features → UI.
+
+
+---
+
+# 2. Bounded Contexts: The `features/` Layer
+
+A feature is an isolated business domain unit.
+- **No Feature-to-Feature Coupling:** Features must NOT import other features directly. Cross-feature communication must go through the `shared/` layer or external services.
+
+## 2.1 Feature Internal Architecture (MANDATORY STRUCTURE)
+Every feature MUST follow a consistent internal structure. Choose ONE of the following configurations:
+
+**Standard Feature:**
+features/[domain]/
+  components/
+  hooks/
+  services/
+  model/
+  utils/ (or logic/)
+  types/
+  index.ts
+
+**UI-Heavy Feature:**
+features/[domain]/
+  ui/
+  hooks/
+  services/
+  state/
+  types/
+  index.ts
+
+- `logic/` is an acceptable alternative to `utils/` for domain-specific pure functions.
+- Deviation from structure requires explicit justification. Arbitrary file organization is forbidden.
+
+## 2.2 Feature Entry Point Contract (STRICT)
+Each feature must expose a controlled public API via `index.ts`.
+- Internal files are private by default. No deep imports from outside the feature are allowed.
+- **Server/Client Boundary Safety in Barrels:** Do NOT export Server-only code (e.g. Node APIs like `fs`, `path`, or database clients) through a feature's main `index.ts` if that barrel is consumed by Client Components (`"use client"`). Use a separate `server.ts` entry point for server-only logic to prevent bundle leaking and runtime crashes.
+
+---
+
+# 3. The `shared/` Layer Contract
+
+`shared/` is a domain-agnostic reuse layer. It exists ONLY to host abstractions reusable across multiple domains.
+
+## 3.1 Shared Responsibility Scope
+`shared/` may contain ONLY:
+- UI Primitives (Domain-Agnostic): No business logic, no feature awareness.
+- Pure Logic Utilities: Deterministic functions, generic hooks.
+- Infrastructure Adapters: API clients, fetch wrappers.
+- Shared Types & Constants: Generic types without domain specificity.
+
+## 3.2 What `shared/` is NOT
+`shared/` MUST NOT contain:
+- Feature composition or business workflows.
+- Application orchestration.
+- Domain knowledge or feature-specific values (e.g., Domain names like "projects" or "articles" in shared interfaces).
+- Hardcoded localized copy (i18n strings). Shared components (like error pages or titles) should receive their copy via props, not hardcode domain-specific or localized text internally.
+
+## 3.3 The `lib/` Folder
+The `lib/` folder (if it exists, e.g., for `lib/utils.ts`) is considered part of the infrastructure/utility layer, equivalent to `shared/utils/`. Do NOT create parallel utility layers. If `shared/` exists, migrate utilities into `shared/` to maintain a single source of truth, or strictly limit `lib/` to vendor configuration setups (e.g., shadcn's `cn` utility).
+
+---
+
+# 4. Anti-Patterns & Global Coupling Rules
+
+Forbidden:
+- Implicit cross-module coupling or hidden shared state between features.
+- Direct dependency chains across multiple features.
+- Circular dependencies.
+- `shared/` depending on `entities/`, `features/`, `app/`, or `layouts/`.
+- `entities/` depending on `features/`, `app/`, or `layouts/`.
+- Cross-feature imports (features must communicate via `entities/` or `shared/`).
+- Deep imports bypassing feature `index.ts` barrels.
+- Opaque barrel exports (`export * from ...`) that hide ownership inside `shared/` or feature `index.ts` files. Clarity of ownership > import convenience.
+
+# 5. Bounded Core: The `entities/` Layer
+
+The `entities/` layer contains core business domain logic and models that are shared across multiple features.
+
+## 5.1 Entities Responsibility Scope
+`entities/` may contain ONLY:
+- Core domain models and types (e.g., `Prescription`, `User`).
+- Domain-specific pure functions and validations (e.g., `validatePrescription`).
+- Domain-specific UI components that are strictly tied to the entity (e.g., `PrescriptionForm`), provided they don't orchestrate external features.
+
+## 5.2 What `entities/` is NOT
+`entities/` MUST NOT contain:
+- Feature-specific workflows or orchestration.
+- Layouts or page-level composition.
+- Imports from the `features/` layer (entities must be feature-agnostic).

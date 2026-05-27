@@ -1,10 +1,6 @@
 "use client";
 
 import {
-  PrescriptionForm,
-  TRANSPOSITION_KEYS,
-} from "@/features/prescription";
-import {
   Title,
   SubTitle,
   Table,
@@ -13,6 +9,7 @@ import {
   Button,
 } from "@/shared/components/ui";
 import { SelectField } from "@/shared/components";
+import { PrescriptionForm } from "@/entities/prescription/components";
 
 import {
   TableColumnsHeader,
@@ -25,6 +22,8 @@ import {
 } from "./constants/catalog-table-columns";
 import { CATALOG_FILTER_COLUMNS } from "./constants/catalog-table-columns";
 import { useCatalogOrchestrator } from "./hooks";
+
+
 export const Catalog = () => {
   const { selectFilter, checkboxFilter, formFilter, pagination } = useCatalogOrchestrator();
 
@@ -54,10 +53,9 @@ export const Catalog = () => {
         />
         <div>
           <PrescriptionForm
-            prescriptionKeys={TRANSPOSITION_KEYS}
-            onSubmit={formFilter.handleFormSubmit}
-            errorList={formFilter.formErrors}
-            isCompletePrescription={false}
+            mode="base"
+            onSubmit={formFilter.handleValidSubmit}
+
           />
         </div>
       </div>

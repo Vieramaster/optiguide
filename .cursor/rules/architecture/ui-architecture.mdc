@@ -1,0 +1,137 @@
+---
+description: Global UI system architecture, layer boundaries, and component composition (Tailwind v4 + shadcn/ui)
+globs:
+  - "src/**/*"
+  - "components/**/*"
+  - "shared/**/*"
+  - "app/**/*"
+  - "features/**/*"
+alwaysApply: true
+---
+
+# UI Architecture & Composition Contract
+
+This file defines the global UI architecture rules, layer definitions, composition model, and component responsibilities.
+It unifies what was previously split across ui-system, ui-boundaries, composition, and rendering rules.
+
+It does NOT define:
+
+- styling values (see styling-system.mdc)
+- global domain architecture (see global-architecture.mdc)
+
+---
+
+# 1. UI Layer Model (STRICT HIERARCHY)
+
+The UI must follow strict layering, depending only downward:
+
+primitives (shadcn/ui) → shared/ui → entities/ui → features/\* → layouts/pages
+
+## 1.1 Primitives Layer (shadcn/ui)
+
+- Base UI components (Button, Input, Card, Dialog, etc.)
+- Stateless UI primitives (must remain framework/domain-agnostic)
+- Must not depend on application code.
+
+## 1.2 Shared UI Layer (shared/ui)
+
+- Reusable, domain-agnostic UI abstractions built only from primitives.
+- Must not contain business logic or domain rules.
+- Must remain feature-agnostic.
+
+## 1.3 Feature UI Layer (features/\*)
+
+- Business-specific UI composition.
+- Built from shared/ui + primitives.
+- May contain local state and domain logic via hooks.
+
+## 1.4 Layout Layer (layouts/pages & shared/layout)
+
+- Structural UI composition only (defines page structure, spacing layout).
+- No business logic or reusable domain components.
+
+Rule: UI layers must only depend downward. UI boundary violations are structural defects.
+
+## 1.5 Entities UI Layer (entities/\*/ui)
+
+- UI components strictly tied to a core business entity (e.g., a standard domain form).
+- Must not contain feature-specific orchestration.
+
+---
+
+# 2. Composition & Creation Model
+
+All components must follow this construction order:
+
+1. shadcn/ui primitives
+2. shared/ui abstractions (if available)
+3. feature-specific composition
+4. local UI state (if required)
+5. layout composition (if applicable)
+
+## 2.1 Component Creation Rule
+
+Before creating UI:
+
+1. Check primitives (shadcn)
+2. Check shared/ui
+3. Check feature existing components
+4. Only then create a new component. Reuse is mandatory before creation.
+
+## 2.2 Wrapper vs Abstraction
+
+- Wrapper (preferred): when behavior remains identical, only visual adaptation is needed (80% similarity).
+- New abstraction (restricted): when reuse exists in multiple features and semantic meaning is consistent.
+- Fork (exceptional): when component purpose fundamentally changes.
+- Avoid deep abstraction chains (e.g. wrapper over wrapper over wrapper).
+
+---
+
+# 3. UI vs Domain Separation (Render Determinism)
+
+UI layer responsibilities:
+
+- Rendering and composition.
+- Presentation state and interaction state (local only).
+
+Forbidden in UI:
+
+- Business logic, domain rules, API orchestration.
+- Data transformation logic (must be externalized).
+- Mixing layout concerns with business orchestration.
+
+## 3.1 Render Determinism
+
+Components must be deterministic, predictable, and side-effect safe by default.
+
+- No side effects during render.
+- Keep render paths predictable and avoid deeply nested conditional rendering.
+- Same input must always produce same UI output.
+
+## 3.2 Hooks in UI
+
+- Allowed: local UI state (toggle, open/close, UI filters), presentation-only state logic.
+- Forbidden: business logic hooks inside UI components, API fetching in generic UI components.
+
+## 3.3 className Discipline
+
+- `className` must remain declarative.
+- No business logic embedded in className.
+- Use `cva` for multi-state components.
+
+---
+
+# 4. Anti-Patterns
+
+Forbidden:
+
+- Primitives importing application code.
+- shared/ui importing features UI.
+- features importing other features UI directly.
+- layouts importing feature internals directly.
+- Mixing business logic inside UI components.
+- Duplicating primitives across features with minor differences.
+- Feature-specific design systems.
+- Hidden side effects in render flow.
+- Inline anonymous components inside render functions.
+- Duplicated rendering branches (extract repeated markup patterns).

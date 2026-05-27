@@ -1,8 +1,7 @@
 "use client";
 
 import { AppSidebar } from "@/shared/layout/sidebar/app-sidebar";
-
-import { ARTICLES_SIDEBAR } from "@/features/articles";
+import {ARTICLES_SIDEBAR} from "@/features/articles/config/articles-sidebar";
 import { CATALOG_SIDEBAR_ITEM } from "@/features/tools/catalog";
 import { FACE_SHAPE_SIDEBAR_ITEM } from "@/features/tools/face-shape";
 import { LENS_THICKNESS_SIDEBAR_ITEM } from "@/features/tools/lens-thickness";

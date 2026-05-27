@@ -1,0 +1,69 @@
+---
+description: Styling architecture rules, design tokens, Tailwind v4, and shadcn/ui integration
+globs:
+  - "src/**/*.tsx"
+  - "components/**/*"
+  - "shared/**/*"
+  - "app/**/*"
+  - "features/**/*"
+alwaysApply: true
+---
+
+# Styling System Contract
+
+This file defines the visual language of the application, how Tailwind CSS is used, and how shadcn/ui must be integrated.
+It combines the design tokens, Tailwind, and shadcn rules into a single source of truth.
+
+---
+
+# 1. Token Architecture (Tailwind v4 model)
+
+Design tokens are defined at the CSS level using Tailwind v4 `@theme`.
+- Tokens are the single source of truth for the visual language.
+- Tailwind utilities are consumers of tokens.
+- shadcn/ui components consume semantic tokens only.
+- Features are NOT allowed to define styling systems or visual rules.
+
+## 1.1 Visual Systems (Color, Spacing, Radius, Typography)
+- Use semantic color roles (background, foreground, primary, secondary, destructive, border, etc.).
+- Use the defined system scales for spacing, radius (sm, md, lg, xl), typography, and shadows.
+- No arbitrary values unless explicitly justified and no semantic token exists.
+- No feature-specific color palettes, spacing systems, or design systems.
+- No hardcoded hex values in UI components.
+
+---
+
+# 2. Tailwind Usage Policy
+
+Tailwind is a utility layer for applying styles, NOT a design system authority.
+
+- Tailwind utilities must map to design tokens only.
+- `className` must remain declarative and compositional. Use `cn()` for conditional composition.
+- Avoid overly long utility chains without structure or logic-heavy styling decisions.
+- Do NOT bypass the design tokens via raw/arbitrary values (e.g., `px-[13px]`) unless as an absolute exception.
+
+---
+
+# 3. shadcn/ui Integration Rule
+
+shadcn/ui is a base component library (primitives layer), NOT a design system of its own.
+
+- shadcn components must be styled ONLY via Tailwind tokens.
+- No direct visual overrides outside system constraints.
+- shadcn components must NOT be modified directly unless fixing a bug or aligning with token compliance.
+- Use composition or wrappers instead of modifying or duplicating shadcn components.
+- Use `cva` for multi-state shadcn-based components instead of ternary className logic.
+- Do not create parallel versions of existing primitives.
+
+---
+
+# 4. Anti-Patterns
+
+Forbidden patterns:
+- Hardcoded hex colors in components.
+- Inconsistent spacing, colors, radius, or elevation between features.
+- Custom design systems inside features.
+- One-off visual decisions not aligned with tokens.
+- Uncontrolled utility proliferation or arbitrary values in Tailwind.
+- Duplicating shadcn components with minor visual changes.
+- Embedding feature logic into styling or primitives.
