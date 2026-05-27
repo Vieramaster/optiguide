@@ -1,0 +1,153 @@
+---
+description: Accessibility (a11y) UI correctness and inclusive interaction rules
+globs:
+  - "app/**/*"
+  - "features/**/*"
+  - "components/**/*"
+alwaysApply: true
+---
+
+# Accessibility Contract
+
+This file defines accessibility rules for UI correctness, inclusive interaction, and semantic consistency.
+
+It does NOT define:
+- UI structure (see ui-boundaries.mdc)
+- runtime behavior (see reactivity-runtime.mdc)
+- state management (see state.mdc)
+- styling system (see design-tokens.mdc)
+
+---
+
+# 1. Core Principle
+
+UI must be usable without assumptions about device, input method, or user capability.
+
+Rule:
+- accessibility is a default requirement, not an enhancement
+
+---
+
+# 2. Semantic HTML First
+
+Rules:
+- prefer semantic HTML over generic elements
+- avoid div/span when semantic alternatives exist
+- structure content using meaningful landmarks
+
+Rule:
+- semantics > styling convenience
+
+---
+
+# 3. Keyboard Accessibility
+
+Rules:
+- all interactive elements must be keyboard reachable
+- logical tab order must be preserved
+- focus must never be trapped unintentionally
+- custom components must implement keyboard behavior explicitly
+
+Rule:
+- keyboard interaction is mandatory for all actions
+
+---
+
+# 4. Focus Management
+
+Rules:
+- focus state must always be visible
+- programmatic focus shifts must be intentional
+- avoid unexpected focus jumps
+- modals and dialogs must manage focus scope explicitly
+
+Rule:
+- focus flow must remain predictable
+
+---
+
+# 5. ARIA Usage Discipline
+
+Rules:
+- use ARIA only when semantic HTML is insufficient
+- avoid redundant or incorrect ARIA attributes
+- ensure ARIA roles match actual behavior
+- do not use ARIA as a substitute for proper structure
+
+Rule:
+- ARIA complements semantics, it does not replace them
+
+---
+
+# 6. Interactive Elements
+
+Rules:
+- interactive UI must have clear affordances
+- clickable elements must be identifiable as interactive
+- disabled states must be clearly communicated
+- loading states must not break accessibility expectations
+
+Rule:
+- interaction must be perceivable without visual assumptions
+
+---
+
+# 7. Color and Contrast
+
+Rules:
+- color must not be the only source of information
+- contrast must be sufficient for readability
+- state changes must be distinguishable beyond color alone
+
+Rule:
+- information must survive grayscale rendering
+
+---
+
+# 8. Text and Labels
+
+Rules:
+- all inputs must have accessible labels
+- placeholders are NOT labels
+- buttons must have descriptive text or accessible names
+- icon-only actions must include accessible labels
+
+Rule:
+- no unlabeled interactive elements allowed
+
+---
+
+# 9. Dynamic Content
+
+Rules:
+- dynamic updates must not disrupt user context
+- important changes must be perceivable by assistive tech
+- avoid silent UI updates that change meaning
+
+Rule:
+- state changes must be announced when relevant
+
+---
+
+# 10. Component Responsibility
+
+Rules:
+- accessibility is the responsibility of each component
+- shared components must be accessible by default
+- features must not override accessibility constraints
+
+Rule:
+- accessibility is inherited, not optional
+
+---
+
+# 11. Anti-Patterns
+
+Forbidden:
+
+- div-based interactive elements without roles
+- keyboard-inaccessible custom components
+- missing form labels
+- color-only state indication
+- misuse of ARIA instead of semantic structure
+- focus loss after interactions

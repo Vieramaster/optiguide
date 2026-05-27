@@ -1,0 +1,151 @@
+---
+description: Shared layer eligibility and reuse governance (strict 2026 contract)
+globs:
+  - "shared/**/*"
+alwaysApply: true
+---
+
+# Shared Layer Contract
+
+shared/ is a domain-agnostic reuse layer.
+
+It exists ONLY to host abstractions that are reusable across multiple domains.
+
+shared/ is NOT a place for application structure, business logic, or feature orchestration.
+
+---
+
+# 1. Core Principle
+
+shared/ exists exclusively for cross-domain reuse.
+
+Rule:
+- must not encode domain knowledge
+- must not implement business workflows
+- must not depend on application structure
+
+---
+
+# 2. Shared Responsibility Scope (STRICT DEFINITION)
+
+shared/ may contain ONLY the following categories:
+
+## 2.1 UI Primitives (Domain-Agnostic)
+- stateless visual components
+- no business logic
+- no feature awareness
+
+Examples:
+- buttons
+- inputs
+- layout primitives
+
+---
+
+## 2.2 Pure Logic Utilities
+- deterministic functions
+- stateless computation helpers
+- generic hooks (UI-agnostic)
+
+Rules:
+- must be side-effect free (unless explicitly isolated)
+- must not depend on features or UI state
+
+---
+
+## 2.3 Infrastructure Adapters
+- API clients
+- fetch wrappers
+- external integrations
+
+Rules:
+- must not contain UI logic
+- must not depend on feature modules
+
+---
+
+## 2.4 Shared Types & Constants
+- generic types reused across domains
+- constants without domain specificity
+
+Rules:
+- must remain stable and minimal
+- must not encode feature-specific values
+
+---
+
+# 3. Non-Goals (IMPORTANT CLARIFICATION)
+
+shared/ MUST NOT be used for:
+
+- feature composition
+- business workflows
+- domain-specific logic
+- application orchestration
+- UI state management tied to features
+
+Rule:
+- if it requires domain context → it does NOT belong in shared
+
+---
+
+# 4. Reuse Policy (STRICT)
+
+- duplication is preferred over premature abstraction
+- shared modules require evidence of reuse across domains
+- speculative abstractions are forbidden
+
+Rule:
+- shared is reactive, not anticipatory
+
+---
+
+# 5. Dependency Rules (STRICT)
+
+shared/ may depend ONLY on:
+
+- other shared modules
+- framework primitives (React, TS, etc.)
+
+shared/ must NOT depend on:
+
+- features/*
+- app/*
+- layout/*
+- domain-specific services
+
+Rule:
+- shared is isolated from application structure
+
+---
+
+# 6. Stability Rule
+
+- shared is a high-stability layer
+- changes must be justified by cross-domain necessity
+- frequent modification indicates architectural drift
+
+Rule:
+- shared evolves slower than features
+
+---
+
+# 7. Export Discipline
+
+- exports must be explicit and intentional
+- avoid opaque barrel exports that hide ownership
+- module boundaries must remain visible
+
+Rule:
+- clarity of ownership > import convenience
+
+---
+
+# 8. System Guarantee
+
+If respected:
+
+- predictable reuse layer
+- zero feature leakage
+- controlled abstraction growth
+- stable cross-domain foundation

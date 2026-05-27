@@ -1,0 +1,134 @@
+---
+description: Pre-flight validation checklist before any code generation or modification
+globs:
+  - "**/*"
+alwaysApply: true
+---
+
+# Cursor Pre-Flight Checklist
+
+This checklist must be completed BEFORE writing or modifying any code.
+
+If any answer is unclear → STOP and re-evaluate architecture decision.
+
+---
+
+# 1. Classification Check
+
+What type of change is this?
+
+- [ ] UI change
+- [ ] Feature change
+- [ ] Shared utility
+- [ ] Infrastructure / service change
+
+Rule:
+- every change MUST belong to exactly one category
+
+---
+
+# 2. Ownership Check
+
+Who owns this change?
+
+- UI → ui-boundaries.mdc
+- Feature → feature-architecture.mdc
+- Shared → shared-layer.mdc
+- Infra → boundaries.mdc
+
+Rule:
+- single owner only
+- no mixed ownership allowed
+
+---
+
+# 3. Dependency Direction Check
+
+Validate:
+
+- no upward imports
+- no cross-feature imports
+- no shared → feature dependency
+- no UI → infra direct dependency
+
+Rule:
+- dependencies must follow global architecture flow
+
+---
+
+# 4. Layer Placement Check
+
+Where does this code belong?
+
+- feature internal layer
+- shared reuse layer
+- UI layer
+- infrastructure layer
+
+Rule:
+- code is placed BEFORE implementation
+- never relocated after writing
+
+---
+
+# 5. Reuse Validation Check
+
+For shared/ candidates:
+
+- is this used in 2+ domains?
+- is reuse proven or assumed?
+- is abstraction necessary or premature?
+
+Rule:
+- duplication is preferred over speculative shared extraction
+
+---
+
+# 6. Feature Isolation Check
+
+If working inside features:
+
+- does this import another feature?
+- does this leak UI/business logic across domains?
+- is this feature self-contained?
+
+Rule:
+- features must remain isolated modules
+
+---
+
+# 7. UI Purity Check
+
+If working in UI:
+
+- is business logic present?
+- is data fetching happening here?
+- is state domain-driven instead of presentation-driven?
+
+Rule:
+- UI is composition only
+
+---
+
+# 8. Final Approval Gate
+
+Only proceed if:
+
+- classification is clear
+- ownership is clear
+- dependency direction is valid
+- layer placement is correct
+
+Otherwise:
+→ STOP → re-evaluate architecture decision
+
+---
+
+# SYSTEM GUARANTEE
+
+If followed:
+
+- zero accidental architecture violations
+- deterministic code placement
+- stable system scaling
+- reduced refactor cycles

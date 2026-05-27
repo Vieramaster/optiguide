@@ -1,4 +1,4 @@
-import { LENS_MATERIALS } from "@/features/tools/catalog/data/lens-materials";
+import { LENS_MATERIALS } from "@/features/tools/catalog/constants/lens-materials";
 import type {
     LensBaseObject,
     LensBase,

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { useTheme } from "next-themes"
 
 import { Switch } from "@/shared/components/ui/switch"
-import { capitalizeFirst } from "@/shared/utils/string/capitalize-first"
+import { capitalizeFirst } from "@/shared/formatters/capitalize-first"
 
 const checking = (theme: boolean) => (theme ? "dark" : "light")
 

@@ -1,4 +1,4 @@
-import { PrescriptionFullValues } from "@/shared/lib/prescription/types";
+import { PrescriptionFullValues } from "@/features/prescription";
 
 import type { LensRefractiveIndexBySide } from "../types/simulator";
 

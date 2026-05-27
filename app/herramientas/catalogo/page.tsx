@@ -1,4 +1,5 @@
-import { Catalog } from "@/features/tools/catalog/catalog"
-const CatalogPage = () => <Catalog />
+import { Catalog } from "@/features/tools/catalog";
 
-export default CatalogPage
+const CatalogPage = () => <Catalog />;
+
+export default CatalogPage;

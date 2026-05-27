@@ -5,7 +5,7 @@ import type {
   CreateLens,
 } from "@/features/tools/catalog/types/domain/lens/lens-base";
 //==================DATA=================/
-import { LENS_MATERIALS } from "@/features/tools/catalog/data/lens-materials";
+import { LENS_MATERIALS } from "@/features/tools/catalog/constants/lens-materials";
 
 
 export const createEvoClearDigital = (data: CreateLens): LensBase =>

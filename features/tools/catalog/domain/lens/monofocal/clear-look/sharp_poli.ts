@@ -3,7 +3,7 @@ import type {
   CreateLens,
   LensBase,
 } from "@/features/tools/catalog/types/domain/lens/lens-base";
-import { LENS_MATERIALS } from "@/features/tools/catalog/data/lens-materials";
+import { LENS_MATERIALS } from "@/features/tools/catalog/constants/lens-materials";
 
 
 

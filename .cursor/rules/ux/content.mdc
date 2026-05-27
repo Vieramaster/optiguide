@@ -1,0 +1,153 @@
+---
+description: UI content rules, copy consistency, and information design constraints
+globs:
+  - "app/**/*"
+  - "features/**/*"
+  - "components/**/*"
+alwaysApply: true
+---
+
+# Content Contract
+
+This file defines rules for UI text, copy, labeling, and information presentation.
+
+It does NOT define:
+- UI structure (see ui-boundaries.mdc)
+- state behavior (see reactivity-runtime.mdc)
+- architecture rules (see boundaries.mdc)
+- styling rules (see design-tokens.mdc)
+
+---
+
+# 1. Core Principle
+
+Content is part of the UI system and must be precise, consistent, and intention-driven.
+
+Rule:
+- text is functional UI, not decoration
+
+---
+
+# 2. Clarity First
+
+Rules:
+- content must be unambiguous
+- avoid vague or generic labels
+- prefer specific, actionable wording
+- avoid internal jargon exposed to users
+
+Rule:
+- user-facing text must be immediately understandable
+
+---
+
+# 3. Consistency of Terminology
+
+Rules:
+- use consistent terms across the system
+- avoid multiple words for the same concept
+- standardize domain vocabulary
+
+Rule:
+- same concept → same wording everywhere
+
+---
+
+# 4. Labeling Discipline
+
+Rules:
+- labels must describe function, not implementation
+- buttons must describe action clearly
+- inputs must describe expected value, not technical type
+- avoid placeholders as primary meaning carriers
+
+Rule:
+- labels define intent, not structure
+
+---
+
+# 5. Hierarchy of Information
+
+Rules:
+- prioritize important information first
+- reduce cognitive load in dense UI
+- group related information visually and semantically
+- avoid overloading single UI regions with mixed intent
+
+Rule:
+- information must be structured, not dumped
+
+---
+
+# 6. Error and Feedback Messages
+
+Rules:
+- errors must be actionable, not technical
+- feedback must describe what happened and what to do next
+- avoid exposing system internals in messages
+- keep tone neutral and informative
+
+Rule:
+- messages must guide user recovery
+
+---
+
+# 7. Empty States
+
+Rules:
+- empty states must explain absence clearly
+- provide next possible action when relevant
+- avoid dead-end UI states without guidance
+
+Rule:
+- empty state must still communicate purpose
+
+---
+
+# 8. Tone Consistency
+
+Rules:
+- maintain consistent tone across the system
+- avoid switching styles between features
+- keep language neutral, clear, and functional
+- avoid exaggerated or emotional language unless intentional product choice
+
+Rule:
+- tone is part of system identity
+
+---
+
+# 9. Dynamic Content Rules
+
+Rules:
+- content must remain valid under state changes
+- avoid text that becomes misleading after updates
+- ensure content reflects current system state accurately
+
+Rule:
+- content must always reflect truth of UI state
+
+---
+
+# 10. Accessibility Alignment
+
+Rules:
+- content must support accessibility requirements
+- avoid reliance on visual-only meaning
+- ensure text complements semantic structure
+
+Rule:
+- content must be understandable without visual cues
+
+---
+
+# 11. Anti-Patterns
+
+Forbidden:
+
+- vague labels like "OK", "Submit", "Data"
+- inconsistent terminology across features
+- exposing technical errors to users
+- missing empty states or guidance
+- overly verbose or cluttered UI text
+- mismatched tone across components

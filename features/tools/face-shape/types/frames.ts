@@ -1,4 +1,4 @@
-import { FRAMES } from "../data/frames"
+import { FRAMES } from "../constants/frames"
 
 export type Frame = typeof FRAMES[number];
 
@@ -10,7 +10,7 @@ export type FaceShape = {
 };
 
 
-export type FrameData = {
+export type FrameDetails = {
     id: Frame
     name: string
     icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;

@@ -1,0 +1,67 @@
+---
+description: Runtime architectural enforcement rules for AI-assisted development
+globs:
+  - "**/*"
+alwaysApply: true
+---
+
+# Cursor Enforcement Layer
+
+This file defines how architectural rules must be enforced during code generation.
+
+---
+
+# 1. Pre-Generation Validation
+
+Before generating any code:
+
+- identify module type (ui / feature / shared / infra)
+- determine owning rule file
+- validate dependency direction
+
+If invalid → do not proceed
+
+---
+
+# 2. Dependency Safety Check
+
+Never generate:
+
+- cross-feature imports
+- shared → feature imports
+- UI → infra direct access
+- feature → feature coupling
+
+---
+
+# 3. Layer Compliance Rule
+
+All code must belong to a valid architectural layer:
+
+- UI layer (ui-boundaries)
+- Feature layer (feature-architecture)
+- Shared layer (shared-layer)
+- Infrastructure layer (boundaries)
+
+No hybrid modules allowed.
+
+---
+
+# 4. Abstraction Control
+
+Do not create shared abstractions unless:
+
+- reused in at least 2 domains
+- proven necessity exists
+
+Prefer duplication over premature reuse.
+
+---
+
+# 5. System Guarantee
+
+If respected:
+
+- zero architectural violations at generation time
+- predictable module placement
+- enforced clean architecture without manual policing

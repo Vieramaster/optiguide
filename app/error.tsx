@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation"
 
 import { ErrorPage } from "@/shared/components/ui/error-page"
-import { stringFormatters } from "@/shared/utils/string/string-formatters"
+import { formatPathSegments } from "@/shared/formatters/path-formatter"
 import { retryError } from "@/shared/actions/retry-error"
 
 interface ErrorProps {
@@ -13,7 +13,7 @@ interface ErrorProps {
 
 const Error = ({ reset }: ErrorProps) => {
   const pathname = usePathname()
-  const formatted = stringFormatters(pathname)
+  const formatted = formatPathSegments(pathname)
 
   const handleRetry = () => retryError(reset)
 

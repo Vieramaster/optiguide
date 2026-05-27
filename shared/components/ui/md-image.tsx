@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-import { isValidImageSrc } from "@/shared/utils/image/image-validator";
-import { parseImageDimensions } from "@/shared/utils/image/image-dimensions";
+import { isValidImageSrc } from "@/shared/validation/image-validator";
+import { parseImageDimensions } from "@/shared/image/get-dimensions";
 
 type MDImageProps = React.ImgHTMLAttributes<HTMLImageElement>;
 

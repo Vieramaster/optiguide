@@ -1,33 +1,30 @@
 import type { LucideIcon } from "lucide-react";
 
-export type block = {
+export type SidebarBlock = {
   title: string;
   url: string;
 };
 
-export type articleItem = {
+export type ArticleItem = {
   title: string;
   Icon: LucideIcon;
-  blocks: block[];
+  blocks: SidebarBlock[];
 };
 
-
-
-export type toolItem = {
+export type ToolItem = {
   title: string;
   url: string;
   Icon: LucideIcon;
 };
 
-export type team = {
+export type Team = {
   name: string;
   logo: LucideIcon;
   plan: string;
 };
 
-export type user = {
+export type User = {
   name: string;
   email: string;
   avatar: string;
 };
-

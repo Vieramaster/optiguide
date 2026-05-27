@@ -1,235 +1,154 @@
 # Arquitectura del Proyecto
 
-## 📐 Estructura de Carpetas Detallada
+## Estructura de carpetas
 
-### `/app`
-Contiene las rutas y páginas de Next.js usando App Router.
+### `app/`
 
-```txt
+Rutas y páginas de Next.js (App Router). Orquesta features y shared; no contiene lógica de negocio.
+
+```
 app/
-├── layout.tsx                     # Layout principal de la aplicación
-├── page.tsx                       # Página de inicio
-├── articulos/[slug]/              # Rutas dinámicas para artículos
-│   ├── page.tsx                   # Renderiza artículos Markdown
-│   └── loading.tsx                # Estado de carga
-└── herramientas/                  # Herramientas interactivas
-    ├── simulador-de-espesor/      # Página del simulador de espesor
+├── layout.tsx
+├── page.tsx
+├── app-sidebar-client.tsx      # Ensambla navegación desde features
+├── articulos/[slug]/
+│   ├── page.tsx
+│   └── loading.tsx
+└── herramientas/
+    ├── catalogo/page.tsx
+    ├── simulador-de-espesor/
     │   ├── page.tsx
-    │   ├── loading.tsx
-    │   └── error.tsx
-    └── lentes-segun-el-rostro/    # Herramienta de monturas según forma de rostro
+    │   └── loading.tsx
+    └── lentes-segun-el-rostro/
         ├── page.tsx
-        ├── loading.tsx
-        └── error.tsx
+        └── loading.tsx
 ```
 
-### `/features`
+### `features/`
 
-Espacio reservado para features de dominio encapsulados (por ejemplo, futuras
-implementaciones de monturas en SVG u otras herramientas avanzadas).
-Actualmente se utiliza `features/frames` como base para futuros desarrollos
-de formas de montura, pero aún no está integrado en el flujo principal.
-
-### `/components`
-Componentes React organizados por funcionalidad.
+Dominios de negocio autocontenidos. Cada feature expone una API pública vía `index.ts`.
 
 ```
-components/
-├── articles/              # Componentes para artículos
-│   ├── markdown-renderer.tsx
-│   ├── article-skeleton.tsx
-│   └── markdown-components/  # Componentes específicos de Markdown
-│       ├── title.tsx
-│       ├── subtitle.tsx
-│       ├── links.tsx
-│       ├── md-image.tsx
-│       └── ...
-├── simulator/            # Componentes del simulador
-│   ├── inputs-simulator.tsx
-│   ├── lens-simulator.tsx
-│   ├── select-simulator.tsx
-│   └── ...
-└── ui/                   # Componentes UI reutilizables
-    ├── button.tsx
-    ├── input.tsx
-    └── ...
+features/
+├── articles/                   # Artículos MDX de la librería
+│   ├── index.ts
+│   ├── components/
+│   ├── config/
+│   ├── constants/
+│   ├── markdowns/
+│   └── queries/
+├── prescription/               # Dominio de recetas ópticas (compartido entre tools)
+│   ├── index.ts
+│   ├── components/
+│   ├── constants.ts
+│   ├── rules.ts
+│   └── types.ts
+└── tools/
+    ├── catalog/                # Catálogo de lentes
+    ├── lens-thickness/         # Simulador de espesor
+    └── face-shape/             # Monturas según forma de rostro
 ```
 
-### `/lib`
-Funciones y utilidades del proyecto.
+Cada subfeature de `tools/` sigue la misma estructura interna:
 
 ```
-lib/
-├── utils/                # Utilidades generales
-│   ├── path-normalizer.ts
-│   ├── image-dimensions.ts
-│   └── image-validator.ts
-├── validation/           # Funciones de validación
-│   └── graduation-validation.ts
-├── calculate-thickness.ts
-├── findmarkdown-file.ts
-└── ...
+feature/
+├── index.ts                    # API pública
+├── components/
+├── constants/
+├── hooks/                      # Hooks y orchestrators
+├── logic/                      # Lógica de negocio pura
+├── types/
+└── config/                     # Configuración de navegación (sidebar)
 ```
 
-### `/hooks`
-Hooks personalizados de React.
+### `shared/`
+
+Código transversal **sin terminología de dominio**. Nunca importa de `features/`.
 
 ```
-hooks/
-├── use-lens-simulator.ts      # Lógica del simulador
-├── use-thickness-simulator.ts # Estado del simulador
-├── use-lens-svg.ts            # Cálculos SVG
-└── use-thickness-sync.ts      # Sincronización de grosor
+shared/
+├── components/                 # UI genérica (PageSkeleton, SelectField, ui/)
+├── formatters/                 # Utilidades de formato
+├── validation/                 # Validaciones genéricas
+├── layout/                     # Header, sidebar (recibe config por props)
+├── hooks/
+├── providers/
+└── image/
 ```
 
-## 🔄 Flujo de Datos
+### `lib/`
 
-### Renderizado de Artículos
+Solo `utils.ts` con `cn()` — convención de shadcn/ui.
+
+## Flujo de dependencias
+
+```
+app/  ──►  features/  ──►  shared/
+              │
+              └── prescription ◄── catalog, lens-thickness
+```
+
+- `app/` importa entrypoints públicos de features.
+- Features importan de `shared/` y, cuando comparten dominio, de otros features (p. ej. `prescription`).
+- `shared/` nunca importa de `features/`.
+
+## Patrones
+
+### Orchestrator hooks
+
+Features complejas (`catalog`, `lens-thickness`) usan un hook orchestrator que coordina hooks especializados:
+
+```tsx
+const { prescriptionForm, lensSide, indexSelect, calculatedLensThickness } =
+  useSimulatorOrchestrator();
+```
+
+Los componentes entrypoint solo renderizan estado orquestado.
+
+### API pública por feature
+
+```ts
+// app/herramientas/catalogo/page.tsx
+import { Catalog } from "@/features/tools/catalog";
+
+// app/articulos/[slug]/page.tsx
+import { getArticleStaticParams, SectionArticle } from "@/features/articles";
+```
+
+### Navegación del sidebar
+
+La configuración de navegación vive en cada feature (`config/sidebar-item.ts`, `config/articles-sidebar.ts`). `app/app-sidebar-client.tsx` la ensambla y la pasa a `AppSidebar` como props.
+
+## Renderizado de artículos
 
 ```
 1. Usuario visita /articulos/[slug]
-   ↓
-2. generateStaticParams() busca todos los .md en articles/
-   ↓
-3. findMarkdownFile() encuentra el archivo correspondiente
-   ↓
-4. Se lee el contenido del archivo Markdown
-   ↓
-5. MarkdownRenderer convierte Markdown a React
-   ↓
-6. Componentes específicos renderizan cada elemento
+2. generateStaticParams() lee markdowns/ del feature articles
+3. Import dinámico del .mdx correspondiente
+4. SectionArticle envuelve el contenido renderizado
 ```
 
-### Simulador de Espesor
+## Simulador de espesor
 
 ```
-1. Usuario ingresa valores en InputsSimulator
-   ↓
-2. validateGraduationInputs() valida los inputs
-   ↓
-3. Usuario hace clic en "Calcular"
-   ↓
-4. useLensSimulator procesa y valida los datos
-   ↓
-5. calculateThickness() calcula el grosor
-   ↓
-6. LensSimulator muestra el resultado con SVG
+1. Usuario completa PrescriptionForm (feature prescription)
+2. usePrescriptionBaseForm valida con rulesFullPrescription
+3. useSimulatorOrchestrator calcula espesor por índice
+4. LensSimulator renderiza SVG con el resultado
 ```
 
-## 🎯 Principios de Diseño
+## Principios
 
-### Separación de Responsabilidades
+- **Separación UI / lógica**: componentes presentacionales; lógica en `logic/` y `hooks/`.
+- **Boundaries**: sin imports cruzados no intencionados entre dominios.
+- **Shared genérico**: sin workflows ni terminología de dominio en `shared/`.
+- **Entrypoints explícitos**: consumidores externos importan desde `index.ts` del feature.
 
-**UI (Presentación)**
-- Solo muestra datos
-- No contiene lógica de negocio
-- Recibe props y callbacks
+## TypeScript
 
-**Lógica de Negocio**
-- Funciones puras en `lib/`
-- Hooks para estado complejo
-- Validaciones y cálculos
+Tipos de dominio viven dentro de cada feature (`types/`). Tipos genéricos de UI en `shared/`.
 
-**Datos**
-- Markdown en `articles/`
-- Datos estáticos en `data/`
-- Tipos en `types/`
+## Generación estática
 
-### Ejemplo de Separación
-
-**Antes (Mezclado):**
-```tsx
-// ❌ Lógica mezclada con UI
-const Component = ({ value }) => {
-  const isValid = Number(value) > 0 && Number(value) < 20;
-  return <button disabled={!isValid}>Enviar</button>;
-};
-```
-
-**Después (Separado):**
-```tsx
-// ✅ Lógica separada
-// lib/validation/validate-value.ts
-export const validateValue = (value: string) => {
-  const num = Number(value);
-  return num > 0 && num < 20;
-};
-
-// Componente solo UI
-const Component = ({ value }) => {
-  const isValid = validateValue(value);
-  return <button disabled={!isValid}>Enviar</button>;
-};
-```
-
-## 📦 Patrones Utilizados
-
-### Container/Presentational Pattern
-
-- **Containers**: Páginas que manejan estado y lógica (`app/simulador-de-espesor/page.tsx`)
-- **Presentational**: Componentes que solo muestran UI (`components/simulator/`)
-
-### Custom Hooks Pattern
-
-Lógica reutilizable encapsulada en hooks:
-- `useLensSimulator`: Lógica del simulador
-- `useThicknessSimulator`: Estado del simulador
-
-### Utility Functions Pattern
-
-Funciones puras reutilizables:
-- `normalizePath()`: Normalización de rutas
-- `validateGraduationInputs()`: Validación
-
-## 🔍 Búsqueda de Archivos Markdown
-
-El sistema busca recursivamente en `articles/`:
-
-```typescript
-// lib/findmarkdown-file.ts
-export const findMarkdownFile = (root: string, slug: string) => {
-  // Busca recursivamente el archivo {slug}.md
-  // Retorna la ruta completa o null
-};
-```
-
-## 🎨 Sistema de Estilos
-
-- **Tailwind CSS**: Estilos utilitarios
-- **Clases condicionales**: `clsx` y `tailwind-merge`
-- **Variables CSS**: Para temas y colores
-
-## 🧪 Testing (Futuro)
-
-Estructura recomendada para tests:
-
-```
-__tests__/
-├── lib/
-│   ├── validation/
-│   └── utils/
-├── hooks/
-└── components/
-```
-
-## 📊 Generación Estática
-
-Next.js genera páginas estáticas en build time:
-
-1. `generateStaticParams()` encuentra todos los slugs
-2. Para cada slug, se genera una página HTML estática
-3. Las páginas se sirven desde CDN (más rápido)
-
-## 🔐 TypeScript
-
-Tipos definidos en `types/`:
-
-- `simulator-types.ts`: Tipos del simulador
-- `sidebar-data-types.ts`: Tipos del sidebar
-
-## 🚀 Optimizaciones
-
-- **Imágenes**: Next.js Image con optimización automática
-- **Código**: Code splitting automático de Next.js
-- **Markdown**: Renderizado del lado del servidor
-- **SVG**: Componentes optimizados para el simulador
+Next.js genera páginas estáticas en build time mediante `generateStaticParams()` en rutas dinámicas de artículos.

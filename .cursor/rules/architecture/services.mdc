@@ -1,0 +1,33 @@
+---
+description: Business logic and service layer constraints
+globs:
+  - "features/**/*"
+  - "shared/**/*"
+alwaysApply: true
+---
+
+# services.mdc
+
+- Place reusable business logic inside services or actions
+- Avoid business logic directly inside UI components
+- Keep services framework-agnnostic where possible
+- Keep services deterministic when possible
+- Keep side effects isolated
+- Separate orchestration from transformation logic
+- Avoid mixing persistence logic with presentation logic
+- Avoid direct mutation of external state inside services
+- Keep async workflows explicit
+- Prefer small focused services
+- Avoid god-service modules
+- Avoid unrelated responsibilities inside a single service
+- Keep service inputs explicit
+- Keep service outputs predictable
+- Prefer typed return values
+- Avoid hidden runtime dependencies
+- Avoid accessing browser APIs from generic services
+- Separate validation from persistence operations
+- Keep error handling centralized and predictable
+- Avoid duplicated business rules across services
+- Prefer pure helper extraction for reusable calculations
+- Keep service naming behavior-oriented
+- Avoid UI terminology inside service modules

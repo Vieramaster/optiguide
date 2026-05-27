@@ -1,15 +1,15 @@
 import type { Frame } from "../types/frames";
 
-import { framesData } from "../data/frames-ids";
+import { availableFrames } from "../constants/available-frames";
 
 interface FrameCardProps {
   frame: Frame;
 }
 
 export const FrameCard = ({ frame }: FrameCardProps) => {
-  const frameData = framesData.find(({ id }) => id === frame);
-  if (!frameData) return null;
-  const { name, icon: Icon } = frameData;
+  const frameDetails = availableFrames.find(({ id }) => id === frame);
+  if (!frameDetails) return null;
+  const { name, icon: Icon } = frameDetails;
 
   return (
     <li className="flex flex-col items-center " aria-label={name}>

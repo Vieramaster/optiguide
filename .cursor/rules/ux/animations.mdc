@@ -1,0 +1,143 @@
+---
+description: UI motion, animation consistency, and performance-safe transitions rules
+globs:
+  - "app/**/*"
+  - "features/**/*"
+  - "components/**/*"
+alwaysApply: true
+---
+
+# Animation Contract
+
+This file defines rules for UI motion, transitions, and animation behavior.
+
+It does NOT define:
+- architecture rules (see boundaries.mdc)
+- UI structure (see ui-boundaries.mdc)
+- state behavior (see reactivity-runtime.mdc)
+- hooks composition (see hooks.mdc)
+
+---
+
+# 1. Core Principle
+
+Animations must support UX clarity, not decorative intent.
+
+Rule:
+- motion must improve understanding of state changes
+
+---
+
+# 2. Motion Purpose Discipline
+
+Allowed purposes:
+- state transition feedback
+- spatial continuity
+- hierarchy clarification
+- interaction feedback
+
+Forbidden:
+- purely decorative motion without functional value
+- motion that obscures UI state
+- motion that delays user interaction unnecessarily
+
+Rule:
+- every animation must have a UX justification
+
+---
+
+# 3. Performance First
+
+Rules:
+- prefer transform and opacity animations
+- avoid layout-triggering animations (reflow-heavy)
+- avoid animating layout properties (height, width, top, left) when possible
+- keep animations GPU-friendly
+
+Rule:
+- animations must not degrade runtime performance
+
+---
+
+# 4. Duration and Timing Consistency
+
+Rules:
+- use consistent timing scale across the system
+- avoid arbitrary animation durations
+- prefer standardized easing curves
+
+Rule:
+- motion system must feel cohesive across features
+
+---
+
+# 5. Reduced Motion Support
+
+Rules:
+- respect user preference for reduced motion
+- disable or simplify animations when reduced motion is enabled
+- ensure no loss of functionality when animations are removed
+
+Rule:
+- accessibility overrides animation behavior
+
+---
+
+# 6. State Transition Animation
+
+Rules:
+- animations must reflect state transitions, not control them
+- avoid coupling animation timing with business logic
+- animation should never block state updates
+
+Rule:
+- state drives animation, not the inverse
+
+---
+
+# 7. Component-Level Responsibility
+
+Rules:
+- components own their own animations
+- shared animation patterns must be abstracted only when reused
+- avoid global animation side-effects
+
+Rule:
+- animations are local unless proven reusable
+
+---
+
+# 8. Layout Stability
+
+Rules:
+- avoid layout shift during animations
+- preserve content stability during transitions
+- avoid jarring positional changes unless intentional
+
+Rule:
+- UI must remain structurally stable during motion
+
+---
+
+# 9. Animation Composition
+
+Rules:
+- prefer simple animations over chained complex motion
+- avoid cascading animation dependencies
+- avoid multiple competing animations on same element
+
+Rule:
+- motion complexity must remain controlled and readable
+
+---
+
+# 10. Anti-Patterns
+
+Forbidden:
+
+- layout thrashing animations
+- uncontrolled animation chains
+- animations driving application logic
+- inconsistent timing across components
+- decorative animations without UX purpose
+- blocking interactions during transitions

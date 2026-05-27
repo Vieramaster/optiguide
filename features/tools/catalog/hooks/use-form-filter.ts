@@ -1,8 +1,8 @@
 "use client";
 import { useState, useMemo } from "react";
 
-import type { PrescriptionBaseValues } from "@/shared/lib/prescription/types";
-import { dioptersRules } from "@/shared/lib/prescription/rules";
+import type { PrescriptionBaseValues } from "@/features/prescription";
+import { dioptersRules } from "@/features/prescription";
 
 import type { LensObjectResolved } from "../types/companies/companies";
 import { transpositionFilter } from "../logic/transposition-filter";

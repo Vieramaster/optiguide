@@ -4,7 +4,7 @@ import { Montserrat, Inter } from "next/font/google";
 
 import { cn } from "@/lib/utils";
 import { Header } from "@/shared/layout/header/header";
-import { AppSidebar } from "@/shared/layout/sidebar/app-sidebar";
+import { AppSidebarClient } from "@/app/app-sidebar-client";
 import { ThemeProvider } from "@/shared/providers/theme-provider";
 import {
   SidebarInset,
@@ -89,7 +89,7 @@ export default function RootLayout({
         >
           {/**page */}
           <SidebarProvider>
-            <AppSidebar />
+            <AppSidebarClient />
             <SidebarInset>
               <Header />
               {children}

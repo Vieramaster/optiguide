@@ -1,4 +1,4 @@
-import type { PrescriptionBaseValues } from "@/shared/lib/prescription/types";
+import type { PrescriptionBaseValues } from "@/features/prescription";
 
 import type { LensObjectResolved } from "../types/companies/companies";
 

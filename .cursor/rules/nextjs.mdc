@@ -1,25 +1,344 @@
 ---
-description: Next.js App Router and server-first architecture rules
+description: Next.js App Router architecture and rendering rules
 globs:
-  - "app/**/*"
-  - "features/**/*"
-  - "shared/**/*"
-alwaysApply: true
+  - "src/app/**/*"
+  - "src/features/**/*"
+alwaysApply: false
 ---
 
-# nextjs.mdc
+# Next.js Architecture
 
-- Use Next.js App Router
-- Prefer React Server Components by default
-- Minimize usage of "use client"
-- Prefer Server Actions for mutations when appropriate
-- Avoid unnecessary API routes
-- Prefer async server components for data fetching
-- Use Suspense and streaming when beneficial
-- Use dynamic imports for heavy client-side components
-- Use the Next.js Image component for optimized images
-- Keep sensitive logic on the server
-- Prefer colocated route structure when it improves maintainability
-- Avoid unnecessary client-side fetching
-- Prefer URL search params over duplicated client state when possible
-- Use loading.tsx and error.tsx boundaries when appropriate
+Use modern Next.js App Router architecture.
+
+Prioritize:
+
+- server rendering
+- performance
+- reduced client JavaScript
+- clear rendering boundaries
+- scalable async architecture
+
+Avoid legacy Pages Router mentality.
+
+---
+
+# Server Components First
+
+Use Server Components by default.
+
+Server Components are ideal for:
+
+- data fetching
+- async rendering
+- security
+- performance
+- reducing client JavaScript
+
+Avoid unnecessary client components.
+
+---
+
+# Client Components
+
+Use Client Components ONLY when interaction is required.
+
+Valid cases:
+
+- event handlers
+- browser APIs
+- local interactive state
+- animations
+- refs
+- effects
+
+Avoid converting entire trees into client components.
+
+Do NOT use:
+
+```tsx
+"use client"
+```
+
+higher than necessary.
+
+Keep client boundaries small.
+
+---
+
+# Rendering Boundaries
+
+Create explicit server/client boundaries.
+
+Correct architecture:
+
+```txt
+Server Component
+  ↓
+Client Boundary
+  ↓
+Interactive UI
+```
+
+Avoid leaking client-side rendering into large server trees.
+
+---
+
+# Data Fetching
+
+Prefer server-side data fetching whenever possible.
+
+Prefer:
+
+- Server Components
+- Server Actions
+- Route Handlers
+
+Avoid unnecessary client-side fetching for critical data.
+
+Avoid:
+
+```tsx
+useEffect(() => {
+  fetch(...)
+}, [])
+```
+
+for primary page data when server rendering solves it better.
+
+---
+
+# Async Architecture
+
+Design async flows intentionally.
+
+Consider:
+
+- loading states
+- suspense
+- streaming
+- retries
+- invalidation
+- optimistic updates
+- error boundaries
+
+Avoid duplicated loading logic across the app.
+
+---
+
+# Streaming
+
+Use streaming and suspense intentionally.
+
+Prefer isolated suspense boundaries instead of blocking entire pages.
+
+Correct:
+
+```tsx
+<Suspense fallback={<Loading />}>
+  <Products />
+</Suspense>
+```
+
+Avoid massive blocking render trees.
+
+---
+
+# Server Actions
+
+Use Server Actions for mutations when appropriate.
+
+Correct use cases:
+
+- forms
+- mutations
+- secure server-side operations
+
+Keep mutation logic outside UI components.
+
+Avoid large mutation flows directly inside client components.
+
+---
+
+# Route Handlers
+
+Keep API logic isolated.
+
+Correct:
+
+```txt
+app/api/
+```
+
+Route handlers should:
+
+- validate inputs
+- orchestrate requests
+- isolate transport logic
+
+Avoid mixing API logic into UI layers.
+
+---
+
+# Caching Strategy
+
+Choose caching intentionally.
+
+Understand when routes are:
+
+- static
+- dynamic
+- revalidated
+- uncached
+
+Avoid making everything dynamic by default.
+
+---
+
+# Rendering Strategy
+
+Use the appropriate rendering strategy per feature.
+
+Possible strategies:
+
+- static rendering
+- dynamic rendering
+- streaming
+- partial hydration
+
+Choose based on actual feature requirements.
+
+---
+
+# Layout Architecture
+
+Use layouts intentionally.
+
+Correct use cases:
+
+- persistent navigation
+- shared UI shells
+- dashboard structures
+- route grouping
+
+Correct:
+
+```txt
+app/
+  dashboard/
+    layout.tsx
+```
+
+Avoid duplicated layout structures across pages.
+
+---
+
+# Route Organization
+
+Keep App Router organization clean and scalable.
+
+Correct:
+
+```txt
+app/
+  (public)/
+  dashboard/
+  api/
+```
+
+Avoid chaotic route nesting.
+
+---
+
+# Server vs Client Responsibility
+
+Server should handle:
+
+- data
+- async orchestration
+- security
+- backend communication
+
+Client should handle:
+
+- interaction
+- visual state
+- browser behavior
+
+Avoid pushing server responsibilities into client components.
+
+---
+
+# Performance
+
+Reduce unnecessary client JavaScript.
+
+Prefer:
+
+- server rendering
+- isolated client boundaries
+- streaming
+- async server components
+
+Avoid large client-side rendering trees.
+
+---
+
+# Providers
+
+Global providers should remain minimal.
+
+Avoid wrapping the entire application unnecessarily with client providers.
+
+Prefer scoped providers when possible.
+
+---
+
+# Loading Architecture
+
+Loading states should be intentional and reusable.
+
+Avoid repeating:
+
+```tsx
+if (loading) return <Loading />
+```
+
+across every component.
+
+Prefer:
+
+- suspense
+- route loading.tsx
+- reusable async boundaries
+
+---
+
+# Error Handling
+
+Use proper error boundaries.
+
+Leverage:
+
+```txt
+error.tsx
+not-found.tsx
+```
+
+inside App Router.
+
+Avoid ad-hoc error handling scattered everywhere.
+
+---
+
+# Next.js Mentality
+
+Think in:
+
+- server-first architecture
+- rendering boundaries
+- async systems
+- streaming
+- progressive rendering
+- reduced client JavaScript
+
+Build scalable rendering systems, not only pages.

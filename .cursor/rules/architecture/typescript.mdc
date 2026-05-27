@@ -1,0 +1,121 @@
+---
+description: TypeScript type system, modeling, and safety constraints
+globs:
+  - "**/*.ts"
+  - "**/*.tsx"
+alwaysApply: true
+---
+
+# TypeScript Contract
+
+This file defines rules for type safety, domain modeling, and type system design.
+
+It does NOT define:
+- runtime behavior (see reactivity-runtime.mdc)
+- architecture rules (see boundaries.mdc)
+- state rules (see state.mdc)
+- UI structure (see ui-boundaries.mdc)
+
+---
+
+# 1. Core Principle
+
+Types must model reality accurately and eliminate invalid states.
+
+Rule:
+- the type system is a correctness layer, not documentation
+
+---
+
+# 2. Strict Mode Enforcement
+
+Rules:
+- always use strict TypeScript mode
+- avoid `any` unless explicitly justified and isolated
+- avoid type weakening patterns (`unknown` without narrowing strategy)
+
+Rule:
+- type safety must be preserved by default
+
+---
+
+# 3. Domain Modeling
+
+Rules:
+- types must reflect domain concepts, not implementation details
+- keep types close to their owning feature or module
+- avoid global type dumping
+
+Rule:
+- domain types > generic reusable types
+
+---
+
+# 4. Invalid State Elimination
+
+Rules:
+- model invalid states out of the system using discriminated unions
+- avoid optional fields that create ambiguous states
+- prefer explicit state modeling over nullable ambiguity
+
+Rule:
+- impossible states must be unrepresentable
+
+---
+
+# 5. API Type Safety
+
+Rules:
+- public APIs must expose explicit types
+- avoid leaking internal implementation types
+- keep external contracts stable and intentional
+
+Rule:
+- API types define system boundaries
+
+---
+
+# 6. Type Inference Discipline
+
+Rules:
+- prefer inference for local variables
+- use explicit types for public boundaries
+- avoid over-annotating trivial values
+
+Rule:
+- clarity > verbosity
+
+---
+
+# 7. Structural Simplicity
+
+Rules:
+- avoid unnecessary generic complexity
+- avoid deep nested type composition unless justified
+- prefer readable type structures over abstract meta-types
+
+Rule:
+- types must remain maintainable, not clever
+
+---
+
+# 8. Immutability Preference
+
+Rules:
+- prefer readonly structures when mutation is not required
+- avoid unintended shared mutable types
+
+Rule:
+- immutability improves predictability
+
+---
+
+# 9. Anti-Patterns
+
+Forbidden:
+
+- global type dumping files
+- excessive use of `any`
+- ambiguous optional chaining as state modeling
+- over-engineered generics
+- leaking internal types to public APIs

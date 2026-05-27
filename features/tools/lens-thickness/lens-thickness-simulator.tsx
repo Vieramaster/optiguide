@@ -1,14 +1,14 @@
 "use client";
 
-//SHARED
+import {
+  PRESCRIPTION_KEYS,
+  PrescriptionForm,
+} from "@/features/prescription";
 import { Button, Title } from "@/shared/components/ui";
-import { PrescriptionForm } from "@/shared/components";
-import { PRESCRIPTION_KEYS } from "@/shared/lib/prescription/constants";
 
-//FEATURES
 import { LensSimulator } from "./components/lens-simulator";
-import { useSimulatorOrchestrator } from "./hook/use-simulator-orchestrator";
-import { LensThicknessTitle } from "./data/title";
+import { useSimulatorOrchestrator } from "./hooks";
+import { LensThicknessTitle } from "./constants/title";
 
 const LENS_SIDE = ["left", "right"] as const;
 

@@ -1,6 +1,6 @@
 import { Skeleton } from "@/shared/components/ui";
 
-import { SKELETON_CONFIG } from "../data/skeleton-config";
+import { SKELETON_CONFIG } from "../constants/skeleton-config";
 
 import { SectionArticle } from "./section-article";
 

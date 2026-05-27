@@ -1,0 +1,121 @@
+---
+description: UI subsystem boundaries (inherits global architecture contract)
+globs:
+  - "src/**/*"
+  - "components/**/*"
+  - "shared/**/*"
+alwaysApply: true
+---
+
+# UI Boundaries (SUBSYSTEM CONTRACT)
+
+This file defines UI-specific dependency rules on top of the global architecture contract defined in boundaries.mdc.
+
+All global rules still apply.
+
+---
+
+# 1. UI Layer Hierarchy (STRICT)
+
+UI must follow strict layering:
+
+primitives (shadcn/ui)
+→ shared/ui
+→ features/*
+→ layouts/pages
+
+Rule:
+- UI layers must only depend downward
+
+---
+
+# 2. Primitives Layer
+
+- Base UI components (shadcn/ui)
+- Stateless visual primitives
+- Must not depend on application code
+
+Rule:
+- primitives are the lowest UI layer
+
+---
+
+# 3. shared/ui Layer
+
+- reusable UI abstractions
+- domain-agnostic components
+- built only from primitives
+
+Rule:
+- shared/ui must remain feature-agnostic
+
+---
+
+# 4. Feature UI Layer
+
+- business-specific UI composition
+- can use shared/ui + primitives
+- may contain local UI state
+
+Rule:
+- feature UI is composition layer, not foundation layer
+
+---
+
+# 5. Layout Layer
+
+- structural UI composition only
+- no business logic
+- no reusable domain components
+
+Rule:
+- layout defines structure only
+
+---
+
+# 6. UI Leakage Prevention (UI-ONLY RULES)
+
+Forbidden:
+
+- primitives importing application code
+- shared/ui importing features UI
+- features importing other features UI directly
+- layouts importing feature internals directly
+
+Rule:
+- UI boundary violations are structural defects
+
+---
+
+# 7. Component Creation Rule
+
+Before creating UI:
+
+1. check primitives (shadcn)
+2. check shared/ui
+3. check feature existing components
+4. then create new component
+
+Rule:
+- reuse is mandatory before creation
+
+---
+
+# 8. UI Stability Rule
+
+- primitives and shared/ui are high-stability layers
+- feature UI evolves faster than base UI layers
+
+Rule:
+- lower UI layers must evolve slower than features
+
+---
+
+# 9. System Guarantee
+
+If respected:
+
+- consistent UI hierarchy across system
+- no UI-level coupling between domains
+- predictable component composition model
+- scalable UI architecture under growth

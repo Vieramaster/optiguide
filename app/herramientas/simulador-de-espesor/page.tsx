@@ -1,5 +1,5 @@
-import { LensThicknessSimulator } from "@/features/tools/lens-thickness/lens-thickness-simulator"
+import { LensThicknessSimulator } from "@/features/tools/lens-thickness";
 
-const LensThicknessSimulatorPage = () => <LensThicknessSimulator />
+const LensThicknessSimulatorPage = () => <LensThicknessSimulator />;
 
-export default LensThicknessSimulatorPage
+export default LensThicknessSimulatorPage;

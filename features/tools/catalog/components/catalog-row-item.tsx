@@ -1,7 +1,7 @@
 import { TableRow, TableCell } from "@/shared/components/ui";
 
 import { FormatCatalogCellValue } from "../components/format-catalog-cell-value";
-import { CATALOG_TABLE_COLUMNS } from "../data/catalog-table-columns";
+import { CATALOG_TABLE_COLUMNS } from "../constants/catalog-table-columns";
 import type { CatalogRow } from "../types/ui/table-options";
 
 interface CatalogRowItemProps {

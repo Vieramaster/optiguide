@@ -1,28 +1,35 @@
 "use client";
 
-
 import { PageTitle } from "@/shared/components/page-title";
 
 import {
-  ProjectsList, ArticlesList, Sidebar, SidebarContent,
+  ProjectsNav,
+  ArticlesNav,
+  Sidebar,
+  SidebarContent,
   SidebarFooter,
   SidebarHeader,
 } from "./components";
-import { TOOLS_SIDEBAR } from "./data/toolsSidebar";
-import { ARTICLES_SIDEBAR } from "./data/librarySidebar";
+import type { ArticleItem, ToolItem } from "./types/sidebar";
 
-export const AppSidebar = ({ ...props }: React.ComponentProps<typeof Sidebar>) => (
+interface AppSidebarProps extends React.ComponentProps<typeof Sidebar> {
+  toolsSidebar: ToolItem[];
+  articlesSidebar: ArticleItem[];
+}
+
+export const AppSidebar = ({
+  toolsSidebar,
+  articlesSidebar,
+  ...props
+}: AppSidebarProps) => (
   <Sidebar collapsible="icon" {...props}>
-    {/**header del sidebar */}
     <SidebarHeader>
       <PageTitle textSize="text-2xl" />
     </SidebarHeader>
-    {/**Contenido del sidebar */}
     <SidebarContent>
-      <ProjectsList projects={TOOLS_SIDEBAR} title="herramientas" />
-      <ArticlesList arrayItems={ARTICLES_SIDEBAR} name="Articulos" />
+      <ProjectsNav projects={toolsSidebar} title="herramientas" />
+      <ArticlesNav articles={articlesSidebar} name="Articulos" />
     </SidebarContent>
-    {/**Footer del sidebar */}
     <SidebarFooter />
   </Sidebar>
 );

@@ -1,0 +1,238 @@
+---
+description: UI component composition rules (React + Tailwind v4 + shadcn/ui)
+globs:
+  - "src/**/*"
+  - "components/**/*"
+  - "shared/**/*"
+alwaysApply: true
+---
+
+# UI Composition System
+
+This file defines how UI components must be constructed in React within a token-driven (Tailwind v4) and shadcn/ui-based architecture.
+
+It enforces **how UI is built in code**, not how the system is structured or styled.
+
+---
+
+# 1. Core Principle
+
+UI is deterministic composition of reusable primitives.
+
+- UI is not a place for business logic
+- UI is not a place for data orchestration
+- UI is not a design system definition layer
+
+Rule:
+- UI = composition layer only
+
+---
+
+# 2. Component Construction Model (MANDATORY)
+
+All components must follow this construction order:
+
+1. shadcn/ui primitives
+2. shared/ui abstractions (if available)
+3. feature-specific composition
+4. local UI state (if required)
+5. layout composition (if applicable)
+
+Rule:
+- Lower-level abstractions must always be evaluated before creating new UI
+
+---
+
+# 3. UI vs Domain Separation (STRICT)
+
+UI layer responsibilities:
+
+- rendering
+- composition
+- presentation state
+- interaction state (local only)
+
+Forbidden in UI:
+
+- business logic
+- domain rules
+- API orchestration
+- data transformation logic (domain level)
+
+Rule:
+- Domain logic must live outside UI components
+
+---
+
+# 4. Render Determinism Rule (STRICT)
+
+Components must be:
+
+- deterministic
+- predictable
+- side-effect safe by default
+
+Forbidden:
+
+- side effects during render
+- hidden external dependencies
+- implicit global state usage
+
+Rule:
+- same input must always produce same UI output
+
+---
+
+# 5. Wrapper vs Abstraction Rule
+
+## Wrapper (preferred)
+Use when:
+- behavior remains identical
+- only visual or structural adaptation is needed
+- reuse exists or is likely across features
+
+## New abstraction (restricted)
+Only when:
+- reuse exists in multiple features
+- abstraction reduces real duplication
+- semantic meaning remains consistent
+
+## Fork (exceptional)
+Only when:
+- component purpose fundamentally changes
+- abstraction introduces coupling or confusion
+
+Rule:
+- 80% similarity → wrapper, not new component
+
+---
+
+# 6. Composition Depth Rule (STRICT)
+
+Avoid deep abstraction chains.
+
+Forbidden patterns:
+
+- wrapper over wrapper over wrapper (>3 levels)
+- unnecessary indirection without reuse value
+- excessive abstraction layering
+
+Rule:
+- if UI requires tracing more than 3 abstraction layers → redesign required
+
+---
+
+# 7. Hook Usage Rules (UI CONTEXT ONLY)
+
+Allowed:
+
+- local UI state (toggle, open/close, UI filters)
+- presentation-only state logic
+
+Forbidden:
+
+- business logic hooks inside UI components
+- API fetching in generic UI components
+- cross-feature state coupling
+
+Rule:
+- hooks in UI must be presentation-only
+
+---
+
+# 8. ClassName Discipline (STRICT)
+
+- className must remain declarative
+- avoid logic-heavy styling decisions
+- no business logic embedded in className
+- cva required for multi-state components
+
+Rule:
+- styling logic must not encode domain logic
+
+---
+
+# 9. Feature Composition Rule
+
+Inside features:
+
+- UI is assembly of primitives + shared/ui
+- no redefinition of system-level components
+- no duplication of reusable abstractions
+
+Rule:
+- features compose, they do not create primitives
+
+---
+
+# 10. Shared/UI Usage Rule
+
+- shared/ui is the only system-level abstraction layer
+- must remain domain-agnostic
+- must not depend on feature logic
+
+Violation:
+- any domain awareness in shared/ui is an architectural defect
+
+---
+
+# 11. Component Creation Rule
+
+Before creating a new component:
+
+1. check shadcn/ui primitives
+2. check shared/ui
+3. check existing feature components
+4. only then create new component
+
+Rule:
+- creation must be justified over reuse
+
+---
+
+# 12. State vs UI Responsibility Rule
+
+- UI components may contain local state only
+- domain state must be externalized (hooks/services)
+- layout components must not contain business logic
+
+Rule:
+- UI is not a state management layer
+
+---
+
+# 13. Anti-Patterns (STRICT)
+
+Forbidden:
+
+- mixing business logic inside UI components
+- duplicating primitives across features
+- uncontrolled abstraction stacking
+- feature-specific design systems
+- className-based business logic
+- hidden side effects in render flow
+
+---
+
+# 14. React Architecture Constraint (2026 standard)
+
+- UI components must remain render-focused
+- async/data logic must be externalized
+- server/client boundaries must be respected if applicable
+- UI must not orchestrate application flow
+
+Rule:
+- UI renders state, it does not own it
+
+---
+
+# 15. System Guarantee
+
+If respected, this system ensures:
+
+- predictable UI behavior across the application
+- strict separation of concerns
+- controlled abstraction growth
+- no UI duplication drift
+- scalable React component architecture
+- token-consistent visual composition

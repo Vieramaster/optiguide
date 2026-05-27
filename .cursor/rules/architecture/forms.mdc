@@ -1,0 +1,111 @@
+---
+description: Form design, validation strategy, and UX composition rules
+globs:
+  - "**/forms/**/*"
+  - "**/*form*"
+alwaysApply: false
+---
+
+# Forms Composition Contract
+
+This file defines rules for form structure, validation strategy, and UX consistency.
+
+It does NOT define:
+- runtime state behavior (see reactivity-runtime.mdc)
+- hook design (see hooks.mdc)
+- UI system structure (see ui-boundaries.mdc)
+- architecture rules (see boundaries.mdc)
+
+---
+
+# 1. Core Principle
+
+Forms are UX composition units for structured user input.
+
+Rule:
+- forms manage interaction flow, not system state
+
+---
+
+# 2. State Scope Principle
+
+Form state must be:
+
+- localized to the form boundary
+- not duplicated outside its scope
+- not mirrored into global state unnecessarily
+
+Rule:
+- form state is temporary interaction state
+
+---
+
+# 3. Validation Strategy
+
+Rules:
+- validation must be explicit and readable
+- avoid duplicated validation logic across forms
+- reuse validation schemas when domain matches
+
+Rule:
+- validation logic must remain close to form intent
+
+---
+
+# 4. Error Handling UX
+
+Rules:
+- errors must be user-readable
+- validation errors must be contextual
+- loading/success states must be explicitly handled in UI
+
+Rule:
+- form UX must always represent state clearly
+
+---
+
+# 5. Form Composition
+
+Rules:
+- forms must remain composable units
+- avoid deeply nested form structures
+- split large forms into logical sections
+
+Rule:
+- forms are composition blocks, not monoliths
+
+---
+
+# 6. Field Components
+
+Rules:
+- prefer reusable field components when UI pattern repeats
+- avoid duplicating input logic across forms
+- fields must remain presentation-focused
+
+Rule:
+- fields are UI primitives for forms
+
+---
+
+# 7. Controlled vs Uncontrolled Inputs
+
+Rules:
+- use controlled inputs for complex interactions
+- avoid unnecessary controlled state overhead
+- choose strategy based on interaction complexity, not habit
+
+Rule:
+- input strategy must match UX complexity
+
+---
+
+# 8. Anti-Patterns
+
+Forbidden:
+
+- duplicated validation logic across forms
+- deeply nested uncontrolled state structures
+- mixing business logic into form components
+- using forms as global state managers
+- embedding side-effect orchestration inside forms

@@ -1,0 +1,225 @@
+---
+description: Semantic naming and domain-driven naming constraints
+globs:
+  - "app/**/*"
+  - "features/**/*"
+  - "shared/**/*"
+alwaysApply: true
+---
+
+# naming.mdc
+
+- Name by responsibility, not implementation
+- Prefer domain terminology over technical terminology
+- Prefer explicit naming over abbreviated naming
+- Prefer predictable naming over clever naming
+- Avoid ambiguous or generic names
+- Naming must communicate responsibility immediately
+
+## Components
+
+- Components must use nouns
+- Components represent UI entities or UI sections
+- Avoid verb-based component names
+- Avoid implementation-oriented names
+
+### Good
+
+```tsx
+<ProductCard />
+<LensForm />
+<UserAvatar />
+```
+
+### Bad
+
+```tsx
+<RenderProducts />
+<HandleModal />
+```
+
+## Hooks
+
+- Hooks must start with `use`
+- Hooks must describe domain responsibility or state context
+- Avoid generic hooks
+- Avoid manager-style naming
+- Avoid catch-all hooks
+
+### Good
+
+```ts
+useCart;
+useLensForm;
+usePagination;
+```
+
+### Bad
+
+```ts
+useData;
+useManager;
+useHandleStuff;
+```
+
+## Functions
+
+- Functions must use verbs
+- Function names must describe actions, transformations, or outcomes
+- Prefer domain language over utility language
+
+### Good
+
+```ts
+calculateTotal;
+validatePrescription;
+buildPayload;
+formatCurrency;
+```
+
+### Bad
+
+```ts
+dataFormatter;
+utilsFunction;
+totalCalculator;
+```
+
+## Handlers
+
+- Event handlers must start with `handle`
+- State mutations must describe resulting state
+- Toggle actions must describe affected state or UI
+
+### Good
+
+```ts
+handleSubmit;
+handleLensSelect;
+setSelectedLens;
+toggleSidebar;
+```
+
+### Bad
+
+```ts
+doStuff;
+changeValue;
+handleData;
+```
+
+## Types
+
+- Types must represent domain entities
+- Avoid meaningless type names
+- Prefer business terminology
+
+### Good
+
+```ts
+type Lens;
+type Prescription;
+type UserProfile;
+```
+
+### Bad
+
+```ts
+type Data;
+type ResponseType;
+type ItemInfo;
+```
+
+## Booleans
+
+- Boolean names must read as conditions
+- Prefer:
+  - `is`
+  - `has`
+  - `can`
+  - `should`
+
+### Good
+
+```ts
+isLoading;
+hasError;
+canSubmit;
+shouldRender;
+```
+
+### Bad
+
+```ts
+loading;
+errorStatus;
+submitValidation;
+```
+
+## Arrays
+
+- Arrays must use real plurals
+- Avoid:
+  - `Data`
+  - `List`
+  - `Array`
+
+### Good
+
+```ts
+users;
+products;
+lensOptions;
+```
+
+### Bad
+
+```ts
+userData;
+productListData;
+arrayOfItems;
+```
+
+## Semantic clarity
+
+- If a name requires explanation, rename it
+- Prefer long explicit names over short ambiguous names
+- Code should read as natural English
+
+### Good
+
+```ts
+const availableLenses = getAvailableLenses();
+
+if (isLoading) return null;
+
+handleLensSelect(lensId);
+```
+
+### Bad
+
+```ts
+const data = ...
+```
+
+## Anti-patterns
+
+- Avoid:
+  - `data`
+  - `info`
+  - `manager`
+  - `utils`
+  - `helper`
+  - `common`
+  - `misc`
+  - `temp`
+  - `stuff`
+
+- Avoid names that hide responsibility
+- Avoid implementation-driven naming
+- Avoid overloaded naming across unrelated domains
+
+## Final rule
+
+- Prefer boring clarity over clever abstraction
+- Prefer explicitness over brevity

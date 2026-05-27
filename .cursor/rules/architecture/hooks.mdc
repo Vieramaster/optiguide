@@ -1,0 +1,133 @@
+---
+description: Hook architecture, orchestration, and composition constraints
+globs:
+  - "features/**/*"
+  - "shared/hooks/**/*"
+alwaysApply: true
+---
+
+# hooks.mdc
+
+- Hooks must live inside a dedicated `hooks/` or `hook/` directory
+- Keep hooks colocated with their owning feature
+- Avoid placing feature business hooks inside `shared/`
+- Shared hooks must remain domain-agnostic
+- Separate UI hooks from business hooks
+- Avoid mixing UI state with business workflows
+
+## Responsibilities
+
+- Hooks must encapsulate a single responsibility
+- Avoid oversized hooks
+- Avoid catch-all hooks
+- Avoid mixing unrelated concerns inside the same hook
+- Hooks manage state, effects, orchestration, and business interaction
+- Components must remain presentation-focused
+- Avoid embedding orchestration logic directly inside components
+
+## Hook composition
+
+- Prefer composing multiple focused hooks
+- Avoid duplicating stateful logic across components
+- Prefer orchestration hooks when multiple hooks must coordinate
+- Hooks must communicate through explicit inputs and outputs
+- Avoid hidden dependencies between composed hooks
+- Avoid implicit shared mutable state between hooks
+
+## Orchestrator hooks
+
+- Create an orchestrator hook when a component uses more than 2 business hooks
+- Orchestrator hooks coordinate communication between hooks
+- Orchestrator hooks centralize derived state
+- Orchestrator hooks centralize business orchestration
+- Components must consume orchestrated state instead of coordinating hooks directly
+- Prefer a single orchestrator hook entrypoint per complex component
+- Orchestrator hooks must expose only the final UI-facing API
+- Avoid leaking internal hook details to components
+- Orchestrator hooks coordinate hooks, not replace them
+- Avoid placing all business logic inside orchestrators
+- Keep orchestrators thin and composition-oriented
+
+### Good
+
+```ts
+const {
+  prescriptionForm,
+  lensSide,
+  indexSelect,
+  calculatedLensThickness,
+} = useSimulatorOrchestrator();
+```
+
+### Bad
+
+```ts
+const prescriptionForm = usePrescriptionForm();
+const lensSide = useLensSide();
+const indexSelect = useIndexSelect();
+```
+
+## Derived state
+
+- Centralize derived state inside hooks or orchestrators
+- Avoid recalculating business state inside JSX
+- Avoid duplicating derived state across hooks
+- Prefer derived state over duplicated synchronized state
+
+## Effects
+
+- Avoid unnecessary `useEffect` usage
+- Prefer derived state over synchronization effects
+- Avoid effect chains between hooks
+- Avoid syncing duplicated state
+- Keep effects narrowly scoped and explicit
+
+## Async coordination
+
+- Keep async coordination inside hooks
+- Components must not orchestrate async workflows
+- Centralize loading and error states inside hooks
+
+## Hook APIs
+
+- Expose explicit return values
+- Prefer object returns for business hooks
+- Avoid unstable return structures
+- Keep hook APIs predictable and narrowly scoped
+- Avoid exposing implementation details
+
+## File structure
+
+- Keep one primary responsibility per hook file
+- Avoid multiple unrelated hooks inside the same file
+- Prefer explicit hook entrypoints
+
+## Naming
+
+- Hooks must start with `use`
+- Hook names must describe domain responsibility
+- Orchestrator hooks should explicitly communicate orchestration intent
+
+### Good
+
+```ts
+useSimulatorOrchestrator;
+usePrescriptionForm;
+useLensSide;
+```
+
+### Bad
+
+```ts
+useManager;
+useData;
+useEverything;
+```
+
+## Anti-patterns
+
+- Avoid hooks that control unrelated workflows
+- Avoid hooks that only proxy values without responsibility
+- Avoid deeply nested hook dependency chains
+- Avoid business orchestration directly inside pages or components
+- Avoid massive hooks replacing proper composition

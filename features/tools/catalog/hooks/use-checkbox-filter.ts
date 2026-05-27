@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 
 import { filterCatalogByColumns } from "../logic/filter-catalog-by-columns";
-import { CATALOG_FILTER_COLUMNS } from "../data/catalog-table-columns";
+import { CATALOG_FILTER_COLUMNS } from "../constants/catalog-table-columns";
 import type { LensObjectResolved } from "../types/companies/companies";
 
 export const useCheckboxFilter = (catalog: LensObjectResolved[]) => {

@@ -1,3 +1,3 @@
-export * from "./articles-list"
-export * from "./projects-list"
+export * from "./articles-nav"
+export * from "./projects-nav"
 export * from "./sidebar"

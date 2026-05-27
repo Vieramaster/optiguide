@@ -1,6 +1,10 @@
 "use client";
 
 import {
+  PrescriptionForm,
+  TRANSPOSITION_KEYS,
+} from "@/features/prescription";
+import {
   Title,
   SubTitle,
   Table,
@@ -8,8 +12,7 @@ import {
   TableHeader,
   Button,
 } from "@/shared/components/ui";
-import { PrescriptionForm, SelectField } from "@/shared/components";
-import { TRANSPOSITION_KEYS } from "@/shared/lib/prescription/constants";
+import { SelectField } from "@/shared/components";
 
 import {
   TableColumnsHeader,
@@ -19,9 +22,9 @@ import {
 import {
   OPTICAL_COMPANY_OPTIONS,
   OPTICAL_LENS_OPTIONS,
-} from "./data/catalog-table-columns";
-import { CATALOG_FILTER_COLUMNS } from "./data/catalog-table-columns";
-import { useCatalogOrchestrator } from "./hooks/use-catalog-orchestatrator";
+} from "./constants/catalog-table-columns";
+import { CATALOG_FILTER_COLUMNS } from "./constants/catalog-table-columns";
+import { useCatalogOrchestrator } from "./hooks";
 export const Catalog = () => {
   const { selectFilter, checkboxFilter, formFilter, pagination } = useCatalogOrchestrator();
 

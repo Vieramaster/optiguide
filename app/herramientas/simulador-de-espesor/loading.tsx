@@ -1,6 +1,3 @@
-"use client";
-import { ArticleSkeleton } from "@/features/articles/components/skeleton-article";
+import { PageSkeleton } from "@/shared/components";
 
-const Loading = () => <ArticleSkeleton />;
-
-export default Loading;
+export default PageSkeleton;

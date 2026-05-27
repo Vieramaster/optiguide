@@ -1,5 +1,5 @@
-import { FaceShapeGlasses } from "@/features/tools/face-shape/face-shape-glasses";
+import { FaceShapeGlasses } from "@/features/tools/face-shape";
 
-const FaceShapeGlassesPage = () => <FaceShapeGlasses />
+const FaceShapeGlassesPage = () => <FaceShapeGlasses />;
 
 export default FaceShapeGlassesPage;

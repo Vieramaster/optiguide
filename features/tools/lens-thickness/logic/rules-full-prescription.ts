@@ -1,14 +1,14 @@
-import { PrescriptionFullValues } from "@/shared/lib/prescription/types";
-import { dioptersRules } from "@/shared/lib/prescription/rules";
 import {
+  dioptersRules,
   isAxisValid,
   isDiameterValid,
-} from "@/shared/lib/prescription/validations";
+  type PrescriptionFullValues,
+} from "@/features/prescription";
 import {
+  INVALID_ASTIGMATISM,
   INVALID_DIAM,
   INVALID_EJE,
-  INVALID_ASTIGMATISM,
-} from "@/shared/lib/prescription/messages";
+} from "@/features/prescription/messages";
 
 export const rulesFullPrescription = (values: PrescriptionFullValues) => {
   const { SPHERE, CYLINDER, AXIS, DIAMETER } = values;

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { normalizePath } from "@/features/articles/utils/path-normalizer";
+import { normalizePath } from "@/shared/formatters/path-normalizer";
 
 export const Links = ({
   children,

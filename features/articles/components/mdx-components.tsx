@@ -2,9 +2,9 @@ import type { MDXComponents } from "mdx/types";
 
 import {
   BodyText,
-  LiList,
+  ListItem,
   Links,
-  OlList,
+  UnorderedList,
   SubTitle,
   Text,
   Title,
@@ -28,8 +28,8 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     p: Text,
     a: Links,
     img: ImageArticle,
-    li: LiList,
-    ul: OlList,
+    li: ListItem,
+    ul: UnorderedList,
     table: Table,
     thead: TableHeader,
     tr: TableRow,

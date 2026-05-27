@@ -1,6 +1,3 @@
-"use client";
-import { ArticleSkeleton } from "@/features/articles/components/skeleton-article";
+import { ArticleSkeleton } from "@/features/articles";
 
-const Loading = () => <ArticleSkeleton />;
-
-export default Loading
+export default ArticleSkeleton;

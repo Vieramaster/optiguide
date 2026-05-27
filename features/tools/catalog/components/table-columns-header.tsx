@@ -1,6 +1,6 @@
 import { TableRow, TableHead } from "@/shared/components/ui";
 
-import { CATALOG_TABLE_COLUMNS } from "../data/catalog-table-columns";
+import { CATALOG_TABLE_COLUMNS } from "../constants/catalog-table-columns";
 
 /**
  * Componente UI puro para renderizar el header de columnas de la tabla de catálogo.

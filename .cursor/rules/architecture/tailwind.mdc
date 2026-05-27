@@ -1,0 +1,162 @@
+---
+description: Tailwind CSS usage rules (Tailwind v4 + CSS-first token system)
+globs:
+  - "src/**/*.tsx"
+alwaysApply: false
+---
+
+# Tailwind Usage Rules
+
+This file defines how Tailwind is used as a runtime utility layer in a CSS-first (Tailwind v4) architecture.
+
+Tailwind is NOT a design system. It is a styling application layer over design tokens.
+
+---
+
+# 1. Role of Tailwind
+
+Tailwind is:
+
+- a utility layer for applying styles
+- a consumer of CSS design tokens (`@theme`)
+- an implementation detail of the UI system
+
+Tailwind is NOT:
+
+- a design system
+- a source of truth for colors, spacing, or typography
+- a place to define visual rules per feature
+
+Rule:
+- Tailwind applies design, it does not define design
+
+---
+
+# 2. Token-First Enforcement (Critical)
+
+All styling must originate from the design-token system.
+
+Allowed:
+- semantic classes (bg-background, text-foreground, border-border)
+- spacing scale derived from tokens
+- radius scale derived from tokens
+- typography scale derived from tokens
+
+Forbidden:
+- hex colors
+- arbitrary color values
+- feature-specific styling systems
+- bypassing semantic tokens via raw values
+
+Rule:
+- Tailwind utilities must map to design tokens only
+
+---
+
+# 3. CSS-First Model (Tailwind v4)
+
+This system assumes Tailwind v4 architecture:
+
+- tokens are defined in CSS via `@theme`
+- Tailwind consumes these tokens at runtime
+- no reliance on tailwind.config as design source
+
+Rule:
+- CSS tokens are the source of truth, not Tailwind configuration
+
+---
+
+# 4. ClassName Composition Rules
+
+- use cn() for conditional class composition
+- avoid manual string concatenation
+- keep className declarative, not logic-heavy
+- avoid overly long utility chains without structure
+
+Rule:
+- className must remain readable and compositional
+
+---
+
+# 5. Arbitrary Values Policy
+
+Arbitrary values are strongly restricted.
+
+Allowed only when:
+- no semantic token exists
+- and the value is explicitly justified as an exception
+
+Forbidden:
+- routine use of px-[...]
+- custom colors in brackets
+- ad-hoc spacing systems per feature
+
+Rule:
+- arbitrary values are exceptions, not a pattern
+
+---
+
+# 6. Styling Consistency Rule
+
+- spacing must follow system scale
+- colors must follow semantic tokens
+- typography must follow global scale
+- radius must follow defined system
+
+Rule:
+- visual consistency overrides local preference
+
+---
+
+# 7. Feature-Level Styling Restriction
+
+Features are NOT allowed to define styling systems.
+
+Forbidden in features:
+- custom color systems
+- custom spacing systems
+- visual overrides that break token consistency
+
+Allowed:
+- composition of shared/ui and primitives
+- minimal layout adjustments within system constraints
+
+Rule:
+- features consume styling system, they do not define it
+
+---
+
+# 8. shadcn/ui Compatibility Rule
+
+- shadcn components must be styled only via Tailwind tokens
+- no direct visual overrides outside system constraints
+- all styling must remain consistent with design-tokens.mdc
+
+Rule:
+- Tailwind + shadcn must operate on the same token system
+
+---
+
+# 9. Anti-Patterns
+
+Forbidden:
+
+- arbitrary styling per feature
+- bypassing design tokens
+- inconsistent spacing or color usage
+- treating Tailwind as a design system
+- uncontrolled utility proliferation
+- per-component visual systems
+
+---
+
+# 10. System Philosophy
+
+Tailwind is a controlled execution layer over a token-based design system.
+
+This ensures:
+
+- consistent UI across all features
+- no visual fragmentation
+- predictable styling behavior
+- long-term maintainability of UI design language
