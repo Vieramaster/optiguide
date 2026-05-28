@@ -12,7 +12,8 @@ export const PrescriptionForm = (props: PrescriptionFormConfig) => {
   // El hook se encarga de toda la lógica sucia
   const { errors, handleSubmitForm } = usePrescriptionForm(props);
 
-  const keysToRender = props.mode === "full" ? FULL_PRESCRIPTION_KEYS : BASE_PRESCRIPTION_KEYS;
+  const keysToRender =
+    props.mode === "full" ? FULL_PRESCRIPTION_KEYS : BASE_PRESCRIPTION_KEYS;
   const isComplete = props.mode === "full";
 
   return (
@@ -25,7 +26,7 @@ export const PrescriptionForm = (props: PrescriptionFormConfig) => {
           {keysToRender.map((key) => (
             <PrescriptionField
               key={key}
-              name={key}
+              name={PRESCRIPTION_FIELD_CONFIG[key].label}
               step={PRESCRIPTION_FIELD_CONFIG[key].step}
               min={PRESCRIPTION_FIELD_CONFIG[key].min}
               max={PRESCRIPTION_FIELD_CONFIG[key].max}

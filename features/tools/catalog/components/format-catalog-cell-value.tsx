@@ -26,9 +26,16 @@ interface SpanComponentProps extends Props {
 }
 
 const SpanComponent = ({ value, label, children }: SpanComponentProps) => {
+  const getText = (value: unknown, label: string) => {
+    if (typeof value === "string") {
+      return label;
+    }
+    return value ? `tiene ${label}` : `no tiene ${label}`;
+  };
+
   return (
     <span
-      title={value ? `tiene ${label}` : `no tiene ${label}`}
+      title={getText(value, label)}
       className="flex justify-center w-full items-center"
     >
       {children}

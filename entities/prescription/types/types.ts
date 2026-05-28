@@ -1,13 +1,8 @@
 import { PRESCRIPTION_FIELD_CONFIG } from "../constants";
 
-export type PrescriptionObjectValues = {
-  min: number;
-  max: number;
-  step: number;
-};
 
 export type PrescriptionKeys = keyof typeof PRESCRIPTION_FIELD_CONFIG;
-
+export type PrescriptionFieldLabels = "ESF" | "CIL" | "EJE" | "DIAM";
 export type PrescriptionFullValues = Record<PrescriptionKeys, number>;
 
 export type PrescriptionBaseValues = Pick<
@@ -15,6 +10,12 @@ export type PrescriptionBaseValues = Pick<
   "SPHERE" | "CYLINDER"
 >;
 
+export type PrescriptionObjectValues = {
+  min: number;
+  max: number;
+  step: number;
+  label: PrescriptionFieldLabels;
+};
 
 type ParsePrescriptionSucceeded<T> = {
   success: true;
