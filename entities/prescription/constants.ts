@@ -25,7 +25,7 @@ export const CYLINDER_CONFIG = {
 } as const satisfies PrescriptionObjectValues;
 
 export const AXIS_CONFIG = {
-  min: -180,
+  min: 0,
   max: 180,
   step: 1,
   label: "EJE",

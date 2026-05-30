@@ -1,27 +1,18 @@
-
-const DEFAULT_THICKNESS_MAP = {
-  1.5: 1.8,
-  1.56: 1.6,
-  1.6: 1.5,
-  1.67: 1.15,
-  1.74: 1.1,
-} as const;
-
-type RefractiveIndex = keyof typeof DEFAULT_THICKNESS_MAP;
-
 /**
  * Devuelve la potencia máxima (meridiano más negativo).
  * Si el cilindro es negativo, se suma al valor esférico.
  */
 export const getMaxPower = (sphere: number, cylinder: number): number => {
-  return cylinder < 0 ? sphere + cylinder : sphere;
+  const maxPower = cylinder < 0 ? sphere + cylinder : sphere;
+
+  return maxPower;
 };
 
 /**
  * Cálculo aproximado del espesor total de la lente.
  *
- * Fórmula base:
- * Δe ≈ |Fmax| * (D/2)^2 / (2000 * (n - 1))
+ * Base: Δe ≈ |Fmax| * (D/2)^2 / (2000 * (n - 1))
+ * Total: base + incremento fijo según índice de refracción.
  */
 export const calculateThickness = (
   sphere: number,
@@ -29,17 +20,29 @@ export const calculateThickness = (
   diameter: number,
   refractiveIndex: number,
 ): number => {
-  const centerThickness =
-    DEFAULT_THICKNESS_MAP[refractiveIndex as RefractiveIndex] ?? 1.2;
-
   const maxPower = getMaxPower(sphere, cylinder);
-
   const radiusSquared = (diameter * diameter) / 4;
-
-  const addedThickness =
+  const baseThickness =
     (Math.abs(maxPower) * radiusSquared) / (2000 * (refractiveIndex - 1));
+  const refractiveIndexThicknessIncrement =
+    getRefractiveIndexThicknessIncrement(refractiveIndex);
+  const totalThickness = baseThickness + refractiveIndexThicknessIncrement;
+  const roundedTotalThickness = roundToOneDecimal(totalThickness);
 
-  const totalThickness = centerThickness + addedThickness;
+  return roundedTotalThickness;
+};
 
-  return Math.round(totalThickness * 10) / 10;
+const getRefractiveIndexThicknessIncrement = (
+  refractiveIndex: number,
+): number => {
+  const increment =
+    refractiveIndex === 1.67 || refractiveIndex === 1.74 ? 0.5 : 1;
+
+  return increment;
+};
+
+const roundToOneDecimal = (value: number): number => {
+  const roundedValue = Math.round(value * 10) / 10;
+
+  return roundedValue;
 };

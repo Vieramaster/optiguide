@@ -10,7 +10,7 @@ type basePrescription = {
 }
 export type RulesPrescriptions = fullPrescription | basePrescription;
 
-export type PrescriptionBasicFormConfig = {
+export type PrescriptionBaseFormConfig = {
     mode: "base";
     onSubmit: (data: PrescriptionBaseValues) => void
 };
@@ -18,4 +18,4 @@ export type PrescriptionFullFormConfig = {
     mode: "full";
     onSubmit: (data: PrescriptionFullValues) => void
 };
-export type PrescriptionFormConfig = PrescriptionBasicFormConfig | PrescriptionFullFormConfig;
+export type PrescriptionFormConfig = PrescriptionBaseFormConfig | PrescriptionFullFormConfig;

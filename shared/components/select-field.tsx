@@ -1,3 +1,5 @@
+import type { SelectOption } from "@/shared/types/select-option";
+
 import {
   Select,
   SelectTrigger,
@@ -8,14 +10,12 @@ import {
   SelectItem,
 } from "./ui";
 
-interface SelectOption {
-  label: string;
-  value: string;
-}
+export type { SelectOption };
 
-interface SelectFieldProps<T> {
+interface SelectFieldProps<T extends string> {
   options: SelectOption[];
   onValueSelect: (value: T) => void;
+  value?: string;
   placeholder?: string;
   label?: string;
 }
@@ -23,29 +23,34 @@ interface SelectFieldProps<T> {
 export const SelectField = <T extends string>({
   options,
   onValueSelect,
+  value,
   placeholder,
   label,
-}: SelectFieldProps<T>) => (
-  <Select
-    onValueChange={onValueSelect}
-    defaultValue={options ? options[0].value : ""}
-  >
-    <SelectTrigger className="w-58 mx-auto">
-      <SelectValue placeholder={placeholder} />
-    </SelectTrigger>
+}: SelectFieldProps<T>) => {
+  const isControlled = value !== undefined;
 
-    <SelectContent>
-      <SelectGroup>
-        {label && <SelectLabel>{label}</SelectLabel>}
+  return (
+    <Select
+      onValueChange={onValueSelect}
+      {...(isControlled
+        ? { value }
+        : { defaultValue: options[0]?.value ?? "" })}
+    >
+      <SelectTrigger className="w-58 mx-auto" aria-label={label}>
+        <SelectValue placeholder={placeholder} />
+      </SelectTrigger>
 
-        {options
-          ? options.map(({ label, value }) => (
-              <SelectItem key={value} value={value}>
-                {label}
-              </SelectItem>
-            ))
-          : null}
-      </SelectGroup>
-    </SelectContent>
-  </Select>
-);
+      <SelectContent>
+        <SelectGroup>
+          {label ? <SelectLabel>{label}</SelectLabel> : null}
+
+          {options.map((option) => (
+            <SelectItem key={option.value} value={option.value}>
+              {option.label}
+            </SelectItem>
+          ))}
+        </SelectGroup>
+      </SelectContent>
+    </Select>
+  );
+};

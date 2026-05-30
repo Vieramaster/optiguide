@@ -1,9 +1,5 @@
 import { useState } from "react";
 
-import type {
-    PrescriptionBaseValues,
-    PrescriptionFullValues,
-} from "../types/types";
 import {
     parseBasePrescription,
     parseFullPrescription,
@@ -13,9 +9,7 @@ import type { PrescriptionFormConfig } from "../types/model/rules";
 
 export const usePrescriptionForm = (config: PrescriptionFormConfig) => {
     const [errors, setErrors] = useState<string[]>([]);
-    const [submittedValues, setSubmittedValues] = useState<
-        PrescriptionBaseValues | PrescriptionFullValues | null
-    >(null);
+
 
     const handleSubmitForm: React.SubmitEventHandler<HTMLFormElement> = (event) => {
         event.preventDefault();
@@ -36,7 +30,7 @@ export const usePrescriptionForm = (config: PrescriptionFormConfig) => {
             }
 
             setErrors([]);
-            setSubmittedValues(values);
+
             config.onSubmit(values);
 
             return;
@@ -55,13 +49,12 @@ export const usePrescriptionForm = (config: PrescriptionFormConfig) => {
         }
 
         setErrors([]);
-        setSubmittedValues(values);
+
         config.onSubmit(values);
     };
 
     return {
         errors,
-        submittedValues,
         handleSubmitForm,
     };
 };

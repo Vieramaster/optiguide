@@ -90,7 +90,7 @@ app/  ──►  features/  ──►  shared/
 ```
 
 - `app/` importa entrypoints públicos de features.
-- Features importan de `shared/` y, cuando comparten dominio, de otros features (p. ej. `prescription`).
+- Features importan de `shared/` y de `entities/` cuando comparten dominio (p. ej. `prescription`). No hay acoplamiento directo entre features.
 - `shared/` nunca importa de `features/`.
 
 ## Patrones

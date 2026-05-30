@@ -26,7 +26,8 @@ export const PrescriptionForm = (props: PrescriptionFormConfig) => {
           {keysToRender.map((key) => (
             <PrescriptionField
               key={key}
-              name={PRESCRIPTION_FIELD_CONFIG[key].label}
+              name={key}
+              label={PRESCRIPTION_FIELD_CONFIG[key].label}
               step={PRESCRIPTION_FIELD_CONFIG[key].step}
               min={PRESCRIPTION_FIELD_CONFIG[key].min}
               max={PRESCRIPTION_FIELD_CONFIG[key].max}

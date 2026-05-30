@@ -1,25 +1,35 @@
-
+import {
+  getThicknessDifferenceDisplay,
+} from "../logic/compare-lens-thickness-percent";
 import { calculateLensThicknessByIndex } from "../logic/lens-thickness";
-
+import type { SimulatorOrchestratorState } from "../types/simulator-orchestrator-state";
 
 import { usePrescriptionSubmit } from "./use-prescription-submit";
+import { useLensComparison } from "./use-lens-comparison";
+import { useRefractiveIndexByLensComparison } from "./use-refractive-index-by-lens-comparison";
 
-import { useLensSide, useIndexSelect } from ".";
-export const useSimulatorOrchestrator = () => {
+export const useSimulatorOrchestrator = (): SimulatorOrchestratorState => {
   const prescriptionForm = usePrescriptionSubmit();
-
-  const lensSide = useLensSide();
-
-  const indexSelect = useIndexSelect();
+  const lensComparison = useLensComparison();
+  const refractiveIndexByLensComparison = useRefractiveIndexByLensComparison();
 
   const calculatedLensThickness = calculateLensThicknessByIndex(
     prescriptionForm.submittedValues,
-    indexSelect.lensIndex,
+    refractiveIndexByLensComparison.refractiveIndexSelectValueByLensComparison,
   );
-  return {
+
+  const thicknessDifferenceDisplay = getThicknessDifferenceDisplay(
+    calculatedLensThickness.lensA,
+    calculatedLensThickness.lensB,
+  );
+
+  const orchestratorState: SimulatorOrchestratorState = {
     prescriptionForm,
-    lensSide,
-    indexSelect,
+    lensComparison,
+    refractiveIndexByLensComparison,
     calculatedLensThickness,
+    thicknessDifferenceDisplay,
   };
+
+  return orchestratorState;
 };

@@ -1,2 +1,11 @@
-export * from "./calculate-thickness";
-export * from "./lens-path-emulator";
+export { calculateThickness, getMaxPower } from "./calculate-thickness";
+export { lensPathEmulator } from "./lens-path-emulator";
+export { calculateLensThicknessByIndex } from "./lens-thickness";
+export {
+  getThicknessDifferenceDisplay,
+  getThicknessDifferenceMessage,
+  getThicknessDifferencePercent,
+} from "./compare-lens-thickness-percent";
+export type { ThicknessDifferenceDisplay } from "./compare-lens-thickness-percent";
+export { isPositiveLensThickness } from "./lens-display";
+export { buildLensThicknessSimulatorView } from "./build-lens-thickness-simulator-view";

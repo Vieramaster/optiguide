@@ -31,3 +31,193 @@ alwaysApply: true
 - Prefer pure helper extraction for reusable calculations
 - Keep service naming behavior-oriented
 - Avoid UI terminology inside service modules
+
+## Pure return discipline (logic / build / services)
+
+Principle: a return is pure when everything returned is already resolved in variables; `return` only exposes those values, it does not compute.
+
+Scope: `features/**/logic/`, `build-*.ts`, `services/`, domain helpers in `shared/**`. Exception: React hooks and components (handlers and JSX may define callbacks inline).
+
+Required flow:
+1. Compute with `const` (functions, expressions, lookups, methods).
+2. `return { ... }` using property shorthand only, or `prop: existingVariable`.
+3. Do not assign that object to a typed intermediate variable only to return it on the next line.
+
+Forbidden pattern (redundant intermediate):
+
+```ts
+const panelView: PanelView = { lensComparisonKey, isVisible, ... };
+return panelView;
+```
+
+Prefer direct return after all `const` are ready:
+
+```ts
+return { lensComparisonKey, isVisible, ... };
+```
+
+Allowed: `return` a variable when it is not a freshly built literal (e.g. `const items = buildItems(); return items` from another function).
+
+### Multiple results (allowed when each is pure)
+
+A function may expose **more than one piece of output** (many properties, many array elements, or several `return` branches). There is no limit on count — only on **purity per result**.
+
+| Shape | Rule |
+|-------|------|
+| One object, many properties | `return { a, b, c, ... }` with every property from a prior `const` (shorthand only). |
+| Collection (array, etc.) | Build with `.map` / helpers where **each element** follows this discipline; then `return lensComparisonPanelViews` (variable holding the collection). |
+| Several `return` paths | Each branch must be pure: primitive or object already in a variable, or `return { ... }` with shorthand only — never inline computation in that branch’s literal. |
+| Delegation | `return buildLensComparisonToggleItem(key, active)` is OK when the callee returns a pure object. |
+
+### Bad (collection built with impure elements)
+
+```ts
+return LENS_COMPARISON_KEYS.map((key) => ({
+  label: MAP[key],
+  isActive: active === key,
+}));
+```
+
+### Good (many pure elements, then return the collection)
+
+```ts
+const lensComparisonPanelViews = LENS_COMPARISON_KEYS.map((lensComparisonKey) => {
+  const isVisible = activeLensComparison === lensComparisonKey;
+  // ... other const per item
+  return { lensComparisonKey, isVisible, ... };
+});
+
+return lensComparisonPanelViews;
+```
+
+Forbidden inside `{ ... }` that is returned:
+
+| In a property | Forbidden example |
+|---------------|-------------------|
+| Function call | `message: getMessage()` |
+| Boolean / arithmetic expression | `isVisible: a === b` |
+| Index / lookup | `label: MAP[key]` |
+| Method call | `value: hook.getValue()` |
+| Ternary / optional chaining | `x: cond ? a : b` |
+
+Allowed:
+- `const isVisible = a === b` then `return { isVisible }`
+- `const handler = createHandler()` then `return { onChange: handler }`
+- Trivial discriminant literals with no computed properties: `return { kind: "equal" }`
+- Static module constant references in the literal when nothing is computed: `noteMessage: LensThicknessTitle.note`
+
+When to use `const` before `return`: only when the value involves a **call, expression, dynamic lookup, or method** — not for static literals or aliases that exist only to satisfy shorthand on the next line. See **Avoid over-fragmentation** below.
+
+### Bad (inline expressions in the object)
+
+```ts
+return {
+  lensComparisonKey,
+  isVisible: lensComparison.activeLensComparison === lensComparisonKey,
+  isPositiveLens: isPositiveLensThickness(estimatedThickness),
+  onRefractiveIndexChange: createRefractiveIndexChangeHandler(hook, key),
+};
+```
+
+### Bad (redundant typed intermediate)
+
+```ts
+const panelView: PanelView = { lensComparisonKey, isVisible, ... };
+return panelView;
+```
+
+### Good
+
+```ts
+const isVisible = lensComparison.activeLensComparison === lensComparisonKey;
+const isPositiveLens = isPositiveLensThickness(estimatedThickness);
+const refractiveIndexLabel = REFRACTIVE_INDEX_LABEL_BY_LENS_COMPARISON[lensComparisonKey];
+const refractiveIndexSelectValue =
+  refractiveIndexByLensComparison.getRefractiveIndexSelectValueForLensComparison(lensComparisonKey);
+const onRefractiveIndexChange = createRefractiveIndexChangeHandler(
+  refractiveIndexByLensComparison,
+  lensComparisonKey,
+);
+
+return {
+  lensComparisonKey,
+  isVisible,
+  estimatedThickness,
+  isPositiveLens,
+  refractiveIndexLabel,
+  refractiveIndexSelectValue,
+  onRefractiveIndexChange,
+};
+```
+
+Anti-patterns:
+- `return { foo: bar(), baz: x > 0 }`
+- `const view: View = { ... }; return view` when the object exists only to be returned immediately
+- Typed intermediate object mixing shorthand with inline expressions
+- Extracting some props but leaving one comparison inline — all properties must be variables
+
+See also `naming.mdc` § Functions (arrow syntax) for helper placement at file bottom; this section defines how returned values are assembled.
+
+## Avoid over-fragmentation (logic / build / services)
+
+Complements **Pure return discipline**: purity applies to **computed** values, not to extra wrappers that add indirection without responsibility.
+
+Principles:
+- Prioritize cohesion and readability.
+- Do not create single-use abstractions that only wrap one trivial line.
+- Do not extract private functions whose implementation is simpler than their name suggests.
+- Do not introduce temporary variables for values returned immediately when nothing is computed.
+- Do not create intermediate objects only to return them on the next line.
+
+### Avoid
+
+```ts
+const equalDisplay = { kind: "equal" };
+
+return equalDisplay;
+```
+
+Prefer:
+
+```ts
+return { kind: "equal" };
+```
+
+---
+
+```ts
+const formatPercentMessage = (percent: number) =>
+  `La diferencia es ${percent}%`;
+
+return formatPercentMessage(percent);
+```
+
+when the function has a single consumer and does not encapsulate reusable logic.
+
+Prefer:
+
+```ts
+return `La diferencia es ${percent}%`;
+```
+
+### Extract only when at least one applies
+
+- Real reuse (multiple call sites).
+- Independent business logic.
+- Significantly lowers complexity in the caller.
+- Isolates a relevant domain concept.
+- Enables focused unit tests for a specific rule.
+
+### Goal
+
+Minimize accidental complexity. An abstraction must remove complexity, not redistribute it across more files, functions, or layers.
+
+### Reconciliation with pure returns
+
+| Situation | Do |
+|-----------|-----|
+| `isVisible: a === b` in `return { }` | Extract `const isVisible` first, then `return { isVisible }` |
+| `return { kind: "hidden" }` on a branch | Return the literal directly |
+| `const panelView = { ... }; return panelView` | Use `return { ... }` with shorthand |
+| `.map` with inline `MAP[key]` per item | Extract helper or per-item `const` when the callback would otherwise be impure |
+| `const note = Title.note` only for return | Inline `noteMessage: Title.note` unless the caller already has many extracted `const` and grouping helps |

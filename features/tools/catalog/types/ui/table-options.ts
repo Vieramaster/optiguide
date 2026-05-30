@@ -1,4 +1,5 @@
 
+import type { SelectOption } from "@/shared/types/select-option";
 import type { LucideIcon } from "@/shared/types/Icons";
 
 import type { Range } from "../domain/lens/lens-base";
@@ -31,5 +32,4 @@ export type TableOptions = Table<string, keyof CatalogRow> & {
   Icon?: LucideIcon;
 };
 
-export type RowOptions = Table<string, string>;
-
+export type RowOptions = SelectOption;

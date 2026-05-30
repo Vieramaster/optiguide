@@ -4,7 +4,8 @@ import type { PrescriptionObjectValues } from "../types/types";
 export const isDiopterValid = (value: number) =>
   Number.isFinite(value) &&
   value >= DIOPTERS_CONFIG.min &&
-  value <= DIOPTERS_CONFIG.max;
+  value <= DIOPTERS_CONFIG.max &&
+  Number.isInteger(value / DIOPTERS_CONFIG.step);
 
 export const isAxisValid = (value: number) =>
   integerFieldValid(value, AXIS_CONFIG);

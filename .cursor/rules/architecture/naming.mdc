@@ -67,19 +67,22 @@ useHandleStuff;
 - Functions must use verbs
 - Function names must describe actions, transformations, or outcomes
 - Prefer domain language over utility language
+- Prefer **arrow function** syntax for functions and helpers (`const fn = () => {}`)
+- Do not use `function` declarations for helpers or module-level utilities (React components and hooks already use arrow style where applicable)
 
 ### Good
 
 ```ts
-calculateTotal;
-validatePrescription;
-buildPayload;
-formatCurrency;
+const calculateTotal = (items: Item[]) => { ... };
+
+const validatePrescription = (values: Prescription) => { ... };
 ```
 
 ### Bad
 
 ```ts
+function calculateTotal(items: Item[]) { ... }
+
 dataFormatter;
 utilsFunction;
 totalCalculator;
