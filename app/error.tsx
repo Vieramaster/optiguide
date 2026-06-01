@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation"
 
 import { ErrorPage } from "@/shared/components/ui/error-page"
 import { formatPathSegments } from "@/shared/formatters/path-formatter"
-import { retryError } from "@/shared/actions/retry-error"
+import { retryError } from "@/shared/hooks/retry-error"
 
 interface ErrorProps {
   error: Error & { digest?: string }
@@ -19,7 +19,9 @@ const Error = ({ reset }: ErrorProps) => {
 
   return (
     <ErrorPage
+      title="Ha ocurrido un error"
       description={`Ocurrió un error al cargar ${formatted?.[0] ?? "la página"}.`}
+      retryLabel="Intentar nuevamente"
       showRetry
       onRetry={handleRetry}
     />

@@ -1,4 +1,4 @@
-import type { PrescriptionFullValues } from "@/entities/prescription/types/types";
+import type { PrescriptionFullValues } from "@/entities/prescription";
 
 import type { LensComparisonKey } from "./lens-comparison";
 

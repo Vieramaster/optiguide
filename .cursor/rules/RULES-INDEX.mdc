@@ -1,0 +1,94 @@
+---
+description: Index, precedence, and legacy rule map for the Optiguide architecture rule system
+globs:
+  - "**/*"
+alwaysApply: true
+---
+
+# Rules Index & Precedence
+
+When multiple rules apply, use **topic ownership** below first; if still ambiguous, use precedence.
+
+When rules conflict, apply this hierarchy (highest authority first):
+
+1. `architecture/global-architecture.mdc` — SSOT for layers, dependencies, features/entities/shared
+2. `architecture/cursor-enforcement.mdc` — Pre-flight process (does not override architecture)
+3. Layer rules (same tier; more specific path wins):
+   - `architecture/ui-architecture.mdc`
+   - `architecture/state-and-reactivity.mdc`
+   - `architecture/logic-discipline.mdc` — pure-return and `logic/` placement
+   - `architecture/forms.mdc`
+   - `nextjs-and-performance.mdc`
+4. `architecture/typescript.mdc`
+5. `architecture/naming.mdc`
+6. `architecture/styling-system.mdc`
+7. UX: `ux/accessibility.mdc` > `ux/content.mdc` > `ux/animations.mdc`
+8. `docs/**` — **non-authoritative**; sync when `global-architecture` changes
+
+## Active rules (13)
+
+| File | Scope |
+|------|--------|
+| `architecture/global-architecture.mdc` | Layers, barrels, server surface |
+| `architecture/cursor-enforcement.mdc` | AI/human pre-flight checklist |
+| `architecture/ui-architecture.mdc` | UI layers and composition |
+| `architecture/state-and-reactivity.mdc` | React state, hooks, effects |
+| `architecture/logic-discipline.mdc` | `logic/`, `build-*`, pure-return |
+| `architecture/forms.mdc` | Forms and submit orchestration |
+| `architecture/typescript.mdc` | Types and modeling |
+| `architecture/naming.mdc` | Naming conventions |
+| `architecture/styling-system.mdc` | Tokens, Tailwind, shadcn |
+| `nextjs-and-performance.mdc` | App Router, RSC, performance |
+| `ux/accessibility.mdc` | a11y |
+| `ux/content.mdc` | Copy and labels |
+| `ux/animations.mdc` | Motion |
+
+## Absorbed legacy rules (do not reference)
+
+| Former file | Use instead |
+|-------------|-------------|
+| `boundaries.mdc` | `global-architecture.mdc` |
+| `state.mdc` | `state-and-reactivity.mdc` |
+| `reactivity-runtime.mdc` | `state-and-reactivity.mdc` |
+| `ui-boundaries.mdc` | `ui-architecture.mdc` |
+| `design-tokens.mdc` | `styling-system.mdc` |
+| `hooks.mdc` | `state-and-reactivity.mdc` §3 |
+| `services.mdc` | `logic-discipline.mdc` |
+
+## Topic ownership (no duplicate text elsewhere)
+
+| Topic | Owner file |
+|-------|------------|
+| Layers, deps, barrels, server surface | `global-architecture.mdc` |
+| Orchestrators, effects, derived state | `state-and-reactivity.mdc` §3.1 |
+| Server state, cache policy | `state-and-reactivity.mdc` §4 |
+| Pure-return, `logic/` placement | `logic-discipline.mdc` |
+| UI layers, composition | `ui-architecture.mdc` |
+| Form submit orchestration | `forms.mdc` |
+| Copy, single-locale | `content.mdc` §1.1 |
+| Reduced motion / a11y | `accessibility.mdc` §1.1 |
+| Motion timing, GPU | `animations.mdc` |
+| RSC, client boundaries | `nextjs-and-performance.mdc` |
+| Types, unions | `typescript.mdc` |
+| Naming | `naming.mdc` |
+| Tokens, Tailwind | `styling-system.mdc` |
+
+Non-owner files must use one-line `See {owner}` cross-refs instead of repeating rules.
+
+## Cursor application
+
+When multiple rules apply in the same turn:
+
+1. Resolve by **Topic ownership** (table above).
+2. If still ambiguous, use **precedence** (hierarchy at top).
+3. Do not merge contradictory instructions — `global-architecture.mdc` wins on dependencies; the topic owner wins on subject matter.
+
+## Conflict resolution (short)
+
+- **Dependencies:** `global-architecture` wins.
+- **Hooks vs `logic/`:** Owner `state-and-reactivity.mdc` §3.1; view assembly owner `logic-discipline.mdc`.
+- **Pure return:** Owner `logic-discipline.mdc`; hooks out of scope.
+
+## Documentation sync
+
+After changing layer contracts in `global-architecture.mdc`, update `docs/ARQUITECTURA.md` if it describes folder structure or dependency flow.

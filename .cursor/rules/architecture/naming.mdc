@@ -4,6 +4,7 @@ globs:
   - "app/**/*"
   - "features/**/*"
   - "shared/**/*"
+  - "entities/**/*"
 alwaysApply: true
 ---
 
@@ -69,6 +70,7 @@ useHandleStuff;
 - Prefer domain language over utility language
 - Prefer **arrow function** syntax for functions and helpers (`const fn = () => {}`)
 - Do not use `function` declarations for helpers or module-level utilities (React components and hooks already use arrow style where applicable)
+- **Exception:** `shared/components/ui/**` may use `function` declarations (shadcn/Radix convention)
 
 ### Good
 

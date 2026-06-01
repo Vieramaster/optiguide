@@ -4,168 +4,83 @@ description: Standard procedure for designing, composing, and structuring React 
 
 # Hook Composition Skill
 
-This skill defines how hooks must be designed, composed, and structured to avoid logic leakage, over-orchestration, and hidden coupling.
+How hooks must be designed and composed in this codebase.
 
-It MUST align with:
-- hooks.mdc
-- reactivity-runtime.mdc
-- server-state.mdc
-- state.mdc
-- feature-architecture.mdc
+**Align with:**
+- `.cursor/rules/architecture/state-and-reactivity.mdc` §3
+- `.cursor/rules/architecture/logic-discipline.mdc`
+- `.cursor/rules/architecture/global-architecture.mdc` §2.4
 
-It MUST NOT:
-- contain UI logic
-- replace feature architecture
-- duplicate server-state responsibilities
+Reference implementation: `features/tools/lens-thickness/hooks/`.
 
 ---
 
 # 1. Core Principle
 
-Hooks are composition units, not system owners.
-
-Rule:
-- hooks orchestrate behavior, they do not define domain truth
+Hooks **coordinate**; `logic/` **decides and transforms**.
 
 ---
 
-# 2. Responsibility Boundaries
+# 2. Location
 
-Each hook must have a single clear responsibility:
-
-Allowed responsibilities:
-- state encapsulation
-- behavior composition
-- adapter over server-state
-- local UI coordination
-
-Forbidden:
-- full feature orchestration
-- business rule ownership
-- cross-domain coordination without explicit orchestrator
-
-Rule:
-- one hook = one responsibility axis
+Hooks live in `features/[domain]/hooks/` or `entities/[entity]/hooks/`.
 
 ---
 
-# 3. Hook Classification Model
+# 3. Classification
 
-Hooks must be categorized:
-
-## 3.1 Primitive Hooks
-- local state
-- simple behavior
-- no external dependencies
-
-## 3.2 Adapter Hooks
-- wrap server-state
-- transform data for UI
-- normalize API responses
-
-## 3.3 Orchestrator Hooks
-- combine multiple hooks
-- coordinate flows between hooks
-- expose unified UI API
-
-Rule:
-- classification must be explicit in design intent
+| Type | Role | Example |
+|------|------|---------|
+| Primitive | Single concern, local state | `useLensComparison` |
+| Adapter | Shape data for UI | `usePrescriptionSubmit` |
+| Orchestrator | Compose 3+ hooks + call logic | `useSimulatorOrchestrator` |
+| View hook | Orchestrator + `build-*` | `useLensThicknessSimulatorView` |
 
 ---
 
-# 4. Orchestrator Hook Rules
+# 4. Orchestrator Rules (§3.1 SSOT)
 
-Rules:
-
-- only create orchestrators when multiple hooks must coordinate
-- orchestrators must not contain business logic
-- orchestrators must remain thin composition layers
-- orchestrators must expose only UI-facing API
+- Create when component uses more than 2 business hooks
+- May call `logic/` and `build-*`; must not inline domain formulas
+- Components consume one orchestrated/view hook
+- View objects assembled in `logic/build-*`, not in orchestrator return literals
 
 Flow:
-primitive hooks → adapter hooks → orchestrator hook → UI
 
-Rule:
-- orchestrators coordinate, they do not own logic
-
----
-
-# 5. Composition Rules
-
-Rules:
-
-- prefer composing small hooks over creating large ones
-- avoid deeply nested hook dependency chains
-- avoid hidden dependencies between hooks
-- avoid circular hook relationships
-
-Rule:
-- composition must remain linear and predictable
+```
+primitive hooks → orchestrator → logic/build-* → view hook → component
+```
 
 ---
 
-# 6. State Ownership in Hooks
+# 5. State in Hooks
 
-Rules:
-
-- hooks may own local UI state
-- hooks must not duplicate server-state
-- hooks must not mirror props into state without transformation need
-- derived state must not be stored
-
-Rule:
-- hooks own behavior, not data truth
+- Own local UI state only
+- Do not mirror props into state
+- Derived values: compute via `logic/`, do not store
+- Effects: external sync only (browser, subscriptions)
 
 ---
 
-# 7. Server-State Interaction
+# 6. Server Data
 
-Rules:
-
-- hooks must not bypass server-state layer
-- hooks must consume server-state only through adapters
-- hooks may transform server-state for UI consumption
-
-Rule:
-- server-state is external dependency, not internal state
+- Reads via `queries/` consumed through hooks in Server Components, or explicit server boundaries
+- No `useEffect` + fetch for critical data
+- UI components do not fetch directly
 
 ---
 
-# 8. Effects Usage in Hooks
+# 7. API Design
 
-Rules:
-
-- avoid using effects for orchestration
-- effects only for synchronization with external systems
-- avoid effect chains between hooks
-- avoid reactive loops between hooks
-
-Rule:
-- effects are side-effect boundary tools, not logic engines
+- Explicit return objects
+- Stable UI-facing contract
+- Avoid god hooks
 
 ---
 
-# 9. API Design of Hooks
+# 8. Anti-Patterns
 
-Rules:
-
-- hooks must expose stable and predictable APIs
-- prefer explicit return objects
-- avoid leaking internal intermediate state
-- avoid exposing implementation details
-
-Rule:
-- hook API is a contract, not implementation exposure
-
----
-
-# 10. Anti-Patterns
-
-Forbidden:
-
-- hooks acting as full feature controllers
-- hooks duplicating server-state logic
-- deeply nested hook chains
-- hidden inter-hook dependencies
-- mixing UI state + server-state + business logic in one hook
-- oversized “god hooks”
+- Business rules inside hooks (→ `logic/`)
+- Inline view assembly in orchestrator returns (→ `build-*`)
+- Effect chains between hooks
+- Hooks as full business layer

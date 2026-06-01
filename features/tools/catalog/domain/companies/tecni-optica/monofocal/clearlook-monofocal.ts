@@ -1,4 +1,4 @@
-import type { LensObjectInput } from "@/features/tools/catalog/types/companies/companies";
+import type { LensObjectInput } from "../../../../types/companies/companies";
 
 export const CLEARLOOK_MONOFOCAL: LensObjectInput[] = [
   { key: "cl-cr39-v1-base", lens: "clearLook_cr39_01" },

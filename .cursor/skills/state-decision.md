@@ -1,148 +1,53 @@
 ---
-description: Standard procedure for designing form state, validation, and submission flows in a layered architecture
+description: Decision guide for where state belongs in the layered architecture
 ---
 
-# Form Design Skill
+# State Decision Skill
 
-This skill defines how forms must be structured, how state is managed, and how server interaction is integrated without breaking architecture boundaries.
+Where to place state in this codebase.
 
-It MUST align with:
-- forms.mdc
-- state.mdc
-- hooks.mdc
-- server-state.mdc
-- reactivity-runtime.mdc
-
-It MUST NOT:
-- directly own server truth
-- bypass server-state layer
-- duplicate business logic from backend
+**Align with:**
+- `.cursor/rules/architecture/state-and-reactivity.mdc`
+- `.cursor/rules/architecture/forms.mdc`
 
 ---
 
-# 1. Core Principle
+# 1. Decision Tree
 
-Forms are temporary user input containers, not sources of truth.
-
-Rule:
-- form state is always a draft state
-
----
-
-# 2. State Classification in Forms
-
-Every form state must be explicitly classified:
-
-## 2.1 Draft state
-- user input
-- local to form
-- mutable
-
-## 2.2 Server snapshot
-- initial values from server-state
-- read-only baseline
-
-## 2.3 Derived state
-- computed from draft + snapshot
-- never stored permanently
-
-Rule:
-- mixing state types is forbidden
+| Question | Answer → Owner |
+|----------|----------------|
+| Remote data from server? | `queries/` + RSC / `server.ts` |
+| User typing in a form? | Form boundary (local); submit → hook → `logic/` |
+| Domain workflow (filters, tabs, comparison)? | Feature `hooks/` |
+| Pure function of other state? | Derived in hook via `logic/` — **do not store** |
+| Transient UI (open, hover)? | Component local state |
+| Shared across 2+ features? | `entities/` model + hooks, not global context by default |
 
 ---
 
-# 3. Form Initialization Flow
+# 2. Rules
 
-Rules:
-
-- initial values come from server-state via hooks
-- forms must not fetch data directly
-- snapshot is copied into draft state
-
-Flow:
-server-state → hook → form initialization → draft state
-
-Rule:
-- server-state is never mutated directly
+- State as close as possible to usage
+- Single owner per source of truth
+- No props → state sync via effects without need
+- Context for DI, not high-frequency reactive stores
 
 ---
 
-# 4. Submission Flow
+# 3. Examples in Repo
 
-Rules:
-
-- form submits through a controlled action layer (hook or service)
-- submission must go through server-state mutation pipeline
-- optimistic updates only if rollback exists
-
-Flow:
-form → hook → server-state mutation → cache update
-
-Rule:
-- form never communicates directly with API layer
+| State | Location |
+|-------|----------|
+| Prescription form errors | `entities/prescription/hooks/use-prescription-form` |
+| Lens comparison active tab | `features/tools/lens-thickness/hooks/use-lens-comparison` |
+| Catalog filters | `features/tools/catalog/hooks/*` |
+| Article slugs list | `features/articles/queries/get-article-static-params` |
 
 ---
 
-# 5. Synchronization Rules
+# 4. Anti-Patterns
 
-Rules:
-
-- avoid syncing server-state into form after initialization unless explicitly required
-- avoid bi-directional syncing between form and server-state
-- avoid effects that continuously overwrite form state
-
-Rule:
-- forms are not reactive mirrors of server data
-
----
-
-# 6. Validation Strategy
-
-Rules:
-
-- validation must be colocated with form logic or extracted into domain utilities
-- avoid duplicating backend validation rules blindly
-- validation errors must be clearly mapped to fields
-
-Rule:
-- validation is local UX logic, not backend replication
-
----
-
-# 7. Hook Integration
-
-Rules:
-
-- forms must be controlled through hooks
-- hooks manage submission lifecycle
-- hooks expose loading/error states
-- forms remain UI-driven only
-
-Rule:
-- form logic lives in hooks, not in components
-
----
-
-# 8. Effects Usage
-
-Rules:
-
-- avoid effects for syncing server-state into forms
-- effects only for external integrations if strictly needed
-- avoid cascading form effects
-
-Rule:
-- forms must not depend on effect chains
-
----
-
-# 9. Anti-Patterns
-
-Forbidden:
-
-- treating forms as source of truth
-- syncing form state continuously with server-state
-- mixing server-state and form state in same object
-- direct API calls from forms
-- business logic inside form components
-- uncontrolled form resets driven by effects
+- Global state as default
+- Duplicating server data in client state
+- Storing derived business values
+- Forms as app-wide state managers

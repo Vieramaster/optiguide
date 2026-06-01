@@ -1,4 +1,4 @@
-import type { LensObjectInput } from "@/features/tools/catalog/types/companies/companies";
+import type { LensObjectInput } from "../../../../types/companies/companies";
 
 export const ESSILOR_MONOFOCAL: LensObjectInput[] = [
   { key: "es-orma1-base", lens: "essilor_orma_01" },

@@ -1,8 +1,9 @@
-import { isDiopterValid, isAxisValid, isDiameterValid } from "./logic/validations";
-import { INVALID_MESSAGES } from "./messages";
-import { transformTranspositionPrescription } from "./transform";
-import type { RulesPrescriptions } from "./types/model/rules";
-import type { PrescriptionFullValues } from "./types/types";
+import { INVALID_MESSAGES } from "../messages";
+import type { RulesPrescriptions } from "../types/prescription-form-config";
+import type { PrescriptionFullValues } from "../types/types";
+
+import { transformTranspositionPrescription } from "./transform-transposition-prescription";
+import { isAxisValid, isDiopterValid, isDiameterValid } from "./validations";
 
 export const evaluatePrescriptionRules = (prescription: RulesPrescriptions) => {
   switch (prescription.mode) {

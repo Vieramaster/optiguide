@@ -1,4 +1,4 @@
-import type { PrescriptionFullValues } from "@/entities/prescription/types/types";
+import type { PrescriptionFullValues } from "@/entities/prescription";
 
 import type { ThicknessDifferenceDisplay } from "../logic/compare-lens-thickness-percent";
 

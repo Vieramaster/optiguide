@@ -3,7 +3,9 @@ description: Accessibility (a11y) UI correctness and inclusive interaction rules
 globs:
   - "app/**/*"
   - "features/**/*"
-  - "components/**/*"
+  - "shared/components/**/*"
+  - "shared/layout/**/*"
+  - "entities/**/*"
 alwaysApply: true
 ---
 
@@ -12,10 +14,10 @@ alwaysApply: true
 This file defines accessibility rules for UI correctness, inclusive interaction, and semantic consistency.
 
 It does NOT define:
-- UI structure (see ui-boundaries.mdc)
-- runtime behavior (see reactivity-runtime.mdc)
-- state management (see state.mdc)
-- styling system (see design-tokens.mdc)
+- UI structure (see `ui-architecture.mdc`)
+- runtime behavior (see `state-and-reactivity.mdc`)
+- architecture layers (see `global-architecture.mdc`)
+- styling system (see `styling-system.mdc`)
 
 ---
 
@@ -25,6 +27,11 @@ UI must be usable without assumptions about device, input method, or user capabi
 
 Rule:
 - accessibility is a default requirement, not an enhancement
+
+## 1.1 Reduced motion (SSOT)
+
+- Respect `prefers-reduced-motion`: disable or simplify motion; no loss of functionality.
+- Motion performance rules: `animations.mdc` (must comply with this section).
 
 ---
 

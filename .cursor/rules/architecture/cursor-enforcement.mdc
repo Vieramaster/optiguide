@@ -11,17 +11,29 @@ This file defines how architectural rules must be enforced during code generatio
 
 If any answer is unclear → STOP and re-evaluate architecture decision.
 
+When rules conflict, apply the hierarchy in `RULES-INDEX.mdc`.
+
 ---
 
 # 1. Pre-Generation Validation & Classification
 
 Before generating any code, identify the module type:
-- UI change (belongs in `shared/ui` or `features/[domain]/components`)
+- UI change (belongs in `shared/components/ui` or `features/[domain]/components` or `entities/[entity]/components`)
 - Feature change (belongs in `features/[domain]`)
+- Entity change (belongs in `entities/[entity]/`)
 - Shared utility (belongs in `shared/`)
-- Infrastructure / service change (belongs in `app/api` or `services/`)
+- Infrastructure change (belongs in domain `server/`, `queries/`, `actions/` with `"use server"`, or `app/api/` route handlers — not in a `shared/actions/` folder)
 
-Every change MUST belong to exactly ONE category. No hybrid modules allowed.
+A change may affect multiple responsibilities.
+Always identify:
+- Primary responsibility (required)
+- Secondary responsibilities (optional)
+
+Example:
+- Primary: logic
+- Secondary: hooks, types
+
+Do not force single-category classification when multiple responsibilities are legitimately involved.
 
 ---
 
@@ -30,7 +42,7 @@ Every change MUST belong to exactly ONE category. No hybrid modules allowed.
 Validate the import graph. Never generate:
 - Upward imports (e.g. from `shared/` to `features/`)
 - Cross-feature imports (feature-to-feature coupling)
-- UI directly accessing infrastructure/services without passing through feature hooks/services
+- UI directly accessing infrastructure without passing through hooks that orchestrate `logic/`, `queries/`, or `actions/`
 
 ---
 
@@ -38,18 +50,24 @@ Validate the import graph. Never generate:
 
 Code is placed BEFORE implementation and never relocated after writing. Where does this code belong?
 - Feature internal layer
+- Entity internal layer
 - Shared reuse layer
 - UI layer
 - Infrastructure layer
 
 ---
 
-# 4. Feature Isolation Check
+# 4. Feature & Entity Isolation Check
 
 If working inside `features/`:
 - Does this import another feature? (Forbidden)
 - Does this leak UI/business logic across domains? (Forbidden)
 - Is this feature self-contained? (Mandatory)
+
+If working inside `entities/`:
+- Does this import from `features/`? (Forbidden)
+- Does this contain feature-specific orchestration? (Forbidden)
+- Does this entity exist only because 2+ features share the domain? (Required for new entities)
 
 ---
 
@@ -65,7 +83,7 @@ If working in UI:
 # 6. Abstraction Control & Reuse Validation
 
 For `shared/` candidates:
-- Is this used in 2+ domains?
+- Is this used in 2+ bounded contexts / features?
 - Is reuse proven or assumed?
 - Is abstraction necessary or premature?
 
@@ -82,3 +100,16 @@ Only proceed to write code if:
 - Layer placement is correct
 
 Otherwise: → STOP → re-evaluate architecture decision.
+
+---
+
+# 8. Post-Edit Rules Validation
+
+After editing `.cursor/rules/`, run:
+
+```bash
+rg "features/prescription|boundaries\\.mdc|ui-boundaries\\.mdc|reactivity-runtime\\.mdc|design-tokens\\.mdc|hooks\\.mdc|state\\.mdc" .cursor/rules/
+rg "\"src/\\*\\*\"" .cursor/rules/
+```
+
+Broken cross-references and obsolete examples must be fixed before merging rule changes.

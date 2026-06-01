@@ -1,6 +1,6 @@
 
+import type { LucideIcon } from "lucide-react";
 import type { SelectOption } from "@/shared/types/select-option";
-import type { LucideIcon } from "@/shared/types/Icons";
 
 import type { Range } from "../domain/lens/lens-base";
 

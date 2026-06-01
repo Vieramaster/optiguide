@@ -1,4 +1,4 @@
-import type { LensObjectInput } from "@/features/tools/catalog/types/companies/companies"
+import type { LensObjectInput } from "../../../../types/companies/companies"
 
 import { TECNI_KODAK_PROGRESSIVE } from "./kodak"
 import { TECNI_VARILUX_PROGRESSIVE } from "./varilux"

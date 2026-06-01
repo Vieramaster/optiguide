@@ -16,15 +16,3 @@ export type ToolItem = {
   url: string;
   Icon: LucideIcon;
 };
-
-export type Team = {
-  name: string;
-  logo: LucideIcon;
-  plan: string;
-};
-
-export type User = {
-  name: string;
-  email: string;
-  avatar: string;
-};

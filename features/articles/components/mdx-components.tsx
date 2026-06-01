@@ -17,7 +17,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/shared/components/ui/table";
-import { ImageArticle } from "@/features/articles/components/image-article";
+import { ImageArticle } from "./image-article";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {

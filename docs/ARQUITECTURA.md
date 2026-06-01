@@ -1,16 +1,23 @@
 # Arquitectura del Proyecto
 
+> **Autoridad:** Este documento es orientativo. La fuente de verdad para capas y dependencias es [`.cursor/rules/architecture/global-architecture.mdc`](../.cursor/rules/architecture/global-architecture.mdc) y [`.cursor/rules/RULES-INDEX.mdc`](../.cursor/rules/RULES-INDEX.mdc).
+
+Documentación relacionada: [README](./README.md) · [Guía de desarrollo](./GUIA-DESARROLLO.md) · [Ejemplos](./EJEMPLOS.md)
+
+---
+
 ## Estructura de carpetas
 
 ### `app/`
 
-Rutas y páginas de Next.js (App Router). Orquesta features y shared; no contiene lógica de negocio.
+Rutas y páginas de Next.js (App Router). Orquesta features, entities y shared; no contiene lógica de negocio.
 
 ```
 app/
 ├── layout.tsx
 ├── page.tsx
-├── app-sidebar-client.tsx      # Ensambla navegación desde features
+├── error.tsx                   # Copy de error → ErrorPage (shared)
+├── app-sidebar-client.tsx      # Ensambla navegación y copy del sidebar
 ├── articulos/[slug]/
 │   ├── page.tsx
 │   └── loading.tsx
@@ -24,131 +31,235 @@ app/
         └── loading.tsx
 ```
 
+### `entities/`
+
+Dominio compartido entre varias features (2+ consumidores).
+
+```
+entities/
+└── prescription/               # Recetas ópticas (catalog, lens-thickness)
+    ├── index.ts                # API pública client-safe
+    ├── components/
+    ├── hooks/
+    ├── logic/
+    │   ├── parse.ts
+    │   ├── validations.ts
+    │   ├── evaluate-prescription-rules.ts
+    │   └── transform-transposition-prescription.ts
+    ├── types/
+    │   ├── types.ts
+    │   └── prescription-form-config.ts
+    ├── constants.ts
+    └── messages.ts
+```
+
 ### `features/`
 
-Dominios de negocio autocontenidos. Cada feature expone una API pública vía `index.ts`.
+Dominios de negocio autocontenidos. Cada bounded context expone API pública vía `index.ts` (+ `server.ts` si aplica).
 
 ```
 features/
-├── articles/                   # Artículos MDX de la librería
-│   ├── index.ts
+├── articles/
+│   ├── index.ts                # UI, sidebar, useMDXComponents
+│   ├── server.ts               # getArticleStaticParams, loadArticleMdx
 │   ├── components/
 │   ├── config/
 │   ├── constants/
-│   ├── markdowns/
-│   └── queries/
-├── prescription/               # Dominio de recetas ópticas (compartido entre tools)
-│   ├── index.ts
-│   ├── components/
-│   ├── constants.ts
-│   ├── rules.ts
-│   └── types.ts
+│   ├── markdowns/              # Contenido .mdx
+│   ├── queries/
+│   └── server/                 # Constantes server-only (ARTICLES_DIR)
 └── tools/
-    ├── catalog/                # Catálogo de lentes
-    ├── lens-thickness/         # Simulador de espesor
-    └── face-shape/             # Monturas según forma de rostro
+    ├── catalog/                # Bounded context hermano
+    ├── lens-thickness/         # Bounded context hermano
+    └── face-shape/             # Bounded context hermano
 ```
 
-Cada subfeature de `tools/` sigue la misma estructura interna:
+Estructura interna típica de un feature:
 
 ```
 feature/
-├── index.ts                    # API pública
-├── components/
+├── index.ts                    # API pública client-safe
+├── server.ts                   # Opcional — queries/actions
+├── components/                 # Entry + UI (Catalog, simulators, etc.)
 ├── constants/
 ├── hooks/                      # Hooks y orchestrators
-├── logic/                      # Lógica de negocio pura
+├── logic/                      # Reglas puras, build-* views
 ├── types/
-└── config/                     # Configuración de navegación (sidebar)
+├── config/                     # Sidebar items
+└── domain/                     # Opcional — catálogos estáticos (catalog)
 ```
+
+**Regla:** No importar `features/tools` como paquete; cada subcarpeta de `tools/` es independiente.
 
 ### `shared/`
 
-Código transversal **sin terminología de dominio**. Nunca importa de `features/`.
+Código transversal **sin terminología de dominio**. Nunca importa de `features/` ni `entities/`.
 
 ```
 shared/
-├── components/                 # UI genérica (PageSkeleton, SelectField, ui/)
-├── formatters/                 # Utilidades de formato
-├── validation/                 # Validaciones genéricas
-├── layout/                     # Header, sidebar (recibe config por props)
-├── hooks/
-├── providers/
-└── image/
+├── components/                 # PageTitle, SelectField, ui/ (shadcn)
+├── formatters/
+├── validation/
+├── types/                      # Tipos genéricos (SelectOption)
+├── layout/
+│   ├── index.ts                # Barrel: Header, AppSidebar, Sidebar*
+│   ├── header/
+│   └── sidebar/
+├── hooks/                      # retry-error, use-mobile
+├── image/
+└── providers/
 ```
+
+**Prohibido:** `shared/actions/` — helpers client van en `shared/hooks/`.
 
 ### `lib/`
 
-Solo `utils.ts` con `cn()` — convención de shadcn/ui.
+Solo `utils.ts` con `cn()` — convención shadcn/ui. No es equivalente a `shared/`.
+
+---
 
 ## Flujo de dependencias
 
 ```
-app/  ──►  features/  ──►  shared/
-              │
-              └── prescription ◄── catalog, lens-thickness
+app/  ──►  features/  ──►  entities/  ──►  shared/  ──►  lib/
 ```
 
-- `app/` importa entrypoints públicos de features.
-- Features importan de `shared/` y de `entities/` cuando comparten dominio (p. ej. `prescription`). No hay acoplamiento directo entre features.
-- `shared/` nunca importa de `features/`.
+| Origen | Permitido | Prohibido |
+|--------|-----------|-----------|
+| `app/` | Barrels `@/features/*`, `@/entities/*`, `@/shared/*`, `@/lib/*` | Deep imports a `components/`, `hooks/`, `logic/`, `queries/` |
+| `features/A/` | `@/entities/*`, `@/shared/*`, `@/lib/*`, imports internos | `@/features/B/*` |
+| `entities/` | `@/shared/*`, `@/lib/*` | `@/features/*` |
+| `shared/` | `@/lib/*` | `@/features/*`, `@/entities/*` |
+
+---
+
+## Contrato de imports (barrels)
+
+Consumidores **fuera** del dominio importan solo:
+
+| Dominio | Client-safe | Server-only |
+|---------|-------------|-------------|
+| `entities/prescription` | `@/entities/prescription` | — |
+| `features/articles` | `@/features/articles` | `@/features/articles/server` |
+| `features/tools/catalog` | `@/features/tools/catalog` | — |
+| `features/tools/lens-thickness` | `@/features/tools/lens-thickness` | — |
+| `features/tools/face-shape` | `@/features/tools/face-shape` | — |
+| Layout | `@/shared/layout` | — |
+| Componentes shared | `@/shared/components` | — |
+
+Dentro del mismo feature/entity: imports relativos profundos permitidos.
+
+---
 
 ## Patrones
 
 ### Orchestrator hooks
 
-Features complejas (`catalog`, `lens-thickness`) usan un hook orchestrator que coordina hooks especializados:
+Features complejas (`catalog`, `lens-thickness`) usan un orchestrator que coordina hooks especializados y delega reglas a `logic/`:
 
 ```tsx
-const { prescriptionForm, lensSide, indexSelect, calculatedLensThickness } =
-  useSimulatorOrchestrator();
+// lens-thickness — referencia canónica
+const simulatorView = useLensThicknessSimulatorView();
+// → useSimulatorOrchestrator + buildLensThicknessSimulatorView
 ```
 
-Los componentes entrypoint solo renderizan estado orquestado.
+Los entry components en `components/` solo renderizan vista orquestada.
 
-### API pública por feature
+### API pública por dominio
 
 ```ts
-// app/herramientas/catalogo/page.tsx
 import { Catalog } from "@/features/tools/catalog";
-
-// app/articulos/[slug]/page.tsx
-import { getArticleStaticParams, SectionArticle } from "@/features/articles";
+import { PrescriptionForm } from "@/entities/prescription";
+import { SectionArticle } from "@/features/articles";
+import { loadArticleMdx } from "@/features/articles/server";
 ```
 
 ### Navegación del sidebar
 
-La configuración de navegación vive en cada feature (`config/sidebar-item.ts`, `config/articles-sidebar.ts`). `app/app-sidebar-client.tsx` la ensambla y la pasa a `AppSidebar` como props.
+- Config de items: `features/*/config/` y `features/articles/config/articles-sidebar.ts`
+- Ensamblaje: `app/app-sidebar-client.tsx`
+- Copy de secciones: props `toolsNavTitle`, `articlesNavTitle` → `AppSidebar`
 
-## Renderizado de artículos
+### Copy en shared
+
+`shared/layout` y `shared/components/ui/error-page` reciben strings desde `app/`, no hardcodean copy de producto.
+
+---
+
+## Flujos de dominio
+
+### Artículos
 
 ```
-1. Usuario visita /articulos/[slug]
-2. generateStaticParams() lee markdowns/ del feature articles
-3. Import dinámico del .mdx correspondiente
-4. SectionArticle envuelve el contenido renderizado
+1. GET /articulos/[slug]
+2. generateStaticParams ← getArticleStaticParams (server.ts)
+3. loadArticleMdx(slug) ← import dinámico ../markdowns/{slug}.mdx
+4. SectionArticle envuelve el MDX renderizado
+5. useMDXComponents (features/articles) mapea tags MDX → shared/ui
 ```
 
-## Simulador de espesor
+### Simulador de espesor
 
 ```
-1. Usuario completa PrescriptionForm (feature prescription)
-2. usePrescriptionBaseForm valida con rulesFullPrescription
-3. useSimulatorOrchestrator calcula espesor por índice
-4. LensSimulator renderiza SVG con el resultado
+1. PrescriptionForm (entities/prescription)
+2. usePrescriptionForm → logic/parse + evaluate-prescription-rules
+3. useSimulatorOrchestrator → logic/calculate*, compare*
+4. buildLensThicknessSimulatorView → objeto de vista
+5. components/* renderizan paneles y SVG
 ```
+
+### Catálogo
+
+```
+1. useCatalogOrchestrator compone filtros + paginación
+2. logic/transposition-filter, filter-catalog-by-columns
+3. domain/ — datos estáticos de lentes (imports relativos intra-feature)
+4. PrescriptionForm mode="base" para filtrar por graduación
+```
+
+---
 
 ## Principios
 
-- **Separación UI / lógica**: componentes presentacionales; lógica en `logic/` y `hooks/`.
-- **Boundaries**: sin imports cruzados no intencionados entre dominios.
-- **Shared genérico**: sin workflows ni terminología de dominio en `shared/`.
-- **Entrypoints explícitos**: consumidores externos importan desde `index.ts` del feature.
+- **UI / lógica:** componentes presentacionales; reglas en `logic/`; coordinación en `hooks/`.
+- **Boundaries:** sin imports cruzados entre features; reutilización vía `entities/` y `shared/`.
+- **Shared genérico:** sin workflows ni tipos de dominio; copy del shell vía props.
+- **Entrypoints explícitos:** `index.ts` (client) y `server.ts` (server) por dominio.
+- **Pure return:** ensamblado de vistas en `logic/build-*` según `logic-discipline.mdc`.
+
+---
+
+## Anti-patrones detectables
+
+```bash
+# Deep imports entity
+rg "@/entities/prescription/(components|types|hooks|logic)" --glob "*.{ts,tsx}"
+
+# Deep imports app → feature internals
+rg "@/features/[^/]+/(components|hooks|logic|queries|config)/" app/
+
+# Cross-feature
+rg "from [\"']@/features/" features/ --glob "*.{ts,tsx}"
+
+# Carpeta prohibida
+rg "shared/actions" --glob "*.{ts,tsx}"
+```
+
+---
 
 ## TypeScript
 
-Tipos de dominio viven dentro de cada feature (`types/`). Tipos genéricos de UI en `shared/`.
+- Dominio: `features/*/types/`, `entities/*/types/`
+- UI genérica: `shared/types/`, props de componentes shared
+
+---
 
 ## Generación estática
 
-Next.js genera páginas estáticas en build time mediante `generateStaticParams()` en rutas dinámicas de artículos.
+`generateStaticParams` en `app/articulos/[slug]/page.tsx` delega a `features/articles/server`. Build genera ~31 rutas de artículos + páginas de herramientas estáticas.
+
+---
+
+## Mantenimiento de docs
+
+Tras cambios en `.cursor/rules/architecture/global-architecture.mdc`, sincronizar este archivo y [GUIA-DESARROLLO.md](./GUIA-DESARROLLO.md).

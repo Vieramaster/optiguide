@@ -3,7 +3,9 @@ description: Form design, validation strategy, submit orchestration, and UX comp
 globs:
   - "**/forms/**/*"
   - "**/*form*"
-alwaysApply: false
+  - "entities/**/*"
+  - "features/**/*"
+alwaysApply: true
 ---
 
 # Forms Composition Contract
@@ -33,24 +35,22 @@ Form state must be:
 - Not mirrored into global state unnecessarily.
 
 ## 2.1 Submit Orchestration Ownership
-- The form feature itself MUST own the parsing, validation, and serialization of its data.
+- Forms in features and entities MUST own the parsing, validation orchestration, and serialization of their data.
+- Domain business rules live in `logic/`; forms consume validation from `logic/` and do not own business rules.
 - Avoid parsing form data (e.g., `FormData` processing) in multiple different consumer features. This causes logic duplication and drift.
 - If a form is reused across features, it should export a clean `onSubmit(parsedAndValidatedData)` interface, rather than having consumer features manually parse raw `FormData` or duplicate validation logic.
 
 Rule:
-- Form state is temporary interaction state. Forms own their parsing and validation orchestration.
+- Form state is temporary interaction state. Forms own their submit orchestration; domain rules belong in `logic/`.
 
 ---
 
 # 3. Validation Strategy
 
 Rules:
-- Validation must be explicit and readable.
-- Avoid duplicated validation logic across forms or consumer features.
-- Reuse validation schemas when the domain matches.
-
-Rule:
-- Validation logic must remain close to form intent.
+- Validation must be explicit and readable; avoid duplicating parse/validate logic in consumer features.
+- Domain rules and schemas: `global-architecture.mdc` §2.4 (logic/, legacy `rules.ts`, shared/validation).
+- Forms consume validation from `logic/`; they orchestrate submit only (see §2.1).
 
 ---
 

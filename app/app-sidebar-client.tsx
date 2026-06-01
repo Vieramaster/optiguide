@@ -1,7 +1,7 @@
 "use client";
 
-import { AppSidebar } from "@/shared/layout/sidebar/app-sidebar";
-import {ARTICLES_SIDEBAR} from "@/features/articles/config/articles-sidebar";
+import { AppSidebar } from "@/shared/layout";
+import { ARTICLES_SIDEBAR } from "@/features/articles";
 import { CATALOG_SIDEBAR_ITEM } from "@/features/tools/catalog";
 import { FACE_SHAPE_SIDEBAR_ITEM } from "@/features/tools/face-shape";
 import { LENS_THICKNESS_SIDEBAR_ITEM } from "@/features/tools/lens-thickness";
@@ -14,13 +14,15 @@ const TOOLS_SIDEBAR = [
 
 type AppSidebarClientProps = Omit<
   React.ComponentProps<typeof AppSidebar>,
-  "toolsSidebar" | "articlesSidebar"
+  "toolsSidebar" | "articlesSidebar" | "toolsNavTitle" | "articlesNavTitle"
 >;
 
 export const AppSidebarClient = (props: AppSidebarClientProps) => (
   <AppSidebar
     toolsSidebar={[...TOOLS_SIDEBAR]}
     articlesSidebar={ARTICLES_SIDEBAR}
+    toolsNavTitle="herramientas"
+    articlesNavTitle="Artículos"
     {...props}
   />
 );

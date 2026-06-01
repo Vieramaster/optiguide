@@ -3,8 +3,8 @@ import type {
   LensBase,
   LensBaseObject,
   CreateLens,
-} from "@/features/tools/catalog/types/domain/lens/lens-base";
-import { LENS_MATERIALS } from "@/features/tools/catalog/constants/lens-materials";
+} from "../../../../types/domain/lens/lens-base";
+import { LENS_MATERIALS } from "../../../../constants/lens-materials";
 
 export const createPremiumLens = (data: CreateLens): LensBase =>
 ({

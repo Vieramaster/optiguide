@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import type { PrescriptionFullValues } from "@/entities/prescription/types/types";
+import type { PrescriptionFullValues } from "@/entities/prescription";
 
 export const usePrescriptionSubmit = () => {
   const [submittedValues, setSubmittedValues] =

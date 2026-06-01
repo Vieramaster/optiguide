@@ -1,7 +1,7 @@
 "use client";
 import { useState, useMemo } from "react";
 
-import type { PrescriptionBaseValues } from "@/entities/prescription/types/types";
+import type { PrescriptionBaseValues } from "@/entities/prescription";
 
 
 import type { LensObjectResolved } from "../types/companies/companies";

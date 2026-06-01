@@ -3,7 +3,9 @@ description: UI motion, animation consistency, and performance-safe transitions 
 globs:
   - "app/**/*"
   - "features/**/*"
-  - "components/**/*"
+  - "shared/components/**/*"
+  - "shared/layout/**/*"
+  - "entities/**/*"
 alwaysApply: true
 ---
 
@@ -12,10 +14,10 @@ alwaysApply: true
 This file defines rules for UI motion, transitions, and animation behavior.
 
 It does NOT define:
-- architecture rules (see boundaries.mdc)
-- UI structure (see ui-boundaries.mdc)
-- state behavior (see reactivity-runtime.mdc)
-- hooks composition (see hooks.mdc)
+- architecture rules (see `global-architecture.mdc`)
+- UI structure (see `ui-architecture.mdc`)
+- state behavior (see `state-and-reactivity.mdc`)
+- hooks composition (see `state-and-reactivity.mdc` §3)
 
 ---
 
@@ -73,13 +75,7 @@ Rule:
 
 # 5. Reduced Motion Support
 
-Rules:
-- respect user preference for reduced motion
-- disable or simplify animations when reduced motion is enabled
-- ensure no loss of functionality when animations are removed
-
-Rule:
-- accessibility overrides animation behavior
+Must comply with `accessibility.mdc` §1.1 (SSOT for reduced motion).
 
 ---
 
