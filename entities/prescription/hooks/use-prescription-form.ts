@@ -4,8 +4,8 @@ import {
     parseBasePrescription,
     parseFullPrescription,
 } from "../logic/parse";
-import { evaluatePrescriptionRules } from "../rules";
-import type { PrescriptionFormConfig } from "../types/model/rules";
+import { evaluatePrescriptionRules } from "../logic/evaluate-prescription-rules";
+import type { PrescriptionFormConfig } from "../types/prescription-form-config";
 
 export const usePrescriptionForm = (config: PrescriptionFormConfig) => {
     const [errors, setErrors] = useState<string[]>([]);

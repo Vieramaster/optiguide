@@ -9,20 +9,18 @@ import {
   Button,
 } from "@/shared/components/ui";
 import { SelectField } from "@/shared/components";
-import { PrescriptionForm } from "@/entities/prescription/components";
+import { PrescriptionForm } from "@/entities/prescription";
 
-import {
-  TableColumnsHeader,
-  CatalogRowItem,
-  FilterCheckboxes,
-} from "./components/";
 import {
   OPTICAL_COMPANY_OPTIONS,
   OPTICAL_LENS_OPTIONS,
-} from "./constants/catalog-table-columns";
-import { CATALOG_FILTER_COLUMNS } from "./constants/catalog-table-columns";
-import { useCatalogOrchestrator } from "./hooks";
+} from "../constants/catalog-table-columns";
+import { CATALOG_FILTER_COLUMNS } from "../constants/catalog-table-columns";
+import { useCatalogOrchestrator } from "../hooks";
 
+import { CatalogRowItem } from "./catalog-row-item";
+import { FilterCheckboxes } from "./filter-checkboxes";
+import { TableColumnsHeader } from "./table-columns-header";
 
 export const Catalog = () => {
   const { selectFilter, checkboxFilter, formFilter, pagination } = useCatalogOrchestrator();
@@ -30,12 +28,10 @@ export const Catalog = () => {
   return (
     <section className="overflow-x-auto">
       <div className="flex flex-col items-center gap-8 p-10">
-        {/*Header */}
         <header className="flex flex-col gap-6 items-center py-4">
           <Title>Catalogo para opticas</Title>
           <SubTitle>Elije la óptica y el cristal que quieras buscar</SubTitle>
         </header>
-        {/* Filtros principales */}
         <div className="flex gap-8">
           <SelectField
             options={OPTICAL_COMPANY_OPTIONS}
@@ -55,7 +51,6 @@ export const Catalog = () => {
           <PrescriptionForm
             mode="base"
             onSubmit={formFilter.handleValidSubmit}
-
           />
         </div>
       </div>

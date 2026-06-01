@@ -1,4 +1,4 @@
-import { PrescriptionBaseValues } from "./types/types";
+import type { PrescriptionBaseValues } from "../types/types";
 
 export const transformTranspositionPrescription = (
   sphere: number,

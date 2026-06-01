@@ -1,8 +1,9 @@
 import { Title } from "@/shared/components/ui";
 
-import { FaceShapeCard } from "./components/face-shape-card";
-import { FaceShapeSection } from "./components/face-shape-section";
-import { faceShapes } from "./constants/face-shapes";
+import { faceShapes } from "../constants/face-shapes";
+
+import { FaceShapeCard } from "./face-shape-card";
+import { FaceShapeSection } from "./face-shape-section";
 
 export const FaceShapeGlasses = () => (
   <FaceShapeSection aria-labelledby="face-shape-title">

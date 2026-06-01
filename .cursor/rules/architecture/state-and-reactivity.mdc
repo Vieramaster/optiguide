@@ -44,7 +44,7 @@ State must be classified by domain and not mixed:
 - UI state (transient interaction state)
 - Feature state (domain workflow state)
 - Form state (interaction flow state)
-- Server state (remote data obtained via `queries/` and mutated via `actions/`; does not require a dedicated cache layer)
+- Server state (remote data via `queries/` and `actions/`; cache policy: §4)
 
 ## 2.2 Locality & Minimalism
 - State lives as close as possible to its usage scope (local over lifted).
@@ -53,7 +53,7 @@ State must be classified by domain and not mixed:
 
 ## 2.3 Derived State Principle
 If a value can be computed, it must NOT be stored.
-- Centralize derived state inside hooks or orchestrators.
+- Centralize derived state inside hooks or orchestrators **by calling** `logic/` (not by inlining domain formulas).
 - Avoid recalculating business state inside JSX.
 - Avoid mirroring state via effects (syncing props → state).
 
@@ -65,21 +65,25 @@ Hooks must live inside a dedicated `hooks/` or `hook/` directory and be colocate
 - Separate UI hooks from business hooks.
 - Hooks encapsulate a single responsibility. Avoid oversized, catch-all hooks.
 
-## 3.1 Hook Composition & Orchestrators
+## 3.1 Hook Composition & Orchestrators (SSOT)
+
+This section is the **single source** for orchestrator and hook coordination rules.
+
 - Prefer composing multiple focused hooks over duplicating stateful logic.
-- **Orchestrator hooks:** Create an orchestrator hook when a component uses more than 2 business hooks.
-- Orchestrators coordinate communication between hooks, centralize derived state, and expose a clean UI-facing API.
-- Orchestrators delegate business rules to `logic/`; they coordinate, not replace.
-- Components must consume orchestrated state instead of coordinating hooks directly.
+- **Orchestrator hooks:** Create an orchestrator when a component uses more than 2 business hooks.
+- Orchestrators coordinate hooks, centralize derived state (by calling `logic/`), and expose a UI-facing API.
+- **Orchestrator boundary:** May call `logic/` and `build-*`; must not inline domain formulas, validation, or view-assembly rules.
+- Components must consume one orchestrated hook instead of wiring multiple business hooks directly.
 - Avoid deeply nested hook dependency chains or effect chains between hooks.
+- View objects for UI: assemble in `logic/` / `build-*` per `logic-discipline.mdc` (not in the orchestrator return literal).
 
 ---
 
 # 4. Server State & Remote Data
 
-Remote data is obtained via `queries/` and mutated via `actions/`.
-This project does **not** require a dedicated server-state/cache layer.
-Introduce additional caching abstractions only when a concrete need exists.
+Remote data shape and folders: `global-architecture.mdc` §2.3. Rendering boundaries: `nextjs-and-performance.mdc`.
+
+This project does **not** require a dedicated server-state/cache layer unless a concrete need arises.
 
 Rule:
 - UI must not fetch directly; hooks orchestrate reads via `queries/` and mutations via `actions/`.

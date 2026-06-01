@@ -4,6 +4,7 @@ globs:
   - "app/**/*"
   - "features/**/*"
   - "shared/components/**/*"
+  - "shared/layout/**/*"
   - "entities/**/*"
 alwaysApply: true
 ---
@@ -13,10 +14,10 @@ alwaysApply: true
 This file defines rules for UI text, copy, labeling, and information presentation.
 
 It does NOT define:
-- UI structure (see ui-boundaries.mdc)
-- state behavior (see reactivity-runtime.mdc)
-- architecture rules (see boundaries.mdc)
-- styling rules (see design-tokens.mdc)
+- UI structure (see `ui-architecture.mdc`)
+- state behavior (see `state-and-reactivity.mdc`)
+- architecture rules (see `global-architecture.mdc`)
+- styling rules (see `styling-system.mdc`)
 
 ---
 
@@ -26,6 +27,13 @@ Content is part of the UI system and must be precise, consistent, and intention-
 
 Rule:
 - text is functional UI, not decoration
+
+## 1.1 Single-locale product (SSOT)
+
+When the app uses one language (e.g. Spanish):
+- User-facing copy may live in feature/entity `constants/` or `messages.ts`.
+- `app/` should pass shell and navigation strings into `shared/layout` via props where possible.
+- Prefer props over new hardcoded domain labels inside `shared/`.
 
 ---
 

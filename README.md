@@ -1,234 +1,109 @@
-# Optiguide 📚
+# Optiguide
 
-**Optiguide** es una aplicación web educativa sobre óptica que proporciona información clara y práctica sobre conceptos básicos, condiciones visuales y tratamientos de lentes. Incluye un simulador interactivo para calcular el espesor de lentes según la graduación.
+Aplicación web educativa sobre óptica: artículos MDX, herramientas interactivas (simulador de espesor, catálogo, forma de rostro) y navegación por sidebar.
 
-## 🚀 Inicio Rápido
+## Inicio rápido
 
-### Requisitos Previos
+### Requisitos
 
-- Node.js 18 o superior
-- npm, yarn, pnpm o bun
+- Node.js 18+
+- npm, pnpm o yarn
 
 ### Instalación
 
-1. Clona el repositorio:
 ```bash
 git clone <url-del-repositorio>
 cd optiguide
-```
-
-2. Instala las dependencias:
-```bash
 npm install
-```
-
-3. Inicia el servidor de desarrollo:
-```bash
 npm run dev
 ```
 
-4. Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
+Abre [http://localhost:3000](http://localhost:3000).
 
-## 📁 Estructura del Proyecto
+## Estructura del proyecto
 
 ```
 optiguide/
-├── app/                    # Páginas y rutas de Next.js
-│   ├── articulos/         # Artículos (ruta dinámica [slug])
-│   └── simulador-de-espesor/  # Simulador de espesor
-│
-├── articles/               # Contenido en Markdown
-│   ├── basic-concepts/    # Conceptos básicos
-│   ├── treatments/        # Tratamientos
-│   └── visual-conditions/ # Condiciones visuales
-│
-├── components/             # Componentes React
-│   ├── articles/          # Componentes para artículos
-│   ├── simulator/         # Componentes del simulador
-│   └── ui/                # Componentes UI reutilizables
-│
-├── hooks/                 # Hooks personalizados de React
-├── lib/                   # Funciones y utilidades
-│   ├── utils/             # Utilidades generales
-│   └── validation/       # Funciones de validación
-│
-├── types/                 # Tipos de TypeScript
-└── data/                  # Datos estáticos
+├── app/                        # Rutas Next.js (App Router)
+├── features/                   # Dominios de negocio (articles, tools/*)
+├── entities/                   # Dominio compartido (prescription)
+├── shared/                     # UI genérica, layout, formatters, validation
+├── lib/                        # utils.ts (cn) — convención shadcn
+├── docs/                       # Documentación del proyecto
+└── .cursor/rules/              # Fuente de verdad arquitectónica
 ```
 
-## 🏗️ Arquitectura
+Flujo de dependencias:
 
-### Separación de Responsabilidades
-
-El proyecto sigue una arquitectura limpia con separación clara entre:
-
-- **UI (Interfaz)**: Componentes React que solo se encargan de mostrar contenido
-- **Lógica de Negocio**: Funciones puras en `lib/` y hooks en `hooks/`
-- **Datos**: Archivos Markdown en `articles/` y datos estáticos en `data/`
-
-### Organización de Componentes
-
-- **`components/articles/`**: Componentes específicos para renderizar artículos Markdown
-- **`components/simulator/`**: Componentes del simulador de espesor
-- **`components/ui/`**: Componentes UI reutilizables (botones, inputs, etc.)
-
-### Funciones Utilitarias
-
-- **`lib/utils/`**: Funciones puras reutilizables (normalización de paths, conversión de imágenes, etc.)
-- **`lib/validation/`**: Funciones de validación de datos
-- **`lib/`**: Funciones específicas del dominio (cálculo de espesor, búsqueda de archivos, etc.)
-
-## 📝 Agregar Nuevo Contenido
-
-### Agregar un Nuevo Artículo
-
-1. Crea un archivo `.md` en la carpeta correspondiente:
-   - `articles/basic-concepts/` para conceptos básicos
-   - `articles/treatments/` para tratamientos
-   - `articles/visual-conditions/` para condiciones visuales
-
-2. El nombre del archivo será el slug de la URL. Por ejemplo:
-   - `miopia.md` → `/articulos/miopia`
-
-3. Escribe el contenido en Markdown. Puedes usar:
-   - Encabezados (`#`, `##`, `###`)
-   - Imágenes: `![alt text](/images/library/ruta/imagen.webp)`
-   - Enlaces: `[texto](/articulos/slug-del-articulo)`
-   - Listas, tablas, etc.
-
-### Formato de Enlaces
-
-Todos los enlaces internos deben usar el prefijo `/articulos/`:
-
-```markdown
-✅ Correcto: [miopía](/articulos/miopia)
-❌ Incorrecto: [miopía](/miopia)
+```
+app/ → features/ → entities/ → shared/ → lib/
 ```
 
-## 🎨 Componentes Principales
+Documentación detallada:
 
-### Simulador de Espesor
+- [Arquitectura](./docs/ARQUITECTURA.md)
+- [Guía de desarrollo](./docs/GUIA-DESARROLLO.md)
+- [Ejemplos prácticos](./docs/EJEMPLOS.md)
 
-El simulador permite calcular el grosor estimado de lentes según:
-- Graduación (ESF, CIL, EJE, DIAM)
-- Índice del material
+## Features actuales
 
-**Componentes principales:**
-- `InputsSimulator`: Formulario de entrada de graduación
-- `LensSimulator`: Visualización del lente y cálculo
-- `SelectSimulator`: Selector de índice de material
+| Ruta | Feature | Descripción |
+|------|---------|-------------|
+| `/articulos/[slug]` | `features/articles` | Artículos MDX estáticos |
+| `/herramientas/simulador-de-espesor` | `features/tools/lens-thickness` | Simulador de espesor de lentes |
+| `/herramientas/catalogo` | `features/tools/catalog` | Catálogo de cristales |
+| `/herramientas/lentes-segun-el-rostro` | `features/tools/face-shape` | Guía de monturas por rostro |
 
-### Renderizador de Markdown
+## Imports (regla rápida)
 
-Convierte archivos Markdown en componentes React con estilos personalizados.
+Consumidores **externos** a un dominio importan solo desde barrels públicos:
 
-**Componentes de Markdown:**
-- `Title`, `SubTitle`, `BodyText`: Encabezados
-- `Text`: Párrafos
-- `Links`: Enlaces con normalización automática
-- `MDImage`: Imágenes optimizadas con Next.js Image
-- `LiList`, `OlList`: Listas
+```ts
+import { Catalog } from "@/features/tools/catalog";
+import { PrescriptionForm } from "@/entities/prescription";
+import { PageTitle } from "@/shared/components";
+import { loadArticleMdx } from "@/features/articles/server"; // server-only
+```
 
-## 🔧 Scripts Disponibles
+No usar deep imports (`@/features/.../components/...`, `@/entities/.../types/...`).
+
+## Scripts
 
 ```bash
-# Desarrollo
-npm run dev          # Inicia servidor de desarrollo
-
-# Producción
-npm run build        # Construye la aplicación
-npm run start        # Inicia servidor de producción
-
-# Calidad de código
-npm run lint         # Ejecuta ESLint
+npm run dev      # Desarrollo
+npm run build    # Build de producción
+npm run start    # Servidor de producción
+npm run lint     # ESLint
 ```
 
-## 🧪 Hooks Personalizados
+## Agregar un artículo
 
-### `useLensSimulator`
-Maneja la lógica del simulador de lentes:
-- Validación de inputs
-- Cálculo de valores finales
-- Manejo de errores
+1. Crea `features/articles/markdowns/mi-articulo.mdx`
+2. El slug será `/articulos/mi-articulo`
+3. Registra el enlace en `features/articles/config/articles-sidebar.ts` si debe aparecer en el sidebar
 
-### `useThicknessSimulator`
-Gestiona el estado del simulador de espesor:
-- Alternancia entre lentes A y B
-- Estado de grosor
+Ver [Guía de desarrollo](./docs/GUIA-DESARROLLO.md#artículos-mdx).
 
-### `useLensSVG`
-Calcula propiedades del SVG del lente:
-- Grosor total
-- Tipo (positivo/negativo)
+## Tecnologías
 
-## 📚 Funciones Utilitarias
+- Next.js 16 (App Router)
+- React 19
+- TypeScript
+- Tailwind CSS v4
+- shadcn/ui + Radix UI
+- MDX
 
-### Validación
-- `validateGraduationInputs()`: Valida inputs de graduación
+## Contribución
 
-### Utilidades
-- `normalizePath()`: Normaliza rutas de enlaces
-- `parseImageDimensions()`: Convierte dimensiones de imágenes
-- `isValidImageSrc()`: Valida source de imágenes
+1. Crea una rama: `git checkout -b feature/mi-cambio`
+2. Respeta la arquitectura en `.cursor/rules/` y `docs/ARQUITECTURA.md`
+3. Verifica: `npm run build` y `npm run lint`
+4. Abre un Pull Request
 
-## 🎯 Características Principales
+## Licencia
 
-- ✅ **Biblioteca de Artículos**: Sistema de artículos en Markdown con renderizado personalizado
-- ✅ **Simulador Interactivo**: Calculadora de espesor de lentes con visualización SVG
-- ✅ **Navegación Intuitiva**: Sidebar con organización por categorías
-- ✅ **Responsive Design**: Diseño adaptable a móviles y desktop
-- ✅ **TypeScript**: Tipado fuerte para mayor seguridad
-- ✅ **Arquitectura Limpia**: Separación clara entre UI y lógica
-
-## 🛠️ Tecnologías Utilizadas
-
-- **Next.js 16**: Framework React con App Router
-- **React 19**: Biblioteca de UI
-- **TypeScript**: Tipado estático
-- **Tailwind CSS**: Estilos utilitarios
-- **Radix UI**: Componentes accesibles
-- **React Markdown**: Renderizado de Markdown
-- **Lucide React**: Iconos
-
-## 📖 Guía de Contribución
-
-1. Crea una rama para tu feature: `git checkout -b feature/nueva-funcionalidad`
-2. Realiza tus cambios
-3. Asegúrate de que el código compile: `npm run build`
-4. Ejecuta el linter: `npm run lint`
-5. Haz commit de tus cambios: `git commit -m "Agrega nueva funcionalidad"`
-6. Push a la rama: `git push origin feature/nueva-funcionalidad`
-7. Abre un Pull Request
-
-## 📝 Convenciones de Código
-
-- **Nombres de archivos**: kebab-case (ej: `graduation-input.tsx`)
-- **Componentes**: PascalCase (ej: `LensSimulator`)
-- **Funciones utilitarias**: camelCase (ej: `normalizePath`)
-- **Hooks**: Prefijo `use` (ej: `useLensSimulator`)
-
-## 🐛 Solución de Problemas
-
-### El servidor no inicia
-- Verifica que Node.js esté instalado: `node --version`
-- Reinstala dependencias: `rm -rf node_modules && npm install`
-
-### Los artículos no se muestran
-- Verifica que los archivos `.md` estén en la carpeta `articles/`
-- Asegúrate de que los enlaces usen el prefijo `/articulos/`
-
-### Errores de TypeScript
-- Ejecuta: `npm run build` para ver errores detallados
-- Verifica que los tipos estén correctamente definidos en `types/`
-
-## 📄 Licencia
-
-Este proyecto es privado.
-
-## 👥 Autor
-
-Desarrollado para proporcionar información educativa sobre óptica.
+Proyecto privado.
 
 ---
 
-**Nota**: Este simulador es ilustrativo y no siempre refleja el grosor real, depende del laboratorio y del técnico óptico.
+**Nota:** El simulador de espesor es ilustrativo; el grosor real depende del laboratorio y del técnico óptico.

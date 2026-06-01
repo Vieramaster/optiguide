@@ -1,13 +1,14 @@
 "use client";
 
-import { PrescriptionForm } from "@/entities/prescription/components";
+import { PrescriptionForm } from "@/entities/prescription";
 
-import { LensComparisonPanelGroup } from "./components/lens-comparison-panel-group";
-import { LensComparisonToggle } from "./components/lens-comparison-toggle";
-import { LensThicknessAwaitingMessage } from "./components/lens-thickness-awaiting-message";
-import { LensThicknessDifferenceBanner } from "./components/lens-thickness-difference-banner";
-import { LensThicknessSimulatorHeader } from "./components/lens-thickness-simulator-header";
-import { useLensThicknessSimulatorView } from "./hooks";
+import { useLensThicknessSimulatorView } from "../hooks";
+
+import { LensComparisonPanelGroup } from "./lens-comparison-panel-group";
+import { LensComparisonToggle } from "./lens-comparison-toggle";
+import { LensThicknessAwaitingMessage } from "./lens-thickness-awaiting-message";
+import { LensThicknessDifferenceBanner } from "./lens-thickness-difference-banner";
+import { LensThicknessSimulatorHeader } from "./lens-thickness-simulator-header";
 
 export const LensThicknessSimulator = () => {
   const simulator = useLensThicknessSimulatorView();

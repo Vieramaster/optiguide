@@ -18,7 +18,8 @@ It unifies the boundaries, feature architecture, and shared layer contracts.
 
 For UI layer rules, see `ui-architecture.mdc`.
 For hooks, reactivity, and server data flow, see `state-and-reactivity.mdc`.
-For pure return discipline in logic/build modules, see `services.mdc`.
+For pure return discipline in `logic/` / `build-*`, see `logic-discipline.mdc`.
+For orchestrator hooks, see `state-and-reactivity.mdc` §3.1.
 
 ---
 
@@ -106,6 +107,10 @@ Optional:
 Rule:
 - Do not create responsibility folders without real content or cohesion need.
 
+**Nested paths (`features/tools/{name}/`):**
+- Each child (e.g. `catalog`, `lens-thickness`) is a separate bounded context with its own `index.ts`.
+- Do NOT import from a non-existent `features/tools` package or treat `tools` as a shared parent feature.
+
 **Legacy mapping (obsolete — do not use in new code):**
 - `model/` → `domain/` or `types/`
 - `services/` (folder) → `logic/` + `server/` + `queries/` + `actions/`
@@ -130,6 +135,9 @@ External consumers (outside the domain) must import only from the public API:
 - Server surface: `server.ts` (preferred over deep imports to `queries/` or `actions/`)
 
 Intra-domain imports (same feature or entity) may use deep imports between internal responsibility folders.
+
+**Transitional debt (codebase):**
+- Some domains may lack a root `index.ts` yet (e.g. `features/articles`, `entities/prescription`). The contract still applies: external consumers must not add new deep imports; migrate toward public barrels.
 
 Examples — correct:
 ```ts
@@ -212,12 +220,14 @@ export * from "./logic";
 | React / DOM / infrastructure | No (except external sync effects) | No |
 
 Rule:
-- Hooks **coordinate**; `logic/` **decides and transforms**.
+- Hooks **coordinate**; `logic/` **decides and transforms**. Orchestrator rules: `state-and-reactivity.mdc` §3.1.
 
 ### Schemas & Validation
 
 - Generic, domain-agnostic validation → `shared/validation/`
 - Domain validation and schemas → `features/*/logic/` or `entities/*/logic/`
+- Legacy modules at entity root (e.g. `rules.ts`) may exist during migration; new validation belongs in `logic/`
+- Form submit orchestration → `forms.mdc`
 - Do NOT create a `validation/` folder inside individual features or entities
 - TypeScript types live in `types/`; they complement schemas but do not replace them
 
@@ -272,7 +282,7 @@ Rule:
 `shared/` may contain ONLY:
 - UI primitives and compositions (domain-agnostic): see §3.4
 - Pure logic utilities: deterministic functions, generic hooks
-- Generic validation: `shared/validation/`
+- Generic validation (placement rules: §2.4 Schemas & Validation)
 - Formatters: `shared/formatters/`
 - Infrastructure adapters: API clients, fetch wrappers
 - Shared types and constants: generic types without domain specificity
@@ -283,6 +293,7 @@ Rule:
 - Application orchestration.
 - Domain knowledge or feature-specific values (e.g., Domain names like "projects" or "articles" in shared interfaces).
 - Hardcoded localized copy (i18n strings). Shared components (like error pages or titles) should receive their copy via props, not hardcode domain-specific or localized text internally.
+- Single-locale apps: see `content.mdc` §1.1.
 
 ## 3.3 The `lib/` Folder
 The `lib/` folder exists for vendor/configuration utilities only (e.g. shadcn's `cn()` utility).
@@ -297,10 +308,14 @@ Rule:
 - `shared/components/ui/` — domain-agnostic primitives (shadcn base and atomic extensions)
 - `shared/components/` — reusable compositions built on `ui/` (e.g. PageTitle, SelectField)
 - `shared/layout/` — structural layout reuse (header, sidebar); separate from `shared/components/`
-- `shared/validation/` — generic validation
+- `shared/validation/` — see §2.4 Schemas & Validation
 - `shared/formatters/` — generic formatting utilities
 - `shared/image/` — optional; use only when a cross-domain image utility is genuinely needed
-- `shared/actions/` — optional and exceptional; domain-specific actions belong in their owning feature or entity
+
+**Server Actions vs client helpers:**
+- Do NOT create a `shared/actions/` folder for client-side helpers.
+- Server Actions belong only in domain `actions/` folders with `"use server"`.
+- Client retry/navigation helpers live elsewhere under `shared/` (not in a folder named `actions/`).
 
 Rule:
 - Primitives live in `shared/components/ui/`; compositions live in `shared/components/`.

@@ -4,149 +4,85 @@ description: Standard procedure for building, structuring, and organizing UI com
 
 # UI Composition Skill
 
-This skill defines how UI must be structured, composed, and separated between feature-specific and reusable components.
+UI structure and layer separation for this codebase.
 
-It MUST align with:
-- ui-boundaries.mdc
-- feature-architecture.mdc
-- shared-layer.mdc
-- hooks.mdc
-
-It MUST NOT:
-- contain business logic
-- depend on server-state directly
-- leak feature internals into shared layer
+**Align with:**
+- `.cursor/rules/architecture/ui-architecture.mdc`
+- `.cursor/rules/architecture/styling-system.mdc`
+- `.cursor/rules/ux/accessibility.mdc`
+- `.cursor/rules/ux/content.mdc`
 
 ---
 
-# 1. Core Principle
+# 1. Layer Hierarchy (strict)
 
-UI is a composition of responsibilities, not a collection of reusable components.
+```
+shared/components/ui (shadcn)
+  → shared/components (compositions)
+    → entities/*/components
+      → features/*/components
+        → app/ + shared/layout
+```
 
-Rule:
-- reuse is a consequence, not a goal
-
----
-
-# 2. UI Layer Classification
-
-All UI must belong to one of these layers:
-
-## 2.1 Primitives Layer
-- low-level UI components
-- no business context
-- fully reusable
-
-Examples:
-- buttons
-- inputs
-- typography
-- layout primitives
+Dependencies flow **downward** only.
 
 ---
 
-## 2.2 Shared UI Layer
-- reusable domain-agnostic components
-- built on primitives only
-- no feature knowledge
+# 2. Layer Responsibilities
 
-Rule:
-- shared UI must remain context-free
-
----
-
-## 2.3 Feature UI Layer
-- domain-specific UI composition
-- may include local hooks
-- may include feature-specific state
-
-Rule:
-- feature UI owns domain presentation logic
+| Layer | Path | Rules |
+|-------|------|-------|
+| Primitives | `shared/components/ui/` | Domain-agnostic, token-based |
+| Shared compositions | `shared/components/` | Reusable, no domain copy |
+| Entity UI | `entities/*/components/` | Entity-bound forms/fields |
+| Feature UI | `features/*/components/` | Domain presentation + entry |
+| Layout | `shared/layout/`, `app/` | Structure; shell copy from `app/` props |
 
 ---
 
-## 2.4 Layout Layer
-- structural composition only
-- no domain logic
-- no state ownership
+# 3. Before Creating a Component
 
-Rule:
-- layout defines structure, not behavior
-
----
-
-# 3. Component Creation Decision Flow
-
-Before creating a component:
-
-1. Does a primitive already solve this?
-2. Does shared UI already cover this abstraction?
-3. Is this specific to a feature?
-4. Only then create new component
-
-Rule:
-- creation must follow hierarchy, not preference
+1. Check `shared/components/ui/`
+2. Check `shared/components/`
+3. Check `entities/*/components/`
+4. Check existing feature components
+5. Create new only if none fit
 
 ---
 
-# 4. Reusability Discipline
+# 4. Feature Entry Components
 
-Rules:
+Root feature UI lives in `components/`:
 
-- do not abstract prematurely
-- do not extract shared components without repetition evidence
-- prefer duplication over incorrect abstraction
+- `features/tools/catalog/components/catalog.tsx`
+- `features/tools/lens-thickness/components/lens-thickness-simulator.tsx`
 
-Rule:
-- reuse must be justified by multiple real usages
+Exported via feature `index.ts`.
 
 ---
 
-# 5. Feature vs Shared Boundary
+# 5. Shared Copy Rule
 
-Rules:
+`content.mdc` §1.1 — single locale:
 
-- feature components must never leak into shared
-- shared must never depend on features
-- shared components must remain domain-free
-
-Rule:
-- direction of dependency must always be downward
+- Domain copy → `features/*/constants/`, `messages.ts`
+- Shell/navigation labels → `app/` passes props to `shared/layout`
+- `ErrorPage`, `AppSidebar`: no hardcoded product strings in shared
 
 ---
 
-# 6. Composition Rules
+# 6. Hooks in UI
 
-Rules:
-
-- prefer small composable components over large monoliths
-- avoid deeply nested JSX logic
-- separate layout concerns from business rendering
-
-Rule:
-- composition must improve readability, not abstraction
+- Feature components: feature hooks OK
+- Shared components: no feature/entity hooks
+- Primitives: visual-only hooks if needed
 
 ---
 
-# 7. Hook Usage in UI
+# 7. Anti-Patterns
 
-Rules:
-
-- feature UI may use feature hooks
-- shared UI must not depend on feature hooks
-- primitives must not use hooks unless purely visual
-
-Rule:
-- hooks belong to behavior, not presentation primitives
-
----
-
-# 8. Anti-Patterns
-
-Forbidden:
-
-- shared components with feature logic
-- feature UI leaking into shared layer
-- over-abstraction of reusable components
-- mixing layout and business logic
-- components acting as mini-features
+- Business logic in components
+- Shared importing features/entities
+- Feature-specific design tokens
+- Hardcoded hex / arbitrary Tailwind in features
+- Entry components at feature root (use `components/`)

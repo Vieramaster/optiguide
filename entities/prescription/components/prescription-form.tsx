@@ -3,7 +3,7 @@ import { ErrorMessages } from "@/shared/components/error-messages";
 
 import { PRESCRIPTION_FIELD_CONFIG } from "../constants";
 import { usePrescriptionForm } from "../hooks/use-prescription-form";
-import type { PrescriptionFormConfig } from "../types/model/rules";
+import type { PrescriptionFormConfig } from "../types/prescription-form-config";
 import { BASE_PRESCRIPTION_KEYS, FULL_PRESCRIPTION_KEYS } from "../constants";
 
 import { PrescriptionField } from "./prescription-field";

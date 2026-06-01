@@ -1,5 +1,5 @@
 ---
-description: Business logic and service layer constraints
+description: Business logic placement, pure-return, and return-shape discipline for logic and build modules
 globs:
   - "features/**/*"
   - "entities/**/*"
@@ -7,11 +7,12 @@ globs:
 alwaysApply: true
 ---
 
-# services.mdc
+# logic-discipline.mdc
 
-- Note: "services" in this file refers to orchestration patterns, not a domain folder named `services/`.
+- Not the legacy domain folder `services/` (see `global-architecture.mdc` §2.1 legacy mapping).
+- **SSOT for:** business logic placement, pure-return, return-shape discipline in `logic/` / `build-*` / mappers.
+- **Not here:** orchestrator hooks → `state-and-reactivity.mdc` §3.1; UI boundaries → `ui-architecture.mdc` §3; layer deps → `global-architecture.mdc`.
 - Place reusable business logic inside `logic/`
-- Avoid business logic directly inside UI components
 - Keep logic modules framework-agnostic where possible
 - Keep logic modules deterministic when possible
 - Keep side effects isolated in `queries/`, `actions/`, or `server/`
@@ -27,18 +28,20 @@ alwaysApply: true
 - Prefer typed return values
 - Avoid hidden runtime dependencies
 - Avoid accessing browser APIs from generic logic modules
-- Separate validation from persistence operations
+- Validation placement: `global-architecture.mdc` §2.4; form consumption: `forms.mdc`
 - Keep error handling centralized and predictable
 - Avoid duplicated business rules across logic modules
 - Prefer pure helper extraction for reusable calculations
 - Keep logic naming behavior-oriented
 - Avoid UI terminology inside logic modules
 
-## Pure return discipline (logic / build / services)
+## Return discipline (`logic/` / `build-*` / mappers)
+
+**SSOT** for how modules in scope assemble return values. React hooks and components are out of scope (see `state-and-reactivity.mdc` §3.1).
 
 Principle: a return is pure when everything returned is already resolved in variables; `return` only exposes those values, it does not compute.
 
-Scope: `features/**/logic/`, `entities/**/logic/`, `**/mappers/`, `build-*.ts`, domain helpers in `shared/**`. Exception: React hooks and components (handlers and JSX may define callbacks inline).
+Scope: `features/**/logic/`, `entities/**/logic/`, `**/mappers/`, `build-*.ts`, domain helpers in `shared/**`.
 
 Required flow:
 1. Compute with `const` (functions, expressions, lookups, methods).
@@ -108,7 +111,7 @@ Allowed:
 - Trivial discriminant literals with no computed properties: `return { kind: "equal" }`
 - Static module constant references in the literal when nothing is computed: `noteMessage: LensThicknessTitle.note`
 
-When to use `const` before `return`: only when the value involves a **call, expression, dynamic lookup, or method** — not for static literals or aliases that exist only to satisfy shorthand on the next line. See **Avoid over-fragmentation** below.
+When to use `const` before `return`: only when the value involves a **call, expression, dynamic lookup, or method** — not for static literals or aliases that exist only to satisfy shorthand on the next line. See **When not to over-extract** below.
 
 ### Bad (inline expressions in the object)
 
@@ -158,11 +161,11 @@ Anti-patterns:
 - Typed intermediate object mixing shorthand with inline expressions
 - Extracting some props but leaving one comparison inline — all properties must be variables
 
-See also `naming.mdc` § Functions (arrow syntax) for helper placement at file bottom; this section defines how returned values are assembled.
+See also `naming.mdc` § Functions (arrow syntax) for helper placement.
 
-## Avoid over-fragmentation (logic / build / services)
+### When not to over-extract
 
-Complements **Pure return discipline**: purity applies to **computed** values, not to extra wrappers that add indirection without responsibility.
+Purity applies to **computed** values, not to wrappers that add indirection without responsibility.
 
 Principles:
 - Prioritize cohesion and readability.
@@ -214,7 +217,7 @@ return `La diferencia es ${percent}%`;
 
 Minimize accidental complexity. An abstraction must remove complexity, not redistribute it across more files, functions, or layers.
 
-### Reconciliation with pure returns
+### Pure return vs over-extraction
 
 | Situation | Do |
 |-----------|-----|

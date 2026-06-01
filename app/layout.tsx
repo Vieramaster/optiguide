@@ -3,13 +3,9 @@ import "./globals.css";
 import { Montserrat, Inter } from "next/font/google";
 
 import { cn } from "@/lib/utils";
-import { Header } from "@/shared/layout/header/header";
+import { Header, SidebarInset, SidebarProvider } from "@/shared/layout";
 import { AppSidebarClient } from "@/app/app-sidebar-client";
 import { ThemeProvider } from "@/shared/providers/theme-provider";
-import {
-  SidebarInset,
-  SidebarProvider,
-} from "@/shared/layout/sidebar/components/";
 
 const interHeading = Inter({subsets:['latin'],variable:'--font-heading'});
 

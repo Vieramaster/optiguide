@@ -1,4 +1,4 @@
-import type { LensObjectInput } from "@/features/tools/catalog/types/companies/companies";
+import type { LensObjectInput } from "../../../../types/companies/companies";
 
 export const KODAK_MONOFOCAL: LensObjectInput[] = [
   {

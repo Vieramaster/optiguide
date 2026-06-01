@@ -15,8 +15,8 @@ It unifies what was previously split across ui-system, ui-boundaries, compositio
 
 It does NOT define:
 
-- styling values (see styling-system.mdc)
-- global domain architecture (see global-architecture.mdc)
+- styling values (see `styling-system.mdc` — SSOT for tokens and Tailwind)
+- global domain architecture (see `global-architecture.mdc`)
 
 ---
 
@@ -48,6 +48,7 @@ primitives (shadcn/ui) → shared/components/ui → entities/*/components → fe
 
 - Structural UI composition only (defines page structure, spacing layout).
 - No business logic or reusable domain components.
+- Navigation copy and labels: `content.mdc` §1.1. Structure only here; avoid domain-specific types in `shared/layout`.
 
 Rule: UI layers must only depend downward. UI boundary violations are structural defects.
 
@@ -74,8 +75,9 @@ Before creating UI:
 
 1. Check primitives (shadcn)
 2. Check shared/components/ui
-3. Check feature existing components
-4. Only then create a new component. Reuse is mandatory before creation.
+3. Check `entities/*/components`
+4. Check feature existing components
+5. Only then create a new component. Reuse is mandatory before creation.
 
 ## 2.2 Wrapper vs Abstraction
 
@@ -95,8 +97,8 @@ UI layer responsibilities:
 
 Forbidden in UI:
 
-- Business logic, domain rules, API orchestration.
-- Data transformation logic (must be externalized to `logic/`, `formatters/`, or `mappers/` — see global-architecture.mdc §2.4).
+- Business logic, domain rules, API orchestration → delegate per `global-architecture.mdc` §2.4 and `logic-discipline.mdc`.
+- Data transformation → `logic/`, `formatters/`, or `mappers/`.
 - Mixing layout concerns with business orchestration.
 
 ## 3.1 Render Determinism

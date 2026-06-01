@@ -11,10 +11,9 @@ alwaysApply: true
 This file defines rules for type safety, domain modeling, and type system design.
 
 It does NOT define:
-- runtime behavior (see reactivity-runtime.mdc)
-- architecture rules (see boundaries.mdc)
-- state rules (see state.mdc)
-- UI structure (see ui-boundaries.mdc)
+- runtime behavior, React state, or effects (see `state-and-reactivity.mdc`)
+- architecture rules (see `global-architecture.mdc`)
+- UI structure (see `ui-architecture.mdc`)
 
 ---
 
@@ -60,6 +59,8 @@ Rules:
 
 Rule:
 - impossible states must be unrepresentable
+
+**Incremental migration:** Nullable or optional fields are acceptable in existing APIs during migration; prefer discriminated unions for new public boundaries.
 
 ---
 

@@ -1,280 +1,248 @@
 # Guía de Desarrollo
 
-## 🛠️ Configuración del Entorno
+> Orientativa. Autoridad arquitectónica: [`.cursor/rules/`](../.cursor/rules/) y [ARQUITECTURA.md](./ARQUITECTURA.md).
 
-### Requisitos
+## Configuración del entorno
 
 - Node.js 18+
-- Editor de código (Cursor)
-- Git
-
-### Extensiones Recomendadas (VS Code)
-
-- ESLint
-- Prettier
-- Tailwind CSS IntelliSense
-
-## 📝 Agregar un Nuevo Artículo
-
-### Paso 1: Crear el archivo Markdown
-
-Crea un archivo `.md` en la carpeta correspondiente:
+- Cursor / VS Code con ESLint y Tailwind CSS IntelliSense
 
 ```bash
-articles/visual-conditions/nueva-condicion.md
+npm install
+npm run dev
 ```
 
-### Paso 2: Escribir el contenido
+## Dónde va cada cosa
 
-Usa Markdown estándar con algunas convenciones:
+| Qué estás creando | Ubicación | Import desde |
+|-------------------|-----------|--------------|
+| Página o ruta | `app/` | Barrels de features/entities/shared |
+| Feature nueva | `features/[dominio]/` | `@/features/[dominio]` |
+| Lógica de dominio (pura) | `features/*/logic/` o `entities/*/logic/` | Relativo intra-dominio |
+| Hook / orchestrator | `features/*/hooks/` | Relativo intra-dominio |
+| UI de feature | `features/*/components/` | Relativo o barrel del feature |
+| Entidad compartida (2+ features) | `entities/[entidad]/` | `@/entities/[entidad]` |
+| UI genérica reutilizable | `shared/components/` | `@/shared/components` |
+| Primitivos shadcn | `shared/components/ui/` | `@/shared/components/ui` |
+| Layout (header, sidebar) | `shared/layout/` | `@/shared/layout` |
+| Validación genérica | `shared/validation/` | `@/shared/validation/...` |
+| Server reads | `features/*/queries/` | `@/features/*/server` |
+| `cn()` y vendor | `lib/utils.ts` | `@/lib/utils` |
 
-```markdown
-# Título Principal
+**Prohibido:**
 
-## Subtítulo
+- `utils/` dentro de `features/` o `entities/`
+- `shared/actions/` (helpers client → `shared/hooks/`)
+- Imports entre features (`features/A` → `features/B`)
+- Deep imports desde `app/` hacia internals de un dominio
+- Copy de dominio hardcodeado en `shared/` (pasar vía props desde `app/`)
 
-Texto del artículo...
+## Crear un feature nuevo
 
-![Descripción de la imagen](/images/library/visual-conditions/imagen.webp)
+### 1. Estructura mínima
 
-- Lista de puntos
-- Otro punto
-
-[Enlace a otro artículo](/articulos/otro-articulo)
+```
+features/mi-dominio/
+├── index.ts              # API pública client-safe
+├── server.ts             # Opcional: queries/actions server-only
+├── components/
+├── hooks/                # Opcional
+├── logic/                # Opcional
+├── types/                # Opcional
+├── constants/            # Opcional
+└── config/               # Opcional (sidebar, etc.)
 ```
 
-### Paso 3: Agregar imágenes
+### 2. Barrel `index.ts`
 
-1. Coloca las imágenes en `public/images/library/`
-2. Organiza por categoría (ej: `visual-conditions/`)
-3. Usa formato WebP para mejor rendimiento
-4. Referencia con ruta absoluta desde `/images/`
-
-### Paso 4: Enlaces internos
-
-**✅ Correcto:**
-
-```markdown
-[miopía](/articulos/miopia)
+```ts
+export { MiFeatureRoot } from "./components/mi-feature-root";
+export { MI_FEATURE_SIDEBAR_ITEM } from "./config/sidebar-item";
 ```
 
-**❌ Incorrecto:**
-
-```markdown
-[miopía](/miopia)
-```
-
-## 🎨 Crear un Nuevo Componente
-
-### Estructura Básica
+### 3. Página en `app/`
 
 ```tsx
-// components/mi-carpeta/mi-componente.tsx
-interface MiComponenteProps {
-  // Props del componente
+// app/mi-ruta/page.tsx
+import { MiFeatureRoot } from "@/features/mi-dominio";
+
+export default function MiRutaPage() {
+  return <MiFeatureRoot />;
+}
+```
+
+### 4. Sidebar (si aplica)
+
+```ts
+// features/mi-dominio/config/sidebar-item.ts
+import type { ToolItem } from "@/shared/layout/sidebar/types/sidebar";
+
+export const MI_FEATURE_SIDEBAR_ITEM: ToolItem = {
+  title: "Mi herramienta",
+  url: "/mi-ruta",
+  Icon: SomeIcon,
+};
+```
+
+Registrar en `app/app-sidebar-client.tsx`.
+
+## Artículos MDX
+
+### Agregar artículo
+
+1. Crear `features/articles/markdowns/mi-articulo.mdx`
+2. URL: `/articulos/mi-articulo`
+3. Añadir entrada en `features/articles/config/articles-sidebar.ts`
+
+### Formato de enlaces internos
+
+```markdown
+✅ [miopía](/articulos/miopia)
+❌ [miopía](/miopia)
+```
+
+### Imágenes
+
+- Archivos en `public/images/library/`
+- Referencia: `![alt](/images/library/categoria/imagen.webp)`
+- Componente MDX: `ImageArticle` (configurado en `useMDXComponents`)
+
+### Server
+
+- Listado de slugs: `getArticleStaticParams` → `@/features/articles/server`
+- Carga de MDX: `loadArticleMdx(slug)` → `@/features/articles/server`
+
+## Componentes
+
+### UI de feature (presentacional)
+
+```tsx
+// features/mi-dominio/components/mi-panel.tsx
+interface MiPanelProps {
+  label: string;
 }
 
-export const MiComponente = ({ ...props }: MiComponenteProps) => {
-  return <div>{/* Contenido */}</div>;
+export const MiPanel = ({ label }: MiPanelProps) => (
+  <section>{label}</section>
+);
+```
+
+- Sin lógica de negocio en JSX
+- Sin fetch directo
+- Estado local solo si es interacción UI
+
+### Entry component
+
+El componente raíz del feature vive en `components/` (ej. `components/catalog.tsx`), no en la raíz del feature.
+
+## Hooks
+
+### Hook focalizado
+
+```ts
+// features/mi-dominio/hooks/use-mi-filtro.ts
+export const useMiFiltro = () => {
+  const [valor, setValor] = useState<string | null>(null);
+  return { valor, setValor };
 };
 ```
 
-### Separar Lógica de UI
+### Orchestrator (cuando hay 3+ hooks de negocio)
 
-**1. Si necesitas validación o cálculos:**
-
-Crea una función en `lib/validation/` o `lib/utils/`:
-
-```typescript
-// lib/validation/mi-validacion.ts
-export const validarAlgo = (valor: string): boolean => {
-  // Lógica de validación
-  return true;
+```ts
+// features/mi-dominio/hooks/use-mi-orchestrator.ts
+export const useMiOrchestrator = () => {
+  const filtro = useMiFiltro();
+  const resultado = useMiResultado(filtro.valor);
+  return { filtro, resultado };
 };
 ```
 
-**2. Si necesitas estado complejo:**
+Reglas:
 
-Crea un hook en `hooks/`:
+- Orchestrator coordina; reglas puras en `logic/`
+- Vista para UI: ensamblar en `logic/build-*` (ver `lens-thickness` como referencia)
+- Efectos solo para sync externa (browser, timers)
 
-```typescript
-// hooks/use-mi-hook.ts
-export const useMiHook = () => {
-  const [estado, setEstado] = useState();
+## Lógica pura (`logic/`)
 
-  // Lógica del hook
-
-  return { estado, setEstado };
+```ts
+// features/mi-dominio/logic/calcular-algo.ts
+export const calcularAlgo = (entrada: number): number => {
+  return entrada * 2;
 };
 ```
 
-**3. Usa en el componente:**
+- Funciones deterministas, sin React
+- Validación de dominio aquí, no en componentes
+- Disciplina de return: ver `logic-discipline.mdc`
 
-```tsx
-import { validarAlgo } from "@/lib/validation/mi-validacion";
-import { useMiHook } from "@/hooks/use-mi-hook";
+## Entidades
 
-export const MiComponente = () => {
-  const { estado } = useMiHook();
-  const esValido = validarAlgo(estado);
+Crear en `entities/` solo si **2 o más features** comparten el dominio.
 
-  return <div>{/* UI */}</div>;
-};
+Ejemplo actual: `entities/prescription` (catalog + lens-thickness).
+
+```ts
+import { PrescriptionForm } from "@/entities/prescription";
+import type { PrescriptionFullValues } from "@/entities/prescription";
 ```
 
-## 🔧 Agregar una Nueva Función Utilitaria
+## Shared
 
-### Ubicación
+### Qué puede ir en `shared/`
 
-- `lib/utils/`: Funciones generales reutilizables
-- `lib/validation/`: Funciones de validación
-- `lib/`: Funciones específicas del dominio
+- Componentes UI sin terminología óptica
+- Formatters genéricos (`shared/formatters/`)
+- Validación genérica (`shared/validation/`)
+- Layout estructural con copy inyectado por props
 
-### Ejemplo
+### Qué no va en `shared/`
 
-```typescript
-// lib/utils/mi-utilidad.ts
+- Workflows de negocio
+- Tipos de dominio óptico
+- Strings de features (viven en `features/*/constants/` o `messages.ts`)
+- Carpetas `actions/` (usar `hooks/` para helpers client)
 
-/**
- * Descripción breve de qué hace la función
- * @param parametro - Descripción del parámetro
- * @returns Descripción del retorno
- */
-export const miUtilidad = (parametro: string): string => {
-  // Implementación
-  return resultado;
-};
-```
+## Server / Client
 
-## 🎣 Crear un Nuevo Hook
+- **Server Components** por defecto en `app/`
+- `"use client"` solo con interactividad
+- Código con `fs`, `path`, queries → `queries/` + export en `server.ts`
+- **Nunca** reexportar server-only desde `index.ts` client-safe
 
-### Estructura
+## Navegación y copy del shell
 
-```typescript
-// hooks/use-mi-hook.ts
+`app/app-sidebar-client.tsx` ensambla:
 
-/**
- * Descripción del hook
- * @returns Objeto con valores y funciones
- */
-export const useMiHook = () => {
-  const [estado, setEstado] = useState();
+- Items de sidebar desde cada feature
+- Títulos de sección (`toolsNavTitle`, `articlesNavTitle`) hacia `AppSidebar`
 
-  const funcion = () => {
-    // Lógica
-  };
+`app/error.tsx` pasa copy a `ErrorPage` (`title`, `retryLabel`, `description`).
 
-  return {
-    estado,
-    funcion,
-  };
-};
-```
+## Checklist antes de commit
 
-### Uso
+- [ ] `npm run build` sin errores
+- [ ] `npm run lint` pasa
+- [ ] Imports externos usan barrels (`index.ts` / `server.ts`)
+- [ ] Sin imports feature → feature
+- [ ] Lógica de negocio en `logic/`, no en componentes
+- [ ] Sin copy de dominio nuevo en `shared/`
 
-```tsx
-import { useMiHook } from "@/hooks/use-mi-hook";
-
-const MiComponente = () => {
-  const { estado, funcion } = useMiHook();
-
-  return <div onClick={funcion}>{estado}</div>;
-};
-```
-
-## 🧪 Testing (Futuro)
-
-### Estructura de Tests
-
-```typescript
-// __tests__/lib/utils/mi-utilidad.test.ts
-import { miUtilidad } from "@/lib/utils/mi-utilidad";
-
-describe("miUtilidad", () => {
-  it("debe retornar el resultado esperado", () => {
-    expect(miUtilidad("input")).toBe("output");
-  });
-});
-```
-
-## 🐛 Debugging
-
-### Errores Comunes
-
-**1. Error: "Cannot find module"**
-
-- Verifica que el import use `@/` para rutas absolutas
-- Ejecuta `npm install` para reinstalar dependencias
-
-**2. Error de TypeScript**
-
-- Verifica que los tipos estén correctos
-- Ejecuta `npm run build` para ver errores detallados
-
-**3. Los artículos no aparecen**
-
-- Verifica que el archivo `.md` esté en `articles/`
-- Asegúrate de que el nombre del archivo coincida con el slug
-- Revisa la consola del navegador para errores
-
-## 📦 Build y Deploy
-
-### Build Local
+## Comandos útiles
 
 ```bash
+npm run dev
 npm run build
-```
-
-Esto generará:
-
-- Páginas estáticas en `.next/`
-- Optimización de imágenes
-- Minificación de código
-
-### Verificar Build
-
-```bash
-npm run start
-```
-
-Abre `http://localhost:3000` para verificar.
-
-## 🔍 Linting
-
-### Ejecutar Linter
-
-```bash
 npm run lint
+
+# Verificar deep imports prohibidos
+rg "@/entities/prescription/(components|types|hooks)" --glob "*.{ts,tsx}"
+rg "@/features/[^/]+/(components|hooks|logic|queries)/" app/
 ```
 
-### Reglas Principales
+## Referencias
 
-- TypeScript estricto habilitado
-- ESLint con configuración de Next.js
-- Preferir funciones puras
-- Separar lógica de UI
-
-## 📚 Recursos Útiles
-
-- [Next.js Docs](https://nextjs.org/docs)
-- [React Docs](https://react.dev)
-- [TypeScript Docs](https://www.typescriptlang.org/docs)
-- [Tailwind CSS Docs](https://tailwindcss.com/docs)
-
-## 💡 Buenas Prácticas
-
-1. **Nombres descriptivos**: Usa nombres claros para funciones y variables
-2. **Comentarios útiles**: Explica el "por qué", no el "qué"
-3. **Funciones pequeñas**: Una función, una responsabilidad
-4. **Tipos explícitos**: Usa TypeScript para mayor seguridad
-5. **Separación de concerns**: UI separada de lógica
-
-## 🚨 Checklist Antes de Commit
-
-- [ ] Código compila sin errores (`npm run build`)
-- [ ] Linter pasa (`npm run lint`)
-- [ ] Tipos de TypeScript correctos
-- [ ] Lógica separada de UI
-- [ ] Comentarios donde sea necesario
-- [ ] Nombres descriptivos
+- [Arquitectura](./ARQUITECTURA.md)
+- [Ejemplos](./EJEMPLOS.md)
+- [Reglas Cursor](../.cursor/rules/RULES-INDEX.mdc)

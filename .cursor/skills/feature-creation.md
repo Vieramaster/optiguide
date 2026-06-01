@@ -4,155 +4,116 @@ description: Standard procedure for creating a new feature module aligned with a
 
 # Feature Creation Skill
 
-This skill defines the step-by-step process to create a new feature that is consistent with the system architecture.
+Process to create a feature consistent with the current architecture.
 
-It MUST align with:
-- feature-architecture.mdc
-- hooks.mdc
-- state.mdc
-- server-state.mdc
-- ui-boundaries.mdc
-- reactivity-runtime.mdc
+**Align with:**
+- `.cursor/rules/architecture/global-architecture.mdc`
+- `.cursor/rules/architecture/state-and-reactivity.mdc`
+- `.cursor/rules/architecture/ui-architecture.mdc`
+- `.cursor/rules/architecture/logic-discipline.mdc`
+- `.cursor/rules/nextjs-and-performance.mdc`
 
-It does NOT introduce new architectural concepts.
+See also: `docs/GUIA-DESARROLLO.md`, `docs/ARQUITECTURA.md`.
 
 ---
 
 # 1. Feature Definition First
 
-Before writing code:
-
-- define the domain responsibility of the feature
-- ensure it represents a single business capability
-- avoid mixing unrelated workflows
-
-Rule:
-- one feature = one domain intent
+- Define single domain responsibility
+- One feature = one business capability
+- Do not mix unrelated workflows
 
 ---
 
 # 2. Feature Boundary Check
 
-Validate:
-
-- does this feature already exist?
-- is this truly a new domain?
-- can this be part of an existing feature?
-
-Rule:
-- prefer extension over duplication
+- Does this feature already exist?
+- Can this extend an existing feature instead?
+- If shared by 2+ features → consider `entities/` instead
 
 ---
 
-# 3. Internal Structure Model
+# 3. Internal Structure
 
-A feature must be organized by responsibility, not by technical type:
+Organize by responsibility (create folders only when needed):
 
-Recommended structure:
+```
+features/[domain]/
+├── index.ts              # Required — public client API
+├── server.ts             # Optional — server-only barrel
+├── components/           # UI including entry component
+├── hooks/
+├── logic/
+├── types/
+├── constants/
+├── config/               # Sidebar, navigation
+├── queries/              # Server reads
+└── domain/               # Static catalogs (if applicable)
+```
 
-- ui/ → presentational components
-- hooks/ → feature-specific composition logic
-- services/ → feature-level orchestration (if needed)
-- types/ → domain types
-- state/ → local feature state only if required
-
-Rule:
-- structure follows responsibility, not technology
-
----
-
-# 4. State Assignment Decision
-
-For every state inside the feature:
-
-Decide explicitly:
-
-- server-state → belongs to server-state.mdc layer
-- local UI state → state.mdc rules
-- derived state → computed, not stored
-- form state → forms.mdc rules
-
-Rule:
-- no unclassified state is allowed
+**Forbidden inside features:** `utils/`, `services/` (legacy → use `logic/`, `queries/`, `actions/`).
 
 ---
 
-# 5. Server Data Integration
+# 4. Public API
 
-If the feature uses remote data:
+**`index.ts`** — client-safe exports only (components, hooks, types, config).
 
-- do NOT fetch directly in components
-- use server-state layer as source of truth
-- access data through hooks abstraction
+**`server.ts`** — queries/actions with Node/fs; never re-export from `index.ts`.
 
-Flow:
-server-state → hook adapter → feature UI
-
-Rule:
-- server data must be normalized through abstraction layer
+External consumers (`app/`, other layers) import **only** from these barrels.
 
 ---
 
-# 6. Hook Design Inside Feature
+# 5. State Assignment
 
-Rules:
-
-- hooks must encapsulate single responsibility
-- avoid oversized orchestrator hooks unless necessary
-- hooks must not leak internal implementation to UI
-- hooks act as adapters, not owners of domain truth
-
-Rule:
-- hooks are composition, not system logic
+| State type | Owner |
+|------------|-------|
+| Server data | `queries/` + `server.ts` |
+| Feature workflow | `hooks/` |
+| Form interaction | form boundary + entity/feature hooks |
+| UI transient | local component state or UI hooks |
+| Derived values | computed in hooks calling `logic/` — not stored |
 
 ---
 
-# 7. UI Composition Rules
+# 6. Hook Design
 
-Rules:
-
-- UI must be built using ui-boundaries.mdc hierarchy
-- feature UI must not leak into shared layer
-- reusable UI must be promoted only if reuse is proven
-
-Rule:
-- UI reuse requires evidence, not assumption
+- Small focused hooks; orchestrator when 3+ business hooks
+- Orchestrator coordinates; business rules in `logic/`
+- View assembly in `logic/build-*` (see `lens-thickness`)
 
 ---
 
-# 8. Types Co-location
+# 7. UI
 
-Rules:
-
-- types must live close to feature domain
-- avoid global type pollution
-- avoid duplicating domain types across features
-
-Rule:
-- feature owns its domain model
+- Entry component in `components/` (not feature root)
+- Built from `shared/components/ui` + shared compositions
+- No fetch, no business rules in JSX
 
 ---
 
-# 9. Cross-Feature Isolation
+# 8. Cross-Feature Isolation
 
-Rules:
+- No `features/A` → `features/B` imports
+- Shared domain → `entities/` or proven `shared/` abstraction
 
-- features must not import each other directly
-- shared behavior must go through shared-layer or hooks abstraction
-- no hidden coupling allowed
+---
 
-Rule:
-- features are independent systems
+# 9. Checklist
+
+- [ ] `index.ts` created
+- [ ] `server.ts` if server-only code exists
+- [ ] Page in `app/` uses barrel import
+- [ ] Sidebar config in `config/` if navigable
+- [ ] `npm run build` passes
 
 ---
 
 # 10. Anti-Patterns
 
-Forbidden:
-
-- mixing multiple domains inside a single feature
-- direct server-state manipulation inside UI
-- hooks acting as business layer
-- duplicated state across layers
-- cross-feature imports
-- unclear state ownership
+- Multiple domains in one feature
+- Deep imports from `app/`
+- Server code in client barrel
+- Business logic in components
+- Cross-feature coupling

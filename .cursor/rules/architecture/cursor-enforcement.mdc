@@ -11,6 +11,8 @@ This file defines how architectural rules must be enforced during code generatio
 
 If any answer is unclear → STOP and re-evaluate architecture decision.
 
+When rules conflict, apply the hierarchy in `RULES-INDEX.mdc`.
+
 ---
 
 # 1. Pre-Generation Validation & Classification
@@ -20,7 +22,7 @@ Before generating any code, identify the module type:
 - Feature change (belongs in `features/[domain]`)
 - Entity change (belongs in `entities/[entity]/`)
 - Shared utility (belongs in `shared/`)
-- Infrastructure change (belongs in `server/`, `queries/`, `actions/`, `shared/actions/`, or `app/api/`)
+- Infrastructure change (belongs in domain `server/`, `queries/`, `actions/` with `"use server"`, or `app/api/` route handlers — not in a `shared/actions/` folder)
 
 A change may affect multiple responsibilities.
 Always identify:
@@ -65,6 +67,7 @@ If working inside `features/`:
 If working inside `entities/`:
 - Does this import from `features/`? (Forbidden)
 - Does this contain feature-specific orchestration? (Forbidden)
+- Does this entity exist only because 2+ features share the domain? (Required for new entities)
 
 ---
 
@@ -97,3 +100,16 @@ Only proceed to write code if:
 - Layer placement is correct
 
 Otherwise: → STOP → re-evaluate architecture decision.
+
+---
+
+# 8. Post-Edit Rules Validation
+
+After editing `.cursor/rules/`, run:
+
+```bash
+rg "features/prescription|boundaries\\.mdc|ui-boundaries\\.mdc|reactivity-runtime\\.mdc|design-tokens\\.mdc|hooks\\.mdc|state\\.mdc" .cursor/rules/
+rg "\"src/\\*\\*\"" .cursor/rules/
+```
+
+Broken cross-references and obsolete examples must be fixed before merging rule changes.

@@ -1,3 +1,3 @@
-import {ArticleSkeleton} from "@/features/articles/components/skeleton-article";
+import { ArticleSkeleton } from "@/features/articles";
 
 export default ArticleSkeleton;

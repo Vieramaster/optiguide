@@ -3,7 +3,9 @@ description: Form design, validation strategy, submit orchestration, and UX comp
 globs:
   - "**/forms/**/*"
   - "**/*form*"
-alwaysApply: false
+  - "entities/**/*"
+  - "features/**/*"
+alwaysApply: true
 ---
 
 # Forms Composition Contract
@@ -46,14 +48,9 @@ Rule:
 # 3. Validation Strategy
 
 Rules:
-- Validation must be explicit and readable.
-- Avoid duplicated validation logic across forms or consumer features.
-- Reuse validation schemas when the domain matches.
-- Domain validation and schemas → `features/*/logic/` or `entities/*/logic/` (see global-architecture.mdc §2.4).
-- Generic validation → `shared/validation/`.
-
-Rule:
-- Validation remains close to form intent through domain logic in `logic/`.
+- Validation must be explicit and readable; avoid duplicating parse/validate logic in consumer features.
+- Domain rules and schemas: `global-architecture.mdc` §2.4 (logic/, legacy `rules.ts`, shared/validation).
+- Forms consume validation from `logic/`; they orchestrate submit only (see §2.1).
 
 ---
 

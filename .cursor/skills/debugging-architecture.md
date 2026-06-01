@@ -4,151 +4,107 @@ description: Standard procedure for detecting architectural drift, coupling issu
 
 # Debugging Architecture Skill
 
-This skill defines how to detect architectural violations, coupling issues, and system drift in an existing codebase.
+Detect violations and drift against current rules.
 
-It MUST align with:
-- boundaries.mdc
-- feature-architecture.mdc
-- server-state.mdc
-- hooks.mdc
-- state.mdc
-- ui-boundaries.mdc
+**Align with:**
+- `.cursor/rules/architecture/global-architecture.mdc`
+- `.cursor/rules/architecture/cursor-enforcement.mdc`
+- `.cursor/rules/RULES-INDEX.mdc`
 
-It MUST NOT:
-- change architecture rules
-- introduce new patterns
-- justify existing violations
+See: `docs/ARQUITECTURA.md` (anti-patterns section).
 
 ---
 
 # 1. Core Principle
 
-Architecture issues are detected, not rationalized.
-
-Rule:
-- if structure violates rules, it is a defect, not a trade-off
+Structure violations are defects, not exceptions.
 
 ---
 
-# 2. Server-State Violations
+# 2. Dependency Violations
 
-Check for:
+Check:
 
-- direct fetch inside components
-- duplicate API calls across features
-- bypassing server-state layer
-- uncontrolled cache updates
-- inconsistent data sources
+```bash
+# Cross-feature
+rg "from [\"']@/features/" features/ --glob "*.{ts,tsx}"
 
-Rule:
-- server-state must remain single source of truth for remote data
+# shared → app layers (forbidden upward)
+rg "from [\"']@/(features|entities|app)/" shared/ --glob "*.{ts,tsx}"
 
----
+# entities → features
+rg "from [\"']@/features/" entities/ --glob "*.{ts,tsx}"
 
-# 3. Hook Violations
+# Deep imports from app
+rg "@/features/[^/]+/(components|hooks|logic|queries|config)/" app/
 
-Check for:
-
-- hooks acting as business layer
-- oversized orchestrator hooks
-- hidden cross-hook dependencies
-- duplicated logic across hooks
-- hooks duplicating server-state logic
-
-Rule:
-- hooks must remain compositional, not systemic
+# Deep entity imports
+rg "@/entities/[^/]+/(components|types|hooks|logic)/" --glob "*.{ts,tsx}"
+```
 
 ---
 
-# 4. State Violations
+# 3. Barrel / Server-Client Violations
 
-Check for:
-
-- mirrored state (props → state duplication)
-- duplicated server-state in local state
-- derived values stored as state
-- global mutable state without ownership
-
-Rule:
-- each state must have a single authority
+- Server-only (`fs`, queries) exported from client `index.ts`
+- Missing `index.ts` on domain with external consumers
+- `shared/actions/` folder usage
 
 ---
 
-# 5. Form Violations
+# 4. Hook Violations
 
-Check for:
-
-- forms directly calling APIs
-- mixing server-state and form state
-- uncontrolled sync loops between backend and UI
-- business logic inside form components
-
-Rule:
-- forms are UI drafts, not system controllers
+- Business rules in hooks instead of `logic/`
+- View assembly inline in orchestrator returns
+- Effect chains / props → state mirroring
+- God hooks replacing composition
 
 ---
 
-# 6. UI Boundary Violations
+# 5. Logic Violations
 
-Check for:
-
-- shared components depending on features
-- feature UI leaking into shared layer
-- layout containing business logic
-- improper abstraction of reusable components
-
-Rule:
-- UI layers must strictly follow dependency hierarchy
+- `utils/` folders in features/entities
+- Legacy `rules.ts` at entity root (→ `logic/`)
+- Duplicated parse/validate across feature and entity
 
 ---
 
-# 7. Coupling Detection
+# 6. UI Violations
 
-Check for:
-
-- cross-feature imports
-- implicit shared state
-- hidden dependency chains
-- circular module relationships
-
-Rule:
-- features must remain isolated systems
+- Fetch in presentation components
+- Domain copy in `shared/`
+- Cross-layer imports (shared → features)
+- Entry components outside `components/`
 
 ---
 
-# 8. Reactivity Violations
+# 7. Form Violations
 
-Check for:
-
-- effect chains between hooks
-- cascading state updates
-- uncontrolled synchronization loops
-- unstable dependency patterns
-
-Rule:
-- reactive flows must be predictable and linear
+- Validation duplicated outside entity/feature `logic/`
+- Forms as global state managers
 
 ---
 
-# 9. System Drift Detection
+# 8. Drift Indicators
 
-Indicators:
-
-- increasing hook size over time
-- repeated logic across features
-- growing server-state bypass usage
-- rising UI complexity without abstraction discipline
-
-Rule:
-- complexity growth must be intentional, not accidental
+- New deep imports from `app/`
+- Growing cross-feature coupling
+- Shared abstractions with single consumer
+- Logic creeping into components/hooks
 
 ---
 
-# 10. Anti-Pattern Summary
+# 9. Fix Order
 
-Forbidden:
+1. Critical: dependency direction, server/client barrels
+2. Structural: move logic, entry components, entity legacy
+3. Cleanup: dead code, premature shared abstractions
+4. Cosmetic: relative vs absolute intra-feature imports
 
-- rationalizing violations as exceptions
-- fixing symptoms instead of structure
-- duplicating logic instead of abstracting correctly
-- ignoring boundary rules under pressure
+---
+
+# 10. Anti-Patterns
+
+- Rationalizing violations as one-offs
+- Fixing symptoms (lint ignore) instead of structure
+- Creating `shared/` abstractions without 2+ proven consumers
