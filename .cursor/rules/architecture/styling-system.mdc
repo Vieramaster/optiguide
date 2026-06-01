@@ -1,11 +1,10 @@
 ---
 description: Styling architecture rules, design tokens, Tailwind v4, and shadcn/ui integration
 globs:
-  - "src/**/*.tsx"
-  - "components/**/*"
   - "shared/**/*"
   - "app/**/*"
   - "features/**/*"
+  - "entities/**/*"
 alwaysApply: true
 ---
 

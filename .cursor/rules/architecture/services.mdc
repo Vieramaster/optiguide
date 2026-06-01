@@ -2,41 +2,43 @@
 description: Business logic and service layer constraints
 globs:
   - "features/**/*"
+  - "entities/**/*"
   - "shared/**/*"
 alwaysApply: true
 ---
 
 # services.mdc
 
-- Place reusable business logic inside services or actions
+- Note: "services" in this file refers to orchestration patterns, not a domain folder named `services/`.
+- Place reusable business logic inside `logic/`
 - Avoid business logic directly inside UI components
-- Keep services framework-agnnostic where possible
-- Keep services deterministic when possible
-- Keep side effects isolated
+- Keep logic modules framework-agnostic where possible
+- Keep logic modules deterministic when possible
+- Keep side effects isolated in `queries/`, `actions/`, or `server/`
+- `actions/` orchestrate mutations; they must not host complex business rules inline
 - Separate orchestration from transformation logic
 - Avoid mixing persistence logic with presentation logic
-- Avoid direct mutation of external state inside services
+- Avoid direct mutation of external state inside logic modules
 - Keep async workflows explicit
-- Prefer small focused services
-- Avoid god-service modules
-- Avoid unrelated responsibilities inside a single service
-- Keep service inputs explicit
-- Keep service outputs predictable
+- Prefer small focused logic modules
+- Avoid god-modules that mix unrelated responsibilities
+- Keep logic inputs explicit
+- Keep logic outputs predictable
 - Prefer typed return values
 - Avoid hidden runtime dependencies
-- Avoid accessing browser APIs from generic services
+- Avoid accessing browser APIs from generic logic modules
 - Separate validation from persistence operations
 - Keep error handling centralized and predictable
-- Avoid duplicated business rules across services
+- Avoid duplicated business rules across logic modules
 - Prefer pure helper extraction for reusable calculations
-- Keep service naming behavior-oriented
-- Avoid UI terminology inside service modules
+- Keep logic naming behavior-oriented
+- Avoid UI terminology inside logic modules
 
 ## Pure return discipline (logic / build / services)
 
 Principle: a return is pure when everything returned is already resolved in variables; `return` only exposes those values, it does not compute.
 
-Scope: `features/**/logic/`, `build-*.ts`, `services/`, domain helpers in `shared/**`. Exception: React hooks and components (handlers and JSX may define callbacks inline).
+Scope: `features/**/logic/`, `entities/**/logic/`, `**/mappers/`, `build-*.ts`, domain helpers in `shared/**`. Exception: React hooks and components (handlers and JSX may define callbacks inline).
 
 Required flow:
 1. Compute with `const` (functions, expressions, lookups, methods).

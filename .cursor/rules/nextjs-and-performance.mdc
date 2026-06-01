@@ -1,9 +1,9 @@
 ---
 description: Next.js App Router architecture, rendering strategies, and performance optimization rules
 globs:
-  - "src/app/**/*"
   - "app/**/*"
   - "features/**/*"
+  - "entities/**/*"
 alwaysApply: false
 ---
 
@@ -41,7 +41,8 @@ Prefer server-side data fetching whenever possible.
 
 # 4. Server Actions & Route Handlers
 
-- **Server Actions:** Use for mutations when appropriate (forms, secure operations). Keep mutation logic outside UI components. Avoid large mutation flows directly inside client components.
+- **Server Actions:** Use for mutations when appropriate (forms, secure operations). Domain mutations belong in `actions/` (see global-architecture.mdc §2.3). Keep mutation logic outside UI components. Avoid large mutation flows directly inside client components.
+- **Server reads:** Use `queries/` for server-side data fetching (see global-architecture.mdc §2.3). Prefer `server.ts` as the public server surface when exposing queries/actions externally.
 - **Route Handlers (`app/api/`):** Keep API logic isolated. Validate inputs, orchestrate requests, isolate transport logic. Avoid mixing API logic into UI layers.
 
 ---

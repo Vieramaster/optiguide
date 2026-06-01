@@ -1,11 +1,10 @@
 ---
 description: Global UI system architecture, layer boundaries, and component composition (Tailwind v4 + shadcn/ui)
 globs:
-  - "src/**/*"
-  - "components/**/*"
   - "shared/**/*"
   - "app/**/*"
   - "features/**/*"
+  - "entities/**/*"
 alwaysApply: true
 ---
 
@@ -25,7 +24,7 @@ It does NOT define:
 
 The UI must follow strict layering, depending only downward:
 
-primitives (shadcn/ui) → shared/ui → entities/ui → features/\* → layouts/pages
+primitives (shadcn/ui) → shared/components/ui → entities/*/components → features/\* → app/ + shared/layout
 
 ## 1.1 Primitives Layer (shadcn/ui)
 
@@ -33,7 +32,7 @@ primitives (shadcn/ui) → shared/ui → entities/ui → features/\* → layouts
 - Stateless UI primitives (must remain framework/domain-agnostic)
 - Must not depend on application code.
 
-## 1.2 Shared UI Layer (shared/ui)
+## 1.2 Shared UI Layer (shared/components/ui)
 
 - Reusable, domain-agnostic UI abstractions built only from primitives.
 - Must not contain business logic or domain rules.
@@ -42,17 +41,17 @@ primitives (shadcn/ui) → shared/ui → entities/ui → features/\* → layouts
 ## 1.3 Feature UI Layer (features/\*)
 
 - Business-specific UI composition.
-- Built from shared/ui + primitives.
-- May contain local state and domain logic via hooks.
+- Built from shared/components/ui + primitives.
+- May contain local state and orchestrates domain logic from `logic/` via feature hooks or entity hooks.
 
-## 1.4 Layout Layer (layouts/pages & shared/layout)
+## 1.4 Layout Layer (app/ & shared/layout)
 
 - Structural UI composition only (defines page structure, spacing layout).
 - No business logic or reusable domain components.
 
 Rule: UI layers must only depend downward. UI boundary violations are structural defects.
 
-## 1.5 Entities UI Layer (entities/\*/ui)
+## 1.5 Entities UI Layer (entities/*/components)
 
 - UI components strictly tied to a core business entity (e.g., a standard domain form).
 - Must not contain feature-specific orchestration.
@@ -64,7 +63,7 @@ Rule: UI layers must only depend downward. UI boundary violations are structural
 All components must follow this construction order:
 
 1. shadcn/ui primitives
-2. shared/ui abstractions (if available)
+2. shared/components/ui abstractions (if available)
 3. feature-specific composition
 4. local UI state (if required)
 5. layout composition (if applicable)
@@ -74,7 +73,7 @@ All components must follow this construction order:
 Before creating UI:
 
 1. Check primitives (shadcn)
-2. Check shared/ui
+2. Check shared/components/ui
 3. Check feature existing components
 4. Only then create a new component. Reuse is mandatory before creation.
 
@@ -97,7 +96,7 @@ UI layer responsibilities:
 Forbidden in UI:
 
 - Business logic, domain rules, API orchestration.
-- Data transformation logic (must be externalized).
+- Data transformation logic (must be externalized to `logic/`, `formatters/`, or `mappers/` — see global-architecture.mdc §2.4).
 - Mixing layout concerns with business orchestration.
 
 ## 3.1 Render Determinism
@@ -126,9 +125,9 @@ Components must be deterministic, predictable, and side-effect safe by default.
 Forbidden:
 
 - Primitives importing application code.
-- shared/ui importing features UI.
+- shared/components/ui importing features UI.
 - features importing other features UI directly.
-- layouts importing feature internals directly.
+- `app/` pages importing feature or entity internals directly (bypassing public APIs).
 - Mixing business logic inside UI components.
 - Duplicating primitives across features with minor differences.
 - Feature-specific design systems.

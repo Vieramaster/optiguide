@@ -3,6 +3,8 @@ description: Reactivity runtime, state ownership, hooks architecture, and server
 globs:
   - "app/**/*"
   - "features/**/*"
+  - "entities/**/*"
+  - "entities/**/hooks/**"
   - "shared/hooks/**/*"
 alwaysApply: true
 ---
@@ -42,7 +44,7 @@ State must be classified by domain and not mixed:
 - UI state (transient interaction state)
 - Feature state (domain workflow state)
 - Form state (interaction flow state)
-- Server state (external data state)
+- Server state (remote data obtained via `queries/` and mutated via `actions/`; does not require a dedicated cache layer)
 
 ## 2.2 Locality & Minimalism
 - State lives as close as possible to its usage scope (local over lifted).
@@ -59,7 +61,7 @@ If a value can be computed, it must NOT be stored.
 
 # 3. Hook Architecture & Orchestration
 
-Hooks must live inside a dedicated `hooks/` or `hook/` directory and be colocated with their owning feature.
+Hooks must live inside a dedicated `hooks/` or `hook/` directory and be colocated with their owning feature or entity.
 - Separate UI hooks from business hooks.
 - Hooks encapsulate a single responsibility. Avoid oversized, catch-all hooks.
 
@@ -67,17 +69,20 @@ Hooks must live inside a dedicated `hooks/` or `hook/` directory and be colocate
 - Prefer composing multiple focused hooks over duplicating stateful logic.
 - **Orchestrator hooks:** Create an orchestrator hook when a component uses more than 2 business hooks.
 - Orchestrators coordinate communication between hooks, centralize derived state, and expose a clean UI-facing API.
+- Orchestrators delegate business rules to `logic/`; they coordinate, not replace.
 - Components must consume orchestrated state instead of coordinating hooks directly.
-- Avoid placing all business logic inside orchestrators (they coordinate, not replace).
 - Avoid deeply nested hook dependency chains or effect chains between hooks.
 
 ---
 
 # 4. Server State & Remote Data
 
-Server state is a cached projection of remote truth.
-- The backend is the source of truth; the frontend maintains a controlled cache.
-- Do NOT bypass the server-state layer (e.g. using `fetch` directly in UI or hooks without an abstraction/cache layer).
+Remote data is obtained via `queries/` and mutated via `actions/`.
+This project does **not** require a dedicated server-state/cache layer.
+Introduce additional caching abstractions only when a concrete need exists.
+
+Rule:
+- UI must not fetch directly; hooks orchestrate reads via `queries/` and mutations via `actions/`.
 
 ## 4.1 Fetching & Caching
 - Fetching must be explicit and traceable.
@@ -101,4 +106,4 @@ Forbidden:
 - Fetching directly inside presentation components without abstraction.
 - Uncontrolled refetch loops or duplicating server state into local UI state.
 - Massive hooks replacing proper composition.
-- Hooks acting as the business layer (business logic belongs in `services/` or `model/`).
+- Hooks acting as the business layer (business logic belongs in `logic/`).

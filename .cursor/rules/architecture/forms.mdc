@@ -33,12 +33,13 @@ Form state must be:
 - Not mirrored into global state unnecessarily.
 
 ## 2.1 Submit Orchestration Ownership
-- The form feature itself MUST own the parsing, validation, and serialization of its data.
+- Forms in features and entities MUST own the parsing, validation orchestration, and serialization of their data.
+- Domain business rules live in `logic/`; forms consume validation from `logic/` and do not own business rules.
 - Avoid parsing form data (e.g., `FormData` processing) in multiple different consumer features. This causes logic duplication and drift.
 - If a form is reused across features, it should export a clean `onSubmit(parsedAndValidatedData)` interface, rather than having consumer features manually parse raw `FormData` or duplicate validation logic.
 
 Rule:
-- Form state is temporary interaction state. Forms own their parsing and validation orchestration.
+- Form state is temporary interaction state. Forms own their submit orchestration; domain rules belong in `logic/`.
 
 ---
 
@@ -48,9 +49,11 @@ Rules:
 - Validation must be explicit and readable.
 - Avoid duplicated validation logic across forms or consumer features.
 - Reuse validation schemas when the domain matches.
+- Domain validation and schemas → `features/*/logic/` or `entities/*/logic/` (see global-architecture.mdc §2.4).
+- Generic validation → `shared/validation/`.
 
 Rule:
-- Validation logic must remain close to form intent.
+- Validation remains close to form intent through domain logic in `logic/`.
 
 ---
 

@@ -3,7 +3,8 @@ description: UI motion, animation consistency, and performance-safe transitions 
 globs:
   - "app/**/*"
   - "features/**/*"
-  - "components/**/*"
+  - "shared/components/**/*"
+  - "entities/**/*"
 alwaysApply: true
 ---
 

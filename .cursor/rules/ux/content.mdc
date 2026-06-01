@@ -3,7 +3,8 @@ description: UI content rules, copy consistency, and information design constrai
 globs:
   - "app/**/*"
   - "features/**/*"
-  - "components/**/*"
+  - "shared/components/**/*"
+  - "entities/**/*"
 alwaysApply: true
 ---
 

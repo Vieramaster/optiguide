@@ -4,6 +4,7 @@ globs:
   - "app/**/*"
   - "features/**/*"
   - "shared/**/*"
+  - "entities/**/*"
 alwaysApply: true
 ---
 

@@ -3,7 +3,8 @@ description: Accessibility (a11y) UI correctness and inclusive interaction rules
 globs:
   - "app/**/*"
   - "features/**/*"
-  - "components/**/*"
+  - "shared/components/**/*"
+  - "entities/**/*"
 alwaysApply: true
 ---
 
