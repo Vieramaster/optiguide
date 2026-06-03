@@ -6,11 +6,14 @@ import {
   ZapOff,
   Sun,
   RectangleGoggles,
+  Slice
 } from "lucide-react";
+
 
 import type { TableOptions, RowOptions } from "../types/ui/table-options";
 
 export const CATALOG_FILTER_COLUMNS = [
+  { label: "tallado digital", Icon: Slice, value: "surfacing" },
   { label: "polarizado", value: "polarized", Icon: RectangleGoggles },
   { label: "antireflejo", Icon: Sparkles, value: "antiReflex" },
   { label: "filtro de pantalla", Icon: MonitorSmartphone, value: "blueControl" },
@@ -22,6 +25,7 @@ export const CATALOG_FILTER_COLUMNS = [
   { label: "proteccion contra rayas", Icon: Shield, value: "scratchResistant" },
   { label: "anti estatica", Icon: ZapOff, value: "antiStatic" },
   { label: "fotocromatico", Icon: Sun, value: "photochromatic" },
+
 ] satisfies readonly TableOptions[];
 
 export const CATALOG_TABLE_COLUMNS: TableOptions[] = [
@@ -31,7 +35,7 @@ export const CATALOG_TABLE_COLUMNS: TableOptions[] = [
   { label: "add", value: "add" },
   { label: "indice", value: "index" },
   { label: "diam", value: "diam" },
-  { label: "tallado", value: "surfacing" },
+
   { label: "forma", value: "lensForm" },
   ...CATALOG_FILTER_COLUMNS,
 ] satisfies readonly TableOptions[];

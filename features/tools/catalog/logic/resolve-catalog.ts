@@ -3,7 +3,7 @@ import { CATALOG_OPTICAL_COMPANY } from "../domain/companies/optical-companies-c
 import { LENS_CATALOGS } from "../domain/lens/lens-catalog";
 import { TREATMENTS_CATALOG } from "../domain/technologies/treatments";
 import { PHOTOCHROMATIC_LENSES_CATALOG } from "../domain/technologies/photochromatic";
-import type { SelectState, LensObjectResolved } from "../types/companies/companies";
+import type { SelectState, LensObjectResolved, LensObjectInput } from "../types/companies/companies";
 import type { TreatmentsName } from "../types/domain/technologies/lens-treatments";
 import type { PhotochromaticName } from "../types/domain/technologies/photochromatic";
 
@@ -14,7 +14,6 @@ const assertSelectFilter = (filter: SelectState) => {
   }
 };
 
-//RESOLVERS
 const resolveLens = (
   lensKey: string,
   lensType: SelectState["lens"]
@@ -35,15 +34,17 @@ const resolveTreatments = (
 ) => {
   if (!treatments?.length) return undefined;
 
-  return treatments.map((t) => {
-    const resolved = TREATMENTS_CATALOG[t];
+  const resolvedTreatments = treatments.map((treatmentName) => {
+    const resolved = TREATMENTS_CATALOG[treatmentName];
 
     if (!resolved) {
-      throw new Error(`Treatment not found → "${t}"`);
+      throw new Error(`Treatment not found → "${treatmentName}"`);
     }
 
     return resolved;
   });
+
+  return resolvedTreatments;
 };
 
 const resolvePhotochromatic = (
@@ -60,7 +61,22 @@ const resolvePhotochromatic = (
   return resolved;
 };
 
-//MAIN
+const mapCatalogEntryToResolved = (
+  entry: LensObjectInput,
+  lensType: SelectState["lens"],
+): LensObjectResolved => {
+  const key = entry.key;
+  const lens = resolveLens(entry.lens, lensType);
+  const treatment = resolveTreatments(entry.treatment);
+  const photochromatic = resolvePhotochromatic(entry.photochromatic);
+
+  return {
+    key,
+    lens,
+    treatment,
+    photochromatic,
+  };
+};
 
 export const resolveCatalog = (
   selectFilter: SelectState
@@ -78,10 +94,9 @@ export const resolveCatalog = (
     );
   }
 
-  return catalog.map(({ key, lens, treatment, photochromatic }) => ({
-    key: key,
-    lens: resolveLens(lens, lensType),
-    treatment: resolveTreatments(treatment),
-    photochromatic: resolvePhotochromatic(photochromatic),
-  }));
+  const resolvedCatalog = catalog.map((entry) =>
+    mapCatalogEntryToResolved(entry, lensType),
+  );
+
+  return resolvedCatalog;
 };

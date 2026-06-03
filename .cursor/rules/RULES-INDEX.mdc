@@ -16,7 +16,7 @@ When rules conflict, apply this hierarchy (highest authority first):
 3. Layer rules (same tier; more specific path wins):
    - `architecture/ui-architecture.mdc`
    - `architecture/state-and-reactivity.mdc`
-   - `architecture/logic-discipline.mdc` — pure-return and `logic/` placement
+   - `architecture/logic-discipline.mdc` — extraction discipline, pure-return, and `logic/` placement
    - `architecture/forms.mdc`
    - `nextjs-and-performance.mdc`
 4. `architecture/typescript.mdc`
@@ -33,7 +33,7 @@ When rules conflict, apply this hierarchy (highest authority first):
 | `architecture/cursor-enforcement.mdc` | AI/human pre-flight checklist |
 | `architecture/ui-architecture.mdc` | UI layers and composition |
 | `architecture/state-and-reactivity.mdc` | React state, hooks, effects |
-| `architecture/logic-discipline.mdc` | `logic/`, `build-*`, pure-return |
+| `architecture/logic-discipline.mdc` | Extraction discipline, `logic/`, `build-*`, pure-return |
 | `architecture/forms.mdc` | Forms and submit orchestration |
 | `architecture/typescript.mdc` | Types and modeling |
 | `architecture/naming.mdc` | Naming conventions |
@@ -62,7 +62,10 @@ When rules conflict, apply this hierarchy (highest authority first):
 | Layers, deps, barrels, server surface | `global-architecture.mdc` |
 | Orchestrators, effects, derived state | `state-and-reactivity.mdc` §3.1 |
 | Server state, cache policy | `state-and-reactivity.mdc` §4 |
-| Pure-return, `logic/` placement | `logic-discipline.mdc` |
+| Pure-return, `logic/` placement | `logic-discipline.mdc` § Return discipline |
+| Extraction cost, trivial inline, when to extract | `logic-discipline.mdc` § Extraction discipline |
+| Extraction placement ladder (where to put code) | `global-architecture.mdc` §2.8 |
+| Component extraction (UI only) | `ui-architecture.mdc` §2.3 |
 | UI layers, composition | `ui-architecture.mdc` |
 | Form submit orchestration | `forms.mdc` |
 | Copy, single-locale | `content.mdc` §1.1 |
@@ -87,7 +90,10 @@ When multiple rules apply in the same turn:
 
 - **Dependencies:** `global-architecture` wins.
 - **Hooks vs `logic/`:** Owner `state-and-reactivity.mdc` §3.1; view assembly owner `logic-discipline.mdc`.
-- **Pure return:** Owner `logic-discipline.mdc`; hooks out of scope.
+- **Pure return:** Owner `logic-discipline.mdc` § Return discipline; hooks out of scope.
+- **Whether to extract (cost):** Owner `logic-discipline.mdc` § Extraction discipline; `global-architecture.mdc` §2.8 does not override.
+- **Where to extract (placement):** Owner `global-architecture.mdc` §2.8 ladder; gated by Extraction discipline.
+- **`build-*` vs orchestrator:** Orchestration `state-and-reactivity.mdc` §3.1; new `build-*` files gated by Extraction discipline.
 
 ## Documentation sync
 

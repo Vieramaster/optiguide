@@ -14,7 +14,7 @@ export const createEssilor156Lens = (data: CreateLens): LensBase =>
   category: "Essilor 1.56",
   lensMaterial: LENS_MATERIALS.MID_INDEX_RESIN,
   lensForm: "esf",
-  surfacing: "estandar",
+  surfacing: false,
   ...data,
 });
 

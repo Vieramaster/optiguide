@@ -14,7 +14,7 @@ export const createOrmaLens = (data: CreateLens): LensBase =>
   category: "Orma",
   lensMaterial: LENS_MATERIALS.CR_39,
   lensForm: "esf",
-  surfacing: "estandar",
+  surfacing: false,
   ...data,
 })
 

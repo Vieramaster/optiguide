@@ -85,6 +85,19 @@ Before creating UI:
 - New abstraction (restricted): when reuse exists in multiple features and semantic meaning is consistent.
 - Fork (exceptional): when component purpose fundamentally changes.
 - Avoid deep abstraction chains (e.g. wrapper over wrapper over wrapper).
+- Purely visual wrappers with no behavior or semantic value: See §2.3.
+
+## 2.3 Component Extraction Discipline
+
+SSOT for **React components** only. Functions, `logic/`, `build-*`: `logic-discipline.mdc` § Extraction discipline. Layer ladder: `global-architecture.mdc` §2.8.
+
+- Do NOT extract components solely to reduce line count.
+- Extract a component when there is identifiable responsibility, real reuse (`global-architecture.mdc` §2.7), or a clear readability gain — same navigation-cost spirit as Extraction discipline, applied to UI boundaries.
+- Avoid components that only wrap markup without behavior or semantic structure (distinct from §2.2 visual adaptation with a justified UX purpose).
+- Before creating a new component, follow §2.1 Component Creation Rule (reuse existing primitives and compositions first).
+
+Rule:
+- Component boundaries must add responsibility, reuse, or clarity — not indirection.
 
 ---
 
@@ -136,3 +149,5 @@ Forbidden:
 - Hidden side effects in render flow.
 - Inline anonymous components inside render functions.
 - Duplicated rendering branches (extract repeated markup patterns).
+- Extracting components only to shorten a file without identifiable responsibility or reuse (See §2.3).
+- Visual-only wrapper components with no behavior, semantics, or justified adaptation (See §2.3).

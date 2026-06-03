@@ -27,6 +27,10 @@ export const mapCatalogToRow = (catalog: LensObjectResolved): CatalogRow => {
   const rangeDioptersText = buildRange(rangeDiopters, maxDiopters);
 
   const addText = add ? `${add.min} hasta ${add.max}` : "—";
+  const photochromaticCell = Boolean(photochromatic);
+  const polarizedCell =
+    photochromatic?.photochromaticPolarized ||
+    hasFeature(treatment, "polarized");
 
   return {
     lensLine,
@@ -42,10 +46,8 @@ export const mapCatalogToRow = (catalog: LensObjectResolved): CatalogRow => {
     oleophobicHydrophobic: hasFeature(treatment, "oleophobicHydrophobic"),
     scratchResistant: hasFeature(treatment, "scratchResistant"),
     antiStatic: hasFeature(treatment, "antiStatic"),
-    photochromatic: Boolean(photochromatic),
-    polarized:
-      photochromatic?.photochromaticPolarized ||
-      hasFeature(treatment, "polarized"),
+    photochromatic: photochromaticCell,
+    polarized: polarizedCell,
   };
 };
 

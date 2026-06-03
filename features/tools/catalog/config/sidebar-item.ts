@@ -1,6 +1,6 @@
 import { NotebookText } from "lucide-react";
 
-import type { ToolItem } from "@/shared/layout/sidebar/types/sidebar";
+import type { ToolItem } from "@/shared/layout";
 
 export const CATALOG_SIDEBAR_ITEM: ToolItem = {
   title: "Catalogo",

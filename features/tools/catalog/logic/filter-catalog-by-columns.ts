@@ -6,11 +6,11 @@ import { mapCatalogToRow } from "./catalog-row";
 /**
  * Filtra el catálogo según los filtros booleanos de columnas.
  */
-export function filterCatalogByColumns(
+export const filterCatalogByColumns = (
   catalog: LensObjectResolved[],
   columns: TableOptions[],
-  filters: Record<string, boolean>
-): LensObjectResolved[] {
+  filters: Record<string, boolean>,
+): LensObjectResolved[] => {
   if (!columns.length) return catalog;
 
   return catalog.filter((lensItem) => {
@@ -24,4 +24,4 @@ export function filterCatalogByColumns(
       return Boolean(row[value]);
     });
   });
-}
+};

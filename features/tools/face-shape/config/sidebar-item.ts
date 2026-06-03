@@ -1,6 +1,6 @@
 import { Smile } from "lucide-react";
 
-import type { ToolItem } from "@/shared/layout/sidebar/types/sidebar";
+import type { ToolItem } from "@/shared/layout";
 
 export const FACE_SHAPE_SIDEBAR_ITEM: ToolItem = {
   title: "Lentes según el rostro",

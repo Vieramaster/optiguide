@@ -2,7 +2,6 @@ import { INVALID_MESSAGES } from "../messages";
 import type { RulesPrescriptions } from "../types/prescription-form-config";
 import type { PrescriptionFullValues } from "../types/types";
 
-import { transformTranspositionPrescription } from "./transform-transposition-prescription";
 import { isAxisValid, isDiopterValid, isDiameterValid } from "./validations";
 
 export const evaluatePrescriptionRules = (prescription: RulesPrescriptions) => {
@@ -42,11 +41,8 @@ export const baseRules = (sphere: number, cylinder: number) => {
     dioptersErrors.push(INVALID_MESSAGES.INVALID_DIOPTERS);
   }
 
-  const transposedPrescription = transformTranspositionPrescription(
-    sphere,
-    cylinder,
-  );
-  const isTranspositionValid = isDiopterValid(transposedPrescription.SPHERE);
+  const transposedSphere = sphere + cylinder;
+  const isTranspositionValid = isDiopterValid(transposedSphere);
 
   if (!isTranspositionValid) {
     dioptersErrors.push(INVALID_MESSAGES.INVALID_TRANSPOSITION);

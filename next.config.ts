@@ -1,10 +1,26 @@
 import type { NextConfig } from "next";
 import createMDX from "@next/mdx";
 
+const securityHeaders = [
+  { key: "X-Frame-Options", value: "DENY" },
+  { key: "X-Content-Type-Options", value: "nosniff" },
+  { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+  {
+    key: "Permissions-Policy",
+    value: "camera=(), microphone=(), geolocation=()",
+  },
+];
+
 const nextConfig: NextConfig = {
   reactCompiler: true,
-  images: {
-    unoptimized: true,
+  // Optimización activa: imágenes en /public (artículos MDX, face-shape). Requiere runtime Next (p. ej. Vercel).
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: securityHeaders,
+      },
+    ];
   },
 };
 

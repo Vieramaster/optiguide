@@ -12,7 +12,7 @@ export const createPrecise = (data: createBifocalProgressive): LensBase =>
     company: "Kodak",
     lens: "progressive",
     lensForm: "esf",
-    surfacing: "estandar",
+    surfacing: false,
     diam: [70],
     range: "stock",
     ...data,

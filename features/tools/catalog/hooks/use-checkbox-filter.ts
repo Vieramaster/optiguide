@@ -7,7 +7,7 @@ import { CATALOG_FILTER_COLUMNS } from "../constants/catalog-table-columns";
 import type { LensObjectResolved } from "../types/companies/companies";
 
 export const useCheckboxFilter = (catalog: LensObjectResolved[]) => {
-  const [checkboxFilter, setCheckboxFilter] = useState<Record<string, boolean>>(
+  const [filter, setFilter] = useState<Record<string, boolean>>(
     {},
   );
 
@@ -16,17 +16,17 @@ export const useCheckboxFilter = (catalog: LensObjectResolved[]) => {
     return filterCatalogByColumns(
       catalog,
       CATALOG_FILTER_COLUMNS,
-      checkboxFilter,
+      filter,
     );
-  }, [catalog, checkboxFilter]);
+  }, [catalog, filter]);
 
   const handleCheckboxChange = (key: string, checked: boolean) => {
-    setCheckboxFilter((prev) => ({ ...prev, [key]: checked }));
+    setFilter((prev) => ({ ...prev, [key]: checked }));
   };
 
   return {
     checkboxCatalog,
-    checkboxFilter,
+    filter,
     handleCheckboxChange,
   };
 };

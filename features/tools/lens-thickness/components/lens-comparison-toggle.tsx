@@ -5,12 +5,12 @@ import type { LensComparisonToggleItemView } from "../types/lens-comparison-view
 
 type LensComparisonToggleProps = {
   items: LensComparisonToggleItemView[];
-  onSelectLensComparison: (lensComparisonKey: LensComparisonKey) => void;
+  onSelectLens: (lensComparisonKey: LensComparisonKey) => void;
 };
 
 export const LensComparisonToggle = ({
   items,
-  onSelectLensComparison,
+  onSelectLens,
 }: LensComparisonToggleProps) => (
   <div
     className="flex justify-center gap-6 xl:hidden"
@@ -24,7 +24,7 @@ export const LensComparisonToggle = ({
         variant={item.isActive ? "default" : "outline"}
         aria-pressed={item.isActive}
         aria-label={item.ariaLabel}
-        onClick={() => onSelectLensComparison(item.lensComparisonKey)}
+        onClick={() => onSelectLens(item.lensComparisonKey)}
       >
         {item.buttonLabel}
       </Button>

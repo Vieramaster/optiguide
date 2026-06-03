@@ -1,13 +1,16 @@
 import Link from "next/link";
 
-import { normalizePath } from "@/shared/formatters/path-normalizer";
-
 export const Links = ({
   children,
   href,
   ...props
 }: React.ComponentProps<"a">) => {
-  const path = normalizePath(href);
+  const path =
+    !href
+      ? "#"
+      : href.startsWith("/") || href.startsWith("http")
+        ? href
+        : `/${href}`;
 
   return (
     <Link href={path} {...props} className="font-semibold underline">

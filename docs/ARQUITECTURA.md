@@ -6,6 +6,22 @@ Documentación relacionada: [README](./README.md) · [Guía de desarrollo](./GUI
 
 ---
 
+## Convenciones en root (Next.js)
+
+Archivos que el framework exige o genera en la raíz del repo (junto a `app/` y `package.json`). No forman parte del modelo de capas `features` / `entities` / `shared`; son adaptadores de configuración.
+
+| Archivo | Obligatorio | Rol |
+|---------|-------------|-----|
+| `next.config.ts` | Sí | Config de Next; MDX vía `createMDX` (`@next/mdx`) |
+| `mdx-components.tsx` | Sí (App Router + MDX) | Convención Next: exporta `useMDXComponents`. Aquí solo re-exporta desde `@/features/articles`; la implementación vive en el feature |
+| `next-env.d.ts` | Sí (generado) | Tipos de Next; no editar a mano |
+
+**MDX en este proyecto:** el contenido está en `features/articles/markdowns/*.mdx` y se carga con import dinámico (`loadArticleMdx`). No hay rutas `.mdx` dentro de `app/`, por lo que no hace falta `pageExtensions` con `mdx` salvo que en el futuro se usen páginas MDX en el filesystem de `app/`.
+
+**Tipos TypeScript:** no usar una carpeta `types/` en root para dominio. Los tipos de negocio van en `features/*/types/`, `entities/*/types/` o `shared/types/`. El tipado de módulos `*.mdx` lo provee el paquete `@types/mdx` (dependencia del proyecto). Si hace falta augmentar exports concretos de un artículo, preferir `features/articles/types/*.d.ts`.
+
+---
+
 ## Estructura de carpetas
 
 ### `app/`
@@ -251,6 +267,7 @@ rg "shared/actions" --glob "*.{ts,tsx}"
 
 - Dominio: `features/*/types/`, `entities/*/types/`
 - UI genérica: `shared/types/`, props de componentes shared
+- Root: ver [Convenciones en root (Next.js)](#convenciones-en-root-nextjs); sin `types/` de dominio en la raíz
 
 ---
 

@@ -4,3 +4,8 @@ export {
   SidebarInset,
   SidebarProvider,
 } from "./sidebar/components";
+export type {
+  ArticleItem,
+  SidebarBlock,
+  ToolItem,
+} from "./sidebar/types/sidebar";

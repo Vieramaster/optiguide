@@ -12,7 +12,7 @@ export const createOrmixLens = (data: CreateLens): LensBase => ({
   category: "Ormix",
   lensMaterial: LENS_MATERIALS.RESIN_MR_8,
   lensForm: "esf",
-  surfacing: "estandar",
+  surfacing: false,
   ...data,
 });
 

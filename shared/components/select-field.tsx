@@ -30,27 +30,29 @@ export const SelectField = <T extends string>({
   const isControlled = value !== undefined;
 
   return (
-    <Select
-      onValueChange={onValueSelect}
-      {...(isControlled
-        ? { value }
-        : { defaultValue: options[0]?.value ?? "" })}
-    >
-      <SelectTrigger className="w-58 mx-auto" aria-label={label}>
-        <SelectValue placeholder={placeholder} />
-      </SelectTrigger>
+    <div className="flex w-full justify-center lg:w-auto">
+      <Select
+        onValueChange={onValueSelect}
+        {...(isControlled
+          ? { value }
+          : { defaultValue: options[0]?.value ?? "" })}
+      >
+        <SelectTrigger className="w-50" aria-label={label}>
+          <SelectValue placeholder={placeholder} />
+        </SelectTrigger>
 
-      <SelectContent>
-        <SelectGroup>
-          {label ? <SelectLabel>{label}</SelectLabel> : null}
+        <SelectContent>
+          <SelectGroup>
+            {label ? <SelectLabel>{label}</SelectLabel> : null}
 
-          {options.map((option) => (
-            <SelectItem key={option.value} value={option.value}>
-              {option.label}
-            </SelectItem>
-          ))}
-        </SelectGroup>
-      </SelectContent>
-    </Select>
+            {options.map((option) => (
+              <SelectItem key={option.value} value={option.value}>
+                {option.label}
+              </SelectItem>
+            ))}
+          </SelectGroup>
+        </SelectContent>
+      </Select>
+    </div>
   );
 };

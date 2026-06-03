@@ -6,12 +6,12 @@ export const usePrescriptionSubmit = () => {
   const [submittedValues, setSubmittedValues] =
     useState<PrescriptionFullValues | null>(null);
 
-  const handlePrescriptionSubmit = (data: PrescriptionFullValues) => {
-    setSubmittedValues(data);
+  const handleSubmit = (values: PrescriptionFullValues) => {
+    setSubmittedValues(values);
   };
 
   return {
     submittedValues,
-    handlePrescriptionSubmit,
+    handleSubmit,
   };
 };

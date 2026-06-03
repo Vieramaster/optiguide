@@ -1,6 +1,6 @@
 import { Sparkle, Eye, BookOpen } from "lucide-react";
 
-import type { ArticleItem } from "@/shared/layout/sidebar/types/sidebar";
+import type { ArticleItem } from "@/shared/layout";
 
 export const ARTICLES_SIDEBAR: ArticleItem[] = [
   {

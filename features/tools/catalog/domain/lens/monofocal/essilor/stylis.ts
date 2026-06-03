@@ -14,7 +14,7 @@ export const createStylisLens = (data: CreateLens): LensBase =>
   category: "Stylis",
   lensMaterial: LENS_MATERIALS.RESIN_MR_7,
   lensForm: "asf",
-  surfacing: "digital",
+  surfacing: true,
   ...data,
 })
 

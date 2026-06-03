@@ -12,7 +12,7 @@ export type CatalogRow = {
   rangeDiopters: string;
   index: number;
   diam: string;
-  surfacing: string;
+  surfacing: boolean;
   lensForm: string;
   antiReflex: boolean;
   blueControl: boolean;

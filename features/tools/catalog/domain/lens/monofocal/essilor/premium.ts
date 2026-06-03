@@ -12,7 +12,7 @@ export const createPremiumLens = (data: CreateLens): LensBase =>
   lens: "monofocal",
   category: "Premium",
   lensMaterial: LENS_MATERIALS.ULTRA_HIGH_INDEX_RESIN,
-  surfacing: "digital",
+  surfacing: true,
   lensForm: "asf",
 
   ...data,

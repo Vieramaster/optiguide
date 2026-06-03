@@ -242,6 +242,8 @@ Prefer:
 - `shared/utils/` — optional, last resort when responsibility does not fit `formatters/`, `validation/`, `hooks/`, or `types/`
 - `lib/` — vendor/config only; NOT equivalent to `shared/utils/`
 
+Extraction progression when moving code outward: See §2.8.
+
 ## 2.6 Scalability Rule
 
 When a responsibility accumulates multiple related files (approximately more than 5–10), thematic subfolders are allowed:
@@ -271,6 +273,34 @@ Move to `shared/` only when:
 
 Rule:
 - Prefer proximity to the domain over hypothetical reuse.
+
+## 2.8 Extraction & Simplicity Discipline
+
+**Whether to extract** (navigation cost, trivial inline, 5-second rule, 2+ call sites nuance): `logic-discipline.mdc` § Extraction discipline (SSOT). Do not duplicate that checklist here.
+
+**Where to place code** once § Extraction discipline allows — placement ladder only:
+
+Rules:
+- Do NOT create helpers, hooks, components, responsibility folders, or modules by anticipation.
+- Escalate along the ladder below only after `logic-discipline.mdc` § Extraction discipline passes.
+- Private functions used exclusively within one file stay in that file until outward extraction is justified (see Extraction discipline § Same-file private helpers).
+- Do NOT create separate files for code that fails § Extraction discipline.
+- Do NOT create intermediate layers without a clear, distinct responsibility.
+- Do NOT create wrappers that only delegate a single call without added value. UI wrappers: See `ui-architecture.mdc` §2.2 and §2.3.
+
+Pure-return in `logic/` / `build-*`: `logic-discipline.mdc` § Return discipline.
+
+**Extraction progression** (adapted to §2.5; no `utils/` inside features or entities):
+
+```text
+current file (inline at call site when trivial)
+→ private helper (same file; non-trivial only — Extraction discipline)
+→ domain logic/ | mappers/ | constants/ (feature or entity)
+→ shared/utils | shared/formatters | shared/validation (last resort; no domain knowledge)
+```
+
+Rule:
+- Escalate only when the previous step is insufficient **and** § Extraction discipline allows it. Cross-domain `shared/` reuse: §2.7.
 
 ---
 
@@ -333,6 +363,9 @@ Forbidden:
 - Cross-feature imports (features must communicate via `entities/` or `shared/`).
 - Deep imports bypassing feature or entity `index.ts` barrels from external consumers.
 - Feature-to-feature imports.
+- Creating helpers, hooks, components, folders, or modules before § Extraction discipline allows (See §2.8; cost: `logic-discipline.mdc` § Extraction discipline).
+- Separate files for locally used small or medium functions when a private helper in the same file suffices.
+- Intermediate layers or pass-through wrappers without clear responsibility (See §2.8).
 
 ## 4.1 Application Layer (`app/`)
 

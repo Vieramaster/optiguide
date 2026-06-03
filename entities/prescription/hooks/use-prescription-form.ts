@@ -11,7 +11,7 @@ export const usePrescriptionForm = (config: PrescriptionFormConfig) => {
     const [errors, setErrors] = useState<string[]>([]);
 
 
-    const handleSubmitForm: React.SubmitEventHandler<HTMLFormElement> = (event) => {
+    const handleSubmit: React.SubmitEventHandler<HTMLFormElement> = (event) => {
         event.preventDefault();
 
         const formData = new FormData(event.currentTarget);
@@ -55,6 +55,6 @@ export const usePrescriptionForm = (config: PrescriptionFormConfig) => {
 
     return {
         errors,
-        handleSubmitForm,
+        handleSubmit,
     };
 };

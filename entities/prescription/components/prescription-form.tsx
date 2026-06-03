@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/shared/components/ui/button";
 import { ErrorMessages } from "@/shared/components/error-messages";
 
@@ -9,8 +11,7 @@ import { BASE_PRESCRIPTION_KEYS, FULL_PRESCRIPTION_KEYS } from "../constants";
 import { PrescriptionField } from "./prescription-field";
 
 export const PrescriptionForm = (props: PrescriptionFormConfig) => {
-  // El hook se encarga de toda la lógica sucia
-  const { errors, handleSubmitForm } = usePrescriptionForm(props);
+  const { errors, handleSubmit } = usePrescriptionForm(props);
 
   const keysToRender =
     props.mode === "full" ? FULL_PRESCRIPTION_KEYS : BASE_PRESCRIPTION_KEYS;
@@ -19,8 +20,8 @@ export const PrescriptionForm = (props: PrescriptionFormConfig) => {
   return (
     <>
       <form
-        onSubmit={handleSubmitForm}
-        className={`flex  gap-6 items-center ${isComplete ? " flex-col  w-72  mx-auto xl:w-full xl:flex-row xl:justify-center" : ""}`}
+        onSubmit={handleSubmit}
+        className="flex  gap-6 items-center flex-col w-60 xl:flex-row xl:justify-center  mx-auto "
       >
         <div className="grid grid-cols-2 w-full gap-6 xl:flex xl:w-fit">
           {keysToRender.map((key) => (
@@ -38,7 +39,7 @@ export const PrescriptionForm = (props: PrescriptionFormConfig) => {
 
         <Button
           type="submit"
-          className={`w-full py-4 cursor-pointer ${isComplete ? " xl:w-30" : "xl:w-22 ml-6"}`}
+          className="w-full py-4 cursor-pointer xl:w-30 xl:ml-6"
         >
           Calcular
         </Button>

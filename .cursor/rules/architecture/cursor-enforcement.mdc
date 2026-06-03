@@ -82,28 +82,55 @@ If working in UI:
 
 # 6. Abstraction Control & Reuse Validation
 
-For `shared/` candidates:
+### Shared layer reuse
+
+For `shared/` candidates (`global-architecture.mdc` §2.7):
 - Is this used in 2+ bounded contexts / features?
 - Is reuse proven or assumed?
 - Is abstraction necessary or premature?
 
 Prefer duplication over premature speculative shared extraction. Do not create shared abstractions unless proven necessity exists.
 
+### Domain extraction cost
+
+For helpers, `build-*` modules, or `logic/` files — SSOT: `logic-discipline.mdc` § Extraction discipline:
+- Is the logic complex enough to justify a file jump?
+- Does extraction reduce total complexity, or only redistribute lines?
+- Does benefit exceed navigation cost?
+- Can the operation be understood in under five seconds inline?
+
+If any answer favors staying inline → do not extract. Placement after approval: `global-architecture.mdc` §2.8.
+
 ---
 
-# 7. Final Approval Gate
+# 7. Naming Check
+
+Before creating identifiers, complete `naming.mdc` §2 pre-identifier checklist:
+
+- Am I repeating context already in the file, hook, component, module, or feature?
+- Does the name accumulate implementation details instead of responsibility?
+- Is there a shorter name equally clear in this scope?
+- Did I apply the correct scope tier — local, composed API, or public surface (see `naming.mdc` §2.5)?
+
+If any answer indicates redundant or cumulative naming → shorten before writing code.
+
+---
+
+# 8. Final Approval Gate
 
 Only proceed to write code if:
 - Classification is clear
 - Ownership is clear
 - Dependency direction is valid
 - Layer placement is correct
+- Naming passes §7 (context-aware, non-cumulative, scope-appropriate)
+- Domain extraction passes §6 Domain extraction cost when adding helpers, `build-*`, or `logic/` files
 
 Otherwise: → STOP → re-evaluate architecture decision.
 
 ---
 
-# 8. Post-Edit Rules Validation
+# 9. Post-Edit Rules Validation
 
 After editing `.cursor/rules/`, run:
 

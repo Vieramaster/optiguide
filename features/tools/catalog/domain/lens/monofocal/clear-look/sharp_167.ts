@@ -15,7 +15,7 @@ const createSharp167 = (data: CreateLens): LensBase =>
   category: "Sharp 1.67",
   lensMaterial: LENS_MATERIALS.RESIN_MR_7,
   lensForm: "asf",
-  surfacing: "digital",
+  surfacing: true,
   ...data,
 })
 

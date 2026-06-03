@@ -5,27 +5,22 @@ import type { ThicknessDifferenceDisplay } from "../logic/compare-lens-thickness
 import type {
   CalculatedLensThicknessByComparison,
   LensComparisonKey,
-  RefractiveIndexSelectValueByLensComparison,
+  RefractiveIndexByLensComparison,
 } from "./lens-comparison";
 
 export type SimulatorOrchestratorState = {
   prescriptionForm: {
     submittedValues: PrescriptionFullValues | null;
-    handlePrescriptionSubmit: (data: PrescriptionFullValues) => void;
+    handleSubmit: (values: PrescriptionFullValues) => void;
   };
   lensComparison: {
-    activeLensComparison: LensComparisonKey;
-    selectLensComparison: (lensComparisonKey: LensComparisonKey) => void;
+    active: LensComparisonKey;
+    select: (lensComparisonKey: LensComparisonKey) => void;
   };
   refractiveIndexByLensComparison: {
-    refractiveIndexSelectValueByLensComparison: RefractiveIndexSelectValueByLensComparison;
-    setRefractiveIndexForLensComparison: (
-      lensComparisonKey: LensComparisonKey,
-      selectValue: string,
-    ) => void;
-    getRefractiveIndexSelectValueForLensComparison: (
-      lensComparisonKey: LensComparisonKey,
-    ) => string;
+    indexes: RefractiveIndexByLensComparison;
+    setIndex: (lensComparisonKey: LensComparisonKey, selectValue: string) => void;
+    getIndex: (lensComparisonKey: LensComparisonKey) => string;
   };
   calculatedLensThickness: CalculatedLensThicknessByComparison;
   thicknessDifferenceDisplay: ThicknessDifferenceDisplay;

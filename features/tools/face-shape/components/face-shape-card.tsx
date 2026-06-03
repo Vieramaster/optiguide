@@ -12,7 +12,7 @@ export const FaceShapeCard = ({ shape }: FaceShapeProps) => {
 
   return (
     <li className="bg-secondary w-72 lg:w-160 rounded-lg overflow-hidden pb-4 ">
-      <article aria-labelledby={`face-shape-${name} `}>
+      <article aria-labelledby={`face-shape-${name}`}>
         <div className="lg:flex gap-4 lg:gap-6">
           {/* Imagen */}
           <div className="p-3 lg:w-[30%]">

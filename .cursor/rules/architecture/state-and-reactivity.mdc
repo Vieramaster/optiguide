@@ -71,11 +71,23 @@ This section is the **single source** for orchestrator and hook coordination rul
 
 - Prefer composing multiple focused hooks over duplicating stateful logic.
 - **Orchestrator hooks:** Create an orchestrator when a component uses more than 2 business hooks.
-- Orchestrators coordinate hooks, centralize derived state (by calling `logic/`), and expose a UI-facing API.
 - **Orchestrator boundary:** May call `logic/` and `build-*`; must not inline domain formulas, validation, or view-assembly rules.
 - Components must consume one orchestrated hook instead of wiring multiple business hooks directly.
 - Avoid deeply nested hook dependency chains or effect chains between hooks.
-- View objects for UI: assemble in `logic/` / `build-*` per `logic-discipline.mdc` (not in the orchestrator return literal).
+- View objects for UI: assemble in `logic/` / `build-*` per `logic-discipline.mdc` § Return discipline (not in the orchestrator return literal). New `build-*` **files** only when `logic-discipline.mdc` § Extraction discipline allows (non-trivial assembly — not trivial keys/formatting).
+
+### Orchestrator role
+
+- Orchestrators may coordinate multiple hooks and expose state, callbacks, and actions to consumers.
+- An orchestrator is not required to define its own functions.
+- An orchestrator is valid when it only composes other hooks, provided it adds coordination or a unified UI-facing API (not a single-hook re-export).
+- A hook that only calls one other hook and returns the same result without transformation, composition, or additional coordination is an anti-pattern — even if named as an orchestrator.
+
+### Hook-local helpers
+
+- Trivial operations stay **inline** at the call site — See `logic-discipline.mdc` § Extraction discipline (forbidden trivial helpers, including at the bottom of the hook file).
+- Non-trivial helpers used only inside one hook may stay in that file when they improve comprehension of the main flow.
+- Move to another file (`logic/`, `build-*`, etc.) only when § Extraction discipline passes; placement ladder: `global-architecture.mdc` §2.8.
 
 ---
 
@@ -111,3 +123,5 @@ Forbidden:
 - Uncontrolled refetch loops or duplicating server state into local UI state.
 - Massive hooks replacing proper composition.
 - Hooks acting as the business layer (business logic belongs in `logic/`).
+- Pass-through hooks that wrap a single hook and return the same API without coordination, transformation, or a unified consumer surface.
+- Orchestrator hooks that re-export one hook with no additional composition (See §3.1).

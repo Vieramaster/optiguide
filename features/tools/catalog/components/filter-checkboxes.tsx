@@ -1,5 +1,6 @@
 import type { TableOptions } from "../types/ui/table-options";
 
+import { CatalogColumnIcon } from "./catalog-column-icon";
 import { CheckboxField } from "./checkbox-field";
 
 /**
@@ -17,7 +18,7 @@ export const FilterCheckboxes = ({
   filters,
   onChange,
 }: FilterCheckboxesProps) => (
-  <ul className="w-50 flex flex-wrap items-center justify-center gap-8 lg:gap-16 lg:w-[90%]">
+  <ul className="w-full grid grid-cols-4 gap-4 place-items-center  ">
     {columns.map(({ label, Icon, value }) => (
       <CheckboxField
         key={value}
@@ -25,7 +26,7 @@ export const FilterCheckboxes = ({
         onChange={(checked) => onChange(value, checked)}
         checked={!!filters[value]}
       >
-        {Icon ? <Icon /> : <span>{label}</span>}
+        {Icon ? <CatalogColumnIcon label={label} Icon={Icon} /> : <span>{label}</span>}
       </CheckboxField>
     ))}
   </ul>

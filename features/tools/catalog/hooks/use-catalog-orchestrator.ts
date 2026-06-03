@@ -1,4 +1,4 @@
-
+import type { CatalogSnapshots } from "../types/catalog-snapshots";
 
 import {
   useCatalogRows,
@@ -9,8 +9,8 @@ import {
 
 } from ".";
 
-export const useCatalogOrchestrator = () => {
-  const selectFilter = useSelectFilter();
+export const useCatalogOrchestrator = (snapshots: CatalogSnapshots) => {
+  const selectFilter = useSelectFilter(snapshots);
   const checkboxFilter = useCheckboxFilter(selectFilter.catalogResult);
   const formFilter = useFormFilter(checkboxFilter.checkboxCatalog);
   const catalogRow = useCatalogRows(formFilter.catalog);

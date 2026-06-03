@@ -7,7 +7,7 @@ import { LensSVG } from "./svg-lens";
 export type LensComparisonPanelProps = {
   isVisible: boolean;
   refractiveIndexLabel: string;
-  refractiveIndexSelectValue: string;
+  indexValue: string;
   onRefractiveIndexChange: (selectValue: string) => void;
   estimatedThickness: number;
   isPositiveLens: boolean;
@@ -16,7 +16,7 @@ export type LensComparisonPanelProps = {
 export const LensComparisonPanel = ({
   isVisible,
   refractiveIndexLabel,
-  refractiveIndexSelectValue,
+  indexValue,
   onRefractiveIndexChange,
   estimatedThickness,
   isPositiveLens,
@@ -26,7 +26,7 @@ export const LensComparisonPanel = ({
   >
     <SelectField
       options={REFRACTIVE_INDEX_SELECT_OPTIONS}
-      value={refractiveIndexSelectValue}
+      value={indexValue}
       onValueSelect={onRefractiveIndexChange}
       label={refractiveIndexLabel}
     />

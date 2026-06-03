@@ -13,7 +13,7 @@ export const createSharpPoli = (data: CreateLens): LensBase => ({
   category: "Sharp Poli",
   lensMaterial: LENS_MATERIALS.POLICARBONATE,
   lensForm: "asf",
-  surfacing: "estandar",
+  surfacing: false,
   ...data,
 });
 

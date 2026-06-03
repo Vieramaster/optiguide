@@ -1,7 +1,7 @@
 import { promises as fs } from "fs";
 import path from "path";
 
-import { ARTICLES_DIR } from "@/features/articles/server/constants";
+import { ARTICLES_DIR } from "../server/constants";
 
 export const getArticleStaticParams = async (): Promise<{ slug: string }[]> => {
   try {

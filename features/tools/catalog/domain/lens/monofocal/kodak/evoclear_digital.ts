@@ -15,7 +15,7 @@ export const createEvoClearDigital = (data: CreateLens): LensBase =>
   category: "EvoClear Digital 1.56",
   lensMaterial: LENS_MATERIALS.MID_INDEX_RESIN,
   lensForm: "asf",
-  surfacing: "digital",
+  surfacing: true,
   ...data,
 })
 

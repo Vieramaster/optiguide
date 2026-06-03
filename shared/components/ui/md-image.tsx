@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 import { isValidImageSrc } from "@/shared/validation/image-validator";
-import { parseImageDimensions } from "@/shared/image/get-dimensions";
 
 type MDImageProps = React.ImgHTMLAttributes<HTMLImageElement>;
 
@@ -15,10 +14,10 @@ export const MDImage = ({
 }: MDImageProps) => {
   if (typeof src !== "string" || !isValidImageSrc(src)) return null;
 
-  const { width: imageWidth, height: imageHeight } = parseImageDimensions(
-    width,
-    height,
-  );
+  const imageWidth =
+    typeof width === "string" ? parseInt(width, 10) : (width ?? 600);
+  const imageHeight =
+    typeof height === "string" ? parseInt(height, 10) : (height ?? 400);
 
   return (
     <Image
@@ -27,7 +26,7 @@ export const MDImage = ({
       width={imageWidth}
       height={imageHeight}
       sizes="(max-width: 1024px) 100vw, 800px"
-      loading="eager"
+      loading="lazy"
       className={className}
       {...rest}
     />

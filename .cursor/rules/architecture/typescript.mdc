@@ -111,7 +111,40 @@ Rule:
 
 ---
 
-# 9. Anti-Patterns
+# 9. Type Assertions (`as`)
+
+Type assertions are an exception, not the default typing strategy.
+
+Rules:
+- Before using `as`, try to fix the type at the source: correct upstream typing, narrowing, type guards, discriminated unions, or generics.
+- Do NOT use `as` to silence TypeScript errors.
+- Props, parameters, and return types must be correctly typed from their origin.
+- Use `as` only when required by real TypeScript limitations or external APIs (document the reason when non-obvious).
+
+### Forbidden
+
+```ts
+const value = unknownInput as MyType; // silences the compiler without narrowing
+const props = data as any;
+```
+
+### Allowed
+
+```ts
+// External API returns a loose shape; narrow immediately after validation
+const parsed = externalSchema.parse(raw);
+// parsed is MyType — no assertion needed
+
+// Documented external limitation (e.g. DOM, third-party SDK)
+const el = document.getElementById(id) as HTMLInputElement | null;
+```
+
+Rule:
+- Prefer making invalid states unrepresentable (See §4) over asserting them away.
+
+---
+
+# 10. Anti-Patterns
 
 Forbidden:
 
@@ -120,3 +153,5 @@ Forbidden:
 - ambiguous optional chaining as state modeling
 - over-engineered generics
 - leaking internal types to public APIs
+- `as` to silence compiler errors or bypass narrowing
+- `as any` or chained assertions without a documented external constraint

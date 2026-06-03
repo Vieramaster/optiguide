@@ -8,28 +8,174 @@ globs:
 alwaysApply: true
 ---
 
-# naming.mdc
+# Naming Contract
 
-- Name by responsibility, not implementation
-- Prefer domain terminology over technical terminology
-- Prefer explicit naming over abbreviated naming
-- Prefer predictable naming over clever naming
-- Avoid ambiguous or generic names
-- Naming must communicate responsibility immediately
+Names must describe **intent, responsibility, or domain concept**.
+They must **not** describe internal implementation details.
 
-## Components
+Rule:
+- naming is a correctness tool for reading code, not a compression game
 
-- Components must use nouns
-- Components represent UI entities or UI sections
-- Avoid verb-based component names
-- Avoid implementation-oriented names
+---
+
+# 1. Core Principle
+
+Rules:
+- A name must reveal the **primary responsibility** without reading the implementation.
+- **Do not shorten** if responsibility is lost or ambiguity appears in the current scope.
+- **Do not lengthen** if module context already resolves ambiguity — verbosity is not clarity.
+- Prefer **domain terminology** over technical or library-oriented terms.
+- Prefer predictable naming over clever naming.
+- Avoid ambiguous or generic names.
+
+### Hooks — responsibility vs implementation
+
+```ts
+// Bad — implementation-focused
+const useRefractiveIndexSelectionStateForLensComparison = () => {};
+
+// Good — responsibility-focused
+const useLensComparisonRefractiveIndex = () => {};
+```
+
+### Handlers — redundant context
+
+```ts
+// Bad — redundant context
+const handleSubmitFormButtonClick = () => {};
+
+// Good — concise and intention-revealing
+const handleSubmit = () => {};
+```
+
+The first pair contrasts **implementation vocabulary** (`Selection`, `State`) with **domain responsibility**.
+The second pair contrasts **redundant context** (form, button, click) with the **action intent** already clear in scope.
+
+---
+
+# 2. Context-Aware Naming (SSOT)
+
+The file, hook, component, module, and feature **are part of the name**.
+Do not repeat in variables, functions, or constants information already explicit in:
+
+- file name
+- hook name
+- component name
+- module name
+- feature / bounded domain
+
+Before creating any identifier, run this checklist:
+
+1. What context does the file / hook / component / feature already provide?
+2. Does the name repeat any of those words without adding new information?
+3. Am I chaining UI type + action + scope into a single identifier?
+4. Would a shorter name remain unambiguous in this scope?
+5. If two options are equally clear → choose the more ergonomic one.
+
+## 2.1 Avoid cumulative names
+
+Do not build names by stacking every attribute of the data.
+
+Forbidden pattern: `[domain] + [UI widget] + [value type] + [action] + [scope]`
+
+```ts
+// Bad — implementation chain inside use-refractive-index-by-lens-comparison.ts
+const refractiveIndexSelectValueByLensComparison = ...;
+const setRefractiveIndexForLensComparison = ...;
+const getRefractiveIndexSelectValueForLensComparison = ...;
+const INITIAL_REFRACTIVE_INDEX_SELECT_VALUE_BY_LENS_COMPARISON = ...;
+
+// Good — context already in file and hook name
+const indexes = ...;
+const setIndex = ...;
+const getIndex = ...;
+const INITIAL_INDEXES = ...;
+```
+
+```ts
+// Bad — redundant scope in lens-thickness comparison UI
+const lensThicknessComparisonSelectedLensConfiguration = ...;
+
+// Good
+const selectedLens = ...;
+```
+
+## 2.2 Naming by responsibility
+
+Names describe **intention**, **responsibility**, or **domain concept** — not the full internal implementation chain.
+
+| Bad | Why | Good |
+|-----|-----|------|
+| `mapApiResponseToCatalogRow` | exposes API + response | `mapCatalogToRow` |
+| `useStateForLensComparison` | exposes React state | `useLensComparison` or `useLensComparisonRefractiveIndex` (match actual responsibility) |
+| `CatalogTableRowRendererComponent` | implementation + redundant | `CatalogRow` (under `catalog/components/`) |
+| `getRefractiveIndexSelectValueForLensComparison` | accumulates domain + UI + action + scope | `getIndex` (inside refractive-index hook) |
+
+## 2.3 Redundancy rule
+
+If a word already appears in the file, hook, or component name, evaluate whether repeating it in a local identifier adds new information.
+
+- If it does not → remove it.
+- If the parent object or module already names the domain → child keys describe **role**, not the full domain again.
+
+## 2.4 Ergonomics rule
+
+Code is read far more often than it is written.
+Between two names that are equally clear in the current scope, prefer the one that is:
+
+- easier to read
+- easier to scan visually
+- still unambiguous
+
+Do not sacrifice comprehension for brevity; do not add words that the scope already supplies.
+
+## 2.5 Naming by scope
+
+Apply context stripping according to where the identifier lives:
+
+| Scope | Rule | Example (`use-refractive-index-by-lens-comparison.ts`) |
+|-------|------|--------------------------------------------------------|
+| **Local** — variables, private helpers, module-scoped constants | Maximum context reduction | `indexes`, `setIndex`, `getIndex`, `INITIAL_INDEXES` |
+| **Composed API** — hook return, grouped props, nested object keys | Parent supplies domain context; children describe role | `refractiveIndexByLensComparison: { values, setValue, getValue }` |
+| **Public surface** — exports in `index.ts`, cross-domain types | Keep necessary domain term; avoid accumulation | Type `RefractiveIndexByLensComparison` OK; internal getter `getIndex` OK |
+
+TypeScript types may keep a full domain name when crossing module boundaries.
+**Internal implementations must not repeat that full name** in every local variable or helper.
+
+## 2.6 Module-scoped constants
+
+`INITIAL_*`, `DEFAULT_*`, and similar constants inherit context from the file.
+Do not repeat the full domain path in SCREAMING_SNAKE_CASE:
+
+```ts
+// Bad
+const INITIAL_REFRACTIVE_INDEX_SELECT_VALUE_BY_LENS_COMPARISON = ...;
+
+// Good — inside use-refractive-index-by-lens-comparison.ts
+const INITIAL_INDEXES = ...;
+```
+
+Additional rules:
+- Avoid names that **expose internal implementation** (`useState`, `fetch`, `map`, `ref`, wire format) when a domain term exists.
+- Shorter is better **only when** the shorter name remains **unambiguous** in its scope.
+
+---
+
+# 3. Components
+
+- Components must use nouns.
+- Components represent UI entities or UI sections.
+- Avoid verb-based component names.
+- Avoid implementation-oriented names (`RenderX`, `XWithModal` when the domain concept is `ProductList`).
+
+See §1 for intent over implementation. Apply §2 checklist for local identifiers inside components.
 
 ### Good
 
 ```tsx
 <ProductCard />
 <LensForm />
-<UserAvatar />
+<ProductList />
 ```
 
 ### Bad
@@ -37,22 +183,29 @@ alwaysApply: true
 ```tsx
 <RenderProducts />
 <HandleModal />
+<ProductListWithModalWrapper />
 ```
 
-## Hooks
+---
 
-- Hooks must start with `use`
-- Hooks must describe domain responsibility or state context
-- Avoid generic hooks
-- Avoid manager-style naming
-- Avoid catch-all hooks
+# 4. Hooks
+
+- Hooks must start with `use`.
+- Hooks must describe **domain responsibility** or workflow context — not React mechanics.
+- Avoid generic hooks.
+- Avoid manager-style naming.
+- Avoid catch-all hooks.
+
+Apply §2 Context-Aware Naming and the pre-identifier checklist for hook internals and return keys.
+
+See §1 for canonical hook examples.
 
 ### Good
 
 ```ts
 useCart;
 useLensForm;
-usePagination;
+useLensComparisonRefractiveIndex;
 ```
 
 ### Bad
@@ -60,17 +213,24 @@ usePagination;
 ```ts
 useData;
 useManager;
-useHandleStuff;
+useStateForLensComparison;
+useRefractiveIndexSelectionStateForLensComparison;
 ```
 
-## Functions
+---
 
-- Functions must use verbs
-- Function names must describe actions, transformations, or outcomes
-- Prefer domain language over utility language
-- Prefer **arrow function** syntax for functions and helpers (`const fn = () => {}`)
-- Do not use `function` declarations for helpers or module-level utilities (React components and hooks already use arrow style where applicable)
-- **Exception:** `shared/components/ui/**` may use `function` declarations (shadcn/Radix convention)
+# 5. Functions
+
+- Functions must use verbs.
+- Function names must describe actions, transformations, or **domain outcomes**.
+- Prefer domain language over utility language.
+- Prefer **arrow function** syntax for functions and helpers (`const fn = () => {}`).
+- Do not use `function` declarations for helpers or module-level utilities (React components and hooks already use arrow style where applicable).
+- **Exception:** `shared/components/ui/**` may use `function` declarations (shadcn/Radix convention).
+
+Apply §2 Context-Aware Naming and the pre-identifier checklist.
+
+See §1–§2 for intent and context rules.
 
 ### Good
 
@@ -78,6 +238,8 @@ useHandleStuff;
 const calculateTotal = (items: Item[]) => { ... };
 
 const validatePrescription = (values: Prescription) => { ... };
+
+const mapCatalogToRow = (catalog: LensObjectResolved) => { ... };
 ```
 
 ### Bad
@@ -85,16 +247,25 @@ const validatePrescription = (values: Prescription) => { ... };
 ```ts
 function calculateTotal(items: Item[]) { ... }
 
+const mapApiResponseToCatalogRow = () => { ... };
+
 dataFormatter;
 utilsFunction;
 totalCalculator;
 ```
 
-## Handlers
+---
 
-- Event handlers must start with `handle`
-- State mutations must describe resulting state
-- Toggle actions must describe affected state or UI
+# 6. Handlers
+
+- Event handlers must start with `handle`.
+- State mutations must describe resulting state.
+- Toggle actions must describe affected state or UI.
+- Do not stack file/component context into the handler name when scope already provides it.
+
+Apply §2 Context-Aware Naming and the pre-identifier checklist.
+
+See §1 for `handleSubmit` vs redundant variants.
 
 ### Good
 
@@ -111,13 +282,18 @@ toggleSidebar;
 doStuff;
 changeValue;
 handleData;
+handleSubmitFormButtonClick;
 ```
 
-## Types
+---
 
-- Types must represent domain entities
-- Avoid meaningless type names
-- Prefer business terminology
+# 7. Types
+
+- Types must represent domain entities or domain contracts.
+- Avoid meaningless type names.
+- Prefer business terminology.
+
+See §1. Public cross-domain types may be more explicit; see §2.5.
 
 ### Good
 
@@ -135,9 +311,11 @@ type ResponseType;
 type ItemInfo;
 ```
 
-## Booleans
+---
 
-- Boolean names must read as conditions
+# 8. Booleans
+
+- Boolean names must read as conditions.
 - Prefer:
   - `is`
   - `has`
@@ -161,9 +339,11 @@ errorStatus;
 submitValidation;
 ```
 
-## Arrays
+---
 
-- Arrays must use real plurals
+# 9. Arrays
+
+- Arrays must use real plurals.
 - Avoid:
   - `Data`
   - `List`
@@ -185,11 +365,15 @@ productListData;
 arrayOfItems;
 ```
 
-## Semantic clarity
+---
 
-- If a name requires explanation, rename it
-- Prefer long explicit names over short ambiguous names
-- Code should read as natural English
+# 10. Semantic Clarity
+
+Rules:
+- If a name needs a comment to understand, rename it.
+- Prefer **clear responsibility** over arbitrary length — neither longest nor shortest by default.
+- Prefer **concise** names when they remain **unambiguous** in context.
+- Code should read as natural English **at the domain level**, not as a dump of implementation steps.
 
 ### Good
 
@@ -204,27 +388,30 @@ handleLensSelect(lensId);
 ### Bad
 
 ```ts
-const data = ...
+const data = getCatalogFilterApiResponse();
 ```
 
-## Anti-patterns
+---
 
-- Avoid:
-  - `data`
-  - `info`
-  - `manager`
-  - `utils`
-  - `helper`
-  - `common`
-  - `misc`
-  - `temp`
-  - `stuff`
+# 11. Anti-Patterns
 
-- Avoid names that hide responsibility
-- Avoid implementation-driven naming
-- Avoid overloaded naming across unrelated domains
+Forbidden:
 
-## Final rule
+- Generic buckets: `data`, `info`, `manager`, `utils`, `helper`, `common`, `misc`, `temp`, `stuff`
+- Implementation-driven names: `useStateX`, `fetchAndSet`, `mapApiResponse`, `ComponentWithDialog`
+- **Cumulative / implementation-chain names** — stacking domain + UI widget + value type + action + scope in one identifier
+- **Redundant context** in the identifier when the module, hook, or file already provides it
+- **Repeating hook or file name** in every member of a return object when the parent key or module already establishes context
+- **SCREAMING_SNAKE constants** that duplicate the entire module or domain path (`INITIAL_REFRACTIVE_INDEX_SELECT_VALUE_BY_LENS_COMPARISON` inside a refractive-index hook file)
+- **Shortening that hides responsibility** (e.g. `useData` for catalog filtering)
+- Names that hide responsibility
+- Overloaded naming across unrelated domains
 
-- Prefer boring clarity over clever abstraction
-- Prefer explicitness over brevity
+---
+
+# 12. Final Rule
+
+- Prefer boring, **responsibility-clear** names over clever or abbreviated ones.
+- **Clarity in scope is mandatory** — neither verbosity nor brevity is a goal by itself.
+- When clarity is equivalent in the current scope, prefer **ergonomics and brevity** over redundant words.
+- Before every new identifier: verify whether file, hook, component, or domain already supplies part of the name; do not repeat context unnecessarily.

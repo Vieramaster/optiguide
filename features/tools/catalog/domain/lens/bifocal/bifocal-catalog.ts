@@ -10,7 +10,7 @@ export const createBifocal = (data: createBifocalProgressive): LensBase =>
     company: "Essilor",
     lens: "bifocal",
     lensForm: "esf",
-    surfacing: "estandar",
+    surfacing: false,
     diam: [70],
     range: "stock",
     ...data,

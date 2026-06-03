@@ -1,1 +1,0 @@
-export const isValidString = (value: string | null) => value !== null && value !== "";

@@ -1,5 +1,5 @@
 ---
-description: Business logic placement, pure-return, and return-shape discipline for logic and build modules
+description: Business logic placement, extraction discipline, pure-return, and return-shape discipline for logic and build modules
 globs:
   - "features/**/*"
   - "entities/**/*"
@@ -10,9 +10,9 @@ alwaysApply: true
 # logic-discipline.mdc
 
 - Not the legacy domain folder `services/` (see `global-architecture.mdc` §2.1 legacy mapping).
-- **SSOT for:** business logic placement, pure-return, return-shape discipline in `logic/` / `build-*` / mappers.
+- **SSOT for:** business logic placement; when to extract to `logic/` / `build-*` / new files (navigation cost, total system complexity); pure-return and return-shape discipline in `logic/` / `build-*` / mappers.
 - **Not here:** orchestrator hooks → `state-and-reactivity.mdc` §3.1; UI boundaries → `ui-architecture.mdc` §3; layer deps → `global-architecture.mdc`.
-- Place reusable business logic inside `logic/`
+- Place business logic in `logic/` only when **Extraction discipline** below allows (non-trivial domain logic or justified extraction — not “reusable” alone)
 - Keep logic modules framework-agnostic where possible
 - Keep logic modules deterministic when possible
 - Keep side effects isolated in `queries/`, `actions/`, or `server/`
@@ -31,9 +31,127 @@ alwaysApply: true
 - Validation placement: `global-architecture.mdc` §2.4; form consumption: `forms.mdc`
 - Keep error handling centralized and predictable
 - Avoid duplicated business rules across logic modules
-- Prefer pure helper extraction for reusable calculations
+- Prefer `logic/` helpers only when **Extract only when** below applies — never for trivial calculations or formatting
 - Keep logic naming behavior-oriented
 - Avoid UI terminology inside logic modules
+
+## Extraction discipline
+
+**SSOT** for **whether** to extract functions, helpers, or modules. **Where** to place code after that decision: `global-architecture.mdc` §2.8 (placement ladder only).
+
+Return-literal indirection (not file extraction): **When not to over-extract** below. Terminology: **file over-extraction** = this section; **return over-extraction** = When not to over-extract.
+
+### Principle
+
+Extract only when it reduces **total system complexity**. Moving lines to another file without architectural value is not an improvement.
+
+Evaluate: lines of code, file count, imports, navigation jumps, and cognitive load. **Fewer lines in one file is not a win** if total complexity increases.
+
+### Navigation cost (before extracting)
+
+Before creating a function, helper, or separate file, answer:
+
+1. Is the logic complex enough to justify a file jump?
+2. Does extraction reduce complexity, or only redistribute lines?
+3. Does benefit exceed navigation cost?
+
+If any answer is no → keep the implementation in the current file.
+
+### 5-second rule
+
+If a developer can fully understand the operation in under five seconds reading inline code, do not extract it to another file.
+
+### Keep inline (forbidden trivial extraction)
+
+Do not create helpers, functions, files, or modules for:
+
+- simple property access
+- obvious string concatenation
+- one-line wrappers
+- evident transformations
+- single-use operations with no identifiable business rule
+
+Applies to **new files**, **cross-file helpers**, and **named functions** whose body is a trivial one-liner — including a private helper at the bottom of a hook file.
+
+### Same-file private helpers
+
+Allowed only when the helper encapsulates **non-trivial** logic and inline would harm comprehension of the main flow.
+
+Forbidden: a private `buildX` / `getY` at the bottom of a hook (or logic file) that only renames a 5-second operation — keep that expression inline at the call site.
+
+### `build-*` modules and orchestrators
+
+`state-and-reactivity.mdc` §3.1 requires view assembly via `logic/` / `build-*`, not inline in orchestrator return literals. That does **not** justify a new `build-*` **file** for trivial fragments.
+
+| Situation | Do |
+|-----------|-----|
+| New `build-*` file | Non-trivial view assembly (multiple derived fields, domain rules, pure-return object). Must pass **Navigation cost** above. |
+| Trivial key/format inside an existing `build-*` | Inline in that module, or `constants/` — not a separate `build-*` file. |
+| Orchestrator | Call existing `build-*` / `logic/`; do not add trivial hook-local wrappers to satisfy the orchestrator rule. |
+
+### Stable cross-boundary contracts
+
+When server and client must share the same shape (e.g. snapshot record keys) and drift is costly:
+
+1. **Preferred:** named export in `constants/` or next to the owning type in `types/` (single line is OK).
+2. **Acceptable:** documented duplicate template literal at each call site when still trivial.
+3. **Forbidden:** `logic/build-*` module whose only job is formatting that contract.
+
+Prefer inline:
+
+
+```ts
+const snapshotKey = `${selectFilter.company}:${selectFilter.lens}`;
+```
+
+```ts
+const fullName = `${firstName} ${lastName}`;
+```
+
+```ts
+const isEmpty = items.length === 0;
+```
+
+### Extract only when at least one applies
+
+- Real reuse (multiple call sites) **and** the operation is not trivial (see nuance below).
+- Identifiable business logic.
+- Significant complexity.
+- Non-trivial algorithm.
+- Substantial comprehension gain in the caller.
+
+**Nuance:** Two or more call sites alone is **not** sufficient if the operation stays trivial. Do not place a one-line template or property access in `logic/` or `build-*` only because a hook and a query both need the same key shape.
+
+See **Stable cross-boundary contracts** above.
+
+### Empty semantic wrappers
+
+Forbidden: functions whose only purpose is to rename a trivial operation.
+
+### Bad
+
+```ts
+const buildCatalogSnapshotKey = (filter: SelectState): string => {
+  const company = filter.company;
+  const lens = filter.lens;
+
+  return `${company}:${lens}`;
+};
+```
+
+when used once (or twice) with no business rule beyond formatting — adds a file jump for a 5-second read.
+
+### Good
+
+```ts
+const snapshotKey = `${selectFilter.company}:${selectFilter.lens}`;
+```
+
+inline in the `useMemo`, loop, or query that needs it.
+
+### Goal
+
+Minimize accidental complexity. An abstraction must remove complexity, not redistribute it across more files, functions, or layers.
 
 ## Return discipline (`logic/` / `build-*` / mappers)
 
@@ -111,7 +229,7 @@ Allowed:
 - Trivial discriminant literals with no computed properties: `return { kind: "equal" }`
 - Static module constant references in the literal when nothing is computed: `noteMessage: LensThicknessTitle.note`
 
-When to use `const` before `return`: only when the value involves a **call, expression, dynamic lookup, or method** — not for static literals or aliases that exist only to satisfy shorthand on the next line. See **When not to over-extract** below.
+When to use `const` before `return`: only when the value involves a **call, expression, dynamic lookup, or method** — not for static literals or aliases that exist only to satisfy shorthand on the next line. See **Extraction discipline** (file/function extraction) and **When not to over-extract** (return literals) below.
 
 ### Bad (inline expressions in the object)
 
@@ -163,14 +281,14 @@ Anti-patterns:
 
 See also `naming.mdc` § Functions (arrow syntax) for helper placement.
 
-### When not to over-extract
+### When not to over-extract (return literals only)
 
-Purity applies to **computed** values, not to wrappers that add indirection without responsibility.
+**File / helper extraction:** See **Extraction discipline** above (SSOT). This subsection is **return over-extraction** only — not the same as file over-extraction.
+
+Purity applies to **return literals** — wrappers that add indirection without responsibility inside a `return { ... }`.
 
 Principles:
 - Prioritize cohesion and readability.
-- Do not create single-use abstractions that only wrap one trivial line.
-- Do not extract private functions whose implementation is simpler than their name suggests.
 - Do not introduce temporary variables for values returned immediately when nothing is computed.
 - Do not create intermediate objects only to return them on the next line.
 
@@ -204,18 +322,6 @@ Prefer:
 ```ts
 return `La diferencia es ${percent}%`;
 ```
-
-### Extract only when at least one applies
-
-- Real reuse (multiple call sites).
-- Independent business logic.
-- Significantly lowers complexity in the caller.
-- Isolates a relevant domain concept.
-- Enables focused unit tests for a specific rule.
-
-### Goal
-
-Minimize accidental complexity. An abstraction must remove complexity, not redistribute it across more files, functions, or layers.
 
 ### Pure return vs over-extraction
 

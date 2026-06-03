@@ -2,7 +2,6 @@
 import { usePathname } from "next/navigation";
 
 import { formatPathSegments } from "@/shared/formatters/path-formatter";
-
 import {
   Breadcrumb,
   BreadcrumbItem,

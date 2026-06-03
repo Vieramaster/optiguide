@@ -13,17 +13,17 @@ export const CheckboxField = ({
   checked,
   onChange,
 }: CheckboxFieldProps) => (
-  <li>
-    <FieldGroup className="mx-auto w-14">
-      <Field orientation="horizontal" className="w-10">
+  <li className="w-full">
+    <FieldGroup className=" place-items-center ">
+      <Field orientation="horizontal" className="w-fit">
         <Checkbox
           className="cursor-pointer"
           id={`${label}-checkbox`}
           checked={checked}
           onCheckedChange={(checked) => onChange?.(!!checked)}
         />
-        <FieldLabel title={label} className="cursor-help ">
-          {children}
+        <FieldLabel htmlFor={`${label}-checkbox`} className="cursor-help">
+          {children ?? label}
         </FieldLabel>
       </Field>
     </FieldGroup>

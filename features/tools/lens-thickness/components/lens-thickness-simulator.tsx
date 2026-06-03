@@ -2,7 +2,8 @@
 
 import { PrescriptionForm } from "@/entities/prescription";
 
-import { useLensThicknessSimulatorView } from "../hooks";
+import { useSimulatorOrchestrator } from "../hooks";
+import { buildLensThicknessSimulatorView } from "../logic/build-lens-thickness-simulator-view";
 
 import { LensComparisonPanelGroup } from "./lens-comparison-panel-group";
 import { LensComparisonToggle } from "./lens-comparison-toggle";
@@ -11,7 +12,8 @@ import { LensThicknessDifferenceBanner } from "./lens-thickness-difference-banne
 import { LensThicknessSimulatorHeader } from "./lens-thickness-simulator-header";
 
 export const LensThicknessSimulator = () => {
-  const simulator = useLensThicknessSimulatorView();
+  const orchestratorState = useSimulatorOrchestrator();
+  const simulator = buildLensThicknessSimulatorView(orchestratorState);
 
   return (
     <section className="flex h-full w-full flex-col gap-10 p-10 text-center">
@@ -19,7 +21,7 @@ export const LensThicknessSimulator = () => {
 
       <PrescriptionForm
         mode="full"
-        onSubmit={simulator.onPrescriptionSubmit}
+        onSubmit={simulator.onSubmit}
       />
 
       {!simulator.hasSubmittedPrescription ? (
@@ -30,7 +32,7 @@ export const LensThicknessSimulator = () => {
 
       <LensComparisonToggle
         items={simulator.lensComparisonToggleItems}
-        onSelectLensComparison={simulator.selectLensComparison}
+        onSelectLens={simulator.selectLens}
       />
 
       <LensThicknessDifferenceBanner

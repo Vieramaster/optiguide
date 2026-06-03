@@ -15,17 +15,17 @@ export type LensComparisonPanelView = {
   estimatedThickness: number;
   isPositiveLens: boolean;
   refractiveIndexLabel: string;
-  refractiveIndexSelectValue: string;
+  indexValue: string;
   onRefractiveIndexChange: (selectValue: string) => void;
 };
 
 export type LensThicknessSimulatorView = {
-  onPrescriptionSubmit: (data: PrescriptionFullValues) => void;
+  onSubmit: (values: PrescriptionFullValues) => void;
   hasSubmittedPrescription: boolean;
   awaitingPrescriptionMessage: string;
   noteMessage: string;
   thicknessDifferenceMessage: string | null;
   lensComparisonToggleItems: LensComparisonToggleItemView[];
-  selectLensComparison: (lensComparisonKey: LensComparisonKey) => void;
+  selectLens: (lensComparisonKey: LensComparisonKey) => void;
   lensComparisonPanelViews: LensComparisonPanelView[];
 };

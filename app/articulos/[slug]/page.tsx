@@ -1,8 +1,11 @@
 import { notFound } from "next/navigation";
 
 import { SectionArticle } from "@/features/articles";
-import { getArticleStaticParams, loadArticleMdx } from "@/features/articles/server";
-import { isValidSlug } from "@/shared/validation/slug-validation";
+import {
+  getArticleStaticParams,
+  isValidSlug,
+  loadArticleMdx,
+} from "@/features/articles/server";
 
 interface PageProps {
   params: Promise<{

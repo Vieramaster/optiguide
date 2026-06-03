@@ -16,7 +16,7 @@ export const createSharpCR39 = (data: CreateLens): LensBase =>
   category: "Sharp CR-39",
   lensMaterial: LENS_MATERIALS.CR_39,
   lensForm: "asf",
-  surfacing: "estandar",
+  surfacing: false,
   ...data,
 })
 

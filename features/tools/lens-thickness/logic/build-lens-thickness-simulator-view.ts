@@ -15,7 +15,6 @@ import {
 } from "../types/lens-comparison";
 
 import { getThicknessDifferenceMessage } from "./compare-lens-thickness-percent";
-import { isPositiveLensThickness } from "./lens-display";
 
 export const buildLensThicknessSimulatorView = (
   orchestratorState: SimulatorOrchestratorState,
@@ -28,25 +27,22 @@ export const buildLensThicknessSimulatorView = (
     thicknessDifferenceDisplay,
   );
   const lensComparisonToggleItems = buildLensComparisonToggleItems(
-    lensComparison.activeLensComparison,
+    lensComparison.active,
   );
   const lensComparisonPanelViews =
     buildLensComparisonPanelViews(orchestratorState);
 
   return {
-    onPrescriptionSubmit: prescriptionForm.handlePrescriptionSubmit,
+    onSubmit: prescriptionForm.handleSubmit,
     hasSubmittedPrescription,
     awaitingPrescriptionMessage: LensThicknessTitle.awaitingPrescription,
     noteMessage: LensThicknessTitle.note,
     thicknessDifferenceMessage,
     lensComparisonToggleItems,
-    selectLensComparison: lensComparison.selectLensComparison,
+    selectLens: lensComparison.select,
     lensComparisonPanelViews,
   };
 };
-
-type RefractiveIndexByLensComparisonHandlers =
-  SimulatorOrchestratorState["refractiveIndexByLensComparison"];
 
 const buildLensComparisonPanelViews = (
   orchestratorState: SimulatorOrchestratorState,
@@ -57,19 +53,15 @@ const buildLensComparisonPanelViews = (
   const lensComparisonPanelViews = LENS_COMPARISON_KEYS.map(
     (lensComparisonKey) => {
       const estimatedThickness = calculatedLensThickness[lensComparisonKey];
-      const isPositiveLens = isPositiveLensThickness(estimatedThickness);
+      const isPositiveLens = estimatedThickness > 0;
       const refractiveIndexLabel =
         REFRACTIVE_INDEX_LABEL_BY_LENS_COMPARISON[lensComparisonKey];
-      const refractiveIndexSelectValue =
-        refractiveIndexByLensComparison.getRefractiveIndexSelectValueForLensComparison(
-          lensComparisonKey,
-        );
-      const onRefractiveIndexChange = createRefractiveIndexChangeHandler(
-        refractiveIndexByLensComparison,
+      const indexValue = refractiveIndexByLensComparison.getIndex(
         lensComparisonKey,
       );
-      const isVisible =
-        lensComparison.activeLensComparison === lensComparisonKey;
+      const onRefractiveIndexChange = (selectValue: string) =>
+        refractiveIndexByLensComparison.setIndex(lensComparisonKey, selectValue);
+      const isVisible = lensComparison.active === lensComparisonKey;
 
       return {
         lensComparisonKey,
@@ -77,7 +69,7 @@ const buildLensComparisonPanelViews = (
         estimatedThickness,
         isPositiveLens,
         refractiveIndexLabel,
-        refractiveIndexSelectValue,
+        indexValue,
         onRefractiveIndexChange,
       };
     },
@@ -86,37 +78,22 @@ const buildLensComparisonPanelViews = (
   return lensComparisonPanelViews;
 };
 
-const buildLensComparisonToggleItems = (
-  activeLensComparison: LensComparisonKey,
-) => {
+const buildLensComparisonToggleItems = (active: LensComparisonKey) => {
   const lensComparisonToggleItems = LENS_COMPARISON_KEYS.map(
     (lensComparisonKey) =>
-      buildLensComparisonToggleItem(lensComparisonKey, activeLensComparison),
+      buildLensComparisonToggleItem(lensComparisonKey, active),
   );
 
   return lensComparisonToggleItems;
 };
 
-const createRefractiveIndexChangeHandler = (
-  refractiveIndexByLensComparison: RefractiveIndexByLensComparisonHandlers,
-  lensComparisonKey: LensComparisonKey,
-) => {
-  const onRefractiveIndexChange = (selectValue: string) =>
-    refractiveIndexByLensComparison.setRefractiveIndexForLensComparison(
-      lensComparisonKey,
-      selectValue,
-    );
-
-  return onRefractiveIndexChange;
-};
-
 const buildLensComparisonToggleItem = (
   lensComparisonKey: LensComparisonKey,
-  activeLensComparison: LensComparisonKey,
+  active: LensComparisonKey,
 ) => {
   const buttonLabel = LENS_COMPARISON_BUTTON_LABEL[lensComparisonKey];
   const ariaLabel = LENS_COMPARISON_ARIA_LABEL[lensComparisonKey];
-  const isActive = activeLensComparison === lensComparisonKey;
+  const isActive = active === lensComparisonKey;
 
   return {
     lensComparisonKey,
@@ -125,4 +102,3 @@ const buildLensComparisonToggleItem = (
     isActive,
   };
 };
-

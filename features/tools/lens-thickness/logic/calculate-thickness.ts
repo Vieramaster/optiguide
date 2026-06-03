@@ -25,14 +25,14 @@ export const calculateThickness = (
   const baseThickness =
     (Math.abs(maxPower) * radiusSquared) / (2000 * (refractiveIndex - 1));
   const refractiveIndexThicknessIncrement =
-    getRefractiveIndexThicknessIncrement(refractiveIndex);
+    getThicknessIncrement(refractiveIndex);
   const totalThickness = baseThickness + refractiveIndexThicknessIncrement;
   const roundedTotalThickness = roundToOneDecimal(totalThickness);
 
   return roundedTotalThickness;
 };
 
-const getRefractiveIndexThicknessIncrement = (
+const getThicknessIncrement = (
   refractiveIndex: number,
 ): number => {
   const increment =

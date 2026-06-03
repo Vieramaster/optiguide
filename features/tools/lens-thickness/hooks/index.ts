@@ -1,4 +1,3 @@
-export { useLensThicknessSimulatorView } from "./use-lens-thickness-simulator-view";
 export { useRefractiveIndexByLensComparison } from "./use-refractive-index-by-lens-comparison";
 export { useLensComparison } from "./use-lens-comparison";
 export { useSimulatorOrchestrator } from "./use-simulator-orchestrator";

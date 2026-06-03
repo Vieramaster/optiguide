@@ -1,5 +1,3 @@
-export type Surfacing = "estandar" | "digital";
-
 export type Lens = "monofocal" | "bifocal" | "progressive";
 
 export type Company = "Essilor" | "Kodak" | "Vitolén" | "ClearLook";
@@ -63,7 +61,8 @@ export type LensBase = {
   lensMaterial: LensMaterial;
   lensForm: LensType;
   lensTecnologies?: string[];
-  surfacing: Surfacing;
+  /** `true` = tallado digital; `false` = estándar */
+  surfacing: boolean;
   add?: MaxDiopters;
 };
 

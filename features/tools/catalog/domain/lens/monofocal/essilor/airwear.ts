@@ -14,7 +14,7 @@ export const createAirwearLens = (data: CreateLens): LensBase =>
   category: "Airwear",
   lensMaterial: LENS_MATERIALS.POLICARBONATE,
   lensForm: "esf",
-  surfacing: "estandar",
+  surfacing: false,
   ...data,
 })
 

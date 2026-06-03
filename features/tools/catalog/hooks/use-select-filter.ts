@@ -2,12 +2,12 @@
 
 import { useState, useMemo } from "react";
 
-import { resolveCatalog } from "../logic/resolve-catalog";
+import type { CatalogSnapshots } from "../types/catalog-snapshots";
 import type { SelectState } from "../types/companies/companies";
 import type { Lens } from "../types/domain/lens/lens-base";
 import type { OpticalCompanyKey } from "../types/companies/companies";
 
-export const useSelectFilter = () => {
+export const useSelectFilter = (snapshots: CatalogSnapshots) => {
   const [selectFilter, setSelectFilter] = useState<SelectState>({
     company: "tecniOptica",
     lens: "monofocal",
@@ -27,18 +27,18 @@ export const useSelectFilter = () => {
     }));
   };
 
-  const catalogResult = useMemo(
-    () => resolveCatalog(selectFilter),
-    [selectFilter],
-  );
+  const catalogResult = useMemo(() => {
+    const snapshotKey = `${selectFilter.company}:${selectFilter.lens}`;
 
-  if (!catalogResult || catalogResult.length === 0) {
-    throw new Error("Catalog could not be resolved.");
-  }
+    return snapshots[snapshotKey] ?? [];
+  }, [selectFilter, snapshots]);
+
+  const isCatalogEmpty = catalogResult.length === 0;
 
   return {
     handleSelectCompany,
     handleSelectLens,
     catalogResult,
+    isCatalogEmpty,
   };
 };

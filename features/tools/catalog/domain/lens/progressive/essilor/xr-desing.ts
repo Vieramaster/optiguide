@@ -12,7 +12,7 @@ export const createXRDesign = (data: createBifocalProgressive): LensBase =>
     company: "Essilor",
     lens: "progressive",
     lensForm: "esf",
-    surfacing: "estandar",
+    surfacing: false,
     diam: [70],
     range: "stock",
     ...data,
