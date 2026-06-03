@@ -16,11 +16,9 @@ export const getThicknessDifferencePercent = (
     return null;
   }
 
-  const thicknessDifferencePercent = Math.round(
+  return Math.round(
     ((thickerLensThickness - thinnerLensThickness) / thickerLensThickness) * 100,
   );
-
-  return thicknessDifferencePercent;
 };
 
 export const getThicknessDifferenceDisplay = (

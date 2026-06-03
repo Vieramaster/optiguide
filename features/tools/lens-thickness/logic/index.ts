@@ -1,4 +1,8 @@
-export { calculateThickness, getMaxPower } from "./calculate-thickness";
+export {
+  calculateThickness,
+  getMaxPower,
+  isPositiveLensPower,
+} from "./calculate-thickness";
 export { lensPathEmulator } from "./lens-path-emulator";
 export { calculateLensThicknessByIndex } from "./lens-thickness";
 export {

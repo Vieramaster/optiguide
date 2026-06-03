@@ -1,6 +1,10 @@
 import { describe, expect, it } from "vitest";
 
-import { calculateThickness, getMaxPower } from "./calculate-thickness";
+import {
+  calculateThickness,
+  getMaxPower,
+  isPositiveLensPower,
+} from "./calculate-thickness";
 
 describe("getMaxPower", () => {
   it("suma cilindro negativo al esférico", () => {
@@ -9,6 +13,24 @@ describe("getMaxPower", () => {
 
   it("usa solo esférico si el cilindro es positivo", () => {
     expect(getMaxPower(-4, 1)).toBe(-4);
+  });
+});
+
+describe("isPositiveLensPower", () => {
+  it("devuelve false para esfera negativa", () => {
+    expect(isPositiveLensPower(-8, 0)).toBe(false);
+  });
+
+  it("devuelve true para esfera positiva", () => {
+    expect(isPositiveLensPower(8, 0)).toBe(true);
+  });
+
+  it("devuelve false para graduación plana", () => {
+    expect(isPositiveLensPower(0, 0)).toBe(false);
+  });
+
+  it("usa getMaxPower cuando el cilindro es negativo", () => {
+    expect(isPositiveLensPower(-4, -2)).toBe(false);
   });
 });
 
@@ -38,5 +60,11 @@ describe("calculateThickness", () => {
     const highIndex = calculateThickness(-2, 0, 50, 1.67);
 
     expect(highIndex - standardIndex).toBeLessThan(1);
+  });
+
+  it("no devuelve un grosor menor que 1 mm", () => {
+    const thickness = calculateThickness(0, 0, 50, 1.74);
+
+    expect(thickness).toBeGreaterThanOrEqual(1);
   });
 });

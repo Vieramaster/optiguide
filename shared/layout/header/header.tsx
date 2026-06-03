@@ -20,7 +20,7 @@ export const Header = () => {
   return (
     <header className="flex justify-between px-10 h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12 ">
       <div className="flex items-center gap-2 ">
-        <SidebarTrigger className="-ml-1 md:hidden" />
+        <SidebarTrigger className="relative -ml-1 after:absolute after:-inset-3 md:after:hidden md:hidden" />
         <Separator
           orientation="vertical"
           className="mr-2 data-[orientation=vertical]:h-4"

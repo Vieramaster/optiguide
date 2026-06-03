@@ -4,6 +4,9 @@ const EDGE = 20;
 
 export const lensPathEmulator = (size: number, isPositive: boolean) => {
   // positivos
+  if (size === 0) {
+    size = 2;
+  }
   const frontCurveControlX = size * 36;
   const frontCurveControlY = size * 31.5;
   const backCurveControlX = size * 9.5;

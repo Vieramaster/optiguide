@@ -323,6 +323,60 @@ Prefer:
 return `La diferencia es ${percent}%`;
 ```
 
+### Trivial implementations (scalar returns)
+
+**Scope:** scalar helpers and single-expression returns in `logic/` and private helpers. **Object literals and collections:** See **Return discipline** and **When not to over-extract** above — do not relax pure-return for `build-*` assembly.
+
+Principle: prefer the simplest representation that stays readable. Do not add temporaries, blocks, or steps that exist only to return the same value on the next line.
+
+**Avoid** bridge variables:
+
+```ts
+const getValue = () => {
+  const value = calculate();
+
+  return value;
+};
+```
+
+**Prefer:**
+
+```ts
+const getValue = () => calculate();
+```
+
+**Avoid** artificial line expansion for obvious one-step operations:
+
+```ts
+const isEmpty = () => {
+  const result = items.length === 0;
+
+  return result;
+};
+```
+
+**Prefer:**
+
+```ts
+const isEmpty = () => items.length === 0;
+```
+
+**Inline return:** when a function is a single expression, needs no meaningful local names, and locals would not improve comprehension — use a direct return (including one-line arrow):
+
+```ts
+const getThicknessIncrement = (refractiveIndex: number): number =>
+  refractiveIndex === 1.67 || refractiveIndex === 1.74 ? 0.6 : 1;
+```
+
+**Use locals only when they:**
+
+- materially improve readability
+- name a domain concept (e.g. formula steps in a pipeline)
+- avoid duplication
+- simplify a complex expression
+
+Do not create a variable solely to store what is returned immediately on the next line.
+
 ### Pure return vs over-extraction
 
 | Situation | Do |
@@ -332,3 +386,5 @@ return `La diferencia es ${percent}%`;
 | `const panelView = { ... }; return panelView` | Use `return { ... }` with shorthand |
 | `.map` with inline `MAP[key]` per item | Extract helper or per-item `const` when the callback would otherwise be impure |
 | `const note = Title.note` only for return | Inline `noteMessage: Title.note` unless the caller already has many extracted `const` and grouping helps |
+| Scalar return, single expression, no domain naming need | Direct `return` or one-line arrow; no bridge `const` |
+| Object/collection in `logic/` / `build-*` | **Return discipline** (computed props as `const`, then shorthand return) |

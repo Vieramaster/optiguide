@@ -1,9 +1,10 @@
-import { LensThicknessTitle } from "../constants/title";
+import { buildLensThicknessMmMessage } from "../constants/lens-comparison-messages";
 import {
   LENS_COMPARISON_ARIA_LABEL,
   LENS_COMPARISON_BUTTON_LABEL,
   REFRACTIVE_INDEX_LABEL_BY_LENS_COMPARISON,
 } from "../constants/lens-comparison-labels";
+import { LensThicknessTitle } from "../constants/title";
 import type {
   LensComparisonPanelView,
   LensThicknessSimulatorView,
@@ -14,6 +15,7 @@ import {
   type LensComparisonKey,
 } from "../types/lens-comparison";
 
+import { isPositiveLensPower } from "./calculate-thickness";
 import { getThicknessDifferenceMessage } from "./compare-lens-thickness-percent";
 
 export const buildLensThicknessSimulatorView = (
@@ -47,13 +49,22 @@ export const buildLensThicknessSimulatorView = (
 const buildLensComparisonPanelViews = (
   orchestratorState: SimulatorOrchestratorState,
 ): LensComparisonPanelView[] => {
-  const { lensComparison, refractiveIndexByLensComparison, calculatedLensThickness } =
-    orchestratorState;
+  const {
+    prescriptionForm,
+    lensComparison,
+    refractiveIndexByLensComparison,
+    calculatedLensThickness,
+  } = orchestratorState;
+
+  const submittedValues = prescriptionForm.submittedValues;
+  const isPositiveLens =
+    submittedValues !== null
+      ? isPositiveLensPower(submittedValues.SPHERE, submittedValues.CYLINDER)
+      : false;
 
   const lensComparisonPanelViews = LENS_COMPARISON_KEYS.map(
     (lensComparisonKey) => {
       const estimatedThickness = calculatedLensThickness[lensComparisonKey];
-      const isPositiveLens = estimatedThickness > 0;
       const refractiveIndexLabel =
         REFRACTIVE_INDEX_LABEL_BY_LENS_COMPARISON[lensComparisonKey];
       const indexValue = refractiveIndexByLensComparison.getIndex(
@@ -62,6 +73,10 @@ const buildLensComparisonPanelViews = (
       const onRefractiveIndexChange = (selectValue: string) =>
         refractiveIndexByLensComparison.setIndex(lensComparisonKey, selectValue);
       const isVisible = lensComparison.active === lensComparisonKey;
+      const thicknessMessage =
+        submittedValues !== null
+          ? buildLensThicknessMmMessage(estimatedThickness)
+          : null;
 
       return {
         lensComparisonKey,
@@ -71,6 +86,7 @@ const buildLensComparisonPanelViews = (
         refractiveIndexLabel,
         indexValue,
         onRefractiveIndexChange,
+        thicknessMessage,
       };
     },
   );

@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import { Metadata, type Viewport } from "next";
 import "./globals.css";
 import { Montserrat, Inter } from "next/font/google";
 
@@ -10,6 +10,11 @@ import { ThemeProvider } from "@/shared/providers/theme-provider";
 const interHeading = Inter({subsets:['latin'],variable:'--font-heading'});
 
 const montserrat = Montserrat({subsets:['latin'],variable:'--font-sans'});
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   title: {

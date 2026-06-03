@@ -64,6 +64,7 @@ When rules conflict, apply this hierarchy (highest authority first):
 | Server state, cache policy | `state-and-reactivity.mdc` §4 |
 | Pure-return, `logic/` placement | `logic-discipline.mdc` § Return discipline |
 | Extraction cost, trivial inline, when to extract | `logic-discipline.mdc` § Extraction discipline |
+| Trivial implementations, scalar inline return | `logic-discipline.mdc` § Trivial implementations |
 | Extraction placement ladder (where to put code) | `global-architecture.mdc` §2.8 |
 | Component extraction (UI only) | `ui-architecture.mdc` §2.3 |
 | UI layers, composition | `ui-architecture.mdc` |

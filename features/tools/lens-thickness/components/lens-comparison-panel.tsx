@@ -11,6 +11,7 @@ export type LensComparisonPanelProps = {
   onRefractiveIndexChange: (selectValue: string) => void;
   estimatedThickness: number;
   isPositiveLens: boolean;
+  thicknessMessage: string | null;
 };
 
 export const LensComparisonPanel = ({
@@ -20,16 +21,22 @@ export const LensComparisonPanel = ({
   onRefractiveIndexChange,
   estimatedThickness,
   isPositiveLens,
+  thicknessMessage,
 }: LensComparisonPanelProps) => (
   <div
     className={`w-80 flex-col items-center gap-8 ${isVisible ? "flex" : "hidden"} xl:flex`}
   >
-    <SelectField
-      options={REFRACTIVE_INDEX_SELECT_OPTIONS}
-      value={indexValue}
-      onValueSelect={onRefractiveIndexChange}
-      label={refractiveIndexLabel}
-    />
+    <div className="flex w-full flex-col items-center gap-2">
+      <SelectField
+        options={REFRACTIVE_INDEX_SELECT_OPTIONS}
+        value={indexValue}
+        onValueSelect={onRefractiveIndexChange}
+        label={refractiveIndexLabel}
+      />
+      {thicknessMessage !== null ? (
+        <p className="text-sm text-muted-foreground">{thicknessMessage}</p>
+      ) : null}
+    </div>
     <LensSVG
       isPositive={isPositiveLens}
       size={estimatedThickness}

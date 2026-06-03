@@ -19,6 +19,7 @@ export const LensComparisonPanelGroup = ({
         onRefractiveIndexChange={panel.onRefractiveIndexChange}
         estimatedThickness={panel.estimatedThickness}
         isPositiveLens={panel.isPositiveLens}
+        thicknessMessage={panel.thicknessMessage}
       />
     ))}
   </div>

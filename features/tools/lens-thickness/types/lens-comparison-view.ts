@@ -17,6 +17,7 @@ export type LensComparisonPanelView = {
   refractiveIndexLabel: string;
   indexValue: string;
   onRefractiveIndexChange: (selectValue: string) => void;
+  thicknessMessage: string | null;
 };
 
 export type LensThicknessSimulatorView = {
