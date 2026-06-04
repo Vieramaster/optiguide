@@ -46,9 +46,9 @@ Rule:
 ## 1.1 Project Root Organization
 
 - `app/` — Next.js routes; orchestrates features, entities, and shared only
-- `features/[domain]/` — self-contained bounded context + `index.ts` (+ optional `server.ts`)
-- `entities/[entity]/` — domain shared across multiple features + `index.ts` (+ optional `server.ts`)
-- `shared/` — domain-agnostic reuse; never imports features or entities
+- `features/[domain]/` — user-facing capability tied to a route or flow + `index.ts` (+ optional `server.ts`)
+- `entities/[entity]/` — stable business concept with its own identity + `index.ts` (+ optional `server.ts`)
+- `shared/` — generic reusable infrastructure; no ophthalmic domain knowledge; never imports features or entities
 - `lib/` — vendor/config only (e.g. shadcn `cn()`)
 - `public/` — static assets
 - `docs/` — project documentation
@@ -68,15 +68,50 @@ Forbidden:
 - `lib` → `shared` | `entities` | `features` | `app`
 
 Rule:
-- Cross-domain reuse occurs **only** via `entities/` and `shared/`.
+- Cross-layer placement of shared concepts occurs **only** via `entities/` (business identity) or `shared/` (generic infrastructure).
 - Never via direct feature-to-feature imports.
+
+## 1.3 Layer Semantics (Features, Entities, Shared)
+
+SSOT for **what each layer means** and **when to move code between layers**. File-level extraction cost: `logic-discipline.mdc` § Extraction discipline. Placement ladder after that passes: §2.8.
+
+### Features
+
+- A feature represents a **user-facing capability** tied to a concrete **URL or user flow**.
+- All code **exclusive** to that capability stays inside the feature.
+- May contain: `components/`, `hooks/`, `logic/`, `types/`, `constants/`, `config/`, `queries/`, `server/`, `actions/`, `domain/`, and other folders in §2.1.
+- **Internal services** (reads, server-only helpers, mutations) live in `queries/`, `server/`, `actions/`, and related `logic/` — not in a legacy `services/` folder.
+- **Forbidden:** moving code out of a feature solely for organization or anticipated future reuse.
+
+### Entities
+
+- An entity represents a **stable business concept** with its own identity (e.g. `Prescription`).
+- An entity does **not** exist because something is technically reusable across features; multiple consumers do **not** define the entity.
+- May contain: `types/`, `logic/`, `hooks/`, `components/`, validations, `constants/`, `messages.ts`.
+- UI that directly manipulates the concept (e.g. `PrescriptionForm`) belongs in the entity when it is bound to that concept, not in a feature for convenience.
+
+### Shared
+
+- `shared/` contains **only generic reusable infrastructure**, independent of ophthalmic/optical business terminology and rules.
+- Examples in this project: `Button`, `SelectField`, `Input`, `providers/`, `shared/validation/`, `shared/formatters/`, structural `shared/layout/`.
+- Shell and navigation copy: injected via props from `app/` — see `content.mdc` §1.1.
+
+### Cross-layer extraction (before leaving a feature)
+
+| Question | Place in |
+|----------|----------|
+| Stable business concept with its own identity? | `entities/` |
+| Generic infrastructure with no domain knowledge? | `shared/` |
+| Still belongs to one user flow or route? | **Stay in the feature** |
+
+**Forbidden:** moving feature code to `entities/` for technical reuse alone (e.g. duplicated imports between two features).
 
 ---
 
-# 2. Bounded Contexts: The `features/` Layer
+# 2. The `features/` Layer
 
-A feature is an isolated business domain unit.
-- **No Feature-to-Feature Coupling:** Features must NOT import other features directly. Cross-domain reuse must go through `entities/` or `shared/` only.
+A feature is a **self-contained user-facing capability** (route or flow). It is not defined by DDD bounded contexts or generic “business domain units.”
+- **No Feature-to-Feature Coupling:** Features must NOT import other features directly. Shared business concepts use `entities/`; generic infrastructure uses `shared/`.
 
 ## 2.1 Feature Internal Architecture
 
@@ -108,7 +143,7 @@ Rule:
 - Do not create responsibility folders without real content or cohesion need.
 
 **Nested paths (`features/tools/{name}/`):**
-- Each child (e.g. `catalog`, `lens-thickness`) is a separate bounded context with its own `index.ts`.
+- Each child (e.g. `catalog`, `lens-thickness`) is a **separate feature** (sibling capability) with its own `index.ts`.
 - Do NOT import from a non-existent `features/tools` package or treat `tools` as a shared parent feature.
 
 **Legacy mapping (obsolete — do not use in new code):**
@@ -137,7 +172,7 @@ External consumers (outside the domain) must import only from the public API:
 Intra-domain imports (same feature or entity) may use deep imports between internal responsibility folders.
 
 **Transitional debt (codebase):**
-- Some domains may lack a root `index.ts` yet (e.g. `features/articles`, `entities/prescription`). The contract still applies: external consumers must not add new deep imports; migrate toward public barrels.
+- Some domains may still lack a complete public barrel. External consumers must not add new deep imports; migrate toward `index.ts` / `server.ts` barrels.
 
 Examples — correct:
 ```ts
@@ -262,21 +297,23 @@ Rules:
 - Do not create folders only to satisfy structure
 - Create groupings only when they improve cohesion, maintainability, and navigation
 
-## 2.7 Reuse Discipline
+## 2.7 Reuse Discipline (`shared/`)
 
 Do NOT move code to `shared/` by anticipation or only to reduce lines.
 
 Move to `shared/` only when:
-- it is already used by multiple domains (2+ bounded contexts / features)
-- there is a real reuse need
-- it contains no domain-specific knowledge
+- it is **generic infrastructure** with **no ophthalmic/optical domain knowledge** (see §1.3)
+- reuse is proven, not assumed
+- optional signal: already used by multiple features or entities — usage alone is not sufficient
 
 Rule:
-- Prefer proximity to the domain over hypothetical reuse.
+- Prefer keeping code in the feature or entity over hypothetical shared extraction.
 
 ## 2.8 Extraction & Simplicity Discipline
 
 **Whether to extract** (navigation cost, trivial inline, 5-second rule, 2+ call sites nuance): `logic-discipline.mdc` § Extraction discipline (SSOT). Do not duplicate that checklist here.
+
+**Which layer** when moving code **out of a feature**: §1.3 Cross-layer extraction (business concept → `entities/`; generic infra → `shared/`; flow-specific → stay in feature). **Forbidden:** feature → entity for technical reuse only.
 
 **Where to place code** once § Extraction discipline allows — placement ladder only:
 
@@ -306,7 +343,7 @@ Rule:
 
 # 3. The `shared/` Layer Contract
 
-`shared/` is a domain-agnostic reuse layer. It exists ONLY to host abstractions reusable across multiple domains.
+`shared/` is generic reusable infrastructure with no ophthalmic business domain knowledge. See §1.3.
 
 ## 3.1 Shared Responsibility Scope
 `shared/` may contain ONLY:
@@ -366,6 +403,8 @@ Forbidden:
 - Creating helpers, hooks, components, folders, or modules before § Extraction discipline allows (See §2.8; cost: `logic-discipline.mdc` § Extraction discipline).
 - Separate files for locally used small or medium functions when a private helper in the same file suffices.
 - Intermediate layers or pass-through wrappers without clear responsibility (See §2.8).
+- Moving code out of a feature for organization or anticipated reuse without §1.3 criteria.
+- Creating an entity solely because multiple features import the same module (technical reuse without business identity).
 
 ## 4.1 Application Layer (`app/`)
 
@@ -379,28 +418,38 @@ Rule:
 
 ---
 
-# 5. Bounded Core: The `entities/` Layer
+# 5. The `entities/` Layer
 
-The `entities/` layer contains core business domain logic and models that are shared across multiple features.
+The `entities/` layer hosts **stable business concepts** with their own identity. See §1.3.
+
+**Not an entity criterion:** technical reuse, duplicate imports, or “used by 2+ features.”  
+**Entity criterion:** the code models a business concept that exists independently of any single user flow (e.g. `Prescription`).
+
+Current example in this project: `entities/prescription` — types, validations, `PrescriptionForm`, and hooks that operate on the Prescription concept. Consumption by `catalog` and `lens-thickness` reflects the concept’s role in the product, not the reason the entity exists.
 
 ## 5.1 Entities Responsibility Scope
-`entities/` may contain ONLY:
-- Core domain models and types (e.g., `Prescription`, `User`).
-- Domain-specific pure functions and validations (e.g., `validatePrescription`).
-- Domain-specific UI components that are strictly tied to the entity (e.g., `PrescriptionForm` in `entities/*/components/`), provided they don't orchestrate external features.
+
+`entities/` may contain:
+- Domain models and types (e.g. `Prescription`).
+- Business rules, parsing, and validations for that concept.
+- Entity-bound hooks (e.g. prescription form state).
+- UI components that directly manipulate the concept (e.g. `PrescriptionForm`, `PrescriptionField`), without orchestrating external features.
 
 ## 5.2 What `entities/` is NOT
+
 `entities/` MUST NOT contain:
-- Feature-specific workflows or orchestration.
-- Layouts or page-level composition.
-- Imports from the `features/` layer (entities must be feature-agnostic).
+- Feature-specific workflows or page-level orchestration.
+- Layouts or route composition.
+- Imports from `features/` (entities remain feature-agnostic).
+- Code placed here **only** because two features import the same module (technical reuse without business identity).
 
 ## 5.3 Entity Internal Structure
 
-An entity exists **only** when its domain is reused by **2 or more features**.
-If something belongs exclusively to one feature, it remains in that feature.
+Create or extend an entity when §1.3 Cross-layer extraction identifies a **stable business concept**, not when a second feature happens to need the same helper.
 
-`entities/[entity]/` uses the same optional responsibility vocabulary as features (see §2.1).
+If code still belongs to one user flow or route, it remains in that **feature** even if only one feature consumes it today.
+
+`entities/[entity]/` uses the same optional responsibility vocabulary as features (see §2.1), except feature-only folders (`config/` for sidebar, `markdowns/`, feature `domain/` catalogs).
 
 Required:
 - `index.ts` — public API of the entity

@@ -26,7 +26,7 @@ Abre [http://localhost:3000](http://localhost:3000).
 optiguide/
 ├── app/                        # Rutas Next.js (App Router)
 ├── features/                   # Dominios de negocio (articles, tools/*)
-├── entities/                   # Dominio compartido (prescription)
+├── entities/                   # Conceptos de negocio estables (prescription)
 ├── shared/                     # UI genérica, layout, formatters, validation
 ├── lib/                        # utils.ts (cn) — convención shadcn
 ├── docs/                       # Documentación del proyecto

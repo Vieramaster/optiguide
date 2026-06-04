@@ -77,7 +77,9 @@ export default async function ArticlesPage({ params }: { params: Promise<{ slug:
 
 ---
 
-## Usar PrescriptionForm (entidad compartida)
+## Usar PrescriptionForm (entity de dominio)
+
+`PrescriptionForm` vive en `entities/prescription` porque manipula el concepto **Prescription**, no porque varias features lo importen.
 
 ```tsx
 "use client";

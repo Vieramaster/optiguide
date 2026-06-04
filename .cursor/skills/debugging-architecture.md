@@ -89,7 +89,8 @@ rg "@/entities/[^/]+/(components|types|hooks|logic)/" --glob "*.{ts,tsx}"
 
 - New deep imports from `app/`
 - Growing cross-feature coupling
-- Shared abstractions with single consumer
+- Entity created only because multiple features import the same module (technical reuse without business identity)
+- Shared abstractions with single consumer or with ophthalmic domain knowledge
 - Logic creeping into components/hooks
 
 ---
@@ -107,4 +108,4 @@ rg "@/entities/[^/]+/(components|types|hooks|logic)/" --glob "*.{ts,tsx}"
 
 - Rationalizing violations as one-offs
 - Fixing symptoms (lint ignore) instead of structure
-- Creating `shared/` abstractions without 2+ proven consumers
+- Creating `shared/` abstractions without generic infrastructure criteria (see `global-architecture.mdc` §1.3, §2.7)

@@ -60,6 +60,7 @@ When rules conflict, apply this hierarchy (highest authority first):
 | Topic | Owner file |
 |-------|------------|
 | Layers, deps, barrels, server surface | `global-architecture.mdc` |
+| Feature / entity / shared semantics and cross-layer extraction | `global-architecture.mdc` §1.3, §5 |
 | Orchestrators, effects, derived state | `state-and-reactivity.mdc` §3.1 |
 | Server state, cache policy | `state-and-reactivity.mdc` §4 |
 | Pure-return, `logic/` placement | `logic-discipline.mdc` § Return discipline |
@@ -98,4 +99,4 @@ When multiple rules apply in the same turn:
 
 ## Documentation sync
 
-After changing layer contracts in `global-architecture.mdc`, update `docs/ARQUITECTURA.md` if it describes folder structure or dependency flow.
+After changing layer contracts or §1.3 Layer semantics in `global-architecture.mdc`, update `docs/ARQUITECTURA.md` and `docs/GUIA-DESARROLLO.md` if they describe folder structure, layer meaning, or dependency flow.

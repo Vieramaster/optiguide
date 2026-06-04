@@ -19,9 +19,9 @@ See also: `docs/GUIA-DESARROLLO.md`, `docs/ARQUITECTURA.md`.
 
 # 1. Feature Definition First
 
-- Define single domain responsibility
-- One feature = one business capability
-- Do not mix unrelated workflows
+- One feature = one user-facing capability tied to a **route or user flow**
+- Keep all code exclusive to that flow inside the feature
+- Do not mix unrelated workflows in one feature
 
 ---
 
@@ -29,7 +29,11 @@ See also: `docs/GUIA-DESARROLLO.md`, `docs/ARQUITECTURA.md`.
 
 - Does this feature already exist?
 - Can this extend an existing feature instead?
-- If shared by 2+ features → consider `entities/` instead
+- Moving code out of the feature?
+  - Stable business concept with identity (e.g. Prescription) → `entities/` — see `global-architecture.mdc` §1.3
+  - Generic infrastructure without ophthalmic domain knowledge → `shared/`
+  - Still belongs to this flow → **stay in the feature**
+- **Forbidden:** extract to `entities/` for technical reuse alone
 
 ---
 
@@ -96,7 +100,7 @@ External consumers (`app/`, other layers) import **only** from these barrels.
 # 8. Cross-Feature Isolation
 
 - No `features/A` → `features/B` imports
-- Shared domain → `entities/` or proven `shared/` abstraction
+- Stable business concept → `entities/`; generic infra → `shared/` (see `global-architecture.mdc` §1.3)
 
 ---
 

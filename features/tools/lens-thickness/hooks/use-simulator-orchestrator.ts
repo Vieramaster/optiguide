@@ -3,12 +3,12 @@ import {
 } from "../logic/compare-lens-thickness-percent";
 import { calculateLensThicknessByIndex } from "../logic/lens-thickness";
 
-import { usePrescriptionSubmit } from "./use-prescription-submit";
+import { useSimulatorPrescription } from "./use-simulator-prescription";
 import { useLensComparison } from "./use-lens-comparison";
 import { useRefractiveIndexByLensComparison } from "./use-refractive-index-by-lens-comparison";
 
 export const useSimulatorOrchestrator = () => {
-  const prescriptionForm = usePrescriptionSubmit();
+  const prescriptionForm = useSimulatorPrescription();
   const lensComparison = useLensComparison();
   const refractiveIndexByLensComparison = useRefractiveIndexByLensComparison();
 

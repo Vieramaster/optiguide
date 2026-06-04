@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import type { PrescriptionFullValues } from "@/entities/prescription";
 
-export const usePrescriptionSubmit = () => {
+export const useSimulatorPrescription = () => {
   const [submittedValues, setSubmittedValues] =
     useState<PrescriptionFullValues | null>(null);
 

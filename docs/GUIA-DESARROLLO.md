@@ -21,7 +21,7 @@ npm run dev
 | Lógica de dominio (pura) | `features/*/logic/` o `entities/*/logic/` | Relativo intra-dominio |
 | Hook / orchestrator | `features/*/hooks/` | Relativo intra-dominio |
 | UI de feature | `features/*/components/` | Relativo o barrel del feature |
-| Entidad compartida (2+ features) | `entities/[entidad]/` | `@/entities/[entidad]` |
+| Concepto de negocio estable (`entities/`) | `entities/[entidad]/` | `@/entities/[entidad]` |
 | UI genérica reutilizable | `shared/components/` | `@/shared/components` |
 | Primitivos shadcn | `shared/components/ui/` | `@/shared/components/ui` |
 | Layout (header, sidebar) | `shared/layout/` | `@/shared/layout` |
@@ -179,9 +179,11 @@ export const calcularAlgo = (entrada: number): number => {
 
 ## Entidades
 
-Crear en `entities/` solo si **2 o más features** comparten el dominio.
+Crear o ampliar una entity cuando el código modela un **concepto estable del negocio con identidad propia**, no porque sea reutilizable técnicamente entre features.
 
-Ejemplo actual: `entities/prescription` (catalog + lens-thickness).
+Ejemplo: `entities/prescription` — `PrescriptionForm`, validaciones y tipos de **Prescription**. Catalog y lens-thickness lo consumen porque el producto usa recetas; eso no es el motivo de existencia de la entity.
+
+**No extraer** de un feature hacia `entities/` solo porque dos features importen el mismo módulo.
 
 ```ts
 import { PrescriptionForm } from "@/entities/prescription";
@@ -192,16 +194,16 @@ import type { PrescriptionFullValues } from "@/entities/prescription";
 
 ### Qué puede ir en `shared/`
 
-- Componentes UI sin terminología óptica
+- Infraestructura genérica sin dominio oftálmico: `Button`, `SelectField`, `Input`, `providers/`
 - Formatters genéricos (`shared/formatters/`)
-- Validación genérica (`shared/validation/`)
+- Validación genérica (`shared/validation/`) — p. ej. slugs, imágenes
 - Layout estructural con copy inyectado por props
 
 ### Qué no va en `shared/`
 
-- Workflows de negocio
-- Tipos de dominio óptico
-- Strings de features (viven en `features/*/constants/` o `messages.ts`)
+- Workflows de negocio ni orquestación de features
+- Terminología, reglas o tipos del dominio óptico
+- Strings de features (viven en `features/*/constants/` o `messages.ts` de la entity)
 - Carpetas `actions/` (usar `hooks/` para helpers client)
 
 ## Server / Client
@@ -228,6 +230,7 @@ import type { PrescriptionFullValues } from "@/entities/prescription";
 - [ ] Sin imports feature → feature
 - [ ] Lógica de negocio en `logic/`, no en componentes
 - [ ] Sin copy de dominio nuevo en `shared/`
+- [ ] Extracciones: concepto de negocio → entity; infra genérica → shared; flujo exclusivo → feature
 
 ## Comandos útiles
 

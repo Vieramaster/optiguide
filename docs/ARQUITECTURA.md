@@ -49,19 +49,20 @@ app/
 
 ### `entities/`
 
-Dominio compartido entre varias features (2+ consumidores).
+Conceptos **estables del negocio** con identidad propia. Una entity **no** existe porque algo sea reutilizable entre features; el número de consumidores no define la capa.
+
+Ejemplo actual: **Prescription** (`entities/prescription`) — tipos, validaciones, `PrescriptionForm` y hooks que operan directamente sobre el concepto receta. Lo usan catalog y lens-thickness porque el producto lo requiere, no porque “2+ features” sea el criterio de extracción.
 
 ```
 entities/
-└── prescription/               # Recetas ópticas (catalog, lens-thickness)
+└── prescription/
     ├── index.ts                # API pública client-safe
-    ├── components/
-    ├── hooks/
+    ├── components/             # PrescriptionForm, PrescriptionField
+    ├── hooks/                  # use-prescription-form
     ├── logic/
     │   ├── parse.ts
     │   ├── validations.ts
-    │   ├── evaluate-prescription-rules.ts
-    │   └── transform-transposition-prescription.ts
+    │   └── evaluate-prescription-rules.ts
     ├── types/
     │   ├── types.ts
     │   └── prescription-form-config.ts
@@ -71,7 +72,14 @@ entities/
 
 ### `features/`
 
-Dominios de negocio autocontenidos. Cada bounded context expone API pública vía `index.ts` (+ `server.ts` si aplica).
+Funcionalidades asociadas a una **ruta o flujo de usuario** concreto. Todo el código exclusivo de esa funcionalidad permanece en el feature. Servicios internos: `queries/`, `server/`, `actions/` y `logic/` relacionada (no carpeta `services/`).
+
+| Ruta | Feature |
+|------|---------|
+| `/articulos/[slug]` | `features/articles` |
+| `/herramientas/catalogo` | `features/tools/catalog` |
+| `/herramientas/simulador-de-espesor` | `features/tools/lens-thickness` |
+| `/herramientas/lentes-segun-el-rostro` | `features/tools/face-shape` |
 
 ```
 features/
@@ -85,9 +93,9 @@ features/
 │   ├── queries/
 │   └── server/                 # Constantes server-only (ARTICLES_DIR)
 └── tools/
-    ├── catalog/                # Bounded context hermano
-    ├── lens-thickness/         # Bounded context hermano
-    └── face-shape/             # Bounded context hermano
+    ├── catalog/                # Feature hermano (independiente)
+    ├── lens-thickness/         # Feature hermano (independiente)
+    └── face-shape/             # Feature hermano (independiente)
 ```
 
 Estructura interna típica de un feature:
@@ -109,7 +117,9 @@ feature/
 
 ### `shared/`
 
-Código transversal **sin terminología de dominio**. Nunca importa de `features/` ni `entities/`.
+Infraestructura genérica reutilizable, **independiente del dominio oftálmico** (sin reglas ni terminología de negocio óptico). Nunca importa de `features/` ni `entities/`.
+
+Ejemplos: `Button`, `SelectField`, `Input`, `providers/`, `shared/validation/`, `shared/formatters/`, `shared/layout/`.
 
 ```
 shared/
@@ -131,6 +141,22 @@ shared/
 ### `lib/`
 
 Solo `utils.ts` con `cn()` — convención shadcn/ui. No es equivalente a `shared/`.
+
+---
+
+## Cuándo usar cada capa
+
+Antes de sacar código de un feature, aplicar esta regla (detalle en `global-architecture.mdc` §1.3):
+
+| Pregunta | Destino |
+|----------|---------|
+| ¿Es un concepto estable del negocio con identidad propia (ej. Prescription)? | `entities/` |
+| ¿Es infraestructura genérica sin dominio oftálmico? | `shared/` |
+| ¿Sigue perteneciendo a un flujo o ruta concreta? | **Permanecer en el feature** |
+
+**Prohibido:** mover código de feature → entity solo por reutilización técnica (mismos imports en dos features). **Prohibido:** sacar código del feature por organización o por anticipar reutilización futura.
+
+Coste de extracción a archivos (`logic/`, helpers): `logic-discipline.mdc` § Extraction discipline.
 
 ---
 
@@ -238,7 +264,7 @@ import { loadArticleMdx } from "@/features/articles/server";
 ## Principios
 
 - **UI / lógica:** componentes presentacionales; reglas en `logic/`; coordinación en `hooks/`.
-- **Boundaries:** sin imports cruzados entre features; reutilización vía `entities/` y `shared/`.
+- **Boundaries:** sin imports cruzados entre features; conceptos de negocio en `entities/`; infra genérica en `shared/`.
 - **Shared genérico:** sin workflows ni tipos de dominio; copy del shell vía props.
 - **Entrypoints explícitos:** `index.ts` (client) y `server.ts` (server) por dominio.
 - **Pure return:** ensamblado de vistas en `logic/build-*` según `logic-discipline.mdc`.

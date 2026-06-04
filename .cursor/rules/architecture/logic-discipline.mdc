@@ -37,7 +37,7 @@ alwaysApply: true
 
 ## Extraction discipline
 
-**SSOT** for **whether** to extract functions, helpers, or modules. **Where** to place code after that decision: `global-architecture.mdc` §2.8 (placement ladder only).
+**SSOT** for **whether** to extract functions, helpers, or modules. **Which layer** (feature vs entity vs shared): `global-architecture.mdc` §1.3. **Where** to place code after that decision: `global-architecture.mdc` §2.8 (placement ladder only).
 
 Return-literal indirection (not file extraction): **When not to over-extract** below. Terminology: **file over-extraction** = this section; **return over-extraction** = When not to over-extract.
 

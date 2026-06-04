@@ -1,8 +1,7 @@
 "use client";
-import { useState, useMemo } from "react";
+import { useState } from "react";
 
 import type { PrescriptionBaseValues } from "@/entities/prescription";
-
 
 import type { LensObjectResolved } from "../types/companies/companies";
 import { transpositionFilter } from "../logic/transposition-filter";
@@ -17,10 +16,10 @@ export const useFormFilter = (baseCatalog: LensObjectResolved[]) => {
     setFilterValues(data);
   };
 
-  const catalog = useMemo(() => {
-    if (!filterValues) return baseCatalog;
-    return transpositionFilter(baseCatalog, filterValues);
-  }, [baseCatalog, filterValues]);
+  const catalog =
+    filterValues === null
+      ? baseCatalog
+      : transpositionFilter(baseCatalog, filterValues);
 
   return {
     handleValidSubmit,

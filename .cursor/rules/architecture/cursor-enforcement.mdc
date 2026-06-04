@@ -49,11 +49,13 @@ Validate the import graph. Never generate:
 # 3. Layer Placement Check
 
 Code is placed BEFORE implementation and never relocated after writing. Where does this code belong?
-- Feature internal layer
-- Entity internal layer
-- Shared reuse layer
+- Feature internal layer (code exclusive to one route or user flow)
+- Entity internal layer (stable business concept with identity — see `global-architecture.mdc` §1.3)
+- Shared layer (generic infrastructure, no ophthalmic domain knowledge)
 - UI layer
 - Infrastructure layer
+
+Cross-layer moves out of a feature: `global-architecture.mdc` §1.3 and §2.8.
 
 ---
 
@@ -67,7 +69,7 @@ If working inside `features/`:
 If working inside `entities/`:
 - Does this import from `features/`? (Forbidden)
 - Does this contain feature-specific orchestration? (Forbidden)
-- Does this entity exist only because 2+ features share the domain? (Required for new entities)
+- Does this model a **stable business concept with its own identity**, not technical reuse alone? (Required for new entities — see `global-architecture.mdc` §1.3, §5)
 
 ---
 
@@ -84,12 +86,19 @@ If working in UI:
 
 ### Shared layer reuse
 
-For `shared/` candidates (`global-architecture.mdc` §2.7):
-- Is this used in 2+ bounded contexts / features?
-- Is reuse proven or assumed?
+For `shared/` candidates (`global-architecture.mdc` §2.7, §1.3):
+- Is this **generic infrastructure** with no ophthalmic/optical domain knowledge?
+- Is reuse proven or assumed (not anticipated)?
 - Is abstraction necessary or premature?
 
 Prefer duplication over premature speculative shared extraction. Do not create shared abstractions unless proven necessity exists.
+
+### Cross-layer extraction (feature → entity or shared)
+
+When moving code **out of a feature** (`global-architecture.mdc` §1.3, §2.8):
+- Stable business concept with identity → `entities/` (not technical reuse alone)
+- Generic infrastructure without domain knowledge → `shared/`
+- Still tied to one user flow → stay in the feature
 
 ### Domain extraction cost
 

@@ -1,6 +1,8 @@
 # Plan de implementación — `.cursor/rules/`
 
-Estado: **implementado** en `.cursor/rules/` (reconciliación Phase 0–4). Validar con grep en `cursor-enforcement.mdc` §8.
+Estado: **implementado** en `.cursor/rules/` (reconciliación Phase 0–4). Validar con grep en `cursor-enforcement.mdc` §9.
+
+**Segunda pasada (2026) — Layer semantics:** alineación features / entities / shared con arquitectura real del producto (`global-architecture.mdc` §1.3, §5; docs y skills sincronizados). Entity por **concepto de negocio estable**, no por “2+ features”.
 
 ---
 
@@ -79,8 +81,8 @@ Eliminar "external services" como mecanismo de reutilización en global-architec
 | **§1** | `shared/components/ui`; añadir **Entity change**; infra → `server/`, `queries/`, `actions/` | shared/ui; services/ |
 | **§1 clasificación** | **D1:** reemplazar ONE category por primary + secondary responsibilities + ejemplo logic/hooks/types | D1 |
 | **§2** | Explicit `features → features` forbidden; UI infra vía hooks → `logic/`/`queries/`/`actions/` | P8; services |
-| **§4** | Añadir **Entity isolation check** (2+ features?) | entities ausente |
-| **§6** | "2+ bounded contexts (features)" | vocabulario |
+| **§4** | **Entity isolation check:** concepto de negocio estable con identidad; no reutilización técnica sola (`global-architecture.mdc` §1.3, §5) | entities |
+| **§6** | Shared: infra genérica sin dominio oftálmico; cross-layer extraction §1.3 | vocabulario |
 
 ---
 

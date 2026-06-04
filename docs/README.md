@@ -10,7 +10,7 @@
 
 ## Sincronización
 
-Cuando cambien contratos de capas en `global-architecture.mdc`, actualizar `ARQUITECTURA.md` y, si aplica, `GUIA-DESARROLLO.md` y `EJEMPLOS.md`.
+Cuando cambien contratos de capas o la semántica de capas (§1.3) en `global-architecture.mdc`, actualizar `ARQUITECTURA.md` (sección [Cuándo usar cada capa](./ARQUITECTURA.md#cuándo-usar-cada-capa)), `GUIA-DESARROLLO.md` y, si aplica, `EJEMPLOS.md`.
 
 ## Features documentados en código (referencia)
 

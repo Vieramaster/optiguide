@@ -4,7 +4,7 @@
 **Rama de contexto:** `migration/rules-architecture-alignment`  
 **Relacionado:** [rules-implementation-spec.md](rules-implementation-spec.md) (ejecución técnica parcial ya especificada).
 
-**Estado:** Implementado (Phase 0–4) — ver commit en `.cursor/rules/` y `docs/ARQUITECTURA.md`.
+**Estado:** Implementado (Phase 0–4). **Phase 5 (2026) — Layer semantics:** implementado — `global-architecture.mdc` §1.3, §5; `docs/ARQUITECTURA.md`, `GUIA-DESARROLLO.md`, skills y `cursor-enforcement.mdc` alineados con arquitectura real (features por ruta/flujo; entities por concepto de negocio; no criterio “2+ features”).
 
 ---
 
@@ -29,11 +29,11 @@
 | C03 | rule vs rule | `naming.mdc`: arrow en helpers | shadcn `function` en `shared/components/ui` | Naming | Excepción explícita: primitivos vendor |
 | C04 | rule vs rule | `content.mdc` + global §3.2: no copy localizado en shared | Producto monolingüe español; copy en shared/layout | Shared / UX | Añadir § "Product copy exception" o mover copy a `app/` props |
 | C05 | rule vs rule | `global-architecture` §actions: solo `"use server"` | `cursor-enforcement` §1: infra incluye `shared/actions/` | Architecture | Renombrar carpeta en reglas a `shared/client-actions/` o prohibir nombre `actions/` sin directive |
-| C06 | rule vs code | global §2.2: `index.ts` requerido por feature/entity | `features/articles` sin `index.ts`; `entities/prescription` sin `index.ts` | Architecture | Regla correcta; marcar código como **transitional debt** en global §2.2 nota |
+| C06 | rule vs code | global §2.2: `index.ts` requerido por feature/entity | ~~`features/articles` / `entities/prescription` sin `index.ts`~~ | Architecture | **Resuelto:** ambos tienen `index.ts`; nota transitional debt genérica en global §2.2 |
 | C07 | rule vs code | global §3.2: shared sin dominio | `ArticleItem`, `ArticlesNav`, `toolsSidebar` en shared/layout | Shared | Regla correcta; código viola — no relajar regla |
 | C08 | rule vs code | global §2.4: validación en `logic/` | `entities/prescription/rules.ts` en raíz | Entities | Regla correcta; nota de migración permitida |
 | C09 | rule vs doc | global: `entities/prescription` | `docs/ARQUITECTURA.md`: `features/prescription` | Documentation | Parche docs en Phase 0 (no SSOT) |
-| C10 | rule vs doc | articles `index.ts` en docs | No existe en repo | Documentation | Igual |
+| C10 | rule vs doc | articles `index.ts` en docs | ~~No existe en repo~~ | Documentation | **Resuelto:** `features/articles/index.ts` existe |
 | C11 | rule vs tooling | Prohibición cross-layer imports | ESLint solo `import/order` | Enforcement | Añadir `no-restricted-imports` (plan separado eslint, no producto) |
 | C12 | meta | `typescript.mdc` "It does NOT define: boundaries.mdc" | Archivo no existe | Meta | Reemplazar refs |
 | C13 | meta | UX rules → `design-tokens.mdc`, `hooks.mdc` | No existen; existe `styling-system.mdc` | Meta | Reemplazar refs en 4 archivos |
@@ -41,7 +41,23 @@
 | C15 | precedence | `nextjs-and-performance` `alwaysApply: false` | App Router es stack principal | Next.js | `alwaysApply: true` o merge §1–2 en global §4.1 |
 | C16 | rule vs code | global: deep imports prohibidos externamente | 8+ deep imports `@/entities/prescription/...` | Architecture | Mantener regla; documentar grace period hasta barrels |
 | C17 | rule vs rule | `services` redundant intermediate forbidden | `state` permite `return orchestratorState` variable | Style | Acotar anti-patrón solo a `logic/`/`build-*` |
-| C18 | structural | `features/[domain]/` | `features/tools/catalog` (path anidado) | Architecture | Añadir §2.1 nota: `features/tools/*` son dominios hermanos, no un feature padre |
+| C18 | structural | `features/[domain]/` | `features/tools/catalog` (path anidado) | Architecture | Añadir §2.1 nota: `features/tools/*` son features hermanos, no un feature padre |
+| C19 | rule vs product | global §5.3: entity solo si **2+ features** | Producto: `prescription` = concepto **Prescription**; consumidores no definen la entity | Architecture / docs | **Resuelto (Phase 5):** §1.3 Layer semantics + §5; docs y enforcement actualizados |
+
+---
+
+## Cambios acordados — Phase 5 (layer semantics, 2026)
+
+| Archivo | Cambio |
+|---------|--------|
+| `architecture/global-architecture.mdc` | §1.3 Layer semantics; §2 intro por ruta/flujo; §5 entities por identidad de negocio; §2.7 shared sin dominio oftálmico; §2.8 extracción entre capas |
+| `architecture/cursor-enforcement.mdc` | Entity/shared checks alineados a §1.3 |
+| `architecture/logic-discipline.mdc` | Cross-ref §1.3 para capa destino |
+| `RULES-INDEX.mdc` | Topic ownership + documentation sync |
+| `docs/ARQUITECTURA.md` | Entities/features/shared; tabla URL↔feature; «Cuándo usar cada capa»; árbol prescription corregido |
+| `docs/GUIA-DESARROLLO.md`, `README.md`, `docs/EJEMPLOS.md`, `docs/README.md` | Criterios de extracción y entidades |
+| `.cursor/skills/feature-creation.md`, `state-decision.md`, `ui-composition.md`, `debugging-architecture.md` | Checklists alineados |
+| `rules-implementation-spec.md` | §3–4 entity isolation actualizado |
 
 ---
 
@@ -148,7 +164,7 @@ Añadir en `cursor-enforcement.mdc` §0: "When rules conflict, apply Rule Preced
 | Acción | Detalle |
 |--------|---------|
 | **CHANGE** L142 | `@/features/prescription` → `@/entities/prescription` |
-| **ADD** §2.1 (~5 líneas) | `features/tools/{name}/` = bounded contexts hermanos; prohibido importar `features/tools` como paquete |
+| **ADD** §2.1 (~5 líneas) | `features/tools/{name}/` = features hermanos; prohibido importar `features/tools` como paquete |
 | **ADD** §2.2 (~8 líneas) | **Transitional debt:** barrels faltantes (`articles`, `prescription`) — external consumers must not add new deep imports |
 | **ADD** §3.2 (~4 líneas) | **Product-language exception:** single-locale apps may pass Spanish copy via props from `app/`; shared defaults discouraged, not forbidden for shell UI |
 | **CHANGE** §3.4 | `shared/actions/` → renombrar a `shared/client-handlers/` en texto O aclarar: "folder MUST NOT be named `actions/` unless files contain `\"use server\"`" |
@@ -160,7 +176,7 @@ Añadir en `cursor-enforcement.mdc` §0: "When rules conflict, apply Rule Preced
 |--------|---------|
 | **ADD** §0 | Link a RULES-INDEX + precedence one-liner |
 | **CHANGE** §1 L23 | `shared/actions/` → `shared/client-handlers/` OR `app/api/` only for non-Server-Action helpers use `shared/` sin carpeta `actions/` |
-| **ADD** §4 | Entity isolation: existe solo si 2+ features; no feature imports |
+| **ADD** §4 | Entity isolation: concepto de negocio estable (§1.3); no reutilización técnica sola; no feature imports |
 | **ADD** §8 | Post-edit grep checklist (from implementation-spec) |
 
 ### Phase 2 — Capas y meta-refs

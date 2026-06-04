@@ -34,7 +34,7 @@ Dependencies flow **downward** only.
 |-------|------|-------|
 | Primitives | `shared/components/ui/` | Domain-agnostic, token-based |
 | Shared compositions | `shared/components/` | Reusable, no domain copy |
-| Entity UI | `entities/*/components/` | Entity-bound forms/fields |
+| Entity UI | `entities/*/components/` | UI bound to a business concept (e.g. `PrescriptionForm`) — placement: `global-architecture.mdc` §1.3 |
 | Feature UI | `features/*/components/` | Domain presentation + entry |
 | Layout | `shared/layout/`, `app/` | Structure; shell copy from `app/` props |
 

@@ -21,7 +21,8 @@ Where to place state in this codebase.
 | Domain workflow (filters, tabs, comparison)? | Feature `hooks/` |
 | Pure function of other state? | Derived in hook via `logic/` — **do not store** |
 | Transient UI (open, hover)? | Component local state |
-| Shared across 2+ features? | `entities/` model + hooks, not global context by default |
+| State of a stable business concept (e.g. Prescription form)? | `entities/[entity]/hooks/` — not global context by default |
+| Belongs to one user flow only? | Feature `hooks/` |
 
 ---
 

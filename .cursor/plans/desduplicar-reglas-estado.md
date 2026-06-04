@@ -19,6 +19,10 @@
 
 - Commit de todos los cambios `.cursor/rules/` (incluye parche reconciliación anterior)
 
+## Referencia — semántica de capas (2026)
+
+Criterio features / entities / shared: `global-architecture.mdc` §1.3 y `docs/ARQUITECTURA.md` § Cuándo usar cada capa.
+
 ## Verificación
 
 ```bash
